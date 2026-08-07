@@ -1,0 +1,14 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Netlify auto-detects Next.js projects and applies its Next.js Runtime
+# (which turns .next server output into Netlify Functions/Edge Functions)
+# when it sees this build/publish shape. Declaring the plugin explicitly
+# here makes that behavior deterministic rather than relying purely on
+# auto-detection.
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

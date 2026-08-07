@@ -1,26 +1,207 @@
 @import "tailwindcss";
 
+/*
+ * This is a single, deliberately art-directed brand experience — not a
+ * light/dark theme toggle. Individual sections are intentionally dark
+ * (hero, footer, CTA bands) or light (content sections) by design choice,
+ * not by responding to the visitor's OS color-scheme preference.
+ *
+ * Tailwind's `dark:` variant defaults to `@media (prefers-color-scheme)`,
+ * which was silently flipping text to white on sections that never got a
+ * matching dark background (e.g. "How It Works" on bg-paper-50), producing
+ * unreadable white-on-near-white text for any visitor with system dark
+ * mode on. Scoping `dark:` to an `.dark` ancestor class we never apply
+ * neutralizes those stray utilities everywhere in one place instead of
+ * hunting through every component.
+ */
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand — derived from the TRA logo (deep black / emergency red / amber-orange / clean white) */
+  --color-ink-950: #0a0a0b;
+  --color-ink-900: #121214;
+  --color-ink-800: #1c1c1f;
+  --color-ink-700: #2a2a2e;
+  --color-ink-600: #3d3d42;
+  --color-ink-400: #6b6b72;
+  --color-ink-200: #b8b8bd;
+
+  --color-paper-0: #ffffff;
+  --color-paper-50: #f7f6f4;
+  --color-paper-100: #eeece8;
+
+  --color-red-700: #a3121a;
+  --color-red-600: #c81721;
+  --color-red-500: #e0202b;
+  --color-red-400: #ea4a52;
+
+  --color-amber-600: #c96a12;
+  --color-amber-500: #f2941c;
+  --color-amber-400: #f8b03e;
+
+  --color-success-600: #1a7f4e;
+  --color-success-500: #22a566;
+  --color-warning-500: #e0a712;
+  --color-info-500: #2563eb;
+
+  --background: var(--color-paper-0);
+  --foreground: var(--color-ink-950);
+
+  /* Layout constants referenced by fixed/sticky UI */
+  --header-height: 4rem;
+  --mobile-action-bar-height: 4.25rem;
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --color-ink-950: var(--color-ink-950);
+  --color-ink-900: var(--color-ink-900);
+  --color-ink-800: var(--color-ink-800);
+  --color-ink-700: var(--color-ink-700);
+  --color-ink-600: var(--color-ink-600);
+  --color-ink-400: var(--color-ink-400);
+  --color-ink-200: var(--color-ink-200);
+
+  --color-paper-0: var(--color-paper-0);
+  --color-paper-50: var(--color-paper-50);
+  --color-paper-100: var(--color-paper-100);
+
+  --color-red-700: var(--color-red-700);
+  --color-red-600: var(--color-red-600);
+  --color-red-500: var(--color-red-500);
+  --color-red-400: var(--color-red-400);
+
+  --color-amber-600: var(--color-amber-600);
+  --color-amber-500: var(--color-amber-500);
+  --color-amber-400: var(--color-amber-400);
+
+  --color-success-600: var(--color-success-600);
+  --color-success-500: var(--color-success-500);
+  --color-warning-500: var(--color-warning-500);
+  --color-info-500: var(--color-info-500);
+
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-oswald);
+  --font-mono: var(--font-mono-data);
+
+  --animate-pulse-ring: pulse-ring 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-marker-bob: marker-bob 2.4s ease-in-out infinite;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    border-color: theme(--color-ink-700 / 15%);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-feature-settings: "cv11", "ss01";
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-red-500);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .journey-marker {
+    @apply relative flex h-14 w-14 shrink-0 items-center justify-center rounded-full border-2 border-white/15 bg-ink-900 text-white/45 transition-[color,border-color,box-shadow] duration-300 ease-out sm:h-16 sm:w-16;
+  }
+  .journey-marker.is-active {
+    @apply border-red-500 text-red-500;
+    box-shadow:
+      0 0 0 6px color-mix(in srgb, var(--color-red-500) 14%, transparent),
+      0 0 30px color-mix(in srgb, var(--color-red-500) 50%, transparent);
+  }
+  .journey-index {
+    @apply text-red-500/50 transition-colors duration-300;
+  }
+  .journey-index.is-active {
+    @apply text-red-500;
+  }
+
+  /*
+   * Signature video-mask typography (VideoMaskText). Hidden by default so
+   * the always-present plain <h2> IS the fallback in browsers without CSS
+   * mask support — only shown when masking actually works.
+   */
+  .mask-video-word {
+    display: none;
+  }
+  @supports (mask-image: linear-gradient(#000, #000)) or (-webkit-mask-image: linear-gradient(#000, #000)) {
+    .mask-video-word {
+      display: block;
+    }
+  }
+}
+
+@layer utilities {
+  .hairline {
+    background-image: linear-gradient(
+      to right,
+      transparent,
+      theme(--color-ink-700 / 30%),
+      transparent
+    );
+    height: 1px;
+  }
+
+  .road-lines {
+    background-image: repeating-linear-gradient(
+      to right,
+      var(--color-amber-400) 0,
+      var(--color-amber-400) 24px,
+      transparent 24px,
+      transparent 48px
+    );
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .safe-bottom {
+    padding-bottom: var(--safe-bottom);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-red-500) 55%, transparent);
+  }
+  70% {
+    box-shadow: 0 0 0 14px color-mix(in srgb, var(--color-red-500) 0%, transparent);
+  }
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-red-500) 0%, transparent);
+  }
+}
+
+@keyframes marker-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
 }

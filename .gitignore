@@ -30,12 +30,31 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
+# env files — never commit real secrets. .env.example holds only empty
+# placeholders and documents which variables to set in Netlify's dashboard,
+# so it's the one exception that should be committed.
 .env*
+!.env.example
 
 # vercel
 .vercel
 
+# netlify
+.netlify
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# raw/source video — never deployed, never committed. Drop new raw footage
+# here; scripts/organize-media.mjs compresses it into public/media/videos/.
+/media-source/
+
+# public/media/incoming/ is legacy — organize-media.mjs now reads from
+# /media-source/ instead. Keep this empty except for .gitkeep so nothing
+# raw ever accidentally ships if a file is dropped here out of habit.
+/public/media/incoming/*
+!/public/media/incoming/.gitkeep
+
+.vercel
+.env*

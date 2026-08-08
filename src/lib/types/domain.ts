@@ -16,6 +16,8 @@ export const SERVICE_TYPE_SLUGS = [
   "minor-repair",
   "truck-assistance",
   "other-roadside-service",
+  "battery-replacement",
+  "tire-repair-plug-patch",
 ] as const;
 
 export type ServiceTypeSlug = (typeof SERVICE_TYPE_SLUGS)[number];

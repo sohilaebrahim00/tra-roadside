@@ -10,6 +10,7 @@ import { SERVICE_ICONS } from "@/lib/content/service-icons";
 import { BUSINESS } from "@/lib/content/business";
 import { env } from "@/lib/env";
 import { CinematicBackgroundVideo } from "@/components/media/cinematic-background-video";
+import { PricingDisclaimer } from "@/components/ui/pricing-disclaimer";
 
 export const metadata: Metadata = {
   title: "Roadside Assistance Services",
@@ -54,8 +55,13 @@ export default function ServicesPage() {
                 <Link
                   key={service.slug}
                   href={`/services/${service.slug}`}
-                  className="group flex flex-col rounded-2xl border border-ink-950/8 bg-white p-6 transition-all hover:-translate-y-0.5 hover:border-red-600/30 hover:shadow-lg dark:border-white/10 dark:bg-ink-900"
+                  className="group relative flex flex-col rounded-2xl border border-ink-950/8 bg-white p-6 transition-all hover:-translate-y-0.5 hover:border-red-600/30 hover:shadow-lg dark:border-white/10 dark:bg-ink-900"
                 >
+                  {service.startingPrice && (
+                    <span className="absolute right-4 top-4 rounded-full bg-ink-950/[0.04] px-2.5 py-1 text-xs font-semibold text-ink-700 dark:bg-white/10 dark:text-ink-100">
+                      From ${service.startingPrice}
+                    </span>
+                  )}
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-red-600/10 text-red-600">
                     <Icon className="h-5.5 w-5.5" aria-hidden="true" />
                   </div>
@@ -68,6 +74,8 @@ export default function ServicesPage() {
               );
             })}
           </div>
+
+          <PricingDisclaimer className="mt-10 text-center" />
         </Container>
       </section>
     </>

@@ -11,6 +11,8 @@ export interface ServiceContent {
   whileYouWait: string[];
   whatWeNeed: string[];
   faqs: { q: string; a: string }[];
+  /** "Starting at" price in whole USD — omitted for services without published pricing. Always a floor, never a guaranteed final price; see PricingDisclaimer. */
+  startingPrice?: number;
 }
 
 export const SERVICES: ServiceContent[] = [
@@ -50,6 +52,7 @@ export const SERVICES: ServiceContent[] = [
     name: "Jump Start",
     shortName: "Jump Start",
     needsDestination: false,
+    startingPrice: 60,
     summary: "Dead battery? We'll get your engine running again on the spot.",
     heroLine: "A dead battery shouldn't end your day.",
     problem:
@@ -80,6 +83,7 @@ export const SERVICES: ServiceContent[] = [
     name: "Flat Tire Change",
     shortName: "Flat Tire",
     needsDestination: false,
+    startingPrice: 75,
     summary: "Fast, safe swap to your spare or a serviceable tire.",
     heroLine: "Flat tire, back on the road.",
     problem:
@@ -152,6 +156,7 @@ export const SERVICES: ServiceContent[] = [
     name: "Fuel Delivery",
     shortName: "Fuel Delivery",
     needsDestination: false,
+    startingPrice: 65,
     summary: "Ran out of gas or diesel? We'll bring enough to get you to a station.",
     heroLine: "Out of fuel, not out of options.",
     problem:
@@ -178,6 +183,7 @@ export const SERVICES: ServiceContent[] = [
     name: "Vehicle Lockout",
     shortName: "Lockout",
     needsDestination: false,
+    startingPrice: 60,
     summary: "Locked your keys inside? We'll get you back in without damage.",
     heroLine: "Locked out, not locked down.",
     problem:
@@ -310,6 +316,68 @@ export const SERVICES: ServiceContent[] = [
       {
         q: "What if my issue isn't listed as its own service?",
         a: "Select Other Roadside Service and describe what you need in the required notes field — dispatch will review it and confirm how we can help.",
+      },
+    ],
+  },
+  {
+    slug: "battery-replacement",
+    name: "Battery Replacement",
+    shortName: "Battery Replacement",
+    needsDestination: false,
+    startingPrice: 189,
+    summary: "Mobile battery replacement with a 2-year warranty — installed at your location.",
+    heroLine: "A new battery, installed right where you are.",
+    problem:
+      "A battery that won't hold a charge, or one that's already failed a jump start, usually needs to be replaced rather than jumped again. We bring a new battery to you and install it on site.",
+    whileYouWait: [
+      "Turn off all electronics and accessories to avoid draining further.",
+      "Pop the hood if it's safe to do so before your driver arrives.",
+      "Have your vehicle year, make, and model ready — battery fit varies by vehicle.",
+    ],
+    whatWeNeed: [
+      "Your exact location",
+      "Vehicle year, make, and model",
+      "Confirmation the battery is the suspected issue",
+    ],
+    faqs: [
+      {
+        q: "Is $189 the final price?",
+        a: "$189 is the starting price. Battery access and installation difficulty vary significantly between vehicles, so your final price is confirmed based on your specific vehicle and location.",
+      },
+      {
+        q: "What does the 2-year warranty cover?",
+        a: "Your battery purchase includes a 2-year warranty. Keep your invoice for warranty service.",
+      },
+      {
+        q: "What if my car just needs a jump, not a full replacement?",
+        a: "Select Jump Start instead — your driver can advise on site if a replacement turns out to be needed.",
+      },
+    ],
+  },
+  {
+    slug: "tire-repair-plug-patch",
+    name: "Tire Repair — Plug & Patch",
+    shortName: "Tire Repair",
+    needsDestination: false,
+    startingPrice: 45,
+    summary: "Puncture repaired roadside with a plug or patch, when the damage allows it.",
+    heroLine: "Small puncture, fixed roadside.",
+    problem:
+      "A nail or small puncture doesn't always mean you need a full tire swap. When the damage allows it, a plug or patch repair gets you back on the road without touching your spare.",
+    whileYouWait: [
+      "Avoid driving further on a visibly low or flat tire.",
+      "Keep hazard lights on while you wait.",
+      "Note where on the tire the damage is, if you can see it.",
+    ],
+    whatWeNeed: ["Your exact location", "Vehicle year, make, and model"],
+    faqs: [
+      {
+        q: "Can every puncture be plugged or patched?",
+        a: "No — damage near the sidewall or beyond a certain size can't be safely repaired. Your driver will advise on site if a tire change or tow is needed instead.",
+      },
+      {
+        q: "Is $45 the final price?",
+        a: "$45 is the starting price. Final price is confirmed based on your vehicle and location.",
       },
     ],
   },

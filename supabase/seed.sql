@@ -14,7 +14,9 @@ insert into service_types (slug, name, needs_destination, description, sort_orde
   ('winching-recovery', 'Winching & Recovery', false, 'Recovery from ditches, mud, or embankments.', 8),
   ('minor-repair', 'Minor Roadside Repair', false, 'Small mechanical fixes on site.', 9),
   ('truck-assistance', '18 Wheeler Roadside Services', false, 'Roadside support for 18-wheelers, semi-trucks, tractor-trailers, and other commercial trucks.', 10),
-  ('other-roadside-service', 'Other Roadside Service', false, 'Not listed above — tell us what you need.', 11)
+  ('other-roadside-service', 'Other Roadside Service', false, 'Not listed above — tell us what you need.', 11),
+  ('battery-replacement', 'Battery Replacement', false, 'Mobile battery replacement with a 2-year warranty, installed on site.', 12),
+  ('tire-repair-plug-patch', 'Tire Repair — Plug & Patch', false, 'Puncture repaired roadside with a plug or patch, when the damage allows it.', 13)
 on conflict (slug) do update set
   name = excluded.name,
   needs_destination = excluded.needs_destination,

@@ -39,10 +39,13 @@ export function ServiceJsonLd({
   name,
   description,
   slug,
+  startingPrice,
 }: {
   name: string;
   description: string;
   slug: string;
+  /** "Starting at" price in whole USD, when published — never a guaranteed final price. */
+  startingPrice?: number;
 }) {
   const data = {
     "@context": "https://schema.org",
@@ -52,6 +55,21 @@ export function ServiceJsonLd({
     provider: { "@id": `${env.siteUrl}/#organization` },
     areaServed: SERVICE_AREAS.map((c) => c.name),
     url: `${env.siteUrl}/services/${slug}`,
+    ...(startingPrice
+      ? {
+          offers: {
+            "@type": "Offer",
+            priceCurrency: "USD",
+            price: startingPrice,
+            priceSpecification: {
+              "@type": "UnitPriceSpecification",
+              price: startingPrice,
+              priceCurrency: "USD",
+              description: "Starting price — final price depends on vehicle and location.",
+            },
+          },
+        }
+      : {}),
   };
   return <JsonLdScript data={data} />;
 }

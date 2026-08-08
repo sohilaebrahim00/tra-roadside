@@ -1,6 +1,6 @@
 import {
   Truck, BatteryCharging, CircleDot, Gauge, Disc, Fuel, KeyRound, Anchor, Wrench,
-  Container, CircleHelp,
+  Container, CircleHelp, BatteryFull, Drill,
   type LucideIcon,
 } from "lucide-react";
 import type { ServiceTypeSlug } from "@/lib/types/domain";
@@ -17,4 +17,6 @@ export const SERVICE_ICONS: Record<ServiceTypeSlug, LucideIcon> = {
   "minor-repair": Wrench,
   "truck-assistance": Container,
   "other-roadside-service": CircleHelp,
+  "battery-replacement": BatteryFull,
+  "tire-repair-plug-patch": Drill,
 };

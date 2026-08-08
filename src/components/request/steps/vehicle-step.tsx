@@ -1,9 +1,11 @@
 "use client";
 
 import { useFormContext } from "react-hook-form";
+import { BatteryFull, ShieldCheck } from "lucide-react";
 import { StepShell } from "../step-shell";
 import { VEHICLE_TYPES, type VehicleType } from "@/lib/types/domain";
 import { cn } from "@/lib/utils/cn";
+import { getService } from "@/lib/content/services";
 import type { CreateRequestInput } from "@/lib/validation/request";
 
 const VEHICLE_TYPE_LABELS: Record<VehicleType, string> = {
@@ -25,6 +27,8 @@ export function VehicleStep({ onNext, onBack }: { onNext: () => void; onBack: ()
   const trailerAttached = watch("trailerAttached");
   const isTruck = serviceSlug === "truck-assistance";
   const isOther = serviceSlug === "other-roadside-service";
+  const isBattery = serviceSlug === "battery-replacement";
+  const selectedService = serviceSlug ? getService(serviceSlug) : undefined;
   const notesLabel = isOther
     ? "Tell us what kind of roadside help you need *"
     : isTruck
@@ -46,6 +50,20 @@ export function VehicleStep({ onNext, onBack }: { onNext: () => void; onBack: ()
 
   return (
     <StepShell title="Tell us about your vehicle" description="This helps your driver arrive prepared." onBack={onBack}>
+      {isBattery && selectedService?.startingPrice && (
+        <div className="mb-5 flex items-center gap-3 rounded-2xl bg-red-600 p-4 text-white">
+          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/15">
+            <BatteryFull className="h-6 w-6" aria-hidden="true" />
+          </span>
+          <div>
+            <p className="font-display text-base font-bold">Battery Replacement · Starting at ${selectedService.startingPrice}</p>
+            <p className="mt-0.5 flex items-center gap-1.5 text-sm text-white/90">
+              <ShieldCheck className="h-3.5 w-3.5" aria-hidden="true" /> 2-Year Warranty included
+            </p>
+          </div>
+        </div>
+      )}
+
       <div className="grid grid-cols-2 gap-3">
         <Field label="Year">
           <input {...register("vehicleYear")} inputMode="numeric" placeholder="2019" className={inputClass} />

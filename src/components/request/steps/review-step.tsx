@@ -27,7 +27,11 @@ export function ReviewStep({
   return (
     <StepShell title="Review your request" description="Confirm everything looks right before submitting." onBack={onBack}>
       <div className="space-y-4">
-        <SummaryRow label="Service" value={service?.name ?? "—"} onEdit={() => onEdit("service")} />
+        <SummaryRow
+          label="Service"
+          value={service?.startingPrice ? `${service.name} · Starting at $${service.startingPrice}` : service?.name ?? "—"}
+          onEdit={() => onEdit("service")}
+        />
         <SummaryRow label="Location" value={values.pickupAddress || "—"} onEdit={() => onEdit("location")} />
         <SummaryRow
           label="Vehicle"
@@ -45,6 +49,20 @@ export function ReviewStep({
           onEdit={() => onEdit("contact")}
         />
       </div>
+
+      {service?.startingPrice && (
+        <div className="mt-4 rounded-xl border border-ink-950/8 bg-paper-50 px-4 py-3 dark:border-white/10 dark:bg-white/5">
+          <p className="text-sm font-semibold text-ink-900 dark:text-white">Starting price: ${service.startingPrice}</p>
+          <p className="mt-1 text-xs text-ink-500 dark:text-ink-300">
+            Final price may vary depending on vehicle, location, and service requirements.
+          </p>
+          {service.slug === "battery-replacement" && (
+            <p className="mt-1 text-xs text-ink-500 dark:text-ink-300">
+              Includes a 2-year battery warranty. Keep your invoice for warranty service.
+            </p>
+          )}
+        </div>
+      )}
 
       {submitError && (
         <p className="mt-4 rounded-lg bg-red-600/10 px-3 py-2.5 text-sm text-red-700 dark:text-red-400">{submitError}</p>

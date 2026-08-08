@@ -13,6 +13,8 @@ import { env } from "@/lib/env";
 import { CinematicBackgroundVideo } from "@/components/media/cinematic-background-video";
 import { TruckVideoSection } from "@/components/media/truck-video-section";
 import { getServiceVideo } from "@/data/media-registry";
+import { PricingDisclaimer } from "@/components/ui/pricing-disclaimer";
+import { ShieldCheck } from "lucide-react";
 
 export function generateStaticParams() {
   return SERVICES.map((s) => ({ slug: s.slug }));
@@ -56,7 +58,7 @@ export default async function ServicePage({
           { name: service.name, url: `${env.siteUrl}/services/${service.slug}` },
         ]}
       />
-      <ServiceJsonLd name={service.name} description={service.summary} slug={service.slug} />
+      <ServiceJsonLd name={service.name} description={service.summary} slug={service.slug} startingPrice={service.startingPrice} />
       {faqItems.length > 0 && <FaqJsonLd items={service.faqs} />}
 
       <section className="relative overflow-hidden border-b border-ink-950/8 bg-ink-950 py-14 text-white sm:py-20">
@@ -72,6 +74,20 @@ export default async function ServicePage({
             <h1 className="mt-2 font-display text-3xl font-bold uppercase tracking-tight sm:text-4xl">
               {service.heroLine}
             </h1>
+
+            {service.startingPrice && (
+              <div className="mt-4 flex flex-wrap items-center gap-3">
+                <span className="rounded-full bg-white/10 px-4 py-1.5 text-base font-bold text-white">
+                  Starting at ${service.startingPrice}
+                </span>
+                {service.slug === "battery-replacement" && (
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-4 py-1.5 text-sm font-semibold text-white/90">
+                    <ShieldCheck className="h-4 w-4 text-red-400" aria-hidden="true" /> 2-Year Warranty
+                  </span>
+                )}
+              </div>
+            )}
+
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <Button href={`/request?service=${service.slug}`} size="lg" icon={<LifeBuoy className="h-4 w-4" aria-hidden="true" />}>
                 Request {service.shortName}
@@ -80,6 +96,8 @@ export default async function ServicePage({
                 Call Now
               </Button>
             </div>
+
+            {service.startingPrice && <PricingDisclaimer tone="light" className="mt-5 max-w-md" />}
           </div>
         </Container>
       </section>

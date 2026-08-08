@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import { Hero } from "@/components/home/hero";
+import { BatteryPromoSection } from "@/components/home/battery-promo-section";
 import { TrustStrip } from "@/components/home/trust-strip";
 import { SignatureWordSection } from "@/components/home/signature-word-section";
 import { RoadsideRevealSection } from "@/components/home/roadside-reveal-section";
@@ -26,6 +27,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <BatteryPromoSection />
       <TrustStrip />
       <SignatureWordSection />
       <ServicesSection />

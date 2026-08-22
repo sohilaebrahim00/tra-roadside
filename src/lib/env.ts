@@ -32,7 +32,7 @@ function normalizeBaseUrl(raw: string): string {
 // domain rather than ever leaking a localhost link to a customer.
 const configuredAppUrl =
   readPublic("NEXT_PUBLIC_APP_URL") || readServer("APP_URL") || readPublic("NEXT_PUBLIC_SITE_URL");
-const PRODUCTION_FALLBACK_URL = "https://texas-roadside-assistance.com";
+const PRODUCTION_FALLBACK_URL = "https://texasroadside-assistance.com";
 const DEV_FALLBACK_URL = "http://localhost:3000";
 
 export const env = {
@@ -48,7 +48,7 @@ export const env = {
   twilioFromNumber: readServer("TWILIO_FROM_NUMBER"),
 
   resendApiKey: readServer("RESEND_API_KEY"),
-  resendFromEmail: readServer("RESEND_FROM_EMAIL") || "TRA Dispatch <dispatch@texas-roadside-assistance.com>",
+  resendFromEmail: readServer("RESEND_FROM_EMAIL") || "TRA Dispatch <info@texasroadside-assistance.com>",
 
   /** Was NEXT_PUBLIC_APP_URL/APP_URL explicitly set, as opposed to falling back? Used for config validation, not for building links. */
   appUrlExplicitlyConfigured: Boolean(configuredAppUrl),
@@ -57,7 +57,7 @@ export const env = {
   // Business's own published contact info is the default so dispatch
   // notifications work out of the box; DISPATCH_EMAIL/DISPATCH_PHONE let a
   // real deployment route internal alerts elsewhere without touching code.
-  dispatchEmail: readServer("DISPATCH_EMAIL") || "support@texas-roadside-assistance.com",
+  dispatchEmail: readServer("DISPATCH_EMAIL") || "info@texasroadside-assistance.com",
   dispatchPhoneRaw: readServer("DISPATCH_PHONE") || "+19454121215",
 
   gaMeasurementId: readPublic("NEXT_PUBLIC_GA_MEASUREMENT_ID"),
@@ -93,7 +93,7 @@ export function integrationStatus(): IntegrationStatus[] {
       label: "Production app URL",
       configured: env.appUrlExplicitlyConfigured,
       envVars: ["NEXT_PUBLIC_APP_URL"],
-      docsHint: "Set this to your real deployed domain (e.g. https://texas-roadside-assistance.com) so tracking links and notifications never reference localhost.",
+      docsHint: "Set this to your real deployed domain (e.g. https://texasroadside-assistance.com) so tracking links and notifications never reference localhost.",
     },
     {
       key: "supabase",

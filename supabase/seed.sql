@@ -57,22 +57,22 @@ on conflict (slug) do update set name = excluded.name, sort_order = excluded.sor
 -- are substituted by src/lib/notifications/render.ts.
 insert into notification_templates (event, channel, subject, body) values
   ('request_received', 'email', 'We received your request — {{requestNumber}}', 'Hi {{customerName}}, your {{serviceName}} request ({{requestNumber}}) has been received and is {{statusLabel}}. Pickup location: {{pickupAddress}}.{{serviceDetails}} Track live status: {{trackingUrl}}. Questions? Call {{supportPhone}}.'),
-  ('request_received', 'sms', null, 'TRA: Request {{requestNumber}} received ({{statusLabel}}). Pickup: {{pickupAddress}}.{{serviceDetails}} Track: {{trackingUrl}}. Support: {{supportPhone}}'),
+  ('request_received', 'sms', null, 'TRA: Request {{requestNumber}} received ({{statusLabel}}). Pickup: {{pickupAddress}}.{{serviceDetails}} Track: {{trackingUrl}}. Support: {{supportPhone}}. Reply STOP to opt out.'),
   ('request_accepted', 'email', 'Your request has been accepted — {{requestNumber}}', 'Hi {{customerName}}, dispatch has accepted your request and is assigning a driver. Track live status: {{trackingUrl}}. Questions? Call {{supportPhone}}.'),
-  ('request_accepted', 'sms', null, 'TRA: Request {{requestNumber}} accepted. Assigning a driver now. {{trackingUrl}}'),
+  ('request_accepted', 'sms', null, 'TRA: Request {{requestNumber}} accepted. Assigning a driver now. {{trackingUrl}} Reply STOP to opt out.'),
   ('driver_assigned', 'email', 'A driver has been assigned — {{requestNumber}}', 'Hi {{customerName}}, {{driverName}} has been assigned to your request. Track live location: {{trackingUrl}}. Questions? Call {{supportPhone}}.'),
-  ('driver_assigned', 'sms', null, 'TRA: {{driverName}} is assigned to your request. Track: {{trackingUrl}}'),
+  ('driver_assigned', 'sms', null, 'TRA: {{driverName}} is assigned to your request. Track: {{trackingUrl}} Reply STOP to opt out.'),
   ('driver_en_route', 'email', 'Your driver is on the way — {{requestNumber}}', 'Hi {{customerName}}, {{driverName}} is on the way. ETA: {{eta}}. Track live: {{trackingUrl}}. Questions? Call {{supportPhone}}.'),
-  ('driver_en_route', 'sms', null, 'TRA: {{driverName}} is on the way. ETA {{eta}}. {{trackingUrl}}'),
+  ('driver_en_route', 'sms', null, 'TRA: {{driverName}} is on the way. ETA {{eta}}. {{trackingUrl}} Reply STOP to opt out.'),
   ('driver_nearby', 'email', 'Your driver is nearby — {{requestNumber}}', 'Hi {{customerName}}, {{driverName}} is almost at your location. Please stay in a safe, visible spot. Questions? Call {{supportPhone}}.'),
-  ('driver_nearby', 'sms', null, 'TRA: {{driverName}} is nearby. Stay in a safe, visible location.'),
+  ('driver_nearby', 'sms', null, 'TRA: {{driverName}} is nearby. Stay in a safe, visible location. Reply STOP to opt out.'),
   ('driver_arrived', 'email', 'Your driver has arrived — {{requestNumber}}', 'Hi {{customerName}}, {{driverName}} has arrived at your location. Questions? Call {{supportPhone}}.'),
-  ('driver_arrived', 'sms', null, 'TRA: {{driverName}} has arrived at your location.'),
+  ('driver_arrived', 'sms', null, 'TRA: {{driverName}} has arrived at your location. Reply STOP to opt out.'),
   ('service_completed', 'email', 'Service completed — {{requestNumber}}', 'Hi {{customerName}}, your {{serviceName}} service is complete. Thanks for choosing TRA. Questions? Call {{supportPhone}}.'),
-  ('service_completed', 'sms', null, 'TRA: Your service is complete. Thanks for choosing TRA!'),
+  ('service_completed', 'sms', null, 'TRA: Your service is complete. Thanks for choosing TRA! Reply STOP to opt out.'),
   ('request_canceled', 'email', 'Request canceled — {{requestNumber}}', 'Hi {{customerName}}, your request {{requestNumber}} has been canceled. Call {{supportPhone}} if this was unexpected.'),
-  ('request_canceled', 'sms', null, 'TRA: Request {{requestNumber}} was canceled. Call {{supportPhone}} with questions.'),
-  ('request_updated', 'sms', null, 'TRA: Your request {{requestNumber}} status changed to {{statusLabel}}.'),
+  ('request_canceled', 'sms', null, 'TRA: Request {{requestNumber}} was canceled. Call {{supportPhone}} with questions. Reply STOP to opt out.'),
+  ('request_updated', 'sms', null, 'TRA: Your request {{requestNumber}} status changed to {{statusLabel}}. Reply STOP to opt out.'),
   ('dispatch_new_request_email', 'email', 'New request — {{requestNumber}} ({{serviceName}})', E'New roadside request received.\n\nRequest #: {{requestNumber}}\nReceived: {{createdAt}}\nService: {{serviceName}}\n\nCustomer: {{customerName}}\nPhone: {{customerPhone}}\nEmail: {{customerEmail}}\n\nPickup: {{pickupAddress}}\nDestination: {{destinationAddress}}\n\nVehicle: {{vehicleDetails}}\nNotes: {{customerNotes}}\n\nCustomer tracking link: {{trackingUrl}}\nManage this request: {{dispatchUrl}}'),
   ('dispatch_new_request_sms', 'sms', null, 'TRA NEW REQUEST {{requestNumber}}: {{customerName}} ({{customerPhone}}) needs {{serviceName}} at {{pickupAddress}}. {{dispatchUrl}}'),
   ('dispatch_unaccepted_timeout', 'email', 'Unaccepted request — {{requestNumber}}', 'Request {{requestNumber}} has not been accepted yet. Review: {{dispatchUrl}}'),
@@ -120,7 +120,7 @@ on conflict (slug) do nothing;
 
 insert into site_settings (key, value) values
   ('demo_mode_banner', '{"enabled": true, "message": "This install is running on seed/demo data. Connect Supabase, Google Maps, Twilio, and Resend to go live."}'),
-  ('dispatch_notification_email', '"dispatch@texas-roadside-assistance.com"'),
+  ('dispatch_notification_email', '"info@texasroadside-assistance.com"'),
   ('unaccepted_request_timeout_minutes', '10')
 on conflict (key) do update set value = excluded.value;
 

@@ -2,7 +2,7 @@
  * Single source of truth for real TRA business facts used across the site
  * (header, footer, structured data, contact page, legal pages).
  *
- * Sourced from an audit of the live site (texas-roadside-assistance.com) on
+ * Sourced from an audit of the live site (texasroadside-assistance.com) on
  * 2026-08-02. Do NOT invent numbers, prices, or claims beyond what's listed
  * here — anything not confirmed is marked as an editable placeholder.
  */
@@ -13,7 +13,7 @@ export const BUSINESS = {
   phoneDisplay: "(945) 412-1215",
   phoneHref: "tel:+19454121215",
   // Placeholder — the source site only exposed an obfuscated address; confirm before publishing.
-  email: "support@texas-roadside-assistance.com",
+  email: "info@texasroadside-assistance.com",
   hours: "Open 24/7, 365 days a year",
   dispatchNote: "Local Dallas–Fort Worth dispatch — not an out-of-state call center",
   addressPlaceholder: "Dallas–Fort Worth Metroplex, TX (exact dispatch address: TBD)",

@@ -3,7 +3,7 @@ import { z } from "zod";
 import { sendEmail } from "@/lib/notifications/email";
 import { isRateLimited } from "@/lib/utils/rate-limit";
 import { createAdminSupabaseClient } from "@/lib/supabase/admin";
-import { isDemoMode } from "@/lib/env";
+import { isDemoMode, env } from "@/lib/env";
 
 const contactSchema = z.object({
   name: z.string().min(2).max(120),
@@ -23,7 +23,7 @@ export async function POST(req: NextRequest) {
   if (!parsed.success) return NextResponse.json({ error: "Please check the form and try again." }, { status: 400 });
   if (parsed.data.companyWebsite) return NextResponse.json({ ok: true });
 
-  let dispatchEmail = "dispatch@texas-roadside-assistance.com";
+  let dispatchEmail = env.dispatchEmail;
   if (!isDemoMode()) {
     try {
       const admin = createAdminSupabaseClient();

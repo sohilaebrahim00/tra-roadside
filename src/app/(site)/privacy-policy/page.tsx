@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { LegalLayout, LegalPlaceholder } from "@/components/legal/legal-layout";
+import { LegalLayout } from "@/components/legal/legal-layout";
 import { BUSINESS } from "@/lib/content/business";
 
 export const metadata: Metadata = {
@@ -43,13 +43,34 @@ export default function PrivacyPolicyPage() {
         strictly to provide the service.
       </p>
 
+      <h2>SMS messaging and mobile information</h2>
+      <p>
+        <strong>
+          No mobile information will be shared with third parties or affiliates for marketing or
+          promotional purposes. Text messaging originator opt-in data and consent will not be
+          shared with any third parties.
+        </strong>{" "}
+        Phone numbers collected for SMS updates are used solely to send you status messages about
+        the roadside assistance request you submitted, and are shared only with the messaging
+        provider that delivers those messages on our behalf.
+      </p>
+      <p>
+        SMS consent is optional and is never required to request or receive service. Message
+        frequency varies with the status of your request, typically four to six messages per
+        request, and messages stop once your request is completed or canceled. Message and data
+        rates may apply. Reply STOP to any message to opt out, or HELP for assistance. See our{" "}
+        <a href="/sms-terms" className="underline">
+          SMS Terms and Consent
+        </a>{" "}
+        for full details.
+      </p>
+
       <h2>Data retention</h2>
       <p>
-        <LegalPlaceholder>
-          Specific retention periods for request records, photos, and communications have not yet
-          been finalized — this section should be completed with input from TRA leadership and legal
-          counsel before publishing.
-        </LegalPlaceholder>
+        We retain service request records and the related communications tied to them for three
+        years from the date of the request. Photos uploaded in connection with a request are
+        retained for twelve months. At the end of those periods the corresponding records and
+        files are deleted.
       </p>
 
       <h2>Your choices</h2>

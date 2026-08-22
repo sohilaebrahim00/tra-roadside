@@ -31,16 +31,13 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # env files — never commit real secrets. .env.example holds only empty
-# placeholders and documents which variables to set in Netlify's dashboard,
+# placeholders and documents which variables to set in Vercel's dashboard,
 # so it's the one exception that should be committed.
 .env*
 !.env.example
 
 # vercel
 .vercel
-
-# netlify
-.netlify
 
 # typescript
 *.tsbuildinfo
@@ -55,6 +52,3 @@ next-env.d.ts
 # raw ever accidentally ships if a file is dropped here out of habit.
 /public/media/incoming/*
 !/public/media/incoming/.gitkeep
-
-.vercel
-.env*

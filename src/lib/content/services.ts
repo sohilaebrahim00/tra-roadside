@@ -17,6 +17,41 @@ export interface ServiceContent {
 
 export const SERVICES: ServiceContent[] = [
   {
+    slug: "battery-replacement",
+    name: "Battery Replacement",
+    shortName: "Battery Replacement",
+    needsDestination: false,
+    startingPrice: 189,
+    summary: "Mobile battery replacement with a 2-year warranty — installed at your location.",
+    heroLine: "A new battery, installed right where you are.",
+    problem:
+      "A battery that won't hold a charge, or one that's already failed a jump start, usually needs to be replaced rather than jumped again. We bring a new battery to you and install it on site.",
+    whileYouWait: [
+      "Turn off all electronics and accessories to avoid draining further.",
+      "Pop the hood if it's safe to do so before your driver arrives.",
+      "Have your vehicle year, make, and model ready — battery fit varies by vehicle.",
+    ],
+    whatWeNeed: [
+      "Your exact location",
+      "Vehicle year, make, and model",
+      "Confirmation the battery is the suspected issue",
+    ],
+    faqs: [
+      {
+        q: "Is $189 the final price?",
+        a: "$189 is the starting price. Battery access and installation difficulty vary significantly between vehicles, so your final price is confirmed based on your specific vehicle and location.",
+      },
+      {
+        q: "What does the 2-year warranty cover?",
+        a: "Your battery purchase includes a 2-year warranty. Keep your invoice for warranty service.",
+      },
+      {
+        q: "What if my car just needs a jump, not a full replacement?",
+        a: "Select Jump Start instead — your driver can advise on site if a replacement turns out to be needed.",
+      },
+    ],
+  },
+  {
     slug: "towing",
     name: "Towing",
     shortName: "Towing",
@@ -316,41 +351,6 @@ export const SERVICES: ServiceContent[] = [
       {
         q: "What if my issue isn't listed as its own service?",
         a: "Select Other Roadside Service and describe what you need in the required notes field — dispatch will review it and confirm how we can help.",
-      },
-    ],
-  },
-  {
-    slug: "battery-replacement",
-    name: "Battery Replacement",
-    shortName: "Battery Replacement",
-    needsDestination: false,
-    startingPrice: 189,
-    summary: "Mobile battery replacement with a 2-year warranty — installed at your location.",
-    heroLine: "A new battery, installed right where you are.",
-    problem:
-      "A battery that won't hold a charge, or one that's already failed a jump start, usually needs to be replaced rather than jumped again. We bring a new battery to you and install it on site.",
-    whileYouWait: [
-      "Turn off all electronics and accessories to avoid draining further.",
-      "Pop the hood if it's safe to do so before your driver arrives.",
-      "Have your vehicle year, make, and model ready — battery fit varies by vehicle.",
-    ],
-    whatWeNeed: [
-      "Your exact location",
-      "Vehicle year, make, and model",
-      "Confirmation the battery is the suspected issue",
-    ],
-    faqs: [
-      {
-        q: "Is $189 the final price?",
-        a: "$189 is the starting price. Battery access and installation difficulty vary significantly between vehicles, so your final price is confirmed based on your specific vehicle and location.",
-      },
-      {
-        q: "What does the 2-year warranty cover?",
-        a: "Your battery purchase includes a 2-year warranty. Keep your invoice for warranty service.",
-      },
-      {
-        q: "What if my car just needs a jump, not a full replacement?",
-        a: "Select Jump Start instead — your driver can advise on site if a replacement turns out to be needed.",
       },
     ],
   },

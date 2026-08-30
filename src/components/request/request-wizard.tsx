@@ -30,6 +30,7 @@ function defaultValues(initialService: string | undefined, clientRequestId: stri
     truckUnitNumber: "",
     trailerAttached: null,
     photos: [],
+    vehicleVin: "",
     preferredContactMethod: "call",
     smsConsent: false,
     termsAccepted: undefined,

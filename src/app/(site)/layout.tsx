@@ -1,6 +1,7 @@
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { MobileActionBar } from "@/components/layout/mobile-action-bar";
+import { BatteryStrip } from "@/components/layout/battery-strip";
 
 export default function SiteLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -11,6 +12,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
       >
         Skip to main content
       </a>
+      <BatteryStrip />
       <SiteHeader />
       <main
         id="main-content"

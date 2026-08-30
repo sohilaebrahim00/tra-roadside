@@ -6,7 +6,7 @@ import { StepShell } from "../step-shell";
 import { VEHICLE_TYPES, type VehicleType } from "@/lib/types/domain";
 import { cn } from "@/lib/utils/cn";
 import { getService } from "@/lib/content/services";
-import type { CreateRequestInput } from "@/lib/validation/request";
+import { VIN_LENGTH, type CreateRequestInput } from "@/lib/validation/request";
 
 const VEHICLE_TYPE_LABELS: Record<VehicleType, string> = {
   sedan: "Sedan",
@@ -28,6 +28,7 @@ export function VehicleStep({ onNext, onBack }: { onNext: () => void; onBack: ()
   const isTruck = serviceSlug === "truck-assistance";
   const isOther = serviceSlug === "other-roadside-service";
   const isBattery = serviceSlug === "battery-replacement";
+  const vinField = register("vehicleVin");
   const selectedService = serviceSlug ? getService(serviceSlug) : undefined;
   const notesLabel = isOther
     ? "Tell us what kind of roadside help you need *"
@@ -42,6 +43,7 @@ export function VehicleStep({ onNext, onBack }: { onNext: () => void; onBack: ()
 
   async function handleNext() {
     const fields: (keyof CreateRequestInput)[] = ["vehicleYear", "vehicleMake", "vehicleModel", "vehicleColor", "vehicleType"];
+    if (isBattery) fields.push("vehicleVin");
     if (isTruck) fields.push("truckType", "truckUnitNumber", "trailerAttached");
     if (isTruck || isOther) fields.push("notes");
     const valid = await trigger(fields);
@@ -65,17 +67,17 @@ export function VehicleStep({ onNext, onBack }: { onNext: () => void; onBack: ()
       )}
 
       <div className="grid grid-cols-2 gap-3">
-        <Field label="Year">
-          <input {...register("vehicleYear")} inputMode="numeric" placeholder="2019" className={inputClass} />
+        <Field label={isBattery ? "Year *" : "Year"} error={errors.vehicleYear?.message}>
+          <input {...register("vehicleYear")} inputMode="numeric" placeholder="2019" aria-required={isBattery} className={inputClass} />
         </Field>
         <Field label="Color">
           <input {...register("vehicleColor")} placeholder="Silver" className={inputClass} />
         </Field>
-        <Field label="Make">
-          <input {...register("vehicleMake")} placeholder="Toyota" className={inputClass} />
+        <Field label={isBattery ? "Make *" : "Make"} error={errors.vehicleMake?.message}>
+          <input {...register("vehicleMake")} placeholder="Toyota" aria-required={isBattery} className={inputClass} />
         </Field>
-        <Field label="Model">
-          <input {...register("vehicleModel")} placeholder="Camry" className={inputClass} />
+        <Field label={isBattery ? "Model *" : "Model"} error={errors.vehicleModel?.message}>
+          <input {...register("vehicleModel")} placeholder="Camry" aria-required={isBattery} className={inputClass} />
         </Field>
         <Field label="License Plate (optional)" full>
           <input {...register("vehicleLicensePlate")} placeholder="ABC-1234" className={inputClass} />
@@ -124,6 +126,38 @@ export function VehicleStep({ onNext, onBack }: { onNext: () => void; onBack: ()
         ))}
       </div>
 
+
+      {isBattery && (
+        <div className="mt-5 rounded-2xl border border-red-600/20 bg-red-600/5 p-4">
+          <p className="text-sm font-semibold text-ink-900 dark:text-white">Battery fitment</p>
+          <Field label="VIN (optional)" full className="mt-3">
+            <input
+              {...vinField}
+              onChange={(e) => {
+                // Uppercase as they type. Cursor stays put because the value
+                // is the same length — this is a case fold, not a reformat.
+                e.target.value = e.target.value.toUpperCase();
+                vinField.onChange(e);
+              }}
+              maxLength={VIN_LENGTH}
+              autoCapitalize="characters"
+              autoCorrect="off"
+              spellCheck={false}
+              placeholder="1HGBH41JXMN109186"
+              aria-describedby="vin-hint"
+              className={cn(inputClass, "font-mono tracking-wide")}
+            />
+          </Field>
+          <p id="vin-hint" className="mt-1.5 text-xs text-ink-600 dark:text-ink-200">
+            Helps us match the exact battery. Find it on the driver&apos;s side dashboard, seen
+            through the windscreen, or on the sticker inside the driver&apos;s door jamb. Skip it if
+            you can&apos;t reach it — year, make and model are enough to get us moving.
+          </p>
+          {errors.vehicleVin && (
+            <p className="mt-1.5 text-sm text-red-600">{errors.vehicleVin.message}</p>
+          )}
+        </div>
+      )}
       {isTruck && (
         <div className="mt-5 rounded-2xl border border-red-600/20 bg-red-600/5 p-4">
           <p className="text-sm font-semibold text-ink-900 dark:text-white">Truck details</p>
@@ -184,11 +218,12 @@ export function VehicleStep({ onNext, onBack }: { onNext: () => void; onBack: ()
 const inputClass =
   "mt-1.5 w-full rounded-xl border border-ink-950/15 px-3.5 py-3 text-base focus:border-red-600 focus:outline-none dark:border-white/15 dark:bg-ink-900";
 
-function Field({ label, children, full, className }: { label: string; children: React.ReactNode; full?: boolean; className?: string }) {
+function Field({ label, children, full, className, error }: { label: string; children: React.ReactNode; full?: boolean; className?: string; error?: string }) {
   return (
     <label className={cn("block text-sm font-medium text-ink-800 dark:text-ink-100", full && "col-span-2", className)}>
       {label}
       {children}
+      {error && <span className="mt-1.5 block text-sm font-normal text-red-600">{error}</span>}
     </label>
   );
 }

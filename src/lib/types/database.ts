@@ -65,7 +65,7 @@ export interface Database {
           id: string; request_number: string; status: RequestStatusDb;
           customer_id: string; service_type_id: string;
           vehicle_year: string | null; vehicle_make: string | null; vehicle_model: string | null;
-          vehicle_color: string | null; vehicle_license_plate: string | null; vehicle_type: VehicleTypeDb;
+          vehicle_color: string | null; vehicle_license_plate: string | null; vehicle_vin: string | null; vehicle_type: VehicleTypeDb;
           is_drivable: boolean | null; notes: string | null;
           truck_type: string | null; truck_unit_number: string | null; trailer_attached: boolean | null;
           pickup_lat: number; pickup_lng: number; pickup_address: string;
@@ -81,7 +81,7 @@ export interface Database {
           id?: string; request_number: string; status?: RequestStatusDb;
           customer_id: string; service_type_id: string;
           vehicle_year?: string | null; vehicle_make?: string | null; vehicle_model?: string | null;
-          vehicle_color?: string | null; vehicle_license_plate?: string | null; vehicle_type?: VehicleTypeDb;
+          vehicle_color?: string | null; vehicle_license_plate?: string | null; vehicle_vin?: string | null; vehicle_type?: VehicleTypeDb;
           is_drivable?: boolean | null; notes?: string | null;
           truck_type?: string | null; truck_unit_number?: string | null; trailer_attached?: boolean | null;
           pickup_lat: number; pickup_lng: number; pickup_address: string;

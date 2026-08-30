@@ -46,7 +46,7 @@ export function MobileMenu() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.18, ease: "easeOut" }}
-            className="fixed inset-x-0 top-(--header-height) z-40 max-h-[calc(100dvh-var(--header-height))] overflow-y-auto border-b border-ink-950/10 bg-white shadow-xl dark:border-white/10 dark:bg-ink-950"
+            className="absolute inset-x-0 top-full z-40 max-h-[calc(100dvh-var(--header-height)-var(--battery-strip-height))] overflow-y-auto border-b border-ink-950/10 bg-white shadow-xl dark:border-white/10 dark:bg-ink-950"
           >
             <nav aria-label="Mobile" className="flex flex-col px-4 py-2">
               {NAV_LINKS.map((link) => (

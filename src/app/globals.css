@@ -48,6 +48,7 @@
   --foreground: var(--color-ink-950);
 
   /* Layout constants referenced by fixed/sticky UI */
+  --battery-strip-height: 2.5rem;
   --header-height: 4rem;
   --mobile-action-bar-height: 4.25rem;
   --safe-bottom: env(safe-area-inset-bottom, 0px);

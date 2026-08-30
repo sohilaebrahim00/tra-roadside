@@ -19,6 +19,7 @@ interface RequestDetailRow {
   vehicle_color: string | null;
   vehicle_type: VehicleType;
   vehicle_license_plate: string | null;
+  vehicle_vin: string | null;
   is_drivable: boolean | null;
   notes: string | null;
   truck_type: string | null;
@@ -51,7 +52,7 @@ export default async function AdminRequestDetailPage({ params }: { params: Promi
   const { data: request } = await supabase
     .from("service_requests")
     .select(
-      "id, request_number, status, created_at, assigned_driver_id, vehicle_year, vehicle_make, vehicle_model, vehicle_color, vehicle_type, vehicle_license_plate, is_drivable, notes, truck_type, truck_unit_number, trailer_attached, pickup_address, destination_address, customers(full_name, phone, email), service_types(name), request_photos(id, storage_path, kind)"
+      "id, request_number, status, created_at, assigned_driver_id, vehicle_year, vehicle_make, vehicle_model, vehicle_color, vehicle_type, vehicle_license_plate, vehicle_vin, is_drivable, notes, truck_type, truck_unit_number, trailer_attached, pickup_address, destination_address, customers(full_name, phone, email), service_types(name), request_photos(id, storage_path, kind)"
     )
     .eq("id", id)
     .maybeSingle()
@@ -136,6 +137,7 @@ export default async function AdminRequestDetailPage({ params }: { params: Promi
               <Detail label="Type" value={request.vehicle_type} />
               <Detail label="Drivable" value={request.is_drivable === null ? "Unknown" : request.is_drivable ? "Yes" : "No"} />
               <Detail label="Plate" value={request.vehicle_license_plate || "—"} />
+              <Detail label="VIN" value={request.vehicle_vin || "—"} />
             </dl>
             {request.notes && <p className="mt-3 rounded-lg bg-paper-50 p-3 text-sm text-ink-600 dark:bg-white/5 dark:text-ink-200">{request.notes}</p>}
           </Section>

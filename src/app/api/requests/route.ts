@@ -30,6 +30,9 @@ function notificationServiceName(service: ServiceContent): string {
 function vehicleSummary(input: CreateRequestInput): string {
   const parts = [input.vehicleYear, input.vehicleMake, input.vehicleModel, input.vehicleColor].filter(Boolean);
   let summary = parts.length > 0 ? parts.join(" ") : "Not provided";
+  // Dispatch orders the battery from this, so the VIN has to travel with the
+  // notification, not just sit in the database.
+  if (input.vehicleVin?.trim()) summary += ` — VIN: ${input.vehicleVin.trim().toUpperCase()}`;
   if (input.serviceSlug === "truck-assistance") {
     const truckParts: string[] = [];
     if (input.truckType) truckParts.push(`Type: ${input.truckType}`);
@@ -209,6 +212,7 @@ export async function POST(req: NextRequest) {
         vehicle_model: input.vehicleModel || null,
         vehicle_color: input.vehicleColor || null,
         vehicle_license_plate: input.vehicleLicensePlate || null,
+        vehicle_vin: input.vehicleVin?.trim().toUpperCase() || null,
         vehicle_type: input.vehicleType,
         is_drivable: input.isDrivable,
         notes: input.notes || null,

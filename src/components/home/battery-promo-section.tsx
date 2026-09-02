@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { BatteryFull, ShieldCheck, LifeBuoy, Check, AlertTriangle } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
@@ -75,11 +76,30 @@ export function BatteryPromoSection() {
           </div>
 
           {/*
-            Image slot for battery-trunk-portrait.jpg (408×612 native).
-            Intentionally empty until the photograph is supplied — see the
-            note in the handover. The slot is capped at the file's native
-            408px so the picture is never upscaled.
+            The one portrait in the set (408x612 native), given the one
+            genuinely vertical slot on the site rather than being cropped into
+            a landscape box. Capped at max-w-102 so it renders at exactly
+            its native width on desktop and narrower — never wider — below that.
+
+            `unoptimized` because the file is already the optimised artefact
+            (webp q76 from scripts/optimize-images.mjs); without it next/image
+            would emit srcset candidates far wider than the 408px source.
+
+            Not marked priority: the hero above it already holds the priority
+            slot for its background video, and a second preload would compete
+            with the actual LCP element for bandwidth.
           */}
+          <div className="mx-auto w-full max-w-102 lg:mx-0">
+            <Image
+              src="/images/battery-trunk-portrait.webp"
+              alt="A technician in a blue jacket loosening the terminal on a white car battery seated in an open car boot, with a pair of work gloves resting on the sill beside it."
+              width={408}
+              height={612}
+              loading="lazy"
+              unoptimized
+              className="h-auto w-full rounded-3xl border border-white/15"
+            />
+          </div>
         </div>
       </Container>
     </section>

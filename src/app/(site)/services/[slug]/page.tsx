@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Phone, LifeBuoy, CheckCircle2, ClipboardList, ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/ui/container";
@@ -109,6 +110,43 @@ export default async function ServicePage({
         </Container>
       </section>
 
+
+      {service.photos && (
+        <section className="border-b border-ink-950/8 bg-paper-50 py-14 sm:py-20 dark:border-white/10 dark:bg-white/5">
+          <Container>
+            <h2 className="font-display text-2xl font-semibold text-ink-950 dark:text-white">
+              The work, on site
+            </h2>
+            {/*
+              Three columns at desktop puts each photo at roughly 395px inside
+              the 1216px container — comfortably under the 612px native width.
+              Two columns at tablet (~352px) and one on mobile (~358px) stay
+              under it too, so these are never upscaled at any breakpoint.
+
+              `unoptimized` because these files are ALREADY the optimised
+              artefact — webp at quality 76 from scripts/optimize-images.mjs.
+              Left to its own devices next/image emits srcset candidates up to
+              3840w from a 612px source, which is exactly the upscaling these
+              photographs must never receive.
+            */}
+            <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {service.photos.map((photo) => (
+                <li key={photo.src} className="overflow-hidden rounded-2xl border border-ink-950/8 dark:border-white/10">
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    width={photo.width}
+                    height={photo.height}
+                    loading="lazy"
+                    unoptimized
+                    className="h-auto w-full"
+                  />
+                </li>
+              ))}
+            </ul>
+          </Container>
+        </section>
+      )}
 
       <section className="py-14 sm:py-20">
         <Container className="grid gap-12 lg:grid-cols-[1.4fr_1fr]">

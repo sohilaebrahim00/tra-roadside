@@ -8,15 +8,25 @@
  */
 
 export const BUSINESS = {
-  legalName: "Texas Roadside Assistance",
+  legalName: "Texas Roadside Assistance LLC",
   shortName: "TRA",
   phoneDisplay: "(945) 412-1215",
   phoneHref: "tel:+19454121215",
-  // Placeholder — the source site only exposed an obfuscated address; confirm before publishing.
+  // Verified against the business's own published contact details.
   email: "info@texasroadside-assistance.com",
   hours: "Open 24/7, 365 days a year",
   dispatchNote: "Local Dallas–Fort Worth dispatch — not an out-of-state call center",
-  addressPlaceholder: "Dallas–Fort Worth Metroplex, TX (exact dispatch address: TBD)",
+  /**
+   * TRA is registered as a service-area business: it dispatches across the
+   * DFW Metroplex and publishes no street address. These coordinates are the
+   * service-area centre from the Google Business listing — they are what goes
+   * into LocalBusiness structured data INSTEAD of a postal address. Never
+   * invent a street address to fill the schema; a wrong address in structured
+   * data is worse than none at all.
+   */
+  geo: { latitude: 32.869322, longitude: -96.711846 },
+  googleListingUrl: "https://maps.app.goo.gl/jArUadnLNCMviYTTA",
+  serviceAreaNote: "Service-area business — we dispatch across the Dallas–Fort Worth Metroplex and do not operate a walk-in location.",
   socials: {
     youtube: "https://youtube.com/@tra_roadside?si=lr_-mWLZaXlBPodx",
     instagram: "https://www.instagram.com/tra.roadside?igsh=dTczZmJhejg5OTR5",

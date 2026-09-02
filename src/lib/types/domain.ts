@@ -5,19 +5,16 @@
  */
 
 export const SERVICE_TYPE_SLUGS = [
-  "towing",
-  "jump-start",
-  "flat-tire-change",
-  "tire-inflation",
-  "spare-tire-install",
-  "fuel-delivery",
-  "lockout",
-  "winching-recovery",
-  "minor-repair",
-  "truck-assistance",
-  "other-roadside-service",
   "battery-replacement",
+  "jump-start",
+  "lockout",
   "tire-repair-plug-patch",
+  "flat-tire-change",
+  "tire-replacement",
+  "stuck-screw-in-tire",
+  "rim-lock-removal",
+  "fuel-delivery",
+  "towing",
 ] as const;
 
 export type ServiceTypeSlug = (typeof SERVICE_TYPE_SLUGS)[number];

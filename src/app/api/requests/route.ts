@@ -15,42 +15,13 @@ import type { ServiceContent } from "@/lib/content/services";
 
 const SMS_CONSENT_TEXT_VERSION = "2026-08-v1";
 
-/**
- * The label used in notifications and short UI. Most services' full `name`
- * doubles as the compact label; Truck Assistance is the one case where the
- * official page name ("18 Wheeler Roadside Services") is too long for a
- * dispatch text, so notifications use `shortName` ("Truck Assistance")
- * instead — per spec, dispatch/customer notifications must read exactly
- * "Service: Truck Assistance".
- */
-function notificationServiceName(service: ServiceContent): string {
-  return service.slug === "truck-assistance" ? service.shortName : service.name;
-}
-
 function vehicleSummary(input: CreateRequestInput): string {
   const parts = [input.vehicleYear, input.vehicleMake, input.vehicleModel, input.vehicleColor].filter(Boolean);
   let summary = parts.length > 0 ? parts.join(" ") : "Not provided";
   // Dispatch orders the battery from this, so the VIN has to travel with the
   // notification, not just sit in the database.
   if (input.vehicleVin?.trim()) summary += ` — VIN: ${input.vehicleVin.trim().toUpperCase()}`;
-  if (input.serviceSlug === "truck-assistance") {
-    const truckParts: string[] = [];
-    if (input.truckType) truckParts.push(`Type: ${input.truckType}`);
-    if (input.truckUnitNumber) truckParts.push(`Unit #: ${input.truckUnitNumber}`);
-    if (input.trailerAttached !== null && input.trailerAttached !== undefined) {
-      truckParts.push(`Trailer: ${input.trailerAttached ? "Yes" : "No"}`);
-    }
-    if (truckParts.length > 0) summary += ` — ${truckParts.join(", ")}`;
-  }
   return summary;
-}
-
-/** For Other Roadside Service, the customer's written description is surfaced directly in their own confirmation (dispatch already gets it via customerNotes). Empty for every other service. */
-function customerServiceDetails(input: CreateRequestInput): string {
-  if (input.serviceSlug === "other-roadside-service" && input.notes) {
-    return ` Details: ${input.notes}.`;
-  }
-  return "";
 }
 
 /** Fields shared by both dispatch notifications (email + SMS) and both persistence modes (demo + real). */
@@ -58,7 +29,7 @@ function buildDispatchVars(input: CreateRequestInput, service: ServiceContent, r
   return {
     requestNumber,
     createdAt: new Date().toLocaleString("en-US", { timeZone: "America/Chicago", dateStyle: "medium", timeStyle: "short" }),
-    serviceName: notificationServiceName(service),
+    serviceName: service.name,
     customerName: input.fullName,
     customerPhone: input.phone,
     customerEmail: input.email || "Not provided",
@@ -145,9 +116,9 @@ export async function POST(req: NextRequest) {
       vars: {
         requestNumber,
         customerName: firstNameOf(input.fullName),
-        serviceName: notificationServiceName(service),
+        serviceName: service.name,
         pickupAddress: input.pickupAddress,
-        serviceDetails: customerServiceDetails(input),
+        serviceDetails: "",
         statusLabel: STATUS_META.new.customerLabel,
         supportPhone: BUSINESS.phoneDisplay,
         trackingUrl,
@@ -216,9 +187,6 @@ export async function POST(req: NextRequest) {
         vehicle_type: input.vehicleType,
         is_drivable: input.isDrivable,
         notes: input.notes || null,
-        truck_type: input.truckType || null,
-        truck_unit_number: input.truckUnitNumber || null,
-        trailer_attached: input.trailerAttached ?? null,
         pickup_lat: input.pickupLat,
         pickup_lng: input.pickupLng,
         pickup_address: input.pickupAddress,
@@ -258,9 +226,9 @@ export async function POST(req: NextRequest) {
       vars: {
         requestNumber,
         customerName: firstNameOf(input.fullName),
-        serviceName: notificationServiceName(service),
+        serviceName: service.name,
         pickupAddress: input.pickupAddress,
-        serviceDetails: customerServiceDetails(input),
+        serviceDetails: "",
         statusLabel: STATUS_META.new.customerLabel,
         supportPhone: BUSINESS.phoneDisplay,
         trackingUrl,

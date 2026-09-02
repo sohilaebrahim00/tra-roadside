@@ -29,7 +29,7 @@ export function ReviewStep({
       <div className="space-y-4">
         <SummaryRow
           label="Service"
-          value={service?.startingPrice ? `${service.name} · Starting at $${service.startingPrice}` : service?.name ?? "—"}
+          value={service?.priceBadge ? `${service.name} · ${service.priceBadge}` : service?.name ?? "—"}
           onEdit={() => onEdit("service")}
         />
         <SummaryRow label="Location" value={values.pickupAddress || "—"} onEdit={() => onEdit("location")} />
@@ -50,16 +50,25 @@ export function ReviewStep({
         />
       </div>
 
-      {service?.startingPrice && (
+      {service?.priceLines && (
         <div className="mt-4 rounded-xl border border-ink-950/8 bg-paper-50 px-4 py-3 dark:border-white/10 dark:bg-white/5">
-          <p className="text-sm font-semibold text-ink-900 dark:text-white">Starting price: ${service.startingPrice}</p>
+          <ul className="space-y-1">
+            {service.priceLines.map((line) => (
+              <li key={line.label ?? line.amount} className="text-sm text-ink-900 dark:text-white">
+                <span className="font-semibold">{line.amount}</span>
+                {line.label && <span className="text-ink-600 dark:text-ink-200"> — {line.label}</span>}
+                {line.note && <span className="text-ink-500 dark:text-ink-300"> ({line.note})</span>}
+              </li>
+            ))}
+          </ul>
+          {service.priceNote && (
+            <p className="mt-1.5 text-xs text-ink-500 dark:text-ink-300">{service.priceNote}</p>
+          )}
           <p className="mt-1 text-xs text-ink-500 dark:text-ink-300">
             Final price may vary depending on vehicle, location, and service requirements.
           </p>
-          {service.slug === "battery-replacement" && (
-            <p className="mt-1 text-xs text-ink-500 dark:text-ink-300">
-              Includes a 2-year battery warranty. Keep your invoice for warranty service.
-            </p>
+          {service.restriction && (
+            <p className="mt-1 text-xs font-semibold text-red-600">{service.restriction}</p>
           )}
         </div>
       )}

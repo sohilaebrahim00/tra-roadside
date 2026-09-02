@@ -24,45 +24,41 @@ export function VehicleStep({ onNext, onBack }: { onNext: () => void; onBack: ()
   const vehicleType = watch("vehicleType");
   const isDrivable = watch("isDrivable");
   const serviceSlug = watch("serviceSlug");
-  const trailerAttached = watch("trailerAttached");
-  const isTruck = serviceSlug === "truck-assistance";
-  const isOther = serviceSlug === "other-roadside-service";
   const isBattery = serviceSlug === "battery-replacement";
   const vinField = register("vehicleVin");
   const selectedService = serviceSlug ? getService(serviceSlug) : undefined;
-  const notesLabel = isOther
-    ? "Tell us what kind of roadside help you need *"
-    : isTruck
-    ? "Description of the problem *"
-    : "Anything else we should know? (optional)";
-  const notesPlaceholder = isOther
-    ? "Describe what's going on so dispatch can confirm the right help"
-    : isTruck
-    ? "e.g. blown steer tire, won't start, brakes locked up"
-    : "e.g. parked on the shoulder of I-35, near exit 12";
+  const notesLabel = "Anything else we should know? (optional)";
+  const notesPlaceholder = "e.g. parked on the shoulder of I-35, near exit 12";
 
   async function handleNext() {
     const fields: (keyof CreateRequestInput)[] = ["vehicleYear", "vehicleMake", "vehicleModel", "vehicleColor", "vehicleType"];
     if (isBattery) fields.push("vehicleVin");
-    if (isTruck) fields.push("truckType", "truckUnitNumber", "trailerAttached");
-    if (isTruck || isOther) fields.push("notes");
     const valid = await trigger(fields);
     if (valid) onNext();
   }
 
   return (
     <StepShell title="Tell us about your vehicle" description="This helps your driver arrive prepared." onBack={onBack}>
-      {isBattery && selectedService?.startingPrice && (
-        <div className="mb-5 flex items-center gap-3 rounded-2xl bg-red-600 p-4 text-white">
-          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/15">
-            <BatteryFull className="h-6 w-6" aria-hidden="true" />
-          </span>
-          <div>
-            <p className="font-display text-base font-bold">Battery Replacement · Starting at ${selectedService.startingPrice}</p>
-            <p className="mt-0.5 flex items-center gap-1.5 text-sm text-white/90">
-              <ShieldCheck className="h-3.5 w-3.5" aria-hidden="true" /> 2-Year Warranty included
-            </p>
+      {isBattery && selectedService?.priceLines && (
+        <div className="mb-5 rounded-2xl bg-red-600 p-4 text-white">
+          <div className="flex items-center gap-3">
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/15">
+              <BatteryFull className="h-6 w-6" aria-hidden="true" />
+            </span>
+            <div>
+              <p className="font-display text-base font-bold">Battery Replacement</p>
+              <p className="mt-0.5 text-sm text-white/90">
+                {selectedService.priceLines.map((l) => `${l.label ?? "Total"} ${l.amount}`).join(" · ")}
+              </p>
+            </div>
           </div>
+          <p className="mt-2.5 flex items-center gap-1.5 text-sm text-white/90">
+            <ShieldCheck className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+            Installation included · 1-year warranty on the standard battery
+          </p>
+          {selectedService.restriction && (
+            <p className="mt-1.5 text-sm font-semibold text-amber-200">{selectedService.restriction}</p>
+          )}
         </div>
       )}
 
@@ -158,47 +154,12 @@ export function VehicleStep({ onNext, onBack }: { onNext: () => void; onBack: ()
           )}
         </div>
       )}
-      {isTruck && (
-        <div className="mt-5 rounded-2xl border border-red-600/20 bg-red-600/5 p-4">
-          <p className="text-sm font-semibold text-ink-900 dark:text-white">Truck details</p>
-          <div className="mt-3 grid grid-cols-2 gap-3">
-            <Field label="Truck type (optional)">
-              <input {...register("truckType")} placeholder="e.g. 18-wheeler, tractor-trailer" className={inputClass} />
-            </Field>
-            <Field label="Unit number (optional)">
-              <input {...register("truckUnitNumber")} placeholder="e.g. 4521" className={inputClass} />
-            </Field>
-          </div>
-          <p className="mt-4 text-sm font-medium text-ink-800 dark:text-ink-100">Trailer attached?</p>
-          <div className="mt-2 flex gap-2">
-            {[
-              { label: "Yes", val: true },
-              { label: "No", val: false },
-            ].map((opt) => (
-              <button
-                key={opt.label}
-                type="button"
-                onClick={() => setValue("trailerAttached", opt.val)}
-                className={cn(
-                  "rounded-full border px-4 py-2 text-sm font-medium",
-                  trailerAttached === opt.val
-                    ? "border-red-600 bg-red-600 text-white"
-                    : "border-ink-950/15 bg-white text-ink-700 dark:border-white/15 dark:bg-transparent dark:text-ink-200"
-                )}
-              >
-                {opt.label}
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
 
       <Field label={notesLabel} full className="mt-5">
         <textarea
           {...register("notes")}
           rows={3}
           placeholder={notesPlaceholder}
-          aria-required={isTruck || isOther}
           className={inputClass}
         />
       </Field>

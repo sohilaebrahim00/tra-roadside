@@ -17,18 +17,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "/videos" },
 };
 
-/** Official TRA truck-assistance clip (YouTube Short) — hosted on YouTube, not through the local media pipeline. */
-const TRUCK_ASSISTANCE_VIDEO: VideoItem = {
-  id: "truck-assistance-youtube-short",
-  title: "18 Wheeler Roadside Services",
-  description: "Roadside support for semi-trucks and commercial vehicles.",
-  youtube_id: "9nvNQNR7of0",
-  video_url: null,
-  poster_url: "https://i.ytimg.com/vi/9nvNQNR7of0/hqdefault.jpg",
-  duration_seconds: null,
-  category: "Truck Assistance",
-};
-
 export default async function VideosPage() {
   const dbVideos = await getVideos();
   const localVideos: VideoItem[] = getVideosForPlacement("gallery-item").map((v) => ({
@@ -41,7 +29,7 @@ export default async function VideosPage() {
     duration_seconds: v.durationSeconds ?? null,
     category: v.category,
   }));
-  const videos = [TRUCK_ASSISTANCE_VIDEO, ...localVideos, ...dbVideos];
+  const videos = [...localVideos, ...dbVideos];
 
   return (
     <>

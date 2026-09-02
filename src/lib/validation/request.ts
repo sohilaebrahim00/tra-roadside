@@ -33,10 +33,6 @@ export const vehicleSchema = z.object({
   vehicleType: z.enum(VEHICLE_TYPES),
   isDrivable: z.boolean().nullable(),
   notes: z.string().max(1000).optional().or(z.literal("")),
-  // Truck Assistance only — see the conditional fields in vehicle-step.tsx.
-  truckType: z.string().max(80).optional().or(z.literal("")),
-  truckUnitNumber: z.string().max(40).optional().or(z.literal("")),
-  trailerAttached: z.boolean().nullable().optional(),
 });
 
 export const destinationSchema = z.object({
@@ -87,20 +83,6 @@ export const createRequestSchema = locationSchema
     clientRequestId: z.string().uuid(),
   })
   .superRefine((data, ctx) => {
-    if (data.serviceSlug === "other-roadside-service" && !data.notes?.trim()) {
-      ctx.addIssue({
-        code: "custom",
-        path: ["notes"],
-        message: "Tell us what kind of roadside help you need.",
-      });
-    }
-    if (data.serviceSlug === "truck-assistance" && !data.notes?.trim()) {
-      ctx.addIssue({
-        code: "custom",
-        path: ["notes"],
-        message: "Describe the problem so dispatch can prepare.",
-      });
-    }
     // A VIN is optional everywhere, but if one is supplied it must be a real
     // 17-character VIN. I, O and Q are excluded from the VIN alphabet by
     // standard precisely because they are confusable with 1 and 0.

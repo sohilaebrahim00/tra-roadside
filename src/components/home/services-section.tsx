@@ -77,9 +77,9 @@ export function ServicesSection() {
                     href={`/services/${service.slug}`}
                     className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-ink-950/8 bg-white p-6 transition-all hover:-translate-y-0.5 hover:border-red-600/30 hover:shadow-lg hover:shadow-red-600/5"
                   >
-                    {service.startingPrice && (
+                    {service.priceBadge && (
                       <span className="absolute right-4 top-4 rounded-full bg-ink-950/[0.04] px-2.5 py-1 text-xs font-semibold text-ink-700">
-                        From ${service.startingPrice}
+                        {service.priceBadge}
                       </span>
                     )}
                     <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-red-600/10 text-red-600 transition-transform duration-300 group-hover:scale-110">

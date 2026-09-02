@@ -11,10 +11,9 @@ import { SERVICE_ICONS } from "@/lib/content/service-icons";
 import { BUSINESS, SERVICE_AREAS } from "@/lib/content/business";
 import { env } from "@/lib/env";
 import { CinematicBackgroundVideo } from "@/components/media/cinematic-background-video";
-import { TruckVideoSection } from "@/components/media/truck-video-section";
 import { getServiceVideo } from "@/data/media-registry";
 import { PricingDisclaimer } from "@/components/ui/pricing-disclaimer";
-import { ShieldCheck } from "lucide-react";
+import { AlertTriangle } from "lucide-react";
 
 export function generateStaticParams() {
   return SERVICES.map((s) => ({ slug: s.slug }));
@@ -58,7 +57,7 @@ export default async function ServicePage({
           { name: service.name, url: `${env.siteUrl}/services/${service.slug}` },
         ]}
       />
-      <ServiceJsonLd name={service.name} description={service.summary} slug={service.slug} startingPrice={service.startingPrice} />
+      <ServiceJsonLd name={service.name} description={service.summary} slug={service.slug} priceFrom={service.priceFrom} />
       {faqItems.length > 0 && <FaqJsonLd items={service.faqs} />}
 
       <section className="relative overflow-hidden border-b border-ink-950/8 bg-ink-950 py-14 text-white sm:py-20">
@@ -75,15 +74,23 @@ export default async function ServicePage({
               {service.heroLine}
             </h1>
 
-            {service.startingPrice && (
-              <div className="mt-4 flex flex-wrap items-center gap-3">
-                <span className="rounded-full bg-white/10 px-4 py-1.5 text-base font-bold text-white">
-                  Starting at ${service.startingPrice}
-                </span>
-                {service.slug === "battery-replacement" && (
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-4 py-1.5 text-sm font-semibold text-white/90">
-                    <ShieldCheck className="h-4 w-4 text-red-400" aria-hidden="true" /> 2-Year Warranty
-                  </span>
+            {service.priceLines && (
+              <div className="mt-5 max-w-lg rounded-2xl bg-white/10 p-4">
+                <ul className="space-y-2">
+                  {service.priceLines.map((line) => (
+                    <li key={line.label ?? line.amount} className="flex flex-wrap items-baseline gap-x-3 gap-y-0.5">
+                      <span className="font-display text-xl font-bold text-white">{line.amount}</span>
+                      {line.label && <span className="text-sm font-semibold text-white/90">{line.label}</span>}
+                      {line.note && <span className="text-sm text-white/70">{line.note}</span>}
+                    </li>
+                  ))}
+                </ul>
+                {service.priceNote && <p className="mt-3 text-sm text-white/70">{service.priceNote}</p>}
+                {service.restriction && (
+                  <p className="mt-3 flex items-start gap-1.5 text-sm font-semibold text-amber-300">
+                    <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
+                    {service.restriction}
+                  </p>
                 )}
               </div>
             )}
@@ -97,18 +104,11 @@ export default async function ServicePage({
               </Button>
             </div>
 
-            {service.startingPrice && <PricingDisclaimer tone="light" className="mt-5 max-w-md" />}
+            {service.priceLines && <PricingDisclaimer tone="light" className="mt-5 max-w-md" />}
           </div>
         </Container>
       </section>
 
-      {service.slug === "truck-assistance" && (
-        <section className="py-14 sm:pb-0 sm:pt-20">
-          <Container>
-            <TruckVideoSection />
-          </Container>
-        </section>
-      )}
 
       <section className="py-14 sm:py-20">
         <Container className="grid gap-12 lg:grid-cols-[1.4fr_1fr]">

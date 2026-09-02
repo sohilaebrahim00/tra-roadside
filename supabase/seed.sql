@@ -4,24 +4,22 @@
 -- install — replace via the admin CMS before going live.
 
 insert into service_types (slug, name, needs_destination, description, sort_order) values
-  ('towing', 'Towing', true, 'Light and medium-duty towing to any destination.', 1),
-  ('jump-start', 'Jump Start', false, 'Dead battery jump start.', 2),
-  ('flat-tire-change', 'Flat Tire Change', false, 'Swap to your spare or a serviceable tire.', 3),
-  ('tire-inflation', 'Tire Inflation', false, 'Top off low tire pressure.', 4),
-  ('spare-tire-install', 'Spare Tire Installation', false, 'Professional spare tire mounting.', 5),
-  ('fuel-delivery', 'Fuel Delivery', false, 'Gas or diesel delivered roadside.', 6),
-  ('lockout', 'Vehicle Lockout', false, 'Non-destructive lockout entry.', 7),
-  ('winching-recovery', 'Winching & Recovery', false, 'Recovery from ditches, mud, or embankments.', 8),
-  ('minor-repair', 'Minor Roadside Repair', false, 'Small mechanical fixes on site.', 9),
-  ('truck-assistance', '18 Wheeler Roadside Services', false, 'Roadside support for 18-wheelers, semi-trucks, tractor-trailers, and other commercial trucks.', 10),
-  ('other-roadside-service', 'Other Roadside Service', false, 'Not listed above — tell us what you need.', 11),
-  ('battery-replacement', 'Battery Replacement', false, 'Mobile battery replacement with a 2-year warranty, installed on site.', 12),
-  ('tire-repair-plug-patch', 'Tire Repair — Plug & Patch', false, 'Puncture repaired roadside with a plug or patch, when the damage allows it.', 13)
+  ('battery-replacement', 'Battery Replacement', false, 'Mobile battery replacement installed on site — standard $290, AGM $380, installation included.', 1),
+  ('jump-start', 'Jump Start', false, 'Dead battery jump start, $55-65.', 2),
+  ('lockout', 'Vehicle Lockout', false, 'Non-destructive lockout entry, $55-65. Keys locked in the trunk, $120.', 3),
+  ('tire-repair-plug-patch', 'Tire Repair — Plug & Patch', false, 'Puncture repaired roadside with a plug or patch, $65-70.', 4),
+  ('flat-tire-change', 'Flat Tire Change', false, 'Swap to the spare carried in your vehicle, $65.', 5),
+  ('tire-replacement', 'Tire Replacement', false, 'New tire supplied by TRA and fitted on site — 15 to 20 inch $189, 21 inch and larger $230.', 6),
+  ('stuck-screw-in-tire', 'Stuck Screw in Tire', false, 'Screw or nail removed from the tire and the tire made safe, $70.', 7),
+  ('rim-lock-removal', 'Rim Lock Removal', false, 'Seized or keyless wheel lock removed so the wheel can come off, $70.', 8),
+  ('fuel-delivery', 'Fuel Delivery', false, 'Gas or diesel delivered roadside, $65 plus the cost of the fuel.', 9),
+  ('towing', 'Towing', true, 'Light and medium-duty towing at $5 per mile to the destination of your choice.', 10)
 on conflict (slug) do update set
   name = excluded.name,
   needs_destination = excluded.needs_destination,
   description = excluded.description,
-  sort_order = excluded.sort_order;
+  sort_order = excluded.sort_order,
+  active = true;
 
 insert into service_areas (slug, name, sort_order) values
   ('dallas', 'Dallas', 1),

@@ -20,7 +20,17 @@ export function OrganizationJsonLd() {
     url: env.siteUrl,
     telephone: BUSINESS.phoneDisplay,
     email: BUSINESS.email,
+    // TRA is a service-area business with no published street address. The
+    // correct schema shape is geo + areaServed and NO PostalAddress: an
+    // invented address here would be worse than omitting one, because search
+    // engines would surface it to customers as a real place they could visit.
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: BUSINESS.geo.latitude,
+      longitude: BUSINESS.geo.longitude,
+    },
     areaServed: SERVICE_AREAS.map((c) => ({ "@type": "City", name: c.name })),
+    hasMap: BUSINESS.googleListingUrl,
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: [
@@ -29,7 +39,12 @@ export function OrganizationJsonLd() {
       opens: "00:00",
       closes: "23:59",
     },
-    sameAs: [BUSINESS.socials.facebook, BUSINESS.socials.instagram, BUSINESS.socials.youtube],
+    sameAs: [
+      BUSINESS.socials.facebook,
+      BUSINESS.socials.instagram,
+      BUSINESS.socials.youtube,
+      BUSINESS.googleListingUrl,
+    ],
   };
 
   return <JsonLdScript data={data} />;
@@ -39,13 +54,13 @@ export function ServiceJsonLd({
   name,
   description,
   slug,
-  startingPrice,
+  priceFrom,
 }: {
   name: string;
   description: string;
   slug: string;
-  /** "Starting at" price in whole USD, when published — never a guaranteed final price. */
-  startingPrice?: number;
+  /** Lowest published total in whole USD, when one can be stated without misleading. */
+  priceFrom?: number;
 }) {
   const data = {
     "@context": "https://schema.org",
@@ -55,17 +70,17 @@ export function ServiceJsonLd({
     provider: { "@id": `${env.siteUrl}/#organization` },
     areaServed: SERVICE_AREAS.map((c) => c.name),
     url: `${env.siteUrl}/services/${slug}`,
-    ...(startingPrice
+    ...(priceFrom
       ? {
           offers: {
             "@type": "Offer",
             priceCurrency: "USD",
-            price: startingPrice,
+            price: priceFrom,
             priceSpecification: {
               "@type": "UnitPriceSpecification",
-              price: startingPrice,
+              price: priceFrom,
               priceCurrency: "USD",
-              description: "Starting price — final price depends on vehicle and location.",
+              description: "Published total from this figure. Final price depends on vehicle and location.",
             },
           },
         }

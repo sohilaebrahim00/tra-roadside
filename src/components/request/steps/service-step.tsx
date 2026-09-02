@@ -43,8 +43,8 @@ export function ServiceStep({ onNext, onBack }: { onNext: () => void; onBack: ()
               )}
               <Icon className={cn("h-7 w-7", isSelected ? "text-red-600" : "text-ink-500 dark:text-ink-300")} aria-hidden="true" />
               <span className="text-sm font-semibold text-ink-900 dark:text-white">{service.shortName}</span>
-              {service.startingPrice && (
-                <span className="text-xs font-medium text-ink-500 dark:text-ink-300">From ${service.startingPrice}</span>
+              {service.priceBadge && (
+                <span className="text-xs font-medium text-ink-500 dark:text-ink-300">{service.priceBadge}</span>
               )}
             </button>
           );

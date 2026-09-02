@@ -1,5 +1,21 @@
 import type { ServiceTypeSlug } from "@/lib/types/domain";
 
+/**
+ * One published price line.
+ *
+ * `amount` is a display string rather than a number because most of TRA's
+ * prices are not single figures — they are ranges ("$55–65"), rates ("$5 per
+ * mile"), or size tiers. It is always a TOTAL the customer pays.
+ * Parts-and-labour breakdowns are deliberately never published: the customer
+ * wants one number, not an itemisation to audit.
+ */
+export interface PriceLine {
+  /** Tier name. Omitted when a service has a single published total. */
+  label?: string;
+  amount: string;
+  note?: string;
+}
+
 export interface ServiceContent {
   slug: ServiceTypeSlug;
   name: string;
@@ -11,8 +27,20 @@ export interface ServiceContent {
   whileYouWait: string[];
   whatWeNeed: string[];
   faqs: { q: string; a: string }[];
-  /** "Starting at" price in whole USD — omitted for services without published pricing. Always a floor, never a guaranteed final price; see PricingDisclaimer. */
-  startingPrice?: number;
+  /** Published totals for this service. */
+  priceLines?: PriceLine[];
+  /** Compact badge for service cards, e.g. "From $290" or "$55–65". */
+  priceBadge?: string;
+  /**
+   * Lowest published total in whole USD, used ONLY for the JSON-LD Offer,
+   * which requires a number. Omitted where a single figure would misrepresent
+   * the price — a per-mile rate, or a charge that excludes the cost of fuel.
+   */
+  priceFrom?: number;
+  /** Qualifier shown beneath the price block. */
+  priceNote?: string;
+  /** Vehicles or situations this service explicitly does not cover. */
+  restriction?: string;
 }
 
 export const SERVICES: ServiceContent[] = [
@@ -21,8 +49,14 @@ export const SERVICES: ServiceContent[] = [
     name: "Battery Replacement",
     shortName: "Battery Replacement",
     needsDestination: false,
-    startingPrice: 189,
-    summary: "Mobile battery replacement with a 2-year warranty — installed at your location.",
+    priceLines: [
+      { label: "Standard battery", amount: "$290", note: "including installation · 1-year warranty" },
+      { label: "AGM battery", amount: "$380", note: "including installation" },
+    ],
+    priceBadge: "From $290",
+    priceFrom: 290,
+    restriction: "Range Rover vehicles are not serviced.",
+    summary: "Mobile battery replacement, installed at your location — standard and AGM.",
     heroLine: "A new battery, installed right where you are.",
     problem:
       "A battery that won't hold a charge, or one that's already failed a jump start, usually needs to be replaced rather than jumped again. We bring a new battery to you and install it on site.",
@@ -34,16 +68,24 @@ export const SERVICES: ServiceContent[] = [
     whatWeNeed: [
       "Your exact location",
       "Vehicle year, make, and model",
-      "Confirmation the battery is the suspected issue",
+      "Your VIN, if you can reach it — it confirms the exact battery fit",
     ],
     faqs: [
       {
-        q: "Is $189 the final price?",
-        a: "$189 is the starting price. Battery access and installation difficulty vary significantly between vehicles, so your final price is confirmed based on your specific vehicle and location.",
+        q: "What is the difference between the standard and AGM battery?",
+        a: "AGM batteries are sealed, and handle heavy electrical loads and frequent stop-start cycles better — many newer vehicles are built to use them. If you're not sure which yours takes, give us the year, make and model and we'll confirm it.",
       },
       {
-        q: "What does the 2-year warranty cover?",
-        a: "Your battery purchase includes a 2-year warranty. Keep your invoice for warranty service.",
+        q: "Is installation included in the price?",
+        a: "Yes. $290 for a standard battery and $380 for an AGM battery are total prices with installation included.",
+      },
+      {
+        q: "What does the warranty cover?",
+        a: "A standard battery replacement includes a 1-year warranty. Keep your invoice for warranty service.",
+      },
+      {
+        q: "Do you replace batteries in any vehicle?",
+        a: "Range Rover vehicles are the one exception — we don't service those. For everything else, tell us the year, make and model and we'll confirm before dispatching.",
       },
       {
         q: "What if my car just needs a jump, not a full replacement?",
@@ -52,42 +94,13 @@ export const SERVICES: ServiceContent[] = [
     ],
   },
   {
-    slug: "towing",
-    name: "Towing",
-    shortName: "Towing",
-    needsDestination: true,
-    summary: "Light and medium-duty towing to the destination of your choice.",
-    heroLine: "Your vehicle, moved safely to wherever it needs to go.",
-    problem:
-      "Some breakdowns can't be fixed roadside — a dead transmission, a collision, or a vehicle that won't safely restart. When that happens, your car needs to move, not get patched on the shoulder.",
-    whileYouWait: [
-      "Move as far from traffic as safely possible and turn on hazard lights.",
-      "Stay inside the vehicle with your seatbelt on if you're on a highway shoulder.",
-      "Have your destination (home, shop, dealership) ready to share with dispatch.",
-    ],
-    whatWeNeed: [
-      "Your exact location or a shareable GPS pin",
-      "Vehicle year, make, and model",
-      "Whether the vehicle is drivable or needs to be loaded",
-      "Your preferred destination",
-    ],
-    faqs: [
-      {
-        q: "Can you tow to any shop?",
-        a: "Yes — tell us the destination during the request and we'll confirm distance and details before dispatching.",
-      },
-      {
-        q: "Do you tow motorcycles or larger vehicles?",
-        a: "Select your vehicle type in the request form and add notes; dispatch will confirm equipment fit before accepting.",
-      },
-    ],
-  },
-  {
     slug: "jump-start",
     name: "Jump Start",
     shortName: "Jump Start",
     needsDestination: false,
-    startingPrice: 60,
+    priceLines: [{ amount: "$55–65" }],
+    priceBadge: "$55–65",
+    priceFrom: 55,
     summary: "Dead battery? We'll get your engine running again on the spot.",
     heroLine: "A dead battery shouldn't end your day.",
     problem:
@@ -114,15 +127,78 @@ export const SERVICES: ServiceContent[] = [
     ],
   },
   {
+    slug: "lockout",
+    name: "Vehicle Lockout",
+    shortName: "Lockout",
+    needsDestination: false,
+    priceLines: [
+      { amount: "$55–65" },
+      { label: "Keys locked in the trunk", amount: "$120" },
+    ],
+    priceBadge: "$55–65",
+    priceFrom: 55,
+    summary: "Locked your keys inside? We'll get you back in without damage.",
+    heroLine: "Locked out, not locked down.",
+    problem:
+      "Keys locked inside, a jammed door, or a dead fob can leave you stuck. Our drivers use non-destructive entry methods whenever possible.",
+    whileYouWait: [
+      "Confirm all doors and the trunk to see if any are unlocked.",
+      "Have ID ready to confirm vehicle ownership.",
+    ],
+    whatWeNeed: [
+      "Your exact location",
+      "Vehicle year, make, and model",
+      "Whether the keys are in the cabin or the trunk",
+      "Confirmation you can verify ownership on site",
+    ],
+    faqs: [
+      {
+        q: "Do you need proof I own the car?",
+        a: "Yes, for everyone's safety our driver will ask for ID or another way to confirm ownership before unlocking a vehicle.",
+      },
+      {
+        q: "Why do keys locked in the trunk cost more?",
+        a: "Trunk access is a different job from opening a door — it takes longer and needs different tools, so it is priced separately at $120.",
+      },
+    ],
+  },
+  {
+    slug: "tire-repair-plug-patch",
+    name: "Tire Repair — Plug & Patch",
+    shortName: "Tire Repair",
+    needsDestination: false,
+    priceLines: [{ amount: "$65–70" }],
+    priceBadge: "$65–70",
+    priceFrom: 65,
+    summary: "Puncture repaired roadside with a plug or patch, when the damage allows it.",
+    heroLine: "Small puncture, fixed roadside.",
+    problem:
+      "A nail or small puncture doesn't always mean you need a full tire swap. When the damage allows it, a plug or patch repair gets you back on the road without touching your spare.",
+    whileYouWait: [
+      "Avoid driving further on a visibly low or flat tire.",
+      "Keep hazard lights on while you wait.",
+      "Note where on the tire the damage is, if you can see it.",
+    ],
+    whatWeNeed: ["Your exact location", "Vehicle year, make, and model"],
+    faqs: [
+      {
+        q: "Can every puncture be plugged or patched?",
+        a: "No — damage near the sidewall or beyond a certain size can't be safely repaired. Your driver will advise on site if a tire change or replacement is needed instead.",
+      },
+    ],
+  },
+  {
     slug: "flat-tire-change",
     name: "Flat Tire Change",
     shortName: "Flat Tire",
     needsDestination: false,
-    startingPrice: 75,
-    summary: "Fast, safe swap to your spare or a serviceable tire.",
+    priceLines: [{ amount: "$65", note: "using the spare carried in your vehicle" }],
+    priceBadge: "$65",
+    priceFrom: 65,
+    summary: "Fast, safe swap to the spare tire carried in your vehicle.",
     heroLine: "Flat tire, back on the road.",
     problem:
-      "A blown or flat tire is one of the most common roadside issues. If you have a usable spare, our driver can typically have you moving again quickly.",
+      "A blown or flat tire is one of the most common roadside issues. If you have a usable spare in the vehicle, our driver can typically have you moving again quickly.",
     whileYouWait: [
       "Pull as far from active traffic lanes as possible.",
       "Turn on hazard lights and, if available, place reflective triangles.",
@@ -136,53 +212,113 @@ export const SERVICES: ServiceContent[] = [
     faqs: [
       {
         q: "What if I don't have a spare?",
-        a: "Let us know in the request notes — depending on availability we may be able to bring a serviceable option, or this may need to become a tow.",
+        a: "Select Tire Replacement instead — we supply the tire and fit it on site, priced by wheel size.",
       },
       {
-        q: "Can you patch the flat instead of swapping it?",
-        a: "Select this if you'd prefer a repair attempt; our driver will advise what's possible on site.",
+        q: "Can you repair the flat instead of swapping it?",
+        a: "Often yes. Select Tire Repair — Plug & Patch and your driver will advise what's possible on site.",
       },
     ],
   },
   {
-    slug: "tire-inflation",
-    name: "Tire Inflation",
-    shortName: "Tire Inflation",
+    slug: "tire-replacement",
+    name: "Tire Replacement",
+    shortName: "Tire Replacement",
     needsDestination: false,
-    summary: "Low tire pressure topped off so you can safely continue.",
-    heroLine: "Low tire pressure, handled roadside.",
-    problem:
-      "A slow leak or underinflated tire can be dangerous to drive on. We can air up your tire enough to get you moving toward a repair.",
-    whileYouWait: [
-      "Avoid driving further on a visibly low or flat tire.",
-      "Keep hazard lights on while you wait.",
+    priceLines: [
+      { label: '15" to 20" wheels', amount: "$189" },
+      { label: '21" and larger', amount: "$230" },
     ],
-    whatWeNeed: ["Your exact location", "Vehicle year, make, and model"],
+    priceBadge: "From $189",
+    priceFrom: 189,
+    priceNote: "Tire supplied by TRA. Price is set by wheel size.",
+    summary: "A new tire supplied by TRA and fitted at your location, priced by wheel size.",
+    heroLine: "A new tire, fitted where you're parked.",
+    problem:
+      "When a tire is damaged beyond a safe repair — a sidewall tear, a blowout, or a puncture too large to plug — it has to be replaced rather than patched. We supply the tire and fit it on site, so you don't need a usable spare in the vehicle.",
+    whileYouWait: [
+      "Pull as far from active traffic lanes as possible and turn on hazard lights.",
+      "Don't drive further on a flat — it damages the wheel as well as the tire.",
+      "Read your wheel size off the tire sidewall or the driver's door jamb sticker, if you can do so safely.",
+    ],
+    whatWeNeed: [
+      "Your exact location",
+      "Vehicle year, make, and model",
+      "Your wheel size, if you can read it off the sidewall",
+    ],
     faqs: [
       {
-        q: "Will this fix a slow leak permanently?",
-        a: "No — inflation is a temporary measure to get you safely to a repair shop.",
+        q: "How is the price decided?",
+        a: "By wheel size. A 15 to 20 inch wheel is $189 and a 21 inch or larger wheel is $230, tire supplied and fitted.",
+      },
+      {
+        q: "What if I already have a spare in the car?",
+        a: "Then Flat Tire Change is the cheaper option at $65 — we fit the spare you are already carrying.",
       },
     ],
   },
   {
-    slug: "spare-tire-install",
-    name: "Spare Tire Installation",
-    shortName: "Spare Install",
+    slug: "stuck-screw-in-tire",
+    name: "Stuck Screw in Tire",
+    shortName: "Stuck Screw",
     needsDestination: false,
-    summary: "We'll mount and install your spare tire correctly and safely.",
-    heroLine: "Spare tire, properly installed.",
+    priceLines: [{ amount: "$70" }],
+    priceBadge: "$70",
+    priceFrom: 70,
+    summary: "A screw or nail lodged in your tire, removed and the tire made safe.",
+    heroLine: "Something in your tire? We'll get it out.",
     problem:
-      "Already have your spare out but need it professionally and safely mounted? We'll handle the install so it's torqued and road-ready.",
+      "A screw or nail picked up off the road can sit in a tire for days before it starts losing air. Pulling it out without sealing the hole turns a slow leak into a flat, so removal and repair are done together.",
     whileYouWait: [
-      "Keep your spare, jack, and lug wrench accessible.",
+      "Leave the screw where it is — pulling it out yourself will usually deflate the tire immediately.",
+      "Check your tire pressure if you have a gauge, and avoid long drives.",
+      "Keep hazard lights on if you have stopped on a roadside.",
+    ],
+    whatWeNeed: [
+      "Your exact location",
+      "Vehicle year, make, and model",
+      "Which tire it is, if you know",
+    ],
+    faqs: [
+      {
+        q: "Should I pull the screw out myself?",
+        a: "No. While it's lodged in the tread it is partly sealing the hole. Removing it without a plug or patch ready usually turns a slow leak into a flat tire.",
+      },
+      {
+        q: "Will the tire always be repairable afterwards?",
+        a: "Usually, if the screw is in the tread. Damage in or near the sidewall can't be safely repaired — your driver will tell you on site if a replacement is needed instead.",
+      },
+    ],
+  },
+  {
+    slug: "rim-lock-removal",
+    name: "Rim Lock Removal",
+    shortName: "Rim Lock",
+    needsDestination: false,
+    priceLines: [{ amount: "$70" }],
+    priceBadge: "$70",
+    priceFrom: 70,
+    summary: "A seized or keyless wheel lock removed so the wheel can come off.",
+    heroLine: "A wheel lock shouldn't strand you.",
+    problem:
+      "Locking wheel nuts need a matching key, and that key is often missing, snapped, or rounded off by the time you actually need it. Without it the wheel can't come off — which blocks a tire change on the roadside.",
+    whileYouWait: [
+      "Check the glovebox, trunk well, and spare tire compartment for the wheel lock key.",
       "Stay clear of the roadway while you wait.",
     ],
-    whatWeNeed: ["Your exact location", "Vehicle year, make, and model"],
+    whatWeNeed: [
+      "Your exact location",
+      "Vehicle year, make, and model",
+      "Whether you have the wheel lock key at all",
+    ],
     faqs: [
       {
-        q: "Is the spare safe for highway speeds?",
-        a: "Most spares are speed- and distance-limited — your driver can walk you through the limitations for your specific spare.",
+        q: "Will removing the lock damage my wheel?",
+        a: "The locking nut itself is sacrificed in the process — that is unavoidable. Your driver works to protect the wheel and the surrounding studs.",
+      },
+      {
+        q: "Do I need this as well as a tire change?",
+        a: "If your wheel lock key is missing, yes — the lock has to come off before the wheel can. Mention it in the notes when you request a tire service.",
       },
     ],
   },
@@ -191,7 +327,9 @@ export const SERVICES: ServiceContent[] = [
     name: "Fuel Delivery",
     shortName: "Fuel Delivery",
     needsDestination: false,
-    startingPrice: 65,
+    priceLines: [{ amount: "$65", note: "plus the cost of the fuel" }],
+    priceBadge: "$65 + fuel",
+    priceNote: "The $65 is the delivery charge. The fuel itself is added at cost.",
     summary: "Ran out of gas or diesel? We'll bring enough to get you to a station.",
     heroLine: "Out of fuel, not out of options.",
     problem:
@@ -211,173 +349,47 @@ export const SERVICES: ServiceContent[] = [
         q: "How much fuel do you bring?",
         a: "Enough to safely reach the nearest station — full fill-ups aren't provided roadside.",
       },
-    ],
-  },
-  {
-    slug: "lockout",
-    name: "Vehicle Lockout",
-    shortName: "Lockout",
-    needsDestination: false,
-    startingPrice: 60,
-    summary: "Locked your keys inside? We'll get you back in without damage.",
-    heroLine: "Locked out, not locked down.",
-    problem:
-      "Keys locked inside, a jammed door, or a dead fob can leave you stuck. Our drivers use non-destructive entry methods whenever possible.",
-    whileYouWait: [
-      "Confirm all doors and the trunk to see if any are unlocked.",
-      "Have ID ready to confirm vehicle ownership.",
-    ],
-    whatWeNeed: [
-      "Your exact location",
-      "Vehicle year, make, and model",
-      "Confirmation you can verify ownership on site",
-    ],
-    faqs: [
       {
-        q: "Do you need proof I own the car?",
-        a: "Yes, for everyone's safety our driver will ask for ID or another way to confirm ownership before unlocking a vehicle.",
+        q: "Is the fuel included in the $65?",
+        a: "No. $65 is the delivery charge, and the fuel is added at cost — so you only pay for what actually goes in the tank.",
       },
     ],
   },
   {
-    slug: "winching-recovery",
-    name: "Winching & Recovery",
-    shortName: "Winch & Recovery",
-    needsDestination: false,
-    summary: "Stuck in a ditch, mud, or off the roadway? We'll recover your vehicle.",
-    heroLine: "Stuck happens. We'll pull you out.",
+    slug: "towing",
+    name: "Towing",
+    shortName: "Towing",
+    needsDestination: true,
+    priceLines: [{ amount: "$5 per mile", note: "from your vehicle's location to the destination" }],
+    priceBadge: "$5 / mile",
+    priceNote: "Charged per mile from where your vehicle is to where you want it taken.",
+    summary: "Light and medium-duty towing to the destination of your choice, at $5 per mile.",
+    heroLine: "Your vehicle, moved safely to wherever it needs to go.",
     problem:
-      "Whether you've slid off the shoulder, into a ditch, or onto soft ground, winching and recovery equipment gets your vehicle safely back on solid pavement.",
+      "Some breakdowns can't be fixed roadside — a dead transmission, a collision, or a vehicle that won't safely restart. When that happens, your car needs to move, not get patched on the shoulder.",
     whileYouWait: [
-      "Stay inside the vehicle if it's in an unsafe position near traffic.",
-      "Do not attempt recovery yourself if the vehicle is on an incline or near water.",
-      "Describe the terrain and vehicle position as accurately as possible in the request notes.",
-    ],
-    whatWeNeed: [
-      "Your exact location",
-      "Vehicle year, make, and model",
-      "Description of how the vehicle is stuck (mud, ditch, embankment, etc.)",
-    ],
-    faqs: [
-      {
-        q: "Can you recover vehicles off-road?",
-        a: "Describe the terrain in your request notes — dispatch will confirm the right equipment before accepting.",
-      },
-    ],
-  },
-  {
-    slug: "minor-repair",
-    name: "Minor Roadside Repair",
-    shortName: "Minor Repair",
-    needsDestination: false,
-    summary: "Small mechanical issues resolved on the spot when possible.",
-    heroLine: "Small problem, fixed roadside.",
-    problem:
-      "Not every issue needs a shop visit. Loose belts, minor hose issues, and other small mechanical problems can sometimes be resolved on site.",
-    whileYouWait: [
-      "Turn off the engine if you notice smoke, unusual smells, or warning lights.",
-      "Describe the issue as specifically as possible in your request notes.",
-    ],
-    whatWeNeed: [
-      "Your exact location",
-      "Vehicle year, make, and model",
-      "A description of the problem",
-    ],
-    faqs: [
-      {
-        q: "What counts as a 'minor' repair?",
-        a: "Small, non-structural issues that don't require shop tools or lift equipment. Your driver will advise if the issue needs a tow instead.",
-      },
-    ],
-  },
-  {
-    slug: "truck-assistance",
-    name: "18 Wheeler Roadside Services",
-    shortName: "Truck Assistance",
-    needsDestination: false,
-    summary:
-      "Roadside support for 18-wheelers, semi-trucks, tractor-trailers, and other commercial trucks.",
-    heroLine: "Roadside help for big rigs, semis, and commercial trucks.",
-    problem:
-      "Breakdowns don't stop at passenger vehicles — 18-wheelers, semi-trucks, tractor-trailers, and other commercial trucks need help too. Tell us what's going on and dispatch will confirm what's needed before a driver is sent.",
-    whileYouWait: [
-      "Set out reflective triangles or hazard warning devices behind the vehicle if you can safely do so.",
-      "Move as far from the travel lanes as possible and keep hazard lights on.",
-      "Stay clear of the roadway side of the vehicle if traffic is close.",
-      "Have your truck type, unit number, and trailer status ready to share with dispatch.",
+      "Move as far from traffic as safely possible and turn on hazard lights.",
+      "Stay inside the vehicle with your seatbelt on if you're on a highway shoulder.",
+      "Have your destination (home, shop, dealership) ready to share with dispatch.",
     ],
     whatWeNeed: [
       "Your exact location or a shareable GPS pin",
-      "Truck type and make/model, if known",
-      "Whether a trailer is attached",
-      "Whether the truck is currently drivable",
-      "A description of the problem",
-    ],
-    faqs: [
-      {
-        q: "Do you handle 18-wheelers, semis, and tractor-trailers?",
-        a: "Yes — select Truck Assistance and describe your truck and the issue; dispatch will confirm equipment and next steps before a driver is sent.",
-      },
-      {
-        q: "What if I don't know my exact truck type or unit number?",
-        a: "Share what you know — those fields are optional. Dispatch can gather the rest by phone if needed.",
-      },
-      {
-        q: "Is towing capacity or heavy-duty equipment guaranteed?",
-        a: "Equipment and capability vary by request — dispatch confirms exact capacity, response time, and any specialized equipment with you directly before dispatching.",
-      },
-    ],
-  },
-  {
-    slug: "other-roadside-service",
-    name: "Other Roadside Service",
-    shortName: "Other Roadside Service",
-    needsDestination: false,
-    summary: "Not sure which service fits? Tell us what's going on and we'll dispatch the right help.",
-    heroLine: "Not listed above? Tell us what you need.",
-    problem:
-      "If your situation doesn't match one of our standard services, select Other Roadside Service and describe what's happening — dispatch will review the details and follow up with next steps.",
-    whileYouWait: [
-      "Move to a safe, visible location away from moving traffic if possible.",
-      "Keep hazard lights on while you wait.",
-      "Be as specific as possible when describing the issue.",
-    ],
-    whatWeNeed: [
-      "Your exact location",
       "Vehicle year, make, and model",
-      "A written description of the help you need",
+      "Whether the vehicle is drivable or needs to be loaded",
+      "Your preferred destination",
     ],
     faqs: [
       {
-        q: "What if my issue isn't listed as its own service?",
-        a: "Select Other Roadside Service and describe what you need in the required notes field — dispatch will review it and confirm how we can help.",
-      },
-    ],
-  },
-  {
-    slug: "tire-repair-plug-patch",
-    name: "Tire Repair — Plug & Patch",
-    shortName: "Tire Repair",
-    needsDestination: false,
-    startingPrice: 45,
-    summary: "Puncture repaired roadside with a plug or patch, when the damage allows it.",
-    heroLine: "Small puncture, fixed roadside.",
-    problem:
-      "A nail or small puncture doesn't always mean you need a full tire swap. When the damage allows it, a plug or patch repair gets you back on the road without touching your spare.",
-    whileYouWait: [
-      "Avoid driving further on a visibly low or flat tire.",
-      "Keep hazard lights on while you wait.",
-      "Note where on the tire the damage is, if you can see it.",
-    ],
-    whatWeNeed: ["Your exact location", "Vehicle year, make, and model"],
-    faqs: [
-      {
-        q: "Can every puncture be plugged or patched?",
-        a: "No — damage near the sidewall or beyond a certain size can't be safely repaired. Your driver will advise on site if a tire change or tow is needed instead.",
+        q: "How is towing priced?",
+        a: "At $5 per mile, measured from your vehicle's location to the destination you choose. Tell us the destination in the request and dispatch confirms the distance before the driver sets off.",
       },
       {
-        q: "Is $45 the final price?",
-        a: "$45 is the starting price. Final price is confirmed based on your vehicle and location.",
+        q: "Can you tow to any shop?",
+        a: "Yes — tell us the destination during the request and we'll confirm distance and details before dispatching.",
+      },
+      {
+        q: "Do you tow motorcycles or larger vehicles?",
+        a: "Select your vehicle type in the request form and add notes; dispatch will confirm equipment fit before accepting.",
       },
     ],
   },

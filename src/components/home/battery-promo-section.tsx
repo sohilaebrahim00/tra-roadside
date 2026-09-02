@@ -92,7 +92,7 @@ export function BatteryPromoSection() {
           <div className="mx-auto w-full max-w-102 lg:mx-0">
             <Image
               src="/images/battery-trunk-portrait.webp"
-              alt="A technician in a blue jacket loosening the terminal on a white car battery seated in an open car boot, with a pair of work gloves resting on the sill beside it."
+              alt="A technician in a blue jacket loosening the terminal on a white car battery sitting in an open car trunk, with a pair of work gloves resting beside it."
               width={408}
               height={612}
               loading="lazy"

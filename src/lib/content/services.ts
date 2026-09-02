@@ -79,19 +79,19 @@ export const SERVICES: ServiceContent[] = [
     photos: [
       {
         src: "/images/battery-install.webp",
-        alt: "A technician in a blue jacket tightening a battery terminal with a spanner under the open bonnet of a silver car.",
+        alt: "A technician in a blue jacket tightening a battery terminal with a wrench under the open hood of a silver car.",
         width: 612,
         height: 408,
       },
       {
         src: "/images/battery-fit.webp",
-        alt: "A technician reaching into an engine bay to seat and secure a black car battery in its tray.",
+        alt: "A technician reaching into an engine compartment to seat and secure a black car battery in its tray.",
         width: 612,
         height: 408,
       },
       {
         src: "/images/battery-terminal.webp",
-        alt: "A technician in a white t-shirt leaning into an engine bay, working a socket wrench on a battery with a red terminal cover, a protective cloth laid over the wing.",
+        alt: "A technician in a white t-shirt leaning into an engine compartment, working a socket wrench on a battery with a red terminal cover, a protective cloth laid over the fender.",
         width: 612,
         height: 408,
       },
@@ -103,7 +103,7 @@ export const SERVICES: ServiceContent[] = [
       },
       {
         src: "/images/battery-handover.webp",
-        alt: "Two people in work gloves lifting a blue car battery out of an engine bay together, one in a red checked shirt and one in blue overalls.",
+        alt: "Two people in work gloves lifting a blue car battery out of an engine compartment together, one in a red checked shirt and one in blue overalls.",
         width: 612,
         height: 408,
       },

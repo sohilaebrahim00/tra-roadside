@@ -4,8 +4,8 @@
 -- install — replace via the admin CMS before going live.
 
 insert into service_types (slug, name, needs_destination, description, sort_order) values
-  ('battery-replacement', 'Battery Replacement', false, 'Mobile battery replacement installed on site — standard $290, AGM $380, installation included.', 1),
-  ('jump-start', 'Jump Start', false, 'Dead battery jump start, $55-65.', 2),
+  ('jump-start', 'Jump Start', false, 'Dead battery jump start, $55-65.', 1),
+  ('battery-replacement', 'Battery Replacement', false, 'Mobile battery replacement at your location. Battery from $189 — battery only, installation quoted by dispatch.', 2),
   ('lockout', 'Vehicle Lockout', false, 'Non-destructive lockout entry, $55-65. Keys locked in the trunk, $120.', 3),
   ('tire-repair-plug-patch', 'Tire Repair — Plug & Patch', false, 'Puncture repaired roadside with a plug or patch, $65-70.', 4),
   ('flat-tire-change', 'Flat Tire Change', false, 'Swap to the spare carried in your vehicle, $65.', 5),

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { BatteryFull, ShieldCheck, LifeBuoy, Check, AlertTriangle } from "lucide-react";
+import { BatteryFull, ShieldCheck, LifeBuoy, Check, Gem } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { getService } from "@/lib/content/services";
@@ -9,8 +9,11 @@ import { getService } from "@/lib/content/services";
  * service, so this gets a full section directly below the Hero rather than
  * being one card among many in the services grid.
  *
- * Prices are published as TOTALS ("$290 including installation"), never as a
- * parts-plus-labour breakdown.
+ * The published figure is the price of the BATTERY ALONE and never appears
+ * without the qualifier that says so. The site's own promise is upfront
+ * pricing with no surprise fees; a bare "$189" followed by an installation
+ * quote on the phone would read as a bait and cost more trust than the
+ * attractive number wins.
  */
 export function BatteryPromoSection() {
   const service = getService("battery-replacement");
@@ -29,39 +32,35 @@ export function BatteryPromoSection() {
               A new battery, installed right where you are.
             </h2>
             <p className="mt-3 max-w-xl text-base leading-relaxed text-white/70">
-              We bring the battery to you and fit it on the spot — no tow, no waiting room. Standard
-              and AGM both carried.
+              We bring the battery to you and fit it on the spot — no tow, no waiting room.
             </p>
 
-            <dl className="mt-7 grid max-w-lg gap-3 sm:grid-cols-2">
-              {service.priceLines.map((line) => (
-                <div
-                  key={line.label ?? line.amount}
-                  className="rounded-2xl border border-white/15 bg-white/5 p-4"
-                >
-                  <dt className="text-sm font-semibold text-white/70">{line.label}</dt>
-                  <dd className="mt-1 font-display text-3xl font-bold text-white">{line.amount}</dd>
-                  {line.note && <p className="mt-1 text-xs text-white/60">{line.note}</p>}
-                </div>
-              ))}
-            </dl>
+            <div className="mt-7 max-w-md rounded-2xl border border-white/15 bg-white/5 p-5">
+              <p className="font-display text-4xl font-bold text-white">Battery from $189</p>
+              <p className="mt-1.5 text-sm text-white/70">
+                Battery only — installation quoted by dispatch
+              </p>
+            </div>
 
             <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/80">
               <li className="flex items-center gap-1.5">
                 <ShieldCheck className="h-4 w-4 shrink-0 text-red-500" aria-hidden="true" />
-                1-year warranty on the standard battery
+                1-year warranty
               </li>
               <li className="flex items-center gap-1.5">
                 <Check className="h-4 w-4 shrink-0 text-red-500" aria-hidden="true" />
-                Installation included in the price
+                Fitted at your location
               </li>
             </ul>
 
-            {service.restriction && (
-              <p className="mt-4 flex items-start gap-1.5 text-sm font-semibold text-amber-300">
-                <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
-                {service.restriction}
-              </p>
+            {service.highlight && (
+              <div className="mt-6 max-w-xl rounded-2xl border border-red-600/30 bg-red-600/10 p-4">
+                <p className="flex items-center gap-2 font-display text-sm font-bold uppercase tracking-wide text-red-400">
+                  <Gem className="h-4 w-4 shrink-0" aria-hidden="true" />
+                  {service.highlight.title}
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-white/80">{service.highlight.body}</p>
+              </div>
             )}
 
             <div className="mt-7">
@@ -78,8 +77,8 @@ export function BatteryPromoSection() {
           {/*
             The one portrait in the set (408x612 native), given the one
             genuinely vertical slot on the site rather than being cropped into
-            a landscape box. Capped at max-w-102 so it renders at exactly
-            its native width on desktop and narrower — never wider — below that.
+            a landscape box. Capped at max-w-102 so it renders at exactly its
+            native width on desktop and narrower — never wider — below that.
 
             `unoptimized` because the file is already the optimised artefact
             (webp q76 from scripts/optimize-images.mjs); without it next/image

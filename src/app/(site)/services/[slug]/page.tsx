@@ -14,7 +14,7 @@ import { env } from "@/lib/env";
 import { CinematicBackgroundVideo } from "@/components/media/cinematic-background-video";
 import { getServiceVideo } from "@/data/media-registry";
 import { PricingDisclaimer } from "@/components/ui/pricing-disclaimer";
-import { AlertTriangle } from "lucide-react";
+import { Gem } from "lucide-react";
 
 export function generateStaticParams() {
   return SERVICES.map((s) => ({ slug: s.slug }));
@@ -87,12 +87,6 @@ export default async function ServicePage({
                   ))}
                 </ul>
                 {service.priceNote && <p className="mt-3 text-sm text-white/70">{service.priceNote}</p>}
-                {service.restriction && (
-                  <p className="mt-3 flex items-start gap-1.5 text-sm font-semibold text-amber-300">
-                    <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
-                    {service.restriction}
-                  </p>
-                )}
               </div>
             )}
 
@@ -110,6 +104,28 @@ export default async function ServicePage({
         </Container>
       </section>
 
+
+      {service.highlight && (
+        <section className="border-b border-ink-950/8 bg-ink-950 py-14 text-white sm:py-16 dark:border-white/10">
+          <Container>
+            <div className="max-w-3xl">
+              <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500">
+                <Gem className="h-4 w-4 shrink-0" aria-hidden="true" />
+                What sets this apart
+              </p>
+              <h2 className="mt-3 font-display text-2xl font-bold uppercase tracking-tight sm:text-3xl">
+                {service.highlight.title}
+              </h2>
+              <p className="mt-4 text-base leading-relaxed text-white/80">{service.highlight.body}</p>
+              <div className="mt-6">
+                <Button href={`/request?service=${service.slug}`} size="lg" icon={<LifeBuoy className="h-4 w-4" aria-hidden="true" />}>
+                  Request {service.shortName}
+                </Button>
+              </div>
+            </div>
+          </Container>
+        </section>
+      )}
 
       {service.photos && (
         <section className="border-b border-ink-950/8 bg-paper-50 py-14 sm:py-20 dark:border-white/10 dark:bg-white/5">

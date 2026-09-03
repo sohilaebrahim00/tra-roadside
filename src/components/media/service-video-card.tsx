@@ -123,7 +123,9 @@ export function ServiceVideoCard({ href, name, summary, icon: Icon, video }: Ser
             aria-hidden="true"
             onError={handleError}
           >
-            <source src={video.mobileSource ?? video.source} media="(max-width: 768px)" />
+            {/* Only the landscape encode: this card is a fixed 4:3 box, and the
+                portrait mobile encode would be cropped to roughly a third of the
+                frame by object-cover. Sized for a background, wrong for a card. */}
             <source src={video.source} />
           </video>
         )}

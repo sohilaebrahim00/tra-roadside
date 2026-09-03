@@ -56,9 +56,6 @@ export function VehicleStep({ onNext, onBack }: { onNext: () => void; onBack: ()
             <ShieldCheck className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
             Installation included · 1-year warranty on the standard battery
           </p>
-          {selectedService.restriction && (
-            <p className="mt-1.5 text-sm font-semibold text-amber-200">{selectedService.restriction}</p>
-          )}
         </div>
       )}
 

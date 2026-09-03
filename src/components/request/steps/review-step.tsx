@@ -67,9 +67,6 @@ export function ReviewStep({
           <p className="mt-1 text-xs text-ink-500 dark:text-ink-300">
             Final price may vary depending on vehicle, location, and service requirements.
           </p>
-          {service.restriction && (
-            <p className="mt-1 text-xs font-semibold text-red-600">{service.restriction}</p>
-          )}
         </div>
       )}
 

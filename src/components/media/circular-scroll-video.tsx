@@ -111,7 +111,11 @@ export function CircularScrollVideo({
           {video ? (
             <InViewVideo
               src={video.source}
-              mobileSrc={video.mobileSource}
+              // Deliberately NOT passing mobileSrc. The mobile encode is a 9:16
+              // portrait clip, which is right for a full-bleed background but
+              // wrong here: this frame is a fixed 16:9 box, and object-cover
+              // on a portrait source inside it shows barely a third of the
+              // frame. The landscape encode fits this container exactly.
               poster={video.poster}
               title={video.altText}
               objectPosition={video.objectPosition}

@@ -22,8 +22,8 @@ export function BatteryStrip() {
           <BatteryFull className="h-4 w-4 shrink-0 text-amber-400" aria-hidden="true" />
           <span className="truncate">
             <span className="font-semibold">Car batteries</span>
-            <span className="hidden sm:inline"> available — standard &amp; AGM, installed on site</span>
-            <span className="sm:hidden"> — standard &amp; AGM</span>
+            <span className="hidden sm:inline"> from $189 — battery only, installation quoted by dispatch</span>
+            <span className="sm:hidden"> from $189 — battery only</span>
           </span>
         </p>
 

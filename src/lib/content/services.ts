@@ -45,7 +45,7 @@ export interface ServiceContent {
   faqs: { q: string; a: string }[];
   /** Published totals for this service. */
   priceLines?: PriceLine[];
-  /** Compact badge for service cards, e.g. "From $290" or "$55–65". */
+  /** Compact badge for service cards, e.g. "Battery from $189" or "$55–65". */
   priceBadge?: string;
   /**
    * Lowest published total in whole USD, used ONLY for the JSON-LD Offer,
@@ -57,23 +57,65 @@ export interface ServiceContent {
   priceNote?: string;
   /** Photographs of this service being performed, for a constrained grid. */
   photos?: ServicePhoto[];
-  /** Vehicles or situations this service explicitly does not cover. */
-  restriction?: string;
+  /** A titled capability block given real placement on the service page. */
+  highlight?: { title: string; body: string };
 }
 
 export const SERVICES: ServiceContent[] = [
+  {
+    slug: "jump-start",
+    name: "Jump Start",
+    shortName: "Jump Start",
+    needsDestination: false,
+    priceLines: [{ amount: "$55–65" }],
+    priceBadge: "$55–65",
+    priceFrom: 55,
+    summary: "Dead battery? We'll get your engine running again on the spot.",
+    heroLine: "A dead battery shouldn't end your day.",
+    problem:
+      "Lights left on, extreme temperatures, or an aging battery can leave you with a car that won't start. A jump start gets most vehicles running again in minutes.",
+    whileYouWait: [
+      "Turn off all electronics and accessories to avoid draining further.",
+      "Pop the hood if it's safe to do so before your driver arrives.",
+      "Stay in a well-lit, visible area if it's dark.",
+    ],
+    whatWeNeed: [
+      "Your exact location",
+      "Vehicle year, make, and model",
+      "Confirmation the battery is the suspected issue",
+    ],
+    faqs: [
+      {
+        q: "What if the battery won't hold a charge afterward?",
+        a: "Your driver can advise whether the battery needs replacement — let dispatch know if you'd like that discussed on site.",
+      },
+      {
+        q: "Does this work for hybrid or electric vehicles?",
+        a: "Add your vehicle type and any details in the notes field so we can dispatch the right equipment.",
+      },
+    ],
+  },
   {
     slug: "battery-replacement",
     name: "Battery Replacement",
     shortName: "Battery Replacement",
     needsDestination: false,
+    // $189 is the price of the BATTERY ALONE — no labour, no service call, no
+    // installation. It is never published as a bare figure: the site promises
+    // upfront pricing with no surprise fees, and a customer who reads $189 and
+    // is then quoted for installation would fairly call that a bait. The
+    // qualifier travels with the number everywhere it appears.
     priceLines: [
-      { label: "Standard battery", amount: "$290", note: "including installation · 1-year warranty" },
-      { label: "AGM battery", amount: "$380", note: "including installation" },
+      { amount: "From $189", note: "Battery only — installation quoted by dispatch" },
     ],
-    priceBadge: "From $290",
-    priceFrom: 290,
-    restriction: "Range Rover vehicles are not serviced.",
+    priceBadge: "Battery from $189",
+    priceFrom: 189,
+    priceNote: "Battery only — installation is quoted by dispatch for your vehicle.",
+    highlight: {
+      title: "Luxury and high-end vehicles, programmed like a dealership",
+      body:
+        "We replace batteries in luxury and high-end vehicles, Range Rover included, and program the vehicle to the new battery the way a dealership would — so your settings carry over and there is no dealer visit to book. Owners typically save over $1,000 against dealership pricing for the same job.",
+    },
     // All six are 612x408 native. The 408x612 portrait is not listed here —
     // it has its own vertical slot in the home page battery section.
     photos: [
@@ -114,7 +156,7 @@ export const SERVICES: ServiceContent[] = [
         height: 408,
       },
     ],
-    summary: "Mobile battery replacement, installed at your location — standard and AGM.",
+    summary: "Mobile battery replacement at your location. Battery from $189 — installation quoted by dispatch.",
     heroLine: "A new battery, installed right where you are.",
     problem:
       "A battery that won't hold a charge, or one that's already failed a jump start, usually needs to be replaced rather than jumped again. We bring a new battery to you and install it on site.",
@@ -130,57 +172,20 @@ export const SERVICES: ServiceContent[] = [
     ],
     faqs: [
       {
-        q: "What is the difference between the standard and AGM battery?",
-        a: "AGM batteries are sealed, and handle heavy electrical loads and frequent stop-start cycles better — many newer vehicles are built to use them. If you're not sure which yours takes, give us the year, make and model and we'll confirm it.",
-      },
-      {
-        q: "Is installation included in the price?",
-        a: "Yes. $290 for a standard battery and $380 for an AGM battery are total prices with installation included.",
+        q: "Does $189 include installation?",
+        a: "No. $189 is the price of the battery itself. Installation depends on how the battery is mounted and how much has to come apart to reach it, so dispatch quotes it for your vehicle before a driver is sent — you will know the full figure before anyone sets off.",
       },
       {
         q: "What does the warranty cover?",
-        a: "A standard battery replacement includes a 1-year warranty. Keep your invoice for warranty service.",
+        a: "A battery replacement includes a 1-year warranty. Keep your invoice for warranty service.",
       },
       {
-        q: "Do you replace batteries in any vehicle?",
-        a: "Range Rover vehicles are the one exception — we don't service those. For everything else, tell us the year, make and model and we'll confirm before dispatching.",
+        q: "Do you replace batteries in luxury vehicles?",
+        a: "Yes, Range Rover included. We also program the vehicle to the new battery the way a dealership would, so your settings carry over and you don't need a dealer appointment — which is where the saving against dealership pricing comes from.",
       },
       {
         q: "What if my car just needs a jump, not a full replacement?",
         a: "Select Jump Start instead — your driver can advise on site if a replacement turns out to be needed.",
-      },
-    ],
-  },
-  {
-    slug: "jump-start",
-    name: "Jump Start",
-    shortName: "Jump Start",
-    needsDestination: false,
-    priceLines: [{ amount: "$55–65" }],
-    priceBadge: "$55–65",
-    priceFrom: 55,
-    summary: "Dead battery? We'll get your engine running again on the spot.",
-    heroLine: "A dead battery shouldn't end your day.",
-    problem:
-      "Lights left on, extreme temperatures, or an aging battery can leave you with a car that won't start. A jump start gets most vehicles running again in minutes.",
-    whileYouWait: [
-      "Turn off all electronics and accessories to avoid draining further.",
-      "Pop the hood if it's safe to do so before your driver arrives.",
-      "Stay in a well-lit, visible area if it's dark.",
-    ],
-    whatWeNeed: [
-      "Your exact location",
-      "Vehicle year, make, and model",
-      "Confirmation the battery is the suspected issue",
-    ],
-    faqs: [
-      {
-        q: "What if the battery won't hold a charge afterward?",
-        a: "Your driver can advise whether the battery needs replacement — let dispatch know if you'd like that discussed on site.",
-      },
-      {
-        q: "Does this work for hybrid or electric vehicles?",
-        a: "Add your vehicle type and any details in the notes field so we can dispatch the right equipment.",
       },
     ],
   },

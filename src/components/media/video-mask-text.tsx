@@ -10,6 +10,28 @@ const VIEW_W = 1000;
 const VIEW_H = 340;
 
 /**
+ * The word occupies roughly the middle 45% of the 1000-unit viewBox. On a
+ * phone that leaves the letterforms at ~41% of screen width inside a squat
+ * band — the desktop composition shrunk, which reads as a small motif rather
+ * than a signature.
+ *
+ * The fix is a narrower effective viewport on mobile, done entirely in CSS:
+ * the wrapper's aspect-ratio is responsive, and `preserveAspectRatio="slice"`
+ * makes the viewBox COVER that box rather than fit inside it. At 520/340 the
+ * scale is driven by height, so the glyphs render ~86% of the container width
+ * and the empty left/right thirds of the viewBox are cropped away — the word
+ * itself (units 282–727) sits comfortably inside the retained 240–760 band.
+ *
+ * Deliberately NOT matchMedia: `viewBox` cannot be set from CSS, so switching
+ * it in JS would mean painting the desktop composition first and snapping to
+ * the mobile one after hydration. Making the WRAPPER responsive instead keeps
+ * one viewBox, so the correct composition is in the very first paint — no
+ * flash, and it stays right with JS disabled.
+ */
+const MOBILE_ASPECT = "aspect-[520/340]";
+const DESKTOP_ASPECT = "sm:aspect-[1000/340]";
+
+/**
  * Signature treatment: a large brand word with video visible only inside
  * the glyph shapes.
  *
@@ -102,7 +124,10 @@ export function VideoMaskText({
   const maskActive = !reduceMotion && Boolean(video) && !errored;
 
   return (
-    <div ref={wrapperRef} className={`relative ${className ?? ""}`} style={{ aspectRatio: `${VIEW_W} / ${VIEW_H}` }}>
+    <div
+      ref={wrapperRef}
+      className={`relative ${MOBILE_ASPECT} ${DESKTOP_ASPECT} ${className ?? ""}`}
+    >
       <h2
         className={
           maskActive
@@ -116,7 +141,7 @@ export function VideoMaskText({
       {maskActive && video && (
         <svg
           viewBox={`0 0 ${VIEW_W} ${VIEW_H}`}
-          preserveAspectRatio="xMidYMid meet"
+          preserveAspectRatio="xMidYMid slice"
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 h-full w-full"
         >
@@ -159,7 +184,14 @@ export function VideoMaskText({
               preload="none"
               onError={() => setErrored(true)}
             >
-              {video.mobileSource && <source src={video.mobileSource} media="(max-width: 768px)" />}
+              {/*
+                Landscape encode at every width. The mobile encode is 9:16
+                portrait, and object-cover inside this 1000x340 box crops it to
+                roughly a fifth of the frame magnified ~3.2x — which under a
+                mask is fatal, because the fill IS the content. Whatever
+                structure the video had disappears and the glyphs read as a
+                blurred wash instead of letters.
+              */}
               <source src={video.source} />
             </video>
           </foreignObject>

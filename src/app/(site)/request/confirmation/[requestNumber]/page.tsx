@@ -4,6 +4,8 @@ import { CheckCircle2, Phone, Radio, AlertTriangle } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { BUSINESS } from "@/lib/content/business";
+import { googleAdsConversionSendTo } from "@/lib/env";
+import { GoogleAdsConversion } from "@/components/analytics/google-ads-conversion";
 
 export const metadata: Metadata = {
   title: "Request Confirmed",
@@ -33,6 +35,13 @@ export default async function ConfirmationPage({
 
   return (
     <div className="bg-paper-50 py-14 sm:py-20">
+      {/* The only place on the site that reports a Google Ads conversion. It
+          fires once per request number, not once per page view — see the guard
+          in GoogleAdsConversion. Demo submissions are excluded: they are not
+          real jobs and must not be optimised against. */}
+      {googleAdsConversionSendTo && !isDemo && (
+        <GoogleAdsConversion sendTo={googleAdsConversionSendTo} requestNumber={requestNumber} />
+      )}
       <Container size="narrow">
         <div className="rounded-3xl border border-ink-950/8 bg-white p-6 text-center shadow-sm sm:p-10 dark:border-white/10 dark:bg-ink-900">
           <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-success-600/10 text-success-600">

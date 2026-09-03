@@ -5,6 +5,7 @@ import { env } from "@/lib/env";
 import { BUSINESS } from "@/lib/content/business";
 import { OrganizationJsonLd } from "@/components/seo/json-ld";
 import { ServiceWorkerRegister } from "@/components/pwa/sw-register";
+import { GoogleAdsTag } from "@/components/analytics/google-ads";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -85,6 +86,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col font-sans">
         <OrganizationJsonLd />
         <ServiceWorkerRegister />
+        <GoogleAdsTag />
         {children}
       </body>
     </html>

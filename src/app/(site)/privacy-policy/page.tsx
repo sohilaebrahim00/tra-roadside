@@ -65,6 +65,16 @@ export default function PrivacyPolicyPage() {
         for full details.
       </p>
 
+      <h2>Advertising measurement</h2>
+      <p>
+        We use Google Ads conversion tracking to measure which of our ads lead to a service
+        request. When you complete a request, the confirmation page tells Google that one
+        conversion happened. Google may read or set a cookie in your browser to connect that
+        conversion to an ad you clicked earlier. We send no details of your request to Google —
+        not your name, phone number, email address, location, vehicle, or the service you asked
+        for — only the fact that a request was completed.
+      </p>
+
       <h2>Data retention</h2>
       <p>
         We retain service request records and the related communications tied to them for three

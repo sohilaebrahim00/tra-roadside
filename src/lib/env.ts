@@ -64,9 +64,27 @@ export const env = {
   gtmContainerId: readPublic("NEXT_PUBLIC_GTM_CONTAINER_ID"),
   metaPixelId: readPublic("NEXT_PUBLIC_META_PIXEL_ID"),
 
+  // Google Ads conversion tracking. The tag only loads when the ID is set, and
+  // the conversion only fires when the label is set too — both are account
+  // -specific values that belong in configuration, not in source. The label is
+  // the segment after the slash in the send_to Google gives you
+  // ("AW-XXXXXXXX/<label>"), kept separate so the tag ID stays a single value
+  // reusable by any future conversion action.
+  googleAdsId: readPublic("NEXT_PUBLIC_GOOGLE_ADS_ID"),
+  googleAdsConversionLabel: readPublic("NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_LABEL"),
+
   hcaptchaSiteKey: readPublic("NEXT_PUBLIC_HCAPTCHA_SITE_KEY"),
   hcaptchaSecret: readServer("HCAPTCHA_SECRET"),
 };
+
+/**
+ * The `send_to` value for the Google Ads conversion action, or null when
+ * either half is unconfigured — in which case no conversion is ever sent.
+ */
+export const googleAdsConversionSendTo: string | null =
+  env.googleAdsId && env.googleAdsConversionLabel
+    ? `${env.googleAdsId}/${env.googleAdsConversionLabel}`
+    : null;
 
 /** Validated E.164 dispatch phone — null if DISPATCH_PHONE is set but malformed. */
 export const dispatchPhoneE164 = toE164(env.dispatchPhoneRaw);

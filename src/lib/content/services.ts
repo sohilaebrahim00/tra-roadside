@@ -57,8 +57,6 @@ export interface ServiceContent {
   priceNote?: string;
   /** Photographs of this service being performed, for a constrained grid. */
   photos?: ServicePhoto[];
-  /** A titled capability block given real placement on the service page. */
-  highlight?: { title: string; body: string };
 }
 
 export const SERVICES: ServiceContent[] = [
@@ -111,11 +109,6 @@ export const SERVICES: ServiceContent[] = [
     priceBadge: "Battery from $189",
     priceFrom: 189,
     priceNote: "Battery only — installation is quoted by dispatch for your vehicle.",
-    highlight: {
-      title: "Luxury and high-end vehicles, programmed like a dealership",
-      body:
-        "We replace batteries in luxury and high-end vehicles, Range Rover included, and program the vehicle to the new battery the way a dealership would — so your settings carry over and there is no dealer visit to book. Owners typically save over $1,000 against dealership pricing for the same job.",
-    },
     // All six are 612x408 native. The 408x612 portrait is not listed here —
     // it has its own vertical slot in the home page battery section.
     photos: [
@@ -178,10 +171,6 @@ export const SERVICES: ServiceContent[] = [
       {
         q: "What does the warranty cover?",
         a: "A battery replacement includes a 1-year warranty. Keep your invoice for warranty service.",
-      },
-      {
-        q: "Do you replace batteries in luxury vehicles?",
-        a: "Yes, Range Rover included. We also program the vehicle to the new battery the way a dealership would, so your settings carry over and you don't need a dealer appointment — which is where the saving against dealership pricing comes from.",
       },
       {
         q: "What if my car just needs a jump, not a full replacement?",
@@ -295,8 +284,8 @@ export const SERVICES: ServiceContent[] = [
     priceBadge: "From $189",
     priceFrom: 189,
     priceNote: "Tire supplied by TRA. Price is set by wheel size.",
-    summary: "A new tire supplied by TRA and fitted at your location, priced by wheel size.",
-    heroLine: "A new tire, fitted where you're parked.",
+    summary: "A tire supplied by TRA and fitted at your location, priced by wheel size.",
+    heroLine: "A tire, fitted where you're parked.",
     problem:
       "When a tire is damaged beyond a safe repair — a sidewall tear, a blowout, or a puncture too large to plug — it has to be replaced rather than patched. We supply the tire and fit it on site, so you don't need a usable spare in the vehicle.",
     whileYouWait: [

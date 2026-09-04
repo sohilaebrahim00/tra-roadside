@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { BatteryFull, ShieldCheck, LifeBuoy, Check, Gem } from "lucide-react";
+import { BatteryFull, ShieldCheck, LifeBuoy, Check } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { getService } from "@/lib/content/services";
@@ -52,16 +52,6 @@ export function BatteryPromoSection() {
                 Fitted at your location
               </li>
             </ul>
-
-            {service.highlight && (
-              <div className="mt-6 max-w-xl rounded-2xl border border-red-600/30 bg-red-600/10 p-4">
-                <p className="flex items-center gap-2 font-display text-sm font-bold uppercase tracking-wide text-red-400">
-                  <Gem className="h-4 w-4 shrink-0" aria-hidden="true" />
-                  {service.highlight.title}
-                </p>
-                <p className="mt-2 text-sm leading-relaxed text-white/80">{service.highlight.body}</p>
-              </div>
-            )}
 
             <div className="mt-7">
               <Button

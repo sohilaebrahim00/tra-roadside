@@ -9,7 +9,7 @@ insert into service_types (slug, name, needs_destination, description, sort_orde
   ('lockout', 'Vehicle Lockout', false, 'Non-destructive lockout entry, $55-65. Keys locked in the trunk, $120.', 3),
   ('tire-repair-plug-patch', 'Tire Repair — Plug & Patch', false, 'Puncture repaired roadside with a plug or patch, $65-70.', 4),
   ('flat-tire-change', 'Flat Tire Change', false, 'Swap to the spare carried in your vehicle, $65.', 5),
-  ('tire-replacement', 'Tire Replacement', false, 'New tire supplied by TRA and fitted on site — 15 to 20 inch $189, 21 inch and larger $230.', 6),
+  ('tire-replacement', 'Tire Replacement', false, 'Tire supplied by TRA and fitted on site — 15 to 20 inch $189, 21 inch and larger $230.', 6),
   ('stuck-screw-in-tire', 'Stuck Screw in Tire', false, 'Screw or nail removed from the tire and the tire made safe, $70.', 7),
   ('rim-lock-removal', 'Rim Lock Removal', false, 'Seized or keyless wheel lock removed so the wheel can come off, $70.', 8),
   ('fuel-delivery', 'Fuel Delivery', false, 'Gas or diesel delivered roadside, $65 plus the cost of the fuel.', 9),

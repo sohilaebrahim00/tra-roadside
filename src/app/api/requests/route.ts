@@ -15,11 +15,34 @@ import type { ServiceContent } from "@/lib/content/services";
 
 const SMS_CONSENT_TEXT_VERSION = "2026-08-v1";
 
+/** Year/make/model/colour only. Never contains a VIN or an em dash, so it is safe to interpolate into an SMS. */
+function vehicleShort(input: CreateRequestInput): string {
+  return [input.vehicleYear, input.vehicleMake, input.vehicleModel, input.vehicleColor]
+    .map((p) => p?.trim())
+    .filter(Boolean)
+    .join(" ");
+}
+
+/**
+ * " for 2019 Toyota Camry", or "" when no vehicle detail was given.
+ *
+ * The clause carries its own leading space and preposition so the templates
+ * need no punctuation around it. Interpolating the vehicle directly would
+ * render "Battery Replacement for  at 1200 Main St" on a request with blank
+ * vehicle fields — a double space and a dangling "for". Partial data collapses
+ * the same way, since the parts are filtered before joining.
+ */
+function vehicleClause(input: CreateRequestInput): string {
+  const short = vehicleShort(input);
+  return short ? ` for ${short}` : "";
+}
+
 function vehicleSummary(input: CreateRequestInput): string {
-  const parts = [input.vehicleYear, input.vehicleMake, input.vehicleModel, input.vehicleColor].filter(Boolean);
-  let summary = parts.length > 0 ? parts.join(" ") : "Not provided";
+  const short = vehicleShort(input);
+  let summary = short || "Not provided";
   // Dispatch orders the battery from this, so the VIN has to travel with the
-  // notification, not just sit in the database.
+  // notification, not just sit in the database. Email only — the em dash here
+  // is not GSM-7 and would force an SMS to UCS-2 encoding.
   if (input.vehicleVin?.trim()) summary += ` — VIN: ${input.vehicleVin.trim().toUpperCase()}`;
   return summary;
 }
@@ -36,6 +59,10 @@ function buildDispatchVars(input: CreateRequestInput, service: ServiceContent, r
     pickupAddress: input.pickupAddress,
     destinationAddress: input.destinationAddress || "N/A",
     vehicleDetails: vehicleSummary(input),
+    // SMS-safe: shortName and the vehicle clause never carry a non-GSM-7
+    // character, so the dispatch text stays on 7-bit encoding.
+    serviceShort: service.shortName,
+    vehicleClause: vehicleClause(input),
     customerNotes: input.notes || "None",
     trackingUrl,
     dispatchUrl,
@@ -118,7 +145,9 @@ export async function POST(req: NextRequest) {
         customerName: firstNameOf(input.fullName),
         serviceName: service.name,
         pickupAddress: input.pickupAddress,
-        serviceDetails: "",
+        serviceShort: service.shortName,
+        vehicleClause: vehicleClause(input),
+        vehicleText: vehicleShort(input) || "Not provided",
         statusLabel: STATUS_META.new.customerLabel,
         supportPhone: BUSINESS.phoneDisplay,
         trackingUrl,
@@ -228,7 +257,9 @@ export async function POST(req: NextRequest) {
         customerName: firstNameOf(input.fullName),
         serviceName: service.name,
         pickupAddress: input.pickupAddress,
-        serviceDetails: "",
+        serviceShort: service.shortName,
+        vehicleClause: vehicleClause(input),
+        vehicleText: vehicleShort(input) || "Not provided",
         statusLabel: STATUS_META.new.customerLabel,
         supportPhone: BUSINESS.phoneDisplay,
         trackingUrl,

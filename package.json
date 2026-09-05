@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/check-sms-gsm7.mjs && next build",
+    "check:sms": "node scripts/check-sms-gsm7.mjs",
     "start": "next start",
     "lint": "eslint",
     "media:organize": "node scripts/organize-media.mjs",

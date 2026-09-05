@@ -70,7 +70,7 @@ async function notifyCustomer(requestId: string, status: RequestStatus, driverNa
   if (!customer) return;
 
   const { data: tokenRow } = await supabase.from("customer_tracking_tokens").select("token").eq("request_id", requestId).maybeSingle();
-  const trackingUrl = tokenRow ? `${env.siteUrl}/track/${tokenRow.token}` : env.siteUrl;
+  const trackingUrl = tokenRow ? `${env.siteUrl}/t/${tokenRow.token}` : env.siteUrl;
 
   const eventMap: Partial<Record<RequestStatus, Parameters<typeof notify>[0]["event"]>> = {
     driver_en_route: "driver_en_route",

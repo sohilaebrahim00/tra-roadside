@@ -31,6 +31,22 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "i.ytimg.com" },
     ],
   },
+  /**
+   * `/t/<token>` is the short tracking path that goes into SMS; `/track/<token>`
+   * is the original and stays permanently valid, because links already sent to
+   * customers use it and some of those live in message history for months.
+   *
+   * A rewrite rather than a redirect, in both directions of reasoning: the new
+   * short path must not cost an extra round trip inside an SMS link, and the
+   * old path must keep RESOLVING rather than bouncing. `/track/[token]` remains
+   * the real page — this only lets the short path reach it.
+   *
+   * This alias must not be removed while any old link could still be opened.
+   */
+  async rewrites() {
+    return [{ source: "/t/:token", destination: "/track/:token" }];
+  },
+
   async redirects() {
     return REMOVED_SERVICE_SLUGS.map((slug) => ({
       source: `/services/${slug}`,

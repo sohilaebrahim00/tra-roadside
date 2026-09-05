@@ -62,7 +62,7 @@ async function notifyStatusChange(requestId: string, status: RequestStatus, chan
   const customer = request.customers;
   const service = request.service_types;
   const { data: tokenRow } = await admin.from("customer_tracking_tokens").select("token").eq("request_id", requestId).maybeSingle();
-  const trackingUrl = tokenRow ? `${env.siteUrl}/track/${tokenRow.token}` : env.siteUrl;
+  const trackingUrl = tokenRow ? `${env.siteUrl}/t/${tokenRow.token}` : env.siteUrl;
 
   const eventMap: Partial<Record<RequestStatus, Parameters<typeof notify>[0]["event"]>> = {
     accepted: "request_accepted",

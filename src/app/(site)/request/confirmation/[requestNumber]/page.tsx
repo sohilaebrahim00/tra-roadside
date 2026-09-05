@@ -116,7 +116,7 @@ export default async function ConfirmationPage({
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
             {token && (
-              <Button href={`/track/${token}`} size="lg">
+              <Button href={`/t/${token}`} size="lg">
                 View Live Tracking
               </Button>
             )}

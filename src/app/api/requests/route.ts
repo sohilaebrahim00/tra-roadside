@@ -135,7 +135,7 @@ export async function POST(req: NextRequest) {
       customerName: input.fullName,
       createdAt: new Date().toISOString(),
     });
-    const trackingUrl = buildUrl(`/track/${token}`);
+    const trackingUrl = buildUrl(`/t/${token}`);
 
     await notify({
       event: "request_received",
@@ -245,7 +245,7 @@ export async function POST(req: NextRequest) {
       expires_at: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
     });
 
-    const trackingUrl = buildUrl(`/track/${token}`);
+    const trackingUrl = buildUrl(`/t/${token}`);
     const dispatchUrl = buildUrl(`/admin/requests/${request.id}`);
 
     await notify({

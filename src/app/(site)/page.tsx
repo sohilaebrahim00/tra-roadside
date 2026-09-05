@@ -9,6 +9,7 @@ import { WhyChooseSection } from "@/components/home/why-choose-section";
 import { ServiceAreasSection } from "@/components/home/service-areas-section";
 import { GallerySection } from "@/components/home/gallery-section";
 import { VideoSection } from "@/components/home/video-section";
+import { GoogleReviewsSection } from "@/components/home/google-reviews-section";
 import { FaqPreviewSection } from "@/components/home/faq-preview-section";
 import { FinalCtaSection } from "@/components/home/final-cta-section";
 
@@ -38,6 +39,11 @@ export default function HomePage() {
       <ServiceAreasSection />
       <GallerySection />
       <VideoSection />
+      {/* Renders null unless GOOGLE_PLACE_ID + the server Maps key are set AND
+          Google returns real reviews. VideoSection and FaqPreviewSection both
+          carry their own vertical padding, so the page closes cleanly when it
+          is absent. */}
+      <GoogleReviewsSection />
       <FaqPreviewSection />
       <FinalCtaSection />
     </>

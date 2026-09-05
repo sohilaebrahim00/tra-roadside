@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Phone, Mail, Clock, LifeBuoy } from "lucide-react";
+import { Phone, Mail, Clock, LifeBuoy, MapPin } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
@@ -38,6 +38,28 @@ export default function ContactPage() {
             <div className="mt-8 space-y-3 text-sm text-ink-600 dark:text-ink-200">
               <p className="flex items-center gap-2"><Mail className="h-4 w-4 text-red-600" aria-hidden="true" /> {BUSINESS.email}</p>
               <p className="flex items-center gap-2"><Clock className="h-4 w-4 text-red-600" aria-hidden="true" /> {BUSINESS.hours}</p>
+            </div>
+
+            {/*
+              A link to the Google listing, deliberately NOT an embedded map.
+              TRA publishes no street address, and a pin on a map reads as a
+              place you can drive to — which would contradict the LocalBusiness
+              schema this site ships (geo + areaServed, no PostalAddress) and
+              send customers to a location that does not exist.
+            */}
+            <div className="mt-6 rounded-2xl border border-ink-950/8 bg-paper-50 p-4 dark:border-white/10 dark:bg-white/5">
+              <a
+                href={BUSINESS.googleListingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View the TRA listing on Google (opens in a new tab)"
+                className="flex items-center gap-2 text-sm font-semibold text-red-600 hover:text-red-700"
+              >
+                <MapPin className="h-4 w-4 shrink-0" aria-hidden="true" /> Find TRA on Google
+              </a>
+              <p className="mt-2 text-xs leading-relaxed text-ink-500 dark:text-ink-300">
+                {BUSINESS.serviceAreaNote}
+              </p>
             </div>
 
             <p className="mt-8 text-sm text-ink-500 dark:text-ink-300">

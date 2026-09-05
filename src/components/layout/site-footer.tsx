@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Phone, Mail, Clock } from "lucide-react";
+import { Phone, Mail, Clock, PenLine, MapPin } from "lucide-react";
 import { FacebookIcon, InstagramIcon, YoutubeIcon } from "@/components/brand/social-icons";
 import { LogoLockup } from "@/components/brand/logo-mark";
 import { BUSINESS, SERVICE_AREAS } from "@/lib/content/business";
@@ -26,6 +26,29 @@ export function SiteFooter() {
             <p className="flex items-center gap-2">
               <Clock className="h-4 w-4 text-red-500" aria-hidden="true" /> {BUSINESS.hours}
             </p>
+            {/*
+              Asking for a review, not asserting one. No stars and no rating
+              figure here on purpose: any rating shown on the site has to come
+              from the live Places response, never from static markup.
+            */}
+            <a
+              href={BUSINESS.googleReviewUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Leave TRA a review on Google (opens in a new tab)"
+              className="flex items-center gap-2 hover:text-white"
+            >
+              <PenLine className="h-4 w-4 text-red-500" aria-hidden="true" /> Review us on Google
+            </a>
+            <a
+              href={BUSINESS.googleListingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View the TRA listing on Google (opens in a new tab)"
+              className="flex items-center gap-2 hover:text-white"
+            >
+              <MapPin className="h-4 w-4 text-red-500" aria-hidden="true" /> Find us on Google
+            </a>
           </div>
           <div className="mt-6 flex items-center gap-3">
             <a

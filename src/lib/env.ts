@@ -42,6 +42,10 @@ export const env = {
 
   googleMapsApiKey: readPublic("NEXT_PUBLIC_GOOGLE_MAPS_API_KEY"),
   googleMapsServerApiKey: readServer("GOOGLE_MAPS_SERVER_API_KEY"),
+  // Google Business Profile place ID, for the Places Details lookup behind the
+  // homepage reviews section. Never guessed or derived from the short listing
+  // link — an incorrect ID would surface another business's reviews as TRA's.
+  googlePlaceId: readServer("GOOGLE_PLACE_ID"),
 
   twilioAccountSid: readServer("TWILIO_ACCOUNT_SID"),
   twilioAuthToken: readServer("TWILIO_AUTH_TOKEN"),
@@ -130,6 +134,14 @@ export function integrationStatus(): IntegrationStatus[] {
       configured: Boolean(env.googleMapsApiKey),
       envVars: ["NEXT_PUBLIC_GOOGLE_MAPS_API_KEY", "GOOGLE_MAPS_SERVER_API_KEY"],
       docsHint: "Enable Maps JavaScript API, Places API, and Routes API in Google Cloud Console.",
+    },
+    {
+      key: "google-reviews",
+      label: "Google reviews on the home page",
+      configured: Boolean(env.googleMapsServerApiKey && env.googlePlaceId),
+      envVars: ["GOOGLE_MAPS_SERVER_API_KEY", "GOOGLE_PLACE_ID"],
+      docsHint:
+        "Needs the SERVER Maps key (not the NEXT_PUBLIC one) with Places API enabled, plus the Google Business Profile place ID. Until both are set the reviews section renders nothing — it never shows placeholder reviews.",
     },
     {
       key: "twilio",

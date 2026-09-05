@@ -26,6 +26,22 @@ export const BUSINESS = {
    */
   geo: { latitude: 32.869322, longitude: -96.711846 },
   googleListingUrl: "https://maps.app.goo.gl/jArUadnLNCMviYTTA",
+  /**
+   * Opens Google's write-a-review box directly.
+   *
+   * NOT the only copy of this URL. The same literal is hardcoded in two other
+   * places, and all THREE must be changed together if the listing ever moves:
+   *   1. here
+   *   2. the notification_templates rows in Supabase (service_completed, both
+   *      the sms and email channels) — the database is what the app reads
+   *   3. NOTIFICATION_TEMPLATES_FALLBACK in
+   *      src/lib/content/notification-templates.ts, used in demo mode and as
+   *      the seed source of truth
+   * Deliberately not refactored into a template variable for now: the
+   * templates are edited in the admin CMS, and a variable there would be one
+   * more thing to get wrong.
+   */
+  googleReviewUrl: "https://g.page/r/CejARc-2hFzlEAI/review",
   serviceAreaNote: "Service-area business — we dispatch across the Dallas–Fort Worth Metroplex and do not operate a walk-in location.",
   socials: {
     youtube: "https://youtube.com/@tra_roadside?si=lr_-mWLZaXlBPodx",

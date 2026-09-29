@@ -5,11 +5,20 @@ import { LocateFixed, MapPin, Search, AlertTriangle } from "lucide-react";
 import { loadGoogleMaps } from "@/lib/maps/load-google-maps";
 import { useGeolocation } from "@/lib/hooks/use-geolocation";
 import { cn } from "@/lib/utils/cn";
+import type { LocationSource } from "@/lib/types/domain";
 
-export interface LocationValue {
+/** A position on the map. Used for the  prop, which only needs to place
+ *  the marker — where it originally came from is irrelevant for that. */
+export interface LocationPoint {
   lat: number;
   lng: number;
   address: string;
+}
+
+/** What the picker EMITS: a point plus how it was obtained. Dispatch uses the
+ *  source to judge how far to trust the pin, so onChange always states it. */
+export interface LocationValue extends LocationPoint {
+  source: LocationSource;
 }
 
 const DALLAS_CENTER = { lat: 32.7767, lng: -96.797 };
@@ -19,7 +28,7 @@ export function MapPicker({
   value,
   onChange,
 }: {
-  value: LocationValue | null;
+  value: LocationPoint | null;
   onChange: (value: LocationValue) => void;
 }) {
   const { status, coords, request } = useGeolocation();
@@ -47,16 +56,17 @@ export function MapPicker({
   // When we get GPS coords, reverse-geocode and center the map / pin.
   useEffect(() => {
     if (!coords) return;
-    reverseGeocodeAndSet(coords.lat, coords.lng);
+    reverseGeocodeAndSet(coords.lat, coords.lng, "gps");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [coords]);
 
-  async function reverseGeocodeAndSet(lat: number, lng: number) {
+  /** Shared by the GPS fix and the draggable marker, so the caller states which it was. */
+  async function reverseGeocodeAndSet(lat: number, lng: number, source: LocationSource) {
     if (mapsReady && window.google) {
       const geocoder = new window.google.maps.Geocoder();
       geocoder.geocode({ location: { lat, lng } }, (results, geoStatus) => {
         const address = geoStatus === "OK" && results?.[0] ? results[0].formatted_address : `${lat.toFixed(5)}, ${lng.toFixed(5)}`;
-        applyLocation(lat, lng, address);
+        applyLocation(lat, lng, address, source);
       });
       return;
     }
@@ -66,18 +76,18 @@ export function MapPicker({
       const data = await res.json();
       if (data.demo) {
         setDemoNotice(true);
-        applyLocation(lat, lng, `Near ${lat.toFixed(4)}, ${lng.toFixed(4)} (confirm exact address)`);
+        applyLocation(lat, lng, `Near ${lat.toFixed(4)}, ${lng.toFixed(4)} (confirm exact address)`, source);
       } else {
-        applyLocation(lat, lng, data.address ?? `${lat.toFixed(5)}, ${lng.toFixed(5)}`);
+        applyLocation(lat, lng, data.address ?? `${lat.toFixed(5)}, ${lng.toFixed(5)}`, source);
       }
     } catch {
-      applyLocation(lat, lng, `${lat.toFixed(5)}, ${lng.toFixed(5)}`);
+      applyLocation(lat, lng, `${lat.toFixed(5)}, ${lng.toFixed(5)}`, source);
     }
   }
 
-  function applyLocation(lat: number, lng: number, address: string) {
+  function applyLocation(lat: number, lng: number, address: string, source: LocationSource) {
     setManualAddress(address);
-    onChange({ lat, lng, address });
+    onChange({ lat, lng, address, source });
   }
 
   // Initialize the interactive map once ready + we have a starting point.
@@ -98,7 +108,7 @@ export function MapPicker({
     });
     marker.addListener("dragend", () => {
       const pos = marker.getPosition();
-      if (pos) reverseGeocodeAndSet(pos.lat(), pos.lng());
+      if (pos) reverseGeocodeAndSet(pos.lat(), pos.lng(), "pin_adjusted");
     });
     mapObjRef.current = map;
     markerRef.current = marker;
@@ -114,7 +124,7 @@ export function MapPicker({
         if (loc) {
           map.panTo(loc);
           marker.setPosition(loc);
-          applyLocation(loc.lat(), loc.lng(), place.formatted_address ?? manualAddress);
+          applyLocation(loc.lat(), loc.lng(), place.formatted_address ?? manualAddress, "address_selected");
         }
       });
     }
@@ -138,7 +148,7 @@ export function MapPicker({
       if (data.demo) {
         setDemoNotice(true);
         const fallback = coords ?? DALLAS_CENTER;
-        applyLocation(fallback.lat, fallback.lng, manualAddress);
+        applyLocation(fallback.lat, fallback.lng, manualAddress, "typed");
       } else {
         setSearchResults(data.results ?? []);
       }
@@ -217,7 +227,7 @@ export function MapPicker({
                 <button
                   type="button"
                   onClick={() => {
-                    applyLocation(r.lat, r.lng, r.address);
+                    applyLocation(r.lat, r.lng, r.address, "address_selected");
                     setSearchResults([]);
                   }}
                   className="w-full px-3.5 py-2.5 text-left text-sm hover:bg-ink-950/5 dark:hover:bg-white/5"
@@ -232,7 +242,7 @@ export function MapPicker({
         {!mapsReady && !searchResults.length && (
           <button
             type="button"
-            onClick={() => manualAddress.trim().length >= 3 && applyLocation(coords?.lat ?? DALLAS_CENTER.lat, coords?.lng ?? DALLAS_CENTER.lng, manualAddress)}
+            onClick={() => manualAddress.trim().length >= 3 && applyLocation(coords?.lat ?? DALLAS_CENTER.lat, coords?.lng ?? DALLAS_CENTER.lng, manualAddress, "typed")}
             className={cn("mt-2 text-xs font-medium text-red-600 hover:underline", manualAddress.trim().length < 3 && "hidden")}
           >
             Use this address as typed

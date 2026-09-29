@@ -2,7 +2,7 @@
  * Single source of truth for real TRA business facts used across the site
  * (header, footer, structured data, contact page, legal pages).
  *
- * Sourced from an audit of the live site (texasroadside-assistance.com) on
+ * Sourced from an audit of the live site on
  * 2026-08-02. Do NOT invent numbers, prices, or claims beyond what's listed
  * here — anything not confirmed is marked as an editable placeholder.
  */

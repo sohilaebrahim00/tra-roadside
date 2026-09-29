@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { SERVICE_TYPE_SLUGS, VEHICLE_TYPES, CONTACT_METHODS } from "@/lib/types/domain";
+import { SERVICE_TYPE_SLUGS, VEHICLE_TYPES, CONTACT_METHODS, LOCATION_SOURCES } from "@/lib/types/domain";
 
 /**
  * The VIN alphabet excludes I, O and Q by standard (ISO 3779) because they are
@@ -12,6 +12,17 @@ export const locationSchema = z.object({
   pickupLat: z.number().min(-90).max(90),
   pickupLng: z.number().min(-180).max(180),
   pickupAddress: z.string().min(3, "Enter or confirm your location").max(300),
+  /**
+   * How the pin was obtained (GPS, a selected address, a dragged marker, or a
+   * typed address). Optional because a request submitted by any path that
+   * predates this field must still validate.
+   *
+   * Captured and carried on the request payload, but deliberately NOT yet
+   * written to the database: service_requests has no location_source column in
+   * production, and inserting one before the migration runs would fail every
+   * booking. Persisting it is part of the dispatch-notification work.
+   */
+  locationSource: z.enum(LOCATION_SOURCES).optional(),
 });
 
 export const serviceSchema = z.object({

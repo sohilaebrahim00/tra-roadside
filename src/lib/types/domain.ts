@@ -84,6 +84,28 @@ export type VehicleType = (typeof VEHICLE_TYPES)[number];
 export const CONTACT_METHODS = ["call", "sms", "email"] as const;
 export type ContactMethod = (typeof CONTACT_METHODS)[number];
 
+/**
+ * How the pickup coordinates were obtained. Dispatch uses this to judge how
+ * far to trust the pin before rolling a truck: a GPS fix is metres-accurate,
+ * a typed address that fell back to a geocode guess may not be.
+ *
+ * `pin_adjusted` is not in the original three. It exists because the map
+ * marker is draggable, and that path genuinely produces a fourth kind of
+ * coordinate — a position the customer placed deliberately by hand. Folding it
+ * into `typed` would tell dispatch the opposite of the truth about how
+ * reliable the pin is.
+ */
+export const LOCATION_SOURCES = ["gps", "address_selected", "pin_adjusted", "typed"] as const;
+export type LocationSource = (typeof LOCATION_SOURCES)[number];
+
+/** Dispatch-facing labels. Kept ASCII: these are interpolated into the dispatch SMS. */
+export const LOCATION_SOURCE_LABELS: Record<LocationSource, string> = {
+  gps: "GPS",
+  address_selected: "Address selected",
+  pin_adjusted: "Pin adjusted",
+  typed: "Typed manually",
+};
+
 export const APP_ROLES = ["super_admin", "dispatcher", "driver", "content_editor"] as const;
 export type AppRole = (typeof APP_ROLES)[number];
 

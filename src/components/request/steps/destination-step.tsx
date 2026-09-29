@@ -2,7 +2,7 @@
 
 import { useFormContext } from "react-hook-form";
 import { StepShell } from "../step-shell";
-import { MapPicker, type LocationValue } from "../map-picker";
+import { MapPicker, type LocationPoint } from "../map-picker";
 import type { CreateRequestInput } from "@/lib/validation/request";
 
 export function DestinationStep({ onNext, onBack }: { onNext: () => void; onBack: () => void }) {
@@ -10,7 +10,7 @@ export function DestinationStep({ onNext, onBack }: { onNext: () => void; onBack
   const lat = watch("destinationLat");
   const lng = watch("destinationLng");
   const address = watch("destinationAddress");
-  const value: LocationValue | null = lat && lng ? { lat, lng, address: address ?? "" } : null;
+  const value: LocationPoint | null = lat && lng ? { lat, lng, address: address ?? "" } : null;
 
   return (
     <StepShell title="Where should we take it?" description="Tell us your preferred shop, dealership, or destination." onBack={onBack}>

@@ -32,7 +32,17 @@ function normalizeBaseUrl(raw: string): string {
 // domain rather than ever leaking a localhost link to a customer.
 const configuredAppUrl =
   readPublic("NEXT_PUBLIC_APP_URL") || readServer("APP_URL") || readPublic("NEXT_PUBLIC_SITE_URL");
-const PRODUCTION_FALLBACK_URL = "https://texasroadside-assistance.com";
+// Canonical production origin. `www` is not a style choice: the apex
+// 308-redirects to www in production (verified against the live site, path and
+// query preserved), so www is what production actually establishes as
+// canonical. Emitting the apex here would make every canonical URL, sitemap
+// entry and tracking link take an extra redirect hop.
+//
+// The previous domain, texasroadside-assistance.com, was detached from the
+// Vercel project and now returns DEPLOYMENT_NOT_FOUND. It must not appear in
+// any generated URL. Note this is the ONLY place the production origin is
+// written down — everything else derives from env.siteUrl / buildUrl().
+const PRODUCTION_FALLBACK_URL = "https://www.txroadsideassistance.com";
 const DEV_FALLBACK_URL = "http://localhost:3000";
 
 export const env = {
@@ -115,7 +125,7 @@ export function integrationStatus(): IntegrationStatus[] {
       label: "Production app URL",
       configured: env.appUrlExplicitlyConfigured,
       envVars: ["NEXT_PUBLIC_APP_URL"],
-      docsHint: "Set this to your real deployed domain (e.g. https://texasroadside-assistance.com) so tracking links and notifications never reference localhost.",
+      docsHint: "Set this to your real deployed domain (https://www.txroadsideassistance.com) so tracking links and notifications never reference localhost or the retired domain.",
     },
     {
       key: "supabase",

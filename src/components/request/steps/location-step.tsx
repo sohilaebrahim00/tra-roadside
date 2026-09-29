@@ -2,12 +2,12 @@
 
 import { useFormContext } from "react-hook-form";
 import { StepShell } from "../step-shell";
-import { MapPicker, type LocationValue } from "../map-picker";
+import { MapPicker, type LocationPoint } from "../map-picker";
 import type { CreateRequestInput } from "@/lib/validation/request";
 
 export function LocationStep({ onNext }: { onNext: () => void }) {
   const { setValue, watch, formState: { errors }, trigger } = useFormContext<CreateRequestInput>();
-  const value: LocationValue | null =
+  const value: LocationPoint | null =
     watch("pickupLat") && watch("pickupLng")
       ? { lat: watch("pickupLat"), lng: watch("pickupLng"), address: watch("pickupAddress") }
       : null;
@@ -25,6 +25,8 @@ export function LocationStep({ onNext }: { onNext: () => void }) {
           setValue("pickupLat", loc.lat, { shouldValidate: true });
           setValue("pickupLng", loc.lng, { shouldValidate: true });
           setValue("pickupAddress", loc.address, { shouldValidate: true });
+          // Provenance of the pin, for dispatch to judge how far to trust it.
+          setValue("locationSource", loc.source);
         }}
       />
       {errors.pickupAddress && <p className="mt-2 text-sm text-red-600">{errors.pickupAddress.message}</p>}

@@ -3,6 +3,7 @@ import { env } from "@/lib/env";
 import { SERVICES } from "@/lib/content/services";
 import { SERVICE_AREAS } from "@/lib/content/business";
 import { getBlogPosts } from "@/lib/data/blog";
+import { cityServicePairs } from "@/lib/content/city-service-pages";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = env.siteUrl;
@@ -44,6 +45,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
+  // City x Service pages. Only pairs with authored content exist, so this
+  // never emits a URL that would 404 or render a templated doorway page.
+  const cityServiceRoutes = cityServicePairs().map((p) => ({
+    url: `${base}/service-areas/${p.city}/${p.service}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
   const posts = await getBlogPosts();
   const postRoutes = posts.map((p) => ({
     url: `${base}/blog/${p.slug}`,
@@ -52,5 +62,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.5,
   }));
 
-  return [...staticRoutes, ...serviceRoutes, ...areaRoutes, ...postRoutes];
+  return [...staticRoutes, ...serviceRoutes, ...areaRoutes, ...cityServiceRoutes, ...postRoutes];
 }

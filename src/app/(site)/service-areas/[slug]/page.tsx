@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { SERVICE_AREAS, BUSINESS, getServiceArea, nearbyAreas } from "@/lib/content/business";
 import { SERVICES } from "@/lib/content/services";
 import { SERVICE_ICONS } from "@/lib/content/service-icons";
+import { getCityServicePage } from "@/lib/content/city-service-pages";
 import { env } from "@/lib/env";
 
 export function generateStaticParams() {
@@ -82,14 +83,23 @@ export default async function ServiceAreaPage({
             <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
               {SERVICES.map((service) => {
                 const Icon = SERVICE_ICONS[service.slug];
+                // Where a city-specific page has been written for this service,
+                // point at it — that page answers the local intent directly.
+                // Otherwise fall back to the general service page.
+                const localPage = getCityServicePage(city.slug, service.slug);
+                const href = localPage
+                  ? `/service-areas/${city.slug}/${service.slug}`
+                  : `/services/${service.slug}`;
                 return (
                   <Link
                     key={service.slug}
-                    href={`/services/${service.slug}`}
+                    href={href}
                     className="flex items-center gap-3 rounded-xl border border-ink-950/8 bg-white p-4 hover:border-red-600/30 dark:border-white/10 dark:bg-ink-900"
                   >
                     <Icon className="h-5 w-5 shrink-0 text-red-600" aria-hidden="true" />
-                    <span className="text-sm font-medium text-ink-800 dark:text-ink-100">{service.name}</span>
+                    <span className="text-sm font-medium text-ink-800 dark:text-ink-100">
+                      {localPage ? `${service.shortName} in ${city.name}` : service.name}
+                    </span>
                   </Link>
                 );
               })}

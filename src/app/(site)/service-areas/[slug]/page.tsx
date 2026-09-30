@@ -97,18 +97,25 @@ export default async function ServiceAreaPage({
           </div>
 
           <aside className="space-y-6">
-            <div className="rounded-2xl border border-ink-950/8 bg-paper-50 p-6 dark:border-white/10 dark:bg-ink-900">
-              <h3 className="font-display text-base font-semibold text-ink-950 dark:text-white">Nearby areas</h3>
-              <ul className="mt-3 space-y-2">
-                {nearby.map((c) => (
-                  <li key={c.slug}>
-                    <Link href={`/service-areas/${c.slug}`} className="text-sm text-ink-600 hover:text-red-600 dark:text-ink-200">
-                      {c.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {/*
+              Only rendered when the city genuinely has adjacent served cities.
+              Denton has none — nothing TRA covers borders it — so the block is
+              omitted rather than showing an empty "Nearby areas" heading.
+            */}
+            {nearby.length > 0 && (
+              <div className="rounded-2xl border border-ink-950/8 bg-paper-50 p-6 dark:border-white/10 dark:bg-ink-900">
+                <h3 className="font-display text-base font-semibold text-ink-950 dark:text-white">Nearby areas</h3>
+                <ul className="mt-3 space-y-2">
+                  {nearby.map((c) => (
+                    <li key={c.slug}>
+                      <Link href={`/service-areas/${c.slug}`} className="text-sm text-ink-600 hover:text-red-600 dark:text-ink-200">
+                        {c.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
             <div className="rounded-2xl bg-red-600 p-6 text-white">
               <h3 className="font-display text-base font-semibold">Stranded in {city.name}?</h3>
               <p className="mt-2 text-sm text-white/85">Share your exact location and we&apos;ll dispatch the nearest driver.</p>

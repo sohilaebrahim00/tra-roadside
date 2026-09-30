@@ -6,6 +6,7 @@
  * 2026-08-02. Do NOT invent numbers, prices, or claims beyond what's listed
  * here — anything not confirmed is marked as an editable placeholder.
  */
+import { realNeighbors } from "./local-data";
 
 export const BUSINESS = {
   legalName: "Texas Roadside Assistance LLC",
@@ -97,12 +98,17 @@ export function getServiceArea(slug: string) {
   return SERVICE_AREAS.find((c) => c.slug === slug);
 }
 
-/** A few real neighbors per city so location pages don't read as duplicated boilerplate. */
+/**
+ * Cities that genuinely adjoin `slug`, from the verified data in local-data.ts.
+ *
+ * This used to be a deterministic pseudo-spread over the service-area array —
+ * a way of giving each city a different-looking list, with no geography behind
+ * it. It was telling visitors and Google that Denton is near Rockwall and that
+ * Grapevine is near Wylie, which are opposite corners of the metroplex.
+ *
+ * May return fewer than `count`: an edge-of-coverage city like Denton or Wylie
+ * has one served neighbour, and one true neighbour beats five invented ones.
+ */
 export function nearbyAreas(slug: string, count = 4): ServiceArea[] {
-  const idx = SERVICE_AREAS.findIndex((c) => c.slug === slug);
-  if (idx === -1) return SERVICE_AREAS.slice(0, count);
-  const others = SERVICE_AREAS.filter((_, i) => i !== idx);
-  // Deterministic pseudo-spread so each city gets a different-looking list.
-  const start = idx % others.length;
-  return Array.from({ length: count }, (_, i) => others[(start + i * 3) % others.length]);
+  return realNeighbors(slug, SERVICE_AREAS, count);
 }

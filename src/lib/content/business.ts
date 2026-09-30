@@ -20,7 +20,7 @@ export const BUSINESS = {
   /**
    * TRA is registered as a service-area business: it dispatches across the
    * DFW Metroplex and publishes no street address. These coordinates are the
-   * service-area centre from the Google Business listing — they are what goes
+   * service-area center from the Google Business listing — they are what goes
    * into LocalBusiness structured data INSTEAD of a postal address. Never
    * invent a street address to fill the schema; a wrong address in structured
    * data is worse than none at all.

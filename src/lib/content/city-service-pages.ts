@@ -213,11 +213,11 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       "A worn fob that stopped responding in an apartment lot after dark.",
     ],
     localContext:
-      "Garland spans Dallas, Collin and Rockwall counties, and we cover all of it — Historic Downtown Garland, the Travis College Hill neighbourhood and the Firewheel area, plus the approaches off I-30, I-635, TX-66, TX-78, the President George Bush Turnpike and Belt Line Road.",
+      "Garland spans Dallas, Collin and Rockwall counties, and we cover all of it — Historic Downtown Garland, the Travis College Hill neighborhood and the Firewheel area, plus the approaches off I-30, I-635, TX-66, TX-78, the President George Bush Turnpike and Belt Line Road.",
     faqs: [
       {
         q: "How quickly can somebody reach me in Garland?",
-        a: "Dispatch is local to DFW rather than an out-of-state call centre, so the driver sent to you is the nearest one actually working Garland. You will be told what to expect when you call rather than given a number that ignores where you are.",
+        a: "Dispatch is local to DFW rather than an out-of-state call center, so the driver sent to you is the nearest one actually working Garland. You will be told what to expect when you call rather than given a number that ignores where you are.",
       },
       {
         q: "Can you open the car if the fob battery is dead?",
@@ -316,7 +316,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Flat tire in Garland? If you have a usable spare, TRA fits it where you are — driveway, retail lot or the shoulder of I-635. Call for roadside help.",
     intro:
-      "A flat with a good spare in the boot is a twenty-minute problem for somebody with the right tools and a safe way to lift the car. We come out, fit the spare, torque it correctly, and you are on your way without touching a jack yourself.",
+      "A flat with a good spare in the trunk is a twenty-minute problem for somebody with the right tools and a safe way to lift the car. We come out, fit the spare, torque it correctly, and you are on your way without touching a jack yourself.",
     scenarios: [
       "A flat discovered in a retail lot with shopping already in the car.",
       "A blowout on a turnpike shoulder where changing it yourself is not safe.",
@@ -585,10 +585,10 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Locked out in Plano? TRA opens your car without damage — Legacy corporate lots, US-75 and Preston Road. Local DFW dispatch, day or night.",
     intro:
-      "Most Plano lockouts happen in a car park in the middle of a working day, with something waiting at the other end. A driver comes to the vehicle, confirms it is yours, and opens it without damage so the rest of the day proceeds roughly as planned.",
+      "Most Plano lockouts happen in a parking lot in the middle of a working day, with something waiting at the other end. A driver comes to the vehicle, confirms it is yours, and opens it without damage so the rest of the day proceeds roughly as planned.",
     scenarios: [
       "Keys locked in a corporate lot along the Legacy Drive corridor.",
-      "A fob that has stopped responding at a shopping centre off Preston Road.",
+      "A fob that has stopped responding at a shopping center off Preston Road.",
       "Keys shut in the trunk after loading, which is quoted separately from a door.",
       "A second vehicle that sat long enough for its fob battery to die.",
     ],
@@ -596,7 +596,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       "Plano is the largest city in Texas without an interstate running through it — the traffic instead moves on US-75 Central Expressway, the Dallas North Tollway, the Sam Rayburn Tollway, the President George Bush Turnpike and Preston Road. Those tollways bound the city, and most of our lockout calls come from the commercial parking they feed, particularly around the Legacy Drive corporate corridor.",
     faqs: [
       {
-        q: "Can you come to an office car park?",
+        q: "Can you come to an office parking lot?",
         a: "Yes, and a good share of our Plano lockout work is exactly that. Give dispatch the building and the row or level so the driver reaches the car rather than the entrance.",
       },
       {
@@ -641,7 +641,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
         a: "No. Each attempt takes more from a battery that is already low, and it makes the jump harder. Switch everything off and wait.",
       },
       {
-        q: "Can you jump start in a multi-level car park?",
+        q: "Can you jump start in a parking garage?",
         a: "Yes. Tell dispatch the building and level when you call so the driver comes straight to the vehicle.",
       },
     ],
@@ -734,7 +734,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Mobile Tire Repair in Plano, TX",
     title: "Mobile Tire Repair Plano TX",
     metaDescription:
-      "Nail in your tire in Plano? TRA repairs punctures on site with a plug or patch where damage allows, so your spare stays in the boot.",
+      "Nail in your tire in Plano? TRA repairs punctures on site with a plug or patch where damage allows, so your spare stays in the trunk.",
     intro:
       "A tire that keeps needing air is worth repairing before it strands you. Where the puncture is in the tread and within repairable limits, we fix it where the car is parked, which keeps your spare unused and avoids a workshop appointment you would have to sit through.",
     scenarios: [
@@ -790,7 +790,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     faqs: [
       {
         q: "How far out do you cover?",
-        a: "McKinney is within our service area and dispatch is local to DFW rather than an out-of-state call centre. When you call, you will be told what is realistic for your location rather than a generic promise.",
+        a: "McKinney is within our service area and dispatch is local to DFW rather than an out-of-state call center. When you call, you will be told what is realistic for your location rather than a generic promise.",
       },
       {
         q: "Can you open the car if the fob battery is flat?",
@@ -903,7 +903,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       "McKinney's flat tire calls split between the fast corridors — US-75, US-380 and the Sam Rayburn Tollway along the Allen boundary — where failures are sudden, and residential streets around the historic downtown, where they are usually discovered rather than experienced.",
     faqs: [
       {
-        q: "What if my spare has gone flat sitting in the boot?",
+        q: "What if my spare has gone flat sitting in the trunk?",
         a: "It is common, since spares go years untouched. Mention it to dispatch if you are unsure so a driver is not sent for a job that cannot be finished.",
       },
       {

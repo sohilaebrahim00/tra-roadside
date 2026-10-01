@@ -1914,6 +1914,837 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       "allhoursroadside.com/the-colony-roadside-tire-service/",
     ],
   },
+
+  // ===================== ADDISON =====================
+  // Three pages only: All Hours has no Addison battery or tire-repair page,
+  // so there was no source intent to analyse for those two.
+  {
+    city: "addison",
+    service: "lockout",
+    h1: "Car Lockout Service in Addison, TX",
+    title: "Car Lockout Service Addison TX",
+    metaDescription:
+      "Locked out in Addison? TRA opens your car without damage — Belt Line Road, the Dallas North Tollway or near Addison Airport. Local dispatch, day or night.",
+    intro:
+      "Addison packs a great deal of parking into a small town, and a locked car in one of those lots tends to happen when you are already due somewhere. A driver comes to the vehicle, confirms it is yours and opens it without damage.",
+    scenarios: [
+      "Keys locked in a restaurant or office lot along Belt Line Road.",
+      "A fob that stopped responding at a parking garage off the Dallas North Tollway.",
+      "Keys shut in the trunk, which is a different job from a door and priced separately.",
+      "A vehicle left at Addison Airport whose fob died while you were away.",
+    ],
+    localContext:
+      "Addison is a small town almost entirely surrounded by Dallas, with Carrollton to the west and Farmers Branch to the west and south. The Dallas North Tollway runs through it, with Belt Line Road and Keller Springs Road carrying the local traffic, and Addison Airport — a business-aviation field — takes up roughly an eighth of the town's area.",
+    faqs: [
+      {
+        q: "Can you reach a car parked at Addison Airport?",
+        a: "Tell dispatch exactly where the vehicle is standing. We hold no special airport access or authorization, so they will tell you plainly whether a driver can reach that particular spot before you wait on one.",
+      },
+      {
+        q: "Do you come out to restaurant and bar parking?",
+        a: "Yes, and in Addison that is a good share of the calls. Give dispatch the lot and roughly where in it the car is parked.",
+      },
+      {
+        q: "Will I need to prove the car is mine?",
+        a: "Yes. The driver asks for ID or another way to confirm you are entitled to the vehicle before opening it — a short check, and the reason nobody else can have your car opened.",
+      },
+    ],
+    primaryKeyword: "car lockout service Addison TX",
+    secondaryKeywords: ["locked out of car Addison", "car unlock Addison TX", "auto lockout Addison"],
+    longTail: ["locked keys in car Addison TX", "car unlock near me Addison", "24 hour lockout Addison"],
+    intent: "Emergency, near-me, dense-parking.",
+    sourceUrls: ["allhoursroadside.com/addison-auto-lockout-help/"],
+  },
+  {
+    city: "addison",
+    service: "jump-start",
+    h1: "Jump Start Service in Addison, TX",
+    title: "Jump Start Service Addison TX",
+    metaDescription:
+      "Dead battery in Addison? TRA brings a jump start to Belt Line Road, the Dallas North Tollway or Addison Airport parking. Local DFW dispatch, 24/7.",
+    intro:
+      "A car that will not turn over at the end of an evening is almost always a flat battery rather than a fault. We come to the vehicle, jump it, and let you drive home instead of leaving it where it stands overnight.",
+    scenarios: [
+      "A car left at Addison Airport while you travelled.",
+      "Lights left on through a long dinner along Belt Line Road.",
+      "A vehicle that sat in an office lot across a long weekend.",
+      "A battery that has cranked slowly each cold morning this week.",
+    ],
+    localContext:
+      "Addison's defining feature for this kind of call is Addison Airport, which occupies around an eighth of the town and leaves vehicles standing for days at a time. The Dallas North Tollway and Belt Line Road carry everything else.",
+    faqs: [
+      {
+        q: "My car sat while I was away — will a jump be enough?",
+        a: "Usually. A sound battery that discharged from standing will take a jump and recharge as you drive. One near the end of its life often will not, and your driver will say which it looked like.",
+      },
+      {
+        q: "Can you get to a vehicle in airport parking?",
+        a: "Tell dispatch exactly where it is. We have no special airport access, so they will be straight with you about whether a driver can reach that spot.",
+      },
+      {
+        q: "Should I keep trying the ignition?",
+        a: "No. Each attempt draws more from a battery that is already low and makes the jump harder. Switch the lights and stereo off and wait.",
+      },
+    ],
+    primaryKeyword: "jump start service Addison TX",
+    secondaryKeywords: ["dead battery Addison", "jump start near me Addison", "car won't start Addison TX"],
+    longTail: ["24 hour jump start Addison TX", "mobile jump start Addison", "car battery died Addison"],
+    intent: "Emergency, mobile, standing-vehicle.",
+    sourceUrls: ["allhoursroadside.com/addison-jump-start-service/"],
+  },
+  {
+    city: "addison",
+    service: "flat-tire-change",
+    h1: "Flat Tire Change in Addison, TX",
+    title: "Flat Tire Change Addison TX",
+    metaDescription:
+      "Flat tire in Addison? If you have a usable spare, TRA fits it where you are — Belt Line Road, the Tollway or a parking garage. Call for roadside help.",
+    intro:
+      "With a serviceable spare in the vehicle, a flat is a short delay rather than a ruined evening. A driver comes to you, fits the spare and torques it correctly, and you drive on.",
+    scenarios: [
+      "A flat found in a Belt Line Road lot after dinner.",
+      "A blowout on the Dallas North Tollway at speed.",
+      "A tire that went down while the car stood at the airport.",
+      "A locking wheel nut with no key, which has to come off before the wheel will.",
+    ],
+    localContext:
+      "The Dallas North Tollway is the fast road through Addison and the one where sudden failures happen; Belt Line Road and Keller Springs Road account for most of the rest, usually as tires found flat rather than tires that failed.",
+    faqs: [
+      {
+        q: "Can you change a tire inside a parking garage?",
+        a: "Usually yes, if there is room to work safely around the car. Low-clearance garages can be a constraint, so mention it to dispatch when you call.",
+      },
+      {
+        q: "What if there is no spare in the car?",
+        a: "Then fitting one is not an option, and the answer is a replacement tire supplied by us or a tow. Say so when you call so the right help is sent first time.",
+      },
+      {
+        q: "How far can I drive on the spare?",
+        a: "Most spares are limited in speed and distance. Your driver will tell you what yours is rated for so you can plan the next step.",
+      },
+    ],
+    primaryKeyword: "flat tire change Addison TX",
+    secondaryKeywords: ["flat tire service Addison", "tire change near me Addison", "roadside tire change Addison TX"],
+    longTail: ["flat tire Addison TX help", "24 hour tire change Addison", "change flat tire Addison"],
+    intent: "Emergency, near-me.",
+    sourceUrls: ["allhoursroadside.com/addison-tire-change-service/"],
+  },
+
+  // ===================== ALLEN =====================
+  // Three pages: no All Hours jump start or tire-repair page for Allen.
+  // Allen also has the thinnest verified local data in this batch — two
+  // corridors, no districts, no airport — so its local sections are short by
+  // design rather than padded out to match the other cities.
+  {
+    city: "allen",
+    service: "lockout",
+    h1: "Car Lockout Service in Allen, TX",
+    title: "Car Lockout Service Allen TX",
+    metaDescription:
+      "Locked out in Allen? TRA opens your car without damage, anywhere off US-75 or the Sam Rayburn Tollway. Local DFW dispatch, day or night.",
+    intro:
+      "A locked car in Allen usually means a wait somewhere with little around it, because the spare key is at home and home is not walking distance. A driver comes to the vehicle, checks it is yours, and opens it without damage.",
+    scenarios: [
+      "Keys locked in at a retail lot off US-75.",
+      "A fob battery that died while the car sat through a working day.",
+      "Keys shut in the trunk after loading, which is quoted separately from a door.",
+    ],
+    localContext:
+      "Allen sits in Collin County between Plano, McKinney and Frisco, with US-75 Central Expressway running north to south and the Sam Rayburn Tollway crossing the top of the city along the McKinney border.",
+    faqs: [
+      {
+        q: "How quickly can a driver reach Allen?",
+        a: "Allen borders three other areas we cover, so the driver sent is usually already working nearby. Dispatch is local to DFW and will tell you what to expect rather than quote a number that ignores where you are.",
+      },
+      {
+        q: "Can you open it if the fob battery is dead?",
+        a: "Yes. A dead fob is one of the most common reasons people call, and it does not change how the vehicle is opened.",
+      },
+      {
+        q: "Does opening the car damage the lock?",
+        a: "Our drivers use non-destructive entry wherever the vehicle allows it. If a car cannot be opened safely without damage, the driver tells you before starting rather than after.",
+      },
+    ],
+    primaryKeyword: "car lockout service Allen TX",
+    secondaryKeywords: ["locked out of car Allen", "car unlock Allen TX", "auto lockout Allen"],
+    longTail: ["locked keys in car Allen TX", "car unlock near me Allen", "24 hour lockout Allen"],
+    intent: "Emergency, near-me.",
+    sourceUrls: ["allhoursroadside.com/allen-auto-lockout-help/"],
+  },
+  {
+    city: "allen",
+    service: "battery-replacement",
+    h1: "Mobile Battery Replacement in Allen, TX",
+    title: "Car Battery Replacement Allen TX",
+    metaDescription:
+      "Need a car battery in Allen? TRA brings it to you and fits it on site, with installation quoted for your vehicle and a 1-year warranty.",
+    intro:
+      "The awkward part of replacing a battery is getting a car that will not start to a workshop. We remove that by bringing the replacement to the vehicle. The battery price is published; installation is quoted for your specific car, because reaching the battery is quick on some models and slow on others.",
+    scenarios: [
+      "A battery that has already needed jumping once this month.",
+      "A car that will not start after standing over a long weekend.",
+      "Dim lights or slow windows pointing at charging rather than the engine.",
+      "An ageing battery you would rather replace before a cold snap than during one.",
+    ],
+    localContext:
+      "Allen's driving is mostly US-75 commuting with the Sam Rayburn Tollway across the north of the city. A long daily run keeps a weak battery looking healthy, so the failure usually shows up the first morning after the car has stood for a few days.",
+    faqs: [
+      {
+        q: "Do you come out to home addresses?",
+        a: "Yes — most battery work in Allen happens on a driveway, where the car has failed to start first thing.",
+      },
+      {
+        q: "Why is installation quoted rather than published?",
+        a: "Because the work genuinely differs by vehicle. Some batteries are reached in minutes, others need trim or a seat removed. Quoting yours is more honest than an average figure.",
+      },
+      {
+        q: "What does the warranty cover?",
+        a: "A battery replacement includes a 1-year warranty. Keep your invoice — warranty service is processed against it.",
+      },
+    ],
+    primaryKeyword: "car battery replacement Allen TX",
+    secondaryKeywords: ["mobile battery replacement Allen", "car battery service Allen TX", "battery installation Allen"],
+    longTail: ["mobile car battery Allen TX", "battery replaced at home Allen", "car battery keeps dying Allen"],
+    intent: "Commercial, convenience-led.",
+    sourceUrls: ["allhoursroadside.com/allen-battery-replacement-service/"],
+  },
+  {
+    city: "allen",
+    service: "flat-tire-change",
+    h1: "Flat Tire Change in Allen, TX",
+    title: "Flat Tire Change Allen TX",
+    metaDescription:
+      "Flat tire in Allen? If you have a usable spare, TRA fits it where you are — US-75 shoulders, retail lots or at home. Call for roadside help.",
+    intro:
+      "If there is a usable spare in the car, a flat is a short job for someone with the right equipment. We come to you, fit it and torque it properly, so you are not changing a wheel beside Central Expressway.",
+    scenarios: [
+      "A blowout on a US-75 shoulder in moving traffic.",
+      "A flat found in a retail lot with the car already loaded.",
+      "A slow puncture that finally went down overnight.",
+    ],
+    localContext:
+      "US-75 carries Allen's fast traffic, with the Sam Rayburn Tollway along the northern edge. Sudden failures tend to happen on those two; tires found soft in the morning come from everywhere else.",
+    faqs: [
+      {
+        q: "Is it safe to change a wheel on the US-75 shoulder?",
+        a: "We would advise against it. Stay belted in with hazards on and let the driver come to you — standing beside a car on Central Expressway is the genuinely dangerous part.",
+      },
+      {
+        q: "Could the tire be repaired instead?",
+        a: "Often, if the damage is in the tread rather than the sidewall. Tire repair is a separate service and your driver can advise once they see it.",
+      },
+      {
+        q: "What if the spare is flat too?",
+        a: "It happens, since spares sit untouched for years. If you are unsure, tell dispatch so a driver is not sent for a job that cannot be finished.",
+      },
+    ],
+    primaryKeyword: "flat tire change Allen TX",
+    secondaryKeywords: ["flat tire service Allen", "tire change near me Allen", "roadside tire change Allen TX"],
+    longTail: ["flat tire on US-75 Allen", "24 hour tire change Allen", "change flat tire Allen TX"],
+    intent: "Emergency, roadside-safety.",
+    sourceUrls: ["allhoursroadside.com/allen-tire-change-service/"],
+  },
+
+  // ===================== CARROLLTON =====================
+  // Four pages: no All Hours tire-repair page for Carrollton.
+  {
+    city: "carrollton",
+    service: "lockout",
+    h1: "Car Lockout Service in Carrollton, TX",
+    title: "Car Lockout Service Carrollton TX",
+    metaDescription:
+      "Locked out in Carrollton? TRA opens your car without damage — off I-35E, the Bush Turnpike or the Sam Rayburn Tollway. Local dispatch, day or night.",
+    intro:
+      "Carrollton straddles three counties and several major roads, which means a locked car here could be almost anywhere. A driver comes to wherever the vehicle has stopped, confirms it is yours and opens it without damage.",
+    scenarios: [
+      "Keys locked in at a stop off I-35E partway through a journey.",
+      "A fob that stopped responding in a workplace lot during a shift.",
+      "Keys shut in the trunk after loading, which is priced separately from a door.",
+      "A door that locked itself with the engine running on a cold morning.",
+    ],
+    localContext:
+      "Carrollton spans Dallas, Denton and Collin counties — more than any other city we serve except Dallas itself — and is connected by I-35E, the President George Bush Turnpike and the Sam Rayburn Tollway at the far north of the city. It also borders five areas we cover: The Colony, Farmers Branch, Coppell, Addison and Lewisville.",
+    faqs: [
+      {
+        q: "How quickly can a driver reach Carrollton?",
+        a: "Carrollton borders five other areas we cover, so there is usually a driver working nearby. Dispatch is local to DFW rather than an out-of-state call center and will tell you what is realistic for your location.",
+      },
+      {
+        q: "Can you come to a workplace parking lot?",
+        a: "Yes. Give dispatch the building and the row or level so the driver reaches the car rather than the entrance.",
+      },
+      {
+        q: "Do I have to be with the vehicle?",
+        a: "Yes — somebody who can show entitlement to it needs to be there, because that check happens before the car is opened.",
+      },
+    ],
+    primaryKeyword: "car lockout service Carrollton TX",
+    secondaryKeywords: ["locked out of car Carrollton", "car unlock Carrollton TX", "auto lockout Carrollton"],
+    longTail: ["locked keys in car Carrollton TX", "car unlock near me Carrollton", "24 hour lockout Carrollton"],
+    intent: "Emergency, near-me, 24-hour.",
+    sourceUrls: ["allhoursroadside.com/carrollton-auto-lockout-help/"],
+  },
+  {
+    city: "carrollton",
+    service: "jump-start",
+    h1: "Jump Start Service in Carrollton, TX",
+    title: "Jump Start Service Carrollton TX",
+    metaDescription:
+      "Car won't start in Carrollton? TRA brings a jump start to you on I-35E, the Bush Turnpike or at home. Local DFW dispatch, 24/7. Call now.",
+    intro:
+      "A car that clicks instead of starting has run its battery down far more often than it has broken anything. A jump start settles it where the vehicle stands, and you drive on rather than waiting for a recovery truck.",
+    scenarios: [
+      "A vehicle that sat through a long weekend without being started.",
+      "Lights left on in a workplace lot during a shift.",
+      "A car that will not restart after a stop on I-35E.",
+      "A battery that has cranked a little slower every morning this week.",
+    ],
+    localContext:
+      "Carrollton's traffic runs on I-35E through the middle of the city, with the President George Bush Turnpike crossing it and the Sam Rayburn Tollway at the northern end. Long highway commuting usually keeps a battery healthy, so the failures here tend to follow a period of standing rather than a period of driving.",
+    faqs: [
+      {
+        q: "Can you reach me on an I-35E shoulder?",
+        a: "Yes. Give dispatch the nearest exit number and your direction of travel — on a highway that locates you far better than a street address.",
+      },
+      {
+        q: "Will the charge hold after you leave?",
+        a: "If the battery is sound, driving recharges it. If it is failing, it may not survive being switched off again. Your driver will tell you which it appeared to be.",
+      },
+      {
+        q: "What should I do before the driver arrives?",
+        a: "Stop turning the key and switch off the lights, stereo and climate control. Repeated attempts take more from a battery that is already low.",
+      },
+    ],
+    primaryKeyword: "jump start service Carrollton TX",
+    secondaryKeywords: ["dead battery Carrollton", "jump start near me Carrollton", "car won't start Carrollton TX"],
+    longTail: ["24 hour jump start Carrollton TX", "mobile jump start Carrollton", "car battery died Carrollton"],
+    intent: "Emergency, mobile, 24-hour.",
+    sourceUrls: ["allhoursroadside.com/carrollton-jump-start-service/"],
+  },
+  {
+    city: "carrollton",
+    service: "battery-replacement",
+    h1: "Mobile Battery Replacement in Carrollton, TX",
+    title: "Car Battery Replacement Carrollton TX",
+    metaDescription:
+      "Car battery failing in Carrollton? TRA brings the battery to you and fits it on site, with installation quoted for your vehicle and a 1-year warranty.",
+    intro:
+      "Once a battery has been jumped more than once, it is telling you it will not last the winter. We bring the replacement to the vehicle and fit it where it stands. The battery price is published; installation is quoted for your car, because access differs enormously between models.",
+    scenarios: [
+      "A second jump start on the same vehicle inside a month.",
+      "A car that will not start after standing over a holiday.",
+      "Electrical symptoms — dim headlights, slow windows, a resetting clock.",
+      "A battery old enough that you would rather replace it on your own schedule.",
+    ],
+    localContext:
+      "Carrollton's position across Dallas, Denton and Collin counties means a lot of its drivers commute some distance on I-35E or the Bush Turnpike. Those long runs hide a declining battery for months; it usually announces itself the first time the car stands for several days.",
+    faqs: [
+      {
+        q: "Can you fit it at my workplace?",
+        a: "Yes, provided the vehicle is somewhere a driver can work safely. A good share of Carrollton battery work happens in employee parking during a shift.",
+      },
+      {
+        q: "Why is installation quoted separately?",
+        a: "Because it genuinely varies. Some batteries sit on top of the engine; others are under a seat or behind panels. A single published figure would be wrong for a large share of cars.",
+      },
+      {
+        q: "Do you need the VIN?",
+        a: "No. Year, make and model are enough to bring the right battery. The VIN only confirms the exact fit if you can reach it easily.",
+      },
+    ],
+    primaryKeyword: "car battery replacement Carrollton TX",
+    secondaryKeywords: ["mobile battery replacement Carrollton", "car battery service Carrollton TX", "battery installation Carrollton"],
+    longTail: ["mobile car battery Carrollton TX", "battery replaced at home Carrollton", "car battery keeps dying Carrollton"],
+    intent: "Commercial, convenience-led.",
+    sourceUrls: ["allhoursroadside.com/carrollton-battery-replacement-service/"],
+  },
+  {
+    city: "carrollton",
+    service: "flat-tire-change",
+    h1: "Flat Tire Change in Carrollton, TX",
+    title: "Flat Tire Change Carrollton TX",
+    metaDescription:
+      "Flat tire in Carrollton? If you have a usable spare, TRA fits it where you are — I-35E shoulders, the Tollway or at home. Call for roadside help.",
+    intro:
+      "A flat with a good spare in the trunk is a short job for somebody with the right tools and a safe way to lift the car. We come to you, fit it and torque it to specification, and you carry on.",
+    scenarios: [
+      "A blowout on I-35E where the shoulder is narrow and the traffic constant.",
+      "A flat found in a workplace lot at the end of a shift.",
+      "A slow puncture that gave up overnight in a driveway.",
+      "A wheel that will not move because the locking nut key is missing.",
+    ],
+    localContext:
+      "I-35E and the President George Bush Turnpike carry Carrollton's fast traffic, with the Sam Rayburn Tollway at the top of the city. Sudden tire failures here are mostly highway events; the ones found in the morning come from quieter streets.",
+    faqs: [
+      {
+        q: "Can you reach a car on the I-35E shoulder?",
+        a: "Yes. Give dispatch the nearest exit number and direction of travel, and stay inside the vehicle with hazards on until the driver arrives.",
+      },
+      {
+        q: "What if I have no spare?",
+        a: "Then the spare cannot be fitted, and the options are a replacement tire supplied by us or a tow. Tell dispatch so the right help is sent first time.",
+      },
+      {
+        q: "How long can I run on the spare afterwards?",
+        a: "Most spares are limited in speed and distance. Your driver will tell you what yours is rated for so you can plan rather than guess.",
+      },
+    ],
+    primaryKeyword: "flat tire change Carrollton TX",
+    secondaryKeywords: ["flat tire service Carrollton", "tire change near me Carrollton", "roadside tire change Carrollton TX"],
+    longTail: ["flat tire on I-35E Carrollton", "24 hour tire change Carrollton", "change flat tire Carrollton TX"],
+    intent: "Emergency, highway-safety.",
+    sourceUrls: ["allhoursroadside.com/carrollton-tire-change-service/"],
+  },
+
+  // ===================== COPPELL =====================
+  // Three pages: no All Hours jump start or tire-repair page for Coppell.
+  {
+    city: "coppell",
+    service: "lockout",
+    h1: "Car Lockout Service in Coppell, TX",
+    title: "Car Lockout Service Coppell TX",
+    metaDescription:
+      "Locked out in Coppell? TRA opens your car without damage, anywhere inside the ring of freeways that bound the city. Local dispatch, day or night.",
+    intro:
+      "Coppell is unusual among the cities we serve: no freeway actually runs through it. That makes it quiet to live in and slightly awkward to reach quickly, which is worth knowing when you are standing beside a locked car. A driver comes out, confirms the vehicle is yours and opens it without damage.",
+    scenarios: [
+      "Keys locked in at a distribution or office site near the airport boundary.",
+      "A fob that stopped responding in a residential lot after dark.",
+      "Keys shut in the trunk after loading, which is quoted separately from a door.",
+    ],
+    localContext:
+      "No freeway crosses Coppell. Instead it is bounded by them: TX-121 and the Sam Rayburn Tollway to the west and north, I-635 to the south, and the President George Bush Turnpike and I-35E to the east. Part of Dallas/Fort Worth International Airport property lies within the city limits, and Coppell borders Grapevine, Lewisville, Carrollton, Irving and Dallas.",
+    faqs: [
+      {
+        q: "Does it take longer to reach Coppell?",
+        a: "Because no freeway runs through the city, a driver comes in from one of the roads that bound it. Dispatch is local and will tell you honestly what to expect rather than quote an optimistic number.",
+      },
+      {
+        q: "Can you reach a car on airport property?",
+        a: "Part of the airport lies inside Coppell's limits, but we hold no special airport access or authorization. Tell dispatch exactly where the vehicle is and they will say plainly whether a driver can reach it.",
+      },
+      {
+        q: "Will opening the car damage it?",
+        a: "Our drivers use non-destructive entry wherever the vehicle allows. If yours cannot be opened safely without damage, you will be told before anything starts.",
+      },
+    ],
+    primaryKeyword: "car lockout service Coppell TX",
+    secondaryKeywords: ["locked out of car Coppell", "car unlock Coppell TX", "auto lockout Coppell"],
+    longTail: ["locked keys in car Coppell TX", "car unlock near me Coppell", "24 hour lockout Coppell"],
+    intent: "Emergency, near-me, access-aware.",
+    sourceUrls: ["allhoursroadside.com/coppell-auto-lockout-help/"],
+  },
+  {
+    city: "coppell",
+    service: "battery-replacement",
+    h1: "Mobile Battery Replacement in Coppell, TX",
+    title: "Car Battery Replacement Coppell TX",
+    metaDescription:
+      "Need a car battery in Coppell? TRA brings it to the car and fits it on site. Installation quoted for your vehicle, 1-year warranty included.",
+    intro:
+      "Getting a car that will not start to a workshop is the hard part of a battery replacement, and it is harder in a city with no freeway through it. We bring the battery to the vehicle instead. The battery price is published; installation is quoted for your car.",
+    scenarios: [
+      "A battery that has needed jumping more than once recently.",
+      "A car that will not start after standing through a trip away.",
+      "Charging symptoms — dim lights, sluggish windows, a clock that resets.",
+      "A battery you would rather replace before winter than during it.",
+    ],
+    localContext:
+      "Coppell sits inside a ring of major roads rather than on one — TX-121 and the Sam Rayburn Tollway, I-635, the President George Bush Turnpike and I-35E all bound the city without crossing it. Commutes out to those roads are long enough to keep a tired battery looking healthy until the car stands for a few days.",
+    faqs: [
+      {
+        q: "Do you come out to home addresses in Coppell?",
+        a: "Yes — most battery work here happens on a driveway, where the car has failed to start in the morning.",
+      },
+      {
+        q: "Why is installation quoted rather than published?",
+        a: "Because the job differs by vehicle. Some batteries take minutes to reach; others need panels or a seat removed. We quote yours rather than publish an average that would be wrong for many cars.",
+      },
+      {
+        q: "What warranty is included?",
+        a: "A battery replacement includes a 1-year warranty. Keep your invoice, as warranty service is processed against it.",
+      },
+    ],
+    primaryKeyword: "car battery replacement Coppell TX",
+    secondaryKeywords: ["mobile battery replacement Coppell", "car battery service Coppell TX", "battery installation Coppell"],
+    longTail: ["mobile car battery Coppell TX", "battery replaced at home Coppell", "car battery keeps dying Coppell"],
+    intent: "Commercial, convenience-led.",
+    sourceUrls: ["allhoursroadside.com/coppell-battery-replacement-service/"],
+  },
+  {
+    city: "coppell",
+    service: "flat-tire-change",
+    h1: "Flat Tire Change in Coppell, TX",
+    title: "Flat Tire Change Coppell TX",
+    metaDescription:
+      "Flat tire in Coppell? If you have a usable spare, TRA fits it where you are — residential streets or the freeways that bound the city.",
+    intro:
+      "With a usable spare in the vehicle, a flat is a short delay. A driver comes to you, fits the spare and torques it properly, and you carry on without working at the roadside yourself.",
+    scenarios: [
+      "A flat found on a residential street in the morning.",
+      "A blowout on one of the freeways bounding the city, on the way in or out.",
+      "A tire that went down while the car stood near the airport boundary.",
+    ],
+    localContext:
+      "Because no freeway runs through Coppell, sudden tire failures tend to happen on the roads that bound it — I-635, I-35E, the Bush Turnpike and TX-121 — rather than inside the city, where flats are usually discovered rather than experienced.",
+    faqs: [
+      {
+        q: "What if I do not have a usable spare?",
+        a: "Then fitting one is not possible, and the answer is a replacement tire supplied by us or a tow. Tell dispatch when you call so the right help comes first time.",
+      },
+      {
+        q: "Could the tire be repaired instead?",
+        a: "Often, if the damage is in the tread rather than the sidewall. Tire repair is a separate service and your driver can advise once they see it.",
+      },
+      {
+        q: "Is it safe to wait on a freeway shoulder?",
+        a: "Stay inside the vehicle with your seatbelt on and hazards running. Standing beside a car on a live freeway is the most dangerous part of a flat tire.",
+      },
+    ],
+    primaryKeyword: "flat tire change Coppell TX",
+    secondaryKeywords: ["flat tire service Coppell", "tire change near me Coppell", "roadside tire change Coppell TX"],
+    longTail: ["flat tire Coppell TX help", "24 hour tire change Coppell", "change flat tire Coppell"],
+    intent: "Emergency, roadside-safety.",
+    sourceUrls: ["allhoursroadside.com/coppell-tire-change-service/"],
+  },
+
+  // ===================== EULESS =====================
+  // Three pages: no All Hours jump start or tire-repair page for Euless.
+  {
+    city: "euless",
+    service: "lockout",
+    h1: "Car Lockout Service in Euless, TX",
+    title: "Car Lockout Service Euless TX",
+    metaDescription:
+      "Locked out in Euless? TRA opens your car without damage — along the Airport Freeway, TX-360 or near the DFW boundary. Local dispatch, day or night.",
+    intro:
+      "Euless sits right against the south-western edge of the airport, and a lot of its lockouts involve somebody on a schedule they cannot move. A driver comes to the vehicle, confirms it is yours and opens it without damage.",
+    scenarios: [
+      "Keys locked in at a hotel or long-stay lot near the airport boundary.",
+      "A fob that stopped working at the end of a shift.",
+      "Keys shut in the trunk with luggage already loaded, which is priced separately.",
+    ],
+    localContext:
+      "The south-western portion of Dallas/Fort Worth International Airport lies inside Euless city limits, and the city's two main routes — TX-183 Airport Freeway and TX-360 — exist largely to move traffic around it. Euless borders Bedford, Hurst, Grapevine and Irving.",
+    faqs: [
+      {
+        q: "I have a flight — how fast can someone get here?",
+        a: "Tell dispatch when you call. They will give you a realistic answer rather than a reassuring one, because a wrong estimate is worse than an inconvenient truth when you have a departure time.",
+      },
+      {
+        q: "Can you reach a car on airport property?",
+        a: "Part of the airport lies inside Euless, but we hold no special airport access or authorization. Tell dispatch exactly where the vehicle is and they will say whether a driver can reach that spot.",
+      },
+      {
+        q: "I am in a rental car — can you open it?",
+        a: "Yes, but you will still be asked to show entitlement to the vehicle, which for a rental usually means the agreement alongside your ID.",
+      },
+    ],
+    primaryKeyword: "car lockout service Euless TX",
+    secondaryKeywords: ["locked out of car Euless", "car unlock Euless TX", "auto lockout Euless"],
+    longTail: ["locked keys in car Euless TX", "car unlock near me Euless", "locked out near DFW airport Euless"],
+    intent: "Emergency, traveller-adjacent, near-me.",
+    sourceUrls: ["allhoursroadside.com/euless-auto-lockout-help/"],
+  },
+  {
+    city: "euless",
+    service: "battery-replacement",
+    h1: "Mobile Battery Replacement in Euless, TX",
+    title: "Car Battery Replacement Euless TX",
+    metaDescription:
+      "Need a car battery in Euless? TRA brings it to the car and fits it on site near the airport or at home. Installation quoted for your vehicle.",
+    intro:
+      "Cars parked near an airport stand still for days at a time, and standing is what finishes a battery that was already weak. We bring the replacement to the vehicle and fit it there. The battery price is published; installation is quoted for your car.",
+    scenarios: [
+      "A car that would not start on returning from a trip, and struggled again days later.",
+      "A vehicle parked long-term near the airport boundary.",
+      "Dim lights or slow electrics pointing at charging rather than the engine.",
+      "A battery you would rather replace before travelling than after.",
+    ],
+    localContext:
+      "With the south-western portion of DFW International inside its city limits, Euless has an unusual share of vehicles that sit rather than drive. TX-183 Airport Freeway and TX-360 carry the traffic that does move.",
+    faqs: [
+      {
+        q: "Can you fit a battery in long-stay parking?",
+        a: "Tell dispatch exactly where the vehicle is — operator, lot and level. We have no special airport access, so they will confirm whether a driver can reach it before you wait.",
+      },
+      {
+        q: "Why is installation quoted separately?",
+        a: "Because access genuinely differs between vehicles. Some batteries take minutes and others need trim removed, so we quote the job for your car rather than publish an average.",
+      },
+      {
+        q: "What warranty comes with it?",
+        a: "A battery replacement includes a 1-year warranty. Keep your invoice — that is what any claim is handled against.",
+      },
+    ],
+    primaryKeyword: "car battery replacement Euless TX",
+    secondaryKeywords: ["mobile battery replacement Euless", "car battery service Euless TX", "battery installation Euless"],
+    longTail: ["mobile car battery Euless TX", "battery dead after trip Euless", "car battery keeps dying Euless"],
+    intent: "Commercial, traveller-adjacent.",
+    sourceUrls: ["allhoursroadside.com/euless-battery-replacement-service/"],
+  },
+  {
+    city: "euless",
+    service: "flat-tire-change",
+    h1: "Flat Tire Change in Euless, TX",
+    title: "Flat Tire Change Euless TX",
+    metaDescription:
+      "Flat tire in Euless? If you have a usable spare, TRA fits it on site — Airport Freeway, TX-360 or a hotel lot. Call for roadside help.",
+    intro:
+      "A flat on the way to a flight is a different problem from a flat at home. With a usable spare in the vehicle, we fit it where you are rather than adding a tow and a workshop wait to a morning that has no slack in it.",
+    scenarios: [
+      "A flat found in a hotel lot on the morning of a flight.",
+      "A blowout on TX-360 or the Airport Freeway with little shoulder to work on.",
+      "A slow puncture that went down while the car stood for a week.",
+    ],
+    localContext:
+      "TX-183 Airport Freeway and TX-360 carry heavy airport-bound traffic through Euless, and shoulder space on both is limited. That is much of why we would rather come out than have you change a wheel beside them.",
+    faqs: [
+      {
+        q: "I am due at the airport — can you be quick?",
+        a: "Say so when you call. Dispatch will tell you what is genuinely achievable rather than what you would like to hear, so you can decide whether to wait or make other arrangements.",
+      },
+      {
+        q: "What if there is no spare in the car?",
+        a: "Then it cannot be fitted, and the options are a replacement tire from us or a tow. Mention it on the call so the right help is sent.",
+      },
+      {
+        q: "Is it safe to change it on the TX-360 shoulder?",
+        a: "We would rather you did not. Stay in the vehicle with hazards on and let the driver handle it with proper equipment and awareness of the traffic.",
+      },
+    ],
+    primaryKeyword: "flat tire change Euless TX",
+    secondaryKeywords: ["flat tire service Euless", "tire change near me Euless", "roadside tire change Euless TX"],
+    longTail: ["flat tire before flight Euless", "24 hour tire change Euless", "change flat tire Euless TX"],
+    intent: "Emergency, time-critical.",
+    sourceUrls: ["allhoursroadside.com/euless-tire-change-service/"],
+  },
+
+  // ===================== GRAPEVINE =====================
+  // Three pages: no All Hours jump start or tire-repair page for Grapevine.
+  {
+    city: "grapevine",
+    service: "lockout",
+    h1: "Car Lockout Service in Grapevine, TX",
+    title: "Car Lockout Service Grapevine TX",
+    metaDescription:
+      "Locked out in Grapevine? TRA opens your car without damage — TX-114, TX-121 or near the airport. Local DFW dispatch, day or night.",
+    intro:
+      "Grapevine holds more of the airport than any other city, and a great many of the cars parked here belong to people who are mid-journey rather than at home. A driver comes to the vehicle, confirms it is yours and opens it without damage.",
+    scenarios: [
+      "Keys locked in at a hotel lot before an early departure.",
+      "A fob that died while the car stood in long-stay parking.",
+      "Keys shut in the trunk with luggage loaded, which is a separately priced job.",
+      "A rental vehicle whose doors locked behind you.",
+    ],
+    localContext:
+      "Grapevine contains a larger share of Dallas/Fort Worth International Airport than any other city, and it spans three counties — Tarrant, with minor portions in Dallas and Denton. Six major routes cross or bound it: TX-114, TX-121, TX-26, TX-360, I-635 and FM 2499. It borders Euless, Hurst, Coppell and Irving.",
+    faqs: [
+      {
+        q: "Can you reach a car on airport property?",
+        a: "Grapevine contains more of the airport than any other city, but we hold no special access or authorization there. Tell dispatch exactly where the vehicle is standing and they will tell you plainly whether a driver can reach it.",
+      },
+      {
+        q: "I am in a rental — will you still open it?",
+        a: "Yes, with the usual check. For a rental that normally means the rental agreement along with your ID, which protects whoever owns the vehicle.",
+      },
+      {
+        q: "How do I describe where I am?",
+        a: "Give dispatch the hotel, lot or nearest of the main routes. Grapevine has six major roads through it and a great deal of similar-looking parking, so a specific landmark saves real time.",
+      },
+    ],
+    primaryKeyword: "car lockout service Grapevine TX",
+    secondaryKeywords: ["locked out of car Grapevine", "car unlock Grapevine TX", "auto lockout Grapevine"],
+    longTail: ["locked keys in car Grapevine TX", "car unlock near me Grapevine", "locked out near DFW airport Grapevine"],
+    intent: "Emergency, traveller-adjacent, near-me.",
+    sourceUrls: ["allhoursroadside.com/grapevine-auto-lockout-help/"],
+  },
+  {
+    city: "grapevine",
+    service: "battery-replacement",
+    h1: "Mobile Battery Replacement in Grapevine, TX",
+    title: "Car Battery Replacement Grapevine TX",
+    metaDescription:
+      "Need a car battery in Grapevine? TRA brings it to the car and fits it on site — hotels, long-stay lots or at home. Installation quoted per vehicle.",
+    intro:
+      "A battery that failed once after a week of standing will fail again after the next one. We bring the replacement to the vehicle and fit it where it sits, which matters when the car is in a lot rather than a driveway. The battery price is published; installation is quoted for your car.",
+    scenarios: [
+      "A car that needed a jump on returning from a trip and struggled again soon after.",
+      "A vehicle regularly left in long-stay parking for a week at a time.",
+      "Charging symptoms — dim headlights, slow windows, a resetting clock.",
+      "A battery you would rather change before a trip than discover on return.",
+    ],
+    localContext:
+      "Grapevine's share of the airport is the largest of any city, and that shapes the work: a high proportion of vehicles here stand for days rather than commute. Standing is what finishes batteries. TX-114, TX-121, TX-26, TX-360, I-635 and FM 2499 carry the traffic that keeps moving.",
+    faqs: [
+      {
+        q: "Can you fit a battery in a hotel or long-stay lot?",
+        a: "Usually yes, provided the driver can work safely around the vehicle. Give dispatch the operator, lot and level when you call.",
+      },
+      {
+        q: "Why is installation not included in the published price?",
+        a: "Because reaching the battery is a short job on some vehicles and a long one on others. Quoting it for your car is more honest than an average figure that would be wrong for many.",
+      },
+      {
+        q: "What warranty is included?",
+        a: "A battery replacement includes a 1-year warranty. Keep the invoice — warranty service is processed against it.",
+      },
+    ],
+    primaryKeyword: "car battery replacement Grapevine TX",
+    secondaryKeywords: ["mobile battery replacement Grapevine", "car battery service Grapevine TX", "battery installation Grapevine"],
+    longTail: ["mobile car battery Grapevine TX", "battery dead after trip Grapevine", "car battery keeps dying Grapevine"],
+    intent: "Commercial, traveller-adjacent.",
+    sourceUrls: ["allhoursroadside.com/grapevine-battery-replacement-service/"],
+  },
+  {
+    city: "grapevine",
+    service: "flat-tire-change",
+    h1: "Flat Tire Change in Grapevine, TX",
+    title: "Flat Tire Change Grapevine TX",
+    metaDescription:
+      "Flat tire in Grapevine? If you have a usable spare, TRA fits it on site — TX-114, TX-121 or a hotel lot. Call for roadside help.",
+    intro:
+      "With a serviceable spare in the vehicle, a flat is a delay rather than a cancelled journey. A driver comes to you, fits the spare and torques it correctly, which is worth a great deal when there is a departure time attached to the morning.",
+    scenarios: [
+      "A flat found in a hotel lot before an early start.",
+      "A blowout on TX-114 or TX-121 in heavy airport-bound traffic.",
+      "A tire that went down while the car stood in long-stay parking.",
+      "A locking wheel nut whose key is at home rather than in the car.",
+    ],
+    localContext:
+      "Six major routes run through or around Grapevine — TX-114, TX-121, TX-26, TX-360, I-635 and FM 2499 — and most carry airport traffic at speed with limited shoulder. Sudden failures here are usually highway events rather than tires found soft on a quiet street.",
+    faqs: [
+      {
+        q: "I have a flight — can you make it in time?",
+        a: "Tell dispatch when you call and they will be straight with you about what is achievable. A hopeful estimate is worse than an honest one when you have a departure time.",
+      },
+      {
+        q: "What if there is no spare?",
+        a: "Then it cannot be fitted, and the answer is a replacement tire supplied by us or a tow. Say so on the call so the right help is sent first time.",
+      },
+      {
+        q: "Can you change a tire in a parking garage?",
+        a: "Usually yes, if there is room to work safely. Low-clearance garages can be a constraint, so mention it to dispatch.",
+      },
+    ],
+    primaryKeyword: "flat tire change Grapevine TX",
+    secondaryKeywords: ["flat tire service Grapevine", "tire change near me Grapevine", "roadside tire change Grapevine TX"],
+    longTail: ["flat tire before flight Grapevine", "24 hour tire change Grapevine", "change flat tire Grapevine TX"],
+    intent: "Emergency, time-critical, traveller-adjacent.",
+    sourceUrls: ["allhoursroadside.com/grapevine-tire-change-service/"],
+  },
+
+  // ===================== HURST =====================
+  // Three pages: no All Hours jump start or tire-repair page for Hurst.
+  {
+    city: "hurst",
+    service: "lockout",
+    h1: "Car Lockout Service in Hurst, TX",
+    title: "Car Lockout Service Hurst TX",
+    metaDescription:
+      "Locked out in Hurst? TRA opens your car without damage — along TX-183, TX-26 or Loop 820. Local DFW dispatch, day or night.",
+    intro:
+      "Hurst is a mid-cities town with a lot of retail parking and a lot of people passing through on their way somewhere else. A driver comes to the vehicle, confirms it is yours and opens it without damage.",
+    scenarios: [
+      "Keys locked in while loading shopping at a retail lot.",
+      "A fob that stopped responding at the end of a shift.",
+      "Keys shut in the trunk after loading, which is quoted separately from a door.",
+    ],
+    localContext:
+      "Hurst sits in the middle of the mid-cities, bordered by Bedford, Euless, North Richland Hills and Grapevine. TX-183 Airport Freeway and TX-26 run through it with Loop 820 along the western side, and the airport is about thirteen miles away.",
+    faqs: [
+      {
+        q: "Do you cover retail and shopping parking?",
+        a: "Yes, and in Hurst that is a large share of the calls. Give dispatch the lot and roughly where the car is standing in it.",
+      },
+      {
+        q: "Can you open the car if the fob battery is dead?",
+        a: "Yes. A dead fob is among the most common reasons people call, and it does not change how the vehicle is opened.",
+      },
+      {
+        q: "Do I need to be there?",
+        a: "Yes — somebody who can show entitlement to the vehicle needs to be present, because that check happens before it is opened.",
+      },
+    ],
+    primaryKeyword: "car lockout service Hurst TX",
+    secondaryKeywords: ["locked out of car Hurst", "car unlock Hurst TX", "auto lockout Hurst"],
+    longTail: ["locked keys in car Hurst TX", "car unlock near me Hurst", "24 hour lockout Hurst"],
+    intent: "Emergency, near-me, retail-parking.",
+    sourceUrls: ["allhoursroadside.com/hurst-auto-lockout-help/"],
+  },
+  {
+    city: "hurst",
+    service: "battery-replacement",
+    h1: "Mobile Battery Replacement in Hurst, TX",
+    title: "Car Battery Replacement Hurst TX",
+    metaDescription:
+      "Car battery failing in Hurst? TRA brings the battery to you and fits it on site, with installation quoted for your vehicle and a 1-year warranty.",
+    intro:
+      "A battery that has been jumped twice is not going to improve on its own. We bring the replacement to the vehicle and fit it where it stands, so the car never has to be recovered anywhere. The battery price is published; installation is quoted for your specific car.",
+    scenarios: [
+      "A second jump start on the same vehicle within a few weeks.",
+      "A car that will not start after standing over a long weekend.",
+      "Dim lights and sluggish windows pointing at charging rather than the engine.",
+      "A battery old enough that replacing it beats being stranded by it.",
+    ],
+    localContext:
+      "Hurst's driving is mid-cities driving — short hops on TX-26 and TX-183 and around Loop 820, rather than long highway runs. Short trips are hard on a battery, because the alternator never gets long enough to replace what starting took out.",
+    faqs: [
+      {
+        q: "Can you replace it at a retail lot while I shop?",
+        a: "Yes, provided the car is somewhere a driver can work safely. Tell dispatch which lot and roughly where the vehicle is.",
+      },
+      {
+        q: "Why do short trips wear a battery out?",
+        a: "Starting the engine takes a large amount out of the battery, and it takes sustained driving to put it back. A pattern of short local trips never quite catches up, which is why mid-cities batteries often fail earlier than commuter ones.",
+      },
+      {
+        q: "What warranty comes with the battery?",
+        a: "A battery replacement includes a 1-year warranty. Keep your invoice, as that is what warranty service is processed against.",
+      },
+    ],
+    primaryKeyword: "car battery replacement Hurst TX",
+    secondaryKeywords: ["mobile battery replacement Hurst", "car battery service Hurst TX", "battery installation Hurst"],
+    longTail: ["mobile car battery Hurst TX", "battery replaced at home Hurst", "car battery keeps dying Hurst"],
+    intent: "Commercial, convenience-led.",
+    sourceUrls: ["allhoursroadside.com/hurst-battery-replacement-service/"],
+  },
+  {
+    city: "hurst",
+    service: "flat-tire-change",
+    h1: "Flat Tire Change in Hurst, TX",
+    title: "Flat Tire Change Hurst TX",
+    metaDescription:
+      "Flat tire in Hurst? If you have a usable spare, TRA fits it where you are — Loop 820, TX-183 or a retail lot. Call for roadside help.",
+    intro:
+      "With a usable spare in the vehicle, a flat is a short job. A driver comes to you, fits it and torques it correctly, and you carry on rather than kneeling in a parking lot with the shopping still in the car.",
+    scenarios: [
+      "A flat found in a retail lot with the car already loaded.",
+      "A blowout on Loop 820 or the Airport Freeway at speed.",
+      "A slow puncture that finally went down overnight in a driveway.",
+    ],
+    localContext:
+      "Loop 820 and TX-183 carry Hurst's fast traffic and are where sudden failures happen; TX-26 and the retail parking around it account for most of the flats that are simply found rather than experienced.",
+    faqs: [
+      {
+        q: "Is it safe to change a wheel on Loop 820?",
+        a: "We would advise against it. Stay belted in with hazards on and let the driver do it — standing beside a car on a busy loop is the genuinely dangerous part of a flat tire.",
+      },
+      {
+        q: "What if my spare is flat as well?",
+        a: "It is common, since spares sit untouched for years. If you are unsure, say so when you call so a driver is not sent for a job that cannot be finished.",
+      },
+      {
+        q: "Could the tire be repaired instead?",
+        a: "Often, if the damage is in the tread rather than the sidewall. Your driver can advise once they have seen it.",
+      },
+    ],
+    primaryKeyword: "flat tire change Hurst TX",
+    secondaryKeywords: ["flat tire service Hurst", "tire change near me Hurst", "roadside tire change Hurst TX"],
+    longTail: ["flat tire on Loop 820 Hurst", "24 hour tire change Hurst", "change flat tire Hurst TX"],
+    intent: "Emergency, roadside-safety, retail-parking.",
+    sourceUrls: ["allhoursroadside.com/hurst-tire-change-service/"],
+  },
 ];
 
 const BY_KEY = new Map(CITY_SERVICE_PAGES.map((p) => [`${p.city}/${p.service}`, p]));

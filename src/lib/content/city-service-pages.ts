@@ -703,7 +703,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     scenarios: [
       "A blowout on a tollway shoulder with traffic at speed alongside.",
       "A flat found in a corporate lot at the end of the working day.",
-      "A slow puncture that finally went down overnight on the drive.",
+      "A slow puncture that finally went down overnight in the driveway.",
       "A wheel you cannot shift because the locking nut key is missing.",
     ],
     localContext:
@@ -959,6 +959,959 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     sourceUrls: [
       "allhoursroadside.com/mckinney-mobile-tire-service/",
       "allhoursroadside.com/mckinney-roadside-tire-service/",
+    ],
+  },
+
+  // ===================== MESQUITE =====================
+  {
+    city: "mesquite",
+    service: "lockout",
+    h1: "Car Lockout Service in Mesquite, TX",
+    title: "Car Lockout Service Mesquite TX",
+    metaDescription:
+      "Locked out of your car in Mesquite? TRA opens it without damage, from the US-80 corridor to Belt Line Road. Local DFW dispatch, day or night.",
+    intro:
+      "A locked car is a short problem that gets long if nobody comes out. We send a driver to wherever the vehicle is standing, confirm it is yours, and open it without drilling or breaking anything. You keep the key you already have and the door you already had.",
+    scenarios: [
+      "Keys shut in a work vehicle at a yard off the Skyline Industrial Park.",
+      "A door that locked itself while the engine idled on a cold morning.",
+      "Keys locked in the trunk after loading, which is quoted separately from a door.",
+      "A fob that stopped responding in a parking lot after a shift.",
+    ],
+    localContext:
+      "Mesquite sits where several freeways meet — I-635 bisects the city, with I-30 along the north side, I-20 to the south and US-80 running east to west through the northern half. TX-352 and Belt Line Road carry the local traffic. Lockout calls here come from both ends of that: freight and work vehicles near the industrial park, and family cars on residential streets.",
+    faqs: [
+      {
+        q: "Do you open commercial and work vehicles?",
+        a: "Tell dispatch the vehicle when you call. Mesquite has a lot of work traffic and vans and trucks are routine for us, but confirming the vehicle first means the driver arrives with the right approach rather than discovering it on site.",
+      },
+      {
+        q: "How do you prove the car is mine?",
+        a: "The driver asks for ID or another way to show you are entitled to the vehicle before opening it. For a company vehicle that may mean paperwork rather than a personal licence — mention it when you call.",
+      },
+      {
+        q: "Can you come out to a freeway shoulder?",
+        a: "We would rather you were somewhere safer, but if the car is immobile on a shoulder, say so when you call and stay inside the vehicle with hazards on until the driver reaches you.",
+      },
+    ],
+    primaryKeyword: "car lockout service Mesquite TX",
+    secondaryKeywords: ["locked out of car Mesquite", "car unlock Mesquite TX", "auto lockout Mesquite", "vehicle lockout Mesquite"],
+    longTail: ["locked keys in car Mesquite TX", "car unlock near me Mesquite", "24 hour car lockout Mesquite"],
+    intent: "Emergency, near-me, 24-hour.",
+    sourceUrls: ["allhoursroadside.com/mesquite-lockout-service/"],
+  },
+  {
+    city: "mesquite",
+    service: "jump-start",
+    h1: "Jump Start Service in Mesquite, TX",
+    title: "Jump Start Service Mesquite TX",
+    metaDescription:
+      "Dead battery in Mesquite? TRA brings a jump start to you on I-635, US-80 or at home. Local DFW dispatch, 24/7. Call now.",
+    intro:
+      "A car that cranks slowly and then gives up has almost always run its battery down rather than broken something. A jump start settles it where the vehicle sits, and you drive on under your own power instead of waiting for a tow truck you did not need.",
+    scenarios: [
+      "A vehicle that sat through a long weekend without being started.",
+      "Lights or an interior lamp left on overnight on a driveway.",
+      "A battery that has cranked a little slower every morning for a fortnight.",
+      "A work truck that stood at a yard over a shutdown period.",
+    ],
+    localContext:
+      "Mesquite's drivers rack up freeway miles — I-635 through the middle of the city, I-30 to the north, I-20 to the south and US-80 east to west. Long freeway running usually keeps a battery healthy, which is why the failures here tend to show up after a car has been standing rather than after a drive.",
+    faqs: [
+      {
+        q: "Will a jump start fix it for good?",
+        a: "It fixes it for now. Whether the battery holds that charge depends on its condition, and your driver will tell you what they saw rather than guess on your behalf.",
+      },
+      {
+        q: "What should I do before the driver arrives?",
+        a: "Stop turning the key, and switch off the stereo, lights and climate control. Repeated attempts take more out of a battery that is already low and make the jump harder.",
+      },
+      {
+        q: "Can you jump start a diesel truck?",
+        a: "Give dispatch the vehicle details when you request help. Larger diesel engines need more from the equipment, so we would rather confirm it up front than send a driver who cannot finish the job.",
+      },
+    ],
+    primaryKeyword: "jump start service Mesquite TX",
+    secondaryKeywords: ["dead battery Mesquite", "jump start near me Mesquite", "car won't start Mesquite TX", "mobile jump start Mesquite"],
+    longTail: ["24 hour jump start Mesquite TX", "battery boost Mesquite", "car battery died Mesquite TX"],
+    intent: "Emergency, mobile, 24-hour.",
+    sourceUrls: ["allhoursroadside.com/mesquite-jump-start-service/"],
+  },
+  {
+    city: "mesquite",
+    service: "battery-replacement",
+    h1: "Mobile Battery Replacement in Mesquite, TX",
+    title: "Car Battery Replacement Mesquite TX",
+    metaDescription:
+      "Car battery failing in Mesquite? TRA brings the battery to you and fits it on site, with installation quoted for your vehicle and a 1-year warranty.",
+    intro:
+      "Once a battery has stopped holding charge, jumping it again only delays the next failure. We bring the replacement to the vehicle and fit it where it stands. The battery price is published; installation is quoted for your specific vehicle, because reaching the battery is a five-minute job on some cars and a much longer one on others.",
+    scenarios: [
+      "A second jump start on the same vehicle inside a month.",
+      "A car that will not start after standing through a holiday.",
+      "Dim headlights, slow windows or a clock that resets — charging symptoms rather than engine ones.",
+      "A battery old enough that you would rather replace it on your terms than on a freeway shoulder.",
+    ],
+    localContext:
+      "A weakening battery can hide for months behind a daily freeway commute on I-635 or US-80, because a long drive keeps putting charge back in. It usually reveals itself the first time the car stands for several days, which is why so many Mesquite battery calls come on a Monday rather than mid-week.",
+    faqs: [
+      {
+        q: "Can you replace the battery at my workplace?",
+        a: "Yes, provided the vehicle is somewhere a driver can work safely. A good share of our Mesquite battery work happens in employee parking during a shift.",
+      },
+      {
+        q: "Why is installation quoted rather than published?",
+        a: "Because the job genuinely differs by vehicle. Some batteries sit on top of the engine; others are under a seat or behind trim. A single published figure would be wrong for a large share of the cars we see.",
+      },
+      {
+        q: "What warranty comes with the battery?",
+        a: "A battery replacement includes a 1-year warranty. Keep your invoice — that is what any warranty claim is handled against.",
+      },
+    ],
+    primaryKeyword: "car battery replacement Mesquite TX",
+    secondaryKeywords: ["mobile battery replacement Mesquite", "car battery service Mesquite TX", "battery installation Mesquite"],
+    longTail: ["mobile car battery Mesquite TX", "battery replaced at home Mesquite", "car battery keeps dying Mesquite"],
+    intent: "Commercial, convenience-led.",
+    sourceUrls: ["allhoursroadside.com/mesquite-battery-replacement-service/"],
+  },
+  {
+    city: "mesquite",
+    service: "flat-tire-change",
+    h1: "Flat Tire Change in Mesquite, TX",
+    title: "Flat Tire Change Mesquite TX",
+    metaDescription:
+      "Flat tire in Mesquite? If you have a usable spare, TRA fits it where you are — I-635, US-80 or your driveway. Call for roadside help.",
+    intro:
+      "With a serviceable spare in the vehicle, a flat is a short delay rather than a lost day. A driver comes to you, fits the spare and torques it properly, and you carry on. Nobody has to kneel beside a freeway with traffic passing a metre away.",
+    scenarios: [
+      "A blowout on a freeway shoulder where getting out of the car is the real hazard.",
+      "A flat found in a parking lot at the end of a shift.",
+      "A slow puncture that finally went down overnight at home.",
+      "A wheel that will not come off because the locking nut key is missing.",
+    ],
+    localContext:
+      "Mesquite is a freeway city — I-635 bisects it and I-30, I-20 and US-80 bound or cross it — and heavy freight running those routes, including the rail intermodal traffic around the Skyline Industrial Park, puts a steady supply of debris on the road. Most of our sudden flats here happen at freeway speed rather than on a side street.",
+    faqs: [
+      {
+        q: "Is it safe to change it myself on the shoulder of I-635?",
+        a: "We would strongly advise against it. Stay belted in with hazards on and let the driver come to you. Standing beside a vehicle on a busy freeway is the genuinely dangerous part of a flat tire.",
+      },
+      {
+        q: "What if there is no spare in the car?",
+        a: "Then fitting one is not an option, and the answer is a replacement tire supplied by us or a tow. Tell dispatch when you call so the right help is sent first time.",
+      },
+      {
+        q: "How far can I drive on the spare?",
+        a: "Most spares are limited in both speed and distance. Your driver will tell you what yours is rated for so you can plan the next step rather than guess at it.",
+      },
+    ],
+    primaryKeyword: "flat tire change Mesquite TX",
+    secondaryKeywords: ["flat tire service Mesquite", "tire change near me Mesquite", "roadside tire change Mesquite TX"],
+    longTail: ["flat tire on I-635 Mesquite", "24 hour tire change Mesquite", "change flat tire Mesquite TX"],
+    intent: "Emergency, roadside-safety, near-me.",
+    sourceUrls: ["allhoursroadside.com/mesquite-tire-change-service/"],
+  },
+  {
+    city: "mesquite",
+    service: "tire-repair-plug-patch",
+    h1: "Mobile Tire Repair in Mesquite, TX",
+    title: "Mobile Tire Repair Mesquite TX",
+    metaDescription:
+      "Nail in your tire in Mesquite? TRA repairs punctures on site with a plug or patch where the damage allows, so your spare stays where it is.",
+    intro:
+      "A tire losing air slowly is worth repairing before it becomes a flat at freeway speed. Where the damage is in the tread and within repairable limits, we fix it where the vehicle is parked and leave your spare untouched.",
+    scenarios: [
+      "A screw picked up near a freight yard that has started weeping air.",
+      "A tire that needs topping up every few days.",
+      "A pressure warning that keeps coming back after being cleared.",
+      "A puncture found at home that you would rather repair than run on the spare.",
+    ],
+    localContext:
+      "The freight traffic that makes Mesquite's freeways busy also makes them a reliable source of road debris — nails, screws and fragments shed around the US-80 and I-635 corridors and the industrial traffic near Skyline. Catching one while it is still a slow leak is the difference between a repair and a shoulder call.",
+    faqs: [
+      {
+        q: "Should I pull the screw out first?",
+        a: "No — leave it in place. While it sits in the tread it is partly sealing the hole. Pulling it out usually turns a slow leak into a flat tire before anyone reaches you.",
+      },
+      {
+        q: "Can every puncture be repaired?",
+        a: "No. Damage in or near the sidewall, or beyond a certain size in the tread, cannot be repaired safely. Your driver will tell you what they find rather than patch something that should not be patched.",
+      },
+      {
+        q: "Will the repair hold at freeway speed?",
+        a: "A correctly placed tread repair is a proper, durable repair rather than a temporary one. If your driver has doubts about the tire staying in service, they will say so.",
+      },
+    ],
+    primaryKeyword: "mobile tire repair Mesquite TX",
+    secondaryKeywords: ["tire repair Mesquite", "puncture repair Mesquite TX", "roadside tire repair Mesquite"],
+    longTail: ["nail in tire Mesquite TX", "mobile tire repair near me Mesquite", "tire losing air Mesquite"],
+    intent: "Time-sensitive, convenience-led, mobile.",
+    sourceUrls: ["allhoursroadside.com/mesquite-mobile-tire-service/"],
+  },
+
+  // ===================== RICHARDSON =====================
+  {
+    city: "richardson",
+    service: "lockout",
+    h1: "Car Lockout Service in Richardson, TX",
+    title: "Car Lockout Service Richardson TX",
+    metaDescription:
+      "Locked out in Richardson? TRA opens your car without damage — Telecom Corridor lots, Galatyn Park, or anywhere off US-75. Local dispatch, day or night.",
+    intro:
+      "Most Richardson lockouts happen in the middle of a working day, in a company lot, with a meeting or a school pickup already slipping. A driver comes to the vehicle, confirms you are entitled to it, and opens it without damage so the day carries on roughly as planned.",
+    scenarios: [
+      "Keys locked in a car in a Telecom Corridor office lot during the day.",
+      "A fob that stopped responding at a Galatyn Park garage after an event.",
+      "Keys shut in the trunk, which is a different job from a door and priced separately.",
+      "A second vehicle that sat long enough for its fob battery to die.",
+    ],
+    localContext:
+      "Richardson runs north to south along US-75 Central Expressway, with I-635 at the southern end and the President George Bush Turnpike along the northern border. Between them sit the Telecom Corridor and Galatyn Park, where a large share of the city's cars spend the working day parked rather than moving — which is exactly where lockouts happen.",
+    faqs: [
+      {
+        q: "Can you reach me in a corporate parking garage?",
+        a: "Yes, and much of our Richardson lockout work is exactly that. Give dispatch the building and the level, because that is usually the difference between a driver finding you quickly and circling the site.",
+      },
+      {
+        q: "Do I need to be with the car?",
+        a: "Yes. Somebody who can show entitlement to the vehicle needs to be present, because that check happens before it is opened.",
+      },
+      {
+        q: "Will the car alarm go off?",
+        a: "It can, depending on the vehicle. It is not a problem — your driver will talk you through it, and it stops once the car is open and the key or fob is present.",
+      },
+    ],
+    primaryKeyword: "car lockout service Richardson TX",
+    secondaryKeywords: ["locked out of car Richardson", "car unlock Richardson TX", "auto lockout Richardson", "vehicle lockout Telecom Corridor"],
+    longTail: ["locked keys in car Richardson TX", "car unlock near me Richardson", "24 hour lockout Richardson"],
+    intent: "Emergency, workday-urgent, near-me.",
+    sourceUrls: ["allhoursroadside.com/richardson-auto-lockout-help/"],
+  },
+  {
+    city: "richardson",
+    service: "jump-start",
+    h1: "Jump Start Service in Richardson, TX",
+    title: "Jump Start Service Richardson TX",
+    metaDescription:
+      "Car won't start in Richardson? TRA brings a jump start to Telecom Corridor lots, Galatyn Park or your driveway. Local DFW dispatch, 24/7.",
+    intro:
+      "A car that clicks instead of starting at five o'clock is a flat battery far more often than it is a fault. We come to the vehicle, start it, and let you drive home rather than arranging a recovery you do not need.",
+    scenarios: [
+      "A car that sat in an office lot through several days of remote working.",
+      "Headlights left on during a long day at a campus off US-75.",
+      "The first properly cold morning finding a battery that was already marginal.",
+      "A vehicle that has needed a longer crank each morning for a week.",
+    ],
+    localContext:
+      "Richardson's working pattern is unusual for the metroplex: a dense concentration of office parking in the Telecom Corridor and around Galatyn Park, fed by US-75 and the President George Bush Turnpike. Cars that commute daily tend to keep their charge. Cars that sit in a company lot for three days while someone works from home do not.",
+    faqs: [
+      {
+        q: "My car sat all week — will a jump be enough?",
+        a: "Usually, yes. A sound battery that simply discharged while standing will take a jump and recharge as you drive. One near the end of its life often will not, and your driver will tell you which it appeared to be.",
+      },
+      {
+        q: "Can you get to a car on an upper garage level?",
+        a: "Yes. Tell dispatch the building and level when you call so the driver comes straight to the vehicle rather than hunting for it.",
+      },
+      {
+        q: "Is it bad to keep trying the ignition?",
+        a: "Yes. Each attempt draws more from a battery that is already low, and it makes the eventual jump harder. Switch everything off and wait.",
+      },
+    ],
+    primaryKeyword: "jump start service Richardson TX",
+    secondaryKeywords: ["dead battery Richardson", "jump start near me Richardson", "car won't start Richardson TX", "mobile jump start Richardson"],
+    longTail: ["24 hour jump start Richardson TX", "jump start Telecom Corridor", "car battery died at work Richardson"],
+    intent: "Emergency, workday-urgent, mobile.",
+    sourceUrls: ["allhoursroadside.com/richardson-jump-start-service/"],
+  },
+  {
+    city: "richardson",
+    service: "battery-replacement",
+    h1: "Mobile Battery Replacement in Richardson, TX",
+    title: "Car Battery Replacement Richardson TX",
+    metaDescription:
+      "Need a car battery in Richardson? TRA brings it to you and fits it on site — office lots off US-75 or at home. Installation quoted per vehicle.",
+    intro:
+      "Replacing a battery normally means surrendering the car for half a day, which is awkward when the car is the thing that will not start. We bring the battery to the vehicle instead. The battery price is published; installation is quoted for your specific car because access varies so much between models.",
+    scenarios: [
+      "A battery that has now needed jumping more than once.",
+      "A car that fails to start after standing in a company lot over a long weekend.",
+      "Electrical behaviour pointing at charging rather than the engine.",
+      "A battery you would rather replace during a working day than on a January morning.",
+    ],
+    localContext:
+      "Richardson's commute along US-75 and the President George Bush Turnpike is long enough to keep a tired battery looking healthy. The failure usually appears in a Telecom Corridor or Galatyn Park lot after the car has stood for a few days, which is also the easiest place for us to come and fit a replacement while you work.",
+    faqs: [
+      {
+        q: "Can this be done while I am at work?",
+        a: "Yes, as long as the car is somewhere a driver can work safely. Give dispatch the building, level and bay and you can carry on with the day.",
+      },
+      {
+        q: "Do you need my VIN?",
+        a: "No. Year, make and model are enough to bring the right battery. The VIN simply confirms the exact fit if you can reach it without effort.",
+      },
+      {
+        q: "What does the warranty cover?",
+        a: "A battery replacement includes a 1-year warranty. Keep the invoice, as that is what warranty service is processed against.",
+      },
+    ],
+    primaryKeyword: "car battery replacement Richardson TX",
+    secondaryKeywords: ["mobile battery replacement Richardson", "car battery service Richardson TX", "battery installation Richardson"],
+    longTail: ["mobile car battery Richardson TX", "battery replaced at office Richardson", "car battery keeps dying Richardson"],
+    intent: "Commercial, convenience-led, comparison-aware.",
+    sourceUrls: [
+      "allhoursroadside.com/richardson-battery-replacement-service/",
+      "allhoursroadside.com/richardson-car-battery-service/",
+    ],
+  },
+  {
+    city: "richardson",
+    service: "flat-tire-change",
+    h1: "Flat Tire Change in Richardson, TX",
+    title: "Flat Tire Change Richardson TX",
+    metaDescription:
+      "Flat tire in Richardson? If you have a usable spare, TRA fits it where you are — US-75 shoulders, office lots or at home. Call for roadside help.",
+    intro:
+      "If there is a usable spare in the vehicle, a roadside change is the quickest route back to normal. A driver fits it properly and torques it to specification, and you drive on — without changing a wheel in work clothes beside Central Expressway.",
+    scenarios: [
+      "A blowout on a US-75 shoulder in moving traffic.",
+      "A flat found in an office lot at the end of the working day.",
+      "A slow puncture that gave up overnight on a residential street.",
+      "A locking wheel nut with no key, which has to be dealt with before the wheel moves.",
+    ],
+    localContext:
+      "US-75 Central Expressway carries most of Richardson's through-traffic, with the President George Bush Turnpike across the north and I-635 at the southern end. Shoulder space on US-75 through the city is tight, which is much of why we would rather come to you than have you attempt a change beside it.",
+    faqs: [
+      {
+        q: "Is it safe to wait on the shoulder of US-75?",
+        a: "Stay inside the vehicle with your seatbelt on and hazards running. Standing beside a car on Central Expressway is the most dangerous part of a flat tire, by a wide margin.",
+      },
+      {
+        q: "Could the tire be repaired instead of changed?",
+        a: "Often, if the damage is in the tread rather than the sidewall. Tire repair is a separate service and your driver can advise which makes sense once they see the tire.",
+      },
+      {
+        q: "What if my spare has gone flat in the trunk?",
+        a: "It happens, since spares sit untouched for years. If you are unsure, say so when you call and we will plan for it rather than send a driver who cannot finish the job.",
+      },
+    ],
+    primaryKeyword: "flat tire change Richardson TX",
+    secondaryKeywords: ["flat tire service Richardson", "tire change near me Richardson", "roadside tire change Richardson TX"],
+    longTail: ["flat tire on US-75 Richardson", "24 hour tire change Richardson", "change flat tire Richardson TX"],
+    intent: "Emergency, roadside-safety.",
+    sourceUrls: ["allhoursroadside.com/richardson-tire-change-service/"],
+  },
+  {
+    city: "richardson",
+    service: "tire-repair-plug-patch",
+    h1: "Mobile Tire Repair in Richardson, TX",
+    title: "Mobile Tire Repair Richardson TX",
+    metaDescription:
+      "Picked up a nail in Richardson? TRA repairs punctures on site with a plug or patch where damage allows — office lots, driveways, anywhere off US-75.",
+    intro:
+      "A tire that keeps needing air is worth repairing before it strands you. Where the puncture is in the tread and within repairable limits, we repair it where the car is parked, which keeps your spare unused and saves a workshop appointment you would have to sit through.",
+    scenarios: [
+      "A pressure warning that returns a day or two after being cleared.",
+      "A screw found in the tread during a check before a long drive.",
+      "One tire that always reads lower than the other three.",
+      "A puncture you would rather fix than run on a speed-limited spare.",
+    ],
+    localContext:
+      "Richardson's tire work is mostly slow leaks rather than sudden failures: cars that spend the day parked in Telecom Corridor and Galatyn Park lots give their owners time to notice a tire going down, rather than discovering it at speed on US-75.",
+    faqs: [
+      {
+        q: "Can you repair it in my office parking lot?",
+        a: "Yes, provided there is safe space around the vehicle. Most of our Richardson tire repairs happen in workplace parking during the day.",
+      },
+      {
+        q: "How do I know if it can be repaired?",
+        a: "Tread punctures within a certain size are repairable; sidewall damage is not. Your driver assesses it at the car and tells you before doing anything.",
+      },
+      {
+        q: "Is a repaired tire safe for a long trip?",
+        a: "A correct tread repair is a normal, durable repair. If your driver is not confident the tire should stay in service, they will tell you instead of repairing it and leaving.",
+      },
+    ],
+    primaryKeyword: "mobile tire repair Richardson TX",
+    secondaryKeywords: ["tire repair Richardson", "puncture repair Richardson TX", "roadside tire repair Richardson"],
+    longTail: ["nail in tire Richardson TX", "mobile tire repair near me Richardson", "tire keeps losing air Richardson"],
+    intent: "Time-sensitive, convenience-led.",
+    sourceUrls: [
+      "allhoursroadside.com/richardson-mobile-tire-service/",
+      "allhoursroadside.com/richardson-roadside-tire-service/",
+    ],
+  },
+
+  // ===================== FRISCO =====================
+  {
+    city: "frisco",
+    service: "lockout",
+    h1: "Car Lockout Service in Frisco, TX",
+    title: "Car Lockout Service Frisco TX",
+    metaDescription:
+      "Locked out in Frisco? TRA opens your car without damage — anywhere off the Dallas North Tollway, Preston Road or US-380. Local dispatch, day or night.",
+    intro:
+      "Frisco is a driving city with very little within walking distance of where you parked, so a locked car tends to strand you properly rather than merely annoy you. A driver comes out, confirms the vehicle is yours and opens it without damage.",
+    scenarios: [
+      "Keys locked in while unloading at a sports or event venue.",
+      "A fob battery that died in a parking lot off Preston Road.",
+      "Keys shut in the trunk after loading, which is quoted separately from a door.",
+      "A door that locked itself with the engine running on a cold morning.",
+    ],
+    localContext:
+      "Frisco is bounded and crossed by toll roads rather than interstates: the Dallas North Tollway runs north to south, the Sam Rayburn Tollway cuts across the south of the city, and Preston Road and US-380 carry much of the rest. We cover all of it, and the city borders four other areas we serve — Plano, The Colony, McKinney and Allen — so a driver is rarely far away.",
+    faqs: [
+      {
+        q: "How long will it take to reach me in Frisco?",
+        a: "Dispatch is local to DFW rather than an out-of-state call center, and Frisco borders four other areas we cover, so the driver sent is the nearest one genuinely working the area. You will be told what to expect when you call.",
+      },
+      {
+        q: "Can you open the car if the fob battery is dead?",
+        a: "Yes. A dead fob is among the most common reasons people call and it does not change how the vehicle is opened.",
+      },
+      {
+        q: "Will opening it damage anything?",
+        a: "Our drivers use non-destructive entry wherever the vehicle allows. If a particular car cannot be opened safely without damage, the driver tells you before starting rather than afterwards.",
+      },
+    ],
+    primaryKeyword: "car lockout service Frisco TX",
+    secondaryKeywords: ["locked out of car Frisco", "car unlock Frisco TX", "auto lockout Frisco", "vehicle lockout Frisco"],
+    longTail: ["locked keys in car Frisco TX", "car unlock near me Frisco", "24 hour car lockout Frisco"],
+    intent: "Emergency, near-me, 24-hour.",
+    sourceUrls: ["allhoursroadside.com/frisco-lockout-service/"],
+  },
+  {
+    city: "frisco",
+    service: "jump-start",
+    h1: "Jump Start Service in Frisco, TX",
+    title: "Jump Start Service Frisco TX",
+    metaDescription:
+      "Dead battery in Frisco? TRA brings a jump start to you on the Tollway, Preston Road or at home. Local DFW dispatch, 24/7. Call now.",
+    intro:
+      "A car that will not turn over is usually a flat battery rather than a serious fault, and a jump start resolves it where the vehicle stands. In a city built around driving, that is the difference between a delay and a lost afternoon.",
+    scenarios: [
+      "A second family car that only moves at weekends.",
+      "Lights left on during a long event at a venue.",
+      "A vehicle that stood through a week away.",
+      "A battery that has cranked slower every morning through a cold spell.",
+    ],
+    localContext:
+      "Frisco has no interstate: its traffic moves on the Dallas North Tollway and the Sam Rayburn Tollway, with Preston Road, US-380 and FM 423 carrying the rest. Tollway commuting is long and steady, which is kind to a battery — so the failures here usually follow a period of standing rather than a period of driving.",
+    faqs: [
+      {
+        q: "Will the charge last once you have gone?",
+        a: "If the battery is healthy, driving will recharge it. If it is failing, it may not survive the next time the car is switched off. Your driver will tell you which it looked like so you are not caught out tomorrow.",
+      },
+      {
+        q: "Should I keep trying to start it?",
+        a: "No. Every failed attempt takes more from a battery that is already low. Switch off the lights, stereo and climate control and wait for the driver.",
+      },
+      {
+        q: "Do you come out to event and venue parking?",
+        a: "Yes. Tell dispatch which lot and roughly where in it the vehicle is, because large event parking is easy to get lost in.",
+      },
+    ],
+    primaryKeyword: "jump start service Frisco TX",
+    secondaryKeywords: ["dead battery Frisco", "jump start near me Frisco", "car won't start Frisco TX", "mobile jump start Frisco"],
+    longTail: ["24 hour jump start Frisco TX", "battery boost Frisco", "car battery died Frisco TX"],
+    intent: "Emergency, mobile, 24-hour.",
+    sourceUrls: ["allhoursroadside.com/frisco-jump-start-service/"],
+  },
+  {
+    city: "frisco",
+    service: "battery-replacement",
+    h1: "Mobile Battery Replacement in Frisco, TX",
+    title: "Car Battery Replacement Frisco TX",
+    metaDescription:
+      "Need a car battery in Frisco? TRA brings it to the car and fits it on site. Installation quoted for your vehicle, 1-year warranty included.",
+    intro:
+      "Getting a car with a dead battery to a workshop is the hard part of replacing a battery. We remove that part by bringing the replacement to the vehicle and fitting it where it stands. The battery price is published; installation is quoted for your car, because access differs enormously between models.",
+    scenarios: [
+      "A battery that has already been jumped once this month.",
+      "A car that will not start reliably after standing for a week.",
+      "Charging symptoms — dim lights, slow windows, a resetting clock.",
+      "An ageing battery you would rather change before a long trip than during one.",
+    ],
+    localContext:
+      "Frisco's roads are tollways and arterials rather than interstates — the Dallas North Tollway, the Sam Rayburn Tollway, Preston Road, US-380 and FM 423 — and the long steady runs they carry tend to mask a declining battery. The first real sign is usually a car that will not wake up after a few days parked.",
+    faqs: [
+      {
+        q: "Do you come out to residential addresses?",
+        a: "Yes — a large share of our Frisco battery work is at home, where the car has failed to start in the morning.",
+      },
+      {
+        q: "Why is installation not included in the published price?",
+        a: "Because it genuinely varies by vehicle. Some batteries are reached in minutes and others need trim or a seat removed. Quoting yours is more honest than an average that would be wrong for many cars.",
+      },
+      {
+        q: "What does the warranty cover?",
+        a: "A battery replacement includes a 1-year warranty. Keep your invoice, as warranty service is processed against it.",
+      },
+    ],
+    primaryKeyword: "car battery replacement Frisco TX",
+    secondaryKeywords: ["mobile battery replacement Frisco", "car battery service Frisco TX", "battery installation Frisco"],
+    longTail: ["mobile car battery Frisco TX", "battery replaced at home Frisco", "car battery keeps dying Frisco"],
+    intent: "Commercial, convenience-led.",
+    sourceUrls: [
+      "allhoursroadside.com/frisco-battery-replacement-service/",
+      "allhoursroadside.com/frisco-car-battery-service/",
+    ],
+  },
+  {
+    city: "frisco",
+    service: "flat-tire-change",
+    h1: "Flat Tire Change in Frisco, TX",
+    title: "Flat Tire Change Frisco TX",
+    metaDescription:
+      "Flat tire in Frisco? If you have a usable spare, TRA fits it on site — Tollway shoulders, Preston Road or at home. Call for roadside help.",
+    intro:
+      "A flat with a good spare in the trunk is a short job for someone with the right tools and a safe way to lift the car. We come to you, fit the spare and torque it correctly, so you are moving again without having worked beside a toll road.",
+    scenarios: [
+      "A blowout on a tollway shoulder at speed.",
+      "A flat discovered in a venue lot after an event.",
+      "A slow puncture that went down overnight on the driveway.",
+      "A wheel that will not come off without a locking nut key you no longer have.",
+    ],
+    localContext:
+      "Because Frisco has no interstate, its fast traffic sits on the Dallas North Tollway and the Sam Rayburn Tollway, with US-380 carrying heavy east-west movement through a city that has been under construction for years. Those construction corridors are where most of the sudden tire damage here originates.",
+    faqs: [
+      {
+        q: "What if I do not have a spare?",
+        a: "Then the spare cannot be fitted, and the options are a replacement tire supplied by us or a tow. Say so when you call so the right help is sent first time.",
+      },
+      {
+        q: "Is it safe to change a wheel on a tollway shoulder?",
+        a: "We would rather you did not. Stay in the vehicle with your seatbelt on and hazards running, and let the driver do it with proper equipment and awareness of the traffic.",
+      },
+      {
+        q: "How long can I run on the spare?",
+        a: "Most spares are limited in speed and distance. Your driver will tell you what yours is rated for so you can plan rather than guess.",
+      },
+    ],
+    primaryKeyword: "flat tire change Frisco TX",
+    secondaryKeywords: ["flat tire service Frisco", "tire change near me Frisco", "roadside tire change Frisco TX"],
+    longTail: ["flat tire on Dallas North Tollway Frisco", "24 hour tire change Frisco", "change flat tire Frisco TX"],
+    intent: "Emergency, roadside-safety, near-me.",
+    sourceUrls: ["allhoursroadside.com/frisco-tire-change-service/"],
+  },
+  {
+    city: "frisco",
+    service: "tire-repair-plug-patch",
+    h1: "Mobile Tire Repair in Frisco, TX",
+    title: "Mobile Tire Repair Frisco TX",
+    metaDescription:
+      "Nail in your tire in Frisco? TRA repairs punctures on site with a plug or patch where the damage allows, so your spare stays in the trunk.",
+    intro:
+      "Frisco has been a construction site for the better part of a decade, and construction means screws and nails on the road. Where the damage is in the tread and within repairable limits, we repair the tire where the car is parked rather than fitting a spare you would only swap back later.",
+    scenarios: [
+      "A screw picked up near roadworks on US-380.",
+      "A tire that needs air every few days without ever going flat.",
+      "A pressure warning that keeps returning after being reset.",
+      "A puncture spotted before a long drive that you would rather fix than risk.",
+    ],
+    localContext:
+      "US-380 and the tollway corridors carry Frisco's heaviest construction and delivery traffic, and that is where most of the punctures we repair here are picked up. A slow leak caught in a driveway is a repair; the same puncture discovered at tollway speed is a shoulder call.",
+    faqs: [
+      {
+        q: "Should I remove the nail myself?",
+        a: "No. Leave it where it is — it is partly sealing the hole. Pulling it out normally turns a manageable slow leak into a flat tire.",
+      },
+      {
+        q: "Can every puncture be plugged or patched?",
+        a: "No. Sidewall damage and punctures beyond a certain size cannot be repaired safely. Your driver will tell you what they find rather than repair something that should not be repaired.",
+      },
+      {
+        q: "Can you do this at my house?",
+        a: "Yes. Most of our Frisco tire repairs happen on a driveway, where the leak was noticed rather than suffered.",
+      },
+    ],
+    primaryKeyword: "mobile tire repair Frisco TX",
+    secondaryKeywords: ["tire repair Frisco", "puncture repair Frisco TX", "roadside tire repair Frisco"],
+    longTail: ["nail in tire Frisco TX", "mobile tire repair near me Frisco", "tire losing air Frisco"],
+    intent: "Time-sensitive, convenience-led, mobile.",
+    sourceUrls: [
+      "allhoursroadside.com/frisco-mobile-tire-service/",
+      "allhoursroadside.com/frisco-roadside-tire-service/",
+    ],
+  },
+
+  // ===================== LEWISVILLE =====================
+  {
+    city: "lewisville",
+    service: "lockout",
+    h1: "Car Lockout Service in Lewisville, TX",
+    title: "Car Lockout Service Lewisville TX",
+    metaDescription:
+      "Locked out in Lewisville? TRA opens your car without damage — off I-35E, Main Street or near the lake. Local DFW dispatch, day or night.",
+    intro:
+      "Lewisville sits on the main road north out of the metroplex, and a good share of the people locked out here are partway through a journey rather than at home. We come to the vehicle wherever it has stopped, confirm it is yours, and open it without damage.",
+    scenarios: [
+      "Keys locked in at a stop off I-35E partway through a drive.",
+      "A fob that stopped working in a lot along Main Street.",
+      "Keys shut in the trunk after loading for a trip to the lake.",
+      "A door that locked itself while the engine was running.",
+    ],
+    localContext:
+      "I-35E runs the length of Lewisville and is the main artery between Dallas and Denton, which makes the city a natural stopping point rather than only a destination. The Sam Rayburn Tollway crosses the south, FM 1171 carries Main Street east to west, and FM 407 and FM 3040 handle the rest. Lewisville Lake forms the northern edge of the city.",
+    faqs: [
+      {
+        q: "I am passing through on I-35E — can you still help?",
+        a: "Yes. A good share of our Lewisville work is for people partway through a journey rather than local residents. Tell dispatch where you have stopped and they will route the nearest driver.",
+      },
+      {
+        q: "Do I need proof the car is mine if it is a rental?",
+        a: "Yes, and for a rental that normally means the rental agreement along with your ID. The check protects whoever owns the vehicle.",
+      },
+      {
+        q: "Can you come out to a lakeside parking area?",
+        a: "Tell dispatch exactly where the vehicle is. Access around the lake varies, and they would rather establish that on the call than have a driver arrive at the wrong side of the water.",
+      },
+    ],
+    primaryKeyword: "car lockout service Lewisville TX",
+    secondaryKeywords: ["locked out of car Lewisville", "car unlock Lewisville TX", "auto lockout Lewisville", "vehicle lockout Lewisville"],
+    longTail: ["locked keys in car Lewisville TX", "car unlock near me Lewisville", "locked out on I-35E Lewisville"],
+    intent: "Emergency, through-traffic, near-me.",
+    sourceUrls: ["allhoursroadside.com/lewisville-lockout-service/"],
+  },
+  {
+    city: "lewisville",
+    service: "jump-start",
+    h1: "Jump Start Service in Lewisville, TX",
+    title: "Jump Start Service Lewisville TX",
+    metaDescription:
+      "Car won't start in Lewisville? TRA brings a jump start to you on I-35E, Main Street or at home. Local DFW dispatch, 24/7. Call now.",
+    intro:
+      "A flat battery on a journey is worse than a flat battery at home, because you are somewhere you did not plan to stop. We come to the vehicle, jump it, and get you moving again under your own power.",
+    scenarios: [
+      "A car that will not restart after a stop partway up I-35E.",
+      "A boat-towing vehicle left standing after a weekend at the lake.",
+      "Lights left on in a lot along Main Street.",
+      "A battery that has struggled each cold morning for a week.",
+    ],
+    localContext:
+      "Lewisville is defined by I-35E running straight through it — the city is as much a through-route between Dallas and Denton as a destination. The Sam Rayburn Tollway crosses the south, and FM 1171, FM 407 and FM 3040 connect the rest. Seasonal traffic to Lewisville Lake on the northern edge adds vehicles that sit for days at a time.",
+    faqs: [
+      {
+        q: "Can you reach me on the shoulder of I-35E?",
+        a: "Yes, and it is a common call here. Stay inside the vehicle with your seatbelt fastened and hazards on, and give dispatch the nearest exit number so the driver finds you quickly.",
+      },
+      {
+        q: "My car sat at the lake all weekend — is a jump enough?",
+        a: "Usually. A healthy battery that discharged while standing will take a jump and recharge as you drive. One at the end of its life often will not, and your driver will say which it appeared to be.",
+      },
+      {
+        q: "Will a jump start harm the car's electronics?",
+        a: "Done properly, no. Our drivers connect in the correct order with the right equipment, which is the main reason to call rather than accept a jump from a stranger's cables.",
+      },
+    ],
+    primaryKeyword: "jump start service Lewisville TX",
+    secondaryKeywords: ["dead battery Lewisville", "jump start near me Lewisville", "car won't start Lewisville TX", "mobile jump start Lewisville"],
+    longTail: ["24 hour jump start Lewisville TX", "jump start on I-35E", "car battery died Lewisville TX"],
+    intent: "Emergency, through-traffic, 24-hour.",
+    sourceUrls: ["allhoursroadside.com/lewisville-jump-start-service/"],
+  },
+  {
+    city: "lewisville",
+    service: "battery-replacement",
+    h1: "Mobile Battery Replacement in Lewisville, TX",
+    title: "Car Battery Replacement Lewisville TX",
+    metaDescription:
+      "Car battery failing in Lewisville? TRA brings the battery to you and fits it on site, with installation quoted for your vehicle and a 1-year warranty.",
+    intro:
+      "A battery that has been jumped more than once is telling you it will not survive the next cold snap. We bring the replacement to the vehicle and fit it where it stands, which matters when the car is sitting at the side of a road you were only passing along. The battery price is published; installation is quoted for your vehicle.",
+    scenarios: [
+      "A battery jumped once on the road and again a few days later.",
+      "A towing vehicle that only comes out for lake trips and will not start.",
+      "Dim lights and sluggish electrics pointing at charging rather than the engine.",
+      "A battery you would rather replace before a long drive north.",
+    ],
+    localContext:
+      "Lewisville's traffic is dominated by I-35E, the main north-south artery between Dallas and Denton. A long highway run keeps a weak battery looking adequate; the failures tend to show up on seasonal vehicles that stand between trips to Lewisville Lake, or on cars that stop somewhere on the highway and will not restart.",
+    faqs: [
+      {
+        q: "Can you fit a battery at the roadside rather than at home?",
+        a: "Yes, provided the vehicle is somewhere a driver can work safely. On a live highway shoulder we will assess the situation first — sometimes moving the vehicle is the safer first step.",
+      },
+      {
+        q: "Why quote installation separately?",
+        a: "Because access genuinely differs. Some batteries are reached in minutes; others sit under a seat or behind panels. Quoting yours is more honest than publishing an average that is wrong for half the cars we see.",
+      },
+      {
+        q: "Do I need the VIN?",
+        a: "No. Year, make and model are enough. The VIN simply confirms the exact fit if you can reach it easily.",
+      },
+    ],
+    primaryKeyword: "car battery replacement Lewisville TX",
+    secondaryKeywords: ["mobile battery replacement Lewisville", "car battery service Lewisville TX", "battery installation Lewisville"],
+    longTail: ["mobile car battery Lewisville TX", "battery replaced at home Lewisville", "car battery keeps dying Lewisville"],
+    intent: "Commercial, convenience-led.",
+    sourceUrls: ["allhoursroadside.com/lewisville-battery-replacement-service/"],
+  },
+  {
+    city: "lewisville",
+    service: "flat-tire-change",
+    h1: "Flat Tire Change in Lewisville, TX",
+    title: "Flat Tire Change Lewisville TX",
+    metaDescription:
+      "Flat tire in Lewisville? If you have a usable spare, TRA fits it where you are — I-35E shoulders, Main Street or at home. Call for roadside help.",
+    intro:
+      "A flat on I-35E is one of the least pleasant places to find yourself, because the shoulder is narrow and the traffic is fast and constant. If there is a serviceable spare in the vehicle, we fit it for you while you stay safely inside the car.",
+    scenarios: [
+      "A blowout on I-35E partway between Dallas and Denton.",
+      "A trailer or towing vehicle with a flat after a lake trip.",
+      "A slow puncture that finally went down in a lot off Main Street.",
+      "A locking wheel nut whose key went missing years ago.",
+    ],
+    localContext:
+      "I-35E runs the full length of Lewisville and carries both metroplex commuting and longer-distance traffic heading north, which is why so many of the flats we attend here are sudden failures at speed rather than tires found soft in the morning. FM 1171, FM 407 and FM 3040 account for most of the rest.",
+    faqs: [
+      {
+        q: "Can you reach a vehicle on the I-35E shoulder?",
+        a: "Yes. Give dispatch the nearest exit number and the direction of travel — on a highway that is far more useful than a street address, and it gets a driver to you sooner.",
+      },
+      {
+        q: "What if the flat is on a trailer rather than the car?",
+        a: "Tell dispatch when you call. Trailer wheels differ from car wheels and we would rather confirm what is needed before a driver sets off.",
+      },
+      {
+        q: "Should I get out and look at the damage?",
+        a: "Not on a live highway shoulder. Stay belted in with hazards on and describe what you felt or heard to dispatch instead. Your driver will assess it when they arrive.",
+      },
+    ],
+    primaryKeyword: "flat tire change Lewisville TX",
+    secondaryKeywords: ["flat tire service Lewisville", "tire change near me Lewisville", "roadside tire change Lewisville TX"],
+    longTail: ["flat tire on I-35E Lewisville", "24 hour tire change Lewisville", "change flat tire Lewisville TX"],
+    intent: "Emergency, highway-safety, through-traffic.",
+    sourceUrls: ["allhoursroadside.com/lewisville-tire-change-service/"],
+  },
+  {
+    city: "lewisville",
+    service: "tire-repair-plug-patch",
+    h1: "Mobile Tire Repair in Lewisville, TX",
+    title: "Mobile Tire Repair Lewisville TX",
+    metaDescription:
+      "Nail in your tire in Lewisville? TRA repairs punctures on site with a plug or patch where the damage allows, so your spare stays in the trunk.",
+    intro:
+      "On a road like I-35E, a slow leak you have been topping up for a fortnight is a blowout waiting for a moment that suits it. Where the damage is in the tread and within repairable limits, we repair the tire where the car is parked and leave the spare where it belongs.",
+    scenarios: [
+      "A tire that needs air before every longer drive.",
+      "A screw picked up on the highway that has started to weep.",
+      "A pressure warning that will not stay cleared.",
+      "A puncture found before heading north on I-35E.",
+    ],
+    localContext:
+      "Lewisville's share of I-35E carries constant heavy traffic between Dallas and Denton, and highway debris is the usual source of the punctures we repair here. Catching one as a slow leak in a driveway is a far better outcome than meeting it at highway speed on a narrow shoulder.",
+    faqs: [
+      {
+        q: "Is it worth repairing rather than replacing?",
+        a: "If the damage is in the tread and within repairable limits, a proper repair is durable and much cheaper than a new tire. Your driver will tell you honestly which situation you are in.",
+      },
+      {
+        q: "Should I pull the screw out?",
+        a: "No. While it sits in the tread it is partly sealing the hole. Removing it usually turns a slow leak into a flat before help arrives.",
+      },
+      {
+        q: "Can you repair a trailer tire?",
+        a: "Mention it when you call. Trailer tires are not always the same proposition as car tires, and dispatch would rather confirm it before sending a driver.",
+      },
+    ],
+    primaryKeyword: "mobile tire repair Lewisville TX",
+    secondaryKeywords: ["tire repair Lewisville", "puncture repair Lewisville TX", "roadside tire repair Lewisville"],
+    longTail: ["nail in tire Lewisville TX", "mobile tire repair near me Lewisville", "tire losing air Lewisville"],
+    intent: "Time-sensitive, preventive, mobile.",
+    sourceUrls: ["allhoursroadside.com/lewisville-mobile-tire-service/"],
+  },
+
+  // ===================== THE COLONY =====================
+  {
+    city: "the-colony",
+    service: "lockout",
+    h1: "Car Lockout Service in The Colony, TX",
+    title: "Car Lockout Service The Colony TX",
+    metaDescription:
+      "Locked out in The Colony? TRA opens your car without damage — along FM 423, the Sam Rayburn Tollway or near the lake. Local dispatch, day or night.",
+    intro:
+      "The Colony is a long, narrow city wrapped around the edge of a lake, and that shape means a locked car can leave you some distance from anywhere useful. A driver comes to the vehicle, confirms it is yours, and opens it without damage.",
+    scenarios: [
+      "Keys locked in at a lakeside parking area after an afternoon out.",
+      "A fob that stopped responding in a lot along FM 423.",
+      "Keys shut in the trunk after loading for a day on the water.",
+      "A second vehicle whose fob battery died while it sat in the driveway.",
+    ],
+    localContext:
+      "The Colony has around 23 miles of Lewisville Lake shoreline inside its boundaries, and the road network reflects that: the Sam Rayburn Tollway runs across the city and FM 423 serves as its spine. Those two routes carry nearly everything, so telling dispatch which one you are near usually narrows your position considerably.",
+    faqs: [
+      {
+        q: "How do I describe where I am near the lake?",
+        a: "Give dispatch the nearest cross street on FM 423 or the tollway, or the name of the parking area. Shoreline access points can look alike from a map, so a landmark helps more than coordinates here.",
+      },
+      {
+        q: "Do I have to prove the car is mine?",
+        a: "Yes. The driver will ask for ID or another way to confirm you are entitled to the vehicle before opening it — a short check that is the reason nobody else can have your car opened.",
+      },
+      {
+        q: "Can you open the car if the fob is dead?",
+        a: "Yes. A dead fob is one of the most common reasons people call and it does not change how the vehicle is opened.",
+      },
+    ],
+    primaryKeyword: "car lockout service The Colony TX",
+    secondaryKeywords: ["locked out of car The Colony", "car unlock The Colony TX", "auto lockout The Colony"],
+    longTail: ["locked keys in car The Colony TX", "car unlock near me The Colony", "24 hour lockout The Colony"],
+    intent: "Emergency, near-me, lakeside access.",
+    sourceUrls: ["allhoursroadside.com/the-colony-auto-lockout-help/"],
+  },
+  {
+    city: "the-colony",
+    service: "jump-start",
+    h1: "Jump Start Service in The Colony, TX",
+    title: "Jump Start Service The Colony TX",
+    metaDescription:
+      "Dead battery in The Colony? TRA brings a jump start to you along FM 423, the Sam Rayburn Tollway or at home. Local DFW dispatch, 24/7.",
+    intro:
+      "Cars that only come out at weekends go flat, and The Colony has a lot of them — boats, trailers and second vehicles that sit between trips to the water. A jump start brings the vehicle back where it stands, without a recovery truck.",
+    scenarios: [
+      "A towing vehicle that has not moved since the last trip to the lake.",
+      "A second car that only gets driven at weekends.",
+      "Lights left on at a shoreline parking area.",
+      "A battery that has cranked slowly every cold morning this week.",
+    ],
+    localContext:
+      "With roughly 23 miles of Lewisville Lake shoreline inside the city, The Colony has an unusual share of vehicles that stand still for long stretches — the trailer tow car, the weekend vehicle, the boat hauler. Standing is what flattens batteries. The Sam Rayburn Tollway and FM 423 carry the daily traffic that does not.",
+    faqs: [
+      {
+        q: "The car has not moved in a month — will a jump work?",
+        a: "Often it will. A sound battery that discharged from standing takes a jump and recharges as you drive. One at the end of its life usually will not, and your driver will tell you which it looked like.",
+      },
+      {
+        q: "Can you jump start a vehicle with a trailer attached?",
+        a: "Tell dispatch when you call so the driver knows what they are coming to. Access around a hitched trailer is different from a car on its own, especially at a boat ramp.",
+      },
+      {
+        q: "Should I keep cranking while I wait?",
+        a: "No. Each attempt takes more from a battery that is already low and makes the jump harder. Switch everything off and wait for the driver.",
+      },
+    ],
+    primaryKeyword: "jump start service The Colony TX",
+    secondaryKeywords: ["dead battery The Colony", "jump start near me The Colony", "car won't start The Colony TX"],
+    longTail: ["24 hour jump start The Colony TX", "mobile jump start The Colony", "car battery died The Colony"],
+    intent: "Emergency, mobile, seasonal-vehicle.",
+    sourceUrls: ["allhoursroadside.com/the-colony-jump-start-service/"],
+  },
+  {
+    city: "the-colony",
+    service: "battery-replacement",
+    h1: "Mobile Battery Replacement in The Colony, TX",
+    title: "Car Battery Replacement The Colony TX",
+    metaDescription:
+      "Need a car battery in The Colony? TRA brings it to you and fits it on site, with installation quoted for your vehicle and a 1-year warranty.",
+    intro:
+      "Batteries on vehicles that stand still age differently from batteries on daily drivers — they are rarely fully charged, and they fail earlier. We bring the replacement to the vehicle and fit it where it is parked. The battery price is published; installation is quoted for your specific car.",
+    scenarios: [
+      "A weekend or towing vehicle that now needs jumping every time it comes out.",
+      "A car that failed to start twice in the same month.",
+      "Charging symptoms — dim lights, slow windows, a resetting clock.",
+      "A battery you would rather replace before the season starts than during it.",
+    ],
+    localContext:
+      "The Colony's mix of daily commuting on the Sam Rayburn Tollway and FM 423 alongside seasonal vehicles that sit for weeks between trips to Lewisville Lake produces more battery failures than a purely commuter suburb would. A battery that is never fully recharged does not last as long as one that runs a highway commute every day.",
+    faqs: [
+      {
+        q: "Can you fit a battery to a vehicle with a trailer attached?",
+        a: "Usually yes, but tell dispatch so the driver knows the situation before arriving. Working space around a hitched vehicle is different from a car parked in a driveway.",
+      },
+      {
+        q: "Why is installation quoted rather than published?",
+        a: "Because access varies so much between vehicles. Some batteries take minutes to reach and others need panels or a seat removed, so we quote the job for your car rather than publish an average.",
+      },
+      {
+        q: "What warranty is included?",
+        a: "A battery replacement includes a 1-year warranty. Keep your invoice — that is what warranty service is processed against.",
+      },
+    ],
+    primaryKeyword: "car battery replacement The Colony TX",
+    secondaryKeywords: ["mobile battery replacement The Colony", "car battery service The Colony TX", "battery installation The Colony"],
+    longTail: ["mobile car battery The Colony TX", "battery replaced at home The Colony", "car battery keeps dying The Colony"],
+    intent: "Commercial, convenience-led, seasonal-vehicle.",
+    sourceUrls: [
+      "allhoursroadside.com/the-colony-battery-replacement-service/",
+      "allhoursroadside.com/the-colony-car-battery-service/",
+    ],
+  },
+  {
+    city: "the-colony",
+    service: "flat-tire-change",
+    h1: "Flat Tire Change in The Colony, TX",
+    title: "Flat Tire Change The Colony TX",
+    metaDescription:
+      "Flat tire in The Colony? If you have a usable spare, TRA fits it where you are — FM 423, the tollway or near the lake. Call for roadside help.",
+    intro:
+      "With a serviceable spare in the vehicle, a flat is a short delay. A driver comes to you, fits the spare and torques it correctly, and you carry on — which matters more than usual here, because the places people get flats are not always places you can comfortably wait.",
+    scenarios: [
+      "A flat at a lakeside parking area some way from the main road.",
+      "A blowout on the Sam Rayburn Tollway at speed.",
+      "A trailer tire that has gone down after a day on the water.",
+      "A slow puncture that finished overnight in the driveway.",
+    ],
+    localContext:
+      "The Colony's road network is unusually simple — the Sam Rayburn Tollway across the city and FM 423 running its length — so describing where you are is normally easy. Access to shoreline parking along the 23 miles of Lewisville Lake within the city is the part worth being precise about when you call.",
+    faqs: [
+      {
+        q: "Can you reach a vehicle at a boat ramp or shoreline lot?",
+        a: "Usually yes, but tell dispatch exactly which access point you used. Lakeside parking areas can be hard to distinguish from one another, and that detail saves real time.",
+      },
+      {
+        q: "What if the flat is on the trailer?",
+        a: "Say so when you call. Trailer wheels are not always the same job as car wheels and dispatch would rather confirm it before a driver sets off.",
+      },
+      {
+        q: "What if there is no usable spare?",
+        a: "Then fitting one is not an option and the answer is a replacement tire supplied by us or a tow. Tell dispatch so the right help is sent first time.",
+      },
+    ],
+    primaryKeyword: "flat tire change The Colony TX",
+    secondaryKeywords: ["flat tire service The Colony", "tire change near me The Colony", "roadside tire change The Colony TX"],
+    longTail: ["flat tire The Colony TX help", "24 hour tire change The Colony", "change flat tire The Colony"],
+    intent: "Emergency, access-sensitive, near-me.",
+    sourceUrls: ["allhoursroadside.com/the-colony-tire-change-service/"],
+  },
+  {
+    city: "the-colony",
+    service: "tire-repair-plug-patch",
+    h1: "Mobile Tire Repair in The Colony, TX",
+    title: "Mobile Tire Repair The Colony TX",
+    metaDescription:
+      "Nail in your tire in The Colony? TRA repairs punctures on site with a plug or patch where the damage allows, so your spare stays in the trunk.",
+    intro:
+      "A tire that has been losing air slowly is worth dealing with before it becomes a flat somewhere inconvenient. Where the puncture is in the tread and within repairable limits, we repair it where the vehicle is standing and leave your spare untouched.",
+    scenarios: [
+      "A tire on a towing vehicle that is always a little soft.",
+      "A screw picked up along FM 423 that has started to weep air.",
+      "A pressure warning that returns every few days.",
+      "A puncture noticed before hitching up for a trip.",
+    ],
+    localContext:
+      "Most of The Colony's traffic funnels onto the Sam Rayburn Tollway and FM 423, which concentrates both the wear and the debris. Vehicles that tow regularly tend to notice a soft tire before a daily driver would, because the handling change is more obvious under load.",
+    faqs: [
+      {
+        q: "Can you repair a tire on a trailer?",
+        a: "Mention it when you call. Trailer tires are not always the same proposition as car tires, and dispatch would rather establish that before sending a driver.",
+      },
+      {
+        q: "Should I pull the screw out first?",
+        a: "No — leave it in. It is partly sealing the hole, and removing it usually turns a slow leak into a flat tire before anyone arrives.",
+      },
+      {
+        q: "Will a repaired tire be safe for towing?",
+        a: "A correct tread repair is durable under normal loads. If your driver has any doubt about the tire staying in service, especially on a vehicle that tows, they will tell you rather than repair it and leave.",
+      },
+    ],
+    primaryKeyword: "mobile tire repair The Colony TX",
+    secondaryKeywords: ["tire repair The Colony", "puncture repair The Colony TX", "roadside tire repair The Colony"],
+    longTail: ["nail in tire The Colony TX", "mobile tire repair near me The Colony", "tire losing air The Colony"],
+    intent: "Time-sensitive, preventive, towing-aware.",
+    sourceUrls: [
+      "allhoursroadside.com/the-colony-mobile-tire-service/",
+      "allhoursroadside.com/the-colony-roadside-tire-service/",
     ],
   },
 ];

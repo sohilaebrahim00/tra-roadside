@@ -49,6 +49,9 @@ const TERMS = [
   ["organise", "organize"],
   ["whilst", "while"],
   ["spanner", "wrench"],
+  // Phrase-level, not single words: Americans park in a driveway, not on a drive.
+  ["on the drive", "in the driveway"],
+  ["on a drive", "in a driveway"],
   ["indicator", "turn signal"],
 ];
 

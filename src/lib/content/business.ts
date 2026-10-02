@@ -107,7 +107,7 @@ export function getServiceArea(slug: string) {
  * Grapevine is near Wylie, which are opposite corners of the metroplex.
  *
  * May return fewer than `count`: an edge-of-coverage city like Denton or Wylie
- * has one served neighbour, and one true neighbour beats five invented ones.
+ * has one served neighbor, and one true neighbor beats five invented ones.
  */
 export function nearbyAreas(slug: string, count = 4): ServiceArea[] {
   return realNeighbors(slug, SERVICE_AREAS, count);

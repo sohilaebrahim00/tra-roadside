@@ -6,7 +6,7 @@ import type { ServiceTypeSlug } from "@/lib/types/domain";
  * `amount` is a display string rather than a number because most of TRA's
  * prices are not single figures — they are ranges ("$55–65"), rates ("$5 per
  * mile"), or size tiers. It is always a TOTAL the customer pays.
- * Parts-and-labour breakdowns are deliberately never published: the customer
+ * Parts-and-labor breakdowns are deliberately never published: the customer
  * wants one number, not an itemisation to audit.
  */
 export interface PriceLine {
@@ -98,7 +98,7 @@ export const SERVICES: ServiceContent[] = [
     name: "Battery Replacement",
     shortName: "Battery Replacement",
     needsDestination: false,
-    // $189 is the price of the BATTERY ALONE — no labour, no service call, no
+    // $189 is the price of the BATTERY ALONE — no labor, no service call, no
     // installation. It is never published as a bare figure: the site promises
     // upfront pricing with no surprise fees, and a customer who reads $189 and
     // is then quoted for installation would fairly call that a bait. The
@@ -144,7 +144,7 @@ export const SERVICES: ServiceContent[] = [
       },
       {
         src: "/images/battery-carry.webp",
-        alt: "A technician in grey overalls carrying a black car battery by its strap handle with a white-gloved hand, walking through a workshop with parts shelving behind him.",
+        alt: "A technician in gray overalls carrying a black car battery by its strap handle with a white-gloved hand, walking through a workshop with parts shelving behind him.",
         width: 612,
         height: 408,
       },

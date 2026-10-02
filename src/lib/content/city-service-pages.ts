@@ -10,7 +10,7 @@
  *
  * RULES FOR EDITING
  *  - Geographic facts come from local-data.ts and NOWHERE else. If a corridor,
- *    district or neighbouring city is not in that file, it must not appear
+ *    district or neighboring city is not in that file, it must not appear
  *    here.
  *  - Prices are NOT written into prose. The page renders them from SERVICES so
  *    a price change propagates; duplicating a figure here would create a
@@ -97,7 +97,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       "Interior light or headlights left on through a workday in a downtown garage.",
       "A cold snap after a mild week — the first genuinely cold morning is our busiest.",
       "Short trips around the city that never let the alternator fully recharge the battery.",
-      "A car left standing for a fortnight while you were away through Love Field.",
+      "A car left standing for two weeks while you were away through Love Field.",
     ],
     localContext:
       "We dispatch across the whole Dallas footprint, including the commuter spine of US-75 Central Expressway, I-35E, I-30, I-45, I-20 and the LBJ Freeway, plus the Dallas North Tollway. Calls come in from office garages Uptown, from residential streets in Lakewood and Lake Highlands, and from the retail lots either side of Oak Cliff.",
@@ -207,7 +207,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     intro:
       "Locked keys are rarely a crisis and almost always an inconvenience with a deadline attached — a shift starting, a child to collect, groceries going warm in the back. A TRA driver comes to the car, opens it without damage, confirms it is yours, and you carry on with the day.",
     scenarios: [
-      "Keys locked in while loading shopping at a Firewheel-area retail lot.",
+      "Keys locked in while loading groceries at a Firewheel-area retail lot.",
       "A door that locked itself while the engine was running on a cold morning.",
       "Keys shut in the trunk after a trip to the lake — a separately priced job.",
       "A worn fob that stopped responding in an apartment lot after dark.",
@@ -242,12 +242,12 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Dead battery in Garland? TRA brings a jump start to your car on I-635, the Bush Turnpike or at home. Local dispatch across Garland, 24/7.",
     intro:
-      "Most cars that refuse to start have a flat battery rather than a real fault, and a jump start settles it on the spot. We come to the vehicle, start it, and let you drive away rather than putting it on a truck.",
+      "Most cars that refuse to start have a dead battery rather than a real fault, and a jump start settles it on the spot. We come to the vehicle, start it, and let you drive away rather than putting it on a truck.",
     scenarios: [
       "A commuter car that sat unused over a long weekend.",
       "Lights left on in a driveway overnight.",
       "The first hard frost of the season finding a battery that was already marginal.",
-      "A car that has needed a longer crank each morning for a fortnight.",
+      "A car that has needed a longer crank each morning for two weeks.",
     ],
     localContext:
       "Garland's traffic runs on I-635 and the President George Bush Turnpike for commuters, and on TX-66, TX-78 and Belt Line Road for everything local. We take jump start calls from all of them, as well as from driveways around Historic Downtown Garland and Travis College Hill.",
@@ -284,7 +284,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       "A second jump start inside a week on the same car.",
       "A vehicle that has stood unused in a driveway through a long trip.",
       "Electrical oddities — dim headlights, slow windows, a resetting clock.",
-      "An ageing battery you would rather replace on a Saturday than on a January morning.",
+      "An aging battery you would rather replace on a Saturday than on a January morning.",
     ],
     localContext:
       "Garland's daily driving mixes long turnpike runs on the President George Bush Turnpike and I-635 with short local trips on TX-78 and Belt Line Road. Short trips are particularly hard on a battery, because the alternator never gets long enough to put back what starting took out.",
@@ -318,7 +318,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     intro:
       "A flat with a good spare in the trunk is a twenty-minute problem for somebody with the right tools and a safe way to lift the car. We come out, fit the spare, torque it correctly, and you are on your way without touching a jack yourself.",
     scenarios: [
-      "A flat discovered in a retail lot with shopping already in the car.",
+      "A flat discovered in a retail lot with groceries already in the car.",
       "A blowout on a turnpike shoulder where changing it yourself is not safe.",
       "A slow leak that finished overnight on the driveway.",
       "A locking wheel nut you have no key for, which we can deal with separately.",
@@ -418,7 +418,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     primaryKeyword: "car lockout service Irving TX",
     secondaryKeywords: ["locked out of car Irving", "car unlock Irving TX", "auto lockout Las Colinas", "vehicle lockout Irving"],
     longTail: ["locked keys in car Irving TX", "car unlock near me Irving", "locked out near DFW airport Irving"],
-    intent: "Emergency, near-me, traveller-adjacent urgency.",
+    intent: "Emergency, near-me, traveler-adjacent urgency.",
     sourceUrls: ["allhoursroadside.com/irving-lockout-service/"],
   },
   {
@@ -455,7 +455,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     primaryKeyword: "jump start service Irving TX",
     secondaryKeywords: ["dead battery Irving", "jump start near me Irving", "car won't start Irving TX", "mobile jump start Las Colinas"],
     longTail: ["car battery died at airport parking Irving", "24 hour jump start Irving TX", "jump start Las Colinas garage"],
-    intent: "Emergency, mobile, traveller-adjacent.",
+    intent: "Emergency, mobile, traveler-adjacent.",
     sourceUrls: ["allhoursroadside.com/irving-jump-start-service/"],
   },
   {
@@ -622,7 +622,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Car won't start in Plano? TRA brings a jump start to Legacy, Preston Road or your driveway. Local DFW dispatch, 24/7. Call now.",
     intro:
-      "A car that clicks instead of starting is usually a flat battery, not a broken engine. We come to the vehicle, jump it, and let you drive on — which on a working day in Plano is generally the difference between a delay and a write-off.",
+      "A car that clicks instead of starting is usually a dead battery, not a broken engine. We come to the vehicle, jump it, and let you drive on — which on a working day in Plano is generally the difference between a delay and a write-off.",
     scenarios: [
       "A car that sat in a corporate lot through several days of remote work.",
       "Lights left on during a long meeting off Legacy Drive.",
@@ -663,7 +663,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     scenarios: [
       "A battery that has now needed jumping more than once.",
       "A car that fails to start after standing over a long weekend.",
-      "Warning lights or electrical behaviour that points at charging rather than the engine.",
+      "Warning lights or electrical behavior that points at charging rather than the engine.",
       "A battery old enough that replacing it beats being stranded by it.",
     ],
     localContext:
@@ -815,18 +815,18 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Dead battery in McKinney? TRA brings a jump start to you on US-75, US-380 or at home. Local DFW dispatch, 24/7. Call now.",
     intro:
-      "A car that will not turn over is usually a flat battery rather than a serious fault, and a jump start resolves it where the vehicle stands. In McKinney that matters more than most places, because the alternative is a recovery run back down US-75.",
+      "A car that will not turn over is usually a dead battery rather than a serious fault, and a jump start resolves it where the vehicle stands. In McKinney that matters more than most places, because the alternative is a recovery run back down US-75.",
     scenarios: [
-      "A vehicle that stood for a week at an airfield or while travelling.",
+      "A vehicle that stood for a week at an airfield or while traveling.",
       "Lights left on overnight on a residential street.",
       "A battery that has cranked slowly each morning through a cold week.",
       "A weekend car that only moves every few weeks.",
     ],
     localContext:
-      "US-75 and US-380 carry most of McKinney's traffic, with the Sam Rayburn Tollway running along the McKinney–Allen border and TX-5 serving the older parts of town. McKinney National Airport also sits within the city, and vehicles left standing there while owners travel are a recurring source of flat batteries.",
+      "US-75 and US-380 carry most of McKinney's traffic, with the Sam Rayburn Tollway running along the McKinney–Allen border and TX-5 serving the older parts of town. McKinney National Airport also sits within the city, and vehicles left standing there while owners travel are a recurring source of dead batteries.",
     faqs: [
       {
-        q: "My car has been parked for a fortnight — will a jump fix it?",
+        q: "My car has been parked for two weeks — will a jump fix it?",
         a: "Usually. A sound battery that simply discharged while standing will take a jump and recharge as you drive. One at the end of its life often will not, and your driver will say which it appeared to be.",
       },
       {
@@ -834,7 +834,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
         a: "Tell dispatch exactly where the vehicle is standing. We hold no special airport access or authorisation, so they will tell you plainly whether a driver can reach that particular spot.",
       },
       {
-        q: "Is it worth just buying jump leads?",
+        q: "Is it worth just buying jumper cables?",
         a: "Leads only help if there is another vehicle and somebody who knows the correct connection order. A wrong connection can be an expensive mistake on a modern car.",
       },
     ],
@@ -855,7 +855,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       "Replacing a battery usually means getting the car to a workshop, which is awkward when the car is the thing that will not start. We bring the replacement to the vehicle and fit it there. The battery itself is published pricing; installation is quoted for your car, because access varies so much between models.",
     scenarios: [
       "A battery that has already been jumped once this month.",
-      "A car that will not start reliably after standing while you travelled.",
+      "A car that will not start reliably after standing while you traveled.",
       "Electrical symptoms pointing at charging rather than the engine itself.",
       "A battery you would rather replace before winter than during it.",
     ],
@@ -987,7 +987,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       },
       {
         q: "How do you prove the car is mine?",
-        a: "The driver asks for ID or another way to show you are entitled to the vehicle before opening it. For a company vehicle that may mean paperwork rather than a personal licence — mention it when you call.",
+        a: "The driver asks for ID or another way to show you are entitled to the vehicle before opening it. For a company vehicle that may mean paperwork rather than a personal license — mention it when you call.",
       },
       {
         q: "Can you come out to a freeway shoulder?",
@@ -1012,7 +1012,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     scenarios: [
       "A vehicle that sat through a long weekend without being started.",
       "Lights or an interior lamp left on overnight on a driveway.",
-      "A battery that has cranked a little slower every morning for a fortnight.",
+      "A battery that has cranked a little slower every morning for two weeks.",
       "A work truck that stood at a yard over a shutdown period.",
     ],
     localContext:
@@ -1048,7 +1048,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       "Once a battery has stopped holding charge, jumping it again only delays the next failure. We bring the replacement to the vehicle and fit it where it stands. The battery price is published; installation is quoted for your specific vehicle, because reaching the battery is a five-minute job on some cars and a much longer one on others.",
     scenarios: [
       "A second jump start on the same vehicle inside a month.",
-      "A car that will not start after standing through a holiday.",
+      "A car that will not start after standing through a holiday weekend.",
       "Dim headlights, slow windows or a clock that resets — charging symptoms rather than engine ones.",
       "A battery old enough that you would rather replace it on your terms than on a freeway shoulder.",
     ],
@@ -1195,7 +1195,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Car won't start in Richardson? TRA brings a jump start to Telecom Corridor lots, Galatyn Park or your driveway. Local DFW dispatch, 24/7.",
     intro:
-      "A car that clicks instead of starting at five o'clock is a flat battery far more often than it is a fault. We come to the vehicle, start it, and let you drive home rather than arranging a recovery you do not need.",
+      "A car that clicks instead of starting at five o'clock is a dead battery far more often than it is a fault. We come to the vehicle, start it, and let you drive home rather than arranging a recovery you do not need.",
     scenarios: [
       "A car that sat in an office lot through several days of remote working.",
       "Headlights left on during a long day at a campus off US-75.",
@@ -1236,7 +1236,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     scenarios: [
       "A battery that has now needed jumping more than once.",
       "A car that fails to start after standing in a company lot over a long weekend.",
-      "Electrical behaviour pointing at charging rather than the engine.",
+      "Electrical behavior pointing at charging rather than the engine.",
       "A battery you would rather replace during a working day than on a January morning.",
     ],
     localContext:
@@ -1388,7 +1388,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Dead battery in Frisco? TRA brings a jump start to you on the Tollway, Preston Road or at home. Local DFW dispatch, 24/7. Call now.",
     intro:
-      "A car that will not turn over is usually a flat battery rather than a serious fault, and a jump start resolves it where the vehicle stands. In a city built around driving, that is the difference between a delay and a lost afternoon.",
+      "A car that will not turn over is usually a dead battery rather than a serious fault, and a jump start resolves it where the vehicle stands. In a city built around driving, that is the difference between a delay and a lost afternoon.",
     scenarios: [
       "A second family car that only moves at weekends.",
       "Lights left on during a long event at a venue.",
@@ -1430,7 +1430,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       "A battery that has already been jumped once this month.",
       "A car that will not start reliably after standing for a week.",
       "Charging symptoms — dim lights, slow windows, a resetting clock.",
-      "An ageing battery you would rather change before a long trip than during one.",
+      "An aging battery you would rather change before a long trip than during one.",
     ],
     localContext:
       "Frisco's roads are tollways and arterials rather than interstates — the Dallas North Tollway, the Sam Rayburn Tollway, Preston Road, US-380 and FM 423 — and the long steady runs they carry tend to mask a declining battery. The first real sign is usually a car that will not wake up after a few days parked.",
@@ -1544,7 +1544,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Locked out in Lewisville? TRA opens your car without damage — off I-35E, Main Street or near the lake. Local DFW dispatch, day or night.",
     intro:
-      "Lewisville sits on the main road north out of the metroplex, and a good share of the people locked out here are partway through a journey rather than at home. We come to the vehicle wherever it has stopped, confirm it is yours, and open it without damage.",
+      "Lewisville sits on the main road north out of the metroplex, and a good share of the people locked out here are partway through a trip rather than at home. We come to the vehicle wherever it has stopped, confirm it is yours, and open it without damage.",
     scenarios: [
       "Keys locked in at a stop off I-35E partway through a drive.",
       "A fob that stopped working in a lot along Main Street.",
@@ -1556,7 +1556,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     faqs: [
       {
         q: "I am passing through on I-35E — can you still help?",
-        a: "Yes. A good share of our Lewisville work is for people partway through a journey rather than local residents. Tell dispatch where you have stopped and they will route the nearest driver.",
+        a: "Yes. A good share of our Lewisville work is for people partway through a trip rather than local residents. Tell dispatch where you have stopped and they will route the nearest driver.",
       },
       {
         q: "Do I need proof the car is mine if it is a rental?",
@@ -1581,7 +1581,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Car won't start in Lewisville? TRA brings a jump start to you on I-35E, Main Street or at home. Local DFW dispatch, 24/7. Call now.",
     intro:
-      "A flat battery on a journey is worse than a flat battery at home, because you are somewhere you did not plan to stop. We come to the vehicle, jump it, and get you moving again under your own power.",
+      "A dead battery on a trip is worse than a dead battery at home, because you are somewhere you did not plan to stop. We come to the vehicle, jump it, and get you moving again under your own power.",
     scenarios: [
       "A car that will not restart after a stop partway up I-35E.",
       "A boat-towing vehicle left standing after a weekend at the lake.",
@@ -1692,7 +1692,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Nail in your tire in Lewisville? TRA repairs punctures on site with a plug or patch where the damage allows, so your spare stays in the trunk.",
     intro:
-      "On a road like I-35E, a slow leak you have been topping up for a fortnight is a blowout waiting for a moment that suits it. Where the damage is in the tread and within repairable limits, we repair the tire where the car is parked and leave the spare where it belongs.",
+      "On a road like I-35E, a slow leak you have been topping up for two weeks is a blowout waiting for a moment that suits it. Where the damage is in the tread and within repairable limits, we repair the tire where the car is parked and leave the spare where it belongs.",
     scenarios: [
       "A tire that needs air before every longer drive.",
       "A screw picked up on the highway that has started to weep.",
@@ -1917,7 +1917,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
 
   // ===================== ADDISON =====================
   // Three pages only: All Hours has no Addison battery or tire-repair page,
-  // so there was no source intent to analyse for those two.
+  // so there was no source intent to analyze for those two.
   {
     city: "addison",
     service: "lockout",
@@ -1963,9 +1963,9 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Dead battery in Addison? TRA brings a jump start to Belt Line Road, the Dallas North Tollway or Addison Airport parking. Local DFW dispatch, 24/7.",
     intro:
-      "A car that will not turn over at the end of an evening is almost always a flat battery rather than a fault. We come to the vehicle, jump it, and let you drive home instead of leaving it where it stands overnight.",
+      "A car that will not turn over at the end of an evening is almost always a dead battery rather than a fault. We come to the vehicle, jump it, and let you drive home instead of leaving it where it stands overnight.",
     scenarios: [
-      "A car left at Addison Airport while you travelled.",
+      "A car left at Addison Airport while you traveled.",
       "Lights left on through a long dinner along Belt Line Road.",
       "A vehicle that sat in an office lot across a long weekend.",
       "A battery that has cranked slowly each cold morning this week.",
@@ -2084,7 +2084,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       "A battery that has already needed jumping once this month.",
       "A car that will not start after standing over a long weekend.",
       "Dim lights or slow windows pointing at charging rather than the engine.",
-      "An ageing battery you would rather replace before a cold snap than during one.",
+      "An aging battery you would rather replace before a cold snap than during one.",
     ],
     localContext:
       "Allen's driving is mostly US-75 commuting with the Sam Rayburn Tollway across the north of the city. A long daily run keeps a weak battery looking healthy, so the failure usually shows up the first morning after the car has stood for a few days.",
@@ -2157,7 +2157,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     intro:
       "Carrollton straddles three counties and several major roads, which means a locked car here could be almost anywhere. A driver comes to wherever the vehicle has stopped, confirms it is yours and opens it without damage.",
     scenarios: [
-      "Keys locked in at a stop off I-35E partway through a journey.",
+      "Keys locked in at a stop off I-35E partway through a trip.",
       "A fob that stopped responding in a workplace lot during a shift.",
       "Keys shut in the trunk after loading, which is priced separately from a door.",
       "A door that locked itself with the engine running on a cold morning.",
@@ -2232,7 +2232,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       "Once a battery has been jumped more than once, it is telling you it will not last the winter. We bring the replacement to the vehicle and fit it where it stands. The battery price is published; installation is quoted for your car, because access differs enormously between models.",
     scenarios: [
       "A second jump start on the same vehicle inside a month.",
-      "A car that will not start after standing over a holiday.",
+      "A car that will not start after standing over a holiday weekend.",
       "Electrical symptoms — dim headlights, slow windows, a resetting clock.",
       "A battery old enough that you would rather replace it on your own schedule.",
     ],
@@ -2342,7 +2342,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Need a car battery in Coppell? TRA brings it to the car and fits it on site. Installation quoted for your vehicle, 1-year warranty included.",
     intro:
-      "Getting a car that will not start to a workshop is the hard part of a battery replacement, and it is harder in a city with no freeway through it. We bring the battery to the vehicle instead. The battery price is published; installation is quoted for your car.",
+      "Getting a car that will not start to a workshop is the hard part of a battery replacement, and it is harder in a city with no freeway through it. We bring the battery out to the vehicle instead. The battery is a published price, and we quote the fitting once we know the car.",
     scenarios: [
       "A battery that has needed jumping more than once recently.",
       "A car that will not start after standing through a trip away.",
@@ -2418,14 +2418,14 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Locked out in Euless? TRA opens your car without damage — along the Airport Freeway, TX-360 or near the DFW boundary. Local dispatch, day or night.",
     intro:
-      "Euless sits right against the south-western edge of the airport, and a lot of its lockouts involve somebody on a schedule they cannot move. A driver comes to the vehicle, confirms it is yours and opens it without damage.",
+      "Euless sits right against the southwestern edge of the airport, and a lot of its lockouts involve somebody on a schedule they cannot move. A driver comes to the vehicle, confirms it is yours and opens it without damage.",
     scenarios: [
       "Keys locked in at a hotel or long-stay lot near the airport boundary.",
       "A fob that stopped working at the end of a shift.",
       "Keys shut in the trunk with luggage already loaded, which is priced separately.",
     ],
     localContext:
-      "The south-western portion of Dallas/Fort Worth International Airport lies inside Euless city limits, and the city's two main routes — TX-183 Airport Freeway and TX-360 — exist largely to move traffic around it. Euless borders Bedford, Hurst, Grapevine and Irving.",
+      "The southwestern portion of Dallas/Fort Worth International Airport lies inside Euless city limits, and the city's two main routes — TX-183 Airport Freeway and TX-360 — exist largely to move traffic around it. Euless borders Bedford, Hurst, Grapevine and Irving.",
     faqs: [
       {
         q: "I have a flight — how fast can someone get here?",
@@ -2443,7 +2443,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     primaryKeyword: "car lockout service Euless TX",
     secondaryKeywords: ["locked out of car Euless", "car unlock Euless TX", "auto lockout Euless"],
     longTail: ["locked keys in car Euless TX", "car unlock near me Euless", "locked out near DFW airport Euless"],
-    intent: "Emergency, traveller-adjacent, near-me.",
+    intent: "Emergency, traveler-adjacent, near-me.",
     sourceUrls: ["allhoursroadside.com/euless-auto-lockout-help/"],
   },
   {
@@ -2459,10 +2459,10 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       "A car that would not start on returning from a trip, and struggled again days later.",
       "A vehicle parked long-term near the airport boundary.",
       "Dim lights or slow electrics pointing at charging rather than the engine.",
-      "A battery you would rather replace before travelling than after.",
+      "A battery you would rather replace before traveling than after.",
     ],
     localContext:
-      "With the south-western portion of DFW International inside its city limits, Euless has an unusual share of vehicles that sit rather than drive. TX-183 Airport Freeway and TX-360 carry the traffic that does move.",
+      "With the southwestern portion of DFW International inside its city limits, Euless has an unusual share of vehicles that sit rather than drive. TX-183 Airport Freeway and TX-360 carry the traffic that does move.",
     faqs: [
       {
         q: "Can you fit a battery in long-stay parking?",
@@ -2480,7 +2480,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     primaryKeyword: "car battery replacement Euless TX",
     secondaryKeywords: ["mobile battery replacement Euless", "car battery service Euless TX", "battery installation Euless"],
     longTail: ["mobile car battery Euless TX", "battery dead after trip Euless", "car battery keeps dying Euless"],
-    intent: "Commercial, traveller-adjacent.",
+    intent: "Commercial, traveler-adjacent.",
     sourceUrls: ["allhoursroadside.com/euless-battery-replacement-service/"],
   },
   {
@@ -2530,7 +2530,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Locked out in Grapevine? TRA opens your car without damage — TX-114, TX-121 or near the airport. Local DFW dispatch, day or night.",
     intro:
-      "Grapevine holds more of the airport than any other city, and a great many of the cars parked here belong to people who are mid-journey rather than at home. A driver comes to the vehicle, confirms it is yours and opens it without damage.",
+      "Grapevine holds more of the airport than any other city, and a great many of the cars parked here belong to people who are mid-trip rather than at home. A driver comes to the vehicle, confirms it is yours and opens it without damage.",
     scenarios: [
       "Keys locked in at a hotel lot before an early departure.",
       "A fob that died while the car stood in long-stay parking.",
@@ -2556,7 +2556,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     primaryKeyword: "car lockout service Grapevine TX",
     secondaryKeywords: ["locked out of car Grapevine", "car unlock Grapevine TX", "auto lockout Grapevine"],
     longTail: ["locked keys in car Grapevine TX", "car unlock near me Grapevine", "locked out near DFW airport Grapevine"],
-    intent: "Emergency, traveller-adjacent, near-me.",
+    intent: "Emergency, traveler-adjacent, near-me.",
     sourceUrls: ["allhoursroadside.com/grapevine-auto-lockout-help/"],
   },
   {
@@ -2593,7 +2593,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     primaryKeyword: "car battery replacement Grapevine TX",
     secondaryKeywords: ["mobile battery replacement Grapevine", "car battery service Grapevine TX", "battery installation Grapevine"],
     longTail: ["mobile car battery Grapevine TX", "battery dead after trip Grapevine", "car battery keeps dying Grapevine"],
-    intent: "Commercial, traveller-adjacent.",
+    intent: "Commercial, traveler-adjacent.",
     sourceUrls: ["allhoursroadside.com/grapevine-battery-replacement-service/"],
   },
   {
@@ -2604,7 +2604,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Flat tire in Grapevine? If you have a usable spare, TRA fits it on site — TX-114, TX-121 or a hotel lot. Call for roadside help.",
     intro:
-      "With a serviceable spare in the vehicle, a flat is a delay rather than a cancelled journey. A driver comes to you, fits the spare and torques it correctly, which is worth a great deal when there is a departure time attached to the morning.",
+      "With a serviceable spare in the vehicle, a flat is a delay rather than a canceled trip. A driver comes to you, fits the spare and torques it correctly, which is worth a great deal when there is a departure time attached to the morning.",
     scenarios: [
       "A flat found in a hotel lot before an early start.",
       "A blowout on TX-114 or TX-121 in heavy airport-bound traffic.",
@@ -2630,7 +2630,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     primaryKeyword: "flat tire change Grapevine TX",
     secondaryKeywords: ["flat tire service Grapevine", "tire change near me Grapevine", "roadside tire change Grapevine TX"],
     longTail: ["flat tire before flight Grapevine", "24 hour tire change Grapevine", "change flat tire Grapevine TX"],
-    intent: "Emergency, time-critical, traveller-adjacent.",
+    intent: "Emergency, time-critical, traveler-adjacent.",
     sourceUrls: ["allhoursroadside.com/grapevine-tire-change-service/"],
   },
 
@@ -2646,7 +2646,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     intro:
       "Hurst is a mid-cities town with a lot of retail parking and a lot of people passing through on their way somewhere else. A driver comes to the vehicle, confirms it is yours and opens it without damage.",
     scenarios: [
-      "Keys locked in while loading shopping at a retail lot.",
+      "Keys locked in while loading groceries at a retail lot.",
       "A fob that stopped responding at the end of a shift.",
       "Keys shut in the trunk after loading, which is quoted separately from a door.",
     ],
@@ -2654,7 +2654,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       "Hurst sits in the middle of the mid-cities, bordered by Bedford, Euless, North Richland Hills and Grapevine. TX-183 Airport Freeway and TX-26 run through it with Loop 820 along the western side, and the airport is about thirteen miles away.",
     faqs: [
       {
-        q: "Do you cover retail and shopping parking?",
+        q: "Do you cover retail and grocery store parking?",
         a: "Yes, and in Hurst that is a large share of the calls. Give dispatch the lot and roughly where the car is standing in it.",
       },
       {
@@ -2717,7 +2717,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Flat tire in Hurst? If you have a usable spare, TRA fits it where you are — Loop 820, TX-183 or a retail lot. Call for roadside help.",
     intro:
-      "With a usable spare in the vehicle, a flat is a short job. A driver comes to you, fits it and torques it correctly, and you carry on rather than kneeling in a parking lot with the shopping still in the car.",
+      "With a usable spare in the vehicle, a flat is a short job. A driver comes to you, fits it and torques it correctly, and you carry on rather than kneeling in a parking lot with the groceries still in the car.",
     scenarios: [
       "A flat found in a retail lot with the car already loaded.",
       "A blowout on Loop 820 or the Airport Freeway at speed.",
@@ -2744,6 +2744,955 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     longTail: ["flat tire on Loop 820 Hurst", "24 hour tire change Hurst", "change flat tire Hurst TX"],
     intent: "Emergency, roadside-safety, retail-parking.",
     sourceUrls: ["allhoursroadside.com/hurst-tire-change-service/"],
+  },
+
+  // ===================== ARLINGTON =====================
+  // Four pages; no All Hours tire-repair page for Arlington.
+  // Arlington borders only Grand Prairie among the cities TRA serves — its
+  // other neighbors (Kennedale, Mansfield, Fort Worth) are outside the
+  // service area. One nearby link is the correct answer, not a gap.
+  {
+    city: "arlington",
+    service: "lockout",
+    h1: "Car Lockout Service in Arlington, TX",
+    title: "Car Lockout Service Arlington TX",
+    metaDescription:
+      "Locked out in Arlington? TRA opens your car without damage — Entertainment District lots, I-20 or I-30. Local DFW dispatch, day or night.",
+    intro:
+      "Arlington fills and empties around events, and a locked car in a stadium lot at eleven at night is a particular kind of stranded. A driver meets you at the car, checks you are entitled to it, and has it open without leaving a mark.",
+    scenarios: [
+      "Keys locked in an Entertainment District lot after a game or concert.",
+      "A fob that gave up in a workplace lot off US-287.",
+      "Keys shut in the trunk with tailgating gear already loaded, which is priced separately from a door.",
+      "A door that locked itself with the engine running.",
+    ],
+    localContext:
+      "Arlington sits in Tarrant County on I-20 and I-30, with US-287 running through as well. The Entertainment District is the part of the city that generates the most of this work, because tens of thousands of cars park there at once and a handful of them end the evening locked.",
+    faqs: [
+      {
+        q: "Can you find me in a stadium parking lot?",
+        a: "Give dispatch the lot name or number and the nearest entrance. Event parking is large and repetitive, and that one detail is usually the difference between a driver reaching you in minutes and circling.",
+      },
+      {
+        q: "Will you come out late after an event?",
+        a: "Yes. Late calls from the Entertainment District are routine, which is part of why dispatch is local rather than an out-of-state call center.",
+      },
+      {
+        q: "Will you check the car is mine?",
+        a: "Yes. The driver asks for ID or some other proof you are entitled to the vehicle before it is opened. It takes a moment, and it is the reason nobody can have your car opened on a whim.",
+      },
+    ],
+    primaryKeyword: "car lockout service Arlington TX",
+    secondaryKeywords: ["locked out of car Arlington", "car unlock Arlington TX", "auto lockout Arlington"],
+    longTail: ["locked keys in car Arlington TX", "car unlock near me Arlington", "locked out after game Arlington"],
+    intent: "Emergency, event-driven, late-night.",
+    sourceUrls: ["allhoursroadside.com/arlington-auto-lockout-help/"],
+  },
+  {
+    city: "arlington",
+    service: "jump-start",
+    h1: "Jump Start Service in Arlington, TX",
+    title: "Jump Start Service Arlington TX",
+    metaDescription:
+      "Car won't start in Arlington? TRA brings a jump start to Entertainment District lots, I-20 or your driveway. Local DFW dispatch, 24/7.",
+    intro:
+      "A car that will not start when a stadium lot is emptying around you is a dead battery far more often than a fault. We come to the vehicle, jump it, and let you join the line out rather than watch it leave without you.",
+    scenarios: [
+      "Headlights or an interior light left on through a three-hour event.",
+      "A car that sat through a long weekend without being started.",
+      "The first properly cold morning finding a battery that was already weak.",
+      "A battery that has cranked slower each day for a week.",
+    ],
+    localContext:
+      "Arlington's event parking is the defining factor here: cars sit for hours with electronics on standby, and the lots empty all at once. Outside the Entertainment District, I-20, I-30 and US-287 carry the commuting that usually keeps a battery healthy.",
+    faqs: [
+      {
+        q: "Can you reach me while a lot is emptying?",
+        a: "It is slower when thousands of cars are leaving at once, and dispatch will tell you that honestly rather than quote a time that ignores the traffic around you.",
+      },
+      {
+        q: "Should I keep trying the ignition?",
+        a: "No. Every turn of the key pulls more out of a battery that is already short, which only makes the jump harder. Kill the lights, stereo and climate control, and sit tight.",
+      },
+      {
+        q: "Will the charge last to get me home?",
+        a: "A healthy battery takes the charge back as you drive. One that is failing may not survive the next time you switch off, and your driver will say which yours looked like.",
+      },
+    ],
+    primaryKeyword: "jump start service Arlington TX",
+    secondaryKeywords: ["dead battery Arlington", "jump start near me Arlington", "car won't start Arlington TX"],
+    longTail: ["24 hour jump start Arlington TX", "jump start after game Arlington", "car battery died Arlington"],
+    intent: "Emergency, event-driven, mobile.",
+    sourceUrls: ["allhoursroadside.com/arlington-jump-start-service/"],
+  },
+  {
+    city: "arlington",
+    service: "battery-replacement",
+    h1: "Mobile Battery Replacement in Arlington, TX",
+    title: "Car Battery Replacement Arlington TX",
+    metaDescription:
+      "Arlington car battery dead again? TRA brings the replacement to the car — Entertainment District lot, I-20 or your driveway — and fits it on the spot.",
+    intro:
+      "A battery that has already been jumped once will usually need it again, and the second time is rarely convenient. We bring the replacement out and fit it where the car already stands. You see the battery price up front; what it costs to install depends on how buried yours is, so that part is quoted for your vehicle.",
+    scenarios: [
+      "A battery jumped once in an event lot and again days later.",
+      "A car that will not start after standing over a holiday weekend.",
+      "Dim headlights or slow windows pointing at charging rather than the engine.",
+      "An aging battery you would rather replace before a cold spell.",
+    ],
+    localContext:
+      "Arlington drivers cover real distance on I-20, I-30 and US-287, and those runs hide a declining battery for months. The failures tend to appear after a car has stood — in an event lot, or at home across a long weekend.",
+    faqs: [
+      {
+        q: "Do you come out to home addresses?",
+        a: "Yes — most Arlington battery work happens on a driveway, where the car failed to start first thing in the morning.",
+      },
+      {
+        q: "Why is installation quoted rather than published?",
+        a: "Because the job genuinely differs by vehicle. Some batteries are reached in minutes, others need trim or a seat removed. A single figure would be wrong for a large share of cars.",
+      },
+      {
+        q: "What warranty is included?",
+        a: "A battery replacement includes a 1-year warranty. Hold on to your invoice — that is what a claim is processed against.",
+      },
+    ],
+    primaryKeyword: "car battery replacement Arlington TX",
+    secondaryKeywords: ["mobile battery replacement Arlington", "car battery service Arlington TX", "battery installation Arlington"],
+    longTail: ["mobile car battery Arlington TX", "battery replaced at home Arlington", "car battery keeps dying Arlington"],
+    intent: "Commercial, convenience-led.",
+    sourceUrls: ["allhoursroadside.com/arlington-battery-replacement-service/"],
+  },
+  {
+    city: "arlington",
+    service: "flat-tire-change",
+    h1: "Flat Tire Change in Arlington, TX",
+    title: "Flat Tire Change Arlington TX",
+    metaDescription:
+      "Flat tire in Arlington? If you have a usable spare, TRA fits it where you are — I-20, I-30 or an Entertainment District lot. Call for roadside help.",
+    intro:
+      "With a serviceable spare in the vehicle, a flat is a delay rather than a tow. A driver comes to you, fits the spare and torques it properly, and you drive on — including out of a parking lot that is emptying around you.",
+    scenarios: [
+      "A flat discovered in an event lot as everyone else is leaving.",
+      "A blowout on I-20 or I-30 where the shoulder is no place to work.",
+      "A tire that had been losing air all week and gave out in the driveway.",
+      "A locking wheel nut whose key is no longer in the car.",
+    ],
+    localContext:
+      "I-20 and I-30 carry Arlington's fast traffic and account for most sudden tire failures here. US-287 adds to it. Flats found in Entertainment District parking are usually discovered rather than experienced, which makes them easier to deal with calmly.",
+    faqs: [
+      {
+        q: "Is it safe to change it on the I-20 shoulder?",
+        a: "We would advise against it. Stay belted in with hazards on and let the driver come to you — standing beside a car on an interstate shoulder is the genuinely dangerous part of a flat tire.",
+      },
+      {
+        q: "What if I have no spare?",
+        a: "Then there is nothing to fit, and it becomes either a replacement tire from us or a tow. Mention it when you call so the right truck comes out.",
+      },
+      {
+        q: "How far will the spare get me?",
+        a: "Most are rated for a limited speed and a limited distance. Your driver will tell you what yours is good for so you can plan the rest of the trip.",
+      },
+    ],
+    primaryKeyword: "flat tire change Arlington TX",
+    secondaryKeywords: ["flat tire service Arlington", "tire change near me Arlington", "roadside tire change Arlington TX"],
+    longTail: ["flat tire on I-20 Arlington", "24 hour tire change Arlington", "change flat tire Arlington TX"],
+    intent: "Emergency, roadside-safety, event-driven.",
+    sourceUrls: ["allhoursroadside.com/arlington-tire-change-service/"],
+  },
+
+  // ===================== GRAND PRAIRIE =====================
+  // Four pages; no All Hours tire-repair page. The lockout source targets the
+  // phrase intent "locked out of car" rather than "lockout service", which is
+  // reflected in the keyword map below.
+  {
+    city: "grand-prairie",
+    service: "lockout",
+    h1: "Car Lockout Service in Grand Prairie, TX",
+    title: "Locked Out of Your Car in Grand Prairie TX",
+    metaDescription:
+      "Locked out of your car in Grand Prairie? TRA opens it without damage — along I-20, I-30, TX-360 or Belt Line Road. Local dispatch, day or night.",
+    intro:
+      "Grand Prairie is long and narrow and crosses four counties, so being locked out here can leave you a fair distance from anyone who could help. We reach the car wherever along that stretch it stopped, verify it belongs to you, and open it without damage.",
+    scenarios: [
+      "Keys locked in at a stop along Belt Line Road partway across the city.",
+      "A fob that stopped responding in a workplace lot.",
+      "Keys shut in the trunk while loading, which is quoted as its own job.",
+      "A vehicle left at Grand Prairie Municipal Airport whose fob died.",
+    ],
+    localContext:
+      "Grand Prairie spans Dallas, Tarrant and Ellis counties with a small part reaching into Johnson — more counties than any city we serve except Dallas. It is crossed by I-20 and I-30, with TX-360, TX-161 President George Bush Turnpike, Spur 303 Pioneer Parkway, TX-180 Main Street and Belt Line Road carrying the rest. Grand Prairie Municipal Airport sits inside the city, and it borders Dallas, Arlington and Irving.",
+    faqs: [
+      {
+        q: "The city is long — does where I am matter?",
+        a: "It does. Grand Prairie stretches across four counties, so tell dispatch the nearest major road or cross street rather than just the city name, and the right driver is sent rather than the nearest one on a map.",
+      },
+      {
+        q: "Can you reach a car at the municipal airport?",
+        a: "Tell dispatch which lot the car is standing on. We hold no special access or authorization at the field, so they will say plainly whether a driver can get to it.",
+      },
+      {
+        q: "Will opening the car damage it?",
+        a: "Our drivers open cars without damaging them wherever the vehicle allows it. If yours is one that cannot be done safely that way, you hear so before any work begins.",
+      },
+    ],
+    primaryKeyword: "locked out of car Grand Prairie TX",
+    secondaryKeywords: ["car lockout service Grand Prairie", "car unlock Grand Prairie TX", "auto lockout Grand Prairie"],
+    longTail: ["locked keys in car Grand Prairie TX", "car unlock near me Grand Prairie", "24 hour lockout Grand Prairie"],
+    intent: "Emergency, phrase-intent 'locked out of car', near-me.",
+    sourceUrls: ["allhoursroadside.com/grand-prairie-locked-out-of-car/"],
+  },
+  {
+    city: "grand-prairie",
+    service: "jump-start",
+    h1: "Jump Start Service in Grand Prairie, TX",
+    title: "Jump Start Service Grand Prairie TX",
+    metaDescription:
+      "Dead battery in Grand Prairie? TRA brings a jump start to you on I-20, I-30, TX-360 or at home. Local DFW dispatch, 24/7. Call now.",
+    intro:
+      "A car that turns over slowly and then stops has run its battery down rather than broken anything, in most cases. A jump start settles it where the vehicle stands and you drive on under your own power.",
+    scenarios: [
+      "A vehicle that sat through a long weekend without moving.",
+      "Lights left on overnight on a street off Pioneer Parkway.",
+      "A work truck that stood at a yard over a shutdown.",
+      "A battery that has needed a longer crank every morning this week.",
+    ],
+    localContext:
+      "Two interstates cross Grand Prairie — I-20 and I-30 — with TX-360 and the President George Bush Turnpike running north to south and Belt Line Road, Pioneer Parkway and Main Street carrying local traffic. Long interstate running tends to keep a battery charged, so most failures here follow a spell of standing still.",
+    faqs: [
+      {
+        q: "Can you jump start a work truck or van?",
+        a: "Give dispatch the vehicle details when you call. Larger engines ask more of the equipment, so we would rather confirm it up front than send a driver who cannot finish the job.",
+      },
+      {
+        q: "What can I do while I wait?",
+        a: "Stop turning the key and switch everything off — lights, stereo, climate control. Repeated attempts drain what little charge is left.",
+      },
+      {
+        q: "Will a jump start harm the electronics?",
+        a: "Done properly, no. Our drivers connect in the correct order with the right equipment, which is the main reason to call rather than accept a jump from a stranger's cables.",
+      },
+    ],
+    primaryKeyword: "jump start service Grand Prairie TX",
+    secondaryKeywords: ["dead battery Grand Prairie", "jump start near me Grand Prairie", "car won't start Grand Prairie TX"],
+    longTail: ["24 hour jump start Grand Prairie TX", "mobile jump start Grand Prairie", "car battery died Grand Prairie"],
+    intent: "Emergency, mobile, 24-hour.",
+    sourceUrls: ["allhoursroadside.com/grand-prairie-jump-start-service/"],
+  },
+  {
+    city: "grand-prairie",
+    service: "battery-replacement",
+    h1: "Mobile Battery Replacement in Grand Prairie, TX",
+    title: "Car Battery Replacement Grand Prairie TX",
+    metaDescription:
+      "Car battery gone in Grand Prairie? We drive the replacement out anywhere from Belt Line Road to I-20 and fit it where you are parked. 1-year warranty.",
+    intro:
+      "Once a battery stops holding charge, jumping it again only moves the problem to a worse moment. We come to the car and change it on the spot. The battery itself is a published price; fitting it is quoted once we know what we are working on.",
+    scenarios: [
+      "A second jump start on the same vehicle inside a month.",
+      "A car that will not start after standing through a trip away.",
+      "Electrical symptoms — dim lights, slow windows, a clock that resets.",
+      "A battery old enough that replacing it costs less than being stranded by it.",
+    ],
+    localContext:
+      "Grand Prairie's shape works against you here: the city runs a long way across four counties, so a battery that fails at one end can be a considerable distance from help at the other. Bringing the replacement to the car rather than the car to the workshop is the practical difference.",
+    faqs: [
+      {
+        q: "Can you fit it at my workplace?",
+        a: "Yes, as long as the car is somewhere a driver can work safely. Tell dispatch the site and roughly where it is parked.",
+      },
+      {
+        q: "Why is installation quoted separately?",
+        a: "Because the work itself varies. On some cars the battery sits right there; on others it is behind panels. Quoting your car beats publishing an average that would be wrong for half of them.",
+      },
+      {
+        q: "Do you need my VIN?",
+        a: "No. Year, make and model are enough to bring the right battery. The VIN only confirms the exact fit if you can reach it easily.",
+      },
+    ],
+    primaryKeyword: "car battery replacement Grand Prairie TX",
+    secondaryKeywords: ["mobile battery replacement Grand Prairie", "car battery service Grand Prairie TX", "battery installation Grand Prairie"],
+    longTail: ["mobile car battery Grand Prairie TX", "battery replaced at home Grand Prairie", "car battery keeps dying Grand Prairie"],
+    intent: "Commercial, convenience-led.",
+    sourceUrls: ["allhoursroadside.com/grand-prairie-battery-replacement-service/"],
+  },
+  {
+    city: "grand-prairie",
+    service: "flat-tire-change",
+    h1: "Flat Tire Change in Grand Prairie, TX",
+    title: "Flat Tire Change Grand Prairie TX",
+    metaDescription:
+      "Flat tire in Grand Prairie? If you have a usable spare, TRA fits it where you are — I-20, I-30, TX-360 or at home. Call for roadside help.",
+    intro:
+      "Given a good spare in the trunk, this is a quick job for someone carrying a proper jack and a torque wrench. We come to you, swap the wheel over, and you drive on.",
+    scenarios: [
+      "A blowout on I-20 or I-30 crossing the city at speed.",
+      "A flat found in a workplace lot at the end of a shift.",
+      "A slow puncture that finally went down in a driveway overnight.",
+      "A wheel that will not come off without a locking nut key you no longer have.",
+    ],
+    localContext:
+      "Both I-20 and I-30 cross Grand Prairie, and TX-360 and the President George Bush Turnpike run north to south through it, so there is a lot of fast road in this city relative to its size. Sudden tire failures here are mostly highway events rather than tires found soft at home.",
+    faqs: [
+      {
+        q: "How do I tell you where I am on the interstate?",
+        a: "Give dispatch the nearest exit number and your direction of travel. On I-20 or I-30 that locates you far better than a street address and gets a driver to you sooner.",
+      },
+      {
+        q: "What if there is no spare?",
+        a: "Then there is nothing to put on, and it is either a tire supplied by us or a tow. Tell dispatch on the call so the right help sets off.",
+      },
+      {
+        q: "Is it safe to get out and look?",
+        a: "Not on a live interstate shoulder. Stay belted in with hazards on and describe what you felt to dispatch — your driver will assess it when they arrive.",
+      },
+    ],
+    primaryKeyword: "flat tire change Grand Prairie TX",
+    secondaryKeywords: ["flat tire service Grand Prairie", "tire change near me Grand Prairie", "roadside tire change Grand Prairie TX"],
+    longTail: ["flat tire on I-20 Grand Prairie", "24 hour tire change Grand Prairie", "change flat tire Grand Prairie TX"],
+    intent: "Emergency, highway-safety.",
+    sourceUrls: ["allhoursroadside.com/grand-prairie-tire-change-service/"],
+  },
+
+  // ===================== ROWLETT =====================
+  // Four pages; no All Hours tire-repair page for Rowlett.
+  {
+    city: "rowlett",
+    service: "lockout",
+    h1: "Car Lockout Service in Rowlett, TX",
+    title: "Car Lockout Service Rowlett TX",
+    metaDescription:
+      "Locked out in Rowlett? TRA opens your car without damage — along Lakeview Parkway, the Bush Turnpike or near the lake. Local dispatch, day or night.",
+    intro:
+      "Rowlett sits out on Lake Ray Hubbard, and a locked car at a boat ramp or a lakeside lot is usually a long way from a spare key. Someone comes out to the water, establishes the car is yours, and opens it without drilling or prying anything.",
+    scenarios: [
+      "Keys locked in at a boat ramp after a day out on the water.",
+      "Keys shut in the trunk with gear loaded, which is priced separately from a door.",
+      "A fob that stopped responding in a retail lot off Lakeview Parkway.",
+      "A door that locked itself while the engine idled.",
+    ],
+    localContext:
+      "Rowlett sits on Lake Ray Hubbard and spans Dallas and Rockwall counties. The President George Bush Turnpike and I-30 connect it to the rest of the metroplex, with TX-66 Lakeview Parkway running through the city itself. It borders Garland, Sachse and Rockwall.",
+    faqs: [
+      {
+        q: "I am down by the water — how do I describe where?",
+        a: "Give dispatch the nearest cross street on Lakeview Parkway, or the name of the ramp or parking area. Shoreline access points look alike on a map, so a landmark helps more than coordinates.",
+      },
+      {
+        q: "My fob has gone dead — can you still get in?",
+        a: "Yes — a flat fob battery is one of the commonest reasons for this call, and it makes no difference to how the car is opened.",
+      },
+      {
+        q: "Does someone need to be at the car?",
+        a: "Yes. Somebody who can show the car is theirs has to be present, because that check comes before the door is opened.",
+      },
+    ],
+    primaryKeyword: "car lockout service Rowlett TX",
+    secondaryKeywords: ["locked out of car Rowlett", "car unlock Rowlett TX", "auto lockout Rowlett"],
+    longTail: ["locked keys in car Rowlett TX", "car unlock near me Rowlett", "24 hour lockout Rowlett"],
+    intent: "Emergency, lakeside access, near-me.",
+    sourceUrls: ["allhoursroadside.com/rowlett-lockout-service/"],
+  },
+  {
+    city: "rowlett",
+    service: "jump-start",
+    h1: "Jump Start Service in Rowlett, TX",
+    title: "Jump Start Service Rowlett TX",
+    metaDescription:
+      "Dead battery in Rowlett? TRA brings a jump start to you on Lakeview Parkway, the Bush Turnpike or at home. Local DFW dispatch, 24/7.",
+    intro:
+      "Boats, trailers and second vehicles spend most of the year standing still, and standing is what flattens a battery. A jump start brings the vehicle back where it sits, without a recovery truck crossing the lake to reach you.",
+    scenarios: [
+      "A towing vehicle that has not moved since the last trip out on the water.",
+      "A car that sat through a long weekend on the driveway.",
+      "Lights left on at a lakeside parking area.",
+      "A battery that has cranked slowly every cold morning this week.",
+    ],
+    localContext:
+      "Rowlett's position on Lake Ray Hubbard means an unusual number of vehicles here tow something, and tow vehicles typically sit between trips rather than commute daily. The President George Bush Turnpike, I-30 and TX-66 Lakeview Parkway carry the traffic that does move.",
+    faqs: [
+      {
+        q: "Can you jump a truck with the boat still hitched?",
+        a: "Mention it when you call so the driver knows what they are arriving to. Working round a hitched trailer at a ramp is a different proposition from a car on a driveway.",
+      },
+      {
+        q: "The car has not moved in a month — will a jump work?",
+        a: "Often it will. A sound battery that discharged from standing takes a jump and recharges as you drive. One at the end of its life usually will not, and your driver will say which it appeared to be.",
+      },
+      {
+        q: "Should I keep cranking while I wait?",
+        a: "No. Each attempt takes more from a battery that is already low. Switch everything off and wait for the driver.",
+      },
+    ],
+    primaryKeyword: "jump start service Rowlett TX",
+    secondaryKeywords: ["dead battery Rowlett", "jump start near me Rowlett", "car won't start Rowlett TX"],
+    longTail: ["24 hour jump start Rowlett TX", "mobile jump start Rowlett", "car battery died Rowlett"],
+    intent: "Emergency, seasonal-vehicle, mobile.",
+    sourceUrls: ["allhoursroadside.com/rowlett-jump-start-service/"],
+  },
+  {
+    city: "rowlett",
+    service: "battery-replacement",
+    h1: "Mobile Battery Replacement in Rowlett, TX",
+    title: "Car Battery Replacement Rowlett TX",
+    metaDescription:
+      "Rowlett car battery flat after sitting? TRA fits a new one at the house, the ramp or the lot. 1-year warranty, installation quoted for your car.",
+    intro:
+      "Batteries on vehicles that stand still age faster than batteries on daily drivers, because they are rarely fully charged. The replacement comes out to the vehicle and goes in where it sits. Battery price published, installation quoted against your particular car.",
+    scenarios: [
+      "A tow vehicle that now needs jumping every time it comes out.",
+      "A car that failed to start twice in the same month.",
+      "Lights that dim at idle and windows that crawl.",
+      "A battery you would rather deal with before the boat goes back in the water.",
+    ],
+    localContext:
+      "Rowlett's mix of lake vehicles that sit for weeks and daily commuting out on the President George Bush Turnpike and I-30 produces more battery failures than a straightforward commuter suburb would. Charge that never quite comes back is what shortens a battery's life, and a boat trailer's tow vehicle rarely gets the chance to come back.",
+    faqs: [
+      {
+        q: "Can you change it with the trailer still on?",
+        a: "Usually, but say so on the call so the driver knows before they arrive. The room to work around a hitched vehicle is not the same as on an open driveway.",
+      },
+      {
+        q: "Why is installation quoted rather than published?",
+        a: "Because access varies so much between vehicles. Some batteries take minutes to reach and others need panels removed, so we quote the job for your car.",
+      },
+      {
+        q: "What warranty is included?",
+        a: "Every battery we fit carries a 1-year warranty. Keep the invoice safe, because claims are handled against it.",
+      },
+    ],
+    primaryKeyword: "car battery replacement Rowlett TX",
+    secondaryKeywords: ["mobile battery replacement Rowlett", "car battery service Rowlett TX", "battery installation Rowlett"],
+    longTail: ["mobile car battery Rowlett TX", "battery replaced at home Rowlett", "car battery keeps dying Rowlett"],
+    intent: "Commercial, seasonal-vehicle.",
+    sourceUrls: ["allhoursroadside.com/rowlett-battery-replacement-service/"],
+  },
+  {
+    city: "rowlett",
+    service: "flat-tire-change",
+    h1: "Flat Tire Change in Rowlett, TX",
+    title: "Flat Tire Change Rowlett TX",
+    metaDescription:
+      "Flat tire in Rowlett? If you have a usable spare, TRA fits it where you are — Lakeview Parkway, I-30 or a lakeside lot. Call for roadside help.",
+    intro:
+      "A flat need not end the day if there is a sound spare in the vehicle. A driver comes to you, fits the spare and torques it correctly — which matters here, because some of the places people get flats are not places you want to wait long.",
+    scenarios: [
+      "A flat at a boat ramp or lakeside lot some way from the main road.",
+      "A blowout on I-30 or the Bush Turnpike at speed.",
+      "A trailer tire down after a day out on the water.",
+      "A slow puncture that finished overnight on the driveway.",
+    ],
+    localContext:
+      "I-30 and the President George Bush Turnpike carry Rowlett's fast traffic, with TX-66 Lakeview Parkway running through the city. Flats on the first two are usually sudden; the ones around the lake and on Lakeview Parkway tend to be found rather than experienced.",
+    faqs: [
+      {
+        q: "What if the flat is on the trailer rather than the car?",
+        a: "Say so when you call. A trailer wheel is not always the same job as a car wheel, and dispatch would rather know before a driver leaves.",
+      },
+      {
+        q: "Can you reach a vehicle at a boat ramp?",
+        a: "Usually yes, but tell dispatch which access point you used. Lakeside parking areas are hard to tell apart, and that detail saves real time.",
+      },
+      {
+        q: "What if there is no usable spare?",
+        a: "Then it cannot be fitted, and the answer is a replacement tire supplied by us or a tow. Mention it on the call so the right help is sent.",
+      },
+    ],
+    primaryKeyword: "flat tire change Rowlett TX",
+    secondaryKeywords: ["flat tire service Rowlett", "tire change near me Rowlett", "roadside tire change Rowlett TX"],
+    longTail: ["flat tire Rowlett TX help", "24 hour tire change Rowlett", "change flat tire Rowlett TX"],
+    intent: "Emergency, access-sensitive, towing-aware.",
+    sourceUrls: ["allhoursroadside.com/rowlett-tire-change-service/"],
+  },
+
+  // ===================== WYLIE =====================
+  // Four pages; no All Hours tire-repair page for Wylie.
+  // Sachse is the only adjacent served city, so one nearby link is shown.
+  {
+    city: "wylie",
+    service: "lockout",
+    h1: "Car Lockout Service in Wylie, TX",
+    title: "Car Lockout Service Wylie TX",
+    metaDescription:
+      "Locked out in Wylie? TRA opens your car without damage — along TX-78, FM 544 or anywhere in town. Local DFW dispatch, day or night.",
+    intro:
+      "Wylie sits at the far northeastern edge of the metroplex with no freeway running through it, which means a locked car here is further from help than the same car would be closer in. A driver comes out along TX-78, confirms your claim to the car, and opens it without damaging the lock.",
+    scenarios: [
+      "Keys locked in at a retail lot off TX-78.",
+      "A fob that stopped working in a lot off FM 544.",
+      "Keys shut in the trunk after a grocery run, which is quoted as a separate job.",
+    ],
+    localContext:
+      "Wylie spans Collin, Dallas and Rockwall counties and sits between Lavon Lake and Lake Ray Hubbard, about twenty-four miles northeast of central Dallas. No freeway runs through it: TX-78 is the main route, with FM 544, FM 1378, FM 2514 and FM 3412 making up the rest of the network. Sachse is the only city we serve that borders it.",
+    faqs: [
+      {
+        q: "How long will it take to reach Wylie?",
+        a: "Wylie is at the outer edge of the area and has no freeway through it, so a driver comes in on TX-78 or the FM roads. Dispatch is local and will give you a realistic answer rather than an optimistic one.",
+      },
+      {
+        q: "Can you open it if the fob battery is dead?",
+        a: "Yes. A dead fob is among the most common reasons people call and does not change how the vehicle is opened.",
+      },
+      {
+        q: "Will opening the car damage the lock?",
+        a: "Wherever the vehicle allows it, our drivers get in without damaging anything. If yours cannot be opened safely that way, you are told before any work starts.",
+      },
+    ],
+    primaryKeyword: "car lockout service Wylie TX",
+    secondaryKeywords: ["locked out of car Wylie", "car unlock Wylie TX", "auto lockout Wylie"],
+    longTail: ["locked keys in car Wylie TX", "car unlock near me Wylie", "24 hour lockout Wylie"],
+    intent: "Emergency, edge-of-metro, near-me.",
+    sourceUrls: ["allhoursroadside.com/wylie-lockout-service/"],
+  },
+  {
+    city: "wylie",
+    service: "jump-start",
+    h1: "Jump Start Service in Wylie, TX",
+    title: "Jump Start Service Wylie TX",
+    metaDescription:
+      "Dead battery in Wylie? TRA brings a jump start to you on TX-78, FM 544 or at home. Local DFW dispatch, 24/7. Call now.",
+    intro:
+      "A car that will not turn over in Wylie is a longer wait than the same car closer in, which is exactly why a jump start beats a tow. We come to the vehicle, start it, and you drive on rather than having it recovered across the county.",
+    scenarios: [
+      "A second vehicle that only moves at weekends.",
+      "Lights left on overnight on a residential street.",
+      "A battery that has cranked slowly each morning through a cold spell.",
+      "A car that stood while you were away.",
+    ],
+    localContext:
+      "Wylie has no freeway. TX-78 carries most of the traffic, with FM 544, FM 1378, FM 2514 and FM 3412 handling the rest, and the city sits between Lavon Lake and Lake Ray Hubbard. That combination means more standing vehicles and fewer long daily runs than closer-in suburbs have.",
+    faqs: [
+      {
+        q: "Is a jump start enough, or do I need a battery?",
+        a: "A jump gets you moving now. Whether the battery holds that charge is a separate question, and your driver will tell you honestly what they observed rather than selling you a battery on the spot.",
+      },
+      {
+        q: "What should I do before the driver arrives?",
+        a: "Stop turning the key and switch off the lights, stereo and climate control. Every failed attempt takes more from a battery that is already low.",
+      },
+      {
+        q: "Do you come out this far at night?",
+        a: "Yes. Dispatch will tell you what to expect for the time of night and your location rather than quote a figure that ignores both.",
+      },
+    ],
+    primaryKeyword: "jump start service Wylie TX",
+    secondaryKeywords: ["dead battery Wylie", "jump start near me Wylie", "car won't start Wylie TX"],
+    longTail: ["24 hour jump start Wylie TX", "mobile jump start Wylie", "car battery died Wylie"],
+    intent: "Emergency, edge-of-metro, 24-hour.",
+    sourceUrls: ["allhoursroadside.com/wylie-jump-start-service/"],
+  },
+  {
+    city: "wylie",
+    service: "battery-replacement",
+    h1: "Mobile Battery Replacement in Wylie, TX",
+    title: "Car Battery Replacement Wylie TX",
+    metaDescription:
+      "Wylie car battery dead? No need to tow it anywhere — TRA brings the battery out along TX-78 and fits it where the car stands. 1-year warranty.",
+    intro:
+      "Getting a car that will not start to a workshop is harder from Wylie than from most places, because there is no freeway to put it on. So the battery comes to you instead. What the battery costs is published; fitting it is quoted once we know which car we are opening up.",
+    scenarios: [
+      "A battery that has already been jumped once this month.",
+      "A car that will not start reliably after standing for a week.",
+      "Dashboard warnings, slow windows, a clock that keeps resetting.",
+      "A battery you would rather replace before winter than during it.",
+    ],
+    localContext:
+      "Wylie sits across three counties at the outer edge of the metroplex, connected mainly by TX-78 and a network of FM roads. A battery that fails here is further from a workshop than one that fails closer in, which is much of the argument for fitting the replacement where the car already is.",
+    faqs: [
+      {
+        q: "Do you come out to home addresses in Wylie?",
+        a: "Yes — nearly all battery work here is on a driveway, where the car has failed to start in the morning.",
+      },
+      {
+        q: "Why is installation quoted rather than published?",
+        a: "Because the job differs by vehicle. Some batteries are reached in minutes and others need trim or a seat removed, so we quote yours rather than publish an average.",
+      },
+      {
+        q: "What does the warranty cover?",
+        a: "The battery is covered for a year. Keep the invoice — it is what a claim is checked against.",
+      },
+    ],
+    primaryKeyword: "car battery replacement Wylie TX",
+    secondaryKeywords: ["mobile battery replacement Wylie", "car battery service Wylie TX", "battery installation Wylie"],
+    longTail: ["mobile car battery Wylie TX", "battery replaced at home Wylie", "car battery keeps dying Wylie"],
+    intent: "Commercial, edge-of-metro convenience.",
+    sourceUrls: ["allhoursroadside.com/wylie-battery-replacement-service/"],
+  },
+  {
+    city: "wylie",
+    service: "flat-tire-change",
+    h1: "Flat Tire Change in Wylie, TX",
+    title: "Flat Tire Change Wylie TX",
+    metaDescription:
+      "Flat tire in Wylie? If you have a usable spare, TRA fits it where you are — TX-78, FM 544 or at home. Call for roadside help.",
+    intro:
+      "With a usable spare in the car, a flat is a short job. A driver comes to you, fits it and torques it properly, so you are not changing a wheel on the shoulder of an FM road with no street lighting.",
+    scenarios: [
+      "A flat on TX-78 where the shoulder is narrow and unlit.",
+      "A tire found down in the morning on a driveway.",
+      "A slow puncture that gave up on an FM road out of town.",
+    ],
+    localContext:
+      "Wylie's roads are TX-78 and a set of FM routes rather than freeways, which changes the character of a flat tire here: shoulders are narrower, lighting is poorer and there is less passing traffic. It is a good reason not to attempt a wheel change yourself after dark.",
+    faqs: [
+      {
+        q: "What if my spare is flat as well?",
+        a: "It happens, since spares sit untouched for years. If you are unsure, tell dispatch so a driver is not sent for a job that cannot be finished.",
+      },
+      {
+        q: "Is it safe to change it myself on an FM road?",
+        a: "We would rather you waited. Those roads have narrow shoulders and little lighting, and passing traffic is often moving quickly with less room to give way.",
+      },
+      {
+        q: "Could the tire be repaired instead?",
+        a: "Often yes, if the puncture is in the tread and clear of the sidewall. Your driver will tell you once they have had a look.",
+      },
+    ],
+    primaryKeyword: "flat tire change Wylie TX",
+    secondaryKeywords: ["flat tire service Wylie", "tire change near me Wylie", "roadside tire change Wylie TX"],
+    longTail: ["flat tire Wylie TX help", "24 hour tire change Wylie", "change flat tire Wylie TX"],
+    intent: "Emergency, rural-road safety.",
+    sourceUrls: ["allhoursroadside.com/wylie-tire-change-service/"],
+  },
+
+  // ===================== BEDFORD =====================
+  // Three pages; no All Hours jump start or tire-repair page for Bedford.
+  // Bedford has the thinnest verified data in this batch — two corridors, no
+  // districts, no airport — so its local sections are deliberately brief.
+  {
+    city: "bedford",
+    service: "lockout",
+    h1: "Car Lockout Service in Bedford, TX",
+    title: "Car Lockout Service Bedford TX",
+    metaDescription:
+      "Locked out in Bedford? TRA opens your car without damage, along the Airport Freeway or TX-121. Local DFW dispatch, day or night.",
+    intro:
+      "A locked car in Bedford is usually a short problem with a deadline attached. There is often a driver working nearby, and once you have shown the car is yours it is open in minutes, undamaged.",
+    scenarios: [
+      "Keys locked in while loading at a retail lot.",
+      "A fob that stopped responding in a lot off TX-121.",
+      "Keys locked in the trunk with the groceries, which is quoted separately from a door.",
+    ],
+    localContext:
+      "Bedford sits in northeastern Tarrant County between Hurst and Euless, served by TX-183 Airport Freeway and TX-121.",
+    faqs: [
+      {
+        q: "How quickly can a driver reach Bedford?",
+        a: "Bedford sits between two other cities we cover, so there is usually a driver working nearby. Dispatch is local to DFW and will tell you what to expect for your location.",
+      },
+      {
+        q: "Can you open it if the fob is dead?",
+        a: "Yes. A dead fob battery is among the most frequent reasons for this call, and it does not change the way we get in.",
+      },
+      {
+        q: "Do I need to prove the car is mine?",
+        a: "Yes. The driver asks for ID or another way to confirm you are entitled to it before opening — the reason nobody else can have your car opened.",
+      },
+    ],
+    primaryKeyword: "car lockout service Bedford TX",
+    secondaryKeywords: ["locked out of car Bedford", "car unlock Bedford TX", "auto lockout Bedford"],
+    longTail: ["locked keys in car Bedford TX", "car unlock near me Bedford", "24 hour lockout Bedford"],
+    intent: "Emergency, near-me.",
+    sourceUrls: ["allhoursroadside.com/bedford-auto-lockout-help/"],
+  },
+  {
+    city: "bedford",
+    service: "battery-replacement",
+    h1: "Mobile Battery Replacement in Bedford, TX",
+    title: "Car Battery Replacement Bedford TX",
+    metaDescription:
+      "Bedford car battery on its way out? TRA brings a replacement to your driveway or workplace off TX-183 and fits it on site, with a 1-year warranty.",
+    intro:
+      "A battery that has needed jumping more than once will not improve on its own. We come out and swap it where the car is. The battery carries a published price; installation is quoted separately, because some are a two-minute job and some are not.",
+    scenarios: [
+      "A second jump start on the same car within a few weeks.",
+      "A vehicle that will not start after standing over a long weekend.",
+      "Dim lights and slow windows pointing at charging rather than the engine.",
+      "A battery far enough past its best that waiting is the expensive option.",
+    ],
+    localContext:
+      "Bedford's driving is mid-cities driving — short local trips on TX-183 and TX-121 rather than long highway runs. That pattern quietly shortens battery life, because the alternator never gets a long enough run to put back what each cold start takes out.",
+    faqs: [
+      {
+        q: "Why do short trips wear a battery out?",
+        a: "Starting takes a large amount out of the battery, and it takes sustained driving to put it back. A pattern of short local trips never quite catches up, which is why mid-cities batteries often fail earlier than commuter ones.",
+      },
+      {
+        q: "Can you replace it while I am at work?",
+        a: "Yes, if the vehicle is parked somewhere it is safe to work. Let dispatch know the address and where to look for the car.",
+      },
+      {
+        q: "What warranty comes with it?",
+        a: "The battery carries a 1-year warranty, and a claim is processed against your invoice — so keep hold of it.",
+      },
+    ],
+    primaryKeyword: "car battery replacement Bedford TX",
+    secondaryKeywords: ["mobile battery replacement Bedford", "car battery service Bedford TX", "battery installation Bedford"],
+    longTail: ["mobile car battery Bedford TX", "battery replaced at home Bedford", "car battery keeps dying Bedford"],
+    intent: "Commercial, convenience-led.",
+    sourceUrls: ["allhoursroadside.com/bedford-battery-replacement-service/"],
+  },
+  {
+    city: "bedford",
+    service: "flat-tire-change",
+    h1: "Flat Tire Change in Bedford, TX",
+    title: "Flat Tire Change Bedford TX",
+    metaDescription:
+      "Flat tire in Bedford? If you have a usable spare, TRA fits it where you are — the Airport Freeway, TX-121 or at home. Call for roadside help.",
+    intro:
+      "With a usable spare in the vehicle, a flat is a short job rather than a tow. A driver comes to you, fits it and torques it correctly, and you carry on.",
+    scenarios: [
+      "A flat spotted in a lot off TX-121 with the car already loaded.",
+      "A blowout on the Airport Freeway at speed.",
+      "A slow puncture that gave out overnight on the driveway.",
+    ],
+    localContext:
+      "TX-183 Airport Freeway carries Bedford's fast traffic and is where sudden failures happen; TX-121 and the local streets account for most of the flats that are simply found.",
+    faqs: [
+      {
+        q: "Is it safe to change it on the Airport Freeway shoulder?",
+        a: "We would advise against it. Stay belted in with hazards on and let the driver handle it — standing beside a car on a busy freeway is the genuinely dangerous part.",
+      },
+      {
+        q: "What if there is no spare in the car?",
+        a: "Then there is nothing to put on, so it is a replacement tire from us or a tow. Say which when you call.",
+      },
+      {
+        q: "Could the tire be repaired instead?",
+        a: "Usually, provided the damage is in the tread and clear of the sidewall. Your driver can tell you on sight.",
+      },
+    ],
+    primaryKeyword: "flat tire change Bedford TX",
+    secondaryKeywords: ["flat tire service Bedford", "tire change near me Bedford", "roadside tire change Bedford TX"],
+    longTail: ["flat tire Bedford TX help", "24 hour tire change Bedford", "change flat tire Bedford TX"],
+    intent: "Emergency, roadside-safety.",
+    sourceUrls: ["allhoursroadside.com/bedford-tire-change-service/"],
+  },
+
+  // ===================== NORTH RICHLAND HILLS =====================
+  // Three pages; no All Hours jump start or tire-repair page for NRH.
+  // Hurst is the only adjacent served city — one nearby link is correct.
+  {
+    city: "north-richland-hills",
+    service: "lockout",
+    h1: "Car Lockout Service in North Richland Hills, TX",
+    title: "Car Lockout Service North Richland Hills TX",
+    metaDescription:
+      "Locked out in North Richland Hills? TRA opens your car without damage — Loop 820, Davis Boulevard or Precinct Line Road. Local dispatch, day or night.",
+    intro:
+      "North Richland Hills is a city of arterial roads and retail parking rather than freeways through the middle, and most lockouts here happen in a lot somewhere along one of them. A driver finds you in the lot, satisfies themselves the car is yours, and opens it leaving nothing to repair.",
+    scenarios: [
+      "Keys locked in while loading at a retail lot off Davis Boulevard.",
+      "A fob that quit at the end of a shift somewhere along Mid Cities Boulevard.",
+      "Keys shut in the trunk mid-errand, which carries its own price.",
+    ],
+    localContext:
+      "North Richland Hills sits in Tarrant County with I-820 along its edge and a network of arterials carrying the local traffic: TX-26, FM 1938 Davis Boulevard, FM 3029 Precinct Line Road, Mid Cities Boulevard and North Tarrant Parkway. Hurst is the one city we serve that borders it.",
+    faqs: [
+      {
+        q: "How do I tell you where I am?",
+        a: "Name the nearest of the main roads — Davis Boulevard, Precinct Line Road, Mid Cities Boulevard or North Tarrant Parkway — along with the lot. The city has several similar retail areas, so that detail saves time.",
+      },
+      {
+        q: "What if the fob battery has died?",
+        a: "That is one of the most common calls we take, and a dead fob changes nothing about how the car is opened.",
+      },
+      {
+        q: "Do I have to be there when the driver arrives?",
+        a: "Yes — someone able to show the vehicle is theirs needs to be on site, since that check happens before anything is opened.",
+      },
+    ],
+    primaryKeyword: "car lockout service North Richland Hills TX",
+    secondaryKeywords: ["locked out of car North Richland Hills", "car unlock North Richland Hills TX", "auto lockout NRH"],
+    longTail: ["locked keys in car North Richland Hills", "car unlock near me North Richland Hills", "24 hour lockout NRH"],
+    intent: "Emergency, retail-parking, near-me.",
+    sourceUrls: ["allhoursroadside.com/north-richland-hills-auto-lockout-help/"],
+  },
+  {
+    city: "north-richland-hills",
+    service: "battery-replacement",
+    h1: "Mobile Battery Replacement in North Richland Hills, TX",
+    title: "Car Battery Replacement North Richland Hills TX",
+    metaDescription:
+      "North Richland Hills car battery dead? We bring the replacement to your driveway off Davis Boulevard or Precinct Line Road and fit it there. 1-year warranty.",
+    intro:
+      "A battery that has already been jumped once is unlikely to survive the next cold morning. A driver brings the new battery to you and fits it on your driveway or in the lot. The battery price is set and published; the labor to install it is quoted for your model.",
+    scenarios: [
+      "A battery jumped once already this month.",
+      "A car that will not start after standing over a long weekend.",
+      "Charging symptoms — dim lights, sluggish windows, a resetting clock.",
+      "A battery you would rather replace on a Saturday than on a January morning.",
+    ],
+    localContext:
+      "Driving in North Richland Hills is mostly arterial rather than freeway — Davis Boulevard, Precinct Line Road, Mid Cities Boulevard, North Tarrant Parkway and TX-26, with I-820 at the edge. Those are short, stop-start trips, and stop-start driving is harder on a battery than a long steady commute.",
+    faqs: [
+      {
+        q: "Do you come out to home addresses?",
+        a: "Yes — most battery work here happens on a driveway, where the car has failed to start first thing.",
+      },
+      {
+        q: "Why is installation quoted separately?",
+        a: "Because reaching it is a two-minute job on some models and a much longer one on others. A quote for your car is more honest than an average.",
+      },
+      {
+        q: "What warranty is included?",
+        a: "One year of warranty comes with the battery. Keep the invoice, because without it a claim is harder to process.",
+      },
+    ],
+    primaryKeyword: "car battery replacement North Richland Hills TX",
+    secondaryKeywords: ["mobile battery replacement North Richland Hills", "car battery service NRH TX", "battery installation North Richland Hills"],
+    longTail: ["mobile car battery North Richland Hills", "battery replaced at home NRH", "car battery keeps dying North Richland Hills"],
+    intent: "Commercial, convenience-led.",
+    sourceUrls: ["allhoursroadside.com/north-richland-hills-battery-replacement-service/"],
+  },
+  {
+    city: "north-richland-hills",
+    service: "flat-tire-change",
+    h1: "Flat Tire Change in North Richland Hills, TX",
+    title: "Flat Tire Change North Richland Hills TX",
+    metaDescription:
+      "Flat tire in North Richland Hills? If you have a usable spare, TRA fits it where you are — Loop 820, Davis Boulevard or at home.",
+    intro:
+      "A flat is a short delay if there is a sound spare on board. A driver comes out, swaps it over and torques it properly, so you are not kneeling in a lot with the groceries melting in the back.",
+    scenarios: [
+      "A flat found in a Davis Boulevard lot with a full trunk.",
+      "A blowout on I-820 at the edge of the city.",
+      "A slow leak that finally flattened overnight at home.",
+    ],
+    localContext:
+      "I-820 runs along the edge of North Richland Hills and is where sudden failures happen. The arterials through the city — Davis Boulevard, Precinct Line Road, Mid Cities Boulevard and North Tarrant Parkway — produce the flats that are discovered rather than experienced.",
+    faqs: [
+      {
+        q: "Is it safe to change a wheel on I-820?",
+        a: "We would advise against it. Stay belted in with hazards on and let the driver do it — standing beside a car on a busy loop is the genuinely dangerous part of a flat tire.",
+      },
+      {
+        q: "What if my spare is flat too?",
+        a: "It is common, since spares sit untouched for years. If you are unsure, say so when you call so a driver is not sent for a job that cannot be finished.",
+      },
+      {
+        q: "Could the tire be repaired instead?",
+        a: "Often it can, as long as the damage sits in the tread rather than the sidewall. Your driver will say once they see it.",
+      },
+    ],
+    primaryKeyword: "flat tire change North Richland Hills TX",
+    secondaryKeywords: ["flat tire service North Richland Hills", "tire change near me NRH", "roadside tire change North Richland Hills"],
+    longTail: ["flat tire North Richland Hills TX", "24 hour tire change NRH", "change flat tire North Richland Hills"],
+    intent: "Emergency, roadside-safety, retail-parking.",
+    sourceUrls: ["allhoursroadside.com/north-richland-hills-tire-change-service/"],
+  },
+
+  // ===================== ROCKWALL =====================
+  // Three pages; no All Hours jump start or tire-repair page for Rockwall.
+  // Rowlett is the only adjacent served city, across Lake Ray Hubbard.
+  {
+    city: "rockwall",
+    service: "lockout",
+    h1: "Car Lockout Service in Rockwall, TX",
+    title: "Car Lockout Service Rockwall TX",
+    metaDescription:
+      "Locked out in Rockwall? TRA opens your car without damage — along I-30, TX-66 or near the lake. Local DFW dispatch, day or night.",
+    intro:
+      "Rockwall sits across the water from the rest of the metroplex, and a locked car here means waiting on the far side of a lake crossing. A driver crosses to you, confirms you are entitled to the vehicle, and then opens it without damage.",
+    scenarios: [
+      "Keys locked in at a marina or shoreline lot on the Rockwall side.",
+      "A fob that stopped responding in a retail lot off I-30.",
+      "Keys shut in the trunk after loading up, which is quoted on its own.",
+    ],
+    localContext:
+      "Rockwall is the county seat of Rockwall County and sits on the eastern shore of Lake Ray Hubbard, around twenty miles northeast of Dallas. I-30 crosses the lake into the city, with US-67, TX-66, TX-205 and TX-276 carrying the rest. Rowlett, on the opposite shore, is the only city we serve that adjoins it.",
+    faqs: [
+      {
+        q: "Does being across the lake slow things down?",
+        a: "It can. Drivers reach Rockwall over I-30, so a call here is a longer run than one inside the main metroplex. Dispatch will give you a realistic time rather than an optimistic one.",
+      },
+      {
+        q: "I am somewhere along the I-30 frontage — is that enough?",
+        a: "Add an exit number and whether you are on the eastbound or westbound side. The frontage roads run a long way either side of the lake crossing, and that one detail narrows it down fast.",
+      },
+      {
+        q: "Will opening the car damage it?",
+        a: "Where the vehicle allows it, entry is non-destructive. If yours cannot be opened safely that way, we say so before starting rather than after.",
+      },
+    ],
+    primaryKeyword: "car lockout service Rockwall TX",
+    secondaryKeywords: ["locked out of car Rockwall", "car unlock Rockwall TX", "auto lockout Rockwall"],
+    longTail: ["locked keys in car Rockwall TX", "car unlock near me Rockwall", "24 hour lockout Rockwall"],
+    intent: "Emergency, edge-of-metro, lakeside access.",
+    sourceUrls: ["allhoursroadside.com/rockwall-lockout-service/"],
+  },
+  {
+    city: "rockwall",
+    service: "battery-replacement",
+    h1: "Mobile Battery Replacement in Rockwall, TX",
+    title: "Car Battery Replacement Rockwall TX",
+    metaDescription:
+      "Rockwall car battery dead? Rather than tow it back over I-30, TRA brings the battery to you and fits it where the car is. 1-year warranty.",
+    intro:
+      "Taking a car that will not start to a workshop is one thing inside the metroplex and another across a lake. So we bring the battery across instead and fit it where the car is standing. Published price on the battery, quoted price on the installation.",
+    scenarios: [
+      "A battery that has already needed jumping once this month.",
+      "A boat or tow vehicle that will not start after standing between trips.",
+      "Electrical oddities that point at charge rather than the engine.",
+      "A battery you would rather change on your own schedule than on the shoreline.",
+    ],
+    localContext:
+      "Rockwall sits on the eastern shore of Lake Ray Hubbard, roughly twenty miles northeast of Dallas, with I-30 crossing the water into the city. Vehicles that tow or sit between lake trips are a meaningful share of what we see here, and standing is what finishes a weak battery.",
+    faqs: [
+      {
+        q: "Do you come out this far for a battery?",
+        a: "Yes. Rockwall is inside our service area. Dispatch will be straight with you about timing, because the run out over I-30 is longer than one inside the main metroplex.",
+      },
+      {
+        q: "Can you fit it to a vehicle with a trailer attached?",
+        a: "Usually yes, but mention it when you call so the driver knows what they are coming to.",
+      },
+      {
+        q: "What warranty is included?",
+        a: "There is a 1-year warranty on the battery. Keep your paperwork, since that is what any claim is settled against.",
+      },
+    ],
+    primaryKeyword: "car battery replacement Rockwall TX",
+    secondaryKeywords: ["mobile battery replacement Rockwall", "car battery service Rockwall TX", "battery installation Rockwall"],
+    longTail: ["mobile car battery Rockwall TX", "battery replaced at home Rockwall", "car battery keeps dying Rockwall"],
+    intent: "Commercial, edge-of-metro, seasonal-vehicle.",
+    sourceUrls: ["allhoursroadside.com/rockwall-battery-replacement-service/"],
+  },
+  {
+    city: "rockwall",
+    service: "flat-tire-change",
+    h1: "Flat Tire Change in Rockwall, TX",
+    title: "Flat Tire Change Rockwall TX",
+    metaDescription:
+      "Flat tire in Rockwall? If you have a usable spare, TRA fits it where you are — I-30, TX-66 or near the lake. Call for roadside help.",
+    intro:
+      "A flat on the I-30 crossing is a poor place to stop, with water on both sides and no useful shoulder. If there is a serviceable spare in the vehicle, we come out and fit it while you stay safely inside the car.",
+    scenarios: [
+      "A blowout on I-30 approaching or leaving the lake crossing.",
+      "A flat found at a lakeside parking area.",
+      "A trailer tire down after a day on the water.",
+      "A slow puncture that finished overnight in a driveway.",
+    ],
+    localContext:
+      "I-30 carries Rockwall's fast traffic and crosses Lake Ray Hubbard into the city, which makes it the least forgiving place in the area to have a tire fail. TX-66, TX-205, TX-276 and US-67 account for the rest.",
+    faqs: [
+      {
+        q: "What if I am on the lake crossing itself?",
+        a: "Tell dispatch immediately and stay inside the vehicle with hazards on. There is little shoulder there and it is one of the places we would most prefer you did not get out of the car.",
+      },
+      {
+        q: "What if it is a trailer tire rather than the car?",
+        a: "Tell dispatch when you call. Trailer wheels do not always come off the way car wheels do, and they would rather know in advance.",
+      },
+      {
+        q: "What if there is no usable spare?",
+        a: "Then there is nothing to fit, and the choice is a replacement tire from us or a tow. Say so on the call so the right vehicle is sent.",
+      },
+    ],
+    primaryKeyword: "flat tire change Rockwall TX",
+    secondaryKeywords: ["flat tire service Rockwall", "tire change near me Rockwall", "roadside tire change Rockwall TX"],
+    longTail: ["flat tire on I-30 Rockwall", "24 hour tire change Rockwall", "change flat tire Rockwall TX"],
+    intent: "Emergency, highway-safety, lakeside access.",
+    sourceUrls: ["allhoursroadside.com/rockwall-tire-change-service/"],
   },
 ];
 

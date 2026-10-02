@@ -15,7 +15,7 @@
  * PROVENANCE
  * `verified` records whether this city's own reference article was read while
  * authoring the entry. `sourceNote` records what that reading established and,
- * where relevant, which adjacency claims came from a NEIGHBOUR's article
+ * where relevant, which adjacency claims came from a NEIGHBOR's article
  * rather than this city's own. All 27 entries were checked.
  *
  * This metadata is INTERNAL. It supports auditing and content generation and
@@ -63,7 +63,7 @@ export const LOCAL_AREAS: LocalArea[] = [
     counties: ["Dallas", "Collin", "Denton", "Kaufman", "Rockwall"],
     corridors: ["I-35E", "I-30", "I-45", "I-20", "I-635 (LBJ Freeway)", "US-75 (Central Expressway)", "Dallas North Tollway"],
     districts: ["Downtown", "Uptown", "Arts District", "West End Historic District", "Deep Ellum", "Bishop Arts District", "Design District", "Fair Park", "Lakewood", "Lake Highlands", "Oak Cliff"],
-    airport: "Dallas Love Field lies inside the city, north-west near Bachman Lake; DFW International serves the wider region.",
+    airport: "Dallas Love Field lies inside the city, northwest near Bachman Lake; DFW International serves the wider region.",
     neighbors: ["irving", "garland", "mesquite", "richardson", "grand-prairie", "farmers-branch", "addison", "coppell"],
     verified: true,
     sourceNote:
@@ -99,7 +99,7 @@ export const LOCAL_AREAS: LocalArea[] = [
     neighbors: ["dallas", "arlington", "irving"],
     verified: true,
     sourceNote:
-      "Article names Dallas to the east, Arlington to the west, Fort Worth to the north-west, Irving to the north, Cedar Hill and Midlothian to the south-east and Mansfield to the south-west. Of those, Dallas, Arlington and Irving are served. Four counties confirmed, including a small part in Johnson County. No named residential districts, so the list is left empty.",
+      "Article names Dallas to the east, Arlington to the west, Fort Worth to the northwest, Irving to the north, Cedar Hill and Midlothian to the southeast and Mansfield to the southwest. Of those, Dallas, Arlington and Irving are served. Four counties confirmed, including a small part in Johnson County. No named residential districts, so the list is left empty.",
   },
   {
     slug: "mesquite",
@@ -109,7 +109,7 @@ export const LOCAL_AREAS: LocalArea[] = [
     neighbors: ["garland", "dallas"],
     verified: true,
     sourceNote:
-      "Article names Garland to the north, Sunnyvale to the north-east, Dallas to the west and south, Seagoville to the south and Balch Springs to the south-west. Only Garland and Dallas are served. Rowlett was REMOVED — it is not among the bordering cities. Kaufman County added.",
+      "Article names Garland to the north, Sunnyvale to the northeast, Dallas to the west and south, Seagoville to the south and Balch Springs to the southwest. Only Garland and Dallas are served. Rowlett was REMOVED — it is not among the bordering cities. Kaufman County added.",
   },
   {
     slug: "garland",
@@ -129,7 +129,7 @@ export const LOCAL_AREAS: LocalArea[] = [
     neighbors: ["dallas", "plano", "garland", "sachse"],
     verified: true,
     sourceNote:
-      "Article states Dallas, Plano and Garland make up almost all of the Richardson border, and adds Murphy to the north-east and Sachse to the east. Roughly two-thirds Dallas County, northern third Collin. Addison was REMOVED — Addison's article states outright that Richardson does not border it. Belt Line Road and Campbell Road were dropped as unverified.",
+      "Article states Dallas, Plano and Garland make up almost all of the Richardson border, and adds Murphy to the northeast and Sachse to the east. Roughly two-thirds Dallas County, northern third Collin. Addison was REMOVED — Addison's article states outright that Richardson does not border it. Belt Line Road and Campbell Road were dropped as unverified.",
   },
   {
     slug: "plano",
@@ -219,7 +219,7 @@ export const LOCAL_AREAS: LocalArea[] = [
     counties: ["Tarrant"],
     corridors: ["TX-183 (Airport Freeway)", "TX-360"],
     districts: [],
-    airport: "The south-western portion of Dallas/Fort Worth International Airport lies inside Euless city limits.",
+    airport: "The southwestern portion of Dallas/Fort Worth International Airport lies inside Euless city limits.",
     neighbors: ["bedford", "hurst", "grapevine", "irving"],
     verified: true,
     sourceNote:
@@ -233,7 +233,7 @@ export const LOCAL_AREAS: LocalArea[] = [
     neighbors: ["hurst", "euless"],
     verified: true,
     sourceNote:
-      "Article gives north-eastern Tarrant County and names neighbouring cities as Hurst and Euless only. North Richland Hills was REMOVED — neither Bedford's nor NRH's article supports a shared boundary. Brown Trail and Harwood Road were dropped as unverified.",
+      "Article gives northeastern Tarrant County and names neighboring cities as Hurst and Euless only. North Richland Hills was REMOVED — neither Bedford's nor NRH's article supports a shared boundary. Brown Trail and Harwood Road were dropped as unverified.",
   },
   {
     slug: "hurst",
@@ -265,7 +265,7 @@ export const LOCAL_AREAS: LocalArea[] = [
     neighbors: ["euless", "hurst", "coppell", "irving"],
     verified: true,
     sourceNote:
-      "Article gives north-east Tarrant County with minor portions in Dallas and Denton, confirms the highway set and the DFW Airport share. Euless's and Coppell's articles name Grapevine as adjacent, and Hurst's lists it too. North Richland Hills was REMOVED. Historic Main Street and Grapevine Mills were dropped as unverified.",
+      "Article gives northeast Tarrant County with minor portions in Dallas and Denton, confirms the highway set and the DFW Airport share. Euless's and Coppell's articles name Grapevine as adjacent, and Hurst's lists it too. North Richland Hills was REMOVED. Historic Main Street and Grapevine Mills were dropped as unverified.",
   },
   {
     slug: "coppell",
@@ -286,7 +286,7 @@ export const LOCAL_AREAS: LocalArea[] = [
     neighbors: ["dallas", "carrollton", "addison"],
     verified: true,
     sourceNote:
-      "Article confirms Dallas County and that I-35E bounds it west, the Dallas North Tollway east and I-635 south. It does not list borders: Carrollton's article puts Farmers Branch 4 miles away and Addison's names it as a western and southern neighbour. Irving was REMOVED as unsupported. Mustang Station was dropped as unverified.",
+      "Article confirms Dallas County and that I-35E bounds it west, the Dallas North Tollway east and I-635 south. It does not list borders: Carrollton's article puts Farmers Branch 4 miles away and Addison's names it as a western and southern neighbor. Irving was REMOVED as unsupported. Mustang Station was dropped as unverified.",
   },
   {
     slug: "addison",
@@ -304,7 +304,7 @@ export const LOCAL_AREAS: LocalArea[] = [
     counties: ["Rockwall"],
     corridors: ["I-30", "US-67", "TX-66", "TX-205", "TX-276"],
     districts: [],
-    airport: "Sits on the eastern shore of Lake Ray Hubbard, about 20 miles north-east of Dallas.",
+    airport: "Sits on the eastern shore of Lake Ray Hubbard, about 20 miles northeast of Dallas.",
     neighbors: ["rowlett"],
     verified: true,
     sourceNote:
@@ -319,7 +319,7 @@ export const LOCAL_AREAS: LocalArea[] = [
     neighbors: ["garland", "sachse", "rockwall"],
     verified: true,
     sourceNote:
-      "Article confirms Dallas and Rockwall counties, the route set and the lake, and names Garland and Sunnyvale as neighbouring cities. Mesquite was REMOVED — Mesquite's own article does not list Rowlett among its borders. Dallas was removed as unsupported.",
+      "Article confirms Dallas and Rockwall counties, the route set and the lake, and names Garland and Sunnyvale as neighboring cities. Mesquite was REMOVED — Mesquite's own article does not list Rowlett among its borders. Dallas was removed as unsupported.",
   },
   {
     slug: "sachse",
@@ -329,14 +329,14 @@ export const LOCAL_AREAS: LocalArea[] = [
     neighbors: ["garland", "rowlett", "wylie", "richardson"],
     verified: true,
     sourceNote:
-      "Article places Sachse in Collin and Dallas counties, off SH 78 and the President George Bush Turnpike, about a mile north of Firewheel Town Center in Garland. Richardson's article names Sachse as its eastern neighbour. No districts could be verified, so none are listed.",
+      "Article places Sachse in Collin and Dallas counties, off SH 78 and the President George Bush Turnpike, about a mile north of Firewheel Town Center in Garland. Richardson's article names Sachse as its eastern neighbor. No districts could be verified, so none are listed.",
   },
   {
     slug: "wylie",
     counties: ["Collin", "Dallas", "Rockwall"],
     corridors: ["TX-78", "FM 544", "FM 1378", "FM 2514", "FM 3412"],
     districts: [],
-    airport: "Sits between Lavon Lake and Lake Ray Hubbard, about 24 miles north-east of central Dallas.",
+    airport: "Sits between Lavon Lake and Lake Ray Hubbard, about 24 miles northeast of central Dallas.",
     neighbors: ["sachse"],
     verified: true,
     sourceNote:

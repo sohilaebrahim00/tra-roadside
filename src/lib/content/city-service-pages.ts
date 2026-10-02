@@ -195,6 +195,47 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     intent: "Emergency, roadside-safety, near-me.",
     sourceUrls: ["allhoursroadside.com/dallas-tire-change-service/"],
   },
+  // Batch 4B. Fuel delivery is a different failure mode from the four Dallas
+  // pages above, so this is a service gap rather than a keyword variant. The
+  // gas-vs-diesel question is the thing that genuinely distinguishes it: it is
+  // the only service where getting the detail wrong is worse than the fault.
+  {
+    city: "dallas",
+    service: "fuel-delivery",
+    h1: "Emergency Fuel Delivery in Dallas, TX",
+    title: "Fuel Delivery Dallas TX",
+    metaDescription:
+      "Out of gas in Dallas? TRA brings enough fuel to reach the nearest station — I-35E, I-30, the Tollway or a side street. Gas or diesel, day or night.",
+    intro:
+      "An empty tank is the one roadside problem that is wholly fixable in a few minutes, as long as somebody can reach you with the right fuel. We bring enough to get the vehicle to a pump under its own power rather than a full tank, and we confirm whether it takes gas or diesel before a driver sets off.",
+    scenarios: [
+      "A tank that ran dry on I-35E or I-30 between exits.",
+      "A gauge that read higher than the tank actually was.",
+      "A diesel pickup that stopped short of the next truck stop.",
+      "A car stranded in a parking garage with no station within walking distance.",
+    ],
+    localContext:
+      "Four interstates cross Dallas — I-35E, I-30, I-45 and I-20 — alongside I-635, US-75 and the Dallas North Tollway. Running dry on any of them tends to leave you where walking to a station is not an option, and because the city reaches into five counties the gap between where you stopped and the nearest pump varies enormously.",
+    faqs: [
+      {
+        q: "Do you bring gas or diesel?",
+        a: "Both, but say which your vehicle takes when you call. Putting the wrong fuel into a tank is a far costlier problem than running out, so the driver confirms it before anything goes in.",
+      },
+      {
+        q: "How much will you bring?",
+        a: "Enough to reach a station safely. This is not a fill-up — the point is to get you to a pump under your own power, and you pay for the fuel that actually goes in.",
+      },
+      {
+        q: "I am stopped on a freeway. What should I do while I wait?",
+        a: "If the car is still rolling, coast onto the shoulder or into a parking area. Then put your hazards on and stay inside with your belt fastened. On a Dallas interstate the stationary car is the hazard, not the empty tank.",
+      },
+    ],
+    primaryKeyword: "fuel delivery Dallas TX",
+    secondaryKeywords: ["emergency fuel delivery Dallas", "out of gas Dallas", "gas delivery Dallas TX", "diesel delivery Dallas"],
+    longTail: ["ran out of gas on I-35E Dallas", "24 hour fuel delivery Dallas", "out of fuel Dallas TX help"],
+    intent: "Emergency, stranded-now, fuel-type-specific.",
+    sourceUrls: ["allhoursroadside.com/emergency-fuel-delivery-dallas/"],
+  },
 
   // ===================== GARLAND =====================
   {

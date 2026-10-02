@@ -26,6 +26,9 @@ const FILES = [
   "src/lib/content/business.ts",
   "src/lib/content/local-data.ts",
   "src/lib/content/notification-templates.ts",
+  // Location hubs carry customer-facing prose inside the component rather than
+  // in a content file, so they are checked too.
+  "src/app/(site)/airports/dallas-love-field/page.tsx",
 ];
 
 /** British -> American. Word-boundary matched, case-insensitive. */

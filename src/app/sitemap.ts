@@ -54,6 +54,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
+  // Location hubs. These are not City x Service pages: each covers one place
+  // and routes to several services, so they are listed explicitly rather than
+  // generated. A hub is added here only once it passes the indexability and
+  // duplicate-content checks, so the list stays short on purpose.
+  const locationHubRoutes = [
+    "/airports/dallas-love-field",
+  ].map((path) => ({
+    url: `${base}${path}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
   const posts = await getBlogPosts();
   const postRoutes = posts.map((p) => ({
     url: `${base}/blog/${p.slug}`,
@@ -62,5 +75,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.5,
   }));
 
-  return [...staticRoutes, ...serviceRoutes, ...areaRoutes, ...cityServiceRoutes, ...postRoutes];
+  return [
+    ...staticRoutes,
+    ...serviceRoutes,
+    ...areaRoutes,
+    ...cityServiceRoutes,
+    ...locationHubRoutes,
+    ...postRoutes,
+  ];
 }

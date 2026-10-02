@@ -29,6 +29,16 @@ const FILES = [
   // Location hubs carry customer-facing prose inside the component rather than
   // in a content file, so they are checked too.
   "src/app/(site)/airports/dallas-love-field/page.tsx",
+  // City x Service template components. These hold no editorial copy, but they
+  // do hold the section labels a visitor reads ("Roads we cover", "Starting
+  // price"), and comment wording migrates into labels when someone edits them.
+  "src/components/city-service/service-hero.tsx",
+  "src/components/city-service/hero-visual.tsx",
+  "src/components/city-service/price-panel.tsx",
+  "src/components/city-service/scenario-cards.tsx",
+  "src/components/city-service/local-section.tsx",
+  "src/components/city-service/service-nav.tsx",
+  "src/components/city-service/final-cta.tsx",
 ];
 
 /** British -> American. Word-boundary matched, case-insensitive. */

@@ -351,7 +351,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Mobile Tire Repair in Garland, TX",
     title: "Mobile Tire Repair Garland TX",
     metaDescription:
-      "Picked up a nail in Garland? TRA repairs punctures on site with a plug or patch where the damage allows, so your spare stays where it is.",
+      "Picked up a nail in Garland? We plug or patch on site when the tread allows, which beats running on a spare to a shop.",
     intro:
       "A nail or screw in the tread does not always mean a tire change. Where the damage allows it, a plug or patch repairs the tire where it sits, which keeps your spare untouched and saves fitting a wheel you would only have to swap back later.",
     scenarios: [
@@ -736,7 +736,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Nail in your tire in Plano? TRA repairs punctures on site with a plug or patch where damage allows, so your spare stays in the trunk.",
     intro:
-      "A tire that keeps needing air is worth repairing before it strands you. Where the puncture is in the tread and within repairable limits, we fix it where the car is parked, which keeps your spare unused and avoids a workshop appointment you would have to sit through.",
+      "A tire you keep topping up is a tire that will choose its own moment to fail. Where the puncture is in the tread and within repairable limits, we fix it where the car is parked, which keeps your spare unused and avoids a workshop appointment you would have to sit through.",
     scenarios: [
       "A tire pressure light that returns a day or two after being cleared.",
       "A screw picked up on a tollway that has begun to weep air.",
@@ -778,7 +778,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Locked out in McKinney? TRA opens your car without damage — Historic Downtown, US-75 or US-380. Local DFW dispatch, day or night.",
     intro:
-      "A lockout in McKinney is often a long way from a spare key, because the city sits at the northern edge of the metroplex and the second set is usually at home. A driver comes to the vehicle, checks it is yours, and opens it without damage.",
+      "A lockout in McKinney is often a long way from a spare key, because the city sits at the northern edge of the metroplex and the second set is usually at home. Rather than wait for someone to drive the spare up, a driver comes out, confirms the car is yours, and opens it without damage.",
     scenarios: [
       "Keys locked in while parked around the historic downtown square.",
       "A fob that died in a lot off US-75 with no spare nearby.",
@@ -815,10 +815,10 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Dead battery in McKinney? TRA brings a jump start to you on US-75, US-380 or at home. Local DFW dispatch, 24/7. Call now.",
     intro:
-      "A car that will not turn over is usually a dead battery rather than a serious fault, and a jump start resolves it where the vehicle stands. In McKinney that matters more than most places, because the alternative is a recovery run back down US-75.",
+      "A car that will not crank is usually a dead battery and not a fault, which a jump start fixes on the spot. In McKinney that matters more than most places, because the alternative is a recovery run back down US-75.",
     scenarios: [
       "A vehicle that stood for a week at an airfield or while traveling.",
-      "Lights left on overnight on a residential street.",
+      "Headlights left on overnight on a street off TX-5.",
       "A battery that has cranked slowly each morning through a cold week.",
       "A weekend car that only moves every few weeks.",
     ],
@@ -850,9 +850,9 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Mobile Battery Replacement in McKinney, TX",
     title: "Car Battery Replacement McKinney TX",
     metaDescription:
-      "Need a car battery in McKinney? TRA brings it to you and fits it on site, with installation quoted for your vehicle and a 1-year warranty.",
+      "McKinney car battery gone? No tow needed — TRA brings the battery up US-75 and fits it where the car stands. 1-year warranty included.",
     intro:
-      "Replacing a battery usually means getting the car to a workshop, which is awkward when the car is the thing that will not start. We bring the replacement to the vehicle and fit it there. The battery itself is published pricing; installation is quoted for your car, because access varies so much between models.",
+      "Replacing a battery usually means getting the car to a workshop, which is awkward when the car is the thing that will not start. So we bring the battery to the car instead and fit it there. The battery itself is published pricing; installation is quoted for your car, because access varies so much between models.",
     scenarios: [
       "A battery that has already been jumped once this month.",
       "A car that will not start reliably after standing while you traveled.",
@@ -1043,9 +1043,9 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Mobile Battery Replacement in Mesquite, TX",
     title: "Car Battery Replacement Mesquite TX",
     metaDescription:
-      "Car battery failing in Mesquite? TRA brings the battery to you and fits it on site, with installation quoted for your vehicle and a 1-year warranty.",
+      "Mesquite car battery failing? We bring the battery to you off I-635, US-80 or Belt Line Road and fit it where you are. 1-year warranty.",
     intro:
-      "Once a battery has stopped holding charge, jumping it again only delays the next failure. We bring the replacement to the vehicle and fit it where it stands. The battery price is published; installation is quoted for your specific vehicle, because reaching the battery is a five-minute job on some cars and a much longer one on others.",
+      "Once a battery has stopped holding charge, jumping it again only delays the next failure. A driver brings the replacement out and changes it without the car moving. The battery price is published; installation is quoted for your specific vehicle, because reaching the battery is a five-minute job on some cars and a much longer one on others.",
     scenarios: [
       "A second jump start on the same vehicle inside a month.",
       "A car that will not start after standing through a holiday weekend.",
@@ -1117,7 +1117,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Mobile Tire Repair in Mesquite, TX",
     title: "Mobile Tire Repair Mesquite TX",
     metaDescription:
-      "Nail in your tire in Mesquite? TRA repairs punctures on site with a plug or patch where the damage allows, so your spare stays where it is.",
+      "Nail or screw in a Mesquite tire? Where it is repairable we fix it at the car, off I-635, US-80 or wherever it stopped.",
     intro:
       "A tire losing air slowly is worth repairing before it becomes a flat at freeway speed. Where the damage is in the tread and within repairable limits, we fix it where the vehicle is parked and leave your spare untouched.",
     scenarios: [
@@ -1274,7 +1274,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     intro:
       "If there is a usable spare in the vehicle, a roadside change is the quickest route back to normal. A driver fits it properly and torques it to specification, and you drive on — without changing a wheel in work clothes beside Central Expressway.",
     scenarios: [
-      "A blowout on a US-75 shoulder in moving traffic.",
+      "A blowout on the Central Expressway shoulder at rush hour.",
       "A flat found in an office lot at the end of the working day.",
       "A slow puncture that gave up overnight on a residential street.",
       "A locking wheel nut with no key, which has to be dealt with before the wheel moves.",
@@ -1309,7 +1309,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Picked up a nail in Richardson? TRA repairs punctures on site with a plug or patch where damage allows — office lots, driveways, anywhere off US-75.",
     intro:
-      "A tire that keeps needing air is worth repairing before it strands you. Where the puncture is in the tread and within repairable limits, we repair it where the car is parked, which keeps your spare unused and saves a workshop appointment you would have to sit through.",
+      "A tire that wants air every few days is worth fixing before it picks its moment. Where the puncture is in the tread and within repairable limits, we repair it where the car is parked, which keeps your spare unused and saves a workshop appointment you would have to sit through.",
     scenarios: [
       "A pressure warning that returns a day or two after being cleared.",
       "A screw found in the tread during a check before a long drive.",
@@ -1351,7 +1351,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Locked out in Frisco? TRA opens your car without damage — anywhere off the Dallas North Tollway, Preston Road or US-380. Local dispatch, day or night.",
     intro:
-      "Frisco is a driving city with very little within walking distance of where you parked, so a locked car tends to strand you properly rather than merely annoy you. A driver comes out, confirms the vehicle is yours and opens it without damage.",
+      "Frisco is a driving city with very little within walking distance of where you parked, so a locked car tends to strand you properly rather than merely annoy you. A driver comes out to the car, confirms your claim to it, and opens it with nothing broken.",
     scenarios: [
       "Keys locked in while unloading at a sports or event venue.",
       "A fob battery that died in a parking lot off Preston Road.",
@@ -1388,7 +1388,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Dead battery in Frisco? TRA brings a jump start to you on the Tollway, Preston Road or at home. Local DFW dispatch, 24/7. Call now.",
     intro:
-      "A car that will not turn over is usually a dead battery rather than a serious fault, and a jump start resolves it where the vehicle stands. In a city built around driving, that is the difference between a delay and a lost afternoon.",
+      "A car that will not turn over has almost always just run its battery down, and a jump start settles it where it stands. In a city built around driving, that is the difference between a delay and a lost afternoon.",
     scenarios: [
       "A second family car that only moves at weekends.",
       "Lights left on during a long event at a venue.",
@@ -1423,7 +1423,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Mobile Battery Replacement in Frisco, TX",
     title: "Car Battery Replacement Frisco TX",
     metaDescription:
-      "Need a car battery in Frisco? TRA brings it to the car and fits it on site. Installation quoted for your vehicle, 1-year warranty included.",
+      "Frisco car battery failing? TRA fits a replacement at your house or off the Dallas North Tollway. Installation quoted, 1-year warranty.",
     intro:
       "Getting a car with a dead battery to a workshop is the hard part of replacing a battery. We remove that part by bringing the replacement to the vehicle and fitting it where it stands. The battery price is published; installation is quoted for your car, because access differs enormously between models.",
     scenarios: [
@@ -1500,7 +1500,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Mobile Tire Repair in Frisco, TX",
     title: "Mobile Tire Repair Frisco TX",
     metaDescription:
-      "Nail in your tire in Frisco? TRA repairs punctures on site with a plug or patch where the damage allows, so your spare stays in the trunk.",
+      "Nail in a Frisco tire? Where the tread damage allows, we plug or patch it at the car — the spare never has to come out.",
     intro:
       "Frisco has been a construction site for the better part of a decade, and construction means screws and nails on the road. Where the damage is in the tread and within repairable limits, we repair the tire where the car is parked rather than fitting a spare you would only swap back later.",
     scenarios: [
@@ -1616,7 +1616,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Mobile Battery Replacement in Lewisville, TX",
     title: "Car Battery Replacement Lewisville TX",
     metaDescription:
-      "Car battery failing in Lewisville? TRA brings the battery to you and fits it on site, with installation quoted for your vehicle and a 1-year warranty.",
+      "Lewisville car battery dead? TRA comes out to I-35E, Main Street or your driveway and fits a new battery there. 1-year warranty included.",
     intro:
       "A battery that has been jumped more than once is telling you it will not survive the next cold snap. We bring the replacement to the vehicle and fit it where it stands, which matters when the car is sitting at the side of a road you were only passing along. The battery price is published; installation is quoted for your vehicle.",
     scenarios: [
@@ -1690,7 +1690,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Mobile Tire Repair in Lewisville, TX",
     title: "Mobile Tire Repair Lewisville TX",
     metaDescription:
-      "Nail in your tire in Lewisville? TRA repairs punctures on site with a plug or patch where the damage allows, so your spare stays in the trunk.",
+      "Puncture in Lewisville? We repair repairable tires on site, off I-35E or at home, so you keep the spare for a real emergency.",
     intro:
       "On a road like I-35E, a slow leak you have been topping up for two weeks is a blowout waiting for a moment that suits it. Where the damage is in the tread and within repairable limits, we repair the tire where the car is parked and leave the spare where it belongs.",
     scenarios: [
@@ -1731,7 +1731,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Locked out in The Colony? TRA opens your car without damage — along FM 423, the Sam Rayburn Tollway or near the lake. Local dispatch, day or night.",
     intro:
-      "The Colony is a long, narrow city wrapped around the edge of a lake, and that shape means a locked car can leave you some distance from anywhere useful. A driver comes to the vehicle, confirms it is yours, and opens it without damage.",
+      "The Colony is a long, narrow city wrapped around the edge of a lake, and that shape means a locked car can leave you some distance from anywhere useful. A driver drives out to the car, establishes that it is yours, and opens it without causing damage.",
     scenarios: [
       "Keys locked in at a lakeside parking area after an afternoon out.",
       "A fob that stopped responding in a lot along FM 423.",
@@ -1803,7 +1803,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Mobile Battery Replacement in The Colony, TX",
     title: "Car Battery Replacement The Colony TX",
     metaDescription:
-      "Need a car battery in The Colony? TRA brings it to you and fits it on site, with installation quoted for your vehicle and a 1-year warranty.",
+      "The Colony car battery flat after standing? TRA fits a new one at the house or off FM 423. Installation quoted for your car, 1-year warranty.",
     intro:
       "Batteries on vehicles that stand still age differently from batteries on daily drivers — they are rarely fully charged, and they fail earlier. We bring the replacement to the vehicle and fit it where it is parked. The battery price is published; installation is quoted for your specific car.",
     scenarios: [
@@ -1880,7 +1880,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Mobile Tire Repair in The Colony, TX",
     title: "Mobile Tire Repair The Colony TX",
     metaDescription:
-      "Nail in your tire in The Colony? TRA repairs punctures on site with a plug or patch where the damage allows, so your spare stays in the trunk.",
+      "Screw in your tire in The Colony? If the damage is repairable we fix it where the car sits, rather than fitting the spare.",
     intro:
       "A tire that has been losing air slowly is worth dealing with before it becomes a flat somewhere inconvenient. Where the puncture is in the tread and within repairable limits, we repair it where the vehicle is standing and leave your spare untouched.",
     scenarios: [
@@ -1926,7 +1926,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Locked out in Addison? TRA opens your car without damage — Belt Line Road, the Dallas North Tollway or near Addison Airport. Local dispatch, day or night.",
     intro:
-      "Addison packs a great deal of parking into a small town, and a locked car in one of those lots tends to happen when you are already due somewhere. A driver comes to the vehicle, confirms it is yours and opens it without damage.",
+      "Addison packs a great deal of parking into a small town, and a locked car in one of those lots tends to happen when you are already due somewhere. A driver is with you in the lot, confirms the car is yours, and opens it without a scratch.",
     scenarios: [
       "Keys locked in a restaurant or office lot along Belt Line Road.",
       "A fob that stopped responding at a parking garage off the Dallas North Tollway.",
@@ -2043,7 +2043,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Locked out in Allen? TRA opens your car without damage, anywhere off US-75 or the Sam Rayburn Tollway. Local DFW dispatch, day or night.",
     intro:
-      "A locked car in Allen usually means a wait somewhere with little around it, because the spare key is at home and home is not walking distance. A driver comes to the vehicle, checks it is yours, and opens it without damage.",
+      "A locked car in Allen usually means a wait somewhere with little around it, because the spare key is at home and home is not walking distance. A driver comes to where you are parked, verifies the car is yours, and opens it cleanly.",
     scenarios: [
       "Keys locked in at a retail lot off US-75.",
       "A fob battery that died while the car sat through a working day.",
@@ -2077,7 +2077,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Mobile Battery Replacement in Allen, TX",
     title: "Car Battery Replacement Allen TX",
     metaDescription:
-      "Need a car battery in Allen? TRA brings it to you and fits it on site, with installation quoted for your vehicle and a 1-year warranty.",
+      "Allen car battery dead? TRA brings the replacement out to US-75 or your driveway and fits it on site. Installation quoted, 1-year warranty.",
     intro:
       "The awkward part of replacing a battery is getting a car that will not start to a workshop. We remove that by bringing the replacement to the vehicle. The battery price is published; installation is quoted for your specific car, because reaching the battery is quick on some models and slow on others.",
     scenarios: [
@@ -2118,8 +2118,8 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     intro:
       "If there is a usable spare in the car, a flat is a short job for someone with the right equipment. We come to you, fit it and torque it properly, so you are not changing a wheel beside Central Expressway.",
     scenarios: [
-      "A blowout on a US-75 shoulder in moving traffic.",
-      "A flat found in a retail lot with the car already loaded.",
+      "A blowout on US-75 with traffic moving past at speed.",
+      "A flat found in a lot off US-75 with the car already loaded.",
       "A slow puncture that finally went down overnight.",
     ],
     localContext:
@@ -2227,9 +2227,9 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Mobile Battery Replacement in Carrollton, TX",
     title: "Car Battery Replacement Carrollton TX",
     metaDescription:
-      "Car battery failing in Carrollton? TRA brings the battery to you and fits it on site, with installation quoted for your vehicle and a 1-year warranty.",
+      "Carrollton car battery giving up? TRA brings a new one to your driveway or a lot off I-35E and fits it there. Installation quoted, 1-year warranty.",
     intro:
-      "Once a battery has been jumped more than once, it is telling you it will not last the winter. We bring the replacement to the vehicle and fit it where it stands. The battery price is published; installation is quoted for your car, because access differs enormously between models.",
+      "Once a battery has been jumped more than once, it is telling you it will not last the winter. We arrive with the battery and change it on your driveway or in the lot. The battery price is published; installation is quoted for your car, because access differs enormously between models.",
     scenarios: [
       "A second jump start on the same vehicle inside a month.",
       "A car that will not start after standing over a holiday weekend.",
@@ -2269,7 +2269,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       "A flat with a good spare in the trunk is a short job for somebody with the right tools and a safe way to lift the car. We come to you, fit it and torque it to specification, and you carry on.",
     scenarios: [
       "A blowout on I-35E where the shoulder is narrow and the traffic constant.",
-      "A flat found in a workplace lot at the end of a shift.",
+      "A flat found in a workplace lot off the Bush Turnpike at clocking-off time.",
       "A slow puncture that gave up overnight in a driveway.",
       "A wheel that will not move because the locking nut key is missing.",
     ],
@@ -2306,7 +2306,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Locked out in Coppell? TRA opens your car without damage, anywhere inside the ring of freeways that bound the city. Local dispatch, day or night.",
     intro:
-      "Coppell is unusual among the cities we serve: no freeway actually runs through it. That makes it quiet to live in and slightly awkward to reach quickly, which is worth knowing when you are standing beside a locked car. A driver comes out, confirms the vehicle is yours and opens it without damage.",
+      "Coppell is unusual among the cities we serve: no freeway actually runs through it. That makes it quiet to live in and slightly awkward to reach quickly, which is worth knowing when you are standing beside a locked car. A driver comes in off the tollway, confirms the vehicle is yours, and opens it without damage.",
     scenarios: [
       "Keys locked in at a distribution or office site near the airport boundary.",
       "A fob that stopped responding in a residential lot after dark.",
@@ -2340,7 +2340,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Mobile Battery Replacement in Coppell, TX",
     title: "Car Battery Replacement Coppell TX",
     metaDescription:
-      "Need a car battery in Coppell? TRA brings it to the car and fits it on site. Installation quoted for your vehicle, 1-year warranty included.",
+      "Coppell car battery dead? With no freeway through town, we come to you — the battery is fitted on site, installation quoted, 1-year warranty.",
     intro:
       "Getting a car that will not start to a workshop is the hard part of a battery replacement, and it is harder in a city with no freeway through it. We bring the battery out to the vehicle instead. The battery is a published price, and we quote the fitting once we know the car.",
     scenarios: [
@@ -2418,7 +2418,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Locked out in Euless? TRA opens your car without damage — along the Airport Freeway, TX-360 or near the DFW boundary. Local dispatch, day or night.",
     intro:
-      "Euless sits right against the southwestern edge of the airport, and a lot of its lockouts involve somebody on a schedule they cannot move. A driver comes to the vehicle, confirms it is yours and opens it without damage.",
+      "Euless sits right against the southwestern edge of the airport, and a lot of its lockouts involve somebody on a schedule they cannot move. A driver reaches the vehicle, checks it belongs to you, and opens it without damage — usually in time for wherever you were going.",
     scenarios: [
       "Keys locked in at a hotel or long-stay lot near the airport boundary.",
       "A fob that stopped working at the end of a shift.",
@@ -2454,7 +2454,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Need a car battery in Euless? TRA brings it to the car and fits it on site near the airport or at home. Installation quoted for your vehicle.",
     intro:
-      "Cars parked near an airport stand still for days at a time, and standing is what finishes a battery that was already weak. We bring the replacement to the vehicle and fit it there. The battery price is published; installation is quoted for your car.",
+      "Cars parked near an airport stand still for days at a time, and standing is what finishes a battery that was already weak. We bring the replacement out and fit it where the car has been standing. The battery price is published; installation is quoted for your car.",
     scenarios: [
       "A car that would not start on returning from a trip, and struggled again days later.",
       "A vehicle parked long-term near the airport boundary.",
@@ -2530,7 +2530,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Locked out in Grapevine? TRA opens your car without damage — TX-114, TX-121 or near the airport. Local DFW dispatch, day or night.",
     intro:
-      "Grapevine holds more of the airport than any other city, and a great many of the cars parked here belong to people who are mid-trip rather than at home. A driver comes to the vehicle, confirms it is yours and opens it without damage.",
+      "Grapevine holds more of the airport than any other city, and a great many of the cars parked here belong to people who are mid-trip rather than at home. A driver comes to wherever the car is standing, confirms it is yours, and gets it open without harming it.",
     scenarios: [
       "Keys locked in at a hotel lot before an early departure.",
       "A fob that died while the car stood in long-stay parking.",
@@ -2644,7 +2644,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Locked out in Hurst? TRA opens your car without damage — along TX-183, TX-26 or Loop 820. Local DFW dispatch, day or night.",
     intro:
-      "Hurst is a mid-cities town with a lot of retail parking and a lot of people passing through on their way somewhere else. A driver comes to the vehicle, confirms it is yours and opens it without damage.",
+      "Hurst is a mid-cities town with a lot of retail parking and a lot of people passing through on their way somewhere else. Because the mid-cities are compact, a driver is rarely far away; they confirm the car is yours and open it undamaged.",
     scenarios: [
       "Keys locked in while loading groceries at a retail lot.",
       "A fob that stopped responding at the end of a shift.",
@@ -2678,7 +2678,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Mobile Battery Replacement in Hurst, TX",
     title: "Car Battery Replacement Hurst TX",
     metaDescription:
-      "Car battery failing in Hurst? TRA brings the battery to you and fits it on site, with installation quoted for your vehicle and a 1-year warranty.",
+      "Hurst car battery failing? We bring the replacement to you off TX-183 or Loop 820 and fit it on the spot. Installation quoted, 1-year warranty.",
     intro:
       "A battery that has been jumped twice is not going to improve on its own. We bring the replacement to the vehicle and fit it where it stands, so the car never has to be recovered anywhere. The battery price is published; installation is quoted for your specific car.",
     scenarios: [
@@ -2719,7 +2719,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     intro:
       "With a usable spare in the vehicle, a flat is a short job. A driver comes to you, fits it and torques it correctly, and you carry on rather than kneeling in a parking lot with the groceries still in the car.",
     scenarios: [
-      "A flat found in a retail lot with the car already loaded.",
+      "A flat found in mid-cities retail parking with a full trunk.",
       "A blowout on Loop 820 or the Airport Freeway at speed.",
       "A slow puncture that finally went down overnight in a driveway.",
     ],
@@ -3026,7 +3026,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       "Given a good spare in the trunk, this is a quick job for someone carrying a proper jack and a torque wrench. We come to you, swap the wheel over, and you drive on.",
     scenarios: [
       "A blowout on I-20 or I-30 crossing the city at speed.",
-      "A flat found in a workplace lot at the end of a shift.",
+      "A flat found at the end of a shift with the lot emptying around you.",
       "A slow puncture that finally went down in a driveway overnight.",
       "A wheel that will not come off without a locking nut key you no longer have.",
     ],
@@ -3254,7 +3254,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       "A car that will not turn over in Wylie is a longer wait than the same car closer in, which is exactly why a jump start beats a tow. We come to the vehicle, start it, and you drive on rather than having it recovered across the county.",
     scenarios: [
       "A second vehicle that only moves at weekends.",
-      "Lights left on overnight on a residential street.",
+      "Interior lights left on overnight outside the house.",
       "A battery that has cranked slowly each morning through a cold spell.",
       "A car that stood while you were away.",
     ],
@@ -3477,7 +3477,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Car Lockout Service in North Richland Hills, TX",
     title: "Car Lockout Service North Richland Hills TX",
     metaDescription:
-      "Locked out in North Richland Hills? TRA opens your car without damage — Loop 820, Davis Boulevard or Precinct Line Road. Local dispatch, day or night.",
+      "Locked out in North Richland Hills? TRA opens your car without damage — I-820, Davis Boulevard or Precinct Line Road. Local dispatch, day or night.",
     intro:
       "North Richland Hills is a city of arterial roads and retail parking rather than freeways through the middle, and most lockouts here happen in a lot somewhere along one of them. A driver finds you in the lot, satisfies themselves the car is yours, and opens it leaving nothing to repair.",
     scenarios: [
@@ -3550,7 +3550,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Flat Tire Change in North Richland Hills, TX",
     title: "Flat Tire Change North Richland Hills TX",
     metaDescription:
-      "Flat tire in North Richland Hills? If you have a usable spare, TRA fits it where you are — Loop 820, Davis Boulevard or at home.",
+      "Flat tire in North Richland Hills? If you have a usable spare, TRA fits it where you are — I-820, Davis Boulevard or at home.",
     intro:
       "A flat is a short delay if there is a sound spare on board. A driver comes out, swaps it over and torques it properly, so you are not kneeling in a lot with the groceries melting in the back.",
     scenarios: [

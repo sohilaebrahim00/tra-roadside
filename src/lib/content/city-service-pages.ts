@@ -3851,6 +3851,136 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     intent: "Emergency, highway-safety, lakeside access.",
     sourceUrls: ["allhoursroadside.com/rockwall-tire-change-service/"],
   },
+
+  // ===================== DENTON =====================
+  // Three pages with no All Hours source: All Hours has no Denton page of any
+  // kind (its sitemap and direct URL checks, October 2026). They rest on live
+  // search results instead. Denton-specific automotive locksmiths and several
+  // Denton roadside operators target lockouts and jump starts, and a search
+  // for battery replacement in Denton returns shop pages with no mobile
+  // installer among them. Flat tire change was not built: that search returns
+  // how-to guides, which is informational intent rather than a service need.
+  // Denton has no adjacent served city, so these pages show no nearby links
+  // and the copy says so plainly instead of implying a neighbor.
+  {
+    city: "denton",
+    service: "lockout",
+    h1: "Car Lockout Service in Denton, TX",
+    title: "Car Lockout Service Denton TX",
+    metaDescription:
+      "Keys stuck inside your car in Denton? TRA opens it without damage near the Square, around UNT and TWU, or off I-35E and I-35W, at any hour.",
+    intro:
+      "A Denton lockout usually happens somewhere you only meant to stop for a minute: a space near the Square, a lot by campus, a gas station just off the interstate. Once a TRA driver arrives and has checked that the car belongs to you, it is opened with non-destructive tools wherever the vehicle allows. Nothing gets towed, and nobody has to fetch a spare key from across town.",
+    scenarios: [
+      "Keys left on the seat after parking for dinner around Downtown Denton Square.",
+      "A fob that quit in a lot near the University of North Texas, with the spare back at home.",
+      "Doors locked behind you while dropping someone off in the Texas Woman's University area.",
+      "Keys shut in the trunk at a stop off US-380, which is a separate job with its own price.",
+    ],
+    localContext:
+      "Denton is the county seat of Denton County and the point where I-35E and I-35W rejoin as I-35, close to the UNT campus. US-380, US-377, US-77 and Loop 288 carry most of the remaining traffic. We handle lockouts throughout the city, from Downtown Denton Square to the University of North Texas and Texas Woman's University areas. No other city we serve shares a border with Denton; the closest, Lewisville, is about fifteen miles to the south.",
+    faqs: [
+      {
+        q: "Denton has no neighboring city you cover. Does that affect the wait?",
+        a: "It can, since the driver sent may not already be working next door. Dispatch looks at where you are and who is closest, then gives you a realistic estimate instead of a stock number.",
+      },
+      {
+        q: "I'm parked near UNT or TWU. What should I tell dispatch?",
+        a: "The street or lot name, plus the nearest building or landmark you can see. Lots around a campus tend to look alike, and that one detail gets the driver to the right row rather than the right block.",
+      },
+      {
+        q: "What do I need to have with me?",
+        a: "Photo ID, or some other proof that the car is yours to open. The driver settles that first, before any tool goes near the door.",
+      },
+    ],
+    primaryKeyword: "car lockout service Denton TX",
+    secondaryKeywords: ["locked out of car Denton", "car unlock Denton TX", "auto lockout Denton", "vehicle lockout Denton TX"],
+    longTail: ["locked keys in car Denton TX", "locked out of car near UNT Denton", "24 hour car unlock Denton"],
+    intent: "Emergency, near-me, downtown and campus-area parking.",
+    sourceUrls: [],
+  },
+  {
+    city: "denton",
+    service: "jump-start",
+    h1: "Jump Start Service in Denton, TX",
+    title: "Jump Start Service Denton TX",
+    metaDescription:
+      "Denton car won't turn over? A TRA driver comes out with a jump start, whether you're near the Square, around UNT and TWU, or off I-35 and Loop 288. 24/7.",
+    intro:
+      "When a car in Denton clicks or turns over sluggishly and then goes quiet, the battery has usually drained rather than died outright, and a jump is the fastest way to tell. The driver connects to it where the car sits, gets the engine running, and you drive off instead of arranging a tow. If the battery looks unlikely to hold a charge, you hear that before the driver leaves.",
+    scenarios: [
+      "A car that sat untouched through a long break near the UNT or TWU campus.",
+      "A dome light that stayed on all night on a street near the Square.",
+      "A slow, labored crank on the first truly cold morning, parked off Loop 288.",
+      "A car that would not restart after a fuel stop just off I-35.",
+    ],
+    localContext:
+      "Through traffic in Denton runs on I-35E and I-35W, which merge into I-35 near the UNT campus, while US-380, US-377, US-77 and Loop 288 handle trips across town. Cars around the University of North Texas and Texas Woman's University areas often make short hops or sit for days on end, and both habits leave a battery low. We jump start vehicles anywhere in Denton, whether the car is near the Square, on a campus-area street or beside one of the highways.",
+    faqs: [
+      {
+        q: "Will one jump fix the problem?",
+        a: "If the battery was only drained, yes. If it was already weak, it may start today and fail again the next time the car sits. Your driver will say what they saw, and a battery replacement can be brought to the same spot as a separate service.",
+      },
+      {
+        q: "My car is nose-in to a wall or squeezed into a tight space. Is that a problem?",
+        a: "Tell dispatch about it up front. The driver needs to reach the battery or the jump points, and knowing about a tight space beforehand means the right approach is planned before they arrive.",
+      },
+      {
+        q: "Is there anything I should do before the driver gets here?",
+        a: "Leave the ignition alone, since cranking again only spends charge the jump will need. Turn off lights and accessories and, after dark, wait somewhere lit where the driver can see you.",
+      },
+    ],
+    primaryKeyword: "jump start service Denton TX",
+    secondaryKeywords: ["dead battery Denton", "jump start near me Denton", "car won't start Denton TX", "battery jump Denton"],
+    longTail: ["24 hour jump start Denton TX", "car won't start near UNT Denton", "mobile jump start Denton"],
+    intent: "Emergency, 24-hour, campus-area and highway.",
+    sourceUrls: [],
+  },
+  {
+    city: "denton",
+    service: "battery-replacement",
+    h1: "Mobile Battery Replacement in Denton, TX",
+    title: "Car Battery Replacement Denton TX",
+    metaDescription:
+      "A failing car battery in Denton doesn't need a trip to the shop. TRA installs the new one in your driveway, apartment lot or workplace, with a 1-year warranty.",
+    intro:
+      "The usual battery swap assumes the car can get itself to a shop, which is exactly what a failing battery cannot promise. We turn that around: the battery travels to wherever the car sits in Denton and goes in on the spot. The battery has a published price; dispatch quotes the installation once it knows your vehicle, because some batteries are far harder to reach than others.",
+    scenarios: [
+      "A car that has needed a jump twice since the semester started.",
+      "A battery that would not recover after the car sat through a holiday break.",
+      "Flickering dash lights and sluggish windows on a car parked near the Square.",
+      "A battery several summers old that you would rather replace at home than on an I-35 shoulder.",
+    ],
+    localContext:
+      "Denton mixes interstate driving on I-35, I-35E and I-35W with short trips across town on US-380, US-377, US-77 and Loop 288. Long highway runs keep a battery topped up; the short hops typical around Downtown Denton Square and the two university areas do not, so a tired battery tends to show itself after a week of errands rather than after a commute. We install replacements anywhere in the city, in driveways, apartment complexes and workplace lots alike.",
+    faqs: [
+      {
+        q: "Can you install it in an apartment or campus-area lot?",
+        a: "Usually, as long as the car can be reached safely and a vehicle can stop beside it. Tell dispatch about anything that affects access, such as a gate or a permit-only section, so the driver arrives prepared.",
+      },
+      {
+        q: "How is the total price made up?",
+        a: "Two parts: the battery, whose price is listed above, and the installation, which dispatch quotes for your year, make and model before a driver sets off. You have both figures before you commit.",
+      },
+      {
+        q: "Does the new battery have a warranty?",
+        a: "Yes, a 1-year warranty. Hang on to the invoice, since any warranty claim is matched against it.",
+      },
+    ],
+    primaryKeyword: "car battery replacement Denton TX",
+    secondaryKeywords: ["mobile battery replacement Denton", "car battery service Denton TX", "battery installation Denton", "new car battery Denton"],
+    longTail: ["mobile car battery replacement near me Denton", "battery replaced at my apartment Denton", "car battery keeps dying Denton TX"],
+    intent: "Commercial, mobile alternative to shop-based installation.",
+    sourceUrls: [],
+  },
+
+  // Farmers Branch and Sachse were evaluated alongside Denton (October 2026)
+  // and deliberately have no City x Service pages. Neither has an All Hours
+  // page, and live searches for their core services turned up only one general
+  // towing-and-roadside listing each, which is the intent their existing city
+  // hubs already serve. Their verified geography is also thin (three bounding
+  // corridors for Farmers Branch, two for Sachse, no districts), and every
+  // road on it already appears on the pages of the cities they border.
 ];
 
 const BY_KEY = new Map(CITY_SERVICE_PAGES.map((p) => [`${p.city}/${p.service}`, p]));

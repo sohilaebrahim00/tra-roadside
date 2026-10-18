@@ -102,7 +102,7 @@
       "category": "unassigned",
       "placement": "gallery-item",
       "priority": 0,
-      "durationSeconds": 10,
+      "durationSeconds": 8.2,
       "aspectRatio": "1280:720",
       "width": 1280,
       "height": 720,
@@ -112,12 +112,13 @@
       "playsInline": true,
       "objectPosition": "center",
       "enabled": true,
-      "sizeBytes": 889263,
-      "mobileSizeBytes": 986094,
+      "sizeBytes": 1074762,
+      "mobileSizeBytes": 1155662,
       "originalSizeBytes": 19521866,
       "format": "mp4",
       "warnings": [
-        "No recognized filename prefix (hero-, service-, background-, scroll-, letter-, gallery-, tracking-, about-, mobile-) — categorized as \"unassigned\" and placement left unset. Rename the file in media-source/ or edit its entry in src/data/generated-media.json directly to assign a category/placement."
+        "No recognized filename prefix (hero-, service-, background-, scroll-, letter-, gallery-, tracking-, about-, mobile-) — categorized as \"unassigned\" and placement left unset. Rename the file in media-source/ or edit its entry in src/data/generated-media.json directly to assign a category/placement.",
+        "Trimmed to 8.2s on 2026-10-18 (both files) to cut the \"OHA Roadside Assistance\" logo card that ended the clip. Re-encoding from media-source/ will bring the card back unless the source clip is trimmed too."
       ],
       "registeredAt": "2026-08-03T01:14:25.979Z"
     },

@@ -68,6 +68,16 @@ export const SERVICES: ServiceContent[] = [
     priceLines: [{ amount: "$55–65" }],
     priceBadge: "$55–65",
     priceFrom: 55,
+    // From the business's own footage; the owner confirmed the rights to it
+    // on 2026-10-18. The hero on every jump start page.
+    photos: [
+      {
+        src: "/images/jump-start-pack.webp",
+        alt: "A technician in a high-visibility shirt holding a red portable jump pack over the open engine bay of a dark sedan.",
+        width: 1200,
+        height: 800,
+      },
+    ],
     summary: "Dead battery? We'll get your engine running again on the spot.",
     heroLine: "A dead battery shouldn't end your day.",
     problem:
@@ -112,9 +122,9 @@ export const SERVICES: ServiceContent[] = [
     // First is the business's own job photo (1200x800, October 2026) and is
     // what every battery page shows as its hero. It also shows why
     // installation is quoted: this battery sits under the rear seat, not under
-    // the hood. The six after it are 612x408 native, and their license is
-    // still to be confirmed by the owner. The home page battery section uses
-    // its own portrait crop of the same job photo.
+    // the hood. The six after it are 612x408 native, supplied by the owner,
+    // who confirmed the rights on 2026-10-18. The home page battery section
+    // uses its own portrait crop of the same job photo.
     photos: [
       {
         src: "/images/battery-under-seat.webp",
@@ -421,6 +431,16 @@ export const SERVICES: ServiceContent[] = [
     priceLines: [{ amount: "$65", note: "plus the cost of the fuel" }],
     priceBadge: "$65 + fuel",
     priceNote: "The $65 is the delivery charge. The fuel itself is added at cost.",
+    // From the business's own footage; the owner confirmed the rights to it
+    // on 2026-10-18. The hero on the fuel delivery pages.
+    photos: [
+      {
+        src: "/images/fuel-pour.webp",
+        alt: "A technician in high-visibility workwear pouring fuel from a red gas can into the open fuel door of a dark vehicle.",
+        width: 1080,
+        height: 720,
+      },
+    ],
     summary: "Ran out of gas or diesel? We'll bring enough to get you to a station.",
     heroLine: "Out of fuel, not out of options.",
     problem:

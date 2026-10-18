@@ -15,7 +15,8 @@ import type { ServiceTypeSlug } from "@/lib/types/domain";
  * site already plays as its home hero, letter-mask and video-page clips — and
  * cropped to 4:5. No stock, competitor or generated imagery. Note for the
  * owner: several of those clips end on an "OHA Roadside Assistance" logo card
- * rather than TRA's, so confirm the rights to this footage before deploying.
+ * rather than TRA's. The owner confirmed on 2026-10-18 that the business holds
+ * the rights to this footage.
  *
  * Frames showing legible slogans on clothing or accessories were left out on
  * purpose, as were frames with readable license plates.

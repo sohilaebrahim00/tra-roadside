@@ -6,10 +6,19 @@
  */
 import { toE164 } from "@/lib/utils/phone";
 
-function readPublic(name: string): string {
-  return process.env[name] ?? "";
+/**
+ * NEXT_PUBLIC_ values MUST be read as literal `process.env.NEXT_PUBLIC_*`
+ * expressions. Next.js inlines those into browser bundles at build time, but a
+ * lookup by variable name (`process.env[name]`) is never inlined, so in the
+ * browser it reads an empty polyfill object. This module used to do exactly
+ * that, which handed every client component an empty Supabase URL and key —
+ * the browser client behind admin and driver sign-in could not be created.
+ */
+function readPublic(value: string | undefined): string {
+  return value ?? "";
 }
 
+/** Server-only values. A dynamic lookup is fine here: the server has the real process.env. */
 function readServer(name: string): string {
   return process.env[name] ?? "";
 }
@@ -31,7 +40,7 @@ function normalizeBaseUrl(raw: string): string {
 // with no app URL configured falls back to the business's real published
 // domain rather than ever leaking a localhost link to a customer.
 const configuredAppUrl =
-  readPublic("NEXT_PUBLIC_APP_URL") || readServer("APP_URL") || readPublic("NEXT_PUBLIC_SITE_URL");
+  readPublic(process.env.NEXT_PUBLIC_APP_URL) || readServer("APP_URL") || readPublic(process.env.NEXT_PUBLIC_SITE_URL);
 // Canonical production origin. `www` is not a style choice: the apex
 // 308-redirects to www in production (verified against the live site, path and
 // query preserved), so www is what production actually establishes as
@@ -46,11 +55,11 @@ const PRODUCTION_FALLBACK_URL = "https://www.txroadsideassistance.com";
 const DEV_FALLBACK_URL = "http://localhost:3000";
 
 export const env = {
-  supabaseUrl: readPublic("NEXT_PUBLIC_SUPABASE_URL"),
-  supabaseAnonKey: readPublic("NEXT_PUBLIC_SUPABASE_ANON_KEY"),
+  supabaseUrl: readPublic(process.env.NEXT_PUBLIC_SUPABASE_URL),
+  supabaseAnonKey: readPublic(process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY),
   supabaseServiceRoleKey: readServer("SUPABASE_SERVICE_ROLE_KEY"),
 
-  googleMapsApiKey: readPublic("NEXT_PUBLIC_GOOGLE_MAPS_API_KEY"),
+  googleMapsApiKey: readPublic(process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY),
   googleMapsServerApiKey: readServer("GOOGLE_MAPS_SERVER_API_KEY"),
   // Google Business Profile place ID, for the Places Details lookup behind the
   // homepage reviews section. Never guessed or derived from the short listing
@@ -74,9 +83,9 @@ export const env = {
   dispatchEmail: readServer("DISPATCH_EMAIL") || "info@texasroadside-assistance.com",
   dispatchPhoneRaw: readServer("DISPATCH_PHONE") || "+19454121215",
 
-  gaMeasurementId: readPublic("NEXT_PUBLIC_GA_MEASUREMENT_ID"),
-  gtmContainerId: readPublic("NEXT_PUBLIC_GTM_CONTAINER_ID"),
-  metaPixelId: readPublic("NEXT_PUBLIC_META_PIXEL_ID"),
+  gaMeasurementId: readPublic(process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID),
+  gtmContainerId: readPublic(process.env.NEXT_PUBLIC_GTM_CONTAINER_ID),
+  metaPixelId: readPublic(process.env.NEXT_PUBLIC_META_PIXEL_ID),
 
   // Google Ads conversion tracking. The tag only loads when the ID is set, and
   // the conversion only fires when the label is set too — both are account
@@ -84,10 +93,10 @@ export const env = {
   // the segment after the slash in the send_to Google gives you
   // ("AW-XXXXXXXX/<label>"), kept separate so the tag ID stays a single value
   // reusable by any future conversion action.
-  googleAdsId: readPublic("NEXT_PUBLIC_GOOGLE_ADS_ID"),
-  googleAdsConversionLabel: readPublic("NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_LABEL"),
+  googleAdsId: readPublic(process.env.NEXT_PUBLIC_GOOGLE_ADS_ID),
+  googleAdsConversionLabel: readPublic(process.env.NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_LABEL),
 
-  hcaptchaSiteKey: readPublic("NEXT_PUBLIC_HCAPTCHA_SITE_KEY"),
+  hcaptchaSiteKey: readPublic(process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY),
   hcaptchaSecret: readServer("HCAPTCHA_SECRET"),
 };
 

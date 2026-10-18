@@ -4,10 +4,12 @@ import { SERVICES } from "@/lib/content/services";
 import { SERVICE_AREAS } from "@/lib/content/business";
 import { getBlogPosts } from "@/lib/data/blog";
 import { cityServicePairs } from "@/lib/content/city-service-pages";
+import { LOCATION_HUBS } from "@/lib/content/location-hubs";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = env.siteUrl;
   const now = new Date();
+  const posts = await getBlogPosts();
 
   const staticRoutes = [
     "",
@@ -17,7 +19,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/about",
     "/gallery",
     "/videos",
-    "/blog",
+    // /blog is noindex while it has no articles, so it is listed only once
+    // there is at least one published post to send a crawler to.
+    ...(posts.length > 0 ? ["/blog"] : []),
     "/faq",
     "/contact",
     "/privacy-policy",
@@ -56,18 +60,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // Location hubs. These are not City x Service pages: each covers one place
   // and routes to several services, so they are listed explicitly rather than
-  // generated. A hub is added here only once it passes the indexability and
-  // duplicate-content checks, so the list stays short on purpose.
-  const locationHubRoutes = [
-    "/airports/dallas-love-field",
-  ].map((path) => ({
-    url: `${base}${path}`,
+  // generated. A hub is added to LOCATION_HUBS only once it passes the
+  // indexability and duplicate-content checks, so the list stays short on
+  // purpose — and the same list is what links each hub from its city page.
+  const locationHubRoutes = LOCATION_HUBS.map((h) => ({
+    url: `${base}${h.path}`,
     lastModified: now,
     changeFrequency: "monthly" as const,
     priority: 0.6,
   }));
 
-  const posts = await getBlogPosts();
   const postRoutes = posts.map((p) => ({
     url: `${base}/blog/${p.slug}`,
     lastModified: now,

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { pageUrls } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Phone, LifeBuoy, MapPin } from "lucide-react";
+import { Phone, LifeBuoy, MapPin, ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
@@ -9,6 +10,7 @@ import { SERVICE_AREAS, BUSINESS, getServiceArea, nearbyAreas } from "@/lib/cont
 import { SERVICES } from "@/lib/content/services";
 import { SERVICE_ICONS } from "@/lib/content/service-icons";
 import { getCityServicePage } from "@/lib/content/city-service-pages";
+import { locationHubsForCity } from "@/lib/content/location-hubs";
 import { env } from "@/lib/env";
 
 export function generateStaticParams() {
@@ -26,7 +28,7 @@ export async function generateMetadata({
   return {
     title: `Roadside Assistance in ${city.name}, TX`,
     description: `24/7 roadside assistance in ${city.name}, Texas — towing, jump starts, flat tires, fuel delivery, and more. Request help online with live driver tracking.`,
-    alternates: { canonical: `/service-areas/${city.slug}` },
+    ...pageUrls(`/service-areas/${city.slug}`),
   };
 }
 
@@ -40,6 +42,7 @@ export default async function ServiceAreaPage({
   if (!city) notFound();
 
   const nearby = nearbyAreas(city.slug, 5);
+  const hubs = locationHubsForCity(city.slug);
 
   return (
     <>
@@ -52,7 +55,7 @@ export default async function ServiceAreaPage({
       />
       <section className="border-b border-ink-950/8 bg-ink-950 py-16 text-white sm:py-20">
         <Container>
-          <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500">
+          <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-400">
             <MapPin className="h-3.5 w-3.5" aria-hidden="true" /> Service Area
           </p>
           <h1 className="mt-3 font-display text-3xl font-bold uppercase tracking-tight sm:text-4xl">
@@ -107,6 +110,31 @@ export default async function ServiceAreaPage({
           </div>
 
           <aside className="space-y-6">
+            {/*
+              Location hubs inside this city's limits, from LOCATION_HUBS. Data
+              driven, so no city is special-cased here: a city with no hub
+              renders nothing.
+            */}
+            {hubs.length > 0 && (
+              <div className="rounded-2xl border border-ink-950/8 bg-white p-6 dark:border-white/10 dark:bg-ink-900">
+                <h3 className="font-display text-base font-semibold text-ink-950 dark:text-white">
+                  Locations in {city.name}
+                </h3>
+                <ul className="mt-3 space-y-4">
+                  {hubs.map((h) => (
+                    <li key={h.path}>
+                      <Link
+                        href={h.path}
+                        className="inline-flex items-center gap-1 text-sm font-semibold text-red-600 hover:text-red-700"
+                      >
+                        {h.name} <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+                      </Link>
+                      <p className="mt-1 text-sm text-ink-600 dark:text-ink-200">{h.summary}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
             {/*
               Only rendered when the city genuinely has adjacent served cities.
               Denton has none — nothing TRA covers borders it — so the block is

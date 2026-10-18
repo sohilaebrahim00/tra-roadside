@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageUrls } from "@/lib/seo";
 import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/ui/container";
@@ -7,11 +8,18 @@ import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { getBlogPosts } from "@/lib/data/blog";
 import { env } from "@/lib/env";
 
-export const metadata: Metadata = {
-  title: "Blog",
-  description: "Roadside safety tips, vehicle maintenance advice, and updates from TRA.",
-  alternates: { canonical: "/blog" },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const posts = await getBlogPosts();
+  return {
+    title: "Blog",
+    description: "Roadside safety tips, vehicle maintenance advice, and updates from TRA.",
+    ...pageUrls("/blog"),
+    // An index with nothing in it is a thin page. It stays out of search, and
+    // out of the sitemap, until there is an article to list; publishing one
+    // calls revalidatePath("/blog"), which re-renders this metadata.
+    ...(posts.length === 0 ? { robots: { index: false, follow: true } } : {}),
+  };
+}
 
 export default async function BlogIndexPage() {
   const posts = await getBlogPosts();
@@ -21,7 +29,7 @@ export default async function BlogIndexPage() {
       <BreadcrumbJsonLd items={[{ name: "Home", url: env.siteUrl }, { name: "Blog", url: `${env.siteUrl}/blog` }]} />
       <section className="border-b border-ink-950/8 bg-ink-950 py-16 text-white sm:py-20">
         <Container>
-          <SectionHeading eyebrow="From TRA" title="Roadside safety & driving tips" tone="light" />
+          <SectionHeading as="h1" eyebrow="From TRA" title="Roadside safety & driving tips" tone="light" />
         </Container>
       </section>
 

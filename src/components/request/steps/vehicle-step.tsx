@@ -143,7 +143,7 @@ export function VehicleStep({ onNext, onBack }: { onNext: () => void; onBack: ()
           </Field>
           <p id="vin-hint" className="mt-1.5 text-xs text-ink-600 dark:text-ink-200">
             Helps us match the exact battery. Find it on the driver&apos;s side dashboard, seen
-            through the windscreen, or on the sticker inside the driver&apos;s door jamb. Skip it if
+            through the windshield, or on the sticker inside the driver&apos;s door jamb. Skip it if
             you can&apos;t reach it — year, make and model are enough to get us moving.
           </p>
           {errors.vehicleVin && (

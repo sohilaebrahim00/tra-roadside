@@ -51,7 +51,7 @@ export function ServiceHero({
           {/* ---------------- Decision column ---------------- */}
           <div>
             <nav aria-label="Breadcrumb">
-              <ol className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-xs font-semibold uppercase tracking-widest text-red-500">
+              <ol className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-xs font-semibold uppercase tracking-widest text-red-400">
                 <li>
                   <Link href="/service-areas" className="hover:underline">
                     Service Areas

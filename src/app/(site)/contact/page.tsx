@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageUrls } from "@/lib/seo";
 import { Phone, Mail, Clock, LifeBuoy, MapPin } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
@@ -10,7 +11,7 @@ import { env } from "@/lib/env";
 export const metadata: Metadata = {
   title: "Contact",
   description: "Contact TRA — 24/7 roadside assistance dispatch for the Dallas–Fort Worth Metroplex.",
-  alternates: { canonical: "/contact" },
+  ...pageUrls("/contact"),
 };
 
 export default function ContactPage() {

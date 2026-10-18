@@ -21,8 +21,17 @@ interface BlogPostFullRow extends BlogPostRow {
   og_image_url: string | null;
 }
 
+/**
+ * The [DEMO] fallback is for a local install with no database. It is never
+ * served by a production build: it used to be returned whenever the Supabase
+ * query failed as well, which put a "[DEMO]" article on the live /blog page
+ * and in the sitemap — while getBlogPost() returned null for the same slug, so
+ * the sitemap advertised a URL that 404s.
+ */
+const DEMO_POSTS: BlogPostFull[] = process.env.NODE_ENV === "production" ? [] : BLOG_FALLBACK;
+
 export async function getBlogPosts(): Promise<BlogPostSummary[]> {
-  if (isDemoMode()) return BLOG_FALLBACK;
+  if (isDemoMode()) return DEMO_POSTS;
   try {
     const supabase = createPublicSupabaseClient();
     const { data, error } = await supabase
@@ -31,7 +40,8 @@ export async function getBlogPosts(): Promise<BlogPostSummary[]> {
       .eq("status", "published")
       .order("published_at", { ascending: false })
       .returns<BlogPostRow[]>();
-    if (error || !data) return BLOG_FALLBACK;
+    // A failed query means "no posts we can serve", not "show the demo".
+    if (error || !data) return [];
     return data.map((row) => ({
       id: row.id,
       slug: row.slug,
@@ -43,12 +53,12 @@ export async function getBlogPosts(): Promise<BlogPostSummary[]> {
       category: row.blog_categories?.name ?? null,
     }));
   } catch {
-    return BLOG_FALLBACK;
+    return [];
   }
 }
 
 export async function getBlogPost(slug: string): Promise<BlogPostFull | null> {
-  if (isDemoMode()) return BLOG_FALLBACK.find((p) => p.slug === slug) ?? null;
+  if (isDemoMode()) return DEMO_POSTS.find((p) => p.slug === slug) ?? null;
   try {
     const supabase = createPublicSupabaseClient();
     const { data, error } = await supabase

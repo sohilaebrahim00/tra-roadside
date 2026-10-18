@@ -14,10 +14,13 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
       </a>
       <BatteryStrip />
       <SiteHeader />
-      <main
-        id="main-content"
-        className="flex-1 pb-[calc(var(--mobile-action-bar-height)+env(safe-area-inset-bottom))] md:pb-0"
-      >
+      {/*
+        No bottom padding here on purpose. The space the fixed MobileActionBar
+        occupies is reserved by a spacer the bar itself renders after the footer,
+        so the footer's last row clears it too. Padding <main> instead only
+        protected <main>, and left a gap between the last section and the footer.
+      */}
+      <main id="main-content" className="flex-1">
         {children}
       </main>
       <SiteFooter />

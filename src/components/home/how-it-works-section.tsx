@@ -115,13 +115,13 @@ export function HowItWorksSection() {
       <Container className="relative">
         <SectionHeading
           eyebrow="How It Works"
-          title="From stranded to sorted"
+          title="From stranded to back on the road"
           description="Every request follows the same route — here's what happens between your tap and your driver's arrival."
           align="center"
           tone="light"
         />
 
-        {/* Desktop: horizontal journey */}
+        {/* Desktop: horizontal track */}
         <div ref={desktopTrackRef} className="relative mt-20 hidden lg:block">
           <div className="absolute left-[6.5rem] right-[6.5rem] top-8 h-[3px] rounded-full bg-white/10 sm:top-8">
             <div
@@ -156,7 +156,7 @@ export function HowItWorksSection() {
           </ol>
         </div>
 
-        {/* Mobile / tablet: vertical journey */}
+        {/* Mobile / tablet: vertical track */}
         <div ref={mobileTrackRef} className="relative mt-14 lg:hidden">
           <div className="absolute left-[27px] top-2 bottom-2 w-[3px] rounded-full bg-white/10">
             <div

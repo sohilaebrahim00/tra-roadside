@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageUrls } from "@/lib/seo";
 import Link from "next/link";
 import { ArrowUpRight, Phone } from "lucide-react";
 import { Container } from "@/components/ui/container";
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
   title: "Roadside Assistance Services",
   description:
     "Towing, jump starts, flat tire changes, fuel delivery, lockouts, winching, and more — 24/7 roadside assistance across the Dallas–Fort Worth Metroplex.",
-  alternates: { canonical: "/services" },
+  ...pageUrls("/services"),
 };
 
 export default function ServicesPage() {
@@ -32,6 +33,7 @@ export default function ServicesPage() {
         <CinematicBackgroundVideo placement="services-header" overlay="strong" />
         <Container className="relative z-10">
           <SectionHeading
+            as="h1"
             eyebrow="What We Do"
             title="Every roadside service, one call away"
             description="Select a service when you request help online, or call dispatch directly — either way, we'll confirm the details before a driver is sent."

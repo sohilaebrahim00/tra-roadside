@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
+import { pageUrls } from "@/lib/seo";
 import { LegalLayout } from "@/components/legal/legal-layout";
 import { BUSINESS } from "@/lib/content/business";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
+  description:
+    "How Texas Roadside Assistance LLC collects, uses and protects your information, including SMS messaging, advertising measurement and data retention.",
   robots: { index: true, follow: true },
-  alternates: { canonical: "/privacy-policy" },
+  ...pageUrls("/privacy-policy"),
 };
 
 export default function PrivacyPolicyPage() {

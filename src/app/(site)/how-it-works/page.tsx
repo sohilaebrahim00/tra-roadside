@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageUrls } from "@/lib/seo";
 import { MapPin, ClipboardList, UserCheck, Navigation, CheckCircle2, Phone, LifeBuoy } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -10,7 +11,7 @@ import { env } from "@/lib/env";
 export const metadata: Metadata = {
   title: "How It Works",
   description: "How to request 24/7 roadside assistance from TRA — share your location, pick a service, get matched with a driver, and track live.",
-  alternates: { canonical: "/how-it-works" },
+  ...pageUrls("/how-it-works"),
 };
 
 const STEPS = [
@@ -48,8 +49,9 @@ export default function HowItWorksPage() {
       <section className="border-b border-ink-950/8 bg-ink-950 py-16 text-white sm:py-20">
         <Container>
           <SectionHeading
+            as="h1"
             eyebrow="How It Works"
-            title="From stranded to sorted"
+            title="From stranded to back on the road"
             description="Requesting roadside help takes under two minutes. Here's exactly what happens from the moment you submit a request."
             tone="light"
           />

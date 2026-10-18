@@ -34,7 +34,7 @@
  *    confidently verified. An empty list is correct; an invented one is not.
  *  - `airport` states the real relationship: land inside the city, a facility
  *    nearby, or regional service. It never implies TRA holds airport access,
- *    authorisation, contracts or any partnership.
+ *    authorization, contracts or any partnership.
  */
 import type { ServiceArea } from "./business";
 
@@ -45,7 +45,7 @@ export interface LocalArea {
   counties: string[];
   /** Highways and major roads verified as running through or bounding the city. */
   corridors: string[];
-  /** Recognisable districts. Empty where nothing could be verified. */
+  /** Recognizable districts. Empty where nothing could be verified. */
   districts: string[];
   /** Factual airport/transport relationship. Omitted where there is none. */
   airport?: string;

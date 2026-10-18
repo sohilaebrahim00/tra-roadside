@@ -30,7 +30,7 @@ export function FinalCta({ city, svc }: { city: ServiceArea; svc: ServiceContent
       <Container className="relative py-12 sm:py-16">
         <div className="flex flex-col items-start gap-8 lg:flex-row lg:items-center lg:justify-between">
           <div className="max-w-xl">
-            <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500">
+            <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-400">
               <Icon className="h-4 w-4" aria-hidden="true" />
               {svc.name}
             </p>

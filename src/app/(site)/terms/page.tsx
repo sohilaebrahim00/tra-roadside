@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
+import { pageUrls } from "@/lib/seo";
 import { LegalLayout, LegalPlaceholder } from "@/components/legal/legal-layout";
 import { BUSINESS } from "@/lib/content/business";
 
 export const metadata: Metadata = {
   title: "Terms and Conditions",
+  description:
+    "The terms for requesting roadside assistance from Texas Roadside Assistance LLC, covering service requests, pricing, cancellations, live tracking and liability.",
   robots: { index: true, follow: true },
-  alternates: { canonical: "/terms" },
+  ...pageUrls("/terms"),
 };
 
 export default function TermsPage() {

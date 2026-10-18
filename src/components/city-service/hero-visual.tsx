@@ -23,7 +23,7 @@ import type { ServiceContent } from "@/lib/content/services";
  *
  * `unoptimized` + explicit width/height + a capped `sizes` follows the
  * convention already set on /services/[slug]: these webp files are the
- * optimised artefact at 612px wide, and next/image would otherwise emit srcset
+ * optimized artifact at 612px wide, and next/image would otherwise emit srcset
  * candidates far wider than the source and upscale the photograph.
  */
 export function HeroVisual({ svc }: { svc: ServiceContent }) {

@@ -23,6 +23,8 @@ export function FaqPageClient({ faqs }: { faqs: FaqItem[] }) {
       <div className="relative">
         <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-ink-400" aria-hidden="true" />
         <input
+          type="search"
+          aria-label="Search FAQs"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search FAQs…"
@@ -30,11 +32,13 @@ export function FaqPageClient({ faqs }: { faqs: FaqItem[] }) {
         />
       </div>
 
-      <div className="mt-4 flex flex-wrap gap-2">
+      <div className="mt-4 flex flex-wrap gap-2" role="group" aria-label="Filter FAQs by topic">
         {categories.map((c) => (
           <button
             key={c}
+            type="button"
             onClick={() => setCategory(c)}
+            aria-pressed={category === c}
             className={cn(
               "rounded-full border px-3.5 py-1.5 text-sm font-medium",
               category === c ? "border-red-600 bg-red-600 text-white" : "border-ink-950/15 text-ink-600 dark:border-white/15 dark:text-ink-200"
@@ -45,6 +49,9 @@ export function FaqPageClient({ faqs }: { faqs: FaqItem[] }) {
         ))}
       </div>
 
+      {/* The accordion renders each question as an h3; this keeps the outline
+          h1 -> h2 -> h3 instead of jumping straight from the page title. */}
+      <h2 className="sr-only">{category === "All" ? "All questions" : `${category} questions`}</h2>
       <div className="mt-6 rounded-2xl border border-ink-950/8 px-6 dark:border-white/10">
         {filtered.length > 0 ? <FaqAccordion items={filtered} /> : <p className="py-8 text-center text-ink-400">No FAQs match your search.</p>}
       </div>

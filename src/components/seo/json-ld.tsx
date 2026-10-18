@@ -53,12 +53,21 @@ export function OrganizationJsonLd() {
 export function ServiceJsonLd({
   name,
   description,
-  slug,
+  path,
+  areaServed,
   priceFrom,
 }: {
   name: string;
   description: string;
-  slug: string;
+  /**
+   * Site path of the page this Service describes. Passed whole rather than
+   * built from a slug: City x Service pages live under /service-areas, and
+   * deriving `/services/${slug}` for them pointed every one of those 97
+   * Service blocks at a URL that 404s.
+   */
+  path: string;
+  /** Defaults to every served city. City pages pass their own city. */
+  areaServed?: string;
   /** Lowest published total in whole USD, when one can be stated without misleading. */
   priceFrom?: number;
 }) {
@@ -68,8 +77,10 @@ export function ServiceJsonLd({
     serviceType: name,
     description,
     provider: { "@id": `${env.siteUrl}/#organization` },
-    areaServed: SERVICE_AREAS.map((c) => c.name),
-    url: `${env.siteUrl}/services/${slug}`,
+    areaServed: areaServed
+      ? { "@type": "City", name: areaServed }
+      : SERVICE_AREAS.map((c) => c.name),
+    url: `${env.siteUrl}${path}`,
     ...(priceFrom
       ? {
           offers: {

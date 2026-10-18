@@ -24,7 +24,7 @@ function sendConversion(sendTo: string) {
     return;
   }
   // The tag is `afterInteractive`, so this effect can run first. Pushing onto
-  // dataLayer is exactly what the gtag stub does; gtag.js drains the queue
+  // dataLayer is exactly what the gtag stub does; gtag.js processes the buffer
   // when it executes, so the conversion is not lost in that race.
   window.dataLayer = window.dataLayer ?? [];
   window.dataLayer.push(["event", "conversion", { send_to: sendTo }]);

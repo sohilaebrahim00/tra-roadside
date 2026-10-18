@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageUrls } from "@/lib/seo";
 import Link from "next/link";
 import { MapPin } from "lucide-react";
 import { Container } from "@/components/ui/container";
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
   title: "Service Areas — Dallas–Fort Worth Metroplex",
   description:
     "TRA provides 24/7 roadside assistance across 27 cities in the Dallas–Fort Worth Metroplex, including Dallas, Arlington, Plano, Frisco, and McKinney.",
-  alternates: { canonical: "/service-areas" },
+  ...pageUrls("/service-areas"),
 };
 
 export default function ServiceAreasPage() {
@@ -26,6 +27,7 @@ export default function ServiceAreasPage() {
       <section className="border-b border-ink-950/8 bg-ink-950 py-16 text-white sm:py-20">
         <Container>
           <SectionHeading
+            as="h1"
             eyebrow="Coverage"
             title="27 cities across the DFW Metroplex"
             description="Dispatch will always confirm exact coverage for your location when you request help — this list reflects our currently confirmed service area."

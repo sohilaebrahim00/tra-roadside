@@ -33,8 +33,10 @@ export function Wordmark({ className, subline = true }: { className?: string; su
       <span className="font-display text-2xl font-bold tracking-tight">
         TR<span className="text-red-600">A</span>
       </span>
+      {/* The subline inherits the lockup color at 60% so it clears 4.5:1 on the
+          white header and the dark footer alike; a fixed gray failed on the dark one. */}
       {subline && (
-        <span className="mt-0.5 text-[0.55rem] font-semibold uppercase tracking-[0.22em] text-ink-400">
+        <span className="mt-0.5 text-[0.55rem] font-semibold uppercase tracking-[0.22em] opacity-60">
           Texas Roadside Assistance
         </span>
       )}

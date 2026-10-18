@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
+import { pageUrls } from "@/lib/seo";
 import { LegalLayout } from "@/components/legal/legal-layout";
 import { BUSINESS } from "@/lib/content/business";
 
 export const metadata: Metadata = {
   title: "Accessibility",
+  description:
+    "How TRA works to keep this website usable for everyone, what has been done so far, and how to reach us if any part of the site does not work for you.",
   robots: { index: true, follow: true },
-  alternates: { canonical: "/accessibility" },
+  ...pageUrls("/accessibility"),
 };
 
 export default function AccessibilityPage() {

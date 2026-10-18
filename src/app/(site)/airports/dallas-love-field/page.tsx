@@ -54,19 +54,19 @@ export const metadata: Metadata = {
 /**
  * The routing table. Each entry pairs the symptom a returning traveler can
  * actually observe with the Dallas page that answers it. Order is deliberate:
- * a car that has stood for days fails at the battery far more often than
+ * a car that has sat for days fails at the battery far more often than
  * anything else.
  */
 const ROUTES = [
   {
     service: "jump-start",
     symptom: "It cranks slowly, clicks, or does nothing at all",
-    body: "The commonest outcome by a wide margin. A car left for a few days with anything drawing current comes back dead. If the battery is otherwise sound, a jump start is enough to get you out of the parking structure and home.",
+    body: "The most common outcome by a wide margin. A car left for a few days with anything drawing current comes back dead. If the battery is otherwise sound, a jump start is enough to get you out of the parking structure and home.",
   },
   {
     service: "battery-replacement",
     symptom: "It has already been jumped once on this trip",
-    body: "A battery that needed help once and died again has stopped holding charge, and jumping it a second time only moves the problem to the drive home. We bring the replacement to the car and fit it where it stands.",
+    body: "A battery that needed help once and died again has stopped holding charge, and jumping it a second time only moves the problem to the drive home. We bring the replacement to the car and install it where it sits.",
   },
   {
     service: "lockout",
@@ -76,7 +76,7 @@ const ROUTES = [
   {
     service: "flat-tire-change",
     symptom: "A tire has gone down while the car was parked",
-    body: "Tires lose air slowly, and a week is long enough for a small puncture to finish the job. If there is a serviceable spare in the vehicle, it can be fitted where the car is standing.",
+    body: "Tires lose air slowly, and a week is long enough for a small puncture to finish the job. If there is a serviceable spare in the vehicle, it can be put on where the car is parked.",
   },
 ] as const;
 
@@ -91,7 +91,7 @@ const FAQS = [
   },
   {
     q: "Does it cost more because the car is at the airport?",
-    a: "The published rates are the same as anywhere else we cover in Dallas. What the final figure depends on is your vehicle and exactly where it is standing, and dispatch confirms that with you before a driver is sent.",
+    a: "The published rates are the same as anywhere else we cover in Dallas. What the final figure depends on is your vehicle and exactly where it is parked, and dispatch confirms that with you before a driver is sent.",
   },
   {
     q: "My flight lands late. Is anyone working?",
@@ -131,7 +131,7 @@ export default function DallasLoveFieldPage() {
       {/* ---------------- Hero ---------------- */}
       <section className="border-b border-ink-950/8 bg-ink-950 py-14 text-white sm:py-20">
         <Container>
-          <p className="text-xs font-semibold uppercase tracking-widest text-red-500">
+          <p className="text-xs font-semibold uppercase tracking-widest text-red-400">
             <Link href="/service-areas" className="hover:underline">Service Areas</Link>
             {" / "}
             <Link href="/service-areas/dallas" className="hover:underline">Dallas</Link>
@@ -237,7 +237,7 @@ export default function DallasLoveFieldPage() {
                 <p>
                   In practice that rarely stops us, because the places travelers park are reachable
                   like any other parking in Dallas. What it does mean is that dispatch needs to know
-                  exactly where the vehicle is standing — the operator, the lot, the level — and
+                  exactly where the vehicle is parked — the operator, the lot, the level — and
                   will tell you plainly if a driver cannot get to that spot.
                 </p>
               </div>

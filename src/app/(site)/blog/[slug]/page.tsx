@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageUrls } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { Container } from "@/components/ui/container";
@@ -13,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: post.seo_title || post.title,
     description: post.seo_description || post.excerpt || undefined,
-    alternates: { canonical: `/blog/${post.slug}` },
+    ...pageUrls(`/blog/${post.slug}`),
   };
 }
 

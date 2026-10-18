@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { getService } from "@/lib/content/services";
 
 /**
- * The commercial centre of the home page — batteries are the highest-margin
+ * The commercial center of the home page — batteries are the highest-margin
  * service, so this gets a full section directly below the Hero rather than
  * being one card among many in the services grid.
  *
@@ -24,7 +24,7 @@ export function BatteryPromoSection() {
       <Container>
         <div className="grid items-center gap-10 lg:grid-cols-[1fr_auto]">
           <div>
-            <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-500">
+            <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-400">
               <BatteryFull className="h-4 w-4" aria-hidden="true" />
               Mobile Battery Replacement
             </p>
@@ -32,7 +32,7 @@ export function BatteryPromoSection() {
               A new battery, installed right where you are.
             </h2>
             <p className="mt-3 max-w-xl text-base leading-relaxed text-white/70">
-              We bring the battery to you and fit it on the spot — no tow, no waiting room.
+              We bring the battery to you and install it on the spot — no tow, no waiting room.
             </p>
 
             <div className="mt-7 max-w-md rounded-2xl border border-white/15 bg-white/5 p-5">
@@ -49,7 +49,7 @@ export function BatteryPromoSection() {
               </li>
               <li className="flex items-center gap-1.5">
                 <Check className="h-4 w-4 shrink-0 text-red-500" aria-hidden="true" />
-                Fitted at your location
+                Installed at your location
               </li>
             </ul>
 
@@ -70,7 +70,7 @@ export function BatteryPromoSection() {
             a landscape box. Capped at max-w-102 so it renders at exactly its
             native width on desktop and narrower — never wider — below that.
 
-            `unoptimized` because the file is already the optimised artefact
+            `unoptimized` because the file is already the optimized artifact
             (webp q76 from scripts/optimize-images.mjs); without it next/image
             would emit srcset candidates far wider than the 408px source.
 

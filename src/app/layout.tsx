@@ -6,6 +6,7 @@ import { BUSINESS } from "@/lib/content/business";
 import { OrganizationJsonLd } from "@/components/seo/json-ld";
 import { ServiceWorkerRegister } from "@/components/pwa/sw-register";
 import { GoogleAdsTag } from "@/components/analytics/google-ads";
+import { OPEN_GRAPH_DEFAULTS } from "@/lib/seo";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -45,12 +46,10 @@ export const metadata: Metadata = {
     "emergency roadside help",
   ],
   authors: [{ name: BUSINESS.legalName }],
-  openGraph: {
-    type: "website",
-    siteName: "TRA — Texas Roadside Assistance",
-    locale: "en_US",
-    url: env.siteUrl,
-  },
+  // No `url` here: a page without its own openGraph inherits this object
+  // whole, so a root-level url made every such page claim to be the homepage.
+  // Pages set og:url alongside their canonical through pageUrls().
+  openGraph: { ...OPEN_GRAPH_DEFAULTS },
   twitter: {
     card: "summary_large_image",
   },

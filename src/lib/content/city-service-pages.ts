@@ -15,7 +15,7 @@
  *  - Prices are NOT written into prose. The page renders them from SERVICES so
  *    a price change propagates; duplicating a figure here would create a
  *    second source of truth that silently goes stale.
- *  - `sourceUrls` records which competitor pages were analysed for search
+ *  - `sourceUrls` records which competitor pages were analyzed for search
  *    intent. It is research provenance only — internal, never rendered, and
  *    no competitor wording, pricing, phone number or claim is reproduced.
  *  - `primaryKeyword` and the keyword sets are for auditing which intent a
@@ -92,12 +92,12 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Car won't start in Dallas? TRA brings a jump start to you on US-75, I-35E, the Tollway or wherever you're parked. Local DFW dispatch, 24/7. Call now.",
     intro:
-      "A car that turns over slowly and then gives up is usually a battery that has run flat rather than a car that has failed. A jump start gets most vehicles running again within minutes of the driver arriving, and you can drive away under your own power instead of waiting on a tow truck.",
+      "A car that turns over slowly and then gives up is usually a battery that has run down rather than a car that has failed. A jump start gets most vehicles running again within minutes of the driver arriving, and you can drive away under your own power instead of waiting on a tow truck.",
     scenarios: [
       "Interior light or headlights left on through a workday in a downtown garage.",
       "A cold snap after a mild week — the first genuinely cold morning is our busiest.",
       "Short trips around the city that never let the alternator fully recharge the battery.",
-      "A car left standing for two weeks while you were away through Love Field.",
+      "A car left sitting for two weeks while you were away through Love Field.",
     ],
     localContext:
       "We dispatch across the whole Dallas footprint, including the commuter spine of US-75 Central Expressway, I-35E, I-30, I-45, I-20 and the LBJ Freeway, plus the Dallas North Tollway. Calls come in from office garages Uptown, from residential streets in Lakewood and Lake Highlands, and from the retail lots either side of Oak Cliff.",
@@ -127,9 +127,9 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Mobile Battery Replacement in Dallas, TX",
     title: "Car Battery Replacement Dallas TX",
     metaDescription:
-      "Need a car battery in Dallas? TRA brings the battery to you and fits it where the car sits — no tow, no waiting room. Installation quoted for your vehicle.",
+      "Need a car battery in Dallas? TRA brings the battery to you and installs it where the car sits — no tow, no waiting room. Installation quoted for your vehicle.",
     intro:
-      "When a battery has stopped holding charge, jumping it again only buys you until the next cold morning. We bring a replacement to the car and fit it there, whether that is a driveway in Lakewood or a garage level downtown. The battery price is published; installation depends on how the battery is mounted in your particular vehicle, so dispatch quotes that before a driver sets off.",
+      "When a battery has stopped holding charge, jumping it again only buys you until the next cold morning. We bring a replacement to the car and install it there, whether that is a driveway in Lakewood or a garage level downtown. The battery price is published; installation depends on how the battery is mounted in your particular vehicle, so dispatch quotes that before a driver sets off.",
     scenarios: [
       "A battery that needed a jump twice in the same week.",
       "A car that has sat at Love Field long-term parking and will not wake up.",
@@ -137,7 +137,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       "A battery old enough that you would rather replace it before a trip than after a failure.",
     ],
     localContext:
-      "Dallas drivers cover long daily distances on I-635, I-30 and the Dallas North Tollway, and a marginal battery tends to fail at the least convenient point of that run. We fit batteries across the city, from the Design District and Fair Park to Bishop Arts and the residential streets of Oak Cliff.",
+      "Dallas drivers cover long daily distances on I-635, I-30 and the Dallas North Tollway, and a marginal battery tends to fail at the least convenient point of that run. We install batteries across the city, from the Design District and Fair Park to Bishop Arts and the residential streets of Oak Cliff.",
     faqs: [
       {
         q: "Why is installation quoted separately?",
@@ -164,21 +164,21 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Flat Tire Change in Dallas, TX",
     title: "Flat Tire Change Dallas TX",
     metaDescription:
-      "Flat tire in Dallas? If you have a usable spare, TRA fits it where you are and gets you moving. Freeway shoulders, garages and side streets across the city.",
+      "Flat tire in Dallas? If you have a usable spare, TRA puts it on where you are and gets you moving. Freeway shoulders, garages and side streets across the city.",
     intro:
-      "If there is a serviceable spare in the vehicle, changing a flat at the roadside is usually the quickest way out of the situation. A driver comes to you, fits the spare properly and torques it, and you drive on. No tow, and no changing a wheel yourself on the edge of a live traffic lane.",
+      "If there is a serviceable spare in the vehicle, changing a flat at the roadside is usually the quickest way out of the situation. A driver comes to you, puts on the spare properly and torques it, and you drive on. No tow, and no changing a wheel yourself on the edge of a live traffic lane.",
     scenarios: [
       "A blowout on a freeway shoulder where getting out of the car is the dangerous part.",
       "A flat found in a parking garage at the end of the working day.",
       "A slow puncture that has finally gone flat overnight outside the house.",
-      "A spare you would rather have fitted and torqued properly than guess at yourself.",
+      "A spare you would rather have put on and torqued properly than guess at yourself.",
     ],
     localContext:
       "Dallas has more freeway miles than anywhere else we cover — I-35E, I-30, I-45, I-20, the LBJ Freeway, US-75 and the Dallas North Tollway all run through the city — and shoulder calls on those roads are a large share of our tire work. If you are on a shoulder, stay belted in with hazards on and let the driver come to you.",
     faqs: [
       {
         q: "What if I don't have a spare?",
-        a: "Then a spare cannot be fitted, and the options are a replacement tire supplied by us or a tow. Tell dispatch when you call so the right thing is sent the first time.",
+        a: "Then a spare cannot be put on, and the options are a replacement tire supplied by us or a tow. Tell dispatch when you call so the right thing is sent the first time.",
       },
       {
         q: "Is it safe to wait on the shoulder?",
@@ -190,7 +190,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       },
     ],
     primaryKeyword: "flat tire change Dallas TX",
-    secondaryKeywords: ["flat tire service Dallas", "tire change near me Dallas", "roadside tire change Dallas", "spare tire fitted Dallas"],
+    secondaryKeywords: ["flat tire service Dallas", "tire change near me Dallas", "roadside tire change Dallas", "spare tire installation Dallas"],
     longTail: ["flat tire on highway Dallas help", "24 hour tire change Dallas", "change my flat tire Dallas TX"],
     intent: "Emergency, roadside-safety, near-me.",
     sourceUrls: ["allhoursroadside.com/dallas-tire-change-service/"],
@@ -235,6 +235,122 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     longTail: ["ran out of gas on I-35E Dallas", "24 hour fuel delivery Dallas", "out of fuel Dallas TX help"],
     intent: "Emergency, stranded-now, fuel-type-specific.",
     sourceUrls: ["allhoursroadside.com/emergency-fuel-delivery-dallas/"],
+  },
+  // The three Dallas pages below have no competitor source page. Dallas tire
+  // repair was flagged as a gap when the pilot was built, and tire replacement
+  // and towing are real TRA services with clear local search intent in TRA's
+  // largest market. They are written from SERVICES and Dallas's verified
+  // local-data entry only, so `sourceUrls` is empty by design.
+  {
+    city: "dallas",
+    service: "tire-repair-plug-patch",
+    h1: "Mobile Tire Repair in Dallas, TX",
+    title: "Mobile Tire Repair Dallas TX",
+    metaDescription:
+      "Nail or screw in your tire in Dallas? TRA plugs or patches the tread on site when the damage allows, in garages, driveways and lots across the city.",
+    intro:
+      "Most punctures start the same way: a screw or nail picked up on the road lets air out slowly for days before anyone notices. When the hole is in the tread and small enough to repair, a plug or patch done where the car is parked fixes it properly. Your spare stays in the trunk and the original tire stays on the car.",
+    scenarios: [
+      "A low-pressure warning on the dash during the morning drive in on US-75 or the Tollway.",
+      "A screw spotted in the tread while loading the car in a Downtown or Uptown garage.",
+      "A tire that has needed air at a gas station twice this week.",
+      "A slow leak you would rather repair today than drive on until it gives out on I-35E.",
+    ],
+    localContext:
+      "Dallas drivers cover a lot of freeway miles. I-35E, I-30, I-45, I-20, the LBJ Freeway, US-75 and the Dallas North Tollway all cross the city, and debris on roads that busy is a common source of nails and screws. We repair tires wherever the car is parked, from office garages Downtown and in Uptown to driveways in Lakewood, Lake Highlands and Oak Cliff.",
+    faqs: [
+      {
+        q: "How do I know if my tire can be plugged or patched?",
+        a: "It depends on where the damage is and how big it is. A small puncture in the tread is usually repairable. Anything in or near the sidewall, or a cut rather than a hole, is not. The driver checks before starting work and tells you which it is.",
+      },
+      {
+        q: "There is a screw in the tire. Should I take it out?",
+        a: "Leave it where it is. A screw lodged in the tread slows the leak, and taking it out before the repair is ready usually lets the tire go flat.",
+      },
+      {
+        q: "What happens if the tire cannot be repaired?",
+        a: "Then the choice is your spare, if you have a usable one, or a replacement tire supplied by us. The driver explains what they found so you can decide on the spot.",
+      },
+    ],
+    primaryKeyword: "mobile tire repair Dallas TX",
+    secondaryKeywords: ["tire plug Dallas", "tire patch Dallas", "nail in tire Dallas", "flat tire repair Dallas TX"],
+    longTail: ["screw in tire repair near me Dallas", "slow leak tire repair Dallas", "tire pressure light on Dallas help"],
+    intent: "Commercial-urgent, repair-before-replace. Flagged as a Dallas gap in the pilot; no competitor source page.",
+    sourceUrls: [],
+  },
+  {
+    city: "dallas",
+    service: "tire-replacement",
+    h1: "Roadside Tire Replacement in Dallas, TX",
+    title: "Tire Replacement Dallas TX",
+    metaDescription:
+      "Tire damaged beyond repair in Dallas, or no usable spare? TRA brings a replacement tire and installs it where the car is. Priced by wheel size.",
+    intro:
+      "Some tire damage cannot be repaired: a sidewall tear, a blowout, or a puncture too large to plug. If there is also no usable spare in the car, the tire has to be replaced before the car can move. We bring a replacement tire to wherever the car is and install it there, so you do not need a tow to a tire shop to get going again.",
+    scenarios: [
+      "A blowout on I-20 or I-45 that left the tire shredded.",
+      "A sidewall cut from a curb or a pothole that no plug or patch can fix.",
+      "A flat on a car whose spare is missing, already in use, or flat itself.",
+      "A puncture a driver checked for repair and found was beyond safe limits.",
+    ],
+    localContext:
+      "Dallas reaches into five counties and is crossed by I-35E, I-30, I-45, I-20, I-635, US-75 and the Dallas North Tollway, so a tire that fails here can leave you a long way from the nearest tire shop. We bring the replacement to the car instead, whether it is on a freeway shoulder, in a parking lot near Love Field, or on a residential street in Oak Cliff or Lake Highlands.",
+    faqs: [
+      {
+        q: "How do you know which tire to bring?",
+        a: "From your wheel size and the tire size printed on the sidewall, if you can read them safely. The sticker inside the driver's door jamb shows the size too. Giving dispatch those details when you call is the quickest way to make sure the right tire is sent.",
+      },
+      {
+        q: "Is this the same as a flat tire change?",
+        a: "No. A flat tire change puts on the spare you already carry. Tire replacement is for when there is no usable spare, or when you would rather not drive on one: we supply the tire as well as install it.",
+      },
+      {
+        q: "How is the price set?",
+        a: "By wheel size, with the tire supplied and installed. Both tiers are shown on this page, and dispatch confirms which one applies to your car before anyone sets off.",
+      },
+    ],
+    primaryKeyword: "tire replacement Dallas TX",
+    secondaryKeywords: ["mobile tire replacement Dallas", "roadside tire replacement Dallas", "tire blowout help Dallas", "no spare tire help Dallas"],
+    longTail: ["blown tire on highway Dallas", "need a tire replaced at home Dallas", "sidewall damage tire Dallas TX"],
+    intent: "Emergency, no-spare or damage-beyond-repair. No competitor source page; built from the TRA service catalog.",
+    sourceUrls: [],
+  },
+  {
+    city: "dallas",
+    service: "towing",
+    h1: "Towing Service in Dallas, TX",
+    title: "Towing Service Dallas TX",
+    metaDescription:
+      "Need a tow in Dallas? TRA provides light and medium-duty towing to the shop, dealership or address you choose. Charged per mile, distance confirmed first.",
+    intro:
+      "Some breakdowns cannot be fixed at the roadside: a failed transmission, collision damage, or an engine that will not run safely. Then the car needs to be moved, and the only questions are where to and how far. Tell us the destination when you request help. Because the charge is per mile from where the car is to where it is going, dispatch confirms the distance with you before a truck is sent.",
+    scenarios: [
+      "A car that will not restart after overheating on I-35E or I-30.",
+      "Warning lights you would rather not risk on the LBJ Freeway, even if the car still runs.",
+      "A car that needs to go from a home in Lakewood or Oak Cliff to a dealership or repair shop across the city.",
+      "A vehicle left undrivable by a minor collision, once everyone is safe and the scene is clear.",
+    ],
+    localContext:
+      "Dallas is big enough that distance matters. The city spreads across five counties, and a tow from a side street in Oak Cliff to a shop off US-75 is a very different trip from one inside Uptown. I-35E, I-30, I-45, I-20, the LBJ Freeway, US-75 and the Dallas North Tollway carry most of those runs, and dispatch works out the route and mileage with you before anyone sets off.",
+    faqs: [
+      {
+        q: "How is the tow priced?",
+        a: "Per mile, measured from where your vehicle is to the destination you choose. The rate is shown on this page, and dispatch confirms the distance with you before the truck is sent, so the total does not come as a surprise.",
+      },
+      {
+        q: "Can you tow to any shop or dealership?",
+        a: "Yes. You choose the destination, whether that is home, your own mechanic or a dealership. Have the address ready when you call.",
+      },
+      {
+        q: "Can you tow a larger vehicle or one that will not roll?",
+        a: "Choose your vehicle type in the request form and add details such as all-wheel drive, a lowered suspension, or wheels that will not turn. Dispatch confirms the equipment suits your vehicle before accepting the job.",
+      },
+    ],
+    primaryKeyword: "towing service Dallas TX",
+    secondaryKeywords: ["tow truck Dallas", "car towing Dallas", "24 hour towing Dallas", "light duty towing Dallas TX"],
+    longTail: ["tow my car to a mechanic Dallas", "towing near me Dallas TX", "car broke down need tow Dallas"],
+    intent: "Emergency, cannot-be-fixed-roadside, destination-specific. No competitor source page; built from the TRA service catalog.",
+    sourceUrls: [],
   },
 
   // ===================== GARLAND =====================
@@ -318,12 +434,12 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Mobile Battery Replacement in Garland, TX",
     title: "Car Battery Replacement Garland TX",
     metaDescription:
-      "Car battery failing in Garland? TRA brings the battery to you and fits it on site, with installation quoted for your vehicle. 1-year warranty included.",
+      "Car battery failing in Garland? TRA brings the battery to you and installs it on site, with installation quoted for your vehicle. 1-year warranty included.",
     intro:
-      "A battery that has been jumped more than once is telling you something. Rather than have the car recovered to a workshop and wait, we bring the replacement to wherever it is standing and fit it there. The battery itself is published pricing; installation is quoted for your vehicle because access differs so much between models.",
+      "A battery that has been jumped more than once is telling you something. Rather than have the car towed to a repair shop and wait, we bring the replacement to wherever it is parked and install it there. The battery itself is published pricing; installation is quoted for your vehicle because access differs so much between models.",
     scenarios: [
       "A second jump start inside a week on the same car.",
-      "A vehicle that has stood unused in a driveway through a long trip.",
+      "A vehicle that has sat unused in a driveway through a long trip.",
       "Electrical oddities — dim headlights, slow windows, a resetting clock.",
       "An aging battery you would rather replace on a Saturday than on a January morning.",
     ],
@@ -331,7 +447,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       "Garland's daily driving mixes long turnpike runs on the President George Bush Turnpike and I-635 with short local trips on TX-78 and Belt Line Road. Short trips are particularly hard on a battery, because the alternator never gets long enough to put back what starting took out.",
     faqs: [
       {
-        q: "Can you fit the battery at my workplace?",
+        q: "Can you install the battery at my workplace?",
         a: "Yes, as long as the vehicle is somewhere a driver can safely work on it. Plenty of our Garland battery jobs happen in employee lots during a shift rather than at home.",
       },
       {
@@ -355,14 +471,14 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Flat Tire Change in Garland, TX",
     title: "Flat Tire Change Garland TX",
     metaDescription:
-      "Flat tire in Garland? If you have a usable spare, TRA fits it where you are — driveway, retail lot or the shoulder of I-635. Call for roadside help.",
+      "Flat tire in Garland? If you have a usable spare, TRA puts it on where you are — driveway, retail lot or the shoulder of I-635. Call for roadside help.",
     intro:
-      "A flat with a good spare in the trunk is a twenty-minute problem for somebody with the right tools and a safe way to lift the car. We come out, fit the spare, torque it correctly, and you are on your way without touching a jack yourself.",
+      "A flat with a good spare in the trunk is a twenty-minute problem for somebody with the right tools and a safe way to lift the car. We come out, put on the spare, torque it correctly, and you are on your way without touching a jack yourself.",
     scenarios: [
       "A flat discovered in a retail lot with groceries already in the car.",
       "A blowout on a turnpike shoulder where changing it yourself is not safe.",
       "A slow leak that finished overnight on the driveway.",
-      "A locking wheel nut you have no key for, which we can deal with separately.",
+      "A locking lug nut you have no key for, which we can deal with separately.",
     ],
     localContext:
       "Garland's tire calls cluster on the faster roads — I-30, I-635 and the President George Bush Turnpike — where debris does the most damage at speed. Local calls on TX-66, TX-78 and Belt Line Road tend to be slow punctures found at home rather than sudden failures.",
@@ -372,12 +488,12 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
         a: "It happens more often than people expect, since spares sit for years untouched. Tell dispatch if you are unsure and we will plan for it rather than send a driver who cannot finish the job.",
       },
       {
-        q: "Can you repair the flat instead of fitting the spare?",
+        q: "Can you repair the flat instead of putting on the spare?",
         a: "Often yes, if the damage is in the tread rather than the sidewall. Tire repair is a separate service and your driver can advise which makes sense once they see the tire.",
       },
       {
-        q: "Will you refit my original wheel later?",
-        a: "This service fits the spare so you can drive. Getting the original wheel repaired or replaced afterwards is a separate job you can arrange with us or elsewhere.",
+        q: "Will you put my original wheel back on later?",
+        a: "This service puts on the spare so you can drive. Getting the original wheel repaired or replaced afterwards is a separate job you can arrange with us or elsewhere.",
       },
     ],
     primaryKeyword: "flat tire change Garland TX",
@@ -394,7 +510,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Picked up a nail in Garland? We plug or patch on site when the tread allows, which beats running on a spare to a shop.",
     intro:
-      "A nail or screw in the tread does not always mean a tire change. Where the damage allows it, a plug or patch repairs the tire where it sits, which keeps your spare untouched and saves fitting a wheel you would only have to swap back later.",
+      "A nail or screw in the tread does not always mean a tire change. Where the damage allows it, a plug or patch repairs the tire where it sits, which keeps your spare untouched and saves putting on a wheel you would only have to swap back later.",
     scenarios: [
       "A screw picked up near roadworks that has started losing pressure.",
       "A tire that needs topping up every few days.",
@@ -433,10 +549,10 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Locked out in Irving? TRA opens your car without damage — Las Colinas garages, Valley Ranch, or the airport approaches. Local dispatch, day or night.",
     intro:
-      "Irving generates a particular kind of lockout: people between places, often with a flight or a meeting attached. We come to the car wherever it is standing, open it without damage once ownership is confirmed, and get you moving again.",
+      "Irving generates a particular kind of lockout: people between places, often with a flight or a meeting attached. We come to the car wherever it is parked, open it without damage once ownership is confirmed, and get you moving again.",
     scenarios: [
       "Keys locked in an office garage in Las Colinas during the working day.",
-      "A fob that stopped working at a hotel or long-stay lot near the airport.",
+      "A fob that stopped working at a hotel or long-term lot near the airport.",
       "Keys shut in the trunk with luggage already loaded — priced separately from a door.",
       "A rental or unfamiliar vehicle whose doors locked behind you.",
     ],
@@ -444,7 +560,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       "Part of Dallas/Fort Worth International Airport lies inside Irving's city limits, and the city's road network — TX-114 John Carpenter Freeway, TX-183 Airport Freeway, I-635 and the President George Bush Turnpike — is built around moving people to and from it. We cover Las Colinas and Valley Ranch as well as the airport approaches.",
     faqs: [
       {
-        q: "Can you reach me in a multi-storey garage?",
+        q: "Can you reach me in a multi-level garage?",
         a: "Yes. Tell dispatch the building and the level when you request help, because that is usually the difference between a driver finding you in two minutes and circling for ten.",
       },
       {
@@ -453,7 +569,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       },
       {
         q: "Do you work on the airport site itself?",
-        a: "We serve Irving and the surrounding area including the approaches to the airport. We hold no special airport access or authorisation, so tell dispatch exactly where the vehicle is and they will tell you plainly whether a driver can reach it.",
+        a: "We serve Irving and the surrounding area including the approaches to the airport. We hold no special airport access or authorization, so tell dispatch exactly where the vehicle is and they will tell you plainly whether a driver can reach it.",
       },
     ],
     primaryKeyword: "car lockout service Irving TX",
@@ -470,19 +586,19 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Car won't start in Irving? TRA brings a jump start to Las Colinas, Valley Ranch or the airport approaches. Local DFW dispatch, 24/7. Call now.",
     intro:
-      "Cars that sit still go flat, and Irving has more cars sitting still than most places — airport parking, office garages, hotel lots. A jump start brings the vehicle back without a tow, and you drive out under your own power.",
+      "Cars that sit still end up with dead batteries, and Irving has more cars sitting still than most places — airport parking, office garages, hotel lots. A jump start brings the vehicle back without a tow, and you drive out under your own power.",
     scenarios: [
-      "A car left in long-stay parking while you were away for a week or more.",
+      "A car left in long-term parking while you were away for a week or more.",
       "A vehicle that sat in an office garage through several remote-working days.",
       "Headlights or an interior light left on during a long meeting.",
       "A battery that has been cranking slowly each morning and finally gave up.",
     ],
     localContext:
-      "Irving's traffic moves on TX-114, TX-183 Airport Freeway, I-635 and the President George Bush Turnpike, which cross the city and feed the airport. Long-stay parking is the defining local factor for jump starts here: a battery that would have been fine on a daily commute goes flat sitting for ten days.",
+      "Irving's traffic moves on TX-114, TX-183 Airport Freeway, I-635 and the President George Bush Turnpike, which cross the city and feed the airport. Long-term parking is the defining local factor for jump starts here: a battery that would have been fine on a daily commute goes dead sitting for ten days.",
     faqs: [
       {
         q: "My car has been parked for two weeks — is a jump enough?",
-        a: "Usually, yes. A healthy battery that simply discharged while standing will take a jump and then recharge as you drive. A battery near the end of its life often will not, and your driver will tell you which it looked like.",
+        a: "Usually, yes. A healthy battery that simply discharged while sitting will take a jump and then recharge as you drive. A battery near the end of its life often will not, and your driver will tell you which it looked like.",
       },
       {
         q: "Can you get to me inside airport-area parking?",
@@ -505,9 +621,9 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Mobile Battery Replacement in Irving, TX",
     title: "Car Battery Replacement Irving TX",
     metaDescription:
-      "Need a battery in Irving? TRA brings it to the car and fits it on site — Las Colinas, Valley Ranch or the airport approaches. Installation quoted per vehicle.",
+      "Need a battery in Irving? TRA brings it to the car and installs it on site — Las Colinas, Valley Ranch or the airport approaches. Installation quoted per vehicle.",
     intro:
-      "If a battery has already failed once after standing, replacing it is usually cheaper than repeating the exercise every time the car is parked for a week. We bring the battery to the vehicle and fit it there. The battery price is published; installation is quoted for your specific vehicle, because how the battery is mounted varies enormously.",
+      "If a battery has already failed once after sitting, replacing it is usually cheaper than repeating the exercise every time the car is parked for a week. We bring the battery to the vehicle and install it there. The battery price is published; installation is quoted for your specific vehicle, because how the battery is mounted varies enormously.",
     scenarios: [
       "A car that needed a jump on returning from a trip, and again a few days later.",
       "A vehicle regularly left for long periods in airport-area parking.",
@@ -515,10 +631,10 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       "Electrical symptoms — dim lights, sluggish windows, a clock that keeps resetting.",
     ],
     localContext:
-      "Irving's pattern of use is unusual: a large share of vehicles here spend days standing rather than driving, between the airport whose grounds partly lie inside the city and the office parking of Las Colinas and Valley Ranch. Standing is what kills batteries, so replacement work is a steady part of what we do in this city.",
+      "Irving's pattern of use is unusual: a large share of vehicles here spend days parked rather than driving, between the airport whose grounds partly lie inside the city and the office parking of Las Colinas and Valley Ranch. Sitting is what kills batteries, so replacement work is a steady part of what we do in this city.",
     faqs: [
       {
-        q: "Can you fit a battery in a parking garage?",
+        q: "Can you install a battery in a parking garage?",
         a: "Usually yes, provided the driver can work safely around the vehicle. Tell dispatch the level and bay when you request help.",
       },
       {
@@ -527,7 +643,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       },
       {
         q: "How long does it take?",
-        a: "On most vehicles the fitting itself is short. Dispatch will tell you what to expect for your specific car when they quote the installation.",
+        a: "On most vehicles the installation itself is short. Dispatch will tell you what to expect for your specific car when they quote the installation.",
       },
     ],
     primaryKeyword: "car battery replacement Irving TX",
@@ -545,11 +661,11 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Flat Tire Change in Irving, TX",
     title: "Flat Tire Change Irving TX",
     metaDescription:
-      "Flat tire in Irving? If you have a usable spare, TRA fits it on site — TX-114, Airport Freeway, Las Colinas garages. Call for roadside help.",
+      "Flat tire in Irving? If you have a usable spare, TRA puts it on for you — TX-114, Airport Freeway, Las Colinas garages. Call for roadside help.",
     intro:
-      "A flat on the way to a flight is a different kind of problem from a flat at home. If there is a usable spare in the vehicle, we fit it where you are and get you moving, rather than adding a tow and a workshop wait to an already tight morning.",
+      "A flat on the way to a flight is a different kind of problem from a flat at home. If there is a usable spare in the vehicle, we put it on where you are and get you moving, rather than adding a tow and a repair-shop wait to an already tight morning.",
     scenarios: [
-      "A flat found in a hotel or long-stay lot on the morning of a flight.",
+      "A flat found in a hotel or long-term lot on the morning of a flight.",
       "A blowout on TX-114 or the Airport Freeway with nowhere safe to work.",
       "A flat in a Las Colinas office garage at the end of the day.",
       "A slow puncture that has gone down overnight in Valley Ranch.",
@@ -563,7 +679,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       },
       {
         q: "What if there's no spare in the car?",
-        a: "Then fitting one is not an option and you need either a replacement tire supplied by us or a tow. Say so when you call so the right vehicle is sent first time.",
+        a: "Then putting one on is not an option and you need either a replacement tire supplied by us or a tow. Say so when you call so the right vehicle is sent first time.",
       },
       {
         q: "Can you change a tire inside a parking garage?",
@@ -584,7 +700,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Nail in your tire in Irving? TRA repairs punctures on site with a plug or patch where the damage allows — Las Colinas, Valley Ranch and airport approaches.",
     intro:
-      "A tire losing pressure slowly is worth repairing rather than replacing, and repairing it where the car stands means you keep your spare and skip the workshop. Where the damage is in the tread and within repairable limits, a plug or patch is a proper fix rather than a stopgap.",
+      "A tire losing pressure slowly is worth repairing rather than replacing, and repairing it where the car sits means you keep your spare and skip the repair shop. Where the damage is in the tread and within repairable limits, a plug or patch is a proper fix rather than a stopgap.",
     scenarios: [
       "A pressure warning that keeps coming back after being reset.",
       "A screw found in the tread during a pre-trip check before flying.",
@@ -604,7 +720,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       },
       {
         q: "What if the puncture is in the sidewall?",
-        a: "Sidewall damage cannot be repaired safely at any price. Your driver will show you why and talk through a replacement tire or fitting your spare instead.",
+        a: "Sidewall damage cannot be repaired safely at any price. Your driver will show you why and talk through a replacement tire or putting on your spare instead.",
       },
     ],
     primaryKeyword: "mobile tire repair Irving TX",
@@ -671,7 +787,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       "A second family car that only gets driven at weekends.",
     ],
     localContext:
-      "Plano's commuting runs on US-75 and the Dallas North Tollway, with the Sam Rayburn Tollway and the President George Bush Turnpike bounding the city north and south. Long tollway commutes are kind to batteries; the corporate parking at the end of them, where cars stand for days, is not.",
+      "Plano's commuting runs on US-75 and the Dallas North Tollway, with the Sam Rayburn Tollway and the President George Bush Turnpike bounding the city north and south. Long tollway commutes are kind to batteries; the corporate parking at the end of them, where cars sit for days, is not.",
     faqs: [
       {
         q: "How long will the charge last after a jump?",
@@ -698,17 +814,17 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Mobile Battery Replacement in Plano, TX",
     title: "Car Battery Replacement Plano TX",
     metaDescription:
-      "Car battery failing in Plano? TRA brings the battery to you and fits it where the car is parked. Installation quoted per vehicle, 1-year warranty.",
+      "Car battery failing in Plano? TRA brings the battery to you and installs it where the car is parked. Installation quoted per vehicle, 1-year warranty.",
     intro:
-      "Replacing a battery normally means surrendering the car for half a day. We bring the battery to the vehicle instead and fit it where it stands, which for most Plano customers means it happens during a working day rather than instead of one. The battery price is published; installation is quoted for your vehicle.",
+      "Replacing a battery normally means surrendering the car for half a day. We bring the battery to the vehicle instead and install it where it sits, which for most Plano customers means it happens during a working day rather than instead of one. The battery price is published; installation is quoted for your vehicle.",
     scenarios: [
       "A battery that has now needed jumping more than once.",
-      "A car that fails to start after standing over a long weekend.",
+      "A car that fails to start after sitting over a long weekend.",
       "Warning lights or electrical behavior that points at charging rather than the engine.",
       "A battery old enough that replacing it beats being stranded by it.",
     ],
     localContext:
-      "Plano's long tollway commutes on the Dallas North Tollway and US-75 mask a weakening battery for months, because a long daily drive keeps putting charge back. The failure usually appears the first time the car stands for several days in a Legacy-area lot rather than on the road.",
+      "Plano's long tollway commutes on the Dallas North Tollway and US-75 mask a weakening battery for months, because a long daily drive keeps putting charge back. The failure usually appears the first time the car sits for several days in a Legacy-area lot rather than on the road.",
     faqs: [
       {
         q: "Can this be done while I'm at work?",
@@ -738,9 +854,9 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Flat Tire Change in Plano, TX",
     title: "Flat Tire Change Plano TX",
     metaDescription:
-      "Flat tire in Plano? If you have a usable spare, TRA fits it on site — tollway shoulders, Preston Road or a corporate lot. Call for roadside help.",
+      "Flat tire in Plano? If you have a usable spare, TRA puts it on for you — tollway shoulders, Preston Road or a corporate lot. Call for roadside help.",
     intro:
-      "If there is a serviceable spare in the car, a roadside change is the fastest route back to normal. A driver comes to you, fits it properly and torques it to spec, and you drive away without having knelt beside a tollway in work clothes.",
+      "If there is a serviceable spare in the car, a roadside change is the fastest route back to normal. A driver comes to you, puts it on properly and torques it to spec, and you drive away without having knelt beside a tollway in work clothes.",
     scenarios: [
       "A blowout on a tollway shoulder with traffic at speed alongside.",
       "A flat found in a corporate lot at the end of the working day.",
@@ -756,7 +872,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       },
       {
         q: "What if I don't have a spare?",
-        a: "Then the spare cannot be fitted, and the answer is a replacement tire supplied by us or a tow. Tell dispatch when you call so the right help is sent first time.",
+        a: "Then the spare cannot be put on, and the answer is a replacement tire supplied by us or a tow. Tell dispatch when you call so the right help is sent first time.",
       },
       {
         q: "How long can I drive on the spare?",
@@ -777,7 +893,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Nail in your tire in Plano? TRA repairs punctures on site with a plug or patch where damage allows, so your spare stays in the trunk.",
     intro:
-      "A tire you keep topping up is a tire that will choose its own moment to fail. Where the puncture is in the tread and within repairable limits, we fix it where the car is parked, which keeps your spare unused and avoids a workshop appointment you would have to sit through.",
+      "A tire you keep topping up is a tire that will choose its own moment to fail. Where the puncture is in the tread and within repairable limits, we fix it where the car is parked, which keeps your spare unused and avoids a shop appointment you would have to sit through.",
     scenarios: [
       "A tire pressure light that returns a day or two after being cleared.",
       "A screw picked up on a tollway that has begun to weep air.",
@@ -834,7 +950,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
         a: "McKinney is within our service area and dispatch is local to DFW rather than an out-of-state call center. When you call, you will be told what is realistic for your location rather than a generic promise.",
       },
       {
-        q: "Can you open the car if the fob battery is flat?",
+        q: "Can you open the car if the fob battery is dead?",
         a: "Yes. A dead fob is one of the most common reasons people call and it does not change how the vehicle is opened.",
       },
       {
@@ -856,23 +972,23 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Dead battery in McKinney? TRA brings a jump start to you on US-75, US-380 or at home. Local DFW dispatch, 24/7. Call now.",
     intro:
-      "A car that will not crank is usually a dead battery and not a fault, which a jump start fixes on the spot. In McKinney that matters more than most places, because the alternative is a recovery run back down US-75.",
+      "A car that will not crank is usually a dead battery and not a fault, which a jump start fixes on the spot. In McKinney that matters more than most places, because the alternative is a tow back down US-75.",
     scenarios: [
-      "A vehicle that stood for a week at an airfield or while traveling.",
+      "A vehicle that sat for a week at an airfield or while traveling.",
       "Headlights left on overnight on a street off TX-5.",
       "A battery that has cranked slowly each morning through a cold week.",
       "A weekend car that only moves every few weeks.",
     ],
     localContext:
-      "US-75 and US-380 carry most of McKinney's traffic, with the Sam Rayburn Tollway running along the McKinney–Allen border and TX-5 serving the older parts of town. McKinney National Airport also sits within the city, and vehicles left standing there while owners travel are a recurring source of dead batteries.",
+      "US-75 and US-380 carry most of McKinney's traffic, with the Sam Rayburn Tollway running along the McKinney–Allen border and TX-5 serving the older parts of town. McKinney National Airport also sits within the city, and vehicles left sitting there while owners travel are a recurring source of dead batteries.",
     faqs: [
       {
         q: "My car has been parked for two weeks — will a jump fix it?",
-        a: "Usually. A sound battery that simply discharged while standing will take a jump and recharge as you drive. One at the end of its life often will not, and your driver will say which it appeared to be.",
+        a: "Usually. A sound battery that simply discharged while sitting will take a jump and recharge as you drive. One at the end of its life often will not, and your driver will say which it appeared to be.",
       },
       {
         q: "Do you cover the airport parking areas?",
-        a: "Tell dispatch exactly where the vehicle is standing. We hold no special airport access or authorisation, so they will tell you plainly whether a driver can reach that particular spot.",
+        a: "Tell dispatch exactly where the vehicle is parked. We hold no special airport access or authorization, so they will tell you plainly whether a driver can reach that particular spot.",
       },
       {
         q: "Is it worth just buying jumper cables?",
@@ -891,17 +1007,17 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Mobile Battery Replacement in McKinney, TX",
     title: "Car Battery Replacement McKinney TX",
     metaDescription:
-      "McKinney car battery gone? No tow needed — TRA brings the battery up US-75 and fits it where the car stands. 1-year warranty included.",
+      "McKinney car battery gone? No tow needed — TRA brings the battery up US-75 and installs it where the car sits. 1-year warranty included.",
     intro:
-      "Replacing a battery usually means getting the car to a workshop, which is awkward when the car is the thing that will not start. So we bring the battery to the car instead and fit it there. The battery itself is published pricing; installation is quoted for your car, because access varies so much between models.",
+      "Replacing a battery usually means getting the car to a repair shop, which is awkward when the car is the thing that will not start. So we bring the battery to the car instead and install it there. The battery itself is published pricing; installation is quoted for your car, because access varies so much between models.",
     scenarios: [
       "A battery that has already been jumped once this month.",
-      "A car that will not start reliably after standing while you traveled.",
+      "A car that will not start reliably after sitting while you traveled.",
       "Electrical symptoms pointing at charging rather than the engine itself.",
       "A battery you would rather replace before winter than during it.",
     ],
     localContext:
-      "McKinney sits at the northern end of the US-75 corridor, and a battery that fails here fails further from a workshop than it would further south. Bringing the replacement to the car rather than the car to the battery is the practical difference, whether you are near the historic downtown or out along US-380.",
+      "McKinney sits at the northern end of the US-75 corridor, and a battery that fails here fails further from a repair shop than it would further south. Bringing the replacement to the car rather than the car to the battery is the practical difference, whether you are near the historic downtown or out along US-380.",
     faqs: [
       {
         q: "Do you come out to residential addresses?",
@@ -931,14 +1047,14 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Flat Tire Change in McKinney, TX",
     title: "Flat Tire Change McKinney TX",
     metaDescription:
-      "Flat tire in McKinney? If you have a usable spare, TRA fits it where you are — US-75, US-380 or at home. Call for roadside help.",
+      "Flat tire in McKinney? If you have a usable spare, TRA puts it on where you are — US-75, US-380 or at home. Call for roadside help.",
     intro:
-      "With a usable spare in the car, a flat is a short delay rather than a lost afternoon. A driver comes to you, fits the spare and torques it correctly, and you continue — no tow, and no wheel-changing beside a fast road.",
+      "With a usable spare in the car, a flat is a short delay rather than a lost afternoon. A driver comes to you, puts on the spare and torques it correctly, and you continue — no tow, and no wheel-changing beside a fast road.",
     scenarios: [
       "A blowout on US-75 or US-380 where the shoulder is no place to work.",
       "A flat found at home after a nail picked up the previous day.",
       "A slow puncture that gave up overnight before an early start.",
-      "A locking wheel nut with no key, which needs dealing with before the wheel moves.",
+      "A locking lug nut with no key, which needs dealing with before the wheel moves.",
     ],
     localContext:
       "McKinney's flat tire calls split between the fast corridors — US-75, US-380 and the Sam Rayburn Tollway along the Allen boundary — where failures are sudden, and residential streets around the historic downtown, where they are usually discovered rather than experienced.",
@@ -970,7 +1086,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Picked up a nail in McKinney? TRA repairs punctures on site with a plug or patch where the damage allows, so your spare stays put.",
     intro:
-      "Catching a puncture while it is still a slow leak is much better than meeting it as a flat tire on US-75 at speed. Where the damage is in the tread and within repairable limits, we repair the tire where the car is standing and leave your spare untouched.",
+      "Catching a puncture while it is still a slow leak is much better than meeting it as a flat tire on US-75 at speed. Where the damage is in the tread and within repairable limits, we repair the tire where the car is parked and leave your spare untouched.",
     scenarios: [
       "A pressure warning that keeps returning after being reset.",
       "A screw or nail spotted in the tread during a routine check.",
@@ -1012,7 +1128,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Locked out of your car in Mesquite? TRA opens it without damage, from the US-80 corridor to Belt Line Road. Local DFW dispatch, day or night.",
     intro:
-      "A locked car is a short problem that gets long if nobody comes out. We send a driver to wherever the vehicle is standing, confirm it is yours, and open it without drilling or breaking anything. You keep the key you already have and the door you already had.",
+      "A locked car is a short problem that gets long if nobody comes out. We send a driver to wherever the vehicle is parked, confirm it is yours, and open it without drilling or breaking anything. You keep the key you already have and the door you already had.",
     scenarios: [
       "Keys shut in a work vehicle at a yard off the Skyline Industrial Park.",
       "A door that locked itself while the engine idled on a cold morning.",
@@ -1054,10 +1170,10 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       "A vehicle that sat through a long weekend without being started.",
       "Lights or an interior lamp left on overnight on a driveway.",
       "A battery that has cranked a little slower every morning for two weeks.",
-      "A work truck that stood at a yard over a shutdown period.",
+      "A work truck that sat at a yard over a shutdown period.",
     ],
     localContext:
-      "Mesquite's drivers rack up freeway miles — I-635 through the middle of the city, I-30 to the north, I-20 to the south and US-80 east to west. Long freeway running usually keeps a battery healthy, which is why the failures here tend to show up after a car has been standing rather than after a drive.",
+      "Mesquite's drivers rack up freeway miles — I-635 through the middle of the city, I-30 to the north, I-20 to the south and US-80 east to west. Long freeway running usually keeps a battery healthy, which is why the failures here tend to show up after a car has been sitting rather than after a drive.",
     faqs: [
       {
         q: "Will a jump start fix it for good?",
@@ -1084,17 +1200,17 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Mobile Battery Replacement in Mesquite, TX",
     title: "Car Battery Replacement Mesquite TX",
     metaDescription:
-      "Mesquite car battery failing? We bring the battery to you off I-635, US-80 or Belt Line Road and fit it where you are. 1-year warranty.",
+      "Mesquite car battery failing? We bring the battery to you off I-635, US-80 or Belt Line Road and install it where you are. 1-year warranty.",
     intro:
       "Once a battery has stopped holding charge, jumping it again only delays the next failure. A driver brings the replacement out and changes it without the car moving. The battery price is published; installation is quoted for your specific vehicle, because reaching the battery is a five-minute job on some cars and a much longer one on others.",
     scenarios: [
       "A second jump start on the same vehicle inside a month.",
-      "A car that will not start after standing through a holiday weekend.",
+      "A car that will not start after sitting through a holiday weekend.",
       "Dim headlights, slow windows or a clock that resets — charging symptoms rather than engine ones.",
       "A battery old enough that you would rather replace it on your terms than on a freeway shoulder.",
     ],
     localContext:
-      "A weakening battery can hide for months behind a daily freeway commute on I-635 or US-80, because a long drive keeps putting charge back in. It usually reveals itself the first time the car stands for several days, which is why so many Mesquite battery calls come on a Monday rather than mid-week.",
+      "A weakening battery can hide for months behind a daily freeway commute on I-635 or US-80, because a long drive keeps putting charge back in. It usually reveals itself the first time the car sits for several days, which is why so many Mesquite battery calls come on a Monday rather than mid-week.",
     faqs: [
       {
         q: "Can you replace the battery at my workplace?",
@@ -1121,9 +1237,9 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Flat Tire Change in Mesquite, TX",
     title: "Flat Tire Change Mesquite TX",
     metaDescription:
-      "Flat tire in Mesquite? If you have a usable spare, TRA fits it where you are — I-635, US-80 or your driveway. Call for roadside help.",
+      "Flat tire in Mesquite? If you have a usable spare, TRA puts it on where you are — I-635, US-80 or your driveway. Call for roadside help.",
     intro:
-      "With a serviceable spare in the vehicle, a flat is a short delay rather than a lost day. A driver comes to you, fits the spare and torques it properly, and you carry on. Nobody has to kneel beside a freeway with traffic passing a metre away.",
+      "With a serviceable spare in the vehicle, a flat is a short delay rather than a lost day. A driver comes to you, puts on the spare and torques it properly, and you carry on. Nobody has to kneel beside a freeway with traffic passing a metre away.",
     scenarios: [
       "A blowout on a freeway shoulder where getting out of the car is the real hazard.",
       "A flat found in a parking lot at the end of a shift.",
@@ -1139,7 +1255,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       },
       {
         q: "What if there is no spare in the car?",
-        a: "Then fitting one is not an option, and the answer is a replacement tire supplied by us or a tow. Tell dispatch when you call so the right help is sent first time.",
+        a: "Then putting one on is not an option, and the answer is a replacement tire supplied by us or a tow. Tell dispatch when you call so the right help is sent first time.",
       },
       {
         q: "How far can I drive on the spare?",
@@ -1236,7 +1352,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Car won't start in Richardson? TRA brings a jump start to Telecom Corridor lots, Galatyn Park or your driveway. Local DFW dispatch, 24/7.",
     intro:
-      "A car that clicks instead of starting at five o'clock is a dead battery far more often than it is a fault. We come to the vehicle, start it, and let you drive home rather than arranging a recovery you do not need.",
+      "A car that clicks instead of starting at five o'clock is a dead battery far more often than it is a fault. We come to the vehicle, start it, and let you drive home rather than arranging a tow you do not need.",
     scenarios: [
       "A car that sat in an office lot through several days of remote working.",
       "Headlights left on during a long day at a campus off US-75.",
@@ -1248,7 +1364,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     faqs: [
       {
         q: "My car sat all week — will a jump be enough?",
-        a: "Usually, yes. A sound battery that simply discharged while standing will take a jump and recharge as you drive. One near the end of its life often will not, and your driver will tell you which it appeared to be.",
+        a: "Usually, yes. A sound battery that simply discharged while sitting will take a jump and recharge as you drive. One near the end of its life often will not, and your driver will tell you which it appeared to be.",
       },
       {
         q: "Can you get to a car on an upper garage level?",
@@ -1271,17 +1387,17 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Mobile Battery Replacement in Richardson, TX",
     title: "Car Battery Replacement Richardson TX",
     metaDescription:
-      "Need a car battery in Richardson? TRA brings it to you and fits it on site — office lots off US-75 or at home. Installation quoted per vehicle.",
+      "Need a car battery in Richardson? TRA brings it to you and installs it on site — office lots off US-75 or at home. Installation quoted per vehicle.",
     intro:
       "Replacing a battery normally means surrendering the car for half a day, which is awkward when the car is the thing that will not start. We bring the battery to the vehicle instead. The battery price is published; installation is quoted for your specific car because access varies so much between models.",
     scenarios: [
       "A battery that has now needed jumping more than once.",
-      "A car that fails to start after standing in a company lot over a long weekend.",
+      "A car that fails to start after sitting in a company lot over a long weekend.",
       "Electrical behavior pointing at charging rather than the engine.",
       "A battery you would rather replace during a working day than on a January morning.",
     ],
     localContext:
-      "Richardson's commute along US-75 and the President George Bush Turnpike is long enough to keep a tired battery looking healthy. The failure usually appears in a Telecom Corridor or Galatyn Park lot after the car has stood for a few days, which is also the easiest place for us to come and fit a replacement while you work.",
+      "Richardson's commute along US-75 and the President George Bush Turnpike is long enough to keep a tired battery looking healthy. The failure usually appears in a Telecom Corridor or Galatyn Park lot after the car has sat for a few days, which is also the easiest place for us to come and install a replacement while you work.",
     faqs: [
       {
         q: "Can this be done while I am at work?",
@@ -1311,14 +1427,14 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Flat Tire Change in Richardson, TX",
     title: "Flat Tire Change Richardson TX",
     metaDescription:
-      "Flat tire in Richardson? If you have a usable spare, TRA fits it where you are — US-75 shoulders, office lots or at home. Call for roadside help.",
+      "Flat tire in Richardson? If you have a usable spare, TRA puts it on where you are — US-75 shoulders, office lots or at home. Call for roadside help.",
     intro:
-      "If there is a usable spare in the vehicle, a roadside change is the quickest route back to normal. A driver fits it properly and torques it to specification, and you drive on — without changing a wheel in work clothes beside Central Expressway.",
+      "If there is a usable spare in the vehicle, a roadside change is the quickest route back to normal. A driver puts it on properly and torques it to specification, and you drive on — without changing a wheel in work clothes beside Central Expressway.",
     scenarios: [
       "A blowout on the Central Expressway shoulder at rush hour.",
       "A flat found in an office lot at the end of the working day.",
       "A slow puncture that gave up overnight on a residential street.",
-      "A locking wheel nut with no key, which has to be dealt with before the wheel moves.",
+      "A locking lug nut with no key, which has to be dealt with before the wheel moves.",
     ],
     localContext:
       "US-75 Central Expressway carries most of Richardson's through-traffic, with the President George Bush Turnpike across the north and I-635 at the southern end. Shoulder space on US-75 through the city is tight, which is much of why we would rather come to you than have you attempt a change beside it.",
@@ -1350,7 +1466,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Picked up a nail in Richardson? TRA repairs punctures on site with a plug or patch where damage allows — office lots, driveways, anywhere off US-75.",
     intro:
-      "A tire that wants air every few days is worth fixing before it picks its moment. Where the puncture is in the tread and within repairable limits, we repair it where the car is parked, which keeps your spare unused and saves a workshop appointment you would have to sit through.",
+      "A tire that wants air every few days is worth fixing before it picks its moment. Where the puncture is in the tread and within repairable limits, we repair it where the car is parked, which keeps your spare unused and saves a shop appointment you would have to sit through.",
     scenarios: [
       "A pressure warning that returns a day or two after being cleared.",
       "A screw found in the tread during a check before a long drive.",
@@ -1429,15 +1545,15 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Dead battery in Frisco? TRA brings a jump start to you on the Tollway, Preston Road or at home. Local DFW dispatch, 24/7. Call now.",
     intro:
-      "A car that will not turn over has almost always just run its battery down, and a jump start settles it where it stands. In a city built around driving, that is the difference between a delay and a lost afternoon.",
+      "A car that will not turn over has almost always just run its battery down, and a jump start settles it where it sits. In a city built around driving, that is the difference between a delay and a lost afternoon.",
     scenarios: [
       "A second family car that only moves at weekends.",
       "Lights left on during a long event at a venue.",
-      "A vehicle that stood through a week away.",
+      "A vehicle that sat unused through a week away.",
       "A battery that has cranked slower every morning through a cold spell.",
     ],
     localContext:
-      "Frisco has no interstate: its traffic moves on the Dallas North Tollway and the Sam Rayburn Tollway, with Preston Road, US-380 and FM 423 carrying the rest. Tollway commuting is long and steady, which is kind to a battery — so the failures here usually follow a period of standing rather than a period of driving.",
+      "Frisco has no interstate: its traffic moves on the Dallas North Tollway and the Sam Rayburn Tollway, with Preston Road, US-380 and FM 423 carrying the rest. Tollway commuting is long and steady, which is kind to a battery — so the failures here usually follow a period of sitting rather than a period of driving.",
     faqs: [
       {
         q: "Will the charge last once you have gone?",
@@ -1464,12 +1580,12 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Mobile Battery Replacement in Frisco, TX",
     title: "Car Battery Replacement Frisco TX",
     metaDescription:
-      "Frisco car battery failing? TRA fits a replacement at your house or off the Dallas North Tollway. Installation quoted, 1-year warranty.",
+      "Frisco car battery failing? TRA installs a replacement at your house or off the Dallas North Tollway. Installation quoted, 1-year warranty.",
     intro:
-      "Getting a car with a dead battery to a workshop is the hard part of replacing a battery. We remove that part by bringing the replacement to the vehicle and fitting it where it stands. The battery price is published; installation is quoted for your car, because access differs enormously between models.",
+      "Getting a car with a dead battery to a repair shop is the hard part of replacing a battery. We remove that part by bringing the replacement to the vehicle and installing it where it sits. The battery price is published; installation is quoted for your car, because access differs enormously between models.",
     scenarios: [
       "A battery that has already been jumped once this month.",
-      "A car that will not start reliably after standing for a week.",
+      "A car that will not start reliably after sitting for a week.",
       "Charging symptoms — dim lights, slow windows, a resetting clock.",
       "An aging battery you would rather change before a long trip than during one.",
     ],
@@ -1504,9 +1620,9 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Flat Tire Change in Frisco, TX",
     title: "Flat Tire Change Frisco TX",
     metaDescription:
-      "Flat tire in Frisco? If you have a usable spare, TRA fits it on site — Tollway shoulders, Preston Road or at home. Call for roadside help.",
+      "Flat tire in Frisco? If you have a usable spare, TRA puts it on for you — Tollway shoulders, Preston Road or at home. Call for roadside help.",
     intro:
-      "A flat with a good spare in the trunk is a short job for someone with the right tools and a safe way to lift the car. We come to you, fit the spare and torque it correctly, so you are moving again without having worked beside a toll road.",
+      "A flat with a good spare in the trunk is a short job for someone with the right tools and a safe way to lift the car. We come to you, put on the spare and torque it correctly, so you are moving again without having worked beside a toll road.",
     scenarios: [
       "A blowout on a tollway shoulder at speed.",
       "A flat discovered in a venue lot after an event.",
@@ -1518,7 +1634,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     faqs: [
       {
         q: "What if I do not have a spare?",
-        a: "Then the spare cannot be fitted, and the options are a replacement tire supplied by us or a tow. Say so when you call so the right help is sent first time.",
+        a: "Then the spare cannot be put on, and the options are a replacement tire supplied by us or a tow. Say so when you call so the right help is sent first time.",
       },
       {
         q: "Is it safe to change a wheel on a tollway shoulder?",
@@ -1543,7 +1659,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Nail in a Frisco tire? Where the tread damage allows, we plug or patch it at the car — the spare never has to come out.",
     intro:
-      "Frisco has been a construction site for the better part of a decade, and construction means screws and nails on the road. Where the damage is in the tread and within repairable limits, we repair the tire where the car is parked rather than fitting a spare you would only swap back later.",
+      "Frisco has been a construction site for the better part of a decade, and construction means screws and nails on the road. Where the damage is in the tread and within repairable limits, we repair the tire where the car is parked rather than putting on a spare you would only swap back later.",
     scenarios: [
       "A screw picked up near roadworks on US-380.",
       "A tire that needs air every few days without ever going flat.",
@@ -1625,7 +1741,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       "A dead battery on a trip is worse than a dead battery at home, because you are somewhere you did not plan to stop. We come to the vehicle, jump it, and get you moving again under your own power.",
     scenarios: [
       "A car that will not restart after a stop partway up I-35E.",
-      "A boat-towing vehicle left standing after a weekend at the lake.",
+      "A boat-towing vehicle left sitting after a weekend at the lake.",
       "Lights left on in a lot along Main Street.",
       "A battery that has struggled each cold morning for a week.",
     ],
@@ -1638,7 +1754,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       },
       {
         q: "My car sat at the lake all weekend — is a jump enough?",
-        a: "Usually. A healthy battery that discharged while standing will take a jump and recharge as you drive. One at the end of its life often will not, and your driver will say which it appeared to be.",
+        a: "Usually. A healthy battery that discharged while sitting will take a jump and recharge as you drive. One at the end of its life often will not, and your driver will say which it appeared to be.",
       },
       {
         q: "Will a jump start harm the car's electronics?",
@@ -1657,9 +1773,9 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Mobile Battery Replacement in Lewisville, TX",
     title: "Car Battery Replacement Lewisville TX",
     metaDescription:
-      "Lewisville car battery dead? TRA comes out to I-35E, Main Street or your driveway and fits a new battery there. 1-year warranty included.",
+      "Lewisville car battery dead? TRA comes out to I-35E, Main Street or your driveway and installs a new battery there. 1-year warranty included.",
     intro:
-      "A battery that has been jumped more than once is telling you it will not survive the next cold snap. We bring the replacement to the vehicle and fit it where it stands, which matters when the car is sitting at the side of a road you were only passing along. The battery price is published; installation is quoted for your vehicle.",
+      "A battery that has been jumped more than once is telling you it will not survive the next cold snap. We bring the replacement to the vehicle and install it where it sits, which matters when the car is sitting at the side of a road you were only passing along. The battery price is published; installation is quoted for your vehicle.",
     scenarios: [
       "A battery jumped once on the road and again a few days later.",
       "A towing vehicle that only comes out for lake trips and will not start.",
@@ -1670,7 +1786,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       "Lewisville's traffic is dominated by I-35E, the main north-south artery between Dallas and Denton. A long highway run keeps a weak battery looking adequate; the failures tend to show up on seasonal vehicles that stand between trips to Lewisville Lake, or on cars that stop somewhere on the highway and will not restart.",
     faqs: [
       {
-        q: "Can you fit a battery at the roadside rather than at home?",
+        q: "Can you install a battery at the roadside rather than at home?",
         a: "Yes, provided the vehicle is somewhere a driver can work safely. On a live highway shoulder we will assess the situation first — sometimes moving the vehicle is the safer first step.",
       },
       {
@@ -1694,14 +1810,14 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Flat Tire Change in Lewisville, TX",
     title: "Flat Tire Change Lewisville TX",
     metaDescription:
-      "Flat tire in Lewisville? If you have a usable spare, TRA fits it where you are — I-35E shoulders, Main Street or at home. Call for roadside help.",
+      "Flat tire in Lewisville? If you have a usable spare, TRA puts it on where you are — I-35E shoulders, Main Street or at home. Call for roadside help.",
     intro:
-      "A flat on I-35E is one of the least pleasant places to find yourself, because the shoulder is narrow and the traffic is fast and constant. If there is a serviceable spare in the vehicle, we fit it for you while you stay safely inside the car.",
+      "A flat on I-35E is one of the least pleasant places to find yourself, because the shoulder is narrow and the traffic is fast and constant. If there is a serviceable spare in the vehicle, we put it on for you while you stay safely inside the car.",
     scenarios: [
       "A blowout on I-35E partway between Dallas and Denton.",
       "A trailer or towing vehicle with a flat after a lake trip.",
       "A slow puncture that finally went down in a lot off Main Street.",
-      "A locking wheel nut whose key went missing years ago.",
+      "A locking lug nut whose key went missing years ago.",
     ],
     localContext:
       "I-35E runs the full length of Lewisville and carries both metroplex commuting and longer-distance traffic heading north, which is why so many of the flats we attend here are sudden failures at speed rather than tires found soft in the morning. FM 1171, FM 407 and FM 3040 account for most of the rest.",
@@ -1809,7 +1925,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Dead battery in The Colony? TRA brings a jump start to you along FM 423, the Sam Rayburn Tollway or at home. Local DFW dispatch, 24/7.",
     intro:
-      "Cars that only come out at weekends go flat, and The Colony has a lot of them — boats, trailers and second vehicles that sit between trips to the water. A jump start brings the vehicle back where it stands, without a recovery truck.",
+      "Cars that only come out at weekends go flat, and The Colony has a lot of them — boats, trailers and second vehicles that sit between trips to the water. A jump start brings the vehicle back where it sits, without a tow truck.",
     scenarios: [
       "A towing vehicle that has not moved since the last trip to the lake.",
       "A second car that only gets driven at weekends.",
@@ -1817,11 +1933,11 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       "A battery that has cranked slowly every cold morning this week.",
     ],
     localContext:
-      "With roughly 23 miles of Lewisville Lake shoreline inside the city, The Colony has an unusual share of vehicles that stand still for long stretches — the trailer tow car, the weekend vehicle, the boat hauler. Standing is what flattens batteries. The Sam Rayburn Tollway and FM 423 carry the daily traffic that does not.",
+      "With roughly 23 miles of Lewisville Lake shoreline inside the city, The Colony has an unusual share of vehicles that stand still for long stretches — the trailer tow car, the weekend vehicle, the boat hauler. Sitting is what drains batteries. The Sam Rayburn Tollway and FM 423 carry the daily traffic that does not.",
     faqs: [
       {
         q: "The car has not moved in a month — will a jump work?",
-        a: "Often it will. A sound battery that discharged from standing takes a jump and recharges as you drive. One at the end of its life usually will not, and your driver will tell you which it looked like.",
+        a: "Often it will. A sound battery that discharged while sitting takes a jump and recharges as you drive. One at the end of its life usually will not, and your driver will tell you which it looked like.",
       },
       {
         q: "Can you jump start a vehicle with a trailer attached?",
@@ -1844,9 +1960,9 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Mobile Battery Replacement in The Colony, TX",
     title: "Car Battery Replacement The Colony TX",
     metaDescription:
-      "The Colony car battery flat after standing? TRA fits a new one at the house or off FM 423. Installation quoted for your car, 1-year warranty.",
+      "The Colony car battery dead after sitting? TRA installs a new one at the house or off FM 423. Installation quoted for your car, 1-year warranty.",
     intro:
-      "Batteries on vehicles that stand still age differently from batteries on daily drivers — they are rarely fully charged, and they fail earlier. We bring the replacement to the vehicle and fit it where it is parked. The battery price is published; installation is quoted for your specific car.",
+      "Batteries on vehicles that stand still age differently from batteries on daily drivers — they are rarely fully charged, and they fail earlier. We bring the replacement to the vehicle and install it where it is parked. The battery price is published; installation is quoted for your specific car.",
     scenarios: [
       "A weekend or towing vehicle that now needs jumping every time it comes out.",
       "A car that failed to start twice in the same month.",
@@ -1857,7 +1973,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       "The Colony's mix of daily commuting on the Sam Rayburn Tollway and FM 423 alongside seasonal vehicles that sit for weeks between trips to Lewisville Lake produces more battery failures than a purely commuter suburb would. A battery that is never fully recharged does not last as long as one that runs a highway commute every day.",
     faqs: [
       {
-        q: "Can you fit a battery to a vehicle with a trailer attached?",
+        q: "Can you install a battery in a vehicle with a trailer attached?",
         a: "Usually yes, but tell dispatch so the driver knows the situation before arriving. Working space around a hitched vehicle is different from a car parked in a driveway.",
       },
       {
@@ -1884,9 +2000,9 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Flat Tire Change in The Colony, TX",
     title: "Flat Tire Change The Colony TX",
     metaDescription:
-      "Flat tire in The Colony? If you have a usable spare, TRA fits it where you are — FM 423, the tollway or near the lake. Call for roadside help.",
+      "Flat tire in The Colony? If you have a usable spare, TRA puts it on where you are — FM 423, the tollway or near the lake. Call for roadside help.",
     intro:
-      "With a serviceable spare in the vehicle, a flat is a short delay. A driver comes to you, fits the spare and torques it correctly, and you carry on — which matters more than usual here, because the places people get flats are not always places you can comfortably wait.",
+      "With a serviceable spare in the vehicle, a flat is a short delay. A driver comes to you, puts on the spare and torques it correctly, and you carry on — which matters more than usual here, because the places people get flats are not always places you can comfortably wait.",
     scenarios: [
       "A flat at a lakeside parking area some way from the main road.",
       "A blowout on the Sam Rayburn Tollway at speed.",
@@ -1906,7 +2022,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       },
       {
         q: "What if there is no usable spare?",
-        a: "Then fitting one is not an option and the answer is a replacement tire supplied by us or a tow. Tell dispatch so the right help is sent first time.",
+        a: "Then putting one on is not an option and the answer is a replacement tire supplied by us or a tow. Tell dispatch so the right help is sent first time.",
       },
     ],
     primaryKeyword: "flat tire change The Colony TX",
@@ -1921,9 +2037,9 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Mobile Tire Repair in The Colony, TX",
     title: "Mobile Tire Repair The Colony TX",
     metaDescription:
-      "Screw in your tire in The Colony? If the damage is repairable we fix it where the car sits, rather than fitting the spare.",
+      "Screw in your tire in The Colony? If the damage is repairable we fix it where the car sits, rather than putting on the spare.",
     intro:
-      "A tire that has been losing air slowly is worth dealing with before it becomes a flat somewhere inconvenient. Where the puncture is in the tread and within repairable limits, we repair it where the vehicle is standing and leave your spare untouched.",
+      "A tire that has been losing air slowly is worth dealing with before it becomes a flat somewhere inconvenient. Where the puncture is in the tread and within repairable limits, we repair it where the vehicle is parked and leave your spare untouched.",
     scenarios: [
       "A tire on a towing vehicle that is always a little soft.",
       "A screw picked up along FM 423 that has started to weep air.",
@@ -1979,7 +2095,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     faqs: [
       {
         q: "Can you reach a car parked at Addison Airport?",
-        a: "Tell dispatch exactly where the vehicle is standing. We hold no special airport access or authorization, so they will tell you plainly whether a driver can reach that particular spot before you wait on one.",
+        a: "Tell dispatch exactly where the vehicle is parked. We hold no special airport access or authorization, so they will tell you plainly whether a driver can reach that particular spot before you wait on one.",
       },
       {
         q: "Do you come out to restaurant and bar parking?",
@@ -2004,7 +2120,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Dead battery in Addison? TRA brings a jump start to Belt Line Road, the Dallas North Tollway or Addison Airport parking. Local DFW dispatch, 24/7.",
     intro:
-      "A car that will not turn over at the end of an evening is almost always a dead battery rather than a fault. We come to the vehicle, jump it, and let you drive home instead of leaving it where it stands overnight.",
+      "A car that will not turn over at the end of an evening is almost always a dead battery rather than a fault. We come to the vehicle, jump it, and let you drive home instead of leaving it where it sits overnight.",
     scenarios: [
       "A car left at Addison Airport while you traveled.",
       "Lights left on through a long dinner along Belt Line Road.",
@@ -2012,11 +2128,11 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       "A battery that has cranked slowly each cold morning this week.",
     ],
     localContext:
-      "Addison's defining feature for this kind of call is Addison Airport, which occupies around an eighth of the town and leaves vehicles standing for days at a time. The Dallas North Tollway and Belt Line Road carry everything else.",
+      "Addison's defining feature for this kind of call is Addison Airport, which occupies around an eighth of the town and leaves vehicles parked for days at a time. The Dallas North Tollway and Belt Line Road carry everything else.",
     faqs: [
       {
         q: "My car sat while I was away — will a jump be enough?",
-        a: "Usually. A sound battery that discharged from standing will take a jump and recharge as you drive. One near the end of its life often will not, and your driver will say which it looked like.",
+        a: "Usually. A sound battery that discharged while sitting will take a jump and recharge as you drive. One near the end of its life often will not, and your driver will say which it looked like.",
       },
       {
         q: "Can you get to a vehicle in airport parking?",
@@ -2039,14 +2155,14 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Flat Tire Change in Addison, TX",
     title: "Flat Tire Change Addison TX",
     metaDescription:
-      "Flat tire in Addison? If you have a usable spare, TRA fits it where you are — Belt Line Road, the Tollway or a parking garage. Call for roadside help.",
+      "Flat tire in Addison? If you have a usable spare, TRA puts it on where you are — Belt Line Road, the Tollway or a parking garage. Call for roadside help.",
     intro:
-      "With a serviceable spare in the vehicle, a flat is a short delay rather than a ruined evening. A driver comes to you, fits the spare and torques it correctly, and you drive on.",
+      "With a serviceable spare in the vehicle, a flat is a short delay rather than a ruined evening. A driver comes to you, puts on the spare and torques it correctly, and you drive on.",
     scenarios: [
       "A flat found in a Belt Line Road lot after dinner.",
       "A blowout on the Dallas North Tollway at speed.",
-      "A tire that went down while the car stood at the airport.",
-      "A locking wheel nut with no key, which has to come off before the wheel will.",
+      "A tire that went down while the car sat at the airport.",
+      "A locking lug nut with no key, which has to come off before the wheel will.",
     ],
     localContext:
       "The Dallas North Tollway is the fast road through Addison and the one where sudden failures happen; Belt Line Road and Keller Springs Road account for most of the rest, usually as tires found flat rather than tires that failed.",
@@ -2057,7 +2173,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       },
       {
         q: "What if there is no spare in the car?",
-        a: "Then fitting one is not an option, and the answer is a replacement tire supplied by us or a tow. Say so when you call so the right help is sent first time.",
+        a: "Then putting one on is not an option, and the answer is a replacement tire supplied by us or a tow. Say so when you call so the right help is sent first time.",
       },
       {
         q: "How far can I drive on the spare?",
@@ -2118,17 +2234,17 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Mobile Battery Replacement in Allen, TX",
     title: "Car Battery Replacement Allen TX",
     metaDescription:
-      "Allen car battery dead? TRA brings the replacement out to US-75 or your driveway and fits it on site. Installation quoted, 1-year warranty.",
+      "Allen car battery dead? TRA brings the replacement out to US-75 or your driveway and installs it on site. Installation quoted, 1-year warranty.",
     intro:
-      "The awkward part of replacing a battery is getting a car that will not start to a workshop. We remove that by bringing the replacement to the vehicle. The battery price is published; installation is quoted for your specific car, because reaching the battery is quick on some models and slow on others.",
+      "The awkward part of replacing a battery is getting a car that will not start to a repair shop. We remove that by bringing the replacement to the vehicle. The battery price is published; installation is quoted for your specific car, because reaching the battery is quick on some models and slow on others.",
     scenarios: [
       "A battery that has already needed jumping once this month.",
-      "A car that will not start after standing over a long weekend.",
+      "A car that will not start after sitting over a long weekend.",
       "Dim lights or slow windows pointing at charging rather than the engine.",
       "An aging battery you would rather replace before a cold snap than during one.",
     ],
     localContext:
-      "Allen's driving is mostly US-75 commuting with the Sam Rayburn Tollway across the north of the city. A long daily run keeps a weak battery looking healthy, so the failure usually shows up the first morning after the car has stood for a few days.",
+      "Allen's driving is mostly US-75 commuting with the Sam Rayburn Tollway across the north of the city. A long daily run keeps a weak battery looking healthy, so the failure usually shows up the first morning after the car has sat for a few days.",
     faqs: [
       {
         q: "Do you come out to home addresses?",
@@ -2155,9 +2271,9 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Flat Tire Change in Allen, TX",
     title: "Flat Tire Change Allen TX",
     metaDescription:
-      "Flat tire in Allen? If you have a usable spare, TRA fits it where you are — US-75 shoulders, retail lots or at home. Call for roadside help.",
+      "Flat tire in Allen? If you have a usable spare, TRA puts it on where you are — US-75 shoulders, retail lots or at home. Call for roadside help.",
     intro:
-      "If there is a usable spare in the car, a flat is a short job for someone with the right equipment. We come to you, fit it and torque it properly, so you are not changing a wheel beside Central Expressway.",
+      "If there is a usable spare in the car, a flat is a short job for someone with the right equipment. We come to you, put it on and torque it properly, so you are not changing a wheel beside Central Expressway.",
     scenarios: [
       "A blowout on US-75 with traffic moving past at speed.",
       "A flat found in a lot off US-75 with the car already loaded.",
@@ -2233,7 +2349,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Car won't start in Carrollton? TRA brings a jump start to you on I-35E, the Bush Turnpike or at home. Local DFW dispatch, 24/7. Call now.",
     intro:
-      "A car that clicks instead of starting has run its battery down far more often than it has broken anything. A jump start settles it where the vehicle stands, and you drive on rather than waiting for a recovery truck.",
+      "A car that clicks instead of starting has run its battery down far more often than it has broken anything. A jump start settles it where the vehicle sits, and you drive on rather than waiting for a tow truck.",
     scenarios: [
       "A vehicle that sat through a long weekend without being started.",
       "Lights left on in a workplace lot during a shift.",
@@ -2241,7 +2357,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       "A battery that has cranked a little slower every morning this week.",
     ],
     localContext:
-      "Carrollton's traffic runs on I-35E through the middle of the city, with the President George Bush Turnpike crossing it and the Sam Rayburn Tollway at the northern end. Long highway commuting usually keeps a battery healthy, so the failures here tend to follow a period of standing rather than a period of driving.",
+      "Carrollton's traffic runs on I-35E through the middle of the city, with the President George Bush Turnpike crossing it and the Sam Rayburn Tollway at the northern end. Long highway commuting usually keeps a battery healthy, so the failures here tend to follow a period of sitting rather than a period of driving.",
     faqs: [
       {
         q: "Can you reach me on an I-35E shoulder?",
@@ -2268,20 +2384,20 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Mobile Battery Replacement in Carrollton, TX",
     title: "Car Battery Replacement Carrollton TX",
     metaDescription:
-      "Carrollton car battery giving up? TRA brings a new one to your driveway or a lot off I-35E and fits it there. Installation quoted, 1-year warranty.",
+      "Carrollton car battery giving up? TRA brings a new one to your driveway or a lot off I-35E and installs it there. Installation quoted, 1-year warranty.",
     intro:
-      "Once a battery has been jumped more than once, it is telling you it will not last the winter. We arrive with the battery and change it on your driveway or in the lot. The battery price is published; installation is quoted for your car, because access differs enormously between models.",
+      "Once a battery has been jumped more than once, it is telling you it will not last the winter. We arrive with the battery and change it in your driveway or in the lot. The battery price is published; installation is quoted for your car, because access differs enormously between models.",
     scenarios: [
       "A second jump start on the same vehicle inside a month.",
-      "A car that will not start after standing over a holiday weekend.",
+      "A car that will not start after sitting over a holiday weekend.",
       "Electrical symptoms — dim headlights, slow windows, a resetting clock.",
       "A battery old enough that you would rather replace it on your own schedule.",
     ],
     localContext:
-      "Carrollton's position across Dallas, Denton and Collin counties means a lot of its drivers commute some distance on I-35E or the Bush Turnpike. Those long runs hide a declining battery for months; it usually announces itself the first time the car stands for several days.",
+      "Carrollton's position across Dallas, Denton and Collin counties means a lot of its drivers commute some distance on I-35E or the Bush Turnpike. Those long runs hide a declining battery for months; it usually announces itself the first time the car sits for several days.",
     faqs: [
       {
-        q: "Can you fit it at my workplace?",
+        q: "Can you install it at my workplace?",
         a: "Yes, provided the vehicle is somewhere a driver can work safely. A good share of Carrollton battery work happens in employee parking during a shift.",
       },
       {
@@ -2305,9 +2421,9 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Flat Tire Change in Carrollton, TX",
     title: "Flat Tire Change Carrollton TX",
     metaDescription:
-      "Flat tire in Carrollton? If you have a usable spare, TRA fits it where you are — I-35E shoulders, the Tollway or at home. Call for roadside help.",
+      "Flat tire in Carrollton? If you have a usable spare, TRA puts it on where you are — I-35E shoulders, the Tollway or at home. Call for roadside help.",
     intro:
-      "A flat with a good spare in the trunk is a short job for somebody with the right tools and a safe way to lift the car. We come to you, fit it and torque it to specification, and you carry on.",
+      "A flat with a good spare in the trunk is a short job for somebody with the right tools and a safe way to lift the car. We come to you, put it on and torque it to specification, and you carry on.",
     scenarios: [
       "A blowout on I-35E where the shoulder is narrow and the traffic constant.",
       "A flat found in a workplace lot off the Bush Turnpike at clocking-off time.",
@@ -2323,7 +2439,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       },
       {
         q: "What if I have no spare?",
-        a: "Then the spare cannot be fitted, and the options are a replacement tire supplied by us or a tow. Tell dispatch so the right help is sent first time.",
+        a: "Then the spare cannot be put on, and the options are a replacement tire supplied by us or a tow. Tell dispatch so the right help is sent first time.",
       },
       {
         q: "How long can I run on the spare afterwards?",
@@ -2381,12 +2497,12 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Mobile Battery Replacement in Coppell, TX",
     title: "Car Battery Replacement Coppell TX",
     metaDescription:
-      "Coppell car battery dead? With no freeway through town, we come to you — the battery is fitted on site, installation quoted, 1-year warranty.",
+      "Coppell car battery dead? With no freeway through town, we come to you — the battery is installed on site, installation quoted, 1-year warranty.",
     intro:
-      "Getting a car that will not start to a workshop is the hard part of a battery replacement, and it is harder in a city with no freeway through it. We bring the battery out to the vehicle instead. The battery is a published price, and we quote the fitting once we know the car.",
+      "Getting a car that will not start to a repair shop is the hard part of a battery replacement, and it is harder in a city with no freeway through it. We bring the battery out to the vehicle instead. The battery is a published price, and we quote the installation once we know the car.",
     scenarios: [
       "A battery that has needed jumping more than once recently.",
-      "A car that will not start after standing through a trip away.",
+      "A car that will not start after sitting idle during a trip.",
       "Charging symptoms — dim lights, sluggish windows, a clock that resets.",
       "A battery you would rather replace before winter than during it.",
     ],
@@ -2418,20 +2534,20 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Flat Tire Change in Coppell, TX",
     title: "Flat Tire Change Coppell TX",
     metaDescription:
-      "Flat tire in Coppell? If you have a usable spare, TRA fits it where you are — residential streets or the freeways that bound the city.",
+      "Flat tire in Coppell? If you have a usable spare, TRA puts it on where you are — residential streets or the freeways that bound the city.",
     intro:
-      "With a usable spare in the vehicle, a flat is a short delay. A driver comes to you, fits the spare and torques it properly, and you carry on without working at the roadside yourself.",
+      "With a usable spare in the vehicle, a flat is a short delay. A driver comes to you, puts on the spare and torques it properly, and you carry on without working at the roadside yourself.",
     scenarios: [
       "A flat found on a residential street in the morning.",
       "A blowout on one of the freeways bounding the city, on the way in or out.",
-      "A tire that went down while the car stood near the airport boundary.",
+      "A tire that went down while the car sat near the airport boundary.",
     ],
     localContext:
       "Because no freeway runs through Coppell, sudden tire failures tend to happen on the roads that bound it — I-635, I-35E, the Bush Turnpike and TX-121 — rather than inside the city, where flats are usually discovered rather than experienced.",
     faqs: [
       {
         q: "What if I do not have a usable spare?",
-        a: "Then fitting one is not possible, and the answer is a replacement tire supplied by us or a tow. Tell dispatch when you call so the right help comes first time.",
+        a: "Then putting one on is not possible, and the answer is a replacement tire supplied by us or a tow. Tell dispatch when you call so the right help comes first time.",
       },
       {
         q: "Could the tire be repaired instead?",
@@ -2461,7 +2577,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     intro:
       "Euless sits right against the southwestern edge of the airport, and a lot of its lockouts involve somebody on a schedule they cannot move. A driver reaches the vehicle, checks it belongs to you, and opens it without damage — usually in time for wherever you were going.",
     scenarios: [
-      "Keys locked in at a hotel or long-stay lot near the airport boundary.",
+      "Keys locked in at a hotel or long-term lot near the airport boundary.",
       "A fob that stopped working at the end of a shift.",
       "Keys shut in the trunk with luggage already loaded, which is priced separately.",
     ],
@@ -2493,9 +2609,9 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Mobile Battery Replacement in Euless, TX",
     title: "Car Battery Replacement Euless TX",
     metaDescription:
-      "Need a car battery in Euless? TRA brings it to the car and fits it on site near the airport or at home. Installation quoted for your vehicle.",
+      "Need a car battery in Euless? TRA brings it to the car and installs it on site near the airport or at home. Installation quoted for your vehicle.",
     intro:
-      "Cars parked near an airport stand still for days at a time, and standing is what finishes a battery that was already weak. We bring the replacement out and fit it where the car has been standing. The battery price is published; installation is quoted for your car.",
+      "Cars parked near an airport sit for days at a time, and sitting is what finishes a battery that was already weak. We bring the replacement out and install it where the car has been sitting. The battery price is published; installation is quoted for your car.",
     scenarios: [
       "A car that would not start on returning from a trip, and struggled again days later.",
       "A vehicle parked long-term near the airport boundary.",
@@ -2506,7 +2622,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       "With the southwestern portion of DFW International inside its city limits, Euless has an unusual share of vehicles that sit rather than drive. TX-183 Airport Freeway and TX-360 carry the traffic that does move.",
     faqs: [
       {
-        q: "Can you fit a battery in long-stay parking?",
+        q: "Can you install a battery in long-term parking?",
         a: "Tell dispatch exactly where the vehicle is — operator, lot and level. We have no special airport access, so they will confirm whether a driver can reach it before you wait.",
       },
       {
@@ -2530,13 +2646,13 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Flat Tire Change in Euless, TX",
     title: "Flat Tire Change Euless TX",
     metaDescription:
-      "Flat tire in Euless? If you have a usable spare, TRA fits it on site — Airport Freeway, TX-360 or a hotel lot. Call for roadside help.",
+      "Flat tire in Euless? If you have a usable spare, TRA puts it on for you — Airport Freeway, TX-360 or a hotel lot. Call for roadside help.",
     intro:
-      "A flat on the way to a flight is a different problem from a flat at home. With a usable spare in the vehicle, we fit it where you are rather than adding a tow and a workshop wait to a morning that has no slack in it.",
+      "A flat on the way to a flight is a different problem from a flat at home. With a usable spare in the vehicle, we put it on where you are rather than adding a tow and a repair-shop wait to a morning that has no slack in it.",
     scenarios: [
       "A flat found in a hotel lot on the morning of a flight.",
       "A blowout on TX-360 or the Airport Freeway with little shoulder to work on.",
-      "A slow puncture that went down while the car stood for a week.",
+      "A slow puncture that went down while the car sat for a week.",
     ],
     localContext:
       "TX-183 Airport Freeway and TX-360 carry heavy airport-bound traffic through Euless, and shoulder space on both is limited. That is much of why we would rather come out than have you change a wheel beside them.",
@@ -2547,7 +2663,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       },
       {
         q: "What if there is no spare in the car?",
-        a: "Then it cannot be fitted, and the options are a replacement tire from us or a tow. Mention it on the call so the right help is sent.",
+        a: "Then it cannot be put on, and the options are a replacement tire from us or a tow. Mention it on the call so the right help is sent.",
       },
       {
         q: "Is it safe to change it on the TX-360 shoulder?",
@@ -2571,10 +2687,10 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Locked out in Grapevine? TRA opens your car without damage — TX-114, TX-121 or near the airport. Local DFW dispatch, day or night.",
     intro:
-      "Grapevine holds more of the airport than any other city, and a great many of the cars parked here belong to people who are mid-trip rather than at home. A driver comes to wherever the car is standing, confirms it is yours, and gets it open without harming it.",
+      "Grapevine holds more of the airport than any other city, and a great many of the cars parked here belong to people who are mid-trip rather than at home. A driver comes to wherever the car is parked, confirms it is yours, and gets it open without harming it.",
     scenarios: [
       "Keys locked in at a hotel lot before an early departure.",
-      "A fob that died while the car stood in long-stay parking.",
+      "A fob that died while the car sat in long-term parking.",
       "Keys shut in the trunk with luggage loaded, which is a separately priced job.",
       "A rental vehicle whose doors locked behind you.",
     ],
@@ -2583,7 +2699,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     faqs: [
       {
         q: "Can you reach a car on airport property?",
-        a: "Grapevine contains more of the airport than any other city, but we hold no special access or authorization there. Tell dispatch exactly where the vehicle is standing and they will tell you plainly whether a driver can reach it.",
+        a: "Grapevine contains more of the airport than any other city, but we hold no special access or authorization there. Tell dispatch exactly where the vehicle is parked and they will tell you plainly whether a driver can reach it.",
       },
       {
         q: "I am in a rental — will you still open it?",
@@ -2606,20 +2722,20 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Mobile Battery Replacement in Grapevine, TX",
     title: "Car Battery Replacement Grapevine TX",
     metaDescription:
-      "Need a car battery in Grapevine? TRA brings it to the car and fits it on site — hotels, long-stay lots or at home. Installation quoted per vehicle.",
+      "Need a car battery in Grapevine? TRA brings it to the car and installs it on site — hotels, long-term lots or at home. Installation quoted per vehicle.",
     intro:
-      "A battery that failed once after a week of standing will fail again after the next one. We bring the replacement to the vehicle and fit it where it sits, which matters when the car is in a lot rather than a driveway. The battery price is published; installation is quoted for your car.",
+      "A battery that failed once after a week of standing will fail again after the next one. We bring the replacement to the vehicle and install it where it sits, which matters when the car is in a lot rather than a driveway. The battery price is published; installation is quoted for your car.",
     scenarios: [
       "A car that needed a jump on returning from a trip and struggled again soon after.",
-      "A vehicle regularly left in long-stay parking for a week at a time.",
+      "A vehicle regularly left in long-term parking for a week at a time.",
       "Charging symptoms — dim headlights, slow windows, a resetting clock.",
       "A battery you would rather change before a trip than discover on return.",
     ],
     localContext:
-      "Grapevine's share of the airport is the largest of any city, and that shapes the work: a high proportion of vehicles here stand for days rather than commute. Standing is what finishes batteries. TX-114, TX-121, TX-26, TX-360, I-635 and FM 2499 carry the traffic that keeps moving.",
+      "Grapevine's share of the airport is the largest of any city, and that shapes the work: a high proportion of vehicles here sit for days rather than commute. Sitting is what finishes batteries. TX-114, TX-121, TX-26, TX-360, I-635 and FM 2499 carry the traffic that keeps moving.",
     faqs: [
       {
-        q: "Can you fit a battery in a hotel or long-stay lot?",
+        q: "Can you install a battery in a hotel or long-term lot?",
         a: "Usually yes, provided the driver can work safely around the vehicle. Give dispatch the operator, lot and level when you call.",
       },
       {
@@ -2643,14 +2759,14 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Flat Tire Change in Grapevine, TX",
     title: "Flat Tire Change Grapevine TX",
     metaDescription:
-      "Flat tire in Grapevine? If you have a usable spare, TRA fits it on site — TX-114, TX-121 or a hotel lot. Call for roadside help.",
+      "Flat tire in Grapevine? If you have a usable spare, TRA puts it on for you — TX-114, TX-121 or a hotel lot. Call for roadside help.",
     intro:
-      "With a serviceable spare in the vehicle, a flat is a delay rather than a canceled trip. A driver comes to you, fits the spare and torques it correctly, which is worth a great deal when there is a departure time attached to the morning.",
+      "With a serviceable spare in the vehicle, a flat is a delay rather than a canceled trip. A driver comes to you, puts on the spare and torques it correctly, which is worth a great deal when there is a departure time attached to the morning.",
     scenarios: [
       "A flat found in a hotel lot before an early start.",
       "A blowout on TX-114 or TX-121 in heavy airport-bound traffic.",
-      "A tire that went down while the car stood in long-stay parking.",
-      "A locking wheel nut whose key is at home rather than in the car.",
+      "A tire that went down while the car sat in long-term parking.",
+      "A locking lug nut whose key is at home rather than in the car.",
     ],
     localContext:
       "Six major routes run through or around Grapevine — TX-114, TX-121, TX-26, TX-360, I-635 and FM 2499 — and most carry airport traffic at speed with limited shoulder. Sudden failures here are usually highway events rather than tires found soft on a quiet street.",
@@ -2661,7 +2777,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       },
       {
         q: "What if there is no spare?",
-        a: "Then it cannot be fitted, and the answer is a replacement tire supplied by us or a tow. Say so on the call so the right help is sent first time.",
+        a: "Then it cannot be put on, and the answer is a replacement tire supplied by us or a tow. Say so on the call so the right help is sent first time.",
       },
       {
         q: "Can you change a tire in a parking garage?",
@@ -2696,7 +2812,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     faqs: [
       {
         q: "Do you cover retail and grocery store parking?",
-        a: "Yes, and in Hurst that is a large share of the calls. Give dispatch the lot and roughly where the car is standing in it.",
+        a: "Yes, and in Hurst that is a large share of the calls. Give dispatch the lot and roughly where the car is parked in it.",
       },
       {
         q: "Can you open the car if the fob battery is dead?",
@@ -2719,12 +2835,12 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Mobile Battery Replacement in Hurst, TX",
     title: "Car Battery Replacement Hurst TX",
     metaDescription:
-      "Hurst car battery failing? We bring the replacement to you off TX-183 or Loop 820 and fit it on the spot. Installation quoted, 1-year warranty.",
+      "Hurst car battery failing? We bring the replacement to you off TX-183 or Loop 820 and install it on the spot. Installation quoted, 1-year warranty.",
     intro:
-      "A battery that has been jumped twice is not going to improve on its own. We bring the replacement to the vehicle and fit it where it stands, so the car never has to be recovered anywhere. The battery price is published; installation is quoted for your specific car.",
+      "A battery that has been jumped twice is not going to improve on its own. We bring the replacement to the vehicle and install it where it sits, so the car never has to be towed anywhere. The battery price is published; installation is quoted for your specific car.",
     scenarios: [
       "A second jump start on the same vehicle within a few weeks.",
-      "A car that will not start after standing over a long weekend.",
+      "A car that will not start after sitting over a long weekend.",
       "Dim lights and sluggish windows pointing at charging rather than the engine.",
       "A battery old enough that replacing it beats being stranded by it.",
     ],
@@ -2756,9 +2872,9 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Flat Tire Change in Hurst, TX",
     title: "Flat Tire Change Hurst TX",
     metaDescription:
-      "Flat tire in Hurst? If you have a usable spare, TRA fits it where you are — Loop 820, TX-183 or a retail lot. Call for roadside help.",
+      "Flat tire in Hurst? If you have a usable spare, TRA puts it on where you are — Loop 820, TX-183 or a retail lot. Call for roadside help.",
     intro:
-      "With a usable spare in the vehicle, a flat is a short job. A driver comes to you, fits it and torques it correctly, and you carry on rather than kneeling in a parking lot with the groceries still in the car.",
+      "With a usable spare in the vehicle, a flat is a short job. A driver comes to you, puts it on and torques it correctly, and you carry on rather than kneeling in a parking lot with the groceries still in the car.",
     scenarios: [
       "A flat found in mid-cities retail parking with a full trunk.",
       "A blowout on Loop 820 or the Airport Freeway at speed.",
@@ -2872,17 +2988,17 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Mobile Battery Replacement in Arlington, TX",
     title: "Car Battery Replacement Arlington TX",
     metaDescription:
-      "Arlington car battery dead again? TRA brings the replacement to the car — Entertainment District lot, I-20 or your driveway — and fits it on the spot.",
+      "Arlington car battery dead again? TRA brings the replacement to the car — Entertainment District lot, I-20 or your driveway — and installs it on the spot.",
     intro:
-      "A battery that has already been jumped once will usually need it again, and the second time is rarely convenient. We bring the replacement out and fit it where the car already stands. You see the battery price up front; what it costs to install depends on how buried yours is, so that part is quoted for your vehicle.",
+      "A battery that has already been jumped once will usually need it again, and the second time is rarely convenient. We bring the replacement out and install it where the car already sits. You see the battery price up front; what it costs to install depends on how buried yours is, so that part is quoted for your vehicle.",
     scenarios: [
       "A battery jumped once in an event lot and again days later.",
-      "A car that will not start after standing over a holiday weekend.",
+      "A car that will not start after sitting over a holiday weekend.",
       "Dim headlights or slow windows pointing at charging rather than the engine.",
       "An aging battery you would rather replace before a cold spell.",
     ],
     localContext:
-      "Arlington drivers cover real distance on I-20, I-30 and US-287, and those runs hide a declining battery for months. The failures tend to appear after a car has stood — in an event lot, or at home across a long weekend.",
+      "Arlington drivers cover real distance on I-20, I-30 and US-287, and those runs hide a declining battery for months. The failures tend to appear after a car has sat — in an event lot, or at home across a long weekend.",
     faqs: [
       {
         q: "Do you come out to home addresses?",
@@ -2909,14 +3025,14 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Flat Tire Change in Arlington, TX",
     title: "Flat Tire Change Arlington TX",
     metaDescription:
-      "Flat tire in Arlington? If you have a usable spare, TRA fits it where you are — I-20, I-30 or an Entertainment District lot. Call for roadside help.",
+      "Flat tire in Arlington? If you have a usable spare, TRA puts it on where you are — I-20, I-30 or an Entertainment District lot. Call for roadside help.",
     intro:
-      "With a serviceable spare in the vehicle, a flat is a delay rather than a tow. A driver comes to you, fits the spare and torques it properly, and you drive on — including out of a parking lot that is emptying around you.",
+      "With a serviceable spare in the vehicle, a flat is a delay rather than a tow. A driver comes to you, puts on the spare and torques it properly, and you drive on — including out of a parking lot that is emptying around you.",
     scenarios: [
       "A flat discovered in an event lot as everyone else is leaving.",
       "A blowout on I-20 or I-30 where the shoulder is no place to work.",
       "A tire that had been losing air all week and gave out in the driveway.",
-      "A locking wheel nut whose key is no longer in the car.",
+      "A locking lug nut whose key is no longer in the car.",
     ],
     localContext:
       "I-20 and I-30 carry Arlington's fast traffic and account for most sudden tire failures here. US-287 adds to it. Flats found in Entertainment District parking are usually discovered rather than experienced, which makes them easier to deal with calmly.",
@@ -2969,7 +3085,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       },
       {
         q: "Can you reach a car at the municipal airport?",
-        a: "Tell dispatch which lot the car is standing on. We hold no special access or authorization at the field, so they will say plainly whether a driver can get to it.",
+        a: "Tell dispatch which lot the car is parked in. We hold no special access or authorization at the field, so they will say plainly whether a driver can get to it.",
       },
       {
         q: "Will opening the car damage it?",
@@ -2990,15 +3106,15 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Dead battery in Grand Prairie? TRA brings a jump start to you on I-20, I-30, TX-360 or at home. Local DFW dispatch, 24/7. Call now.",
     intro:
-      "A car that turns over slowly and then stops has run its battery down rather than broken anything, in most cases. A jump start settles it where the vehicle stands and you drive on under your own power.",
+      "A car that turns over slowly and then stops has run its battery down rather than broken anything, in most cases. A jump start settles it where the vehicle sits and you drive on under your own power.",
     scenarios: [
       "A vehicle that sat through a long weekend without moving.",
       "Lights left on overnight on a street off Pioneer Parkway.",
-      "A work truck that stood at a yard over a shutdown.",
+      "A work truck that sat at a yard over a shutdown.",
       "A battery that has needed a longer crank every morning this week.",
     ],
     localContext:
-      "Two interstates cross Grand Prairie — I-20 and I-30 — with TX-360 and the President George Bush Turnpike running north to south and Belt Line Road, Pioneer Parkway and Main Street carrying local traffic. Long interstate running tends to keep a battery charged, so most failures here follow a spell of standing still.",
+      "Two interstates cross Grand Prairie — I-20 and I-30 — with TX-360 and the President George Bush Turnpike running north to south and Belt Line Road, Pioneer Parkway and Main Street carrying local traffic. Long interstate running tends to keep a battery charged, so most failures here follow a stretch of sitting idle.",
     faqs: [
       {
         q: "Can you jump start a work truck or van?",
@@ -3025,20 +3141,20 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Mobile Battery Replacement in Grand Prairie, TX",
     title: "Car Battery Replacement Grand Prairie TX",
     metaDescription:
-      "Car battery gone in Grand Prairie? We drive the replacement out anywhere from Belt Line Road to I-20 and fit it where you are parked. 1-year warranty.",
+      "Car battery gone in Grand Prairie? We drive the replacement out anywhere from Belt Line Road to I-20 and install it where you are parked. 1-year warranty.",
     intro:
-      "Once a battery stops holding charge, jumping it again only moves the problem to a worse moment. We come to the car and change it on the spot. The battery itself is a published price; fitting it is quoted once we know what we are working on.",
+      "Once a battery stops holding charge, jumping it again only moves the problem to a worse moment. We come to the car and change it on the spot. The battery itself is a published price; installing it is quoted once we know what we are working on.",
     scenarios: [
       "A second jump start on the same vehicle inside a month.",
-      "A car that will not start after standing through a trip away.",
+      "A car that will not start after sitting idle during a trip.",
       "Electrical symptoms — dim lights, slow windows, a clock that resets.",
       "A battery old enough that replacing it costs less than being stranded by it.",
     ],
     localContext:
-      "Grand Prairie's shape works against you here: the city runs a long way across four counties, so a battery that fails at one end can be a considerable distance from help at the other. Bringing the replacement to the car rather than the car to the workshop is the practical difference.",
+      "Grand Prairie's shape works against you here: the city runs a long way across four counties, so a battery that fails at one end can be a considerable distance from help at the other. Bringing the replacement to the car rather than the car to the shop is the practical difference.",
     faqs: [
       {
-        q: "Can you fit it at my workplace?",
+        q: "Can you install it at my workplace?",
         a: "Yes, as long as the car is somewhere a driver can work safely. Tell dispatch the site and roughly where it is parked.",
       },
       {
@@ -3062,7 +3178,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Flat Tire Change in Grand Prairie, TX",
     title: "Flat Tire Change Grand Prairie TX",
     metaDescription:
-      "Flat tire in Grand Prairie? If you have a usable spare, TRA fits it where you are — I-20, I-30, TX-360 or at home. Call for roadside help.",
+      "Flat tire in Grand Prairie? If you have a usable spare, TRA puts it on where you are — I-20, I-30, TX-360 or at home. Call for roadside help.",
     intro:
       "Given a good spare in the trunk, this is a quick job for someone carrying a proper jack and a torque wrench. We come to you, swap the wheel over, and you drive on.",
     scenarios: [
@@ -3120,7 +3236,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       },
       {
         q: "My fob has gone dead — can you still get in?",
-        a: "Yes — a flat fob battery is one of the commonest reasons for this call, and it makes no difference to how the car is opened.",
+        a: "Yes — a dead fob battery is one of the most common reasons for this call, and it makes no difference to how the car is opened.",
       },
       {
         q: "Does someone need to be at the car?",
@@ -3141,7 +3257,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Dead battery in Rowlett? TRA brings a jump start to you on Lakeview Parkway, the Bush Turnpike or at home. Local DFW dispatch, 24/7.",
     intro:
-      "Boats, trailers and second vehicles spend most of the year standing still, and standing is what flattens a battery. A jump start brings the vehicle back where it sits, without a recovery truck crossing the lake to reach you.",
+      "Boats, trailers and second vehicles spend most of the year sitting idle, and sitting is what drains a battery. A jump start brings the vehicle back where it sits, without a tow truck crossing the lake to reach you.",
     scenarios: [
       "A towing vehicle that has not moved since the last trip out on the water.",
       "A car that sat through a long weekend on the driveway.",
@@ -3157,7 +3273,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       },
       {
         q: "The car has not moved in a month — will a jump work?",
-        a: "Often it will. A sound battery that discharged from standing takes a jump and recharges as you drive. One at the end of its life usually will not, and your driver will say which it appeared to be.",
+        a: "Often it will. A sound battery that discharged while sitting takes a jump and recharges as you drive. One at the end of its life usually will not, and your driver will say which it appeared to be.",
       },
       {
         q: "Should I keep cranking while I wait?",
@@ -3176,7 +3292,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Mobile Battery Replacement in Rowlett, TX",
     title: "Car Battery Replacement Rowlett TX",
     metaDescription:
-      "Rowlett car battery flat after sitting? TRA fits a new one at the house, the ramp or the lot. 1-year warranty, installation quoted for your car.",
+      "Rowlett car battery dead after sitting? TRA installs a new one at the house, the ramp or the lot. 1-year warranty, installation quoted for your car.",
     intro:
       "Batteries on vehicles that stand still age faster than batteries on daily drivers, because they are rarely fully charged. The replacement comes out to the vehicle and goes in where it sits. Battery price published, installation quoted against your particular car.",
     scenarios: [
@@ -3213,9 +3329,9 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Flat Tire Change in Rowlett, TX",
     title: "Flat Tire Change Rowlett TX",
     metaDescription:
-      "Flat tire in Rowlett? If you have a usable spare, TRA fits it where you are — Lakeview Parkway, I-30 or a lakeside lot. Call for roadside help.",
+      "Flat tire in Rowlett? If you have a usable spare, TRA puts it on where you are — Lakeview Parkway, I-30 or a lakeside lot. Call for roadside help.",
     intro:
-      "A flat need not end the day if there is a sound spare in the vehicle. A driver comes to you, fits the spare and torques it correctly — which matters here, because some of the places people get flats are not places you want to wait long.",
+      "A flat need not end the day if there is a sound spare in the vehicle. A driver comes to you, puts on the spare and torques it correctly — which matters here, because some of the places people get flats are not places you want to wait long.",
     scenarios: [
       "A flat at a boat ramp or lakeside lot some way from the main road.",
       "A blowout on I-30 or the Bush Turnpike at speed.",
@@ -3235,7 +3351,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       },
       {
         q: "What if there is no usable spare?",
-        a: "Then it cannot be fitted, and the answer is a replacement tire supplied by us or a tow. Mention it on the call so the right help is sent.",
+        a: "Then it cannot be put on, and the answer is a replacement tire supplied by us or a tow. Mention it on the call so the right help is sent.",
       },
     ],
     primaryKeyword: "flat tire change Rowlett TX",
@@ -3292,15 +3408,15 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     metaDescription:
       "Dead battery in Wylie? TRA brings a jump start to you on TX-78, FM 544 or at home. Local DFW dispatch, 24/7. Call now.",
     intro:
-      "A car that will not turn over in Wylie is a longer wait than the same car closer in, which is exactly why a jump start beats a tow. We come to the vehicle, start it, and you drive on rather than having it recovered across the county.",
+      "A car that will not turn over in Wylie is a longer wait than the same car closer in, which is exactly why a jump start beats a tow. We come to the vehicle, start it, and you drive on rather than having it towed across the county.",
     scenarios: [
       "A second vehicle that only moves at weekends.",
       "Interior lights left on overnight outside the house.",
       "A battery that has cranked slowly each morning through a cold spell.",
-      "A car that stood while you were away.",
+      "A car that sat while you were away.",
     ],
     localContext:
-      "Wylie has no freeway. TX-78 carries most of the traffic, with FM 544, FM 1378, FM 2514 and FM 3412 handling the rest, and the city sits between Lavon Lake and Lake Ray Hubbard. That combination means more standing vehicles and fewer long daily runs than closer-in suburbs have.",
+      "Wylie has no freeway. TX-78 carries most of the traffic, with FM 544, FM 1378, FM 2514 and FM 3412 handling the rest, and the city sits between Lavon Lake and Lake Ray Hubbard. That combination means more idle vehicles and fewer long daily runs than closer-in suburbs have.",
     faqs: [
       {
         q: "Is a jump start enough, or do I need a battery?",
@@ -3327,17 +3443,17 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Mobile Battery Replacement in Wylie, TX",
     title: "Car Battery Replacement Wylie TX",
     metaDescription:
-      "Wylie car battery dead? No need to tow it anywhere — TRA brings the battery out along TX-78 and fits it where the car stands. 1-year warranty.",
+      "Wylie car battery dead? No need to tow it anywhere — TRA brings the battery out along TX-78 and installs it where the car sits. 1-year warranty.",
     intro:
-      "Getting a car that will not start to a workshop is harder from Wylie than from most places, because there is no freeway to put it on. So the battery comes to you instead. What the battery costs is published; fitting it is quoted once we know which car we are opening up.",
+      "Getting a car that will not start to a repair shop is harder from Wylie than from most places, because there is no freeway to put it on. So the battery comes to you instead. What the battery costs is published; installing it is quoted once we know which car we are opening up.",
     scenarios: [
       "A battery that has already been jumped once this month.",
-      "A car that will not start reliably after standing for a week.",
+      "A car that will not start reliably after sitting for a week.",
       "Dashboard warnings, slow windows, a clock that keeps resetting.",
       "A battery you would rather replace before winter than during it.",
     ],
     localContext:
-      "Wylie sits across three counties at the outer edge of the metroplex, connected mainly by TX-78 and a network of FM roads. A battery that fails here is further from a workshop than one that fails closer in, which is much of the argument for fitting the replacement where the car already is.",
+      "Wylie sits across three counties at the outer edge of the metroplex, connected mainly by TX-78 and a network of FM roads. A battery that fails here is further from a repair shop than one that fails closer in, which is much of the argument for installing the replacement where the car already is.",
     faqs: [
       {
         q: "Do you come out to home addresses in Wylie?",
@@ -3364,9 +3480,9 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Flat Tire Change in Wylie, TX",
     title: "Flat Tire Change Wylie TX",
     metaDescription:
-      "Flat tire in Wylie? If you have a usable spare, TRA fits it where you are — TX-78, FM 544 or at home. Call for roadside help.",
+      "Flat tire in Wylie? If you have a usable spare, TRA puts it on where you are — TX-78, FM 544 or at home. Call for roadside help.",
     intro:
-      "With a usable spare in the car, a flat is a short job. A driver comes to you, fits it and torques it properly, so you are not changing a wheel on the shoulder of an FM road with no street lighting.",
+      "With a usable spare in the car, a flat is a short job. A driver comes to you, puts it on and torques it properly, so you are not changing a wheel on the shoulder of an FM road with no street lighting.",
     scenarios: [
       "A flat on TX-78 where the shoulder is narrow and unlit.",
       "A tire found down in the morning on a driveway.",
@@ -3441,12 +3557,12 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Mobile Battery Replacement in Bedford, TX",
     title: "Car Battery Replacement Bedford TX",
     metaDescription:
-      "Bedford car battery on its way out? TRA brings a replacement to your driveway or workplace off TX-183 and fits it on site, with a 1-year warranty.",
+      "Bedford car battery on its way out? TRA brings a replacement to your driveway or workplace off TX-183 and installs it on site, with a 1-year warranty.",
     intro:
       "A battery that has needed jumping more than once will not improve on its own. We come out and swap it where the car is. The battery carries a published price; installation is quoted separately, because some are a two-minute job and some are not.",
     scenarios: [
       "A second jump start on the same car within a few weeks.",
-      "A vehicle that will not start after standing over a long weekend.",
+      "A vehicle that will not start after sitting over a long weekend.",
       "Dim lights and slow windows pointing at charging rather than the engine.",
       "A battery far enough past its best that waiting is the expensive option.",
     ],
@@ -3478,9 +3594,9 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Flat Tire Change in Bedford, TX",
     title: "Flat Tire Change Bedford TX",
     metaDescription:
-      "Flat tire in Bedford? If you have a usable spare, TRA fits it where you are — the Airport Freeway, TX-121 or at home. Call for roadside help.",
+      "Flat tire in Bedford? If you have a usable spare, TRA puts it on where you are — the Airport Freeway, TX-121 or at home. Call for roadside help.",
     intro:
-      "With a usable spare in the vehicle, a flat is a short job rather than a tow. A driver comes to you, fits it and torques it correctly, and you carry on.",
+      "With a usable spare in the vehicle, a flat is a short job rather than a tow. A driver comes to you, puts it on and torques it correctly, and you carry on.",
     scenarios: [
       "A flat spotted in a lot off TX-121 with the car already loaded.",
       "A blowout on the Airport Freeway at speed.",
@@ -3554,12 +3670,12 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Mobile Battery Replacement in North Richland Hills, TX",
     title: "Car Battery Replacement North Richland Hills TX",
     metaDescription:
-      "North Richland Hills car battery dead? We bring the replacement to your driveway off Davis Boulevard or Precinct Line Road and fit it there. 1-year warranty.",
+      "North Richland Hills car battery dead? We bring the replacement to your driveway off Davis Boulevard or Precinct Line Road and install it there. 1-year warranty.",
     intro:
-      "A battery that has already been jumped once is unlikely to survive the next cold morning. A driver brings the new battery to you and fits it on your driveway or in the lot. The battery price is set and published; the labor to install it is quoted for your model.",
+      "A battery that has already been jumped once is unlikely to survive the next cold morning. A driver brings the new battery to you and installs it in your driveway or in the lot. The battery price is set and published; the labor to install it is quoted for your model.",
     scenarios: [
       "A battery jumped once already this month.",
-      "A car that will not start after standing over a long weekend.",
+      "A car that will not start after sitting over a long weekend.",
       "Charging symptoms — dim lights, sluggish windows, a resetting clock.",
       "A battery you would rather replace on a Saturday than on a January morning.",
     ],
@@ -3591,7 +3707,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Flat Tire Change in North Richland Hills, TX",
     title: "Flat Tire Change North Richland Hills TX",
     metaDescription:
-      "Flat tire in North Richland Hills? If you have a usable spare, TRA fits it where you are — I-820, Davis Boulevard or at home.",
+      "Flat tire in North Richland Hills? If you have a usable spare, TRA puts it on where you are — I-820, Davis Boulevard or at home.",
     intro:
       "A flat is a short delay if there is a sound spare on board. A driver comes out, swaps it over and torques it properly, so you are not kneeling in a lot with the groceries melting in the back.",
     scenarios: [
@@ -3667,24 +3783,24 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Mobile Battery Replacement in Rockwall, TX",
     title: "Car Battery Replacement Rockwall TX",
     metaDescription:
-      "Rockwall car battery dead? Rather than tow it back over I-30, TRA brings the battery to you and fits it where the car is. 1-year warranty.",
+      "Rockwall car battery dead? Rather than tow it back over I-30, TRA brings the battery to you and installs it where the car is. 1-year warranty.",
     intro:
-      "Taking a car that will not start to a workshop is one thing inside the metroplex and another across a lake. So we bring the battery across instead and fit it where the car is standing. Published price on the battery, quoted price on the installation.",
+      "Taking a car that will not start to a repair shop is one thing inside the metroplex and another across a lake. So we bring the battery across instead and install it where the car is parked. Published price on the battery, quoted price on the installation.",
     scenarios: [
       "A battery that has already needed jumping once this month.",
-      "A boat or tow vehicle that will not start after standing between trips.",
+      "A boat or tow vehicle that will not start after sitting between trips.",
       "Electrical oddities that point at charge rather than the engine.",
       "A battery you would rather change on your own schedule than on the shoreline.",
     ],
     localContext:
-      "Rockwall sits on the eastern shore of Lake Ray Hubbard, roughly twenty miles northeast of Dallas, with I-30 crossing the water into the city. Vehicles that tow or sit between lake trips are a meaningful share of what we see here, and standing is what finishes a weak battery.",
+      "Rockwall sits on the eastern shore of Lake Ray Hubbard, roughly twenty miles northeast of Dallas, with I-30 crossing the water into the city. Vehicles that tow or sit between lake trips are a meaningful share of what we see here, and sitting is what finishes a weak battery.",
     faqs: [
       {
         q: "Do you come out this far for a battery?",
         a: "Yes. Rockwall is inside our service area. Dispatch will be straight with you about timing, because the run out over I-30 is longer than one inside the main metroplex.",
       },
       {
-        q: "Can you fit it to a vehicle with a trailer attached?",
+        q: "Can you install it in a vehicle with a trailer attached?",
         a: "Usually yes, but mention it when you call so the driver knows what they are coming to.",
       },
       {
@@ -3704,9 +3820,9 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Flat Tire Change in Rockwall, TX",
     title: "Flat Tire Change Rockwall TX",
     metaDescription:
-      "Flat tire in Rockwall? If you have a usable spare, TRA fits it where you are — I-30, TX-66 or near the lake. Call for roadside help.",
+      "Flat tire in Rockwall? If you have a usable spare, TRA puts it on where you are — I-30, TX-66 or near the lake. Call for roadside help.",
     intro:
-      "A flat on the I-30 crossing is a poor place to stop, with water on both sides and no useful shoulder. If there is a serviceable spare in the vehicle, we come out and fit it while you stay safely inside the car.",
+      "A flat on the I-30 crossing is a poor place to stop, with water on both sides and no useful shoulder. If there is a serviceable spare in the vehicle, we come out and put it on while you stay safely inside the car.",
     scenarios: [
       "A blowout on I-30 approaching or leaving the lake crossing.",
       "A flat found at a lakeside parking area.",
@@ -3751,4 +3867,9 @@ export function cityServicePairs(): { city: string; service: string }[] {
 /** Pilot service pages published for a given city, for linking from the city hub. */
 export function servicesForCity(city: string): CityServiceContent[] {
   return CITY_SERVICE_PAGES.filter((p) => p.city === city);
+}
+
+/** Cities with a published page for a given service, for linking down from the service hub. */
+export function citiesForService(service: string): string[] {
+  return CITY_SERVICE_PAGES.filter((p) => p.service === service).map((p) => p.city);
 }

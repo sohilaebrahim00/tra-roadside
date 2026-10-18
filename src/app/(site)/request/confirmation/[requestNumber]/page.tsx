@@ -38,7 +38,7 @@ export default async function ConfirmationPage({
       {/* The only place on the site that reports a Google Ads conversion. It
           fires once per request number, not once per page view — see the guard
           in GoogleAdsConversion. Demo submissions are excluded: they are not
-          real jobs and must not be optimised against. */}
+          real jobs and must not be optimized against. */}
       {googleAdsConversionSendTo && !isDemo && (
         <GoogleAdsConversion sendTo={googleAdsConversionSendTo} requestNumber={requestNumber} />
       )}

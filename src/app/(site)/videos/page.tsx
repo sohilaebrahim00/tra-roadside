@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageUrls } from "@/lib/seo";
 import { Film } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -14,7 +15,7 @@ import { env } from "@/lib/env";
 export const metadata: Metadata = {
   title: "Videos",
   description: "Watch TRA roadside assistance in action across the Dallas–Fort Worth Metroplex.",
-  alternates: { canonical: "/videos" },
+  ...pageUrls("/videos"),
 };
 
 export default async function VideosPage() {
@@ -36,7 +37,7 @@ export default async function VideosPage() {
       <BreadcrumbJsonLd items={[{ name: "Home", url: env.siteUrl }, { name: "Videos", url: `${env.siteUrl}/videos` }]} />
       <section className="border-b border-ink-950/8 bg-ink-950 py-16 text-white sm:py-20">
         <Container>
-          <SectionHeading eyebrow="Watch" title="See TRA in action" tone="light" />
+          <SectionHeading as="h1" eyebrow="Watch" title="See TRA in action" tone="light" />
         </Container>
       </section>
 

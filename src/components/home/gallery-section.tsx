@@ -1,12 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Camera } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { Button } from "@/components/ui/button";
 import { getGalleryItems } from "@/lib/data/gallery";
-import { BUSINESS } from "@/lib/content/business";
-import { InstagramIcon } from "@/components/brand/social-icons";
+import { fieldPhotoPreview } from "@/lib/content/field-photos";
 
 export async function GallerySection() {
   const items = await getGalleryItems();
@@ -25,25 +22,23 @@ export async function GallerySection() {
             ))}
           </div>
         ) : (
-          <div className="mx-auto mt-10 flex max-w-lg flex-col items-center rounded-2xl border border-dashed border-ink-950/15 px-8 py-12 text-center dark:border-white/15">
-            <Camera className="h-8 w-8 text-ink-400" aria-hidden="true" />
-            <p className="mt-3 font-display text-lg font-semibold text-ink-950 dark:text-white">
-              Real job photos are on the way
-            </p>
-            <p className="mt-1.5 text-sm text-ink-600 dark:text-ink-200">
-              This gallery pulls directly from completed jobs added through the admin dashboard.
-              In the meantime, follow along on Instagram.
-            </p>
-            <Button
-              href={BUSINESS.socials.instagram}
-              variant="outline"
-              size="sm"
-              className="mt-5"
-              icon={<InstagramIcon className="h-4 w-4" aria-hidden="true" />}
-            >
-              @tra.roadside
-            </Button>
-          </div>
+          // Until job photos are uploaded through the admin dashboard, the
+          // preview shows one still from each group of the business's own
+          // footage rather than an empty placeholder box.
+          <ul className="mt-10 grid grid-cols-2 gap-3 md:grid-cols-4">
+            {fieldPhotoPreview().map((photo) => (
+              <li key={photo.src} className="overflow-hidden rounded-xl border border-ink-950/8 bg-white">
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  width={photo.width}
+                  height={photo.height}
+                  sizes="(min-width: 1280px) 290px, (min-width: 768px) 23vw, 46vw"
+                  className="aspect-[4/5] h-auto w-full object-cover"
+                />
+              </li>
+            ))}
+          </ul>
         )}
 
         <div className="mt-8 text-center">

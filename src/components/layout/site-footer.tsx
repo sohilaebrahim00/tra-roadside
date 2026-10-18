@@ -82,7 +82,7 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <h3 className="text-xs font-semibold uppercase tracking-[0.16em] text-white/50">Services</h3>
+          <h2 className="text-xs font-semibold uppercase tracking-[0.16em] text-white/50">Services</h2>
           <ul className="mt-4 space-y-2.5 text-sm text-white/70">
             {SERVICES.slice(0, 7).map((s) => (
               <li key={s.slug}>
@@ -100,7 +100,7 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <h3 className="text-xs font-semibold uppercase tracking-[0.16em] text-white/50">Service Areas</h3>
+          <h2 className="text-xs font-semibold uppercase tracking-[0.16em] text-white/50">Service Areas</h2>
           <ul className="mt-4 space-y-2.5 text-sm text-white/70">
             {SERVICE_AREAS.slice(0, 7).map((c) => (
               <li key={c.slug}>
@@ -118,7 +118,7 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <h3 className="text-xs font-semibold uppercase tracking-[0.16em] text-white/50">Company</h3>
+          <h2 className="text-xs font-semibold uppercase tracking-[0.16em] text-white/50">Company</h2>
           <ul className="mt-4 space-y-2.5 text-sm text-white/70">
             <li><Link href="/about" className="hover:text-white">About TRA</Link></li>
             <li><Link href="/how-it-works" className="hover:text-white">How It Works</Link></li>

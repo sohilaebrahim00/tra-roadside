@@ -1,21 +1,38 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { pageUrls } from "@/lib/seo";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { GalleryGrid } from "@/components/gallery/gallery-grid";
 import { getGalleryItems } from "@/lib/data/gallery";
 import { env } from "@/lib/env";
-import { Camera } from "lucide-react";
+import { ArrowRight, PlayCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { InstagramIcon } from "@/components/brand/social-icons";
 import { BUSINESS } from "@/lib/content/business";
+import { getService } from "@/lib/content/services";
+import { FIELD_PHOTO_GROUPS } from "@/lib/content/field-photos";
 
 export const metadata: Metadata = {
   title: "Gallery",
-  description: "Real roadside assistance jobs across the Dallas–Fort Worth Metroplex.",
-  alternates: { canonical: "/gallery" },
+  description:
+    "Photos of TRA's crew and equipment at work across the Dallas–Fort Worth Metroplex: jump starts, tire service, fuel delivery and the gear our drivers carry.",
+  ...pageUrls("/gallery"),
 };
 
+/**
+ * Two sources, kept separate on purpose:
+ *
+ *   1. FIELD_PHOTO_GROUPS — stills from the business's own footage, grouped by
+ *      the service they show. Always present, so the page is never an empty
+ *      "coming soon" box. Captioned as the crew and equipment at work, never
+ *      as named customer jobs (see field-photos.ts).
+ *   2. gallery_items from Supabase — photos of completed jobs uploaded through
+ *      the admin dashboard. Rendered under their own heading only when there
+ *      are any.
+ */
 export default async function GalleryPage() {
   const items = await getGalleryItems();
 
@@ -24,26 +41,86 @@ export default async function GalleryPage() {
       <BreadcrumbJsonLd items={[{ name: "Home", url: env.siteUrl }, { name: "Gallery", url: `${env.siteUrl}/gallery` }]} />
       <section className="border-b border-ink-950/8 bg-ink-950 py-16 text-white sm:py-20">
         <Container>
-          <SectionHeading eyebrow="Real Work" title="On the job across DFW" tone="light" />
+          <SectionHeading
+            as="h1"
+            eyebrow="Gallery"
+            title="TRA at work across DFW"
+            description="Our crew and the equipment they bring: jump starts, tire service and fuel delivery, shot from our own footage."
+            tone="light"
+          />
         </Container>
       </section>
 
       <section className="py-16 sm:py-24">
         <Container>
-          {items.length > 0 ? (
-            <GalleryGrid items={items} />
-          ) : (
-            <div className="mx-auto flex max-w-lg flex-col items-center rounded-2xl border border-dashed border-ink-950/15 px-8 py-16 text-center dark:border-white/15">
-              <Camera className="h-8 w-8 text-ink-400" aria-hidden="true" />
-              <p className="mt-3 font-display text-lg font-semibold text-ink-950 dark:text-white">Gallery coming soon</p>
-              <p className="mt-1.5 text-sm text-ink-600 dark:text-ink-200">
-                Real job photos are added here through the admin dashboard. Follow along on Instagram in the meantime.
-              </p>
-              <Button href={BUSINESS.socials.instagram} variant="outline" size="sm" className="mt-5" icon={<InstagramIcon className="h-4 w-4" aria-hidden="true" />}>
+          <div className="grid gap-14 lg:grid-cols-2 lg:gap-x-12 lg:gap-y-16">
+            {FIELD_PHOTO_GROUPS.map((group, gi) => {
+              const svc = group.service ? getService(group.service) : undefined;
+              return (
+                <section key={group.id} aria-labelledby={`field-${group.id}`}>
+                  <h2 id={`field-${group.id}`} className="font-display text-2xl font-semibold text-ink-950">
+                    {group.title}
+                  </h2>
+                  <p className="mt-2 max-w-md text-sm leading-relaxed text-ink-600">{group.caption}</p>
+                  <ul className="mt-5 grid grid-cols-2 gap-3">
+                    {group.photos.map((photo) => (
+                      <li key={photo.src} className="overflow-hidden rounded-2xl border border-ink-950/8 bg-paper-50">
+                        {/* Fixed 4:5 box matching the files, so nothing moves
+                            while they load. The first group is above the fold
+                            on desktop and is not lazy-loaded. */}
+                        <Image
+                          src={photo.src}
+                          alt={photo.alt}
+                          width={photo.width}
+                          height={photo.height}
+                          sizes="(min-width: 1280px) 290px, (min-width: 1024px) 22vw, 46vw"
+                          loading={gi === 0 ? "eager" : "lazy"}
+                          className="aspect-[4/5] h-auto w-full object-cover"
+                        />
+                      </li>
+                    ))}
+                  </ul>
+                  {svc && (
+                    <Link
+                      href={`/services/${svc.slug}`}
+                      className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-red-600 hover:text-red-700"
+                    >
+                      {svc.name} service <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                    </Link>
+                  )}
+                </section>
+              );
+            })}
+          </div>
+
+          {items.length > 0 && (
+            <section aria-labelledby="recent-jobs" className="mt-20 border-t border-ink-950/8 pt-14">
+              <h2 id="recent-jobs" className="font-display text-2xl font-semibold text-ink-950">
+                Recent jobs
+              </h2>
+              <div className="mt-6">
+                <GalleryGrid items={items} />
+              </div>
+            </section>
+          )}
+
+          <div className="mt-16 flex flex-col items-start gap-3 rounded-2xl border border-ink-950/8 bg-paper-50 p-6 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-sm text-ink-600">See the same work in motion, or follow along for new photos.</p>
+            <div className="flex flex-wrap gap-3">
+              <Button href="/videos" variant="outline" size="sm" icon={<PlayCircle className="h-4 w-4" aria-hidden="true" />}>
+                Watch the videos
+              </Button>
+              <Button
+                href={BUSINESS.socials.instagram}
+                variant="outline"
+                size="sm"
+                aria-label="TRA on Instagram (@tra.roadside)"
+                icon={<InstagramIcon className="h-4 w-4" aria-hidden="true" />}
+              >
                 @tra.roadside
               </Button>
             </div>
-          )}
+          </div>
         </Container>
       </section>
     </>

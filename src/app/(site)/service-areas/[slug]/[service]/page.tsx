@@ -93,7 +93,8 @@ export default async function CityServicePage({
       <ServiceJsonLd
         name={`${svc.name} in ${city.name}, TX`}
         description={content.metaDescription}
-        slug={`${city.slug}/${svc.slug}`}
+        path={`/service-areas/${city.slug}/${svc.slug}`}
+        areaServed={`${city.name}, TX`}
         priceFrom={svc.priceFrom}
       />
       <FaqJsonLd items={content.faqs} />

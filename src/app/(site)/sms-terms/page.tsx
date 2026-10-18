@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
+import { pageUrls } from "@/lib/seo";
 import { LegalLayout } from "@/components/legal/legal-layout";
 import { BUSINESS } from "@/lib/content/business";
 
 export const metadata: Metadata = {
   title: "SMS Terms and Consent",
+  description:
+    "How TRA's service text messages work: message frequency and cost, how to opt out, and why agreeing to texts is never a condition of getting help.",
   robots: { index: true, follow: true },
-  alternates: { canonical: "/sms-terms" },
+  ...pageUrls("/sms-terms"),
 };
 
 export default function SmsTermsPage() {

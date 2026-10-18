@@ -29,6 +29,7 @@ export function SectionHeading({
   description,
   align = "left",
   tone = "dark",
+  as: Heading = "h2",
   className,
 }: {
   eyebrow?: string;
@@ -36,19 +37,25 @@ export function SectionHeading({
   description?: React.ReactNode;
   align?: "left" | "center";
   tone?: "dark" | "light";
+  /**
+   * Heading level. Sections default to h2; a page's opening hero passes "h1",
+   * because several hub pages rendered their only title through this
+   * component and so shipped with no H1 at all.
+   */
+  as?: "h1" | "h2";
   className?: string;
 }) {
   return (
     <div className={cn("max-w-2xl", align === "center" && "mx-auto text-center", className)}>
       {eyebrow && <Eyebrow tone={tone === "light" ? "light" : "red"}>{eyebrow}</Eyebrow>}
-      <h2
+      <Heading
         className={cn(
           "mt-3 font-display text-3xl font-semibold uppercase tracking-tight text-balance sm:text-4xl",
           tone === "dark" ? "text-ink-950 dark:text-white" : "text-white"
         )}
       >
         {title}
-      </h2>
+      </Heading>
       {description && (
         <p className={cn("mt-4 text-base leading-relaxed sm:text-lg", tone === "dark" ? "text-ink-600 dark:text-ink-200" : "text-white/75")}>
           {description}

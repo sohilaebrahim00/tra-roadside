@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageUrls } from "@/lib/seo";
 import dynamic from "next/dynamic";
 import { Hero } from "@/components/home/hero";
 import { BatteryPromoSection } from "@/components/home/battery-promo-section";
@@ -28,12 +29,12 @@ const HowItWorksSection = dynamic(() => import("@/components/home/how-it-works-s
 /**
  * The home page previously exported no metadata at all, so it inherited the
  * root layout's and was the ONE indexable page on the site with no canonical
- * tag. Only `alternates` is set here: title, description and Open Graph still
- * come from the layout, and the URL resolves against `metadataBase`
- * (env.siteUrl), so it follows the canonical host rather than hard-coding it.
+ * tag. Only the canonical and og:url are set here: title and description still
+ * come from the layout, and both URLs resolve against `metadataBase`
+ * (env.siteUrl), so they follow the canonical host rather than hard-coding it.
  */
 export const metadata: Metadata = {
-  alternates: { canonical: "/" },
+  ...pageUrls("/"),
 };
 
 export default function HomePage() {

@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import { pageUrls } from "@/lib/seo";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { Phone, LifeBuoy, CheckCircle2, ClipboardList, ArrowUpRight } from "lucide-react";
+import { Phone, LifeBuoy, CheckCircle2, ClipboardList, ArrowUpRight, MapPin } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { FaqAccordion } from "@/components/faq/faq-accordion";
@@ -10,6 +11,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd } from "@/components/seo/jso
 import { SERVICES, getService } from "@/lib/content/services";
 import { SERVICE_ICONS } from "@/lib/content/service-icons";
 import { BUSINESS, SERVICE_AREAS } from "@/lib/content/business";
+import { citiesForService } from "@/lib/content/city-service-pages";
 import { env } from "@/lib/env";
 import { CinematicBackgroundVideo } from "@/components/media/cinematic-background-video";
 import { getServiceVideo } from "@/data/media-registry";
@@ -31,7 +33,7 @@ export async function generateMetadata({
   return {
     title: `${service.name} — 24/7 Roadside Assistance`,
     description: `${service.summary} Serving the Dallas–Fort Worth Metroplex, available 24/7. Request help online in under two minutes.`,
-    alternates: { canonical: `/services/${service.slug}` },
+    ...pageUrls(`/services/${service.slug}`),
   };
 }
 
@@ -46,6 +48,8 @@ export default async function ServicePage({
 
   const Icon = SERVICE_ICONS[service.slug];
   const related = SERVICES.filter((s) => s.slug !== service.slug).slice(0, 3);
+  const withPage = new Set(citiesForService(service.slug));
+  const localCities = SERVICE_AREAS.filter((c) => withPage.has(c.slug));
   const faqItems = service.faqs.map((f, i) => ({ id: `${service.slug}-${i}`, category: service.name, question: f.q, answer: f.a }));
 
   return (
@@ -57,7 +61,7 @@ export default async function ServicePage({
           { name: service.name, url: `${env.siteUrl}/services/${service.slug}` },
         ]}
       />
-      <ServiceJsonLd name={service.name} description={service.summary} slug={service.slug} priceFrom={service.priceFrom} />
+      <ServiceJsonLd name={service.name} description={service.summary} path={`/services/${service.slug}`} priceFrom={service.priceFrom} />
       {faqItems.length > 0 && <FaqJsonLd items={service.faqs} />}
 
       <section className="relative overflow-hidden border-b border-ink-950/8 bg-ink-950 py-14 text-white sm:py-20">
@@ -67,7 +71,7 @@ export default async function ServicePage({
             <Icon className="h-8 w-8" aria-hidden="true" />
           </div>
           <div>
-            <p className="text-xs font-semibold uppercase tracking-widest text-red-500">
+            <p className="text-xs font-semibold uppercase tracking-widest text-red-400">
               <Link href="/services" className="hover:underline">Services</Link> / {service.name}
             </p>
             <h1 className="mt-2 font-display text-3xl font-bold uppercase tracking-tight sm:text-4xl">
@@ -115,8 +119,8 @@ export default async function ServicePage({
               Two columns at tablet (~352px) and one on mobile (~358px) stay
               under it too, so these are never upscaled at any breakpoint.
 
-              `unoptimized` because these files are ALREADY the optimised
-              artefact — webp at quality 76 from scripts/optimize-images.mjs.
+              `unoptimized` because these files are ALREADY the optimized
+              artifact — webp at quality 76 from scripts/optimize-images.mjs.
               Left to its own devices next/image emits srcset candidates up to
               3840w from a 612px source, which is exactly the upscaling these
               photographs must never receive.
@@ -191,7 +195,7 @@ export default async function ServicePage({
                 Plano, and Frisco.
               </p>
               <Link href="/service-areas" className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-red-600 hover:text-red-700">
-                View full coverage map <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+                View all service areas <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
               </Link>
             </div>
 
@@ -205,6 +209,38 @@ export default async function ServicePage({
           </aside>
         </Container>
       </section>
+
+      {/*
+        Down-links to this service's City x Service pages, in service-area
+        order. Only cities with an authored page appear, so a service with no
+        local pages renders nothing rather than a list of fallbacks.
+      */}
+      {localCities.length > 0 && (
+        <section className="border-t border-ink-950/8 py-14 sm:py-20 dark:border-white/10">
+          <Container>
+            <h2 className="font-display text-2xl font-semibold text-ink-950 dark:text-white">
+              {service.name} by city
+            </h2>
+            <p className="mt-2 max-w-2xl text-sm text-ink-600 dark:text-ink-200">
+              Local detail for the cities where we have written a page for this service: the roads
+              we cover there, the situations we see most, and the questions drivers ask.
+            </p>
+            <ul className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+              {localCities.map((c) => (
+                <li key={c.slug}>
+                  <Link
+                    href={`/service-areas/${c.slug}/${service.slug}`}
+                    className="flex items-center gap-2 rounded-xl border border-ink-950/8 bg-white px-4 py-3 text-sm font-medium text-ink-700 hover:border-red-600/30 hover:text-red-600 dark:border-white/10 dark:bg-ink-900 dark:text-ink-200"
+                  >
+                    <MapPin className="h-4 w-4 shrink-0 text-ink-400" aria-hidden="true" />
+                    {c.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </Container>
+        </section>
+      )}
 
       <section className="border-t border-ink-950/8 bg-paper-50 py-14 sm:py-20 dark:border-white/10">
         <Container>

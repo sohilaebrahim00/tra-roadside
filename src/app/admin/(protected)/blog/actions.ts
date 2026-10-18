@@ -38,6 +38,9 @@ export async function upsertBlogPost(input: BlogPostInput) {
   revalidatePath("/admin/blog");
   revalidatePath("/blog");
   revalidatePath(`/blog/${input.slug}`);
+  // The sitemap is static too; without this a new post is not listed in it
+  // until the next deploy.
+  revalidatePath("/sitemap.xml");
 }
 
 export async function deleteBlogPost(id: string) {
@@ -46,4 +49,5 @@ export async function deleteBlogPost(id: string) {
   if (error) throw new Error(error.message);
   revalidatePath("/admin/blog");
   revalidatePath("/blog");
+  revalidatePath("/sitemap.xml");
 }

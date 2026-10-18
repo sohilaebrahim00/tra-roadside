@@ -7,7 +7,7 @@ import type { ServiceTypeSlug } from "@/lib/types/domain";
  * prices are not single figures — they are ranges ("$55–65"), rates ("$5 per
  * mile"), or size tiers. It is always a TOTAL the customer pays.
  * Parts-and-labor breakdowns are deliberately never published: the customer
- * wants one number, not an itemisation to audit.
+ * wants one number, not an itemization to audit.
  */
 export interface PriceLine {
   /** Tier name. Omitted when a service has a single published total. */
@@ -144,7 +144,7 @@ export const SERVICES: ServiceContent[] = [
       },
       {
         src: "/images/battery-carry.webp",
-        alt: "A technician in gray overalls carrying a black car battery by its strap handle with a white-gloved hand, walking through a workshop with parts shelving behind him.",
+        alt: "A technician in gray overalls carrying a black car battery by its strap handle with a white-gloved hand, walking through a repair shop with parts shelving behind him.",
         width: 612,
         height: 408,
       },
@@ -264,7 +264,7 @@ export const SERVICES: ServiceContent[] = [
     faqs: [
       {
         q: "What if I don't have a spare?",
-        a: "Select Tire Replacement instead — we supply the tire and fit it on site, priced by wheel size.",
+        a: "Select Tire Replacement instead — we supply the tire and install it on site, priced by wheel size.",
       },
       {
         q: "Can you repair the flat instead of swapping it?",
@@ -284,10 +284,10 @@ export const SERVICES: ServiceContent[] = [
     priceBadge: "From $189",
     priceFrom: 189,
     priceNote: "Tire supplied by TRA. Price is set by wheel size.",
-    summary: "A tire supplied by TRA and fitted at your location, priced by wheel size.",
-    heroLine: "A tire, fitted where you're parked.",
+    summary: "A tire supplied by TRA and installed at your location, priced by wheel size.",
+    heroLine: "A tire, installed where you're parked.",
     problem:
-      "When a tire is damaged beyond a safe repair — a sidewall tear, a blowout, or a puncture too large to plug — it has to be replaced rather than patched. We supply the tire and fit it on site, so you don't need a usable spare in the vehicle.",
+      "When a tire is damaged beyond a safe repair — a sidewall tear, a blowout, or a puncture too large to plug — it has to be replaced rather than patched. We supply the tire and install it on site, so you don't need a usable spare in the vehicle.",
     whileYouWait: [
       "Pull as far from active traffic lanes as possible and turn on hazard lights.",
       "Don't drive further on a flat — it damages the wheel as well as the tire.",
@@ -301,11 +301,11 @@ export const SERVICES: ServiceContent[] = [
     faqs: [
       {
         q: "How is the price decided?",
-        a: "By wheel size. A 15 to 20 inch wheel is $189 and a 21 inch or larger wheel is $230, tire supplied and fitted.",
+        a: "By wheel size. A 15 to 20 inch wheel is $189 and a 21 inch or larger wheel is $230, tire supplied and installed.",
       },
       {
         q: "What if I already have a spare in the car?",
-        a: "Then Flat Tire Change is the cheaper option at $65 — we fit the spare you are already carrying.",
+        a: "Then Flat Tire Change is the cheaper option at $65 — we put on the spare you are already carrying.",
       },
     ],
   },
@@ -353,9 +353,9 @@ export const SERVICES: ServiceContent[] = [
     summary: "A seized or keyless wheel lock removed so the wheel can come off.",
     heroLine: "A wheel lock shouldn't strand you.",
     problem:
-      "Locking wheel nuts need a matching key, and that key is often missing, snapped, or rounded off by the time you actually need it. Without it the wheel can't come off — which blocks a tire change on the roadside.",
+      "Locking lug nuts need a matching key, and that key is often missing, snapped, or rounded off by the time you actually need it. Without it the wheel can't come off — which blocks a tire change on the roadside.",
     whileYouWait: [
-      "Check the glovebox, trunk well, and spare tire compartment for the wheel lock key.",
+      "Check the glove box, trunk well, and spare tire compartment for the wheel lock key.",
       "Stay clear of the roadway while you wait.",
     ],
     whatWeNeed: [

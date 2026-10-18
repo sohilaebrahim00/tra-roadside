@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageUrls } from "@/lib/seo";
 import { ShieldCheck, MapPinned, Clock, Receipt, Phone, LifeBuoy } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -11,7 +12,7 @@ import { AboutStorySection } from "@/components/about/about-story-section";
 export const metadata: Metadata = {
   title: "About TRA",
   description: "TRA is a Dallas–Fort Worth based roadside assistance company providing 24/7 towing, jump starts, tire service, and more with live driver tracking.",
-  alternates: { canonical: "/about" },
+  ...pageUrls("/about"),
 };
 
 const POINTS = [
@@ -28,6 +29,7 @@ export default function AboutPage() {
       <section className="border-b border-ink-950/8 bg-ink-950 py-16 text-white sm:py-20">
         <Container>
           <SectionHeading
+            as="h1"
             eyebrow="About TRA"
             title="Roadside assistance built for the DFW Metroplex"
             description={`${BUSINESS.legalName} provides 24/7 emergency roadside assistance across ${SERVICE_AREAS.length} cities in the Dallas–Fort Worth area — towing, jump starts, flat tire changes, fuel delivery, lockouts, and more.`}

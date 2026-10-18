@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageUrls } from "@/lib/seo";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
@@ -9,7 +10,7 @@ import { env } from "@/lib/env";
 export const metadata: Metadata = {
   title: "FAQs",
   description: "Answers to common questions about TRA roadside assistance — service areas, arrival time, pricing, tracking, and more.",
-  alternates: { canonical: "/faq" },
+  ...pageUrls("/faq"),
 };
 
 export default async function FaqPage() {
@@ -22,7 +23,7 @@ export default async function FaqPage() {
 
       <section className="border-b border-ink-950/8 bg-ink-950 py-16 text-white sm:py-20">
         <Container>
-          <SectionHeading eyebrow="Questions" title="Frequently asked questions" tone="light" />
+          <SectionHeading as="h1" eyebrow="Questions" title="Frequently asked questions" tone="light" />
         </Container>
       </section>
 

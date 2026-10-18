@@ -71,7 +71,10 @@ export const env = {
   twilioFromNumber: readServer("TWILIO_FROM_NUMBER"),
 
   resendApiKey: readServer("RESEND_API_KEY"),
-  resendFromEmail: readServer("RESEND_FROM_EMAIL") || "TRA Dispatch <info@texasroadside-assistance.com>",
+  // txroadsideassistance.com is the domain verified in Resend (2026-10-18).
+  // texasroadside-assistance.com keeps the business mailbox, so replies are
+  // routed there with Reply-To (see notifications/email.ts).
+  resendFromEmail: readServer("RESEND_FROM_EMAIL") || "Texas Roadside Assistance <dispatch@txroadsideassistance.com>",
 
   /** Was NEXT_PUBLIC_APP_URL/APP_URL explicitly set, as opposed to falling back? Used for config validation, not for building links. */
   appUrlExplicitlyConfigured: Boolean(configuredAppUrl),

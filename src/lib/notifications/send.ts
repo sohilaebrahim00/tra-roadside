@@ -5,6 +5,7 @@ import { getFallbackTemplate } from "@/lib/content/notification-templates";
 import { renderTemplate } from "./render";
 import { sendEmail, type SendEmailResult } from "./email";
 import { sendSms, type SendSmsResult } from "./sms";
+import { renderRichEmailHtml, renderRichEmailText, type RichEmail } from "./email-layout";
 import type { NotificationChannel, NotificationEvent } from "@/lib/types/domain";
 
 const RETRY_DELAYS_MS = [500, 1500]; // one immediate-ish retry, then one more before giving up
@@ -31,6 +32,13 @@ export interface NotifyParams {
   requestId?: string;
   channels: Partial<Record<NotificationChannel, string>>; // channel -> recipient
   vars: Record<string, string | number | undefined>;
+  /**
+   * Optional branded layout for the email channel. Receives the rendered
+   * template body (still editable in the admin CMS) and returns the full
+   * message, which is sent as HTML plus a matching plain-text part. SMS is
+   * unaffected.
+   */
+  richEmail?: (renderedBody: string) => RichEmail;
 }
 
 /**
@@ -39,7 +47,7 @@ export interface NotifyParams {
  * event+channel+recipient for the same request) and logging the outcome.
  * In demo mode, "sending" just logs to the server console.
  */
-export async function notify({ event, requestId, channels, vars }: NotifyParams) {
+export async function notify({ event, requestId, channels, vars, richEmail }: NotifyParams) {
   const results: { channel: NotificationChannel; status: "sent" | "failed" | "skipped" }[] = [];
 
   const supabase = isDemoMode() ? null : createAdminSupabaseClient();
@@ -85,9 +93,14 @@ export async function notify({ event, requestId, channels, vars }: NotifyParams)
 
     const body = renderTemplate(template.body, vars);
     const subject = template.subject ? renderTemplate(template.subject, vars) : "";
+    const rich = channel === "email" && richEmail ? richEmail(body) : null;
 
     const sendResult = await sendWithRetry(() =>
-      channel === "email" ? sendEmail(recipient, subject, body) : sendSms(recipient, body)
+      channel === "email"
+        ? rich
+          ? sendEmail(recipient, subject, renderRichEmailText(rich), renderRichEmailHtml(rich))
+          : sendEmail(recipient, subject, body)
+        : sendSms(recipient, body)
     );
 
     if (supabase) {

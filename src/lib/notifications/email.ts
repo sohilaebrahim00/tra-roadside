@@ -25,13 +25,19 @@ const RESEND_PERMANENT_ERROR_NAMES = new Set([
   "restricted_api_key",
 ]);
 
-export async function sendEmail(to: string, subject: string, body: string): Promise<SendEmailResult> {
+/**
+ * `html` is optional: messages built with the branded layout pass both parts,
+ * and everything else still goes out as plain text. When both are sent, the
+ * text part is what text-only clients show and what spam filters compare
+ * against the HTML, so it carries the same content.
+ */
+export async function sendEmail(to: string, subject: string, body: string, html?: string): Promise<SendEmailResult> {
   if (!EMAIL_RE.test(to)) {
     return { ok: false, error: `Invalid email address format: "${to}"`, retryable: false };
   }
 
   if (!env.resendApiKey) {
-    console.info(`[demo email] to=${to} subject="${subject}"\n${body}`);
+    console.info(`[demo email] to=${to} subject="${subject}"${html ? " (html + text)" : ""}\n${body}`);
     return { ok: true, demo: true };
   }
 
@@ -42,6 +48,7 @@ export async function sendEmail(to: string, subject: string, body: string): Prom
       to,
       subject,
       text: body,
+      ...(html ? { html } : {}),
     });
     if (error) {
       const retryable = !RESEND_PERMANENT_ERROR_NAMES.has(error.name);

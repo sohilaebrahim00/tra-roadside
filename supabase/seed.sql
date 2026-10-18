@@ -54,7 +54,7 @@ on conflict (slug) do update set name = excluded.name, sort_order = excluded.sor
 -- Notification templates — one row per (event, channel). {{placeholders}}
 -- are substituted by src/lib/notifications/render.ts.
 insert into notification_templates (event, channel, subject, body) values
-  ('request_received', 'email', 'We received your request — {{requestNumber}}', 'Hi {{customerName}}, your {{serviceName}} request ({{requestNumber}}) has been received and is {{statusLabel}}. Vehicle: {{vehicleText}}. Pickup location: {{pickupAddress}}. Track live status: {{trackingUrl}}. Questions? Call {{supportPhone}}.'),
+  ('request_received', 'email', 'We received your {{serviceName}} request — {{requestNumber}}', 'Hi {{customerName}}, thanks for choosing TRA. Your request is with our local Dallas–Fort Worth dispatch team now. Everything you sent us is below, with your live tracking link.'),
   ('request_received', 'sms', null, 'TRA: {{serviceShort}}{{vehicleClause}} at {{pickupAddress}}. Ref {{requestNumber}}. Track: {{trackingUrl}} Help: {{supportPhone}}. Reply STOP to opt out.'),
   ('request_accepted', 'email', 'Your request has been accepted — {{requestNumber}}', 'Hi {{customerName}}, dispatch has accepted your request and is assigning a driver. Track live status: {{trackingUrl}}. Questions? Call {{supportPhone}}.'),
   ('request_accepted', 'sms', null, 'TRA: Request {{requestNumber}} accepted. Assigning a driver now. {{trackingUrl}} Reply STOP to opt out.'),
@@ -71,8 +71,8 @@ insert into notification_templates (event, channel, subject, body) values
   ('request_canceled', 'email', 'Request canceled — {{requestNumber}}', 'Hi {{customerName}}, your request {{requestNumber}} has been canceled. Call {{supportPhone}} if this was unexpected.'),
   ('request_canceled', 'sms', null, 'TRA: Request {{requestNumber}} was canceled. Call {{supportPhone}} with questions. Reply STOP to opt out.'),
   ('request_updated', 'sms', null, 'TRA: Your request {{requestNumber}} status changed to {{statusLabel}}. Reply STOP to opt out.'),
-  ('dispatch_new_request_email', 'email', 'New request — {{requestNumber}} ({{serviceName}})', E'New roadside request received.\n\nRequest #: {{requestNumber}}\nReceived: {{createdAt}}\nService: {{serviceName}}\n\nCustomer: {{customerName}}\nPhone: {{customerPhone}}\nEmail: {{customerEmail}}\n\nPickup: {{pickupAddress}}\nDestination: {{destinationAddress}}\n\nVehicle: {{vehicleDetails}}\nNotes: {{customerNotes}}\n\nCustomer tracking link: {{trackingUrl}}\nManage this request: {{dispatchUrl}}'),
-  ('dispatch_new_request_sms', 'sms', null, 'TRA NEW REQUEST {{requestNumber}}: {{customerName}} ({{customerPhone}}) needs {{serviceShort}}{{vehicleClause}} at {{pickupAddress}}. {{dispatchUrl}}'),
+  ('dispatch_new_request_email', 'email', 'NEW {{serviceName}} — {{requestNumber}}{{vehicleClause}}', 'New {{serviceName}} request from {{customerName}}. Call to confirm the checklist below, then assign a driver.'),
+  ('dispatch_new_request_sms', 'sms', null, 'TRA NEW {{requestNumber}}: {{serviceShort}}{{vehicleClause}}. {{customerName}} {{customerPhone}}. At {{pickupAddress}}. Map: {{mapsUrl}} Open: {{dispatchUrl}}'),
   ('dispatch_unaccepted_timeout', 'email', 'Unaccepted request — {{requestNumber}}', 'Request {{requestNumber}} has not been accepted yet. Review: {{dispatchUrl}}'),
   ('dispatch_driver_issue', 'email', 'Driver reported an issue — {{requestNumber}}', 'Driver {{driverName}} reported an issue on request {{requestNumber}}: {{issueNote}}'),
   ('dispatch_request_canceled', 'email', 'Request canceled — {{requestNumber}}', 'Request {{requestNumber}} was canceled.'),

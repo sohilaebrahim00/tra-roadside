@@ -7,6 +7,7 @@ import { isRateLimited } from "@/lib/utils/rate-limit";
 import { encodeDemoToken } from "@/lib/demo/demo-token";
 import { notify } from "@/lib/notifications/send";
 import { firstNameOf } from "@/lib/notifications/vars";
+import { customerConfirmationEmail, dispatchAlertEmail, snapshotFromInput, type RequestSnapshot } from "@/lib/notifications/request-emails";
 import { getService } from "@/lib/content/services";
 import { BUSINESS } from "@/lib/content/business";
 import { STATUS_META } from "@/lib/types/domain";
@@ -66,6 +67,8 @@ function buildDispatchVars(input: CreateRequestInput, service: ServiceContent, r
     customerNotes: input.notes || "None",
     trackingUrl,
     dispatchUrl,
+    // ASCII, so the dispatch SMS stays GSM-7: tapping it opens the pin in Maps.
+    mapsUrl: `https://www.google.com/maps/search/?api=1&query=${input.pickupLat},${input.pickupLng}`,
   };
 }
 
@@ -76,12 +79,13 @@ function buildDispatchVars(input: CreateRequestInput, service: ServiceContent, r
  * per channel) so a failure on one never gets conflated with the other in
  * notification_logs, and so each is dedup'd under its own event name.
  */
-async function notifyDispatch(vars: ReturnType<typeof buildDispatchVars>, requestId?: string) {
+async function notifyDispatch(vars: ReturnType<typeof buildDispatchVars>, snapshot: RequestSnapshot, requestId?: string) {
   await notify({
     event: "dispatch_new_request_email",
     requestId,
     channels: { email: env.dispatchEmail },
     vars,
+    richEmail: (intro) => dispatchAlertEmail(snapshot, intro),
   });
 
   if (dispatchPhoneE164) {
@@ -136,6 +140,8 @@ export async function POST(req: NextRequest) {
       createdAt: new Date().toISOString(),
     });
     const trackingUrl = buildUrl(`/t/${token}`);
+    const dispatchUrl = buildUrl("/admin/requests");
+    const snapshot = snapshotFromInput(input, service, { requestNumber, trackingUrl, dispatchUrl });
 
     await notify({
       event: "request_received",
@@ -152,12 +158,13 @@ export async function POST(req: NextRequest) {
         supportPhone: BUSINESS.phoneDisplay,
         trackingUrl,
       },
+      richEmail: (intro) => customerConfirmationEmail(snapshot, intro),
     });
 
     // No site_settings/service_requests table exists in demo mode (no
     // database at all) — dispatch still gets notified at the configured
     // DISPATCH_EMAIL/DISPATCH_PHONE, just without a real admin request ID to link to.
-    await notifyDispatch(buildDispatchVars(input, service, requestNumber, buildUrl("/admin/requests"), trackingUrl));
+    await notifyDispatch(buildDispatchVars(input, service, requestNumber, dispatchUrl, trackingUrl), snapshot);
 
     return NextResponse.json({
       requestNumber,
@@ -247,6 +254,7 @@ export async function POST(req: NextRequest) {
 
     const trackingUrl = buildUrl(`/t/${token}`);
     const dispatchUrl = buildUrl(`/admin/requests/${request.id}`);
+    const snapshot = snapshotFromInput(input, service, { requestNumber, trackingUrl, dispatchUrl });
 
     await notify({
       event: "request_received",
@@ -264,9 +272,10 @@ export async function POST(req: NextRequest) {
         supportPhone: BUSINESS.phoneDisplay,
         trackingUrl,
       },
+      richEmail: (intro) => customerConfirmationEmail(snapshot, intro),
     });
 
-    await notifyDispatch(buildDispatchVars(input, service, requestNumber, dispatchUrl, trackingUrl), request.id);
+    await notifyDispatch(buildDispatchVars(input, service, requestNumber, dispatchUrl, trackingUrl), snapshot, request.id);
 
     return NextResponse.json({
       requestNumber,

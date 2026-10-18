@@ -122,6 +122,8 @@ export function SiteFooter() {
           <ul className="mt-4 space-y-2.5 text-sm text-white/70">
             <li><Link href="/about" className="hover:text-white">About TRA</Link></li>
             <li><Link href="/how-it-works" className="hover:text-white">How It Works</Link></li>
+            <li><Link href="/pricing" className="hover:text-white">Pricing</Link></li>
+            <li><Link href="/guides" className="hover:text-white">Battery &amp; Roadside Guides</Link></li>
             <li><Link href="/gallery" className="hover:text-white">Gallery</Link></li>
             <li><Link href="/videos" className="hover:text-white">Videos</Link></li>
             <li><Link href="/blog" className="hover:text-white">Blog</Link></li>

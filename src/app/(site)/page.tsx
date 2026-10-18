@@ -43,6 +43,9 @@ export default function HomePage() {
       <Hero />
       <BatteryPromoSection />
       <TrustStrip />
+      {/* Social proof directly under the trust strip: live Places data when
+          configured, otherwise the verbatim snapshot from the listing. */}
+      <GoogleReviewsSection />
       <SignatureWordSection />
       <ServicesSection />
       <RoadsideRevealSection />
@@ -52,11 +55,6 @@ export default function HomePage() {
       <ServiceAreasSection />
       <GallerySection />
       <VideoSection />
-      {/* Renders null unless GOOGLE_PLACE_ID + the server Maps key are set AND
-          Google returns real reviews. VideoSection and FaqPreviewSection both
-          carry their own vertical padding, so the page closes cleanly when it
-          is absent. */}
-      <GoogleReviewsSection />
       <FaqPreviewSection />
       <FinalCtaSection />
     </>

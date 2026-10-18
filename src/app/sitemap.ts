@@ -5,6 +5,7 @@ import { SERVICE_AREAS } from "@/lib/content/business";
 import { getBlogPosts } from "@/lib/data/blog";
 import { cityServicePairs } from "@/lib/content/city-service-pages";
 import { LOCATION_HUBS } from "@/lib/content/location-hubs";
+import { GUIDES } from "@/lib/content/guides";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = env.siteUrl;
@@ -14,6 +15,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes = [
     "",
     "/services",
+    "/pricing",
+    "/guides",
     "/service-areas",
     "/how-it-works",
     "/about",
@@ -70,6 +73,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
+  const guideRoutes = GUIDES.map((g) => ({
+    url: `${base}/guides/${g.slug}`,
+    lastModified: new Date(`${g.updated}T12:00:00Z`),
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
   const postRoutes = posts.map((p) => ({
     url: `${base}/blog/${p.slug}`,
     lastModified: now,
@@ -83,6 +93,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...areaRoutes,
     ...cityServiceRoutes,
     ...locationHubRoutes,
+    ...guideRoutes,
     ...postRoutes,
   ];
 }

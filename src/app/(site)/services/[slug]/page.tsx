@@ -12,6 +12,7 @@ import { SERVICES, getService } from "@/lib/content/services";
 import { SERVICE_ICONS } from "@/lib/content/service-icons";
 import { BUSINESS, SERVICE_AREAS } from "@/lib/content/business";
 import { citiesForService } from "@/lib/content/city-service-pages";
+import { guidesForService } from "@/lib/content/guides";
 import { env } from "@/lib/env";
 import { CinematicBackgroundVideo } from "@/components/media/cinematic-background-video";
 import { getServiceVideo } from "@/data/media-registry";
@@ -49,6 +50,7 @@ export default async function ServicePage({
   const Icon = SERVICE_ICONS[service.slug];
   const related = SERVICES.filter((s) => s.slug !== service.slug).slice(0, 3);
   const withPage = new Set(citiesForService(service.slug));
+  const guides = guidesForService(service.slug);
   const localCities = SERVICE_AREAS.filter((c) => withPage.has(c.slug));
   const faqItems = service.faqs.map((f, i) => ({ id: `${service.slug}-${i}`, category: service.name, question: f.q, answer: f.a }));
 
@@ -137,6 +139,33 @@ export default async function ServicePage({
                     unoptimized
                     className="h-auto w-full"
                   />
+                </li>
+              ))}
+            </ul>
+          </Container>
+        </section>
+      )}
+
+      {/* Guides that answer the questions people ask before booking this
+          service. Data-driven from guides.ts, so it renders only where a
+          guide exists. */}
+      {guides.length > 0 && (
+        <section className="border-b border-ink-950/8 py-12 sm:py-14 dark:border-white/10">
+          <Container>
+            <h2 className="font-display text-2xl font-semibold text-ink-950 dark:text-white">Before you book: guides</h2>
+            <ul className="mt-5 grid gap-4 md:grid-cols-3">
+              {guides.map((g) => (
+                <li key={g.slug}>
+                  <Link
+                    href={`/guides/${g.slug}`}
+                    className="group flex h-full flex-col rounded-2xl border border-ink-950/10 bg-white p-5 transition-colors hover:border-red-600/30 dark:border-white/10 dark:bg-ink-900"
+                  >
+                    <span className="text-xs font-semibold uppercase tracking-widest text-red-600">{g.topic}</span>
+                    <span className="mt-2 font-display text-lg font-semibold text-ink-950 group-hover:text-red-600 dark:text-white">{g.h1}</span>
+                    <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-red-600">
+                      Read <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                    </span>
+                  </Link>
                 </li>
               ))}
             </ul>

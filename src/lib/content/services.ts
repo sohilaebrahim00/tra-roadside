@@ -109,9 +109,19 @@ export const SERVICES: ServiceContent[] = [
     priceBadge: "Battery from $189",
     priceFrom: 189,
     priceNote: "Battery only — installation is quoted by dispatch for your vehicle.",
-    // All six are 612x408 native. The 408x612 portrait is not listed here —
-    // it has its own vertical slot in the home page battery section.
+    // First is the business's own job photo (1200x800, October 2026) and is
+    // what every battery page shows as its hero. It also shows why
+    // installation is quoted: this battery sits under the rear seat, not under
+    // the hood. The six after it are 612x408 native, and their license is
+    // still to be confirmed by the owner. The home page battery section uses
+    // its own portrait crop of the same job photo.
     photos: [
+      {
+        src: "/images/battery-under-seat.webp",
+        alt: "A car battery set into the floor under the rear seat of a blue vehicle, with the seat cushion lifted, the red positive terminal cover visible, and a ratchet resting on a shop towel beside it.",
+        width: 1200,
+        height: 800,
+      },
       {
         src: "/images/battery-install.webp",
         alt: "A technician in a blue jacket tightening a battery terminal with a wrench under the open hood of a silver car.",
@@ -247,6 +257,35 @@ export const SERVICES: ServiceContent[] = [
     priceLines: [{ amount: "$65", note: "using the spare carried in your vehicle" }],
     priceBadge: "$65",
     priceFrom: 65,
+    // The business's own job photos (October 2026), 1200x800. The first is
+    // the hero on every flat tire page. The license plate in the freeway
+    // photo was blurred before export.
+    photos: [
+      {
+        src: "/images/tire-spare-lot.webp",
+        alt: "A gray sedan in a parking space with a compact spare tire on the ground, a floor jack, a cordless impact wrench and a tool bag laid out beside its rear wheel.",
+        width: 1200,
+        height: 800,
+      },
+      {
+        src: "/images/tire-shoulder-night.webp",
+        alt: "A silver SUV on a freeway shoulder at night with its rear wheel removed and a floor jack under the body, beside a striped roadside barrier.",
+        width: 1200,
+        height: 800,
+      },
+      {
+        src: "/images/tire-spare-lugs.webp",
+        alt: "A gloved hand running a cordless impact wrench on the lug nuts of a steel spare wheel.",
+        width: 1200,
+        height: 800,
+      },
+      {
+        src: "/images/tire-wheel-tools.webp",
+        alt: "The front wheel of a white electric sedan with a cordless impact wrench and a floor jack set down beside it.",
+        width: 1200,
+        height: 800,
+      },
+    ],
     summary: "Fast, safe swap to the spare tire carried in your vehicle.",
     heroLine: "Flat tire, back on the road.",
     problem:

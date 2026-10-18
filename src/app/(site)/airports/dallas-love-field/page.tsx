@@ -11,6 +11,7 @@ import { getService } from "@/lib/content/services";
 import { getLocalArea } from "@/lib/content/local-data";
 import { SERVICE_ICONS } from "@/lib/content/service-icons";
 import { env } from "@/lib/env";
+import { DEFAULT_SHARE_IMAGE } from "@/lib/seo";
 
 /**
  * Dallas Love Field — a LOCATION hub, not a service page.
@@ -48,6 +49,7 @@ export const metadata: Metadata = {
       "Car won't start at Dallas Love Field? TRA covers Love Field as part of Dallas — jump starts, batteries, lockouts and flat tires.",
     url: PATH,
     type: "website",
+    images: [DEFAULT_SHARE_IMAGE],
   },
 };
 

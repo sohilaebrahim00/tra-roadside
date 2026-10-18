@@ -22,9 +22,9 @@ import type { ServiceContent } from "@/lib/content/services";
  * exactly what makes these heroes too tall to scroll past.
  *
  * `unoptimized` + explicit width/height + a capped `sizes` follows the
- * convention already set on /services/[slug]: these webp files are the
- * optimized artifact at 612px wide, and next/image would otherwise emit srcset
- * candidates far wider than the source and upscale the photograph.
+ * convention already set on /services/[slug]: these webp files are already the
+ * optimized artifact (612px or 1200px wide), and next/image would otherwise
+ * emit srcset candidates far wider than the source and upscale the photograph.
  */
 export function HeroVisual({ svc }: { svc: ServiceContent }) {
   const photo = svc.photos?.[0];

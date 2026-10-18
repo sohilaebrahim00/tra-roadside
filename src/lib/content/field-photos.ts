@@ -1,10 +1,16 @@
 import type { ServiceTypeSlug } from "@/lib/types/domain";
 
 /**
- * Stills from the business's own video footage, for the gallery and the home
- * page gallery preview.
+ * The business's own job photos and stills from its video footage, for the
+ * gallery and the home page gallery preview.
  *
- * PROVENANCE
+ * PROVENANCE — JOB PHOTOS (battery and the two tire groups)
+ * Phone photos supplied by the owner in October 2026. The license plate and
+ * dealer frame on the freeway-shoulder SUV were pixelated before export, and
+ * the files carry no EXIF or location data. A fifth supplied photo was left
+ * out: it is a crop of the same footage as field-jump-start-booster.webp.
+ *
+ * PROVENANCE — FOOTAGE STILLS (every other group)
  * Each frame was pulled from a clip in /media-source — the same footage the
  * site already plays as its home hero, letter-mask and video-page clips — and
  * cropped to 4:5. No stock, competitor or generated imagery. Note for the
@@ -18,8 +24,8 @@ import type { ServiceTypeSlug } from "@/lib/types/domain";
  * customer jobs: the footage does not establish where or for whom it was shot,
  * so captions describe the service shown and never name a city or a customer.
  *
- * All files are 1080x1350 webp (quality 78); next/image derives the smaller
- * sizes from `sizes` on each slot.
+ * All files are 4:5 webp (quality 78), most at 1080x1350; next/image derives
+ * the smaller sizes from `sizes` on each slot.
  */
 export interface FieldPhoto {
   src: string;
@@ -41,6 +47,66 @@ const W = 1080;
 const H = 1350;
 
 export const FIELD_PHOTO_GROUPS: FieldPhotoGroup[] = [
+  {
+    id: "battery",
+    title: "Battery replacement",
+    caption: "Not every battery is under the hood. This one sits under the rear seat, which is why installation is quoted for each vehicle.",
+    service: "battery-replacement",
+    photos: [
+      {
+        src: "/images/field/field-battery-under-seat.webp",
+        alt: "The rear seat area of a blue vehicle with the seat cushion lifted, showing a car battery set into the floor beside a blue body rail, with a ratchet and a shop towel nearby.",
+        width: W,
+        height: H,
+      },
+      {
+        src: "/images/field/field-battery-under-seat-detail.webp",
+        alt: "Close-up of a car battery mounted in the floor under a rear seat, with a red cover over the positive terminal.",
+        width: 560,
+        height: 700,
+      },
+    ],
+  },
+  {
+    id: "tire-roadside",
+    title: "Flat tires, wherever they happen",
+    caption: "A freeway shoulder after dark or a parking lot in daylight: the spare goes on where the car stopped.",
+    service: "flat-tire-change",
+    photos: [
+      {
+        src: "/images/field/field-tire-shoulder-night.webp",
+        alt: "A silver SUV on a freeway shoulder at night with its rear wheel removed and a floor jack under the body, with city lights and traffic behind.",
+        width: W,
+        height: H,
+      },
+      {
+        src: "/images/field/field-tire-spare-lot.webp",
+        alt: "A gray sedan in a parking space with a compact spare tire on the ground, a floor jack and a cordless impact wrench beside its rear wheel.",
+        width: 960,
+        height: 1200,
+      },
+    ],
+  },
+  {
+    id: "tire-spare",
+    title: "Putting the spare on",
+    caption: "The spare goes on and every lug nut is tightened before you drive away.",
+    service: "flat-tire-change",
+    photos: [
+      {
+        src: "/images/field/field-tire-spare-lugs.webp",
+        alt: "A gloved hand running a cordless impact wrench on the lug nuts of a steel spare wheel.",
+        width: W,
+        height: H,
+      },
+      {
+        src: "/images/field/field-tire-wheel-tools.webp",
+        alt: "The front wheel of a white electric sedan with a cordless impact wrench and a floor jack set down beside it.",
+        width: W,
+        height: H,
+      },
+    ],
+  },
   {
     id: "jump-start",
     title: "Jump starts",
@@ -122,7 +188,12 @@ export const FIELD_PHOTO_GROUPS: FieldPhotoGroup[] = [
   },
 ];
 
-/** One photo per group, for a compact four-up preview. */
+/**
+ * Four photos for the compact four-up preview on the home page: one per
+ * service, battery first, so the preview never shows two tire shots.
+ */
+const PREVIEW_GROUPS = ["battery", "tire-roadside", "jump-start", "fuel"];
+
 export function fieldPhotoPreview(): FieldPhoto[] {
-  return FIELD_PHOTO_GROUPS.map((g) => g.photos[0]);
+  return PREVIEW_GROUPS.map((id) => FIELD_PHOTO_GROUPS.find((g) => g.id === id)!.photos[0]);
 }

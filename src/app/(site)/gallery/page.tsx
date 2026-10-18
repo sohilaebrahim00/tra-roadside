@@ -18,14 +18,14 @@ import { FIELD_PHOTO_GROUPS } from "@/lib/content/field-photos";
 export const metadata: Metadata = {
   title: "Gallery",
   description:
-    "Photos of TRA's crew and equipment at work across the Dallas–Fort Worth Metroplex: jump starts, tire service, fuel delivery and the gear our drivers carry.",
+    "Photos of TRA at work across the Dallas–Fort Worth Metroplex: battery replacement, flat tires, jump starts, fuel delivery and the gear our drivers carry.",
   ...pageUrls("/gallery"),
 };
 
 /**
  * Two sources, kept separate on purpose:
  *
- *   1. FIELD_PHOTO_GROUPS — stills from the business's own footage, grouped by
+ *   1. FIELD_PHOTO_GROUPS — the business's own job photos and stills from its footage, grouped by
  *      the service they show. Always present, so the page is never an empty
  *      "coming soon" box. Captioned as the crew and equipment at work, never
  *      as named customer jobs (see field-photos.ts).
@@ -45,7 +45,7 @@ export default async function GalleryPage() {
             as="h1"
             eyebrow="Gallery"
             title="TRA at work across DFW"
-            description="Our crew and the equipment they bring: jump starts, tire service and fuel delivery, shot from our own footage."
+            description="Our crew and the equipment they bring: battery replacement, flat tires, jump starts and fuel delivery, from our own job photos and footage."
             tone="light"
           />
         </Container>

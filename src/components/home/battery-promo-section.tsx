@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { BatteryFull, ShieldCheck, LifeBuoy, Check } from "lucide-react";
+import Link from "next/link";
+import { BatteryFull, ShieldCheck, LifeBuoy, Check, ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { getService } from "@/lib/content/services";
@@ -35,11 +36,13 @@ export function BatteryPromoSection() {
               We bring the battery to you and install it on the spot — no tow, no waiting room.
             </p>
 
+            {/* Both strings come from SERVICES, so a price change reaches this
+                section without anyone remembering it exists. */}
             <div className="mt-7 max-w-md rounded-2xl border border-white/15 bg-white/5 p-5">
-              <p className="font-display text-4xl font-bold text-white">Battery from $189</p>
-              <p className="mt-1.5 text-sm text-white/70">
-                Battery only — installation quoted by dispatch
-              </p>
+              <p className="font-display text-4xl font-bold text-white">{service.priceBadge}</p>
+              {service.priceLines[0]?.note && (
+                <p className="mt-1.5 text-sm text-white/70">{service.priceLines[0].note}</p>
+              )}
             </div>
 
             <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/80">
@@ -51,9 +54,13 @@ export function BatteryPromoSection() {
                 <Check className="h-4 w-4 shrink-0 text-red-500" aria-hidden="true" />
                 Installed at your location
               </li>
+              <li className="flex items-center gap-1.5">
+                <Check className="h-4 w-4 shrink-0 text-red-500" aria-hidden="true" />
+                Full price confirmed before a driver sets off
+              </li>
             </ul>
 
-            <div className="mt-7">
+            <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-4">
               <Button
                 href={`/request?service=${service.slug}`}
                 size="lg"
@@ -61,34 +68,45 @@ export function BatteryPromoSection() {
               >
                 Request a Battery
               </Button>
+              <Link
+                href={`/services/${service.slug}`}
+                className="inline-flex items-center gap-1 text-sm font-semibold text-white/85 underline-offset-4 hover:text-white hover:underline"
+              >
+                How battery replacement works
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
             </div>
           </div>
 
           {/*
-            The one portrait in the set (408x612 native), given the one
-            genuinely vertical slot on the site rather than being cropped into
-            a landscape box. Capped at max-w-102 so it renders at exactly its
-            native width on desktop and narrower — never wider — below that.
+            The business's own job photo, cropped to 2:3 for the one genuinely
+            vertical slot on the site. Capped at max-w-102 (408px); the file is
+            816px wide, so it stays sharp on 2x screens, and next/image serves
+            smaller widths to phones.
 
-            `unoptimized` because the file is already the optimized artifact
-            (webp q76 from scripts/optimize-images.mjs); without it next/image
-            would emit srcset candidates far wider than the 408px source.
+            The caption is the point of the picture. A battery under the rear
+            seat is why installation is quoted per vehicle rather than
+            published as one figure.
 
             Not marked priority: the hero above it already holds the priority
             slot for its background video, and a second preload would compete
             with the actual LCP element for bandwidth.
           */}
-          <div className="mx-auto w-full max-w-102 lg:mx-0">
+          <figure className="mx-auto w-full max-w-102 lg:mx-0">
             <Image
-              src="/images/battery-trunk-portrait.webp"
-              alt="A technician in a blue jacket loosening the terminal on a white car battery sitting in an open car trunk, with a pair of work gloves resting beside it."
-              width={408}
-              height={612}
+              src="/images/battery-under-seat-portrait.webp"
+              alt="A car battery set into the floor under the rear seat of a blue vehicle, with the seat cushion lifted and the red positive terminal cover visible."
+              width={816}
+              height={1224}
+              sizes="(min-width: 448px) 408px, calc(100vw - 2rem)"
               loading="lazy"
-              unoptimized
               className="h-auto w-full rounded-3xl border border-white/15"
             />
-          </div>
+            <figcaption className="mt-3 text-sm leading-relaxed text-white/70">
+              Not every battery sits under the hood. This one is under the rear seat, which is why
+              installation is quoted for your vehicle before anyone sets off.
+            </figcaption>
+          </figure>
         </div>
       </Container>
     </section>

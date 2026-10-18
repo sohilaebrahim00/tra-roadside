@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { pageUrls } from "@/lib/seo";
+import { pageUrls, shareImageFor } from "@/lib/seo";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -33,7 +33,7 @@ export async function generateMetadata({
   return {
     title: `${service.name} — 24/7 Roadside Assistance`,
     description: `${service.summary} Serving the Dallas–Fort Worth Metroplex, available 24/7. Request help online in under two minutes.`,
-    ...pageUrls(`/services/${service.slug}`),
+    ...pageUrls(`/services/${service.slug}`, shareImageFor(service.slug)),
   };
 }
 

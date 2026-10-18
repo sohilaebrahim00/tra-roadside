@@ -13,6 +13,7 @@ import { getService } from "@/lib/content/services";
 import { getLocalArea } from "@/lib/content/local-data";
 import { cityServicePairs, getCityServicePage, servicesForCity } from "@/lib/content/city-service-pages";
 import { env } from "@/lib/env";
+import { shareImageFor } from "@/lib/seo";
 
 /**
  * City x Service landing pages, nested under the existing city hubs so no
@@ -54,6 +55,7 @@ export async function generateMetadata({
       description: content.metaDescription,
       url,
       type: "website",
+      images: [shareImageFor(service)],
     },
   };
 }

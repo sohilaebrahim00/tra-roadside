@@ -1,6 +1,7 @@
 import "server-only";
 import { Resend } from "resend";
 import { env } from "@/lib/env";
+import { BUSINESS } from "@/lib/content/business";
 
 export interface SendEmailResult {
   ok: boolean;
@@ -45,6 +46,10 @@ export async function sendEmail(to: string, subject: string, body: string, html?
     const resend = new Resend(env.resendApiKey);
     const { data, error } = await resend.emails.send({
       from: env.resendFromEmail,
+      // Replies always reach the business's real mailbox, whichever verified
+      // domain RESEND_FROM_EMAIL sends from. txroadsideassistance.com has no
+      // MX record, so a reply to an address on it would bounce.
+      replyTo: BUSINESS.email,
       to,
       subject,
       text: body,

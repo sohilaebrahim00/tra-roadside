@@ -18,12 +18,12 @@ export function SiteHeader() {
           <LogoLockup onDark priority />
         </Link>
 
-        <nav aria-label="Primary" className="hidden items-center gap-7 lg:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-5 lg:flex xl:gap-7">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-white/75 transition-colors hover:text-white"
+              className="whitespace-nowrap text-sm font-medium text-white/75 transition-colors hover:text-white"
             >
               {link.label}
             </Link>
@@ -33,12 +33,12 @@ export function SiteHeader() {
         <div className="hidden items-center gap-3 md:flex">
           <a
             href={BUSINESS.phoneHref}
-            className="flex items-center gap-2 text-sm font-semibold text-white"
+            className="flex items-center gap-2 whitespace-nowrap text-sm font-semibold text-white lg:hidden xl:flex"
           >
             <Phone className="h-4 w-4 text-red-500" aria-hidden="true" />
             {BUSINESS.phoneDisplay}
           </a>
-          <Button href="/request" size="md">
+          <Button href="/request" size="md" className="whitespace-nowrap">
             Request Help
           </Button>
         </div>

@@ -9,6 +9,7 @@ import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { SERVICES, type ServiceContent } from "@/lib/content/services";
 import { SERVICE_ICONS } from "@/lib/content/service-icons";
+import { SERVICE_PROBLEM } from "@/lib/content/service-problems";
 import { gsap, ScrollTrigger, registerGsap } from "@/lib/gsap/register";
 import { PricingDisclaimer } from "@/components/ui/pricing-disclaimer";
 import { BrandPattern } from "@/components/brand/brand-pattern";
@@ -29,20 +30,6 @@ import { BrandPattern } from "@/components/brand/brand-pattern";
  * show a plain branded tile and pick up a photo automatically when one is
  * added to SERVICES.
  */
-
-/** The situation a driver recognizes, shown above each service's name. */
-const PROBLEM: Record<string, string> = {
-  "battery-replacement": "Need a new battery",
-  "jump-start": "Car won't start",
-  lockout: "Locked out",
-  "tire-repair-plug-patch": "Nail or slow leak",
-  "flat-tire-change": "Flat tire",
-  "tire-replacement": "Tire too damaged",
-  "stuck-screw-in-tire": "Screw in the tire",
-  "rim-lock-removal": "Lost wheel lock key",
-  "fuel-delivery": "Out of gas",
-  towing: "Need a tow",
-};
 
 function cardPhoto(s: ServiceContent) {
   return s.photos?.[0];
@@ -147,7 +134,7 @@ export function ServicesSection() {
                         start" before they know the name of the service. */}
                     <h3 className="leading-snug">
                       <span className="flex items-start justify-between gap-2 font-display text-[1.02rem] font-semibold text-ink-950 group-hover:text-red-600 sm:text-lg">
-                        {PROBLEM[service.slug] ?? service.shortName}
+                        {SERVICE_PROBLEM[service.slug] ?? service.shortName}
                         <ArrowUpRight className="mt-1 hidden h-4 w-4 shrink-0 text-ink-400 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-red-600 sm:block" aria-hidden="true" />
                       </span>
                       <span className="mt-0.5 block text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-red-600 sm:text-xs">

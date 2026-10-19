@@ -8,7 +8,7 @@ import { BUSINESS, SERVICE_AREAS } from "@/lib/content/business";
 import { getService } from "@/lib/content/services";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 import { CinematicBackgroundVideo } from "@/components/media/cinematic-background-video";
-import { RouteGraphic } from "./route-graphic";
+import { HeroQuickRequest } from "./hero-quick-request";
 import { gsap } from "@/lib/gsap/register";
 
 /**
@@ -17,7 +17,7 @@ import { gsap } from "@/lib/gsap/register";
  *
  * The backdrop is the business's own footage as a background video (the
  * owner preferred it to a still photo), and on desktop the right column holds
- * the live-route card.
+ * the quick-request card (hero-quick-request.tsx).
  *
  * The facts row reads its numbers from the content sources (SERVICE_AREAS,
  * SERVICES), so it cannot drift from the rest of the site, and adds no claim
@@ -110,7 +110,7 @@ export function Hero() {
 
           <dl
             ref={factsRef}
-            className="mt-7 grid max-w-2xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:mt-9 sm:grid-cols-4"
+            className="mt-7 grid max-w-2xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:mt-9 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4"
           >
             <Fact label="Dispatch" value="24/7" />
             <Fact label="DFW cities" value={String(SERVICE_AREAS.length)} />
@@ -119,19 +119,9 @@ export function Hero() {
           </dl>
         </div>
 
-        {/* Desktop: the live-route card, with the 24/7 badge floating on it. */}
-        <div ref={graphicRef} className="relative mx-auto hidden w-full max-w-md lg:block lg:max-w-none">
-          <div aria-hidden="true" className="absolute -inset-6 rounded-[2.5rem] bg-red-600/15 blur-3xl" />
-          <div className="relative">
-            <RouteGraphic />
-          </div>
-          <span className="absolute -left-4 top-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-ink-950/85 px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-white shadow-lg backdrop-blur">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400 opacity-60 motion-reduce:animate-none" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-400" />
-            </span>
-            24/7 Dispatch
-          </span>
+        {/* Desktop: the quick-request card over the video. */}
+        <div ref={graphicRef} className="relative hidden lg:block">
+          <HeroQuickRequest />
         </div>
       </div>
     </section>

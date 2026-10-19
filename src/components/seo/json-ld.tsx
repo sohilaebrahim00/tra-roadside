@@ -25,14 +25,17 @@ export function OrganizationJsonLd() {
     logo: `${env.siteUrl}/brand/tra-logo.png`,
     telephone: BUSINESS.phoneDisplay,
     email: BUSINESS.email,
-    // TRA is a service-area business with no published street address. The
-    // correct schema shape is geo + areaServed and NO PostalAddress: an
-    // invented address here would be worse than omitting one, because search
-    // engines would surface it to customers as a real place they could visit.
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: BUSINESS.geo.latitude,
-      longitude: BUSINESS.geo.longitude,
+    // The street address exactly as on the Google Business Profile (owner's
+    // decision, 2026-10-19), so the site and the listing agree. No geo
+    // coordinates: Google places the business from this address, and the old
+    // service-area center sat about 12 km away from it.
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: BUSINESS.address.street,
+      addressLocality: BUSINESS.address.city,
+      addressRegion: BUSINESS.address.region,
+      postalCode: BUSINESS.address.postalCode,
+      addressCountry: BUSINESS.address.country,
     },
     areaServed: SERVICE_AREAS.map((c) => ({ "@type": "City", name: c.name })),
     hasMap: BUSINESS.googleListingUrl,

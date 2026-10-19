@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { BUSINESS } from "@/lib/content/business";
 import { env } from "@/lib/env";
+import { HeroBackdrop } from "@/components/brand/hero-backdrop";
 
 export const metadata: Metadata = {
   title: "How It Works",
@@ -46,7 +47,8 @@ export default function HowItWorksPage() {
   return (
     <>
       <BreadcrumbJsonLd items={[{ name: "Home", url: env.siteUrl }, { name: "How It Works", url: `${env.siteUrl}/how-it-works` }]} />
-      <section className="border-b border-ink-950/8 bg-ink-950 py-16 text-white sm:py-20">
+      <section className="relative isolate overflow-hidden border-b border-ink-950/8 bg-ink-950 py-16 text-white sm:py-20">
+        <HeroBackdrop />
         <Container>
           <SectionHeading
             as="h1"

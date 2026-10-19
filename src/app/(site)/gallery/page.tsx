@@ -14,6 +14,7 @@ import { InstagramIcon } from "@/components/brand/social-icons";
 import { BUSINESS } from "@/lib/content/business";
 import { getService } from "@/lib/content/services";
 import { FIELD_PHOTO_GROUPS } from "@/lib/content/field-photos";
+import { HeroBackdrop } from "@/components/brand/hero-backdrop";
 
 export const metadata: Metadata = {
   title: "Gallery",
@@ -39,7 +40,8 @@ export default async function GalleryPage() {
   return (
     <>
       <BreadcrumbJsonLd items={[{ name: "Home", url: env.siteUrl }, { name: "Gallery", url: `${env.siteUrl}/gallery` }]} />
-      <section className="border-b border-ink-950/8 bg-ink-950 py-16 text-white sm:py-20">
+      <section className="relative isolate overflow-hidden border-b border-ink-950/8 bg-ink-950 py-16 text-white sm:py-20">
+        <HeroBackdrop />
         <Container>
           <SectionHeading
             as="h1"

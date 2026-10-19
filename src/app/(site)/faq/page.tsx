@@ -6,6 +6,7 @@ import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { FaqPageClient } from "@/components/faq/faq-page-client";
 import { getFaqs } from "@/lib/data/faqs";
 import { env } from "@/lib/env";
+import { HeroBackdrop } from "@/components/brand/hero-backdrop";
 
 export const metadata: Metadata = {
   title: "FAQs",
@@ -21,7 +22,8 @@ export default async function FaqPage() {
       <BreadcrumbJsonLd items={[{ name: "Home", url: env.siteUrl }, { name: "FAQs", url: `${env.siteUrl}/faq` }]} />
       <FaqJsonLd items={faqs.map((f) => ({ q: f.question, a: f.answer }))} />
 
-      <section className="border-b border-ink-950/8 bg-ink-950 py-16 text-white sm:py-20">
+      <section className="relative isolate overflow-hidden border-b border-ink-950/8 bg-ink-950 py-16 text-white sm:py-20">
+        <HeroBackdrop />
         <Container>
           <SectionHeading as="h1" eyebrow="Questions" title="Frequently asked questions" tone="light" />
         </Container>

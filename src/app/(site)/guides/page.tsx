@@ -9,6 +9,7 @@ import { GUIDES } from "@/lib/content/guides";
 import { fillPrices } from "@/lib/content/price-tokens";
 import { env } from "@/lib/env";
 import { pageUrls, shareImageFor } from "@/lib/seo";
+import { HeroBackdrop } from "@/components/brand/hero-backdrop";
 
 export const metadata: Metadata = {
   title: "Car Battery and Roadside Guides",
@@ -21,7 +22,8 @@ export default function GuidesPage() {
   return (
     <>
       <BreadcrumbJsonLd items={[{ name: "Home", url: env.siteUrl }, { name: "Guides", url: `${env.siteUrl}/guides` }]} />
-      <section className="border-b border-ink-950/8 bg-ink-950 py-16 text-white sm:py-20">
+      <section className="relative isolate overflow-hidden border-b border-ink-950/8 bg-ink-950 py-16 text-white sm:py-20">
+        <HeroBackdrop />
         <Container>
           <SectionHeading
             as="h1"

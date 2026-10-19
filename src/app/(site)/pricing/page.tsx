@@ -14,6 +14,7 @@ import { batteryReview } from "@/lib/content/google-reviews";
 import { guidesForService } from "@/lib/content/guides";
 import { env } from "@/lib/env";
 import { pageUrls, shareImageFor } from "@/lib/seo";
+import { HeroBackdrop } from "@/components/brand/hero-backdrop";
 
 /**
  * Every published price on one page. Nothing here is typed in: each figure,
@@ -57,7 +58,8 @@ export default function PricingPage() {
       <BreadcrumbJsonLd items={[{ name: "Home", url: env.siteUrl }, { name: "Pricing", url: `${env.siteUrl}/pricing` }]} />
       <FaqJsonLd items={FAQS} />
 
-      <section className="border-b border-ink-950/8 bg-ink-950 py-16 text-white sm:py-20">
+      <section className="relative isolate overflow-hidden border-b border-ink-950/8 bg-ink-950 py-16 text-white sm:py-20">
+        <HeroBackdrop />
         <Container>
           <SectionHeading
             as="h1"

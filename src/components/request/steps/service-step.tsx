@@ -7,6 +7,7 @@ import { SERVICES } from "@/lib/content/services";
 import { SERVICE_ICONS } from "@/lib/content/service-icons";
 import { cn } from "@/lib/utils/cn";
 import type { CreateRequestInput } from "@/lib/validation/request";
+import { Icon3D } from "@/components/ui/icon-3d";
 
 export function ServiceStep({ onNext, onBack }: { onNext: () => void; onBack: () => void }) {
   const { watch, setValue, trigger, formState: { errors } } = useFormContext<CreateRequestInput>();
@@ -41,7 +42,7 @@ export function ServiceStep({ onNext, onBack }: { onNext: () => void; onBack: ()
                   <Check className="h-3 w-3" aria-hidden="true" />
                 </span>
               )}
-              <Icon className={cn("h-7 w-7", isSelected ? "text-red-600" : "text-ink-500 dark:text-ink-300")} aria-hidden="true" />
+              <Icon3D icon={Icon} size="md" muted={!isSelected} />
               <span className="text-sm font-semibold text-ink-900 dark:text-white">{service.shortName}</span>
               {service.priceBadge && (
                 <span className="text-xs font-medium text-ink-500 dark:text-ink-300">{service.priceBadge}</span>

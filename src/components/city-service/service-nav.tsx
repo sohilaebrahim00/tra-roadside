@@ -4,6 +4,7 @@ import { getService } from "@/lib/content/services";
 import { SERVICE_ICONS } from "@/lib/content/service-icons";
 import type { ServiceContent } from "@/lib/content/services";
 import type { ServiceArea } from "@/lib/content/business";
+import { Icon3D } from "@/components/ui/icon-3d";
 
 /**
  * Internal navigation out of a City x Service page.
@@ -41,9 +42,7 @@ export function ServiceNav({
                   href={`/service-areas/${city.slug}/${s.service}`}
                   className="group flex h-full items-center gap-3.5 rounded-2xl border border-ink-950/8 bg-white p-4 transition-colors hover:border-red-600/25"
                 >
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-red-600/10 text-red-600">
-                    <Icon className="h-5 w-5" aria-hidden="true" />
-                  </span>
+                  <Icon3D icon={Icon} size="sm" />
                   <span className="min-w-0 flex-1">
                     <span className="block text-[0.95rem] font-semibold leading-snug text-ink-800 group-hover:text-red-600">
                       {sv.shortName}

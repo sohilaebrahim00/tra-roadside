@@ -12,6 +12,8 @@ import { getLocalArea } from "@/lib/content/local-data";
 import { SERVICE_ICONS } from "@/lib/content/service-icons";
 import { env } from "@/lib/env";
 import { DEFAULT_SHARE_IMAGE } from "@/lib/seo";
+import { Icon3D } from "@/components/ui/icon-3d";
+import { HeroBackdrop } from "@/components/brand/hero-backdrop";
 
 /**
  * Dallas Love Field — a LOCATION hub, not a service page.
@@ -131,7 +133,8 @@ export default function DallasLoveFieldPage() {
       <FaqJsonLd items={FAQS} />
 
       {/* ---------------- Hero ---------------- */}
-      <section className="border-b border-ink-950/8 bg-ink-950 py-14 text-white sm:py-20">
+      <section className="relative isolate overflow-hidden border-b border-ink-950/8 bg-ink-950 py-14 text-white sm:py-20">
+        <HeroBackdrop />
         <Container>
           <p className="text-xs font-semibold uppercase tracking-widest text-red-400">
             <Link href="/service-areas" className="hover:underline">Service Areas</Link>
@@ -199,9 +202,7 @@ export default function DallasLoveFieldPage() {
                     className="block rounded-2xl border border-ink-950/8 bg-white p-5 transition-colors hover:border-red-600/30 dark:border-white/10 dark:bg-ink-900"
                   >
                     <div className="flex items-start gap-4">
-                      <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-red-600/10 text-red-600">
-                        <Icon className="h-5 w-5" aria-hidden="true" />
-                      </span>
+                      <Icon3D icon={Icon} size="sm" className="mt-0.5" />
                       <div className="min-w-0">
                         <p className="font-display text-base font-semibold text-ink-950 dark:text-white">
                           {symptom}

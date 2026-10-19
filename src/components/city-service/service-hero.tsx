@@ -8,6 +8,7 @@ import { SERVICE_ICONS } from "@/lib/content/service-icons";
 import { BUSINESS } from "@/lib/content/business";
 import type { ServiceContent } from "@/lib/content/services";
 import type { ServiceArea } from "@/lib/content/business";
+import { Icon3D } from "@/components/ui/icon-3d";
 
 /**
  * City x Service hero.
@@ -75,9 +76,7 @@ export function ServiceHero({
             </nav>
 
             <div className="mt-5 flex items-start gap-3.5 sm:gap-4">
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-red-500/25 bg-red-600/15 text-red-500 sm:h-14 sm:w-14">
-                <Icon className="h-6 w-6 sm:h-7 sm:w-7" aria-hidden="true" />
-              </span>
+              <Icon3D icon={Icon} size="md" className="sm:h-14 sm:w-14" />
               <h1 className="font-display text-[1.75rem] font-bold uppercase leading-[1.1] tracking-tight text-balance sm:text-4xl lg:text-[2.75rem]">
                 {h1}
               </h1>

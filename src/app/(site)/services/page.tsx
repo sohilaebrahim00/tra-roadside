@@ -12,6 +12,7 @@ import { BUSINESS } from "@/lib/content/business";
 import { env } from "@/lib/env";
 import { CinematicBackgroundVideo } from "@/components/media/cinematic-background-video";
 import { PricingDisclaimer } from "@/components/ui/pricing-disclaimer";
+import { Icon3D } from "@/components/ui/icon-3d";
 
 export const metadata: Metadata = {
   title: "Roadside Assistance Services",
@@ -64,9 +65,7 @@ export default function ServicesPage() {
                       {service.priceBadge}
                     </span>
                   )}
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-red-600/10 text-red-600">
-                    <Icon className="h-5.5 w-5.5" aria-hidden="true" />
-                  </div>
+                  <Icon3D icon={Icon} size="md" />
                   <h2 className="mt-4 font-display text-lg font-semibold text-ink-950 dark:text-white">{service.name}</h2>
                   <p className="mt-1.5 text-sm leading-relaxed text-ink-600 dark:text-ink-200">{service.summary}</p>
                   <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-red-600 opacity-0 transition-opacity group-hover:opacity-100">

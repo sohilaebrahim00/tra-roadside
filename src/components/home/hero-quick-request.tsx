@@ -4,6 +4,7 @@ import { getService } from "@/lib/content/services";
 import { SERVICE_ICONS } from "@/lib/content/service-icons";
 import { SERVICE_PROBLEM } from "@/lib/content/service-problems";
 import type { ServiceTypeSlug } from "@/lib/types/domain";
+import { Icon3D } from "@/components/ui/icon-3d";
 
 /** The six calls that cover most breakdowns, battery first (the main service). */
 const QUICK: ServiceTypeSlug[] = [
@@ -55,9 +56,7 @@ export function HeroQuickRequest() {
                 href={`/request?service=${service.slug}`}
                 className="group flex h-full items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-3 transition-colors hover:border-red-500/60 hover:bg-white/[0.08] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500"
               >
-                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-gradient-to-br xl:h-10 xl:w-10 from-red-500 to-amber-500 text-white shadow-[0_8px_20px_-8px_rgba(224,19,28,0.8)]">
-                  <Icon className="h-5 w-5" aria-hidden="true" />
-                </span>
+                <Icon3D icon={Icon} size="sm" />
                 <span className="min-w-0 flex-1">
                   <span className="block text-sm font-semibold leading-snug text-white">{SERVICE_PROBLEM[service.slug]}</span>
                   <span className="mt-0.5 block text-xs leading-snug text-white/60">{service.priceBadge}</span>

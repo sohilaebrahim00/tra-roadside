@@ -12,6 +12,8 @@ import { SERVICE_ICONS } from "@/lib/content/service-icons";
 import { getCityServicePage } from "@/lib/content/city-service-pages";
 import { locationHubsForCity } from "@/lib/content/location-hubs";
 import { env } from "@/lib/env";
+import { Icon3D } from "@/components/ui/icon-3d";
+import { HeroBackdrop } from "@/components/brand/hero-backdrop";
 
 export function generateStaticParams() {
   return SERVICE_AREAS.map((c) => ({ slug: c.slug }));
@@ -53,7 +55,8 @@ export default async function ServiceAreaPage({
           { name: city.name, url: `${env.siteUrl}/service-areas/${city.slug}` },
         ]}
       />
-      <section className="border-b border-ink-950/8 bg-ink-950 py-16 text-white sm:py-20">
+      <section className="relative isolate overflow-hidden border-b border-ink-950/8 bg-ink-950 py-16 text-white sm:py-20">
+        <HeroBackdrop />
         <Container>
           <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-400">
             <MapPin className="h-3.5 w-3.5" aria-hidden="true" /> Service Area
@@ -99,7 +102,7 @@ export default async function ServiceAreaPage({
                     href={href}
                     className="flex items-center gap-3 rounded-xl border border-ink-950/8 bg-white p-4 hover:border-red-600/30 dark:border-white/10 dark:bg-ink-900"
                   >
-                    <Icon className="h-5 w-5 shrink-0 text-red-600" aria-hidden="true" />
+                    <Icon3D icon={Icon} size="xs" />
                     <span className="text-sm font-medium text-ink-800 dark:text-ink-100">
                       {localPage ? `${service.shortName} in ${city.name}` : service.name}
                     </span>

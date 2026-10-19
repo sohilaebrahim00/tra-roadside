@@ -3,7 +3,7 @@ import { Phone, Mail, Clock, PenLine, MapPin } from "lucide-react";
 import { FacebookIcon, InstagramIcon, YoutubeIcon } from "@/components/brand/social-icons";
 import { FullLogo } from "@/components/brand/logo-mark";
 import { BrandPattern } from "@/components/brand/brand-pattern";
-import { BUSINESS, SERVICE_AREAS } from "@/lib/content/business";
+import { BUSINESS, SERVICE_AREAS, addressLine } from "@/lib/content/business";
 import { SERVICES } from "@/lib/content/services";
 import { Container } from "@/components/ui/container";
 
@@ -25,6 +25,12 @@ export function SiteFooter() {
             <a href={`mailto:${BUSINESS.email}`} className="flex items-center gap-2 hover:text-white">
               <Mail className="h-4 w-4 text-red-500" aria-hidden="true" /> {BUSINESS.email}
             </a>
+            {/* The full address as plain text, matching the Google listing, on
+                every page: the name, address and phone search engines compare. */}
+            <address className="flex items-start gap-2 not-italic">
+              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-red-500" aria-hidden="true" />
+              {addressLine()}
+            </address>
             <p className="flex items-center gap-2">
               <Clock className="h-4 w-4 text-red-500" aria-hidden="true" /> {BUSINESS.hours}
             </p>

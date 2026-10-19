@@ -6,6 +6,7 @@ import { AdminLoginForm } from "@/components/admin/admin-login-form";
 // (and SetupRequired's integrationStatus() call) never needs to ship to the
 // client — only the interactive form below does.
 export default function AdminLoginPage() {
-  if (isDemoMode()) return <SetupRequired area="The admin dashboard" />;
-  return <AdminLoginForm />;
+  // One <main> landmark around either state, so the page has the structure
+  // every other page has.
+  return <main>{isDemoMode() ? <SetupRequired area="The admin dashboard" /> : <AdminLoginForm />}</main>;
 }

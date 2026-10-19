@@ -17,6 +17,7 @@ import { env } from "@/lib/env";
 import { CinematicBackgroundVideo } from "@/components/media/cinematic-background-video";
 import { getServiceVideo } from "@/data/media-registry";
 import { PricingDisclaimer } from "@/components/ui/pricing-disclaimer";
+import { Icon3D } from "@/components/ui/icon-3d";
 
 export function generateStaticParams() {
   return SERVICES.map((s) => ({ slug: s.slug }));
@@ -73,9 +74,7 @@ export default async function ServicePage({
       <section className="relative overflow-hidden border-b border-ink-950/8 bg-ink-950 py-14 text-white sm:py-20">
         <CinematicBackgroundVideo placement="service-detail-hero" video={getServiceVideo(service.slug)} overlay="strong" />
         <Container className="relative z-10 grid gap-8 lg:grid-cols-[auto_1fr] lg:items-center">
-          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-red-600/15 text-red-500">
-            <Icon className="h-8 w-8" aria-hidden="true" />
-          </div>
+          <Icon3D icon={Icon} size="lg" />
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-red-400">
               <Link href="/services" className="hover:underline">Services</Link> / {service.name}
@@ -287,7 +286,7 @@ export default async function ServicePage({
                   href={`/services/${r.slug}`}
                   className="group rounded-2xl border border-ink-950/8 bg-white p-5 hover:border-red-600/30 hover:shadow-md dark:border-white/10 dark:bg-ink-900"
                 >
-                  <RIcon className="h-5 w-5 text-red-600" aria-hidden="true" />
+                  <Icon3D icon={RIcon} size="sm" />
                   <h3 className="mt-3 font-display text-base font-semibold text-ink-950 dark:text-white">{r.name}</h3>
                   <p className="mt-1 text-sm text-ink-600 dark:text-ink-200">{r.summary}</p>
                 </Link>

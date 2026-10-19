@@ -13,6 +13,7 @@ import { SERVICE_PROBLEM } from "@/lib/content/service-problems";
 import { gsap, ScrollTrigger, registerGsap } from "@/lib/gsap/register";
 import { PricingDisclaimer } from "@/components/ui/pricing-disclaimer";
 import { BrandPattern } from "@/components/brand/brand-pattern";
+import { Icon3D } from "@/components/ui/icon-3d";
 
 
 /**
@@ -109,9 +110,7 @@ export function ServicesSection() {
                       // pattern, so the card reads as branded rather than empty.
                       <div className="absolute inset-0 isolate flex items-center justify-center bg-ink-950">
                         <BrandPattern fade="none" strength={0.14} />
-                        <span className="relative grid h-14 w-14 place-items-center rounded-full bg-red-600 shadow-lg shadow-red-950/40 ring-4 ring-white/10">
-                          <Icon className="h-7 w-7 text-white" aria-hidden="true" />
-                        </span>
+                        <Icon3D icon={Icon} size="lg" />
                       </div>
                     )}
                     {/* The price is part of the picture: a dark fade along the
@@ -123,9 +122,7 @@ export function ServicesSection() {
                       </span>
                     )}
                     {photo && (
-                      <span aria-hidden="true" className="absolute right-2 top-2 grid h-8 w-8 place-items-center rounded-full bg-white/95 text-red-600 shadow-sm sm:h-9 sm:w-9">
-                        <Icon className="h-4 w-4 sm:h-[1.1rem] sm:w-[1.1rem]" />
-                      </span>
+                      <Icon3D icon={Icon} size="xs" className="absolute right-2 top-2 sm:h-9 sm:w-9" />
                     )}
                   </div>
                   <div className="px-3 pt-3 sm:px-4 sm:pt-4">

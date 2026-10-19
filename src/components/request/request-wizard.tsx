@@ -52,13 +52,21 @@ export function RequestWizard({ initialService }: { initialService?: string }) {
   const submittedRef = useRef(false);
 
   // Restore an in-progress draft (e.g. after an accidental refresh).
+  //
+  // The service in the link the visitor just clicked (?service=...) always
+  // beats the one saved in an older draft. Restoring the draft wholesale made
+  // "Need a tow" open the form on Battery Replacement for anyone who had
+  // started a battery request before. When the service changes, the rest of
+  // the draft (location, contact) is kept but the form starts from step one.
   useEffect(() => {
     const raw = window.localStorage.getItem(DRAFT_KEY);
     if (!raw) return;
     try {
       const parsed = JSON.parse(raw);
-      if (parsed?.values) methods.reset(parsed.values);
-      if (parsed?.step) setStep(parsed.step);
+      if (!parsed?.values) return;
+      const switched = Boolean(initialService) && parsed.values.serviceSlug !== initialService;
+      methods.reset(initialService ? { ...parsed.values, serviceSlug: initialService } : parsed.values);
+      if (parsed.step && !switched) setStep(parsed.step);
     } catch {
       // ignore corrupt draft
     }

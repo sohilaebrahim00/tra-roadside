@@ -7,6 +7,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { SERVICE_AREAS } from "@/lib/content/business";
 import { env } from "@/lib/env";
+import { HeroBackdrop } from "@/components/brand/hero-backdrop";
 
 export const metadata: Metadata = {
   title: "Service Areas — Dallas–Fort Worth Metroplex",
@@ -24,7 +25,8 @@ export default function ServiceAreasPage() {
           { name: "Service Areas", url: `${env.siteUrl}/service-areas` },
         ]}
       />
-      <section className="border-b border-ink-950/8 bg-ink-950 py-16 text-white sm:py-20">
+      <section className="relative isolate overflow-hidden border-b border-ink-950/8 bg-ink-950 py-16 text-white sm:py-20">
+        <HeroBackdrop />
         <Container>
           <SectionHeading
             as="h1"

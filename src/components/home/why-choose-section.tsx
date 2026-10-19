@@ -2,6 +2,7 @@ import { MapPinned, ShieldCheck, Receipt, Satellite } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { BrandPattern } from "@/components/brand/brand-pattern";
+import { Icon3D } from "@/components/ui/icon-3d";
 
 const POINTS = [
   {
@@ -40,7 +41,7 @@ export function WhyChooseSection() {
         <div className="grid gap-6 sm:grid-cols-2">
           {POINTS.map((point) => (
             <div key={point.title} className="border-l-2 border-red-600/60 pl-5">
-              <point.icon className="h-6 w-6 text-amber-400" aria-hidden="true" />
+              <Icon3D icon={point.icon} size="sm" />
               <h3 className="mt-3 font-display text-lg font-semibold">{point.title}</h3>
               <p className="mt-1.5 text-sm leading-relaxed text-white/65">{point.body}</p>
             </div>

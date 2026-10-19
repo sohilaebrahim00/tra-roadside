@@ -18,12 +18,24 @@ export const BUSINESS = {
   hours: "Open 24/7, 365 days a year",
   dispatchNote: "Local Dallas–Fort Worth dispatch — not an out-of-state call center",
   /**
-   * TRA is registered as a service-area business: it dispatches across the
-   * DFW Metroplex and publishes no street address. These coordinates are the
-   * service-area center from the Google Business listing — they are what goes
-   * into LocalBusiness structured data INSTEAD of a postal address. Never
-   * invent a street address to fill the schema; a wrong address in structured
-   * data is worse than none at all.
+   * The business address exactly as the Google Business Profile shows it. The
+   * owner decided on 2026-10-19 to publish it in full, as plain text on every
+   * page (footer), on the contact page and in the LocalBusiness schema, so
+   * the name, address and phone on the site match Google's letter for letter.
+   * Change it only together with the Google listing.
+   */
+  address: {
+    street: "13907 Montfort Dr",
+    city: "Dallas",
+    region: "TX",
+    postalCode: "75240",
+    country: "US",
+  },
+  /**
+   * The service-area center from the Google listing. No longer emitted in the
+   * schema: it is about 12 km from the street address above, and two
+   * different locations for one business would contradict each other. Kept
+   * for reference only.
    */
   geo: { latitude: 32.869322, longitude: -96.711846 },
   googleListingUrl: "https://maps.app.goo.gl/jArUadnLNCMviYTTA",
@@ -111,4 +123,10 @@ export function getServiceArea(slug: string) {
  */
 export function nearbyAreas(slug: string, count = 4): ServiceArea[] {
   return realNeighbors(slug, SERVICE_AREAS, count);
+}
+
+/** The address on one line, as it is written on the site: "13907 Montfort Dr, Dallas, TX 75240". */
+export function addressLine(): string {
+  const a = BUSINESS.address;
+  return `${a.street}, ${a.city}, ${a.region} ${a.postalCode}`;
 }

@@ -42,18 +42,25 @@ export function BatteryPromoSection() {
 
             {/* Both strings come from SERVICES, so a price change reaches this
                 section without anyone remembering it exists. */}
-            <div className="mt-5 max-w-md rounded-2xl border border-white/15 bg-white/5 p-4 sm:mt-7 sm:p-5">
-              <p className="font-display text-3xl font-bold text-white sm:text-4xl">{service.priceBadge}</p>
+            <div className="mt-5 max-w-md rounded-2xl border border-white/15 bg-gradient-to-br from-white/[0.09] to-white/[0.02] p-5 shadow-[0_20px_50px_-25px_rgba(224,32,43,0.6)] sm:mt-7 sm:p-6">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">Car batteries from</p>
+                  <p className="mt-1.5 font-display text-6xl font-bold leading-none text-white sm:text-7xl">
+                    ${service.priceFrom}
+                  </p>
+                </div>
+                <span className="mt-0.5 inline-flex shrink-0 items-center gap-1.5 rounded-full bg-red-600 px-3 py-1.5 text-[0.68rem] font-bold uppercase tracking-wider text-white">
+                  <ShieldCheck className="h-3.5 w-3.5" aria-hidden="true" />
+                  1-year warranty
+                </span>
+              </div>
               {service.priceLines[0]?.note && (
-                <p className="mt-1.5 text-sm text-white/70">{service.priceLines[0].note}</p>
+                <p className="mt-3 border-t border-white/10 pt-3 text-sm text-white/75">{service.priceLines[0].note}</p>
               )}
             </div>
 
             <ul className="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/80 sm:mt-6">
-              <li className="flex items-center gap-1.5">
-                <ShieldCheck className="h-4 w-4 shrink-0 text-red-500" aria-hidden="true" />
-                1-year warranty
-              </li>
               <li className="flex items-center gap-1.5">
                 <Check className="h-4 w-4 shrink-0 text-red-500" aria-hidden="true" />
                 Installed at your location

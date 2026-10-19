@@ -215,6 +215,9 @@ export const FIELD_PHOTO_GROUPS: FieldPhotoGroup[] = [
  */
 const PREVIEW_GROUPS = ["battery", "tire-roadside", "jump-start", "fuel"];
 
-export function fieldPhotoPreview(): FieldPhoto[] {
-  return PREVIEW_GROUPS.map((id) => FIELD_PHOTO_GROUPS.find((g) => g.id === id)!.photos[0]);
+export function fieldPhotoPreview(): (FieldPhoto & { title: string })[] {
+  return PREVIEW_GROUPS.map((id) => {
+    const group = FIELD_PHOTO_GROUPS.find((g) => g.id === id)!;
+    return { ...group.photos[0], title: group.title };
+  });
 }

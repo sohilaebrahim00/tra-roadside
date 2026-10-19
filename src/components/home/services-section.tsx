@@ -30,6 +30,20 @@ import { BrandPattern } from "@/components/brand/brand-pattern";
  * added to SERVICES.
  */
 
+/** The situation a driver recognizes, shown above each service's name. */
+const PROBLEM: Record<string, string> = {
+  "battery-replacement": "Need a new battery",
+  "jump-start": "Car won't start",
+  lockout: "Locked out",
+  "tire-repair-plug-patch": "Nail or slow leak",
+  "flat-tire-change": "Flat tire",
+  "tire-replacement": "Tire too damaged",
+  "stuck-screw-in-tire": "Screw in the tire",
+  "rim-lock-removal": "Lost wheel lock key",
+  "fuel-delivery": "Out of gas",
+  towing: "Need a tow",
+};
+
 function cardPhoto(s: ServiceContent) {
   return s.photos?.[0];
 }
@@ -114,18 +128,34 @@ export function ServicesSection() {
                         </span>
                       </div>
                     )}
+                    {/* The price is part of the picture: a dark fade along the
+                        bottom edge and the figure in large type on top of it. */}
+                    <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-ink-950/90 via-ink-950/40 to-transparent" />
                     {service.priceBadge && (
-                      <span className="absolute left-2 top-2 rounded-full bg-white/95 px-2 py-0.5 text-[0.7rem] font-bold text-ink-950 shadow-sm sm:text-xs">
+                      <span className="absolute bottom-2 left-2.5 font-display text-base font-bold leading-none text-white drop-shadow sm:bottom-3 sm:left-3.5 sm:text-xl">
                         {service.priceBadge}
+                      </span>
+                    )}
+                    {photo && (
+                      <span aria-hidden="true" className="absolute right-2 top-2 grid h-8 w-8 place-items-center rounded-full bg-white/95 text-red-600 shadow-sm sm:h-9 sm:w-9">
+                        <Icon className="h-4 w-4 sm:h-[1.1rem] sm:w-[1.1rem]" />
                       </span>
                     )}
                   </div>
                   <div className="px-3 pt-3 sm:px-4 sm:pt-4">
-                    <h3 className="font-display text-[0.98rem] font-semibold leading-snug text-ink-950 group-hover:text-red-600 sm:text-lg">
-                      <span className="sm:hidden">{service.shortName}</span>
-                      <span className="hidden sm:inline">{service.name}</span>
+                    {/* Problem first: a stressed driver knows "my car won't
+                        start" before they know the name of the service. */}
+                    <h3 className="leading-snug">
+                      <span className="flex items-start justify-between gap-2 font-display text-[1.02rem] font-semibold text-ink-950 group-hover:text-red-600 sm:text-lg">
+                        {PROBLEM[service.slug] ?? service.shortName}
+                        <ArrowUpRight className="mt-1 hidden h-4 w-4 shrink-0 text-ink-400 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-red-600 sm:block" aria-hidden="true" />
+                      </span>
+                      <span className="mt-0.5 block text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-red-600 sm:text-xs">
+                        <span className="sm:hidden">{service.shortName}</span>
+                        <span className="hidden sm:inline">{service.name}</span>
+                      </span>
                     </h3>
-                    <p className="mt-1 hidden text-sm leading-relaxed text-ink-600 sm:block">{service.summary}</p>
+                    <p className="mt-1.5 hidden text-sm leading-relaxed text-ink-600 sm:block">{service.summary}</p>
                   </div>
                 </Link>
                 <div className="mt-auto px-3 pb-3 pt-3 sm:px-4 sm:pb-4">

@@ -33,7 +33,7 @@ export function MobileMenu() {
         aria-expanded={open}
         aria-controls="mobile-nav-panel"
         aria-label={open ? "Close menu" : "Open menu"}
-        className="flex h-10 w-10 items-center justify-center rounded-full text-ink-950 hover:bg-ink-950/5 dark:text-white dark:hover:bg-white/10"
+        className="flex h-10 w-10 items-center justify-center rounded-full text-white hover:bg-white/10"
       >
         {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
       </button>

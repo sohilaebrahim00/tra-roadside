@@ -45,12 +45,15 @@ export function TrackingPreviewSection() {
             <div className="overflow-hidden rounded-[1.5rem] bg-white dark:bg-ink-900">
               <div className="relative h-48 bg-gradient-to-br from-ink-800 to-ink-950">
                 <svg viewBox="0 0 300 200" className="absolute inset-0 h-full w-full opacity-70">
+                  {/* The dashes flow toward the destination, so the route reads
+                      as a driver on the move (off for reduced motion). */}
                   <path
                     d="M20 170 C 80 140, 60 90, 130 80 S 220 60, 260 30"
                     fill="none"
                     stroke="#f2941c"
                     strokeWidth="3"
                     strokeDasharray="8 8"
+                    className="route-flow"
                   />
                   <circle cx="20" cy="170" r="6" fill="#e0202b" />
                   <circle cx="260" cy="30" r="6" fill="#f2941c" />

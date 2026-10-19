@@ -31,7 +31,7 @@ export function Wordmark({ className, subline = true }: { className?: string; su
   return (
     <span className={cn("inline-flex flex-col leading-none", className)}>
       <span className="font-display text-2xl font-bold tracking-tight">
-        TR<span className="text-red-600">A</span>
+        TR<span className="text-red-500">A</span>
       </span>
       {/* The subline inherits the lockup color at 60% so it clears 4.5:1 on the
           white header and the dark footer alike; a fixed gray failed on the dark one. */}

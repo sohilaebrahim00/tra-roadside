@@ -209,6 +209,16 @@ export const SERVICES: ServiceContent[] = [
     ],
     priceBadge: "$55–65",
     priceFrom: 55,
+    // Supplied by the owner on 2026-10-19 (cropped to 3:2). Not a TRA job
+    // photo, so the alt text describes only what is in the frame.
+    photos: [
+      {
+        src: "/images/lockout-door-tools.webp",
+        alt: "Gloved hands using an inflatable air wedge and a long-reach tool to open the door of a silver car.",
+        width: 500,
+        height: 333,
+      },
+    ],
     summary: "Locked your keys inside? We'll get you back in without damage.",
     heroLine: "Locked out, not locked down.",
     problem:
@@ -524,6 +534,16 @@ export const SERVICES: ServiceContent[] = [
     priceBadge: "$120 + $5/mile",
     priceFrom: 120,
     priceNote: "A $120 base rate, then $5 per mile from where your vehicle is to where you want it taken.",
+    // Supplied by the owner on 2026-10-19 (cropped to 3:2). Not a TRA job
+    // photo, so the alt text describes only what is in the frame.
+    photos: [
+      {
+        src: "/images/towing-flatbed.webp",
+        alt: "A white SUV loaded on the tilted bed of a red and white flatbed tow truck on a highway.",
+        width: 553,
+        height: 369,
+      },
+    ],
     summary: "Light and medium-duty towing to the destination of your choice: $120, then $5 per mile.",
     heroLine: "Your vehicle, moved safely to wherever it needs to go.",
     problem:

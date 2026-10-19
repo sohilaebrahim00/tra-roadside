@@ -25,10 +25,9 @@ import { BrandPattern } from "@/components/brand/brand-pattern";
  * Battery replacement goes first: it is the service the business earns most
  * from.
  *
- * Photos are the business's own: each card uses its service's first SERVICES
- * photo. Services with no photo yet (lockout and towing, as of 2026-10-19)
- * show a plain branded tile and pick up a photo automatically when one is
- * added to SERVICES.
+ * Each card uses its service's first SERVICES photo. As of 2026-10-19 every
+ * service has one; a service added later without a photo shows the dark
+ * monogram tile until one is added to SERVICES.
  */
 
 function cardPhoto(s: ServiceContent) {

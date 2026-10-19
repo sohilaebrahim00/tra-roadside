@@ -1,55 +1,85 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, LifeBuoy } from "lucide-react";
 import { useGSAP } from "@gsap/react";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { SERVICES } from "@/lib/content/services";
+import { SERVICES, type ServiceContent } from "@/lib/content/services";
 import { SERVICE_ICONS } from "@/lib/content/service-icons";
 import { gsap, ScrollTrigger, registerGsap } from "@/lib/gsap/register";
-import { ServiceVideoCard } from "@/components/media/service-video-card";
-import { getServiceVideo } from "@/data/media-registry";
 import { PricingDisclaimer } from "@/components/ui/pricing-disclaimer";
+import type { ServiceTypeSlug } from "@/lib/types/domain";
+
+/**
+ * The services, directly under the hero, as photo cards: what a customer came
+ * for should be visible without scrolling past anything else. Two cards per
+ * row on a phone so all ten fit in a few swipes; each card leads to the
+ * service page and has its own Request button that opens the request form
+ * with that service already chosen.
+ *
+ * Battery replacement goes first: it is the service the business earns most
+ * from.
+ *
+ * Photos are the business's own. A service uses its first SERVICES photo;
+ * the tire services without an exact photo borrow a tire-work shot from the
+ * same set. Services with no photo yet show a plain branded tile, and pick up
+ * a photo automatically when one is added to SERVICES.
+ */
+
+type CardPhoto = { src: string; width: number; height: number };
+
+const BORROWED: Partial<Record<ServiceTypeSlug, CardPhoto>> = {
+  "tire-repair-plug-patch": { src: "/images/tire-wheel-tools.webp", width: 1200, height: 800 },
+  "tire-replacement": { src: "/images/tire-shoulder-night.webp", width: 1200, height: 800 },
+  "stuck-screw-in-tire": { src: "/images/field/field-tire-wheel.webp", width: 1080, height: 1350 },
+};
+
+function cardPhoto(s: ServiceContent): CardPhoto | undefined {
+  const own = s.photos?.[0];
+  return own ? { src: own.src, width: own.width, height: own.height } : BORROWED[s.slug];
+}
+
+const ORDERED = [
+  ...SERVICES.filter((s) => s.slug === "battery-replacement"),
+  ...SERVICES.filter((s) => s.slug !== "battery-replacement"),
+];
 
 export function ServicesSection() {
   const sectionRef = useRef<HTMLElement>(null);
-  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const cardsRef = useRef<(HTMLLIElement | null)[]>([]);
 
   useGSAP(
     () => {
       registerGsap();
-      const cards = cardsRef.current.filter(Boolean) as HTMLDivElement[];
+      const cards = cardsRef.current.filter(Boolean) as HTMLLIElement[];
       if (cards.length === 0) return;
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      if (reduceMotion) return;
-
-      gsap.set(cards, { opacity: 0, y: 28 });
-
+      gsap.set(cards, { opacity: 0, y: 18 });
       const trigger = ScrollTrigger.create({
         trigger: sectionRef.current,
-        start: "top 75%",
+        start: "top 85%",
         once: true,
         onEnter: () => {
-          gsap.to(cards, { opacity: 1, y: 0, duration: 0.6, stagger: 0.07, ease: "power3.out" });
+          gsap.to(cards, { opacity: 1, y: 0, duration: 0.5, stagger: 0.04, ease: "power3.out" });
         },
       });
-
       return () => trigger.kill();
     },
     { scope: sectionRef }
   );
 
   return (
-    <section ref={sectionRef} className="py-20 sm:py-28" id="services">
+    <section ref={sectionRef} className="bg-paper-50 py-12 sm:py-20" id="services">
       <Container>
-        <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+        <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
           <SectionHeading
-            eyebrow="What We Do"
-            title="Roadside services built for every breakdown"
-            description="Select a service when you request help — dispatch confirms the details before a driver is sent."
+            eyebrow="Our Services"
+            title="What do you need help with?"
+            description="Roadside help across Dallas–Fort Worth, 24/7. Tap a service to see how it works and what it costs, or request it right away."
           />
           <Link
             href="/services"
@@ -59,54 +89,77 @@ export function ServicesSection() {
           </Link>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {SERVICES.map((service, i) => {
+        <ul className="mt-7 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-4 md:grid-cols-3 lg:grid-cols-5">
+          {ORDERED.map((service, i) => {
             const Icon = SERVICE_ICONS[service.slug];
-            const video = getServiceVideo(service.slug);
+            const photo = cardPhoto(service);
             return (
-              <div
+              <li
                 key={service.slug}
                 ref={(el) => {
                   cardsRef.current[i] = el;
                 }}
+                className="group flex flex-col overflow-hidden rounded-2xl border border-ink-950/10 bg-white shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-shadow hover:shadow-lg hover:shadow-ink-950/5"
               >
-                {video ? (
-                  <ServiceVideoCard href={`/services/${service.slug}`} name={service.name} summary={service.summary} icon={Icon} video={video} />
-                ) : (
-                  <Link
-                    href={`/services/${service.slug}`}
-                    className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-ink-950/8 bg-white p-6 transition-all hover:-translate-y-0.5 hover:border-red-600/30 hover:shadow-lg hover:shadow-red-600/5"
-                  >
+                <Link href={`/services/${service.slug}`} className="block">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-ink-950">
+                    {photo ? (
+                      <Image
+                        src={photo.src}
+                        alt=""
+                        fill
+                        sizes="(min-width: 1024px) 240px, (min-width: 768px) 33vw, 50vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        priority={i < 2}
+                      />
+                    ) : (
+                      // No photo yet: the site's dark tile with one thin dashed
+                      // road line (the .road-lines utility is meant to be drawn
+                      // as a thin strip, not a fill).
+                      <div className="absolute inset-0 flex items-center justify-center bg-ink-950">
+                        <div className="absolute inset-x-0 top-1/2 h-1 -translate-y-1/2 opacity-30 road-lines" aria-hidden="true" />
+                        <span className="relative grid h-14 w-14 place-items-center rounded-full bg-ink-900 ring-1 ring-white/20">
+                          <Icon className="h-7 w-7 text-white" aria-hidden="true" />
+                        </span>
+                      </div>
+                    )}
                     {service.priceBadge && (
-                      <span className="absolute right-4 top-4 rounded-full bg-ink-950/[0.04] px-2.5 py-1 text-xs font-semibold text-ink-700">
+                      <span className="absolute left-2 top-2 rounded-full bg-white/95 px-2 py-0.5 text-[0.7rem] font-bold text-ink-950 shadow-sm sm:text-xs">
                         {service.priceBadge}
                       </span>
                     )}
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-red-600/10 text-red-600 transition-transform duration-300 group-hover:scale-110">
-                      <Icon className="h-5.5 w-5.5" aria-hidden="true" />
-                    </div>
-                    <h3 className="mt-4 font-display text-lg font-semibold tracking-tight text-ink-950">
-                      {service.name}
+                  </div>
+                  <div className="px-3 pt-3 sm:px-4 sm:pt-4">
+                    <h3 className="font-display text-[0.98rem] font-semibold leading-snug text-ink-950 group-hover:text-red-600 sm:text-lg">
+                      <span className="sm:hidden">{service.shortName}</span>
+                      <span className="hidden sm:inline">{service.name}</span>
                     </h3>
-                    <p className="mt-1.5 text-sm leading-relaxed text-ink-600">{service.summary}</p>
-                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-red-600 opacity-0 transition-opacity group-hover:opacity-100">
-                      Learn more <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
-                    </span>
+                    <p className="mt-1 hidden text-sm leading-relaxed text-ink-600 sm:block">{service.summary}</p>
+                  </div>
+                </Link>
+                <div className="mt-auto px-3 pb-3 pt-3 sm:px-4 sm:pb-4">
+                  <Link
+                    href={`/request?service=${service.slug}`}
+                    className="flex w-full items-center justify-center gap-1.5 rounded-lg bg-red-600 px-3 py-2 text-xs font-bold text-white transition-colors hover:bg-red-700 sm:text-sm"
+                    aria-label={`Request ${service.name}`}
+                  >
+                    <LifeBuoy className="h-3.5 w-3.5" aria-hidden="true" />
+                    Request
                   </Link>
-                )}
-              </div>
+                </div>
+              </li>
             );
           })}
-        </div>
+        </ul>
 
         <Link
           href="/services"
-          className="mt-8 flex items-center justify-center gap-1.5 text-sm font-semibold text-red-600 sm:hidden"
+          className="mt-6 flex items-center justify-center gap-1.5 text-sm font-semibold text-red-600 sm:hidden"
         >
           View all services <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
         </Link>
 
-        <PricingDisclaimer className="mt-8 text-center" />
+        <PricingDisclaimer className="mt-6 text-center" />
       </Container>
     </section>
   );

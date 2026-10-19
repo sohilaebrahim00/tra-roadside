@@ -55,7 +55,7 @@ const UNDER_SEAT_PHOTO = {
 export const GUIDES: Guide[] = [
   {
     slug: "car-battery-replacement-cost",
-    title: "Car Battery Replacement Cost in Dallas–Fort Worth",
+    title: "Car Battery Replacement Cost in DFW",
     h1: "What a car battery replacement costs in DFW, and why the total varies",
     metaDescription:
       "What mobile car battery replacement costs in Dallas–Fort Worth: TRA batteries from {{price:battery-replacement}}, why installation is quoted per vehicle, and what changes the total.",
@@ -125,7 +125,7 @@ export const GUIDES: Guide[] = [
   },
   {
     slug: "signs-car-battery-dying",
-    title: "Signs Your Car Battery Is Dying, and What Texas Heat Does",
+    title: "Car Battery Dying? 7 Warning Signs",
     h1: "Seven signs your car battery is on its way out",
     metaDescription:
       "Slow cranking, clicking, dim lights, a car that needs a second jump: the signs a car battery is failing, and why DFW summers wear batteries out faster.",
@@ -187,7 +187,7 @@ export const GUIDES: Guide[] = [
   },
   {
     slug: "where-is-my-car-battery",
-    title: "Where Is My Car Battery? Hood, Trunk or Under a Seat",
+    title: "Where Is My Car Battery? Hood, Trunk or Seat",
     h1: "Where your car battery is, and why it changes the job",
     metaDescription:
       "Not every car battery is under the hood. Some sit in the trunk, the cargo floor or under a seat, and that changes how long replacement takes and what it costs.",
@@ -242,6 +242,120 @@ export const GUIDES: Guide[] = [
       },
     ],
     services: ["battery-replacement", "jump-start"],
+  },
+  {
+    slug: "lost-wheel-lock-key",
+    title: "Lost Your Wheel Lock Key? What to Do",
+    h1: "Lost the wheel lock key? How a locked wheel comes off",
+    metaDescription:
+      "No wheel lock key means the wheel can't come off for a flat. Where the key usually hides, what not to try, and how TRA removes a locking lug nut for {{price:rim-lock-removal}}.",
+    topic: "Tire guide",
+    dek: "A wheel lock is one special lug nut per wheel that only turns with its matching key. Most of the time nobody thinks about it, until a tire goes flat and the key is nowhere to be found.",
+    updated: "2026-10-19",
+    image: {
+      src: "/images/rim-lock-honda.webp",
+      alt: "A locking lug nut with a star-shaped key pattern on a two-tone Honda alloy wheel, next to four standard lug nuts.",
+      width: 1024,
+      height: 683,
+      caption: "A locking lug nut with a star-shaped pattern. Without its key, this wheel stays on the car.",
+    },
+    sections: [
+      {
+        heading: "Check these places first",
+        paragraphs: ["The key is usually somewhere in the car, put away when the wheels were last off:"],
+        list: [
+          "The glove box or the center console.",
+          "The trunk well, near the jack and the spare tire.",
+          "A small pouch with the owner's manual.",
+          "Tucked in with the spare wheel itself.",
+        ],
+      },
+      {
+        heading: "What not to try",
+        paragraphs: [
+          "Hammering a regular socket onto a locking lug nut, or going at it with pliers, usually rounds the nut off and can scar the wheel. A rounded nut is harder to remove, not easier.",
+          "If the key is missing, snapped or doesn't fit anymore, leave the nut alone and call for help before the job gets bigger.",
+        ],
+      },
+      {
+        heading: "How we remove it",
+        paragraphs: [
+          "A driver removes the locking lug nut on site so the wheel can come off. Wheel lock removal is {{price:rim-lock-removal}}.",
+          "If you also need the spare put on, say so in your request so the driver comes ready for both jobs.",
+        ],
+      },
+      {
+        heading: "Once the wheel is off",
+        paragraphs: [
+          "Decide whether to replace the missing key or go back to standard lug nuts. Many wheel locks come with a code card for ordering a replacement key, so if you have one, keep it with the car's papers.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "How much does wheel lock removal cost?",
+        a: "{{price:rim-lock-removal}}, the published price. Dispatch confirms it when you request help.",
+      },
+      {
+        q: "Can you change my flat at the same visit?",
+        a: "Yes, if there's a usable spare in the car. Mention both jobs in your request so the driver comes ready for both.",
+      },
+    ],
+    services: ["rim-lock-removal", "flat-tire-change"],
+  },
+  {
+    slug: "jump-start-electric-car",
+    title: "Can You Jump Start an Electric Car or Tesla?",
+    h1: "Jump starting an electric car: what actually needs the jump",
+    metaDescription:
+      "An EV's big battery doesn't get jumped. Its 12-volt battery does, and when it runs down the car may not unlock or switch on. What to check, and when to call.",
+    topic: "Battery guide",
+    dek: "Electric cars still carry a small 12-volt battery. It powers the door locks, the screens and the computers that switch the car on, so when it runs down the car can look completely dead even with a full main battery.",
+    updated: "2026-10-19",
+    cardImage: { src: "/images/jump-start-pack.webp", width: 1200, height: 800 },
+    sections: [
+      {
+        heading: "Two batteries, two different problems",
+        paragraphs: [
+          "The large high-voltage battery drives the wheels and is recharged at a charger. A roadside jump does not charge it.",
+          "The small 12-volt battery is the one a jump start is for. It wakes the car up, and once the car is on, the main battery keeps it charged again.",
+        ],
+      },
+      {
+        heading: "Signs the 12-volt battery is the problem",
+        paragraphs: ["Any of these points at the small battery rather than the big one:"],
+        list: [
+          "The car won't unlock with the key fob or the phone app.",
+          "The screens stay dark when you get in.",
+          "A warning about the 12-volt or low-voltage battery appeared in the days before.",
+          "On a hybrid, the car won't switch on and the Ready light never comes on.",
+        ],
+      },
+      {
+        heading: "Where the jump points are",
+        paragraphs: [
+          "It depends on the model. On many electric cars the 12-volt battery or its jump terminals sit under the hood or in the front trunk, and some need a release cable to open the front trunk when the 12-volt system is dead. The owner's manual shows the exact spot.",
+        ],
+      },
+      {
+        heading: "When to call",
+        paragraphs: [
+          "Tell dispatch the year, make and model, and that it's electric or hybrid, so the driver comes with the right equipment for the 12-volt system.",
+          "If the problem is a low main battery rather than a dead 12-volt one, a jump won't help. The car needs a charger, or a tow to one.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Will a jump start charge my EV's main battery?",
+        a: "No. A jump only helps the 12-volt battery. A low main battery needs a charger, or a tow to one.",
+      },
+      {
+        q: "Is jump starting a hybrid different?",
+        a: "The idea is the same: the 12-volt battery is what gets the jump. Note that it's a hybrid in your request so the driver brings the right equipment.",
+      },
+    ],
+    services: ["jump-start", "battery-replacement"],
   },
 ];
 

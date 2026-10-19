@@ -180,7 +180,9 @@ export async function GoogleReviewsSection() {
               )}
               <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
                 {rest.map((review, i) => (
-                  <li key={`${review.author}-${i}`}>
+                  // Phones show the lead review and two more; the full set
+                  // from sm up. "Read all reviews" covers the rest.
+                  <li key={`${review.author}-${i}`} className={i >= 2 ? "hidden sm:block" : undefined}>
                     <figure className="flex h-full flex-col rounded-2xl border border-ink-950/10 bg-paper-50 p-5">
                       <Stars rating={review.rating} />
                       <blockquote className="mt-3 flex-1 text-[0.95rem] leading-relaxed text-ink-700">{review.text}</blockquote>

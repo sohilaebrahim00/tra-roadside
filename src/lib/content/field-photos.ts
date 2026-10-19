@@ -109,6 +109,26 @@ export const FIELD_PHOTO_GROUPS: FieldPhotoGroup[] = [
     ],
   },
   {
+    id: "rim-lock",
+    title: "Wheel locks",
+    caption: "A locking lug nut without its key stops a tire change cold. We remove it so the wheel can come off.",
+    service: "rim-lock-removal",
+    photos: [
+      {
+        src: "/images/field/field-rim-lock-honda.webp",
+        alt: "A locking lug nut with a star-shaped key pattern on a two-tone Honda alloy wheel.",
+        width: 614,
+        height: 768,
+      },
+      {
+        src: "/images/field/field-rim-lock-wheel.webp",
+        alt: "A wheel lock lug nut recessed in the spoke of a dark alloy wheel.",
+        width: 810,
+        height: 1012,
+      },
+    ],
+  },
+  {
     id: "jump-start",
     title: "Jump starts",
     caption: "A portable jump pack comes to the car, so a dead battery is dealt with where the car sits.",

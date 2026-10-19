@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { Phone, LifeBuoy, Radio } from "lucide-react";
+import { Phone, LifeBuoy, Radio, MapPin } from "lucide-react";
 import { useGSAP } from "@gsap/react";
 import { Button } from "@/components/ui/button";
 import { BUSINESS } from "@/lib/content/business";
@@ -72,7 +72,7 @@ export function Hero() {
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_80%_0%,rgba(224,32,43,0.25),transparent),radial-gradient(ellipse_50%_40%_at_10%_100%,rgba(242,148,28,0.15),transparent)]"
       />
 
-      <div className="relative z-10 mx-auto grid max-w-7xl gap-10 px-4 pt-12 pb-16 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-8 lg:px-8 lg:pt-20 lg:pb-24">
+      <div className="relative z-10 mx-auto grid max-w-7xl gap-10 px-4 pt-10 pb-10 sm:px-6 sm:pb-16 lg:grid-cols-2 lg:items-center lg:gap-8 lg:px-8 lg:pt-20 lg:pb-24">
         <div>
           <span
             ref={badgeRef}
@@ -124,9 +124,22 @@ export function Hero() {
               <dd className="mt-0.5 font-display text-xl font-semibold">27 DFW cities</dd>
             </div>
           </dl>
+
+          {/* Phones: the live-tracking idea as one small circle and a line of
+              text, instead of the full route card, which cost ~350px of
+              scroll before the services. */}
+          <div className="mt-6 flex items-center gap-3 lg:hidden">
+            <span className="relative grid h-11 w-11 shrink-0 place-items-center rounded-full bg-red-600/15 ring-1 ring-red-500/40">
+              <span className="absolute inset-0 animate-ping rounded-full ring-1 ring-red-500/25 motion-reduce:animate-none" aria-hidden="true" />
+              <MapPin className="h-5 w-5 text-amber-400" aria-hidden="true" />
+            </span>
+            <p className="text-sm text-white/75">
+              <span className="font-semibold text-white">Live tracking link</span> with every request
+            </p>
+          </div>
         </div>
 
-        <div ref={graphicRef} className="relative mx-auto w-full max-w-md lg:max-w-none">
+        <div ref={graphicRef} className="relative mx-auto hidden w-full max-w-md lg:block lg:max-w-none">
           <RouteGraphic />
         </div>
       </div>

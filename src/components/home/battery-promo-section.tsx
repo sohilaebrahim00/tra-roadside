@@ -119,7 +119,7 @@ export function BatteryPromoSection() {
             slot for its background video, and a second preload would compete
             with the actual LCP element for bandwidth.
           */}
-          <figure className="mx-auto w-full max-w-104 lg:mx-0">
+          <figure className="mx-auto w-full max-w-80 sm:max-w-104 lg:mx-0">
             {/* Two views of the same job: the wide shot behind, the close-up
                 overlapping its lower-left corner. The red outline is offset
                 behind the wide shot as a frame; it is decorative only. */}

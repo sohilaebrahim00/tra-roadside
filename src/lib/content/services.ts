@@ -399,6 +399,21 @@ export const SERVICES: ServiceContent[] = [
     priceLines: [{ amount: "$70" }],
     priceBadge: "$70",
     priceFrom: 70,
+    // The business's own job photos (owner, 2026-10-19).
+    photos: [
+      {
+        src: "/images/rim-lock-honda.webp",
+        alt: "A locking lug nut with a star-shaped key pattern on a two-tone Honda alloy wheel, next to four standard lug nuts.",
+        width: 1024,
+        height: 683,
+      },
+      {
+        src: "/images/rim-lock-wheel.webp",
+        alt: "A wheel lock lug nut recessed in the spoke of a dark alloy wheel, with scuffing around the lug hole.",
+        width: 810,
+        height: 540,
+      },
+    ],
     summary: "A seized or keyless wheel lock removed so the wheel can come off.",
     heroLine: "A wheel lock shouldn't strand you.",
     problem:

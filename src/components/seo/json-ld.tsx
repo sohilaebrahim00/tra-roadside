@@ -18,6 +18,8 @@ export function OrganizationJsonLd() {
     name: BUSINESS.legalName,
     alternateName: BUSINESS.shortName,
     url: env.siteUrl,
+    // A real job photo (the same 1200x630 image used for link previews).
+    image: `${env.siteUrl}/images/og/og-default.jpg`,
     telephone: BUSINESS.phoneDisplay,
     email: BUSINESS.email,
     // TRA is a service-area business with no published street address. The

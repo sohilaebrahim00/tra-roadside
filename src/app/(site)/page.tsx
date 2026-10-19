@@ -14,14 +14,13 @@ import { VideoSection } from "@/components/home/video-section";
 import { GoogleReviewsSection } from "@/components/home/google-reviews-section";
 import { FaqPreviewSection } from "@/components/home/faq-preview-section";
 import { FinalCtaSection } from "@/components/home/final-cta-section";
+import { ServicesSection } from "@/components/home/services-section";
 
-// Code-split the two GSAP ScrollTrigger sections below the fold so their JS
-// loads as separate chunks instead of bloating the bundle the hero/CTAs
-// need to hydrate. Skeletons reserve roughly the real section height to
-// avoid layout shift while each chunk loads.
-const ServicesSection = dynamic(() => import("@/components/home/services-section").then((m) => m.ServicesSection), {
-  loading: () => <div className="h-[900px] sm:h-[700px]" aria-hidden="true" />,
-});
+// Code-split the GSAP ScrollTrigger section below the fold so its JS loads as
+// a separate chunk instead of bloating the bundle the hero/CTAs need to
+// hydrate. The skeleton reserves roughly the real section height to avoid
+// layout shift while the chunk loads. ServicesSection is imported normally:
+// it sits directly under the hero, so it must not wait behind a placeholder.
 const HowItWorksSection = dynamic(() => import("@/components/home/how-it-works-section").then((m) => m.HowItWorksSection), {
   loading: () => <div className="h-[900px] bg-ink-950 sm:h-[600px]" aria-hidden="true" />,
 });
@@ -41,13 +40,15 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      {/* Services first, so a customer sees what we do and can order it
+          without scrolling past anything else; the battery offer follows. */}
+      <ServicesSection />
       <BatteryPromoSection />
       <TrustStrip />
       {/* Social proof directly under the trust strip: live Places data when
           configured, otherwise the verbatim snapshot from the listing. */}
       <GoogleReviewsSection />
       <SignatureWordSection />
-      <ServicesSection />
       <RoadsideRevealSection />
       <HowItWorksSection />
       <TrackingPreviewSection />

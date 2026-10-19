@@ -13,7 +13,7 @@ import { pageUrls, shareImageFor } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Car Battery and Roadside Guides",
   description:
-    "Plain answers from a DFW roadside crew: what a car battery replacement costs, the signs a battery is dying, and where your car keeps its battery.",
+    "Plain answers from a DFW roadside crew: car battery costs and warning signs, jump starting an electric car, and what to do about a lost wheel lock key.",
   ...pageUrls("/guides", shareImageFor("battery-replacement")),
 };
 

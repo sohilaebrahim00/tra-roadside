@@ -30,12 +30,16 @@ const plexMono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.siteUrl),
+  // The suffix used to be " | TRA — Texas Roadside Assistance" (34 characters),
+  // which pushed 134 of 154 titles past the ~60 characters Google shows. The
+  // full business name still appears in og:site_name and the LocalBusiness
+  // schema.
   title: {
-    default: "TRA — Texas Roadside Assistance | 24/7 Emergency Roadside Help",
-    template: "%s | TRA — Texas Roadside Assistance",
+    default: "24/7 Roadside Assistance in Dallas–Fort Worth | TRA Roadside",
+    template: "%s | TRA Roadside",
   },
   description:
-    "24/7 roadside assistance across the Dallas–Fort Worth Metroplex. Towing, jump starts, flat tires, fuel delivery, lockouts, and more — request help online with live driver tracking.",
+    "24/7 roadside help across Dallas–Fort Worth: car batteries, jump starts, flat tires, lockouts, fuel and towing. Request online with live driver tracking.",
   applicationName: "TRA — Texas Roadside Assistance",
   keywords: [
     "roadside assistance Dallas",

@@ -31,9 +31,13 @@ export async function generateMetadata({
   const service = getService(slug);
   if (!service) return {};
 
+  // The location belongs in the title: "battery replacement Dallas" is how
+  // people search, and these hubs are what an ad or a search lands on. The old
+  // description added the same 85-character tail to all ten summaries, which
+  // put every one past 160 characters.
   return {
-    title: `${service.name} — 24/7 Roadside Assistance`,
-    description: `${service.summary} Serving the Dallas–Fort Worth Metroplex, available 24/7. Request help online in under two minutes.`,
+    title: `${service.name} in Dallas–Fort Worth, 24/7`,
+    description: `${service.summary} Available 24/7 across Dallas–Fort Worth.`,
     ...pageUrls(`/services/${service.slug}`, shareImageFor(service.slug)),
   };
 }

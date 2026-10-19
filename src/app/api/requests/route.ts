@@ -6,6 +6,7 @@ import { generateRequestNumber, generateTrackingToken } from "@/lib/utils/reques
 import { isRateLimited } from "@/lib/utils/rate-limit";
 import { encodeDemoToken } from "@/lib/demo/demo-token";
 import { notify } from "@/lib/notifications/send";
+import { smsLine } from "@/lib/notifications/sms-lines";
 import { firstNameOf } from "@/lib/notifications/vars";
 import { customerConfirmationEmail, dispatchAlertEmail, snapshotFromInput, type RequestSnapshot } from "@/lib/notifications/request-emails";
 import { getService } from "@/lib/content/services";
@@ -64,11 +65,14 @@ function buildDispatchVars(input: CreateRequestInput, service: ServiceContent, r
     // character, so the dispatch text stays on 7-bit encoding.
     serviceShort: service.shortName,
     vehicleClause: vehicleClause(input),
+    vehicleLine: smsLine("Vehicle", vehicleShort(input)),
+    destinationLine: smsLine("To", input.destinationAddress),
     customerNotes: input.notes || "None",
     trackingUrl,
     dispatchUrl,
-    // ASCII, so the dispatch SMS stays GSM-7: tapping it opens the pin in Maps.
-    mapsUrl: `https://www.google.com/maps/search/?api=1&query=${input.pickupLat},${input.pickupLng}`,
+    // ASCII, so the dispatch SMS stays GSM-7: tapping it opens the pin in
+    // Maps. Six decimals is about 10 cm, and the short form keeps the text tidy.
+    mapsUrl: `https://maps.google.com/?q=${input.pickupLat.toFixed(6)},${input.pickupLng.toFixed(6)}`,
   };
 }
 
@@ -154,6 +158,7 @@ export async function POST(req: NextRequest) {
         serviceShort: service.shortName,
         vehicleClause: vehicleClause(input),
         vehicleText: vehicleShort(input) || "Not provided",
+        vehicleLine: smsLine("Vehicle", vehicleShort(input)),
         statusLabel: STATUS_META.new.customerLabel,
         supportPhone: BUSINESS.phoneDisplay,
         trackingUrl,
@@ -268,6 +273,7 @@ export async function POST(req: NextRequest) {
         serviceShort: service.shortName,
         vehicleClause: vehicleClause(input),
         vehicleText: vehicleShort(input) || "Not provided",
+        vehicleLine: smsLine("Vehicle", vehicleShort(input)),
         statusLabel: STATUS_META.new.customerLabel,
         supportPhone: BUSINESS.phoneDisplay,
         trackingUrl,

@@ -8,6 +8,8 @@ import { notify } from "@/lib/notifications/send";
 import { firstNameOf } from "@/lib/notifications/vars";
 import { env } from "@/lib/env";
 import { BUSINESS } from "@/lib/content/business";
+import { getService } from "@/lib/content/services";
+import { smsLine } from "@/lib/notifications/sms-lines";
 
 async function requireDriver() {
   const session = await getDriverSession();
@@ -55,13 +57,14 @@ interface NotifyRequestRow {
   request_number: string;
   sms_consent: boolean;
   customers: { full_name: string; phone: string; email: string | null } | null;
+  service_types: { name: string; slug: string } | null;
 }
 
 async function notifyCustomer(requestId: string, status: RequestStatus, driverName: string) {
   const supabase = await createServerSupabaseClient();
   const { data: request } = await supabase
     .from("service_requests")
-    .select("request_number, sms_consent, customers(full_name, phone, email)")
+    .select("request_number, sms_consent, customers(full_name, phone, email), service_types(name, slug)")
     .eq("id", requestId)
     .maybeSingle()
     .returns<NotifyRequestRow>();
@@ -88,7 +91,11 @@ async function notifyCustomer(requestId: string, status: RequestStatus, driverNa
     vars: {
       requestNumber: request.request_number,
       customerName: firstNameOf(customer.full_name),
-      driverName,
+      serviceName: request.service_types?.name,
+      // SMS-safe short name (no em dash), so texts stay on GSM-7.
+      serviceShort: (request.service_types && getService(request.service_types.slug)?.shortName) ?? request.service_types?.name,
+      driverName: firstNameOf(driverName),
+      driverLine: smsLine("Driver", firstNameOf(driverName)),
       trackingUrl,
       supportPhone: BUSINESS.phoneDisplay,
     },

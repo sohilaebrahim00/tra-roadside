@@ -9,6 +9,8 @@ import { notify } from "@/lib/notifications/send";
 import { firstNameOf } from "@/lib/notifications/vars";
 import { env } from "@/lib/env";
 import { BUSINESS } from "@/lib/content/business";
+import { getService } from "@/lib/content/services";
+import { smsLine } from "@/lib/notifications/sms-lines";
 
 async function requireStaff() {
   const session = await getStaffSession();
@@ -46,14 +48,15 @@ interface NotifyRequestRow {
   request_number: string;
   sms_consent: boolean;
   customers: { full_name: string; phone: string; email: string | null } | null;
-  service_types: { name: string } | null;
+  service_types: { name: string; slug: string } | null;
+  assigned_driver_id: string | null;
 }
 
 async function notifyStatusChange(requestId: string, status: RequestStatus, changedBy: string) {
   const admin = createAdminSupabaseClient();
   const { data: request } = await admin
     .from("service_requests")
-    .select("request_number, customers(full_name, phone, email), service_types(name), sms_consent")
+    .select("request_number, customers(full_name, phone, email), service_types(name, slug), sms_consent, assigned_driver_id")
     .eq("id", requestId)
     .maybeSingle()
     .returns<NotifyRequestRow>();
@@ -76,6 +79,14 @@ async function notifyStatusChange(requestId: string, status: RequestStatus, chan
   const event = eventMap[status];
   if (!event || !customer) return;
 
+  // The assigned driver's first name, for the "Driver:" line. Status changes
+  // made from the dashboard used to send no driver name at all.
+  let driverFirst: string | undefined;
+  if (request.assigned_driver_id) {
+    const { data: driver } = await admin.from("profiles").select("full_name").eq("id", request.assigned_driver_id).maybeSingle();
+    if (driver?.full_name) driverFirst = firstNameOf(driver.full_name);
+  }
+
   await notify({
     event,
     requestId,
@@ -84,6 +95,10 @@ async function notifyStatusChange(requestId: string, status: RequestStatus, chan
       requestNumber: request.request_number,
       customerName: firstNameOf(customer.full_name),
       serviceName: service?.name,
+      // SMS-safe short name (no em dash), so texts stay on GSM-7.
+      serviceShort: (service && getService(service.slug)?.shortName) ?? service?.name,
+      driverName: driverFirst,
+      driverLine: smsLine("Driver", driverFirst),
       trackingUrl,
       statusLabel: STATUS_META[status]?.customerLabel ?? status.replace(/_/g, " "),
       supportPhone: BUSINESS.phoneDisplay,

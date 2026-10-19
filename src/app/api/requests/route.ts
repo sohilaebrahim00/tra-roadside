@@ -6,7 +6,8 @@ import { generateRequestNumber, generateTrackingToken } from "@/lib/utils/reques
 import { isRateLimited } from "@/lib/utils/rate-limit";
 import { encodeDemoToken } from "@/lib/demo/demo-token";
 import { notify } from "@/lib/notifications/send";
-import { smsLine } from "@/lib/notifications/sms-lines";
+import { smsLine, smsPrice } from "@/lib/notifications/sms-lines";
+import { reverseGeocode, isCoordinatePlaceholder } from "@/lib/geo/reverse-geocode";
 import { firstNameOf } from "@/lib/notifications/vars";
 import { customerConfirmationEmail, dispatchAlertEmail, snapshotFromInput, type RequestSnapshot } from "@/lib/notifications/request-emails";
 import { getService } from "@/lib/content/services";
@@ -65,6 +66,7 @@ function buildDispatchVars(input: CreateRequestInput, service: ServiceContent, r
     // character, so the dispatch text stays on 7-bit encoding.
     serviceShort: service.shortName,
     vehicleClause: vehicleClause(input),
+    priceLine: smsLine("Price", smsPrice(service)),
     vehicleLine: smsLine("Vehicle", vehicleShort(input)),
     destinationLine: smsLine("To", input.destinationAddress),
     customerNotes: input.notes || "None",
@@ -122,6 +124,15 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ requestNumber: generateRequestNumber(), trackingToken: "void" });
   }
 
+  // The form writes "Near 33.19, -97.12 (confirm exact address)" when its own
+  // lookup failed. Try once more here so the saved request, the customer's
+  // confirmation and the dispatch text carry a street address; "(from GPS)"
+  // tells dispatch it came from the phone's location, not from the customer.
+  if (isCoordinatePlaceholder(input.pickupAddress)) {
+    const found = await reverseGeocode(input.pickupLat, input.pickupLng);
+    if (found) input.pickupAddress = `${found.address} (from GPS)`;
+  }
+
   const service = getService(input.serviceSlug);
   if (!service) {
     return NextResponse.json({ error: "Unknown service selected." }, { status: 400 });
@@ -158,6 +169,7 @@ export async function POST(req: NextRequest) {
         serviceShort: service.shortName,
         vehicleClause: vehicleClause(input),
         vehicleText: vehicleShort(input) || "Not provided",
+        priceLine: smsLine("Price", smsPrice(service)),
         vehicleLine: smsLine("Vehicle", vehicleShort(input)),
         statusLabel: STATUS_META.new.customerLabel,
         supportPhone: BUSINESS.phoneDisplay,
@@ -273,6 +285,7 @@ export async function POST(req: NextRequest) {
         serviceShort: service.shortName,
         vehicleClause: vehicleClause(input),
         vehicleText: vehicleShort(input) || "Not provided",
+        priceLine: smsLine("Price", smsPrice(service)),
         vehicleLine: smsLine("Vehicle", vehicleShort(input)),
         statusLabel: STATUS_META.new.customerLabel,
         supportPhone: BUSINESS.phoneDisplay,

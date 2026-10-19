@@ -41,6 +41,8 @@ export function MapPicker({
   const [searchResults, setSearchResults] = useState<{ address: string; lat: number; lng: number }[]>([]);
   const [searching, setSearching] = useState(false);
   const [demoNotice, setDemoNotice] = useState(false);
+  // OpenStreetMap's license asks for credit wherever its data is shown.
+  const [osmCredit, setOsmCredit] = useState(false);
 
   // Load Google Maps once.
   useEffect(() => {
@@ -78,6 +80,7 @@ export function MapPicker({
         setDemoNotice(true);
         applyLocation(lat, lng, `Near ${lat.toFixed(4)}, ${lng.toFixed(4)} (confirm exact address)`, source);
       } else {
+        if (data.provider === "osm") setOsmCredit(true);
         applyLocation(lat, lng, data.address ?? `${lat.toFixed(5)}, ${lng.toFixed(5)}`, source);
       }
     } catch {
@@ -150,6 +153,7 @@ export function MapPicker({
         const fallback = coords ?? DALLAS_CENTER;
         applyLocation(fallback.lat, fallback.lng, manualAddress, "typed");
       } else {
+        if (data.provider === "osm") setOsmCredit(true);
         setSearchResults(data.results ?? []);
       }
     } finally {
@@ -251,8 +255,11 @@ export function MapPicker({
 
         {demoNotice && (
           <p className="mt-2 text-xs text-ink-500 dark:text-ink-300">
-            Demo mode: address lookup isn&apos;t connected to Google Maps yet — dispatch will confirm your exact location by phone.
+            We couldn&apos;t look up that address automatically. Dispatch will confirm your exact location by phone.
           </p>
+        )}
+        {osmCredit && (
+          <p className="mt-2 text-[0.7rem] text-ink-500 dark:text-ink-300">Address data © OpenStreetMap contributors</p>
         )}
       </div>
     </div>

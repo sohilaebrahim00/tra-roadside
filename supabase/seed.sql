@@ -55,7 +55,7 @@ on conflict (slug) do update set name = excluded.name, sort_order = excluded.sor
 -- are substituted by src/lib/notifications/render.ts.
 insert into notification_templates (event, channel, subject, body) values
   ('request_received', 'email', 'We received your {{serviceName}} request — {{requestNumber}}', 'Hi {{customerName}}, thanks for choosing TRA. Your request is with our local Dallas–Fort Worth dispatch team now. Everything you sent us is below, with your live tracking link.'),
-  ('request_received', 'sms', null, E'TRA Roadside: Request received\nService: {{serviceShort}}{{vehicleLine}}\nLocation: {{pickupAddress}}\nRef: {{requestNumber}}\nTrack live: {{trackingUrl}}\nQuestions: {{supportPhone}}\nReply STOP to opt out.'),
+  ('request_received', 'sms', null, E'TRA Roadside: Request received\nService: {{serviceShort}}{{priceLine}}{{vehicleLine}}\nLocation: {{pickupAddress}}\nRef: {{requestNumber}}\nTrack live: {{trackingUrl}}\nQuestions: {{supportPhone}}\nReply STOP to opt out.'),
   ('request_accepted', 'email', 'Your request has been accepted — {{requestNumber}}', 'Hi {{customerName}}, dispatch has accepted your request and is assigning a driver. Track live status: {{trackingUrl}}. Questions? Call {{supportPhone}}.'),
   ('request_accepted', 'sms', null, E'TRA Roadside: Request accepted\nService: {{serviceShort}}\nRef: {{requestNumber}}\nWe\'re assigning a driver now.\nTrack live: {{trackingUrl}}\nReply STOP to opt out.'),
   ('driver_assigned', 'email', 'A driver has been assigned — {{requestNumber}}', 'Hi {{customerName}}, {{driverName}} has been assigned to your request. Track live location: {{trackingUrl}}. Questions? Call {{supportPhone}}.'),
@@ -72,7 +72,7 @@ insert into notification_templates (event, channel, subject, body) values
   ('request_canceled', 'sms', null, E'TRA Roadside: Request canceled\nService: {{serviceShort}}\nRef: {{requestNumber}}\nQuestions: {{supportPhone}}\nReply STOP to opt out.'),
   ('request_updated', 'sms', null, E'TRA Roadside: Status update\nRef: {{requestNumber}}\nStatus: {{statusLabel}}\nReply STOP to opt out.'),
   ('dispatch_new_request_email', 'email', 'NEW {{serviceName}} — {{requestNumber}}{{vehicleClause}}', 'New {{serviceName}} request from {{customerName}}. Call to confirm the checklist below, then assign a driver.'),
-  ('dispatch_new_request_sms', 'sms', null, E'TRA NEW REQUEST {{requestNumber}}\nService: {{serviceShort}}{{vehicleLine}}\nCustomer: {{customerName}} {{customerPhone}}\nLocation: {{pickupAddress}}{{destinationLine}}\nMap: {{mapsUrl}}\nOpen: {{dispatchUrl}}'),
+  ('dispatch_new_request_sms', 'sms', null, E'TRA NEW REQUEST {{requestNumber}}\nService: {{serviceShort}}{{priceLine}}{{vehicleLine}}\nCustomer: {{customerName}} {{customerPhone}}\nLocation: {{pickupAddress}}{{destinationLine}}\nMap: {{mapsUrl}}\nOpen: {{dispatchUrl}}'),
   ('dispatch_unaccepted_timeout', 'email', 'Unaccepted request — {{requestNumber}}', 'Request {{requestNumber}} has not been accepted yet. Review: {{dispatchUrl}}'),
   ('dispatch_driver_issue', 'email', 'Driver reported an issue — {{requestNumber}}', 'Driver {{driverName}} reported an issue on request {{requestNumber}}: {{issueNote}}'),
   ('dispatch_request_canceled', 'email', 'Request canceled — {{requestNumber}}', 'Request {{requestNumber}} was canceled.'),

@@ -75,6 +75,9 @@ for (const [, event, raw] of smsRows) {
 // 2. Service short names.
 const services = read("src/lib/content/services.ts");
 for (const m of services.matchAll(/^    shortName: "([^"]+)",$/gm)) check(`service shortName "${m[1]}"`, m[1]);
+// Prices go into texts through smsPrice() (src/lib/notifications/sms-lines.ts),
+// which turns en and em dashes into hyphens; everything else must already be GSM-7.
+for (const m of services.matchAll(/^    priceBadge: "([^"]+)",$/gm)) check(`SMS price "${m[1]}"`, m[1].replace(/[–—]/g, "-"));
 
 // 3. Customer-facing status labels.
 const domain = read("src/lib/types/domain.ts");
@@ -94,4 +97,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`SMS GSM-7 check passed: ${checked} SMS templates, all shortNames, status labels and the support phone are 7-bit safe.`);
+console.log(`SMS GSM-7 check passed: ${checked} SMS templates, all shortNames, SMS prices, status labels and the support phone are 7-bit safe.`);

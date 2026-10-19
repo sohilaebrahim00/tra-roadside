@@ -1,32 +1,22 @@
 import { NextRequest, NextResponse } from "next/server";
-import { env } from "@/lib/env";
+import { reverseGeocode } from "@/lib/geo/reverse-geocode";
 
 /**
- * Server-side reverse geocoding proxy so the Google Maps server key never
- * reaches the browser. Returns `{ demo: true }` with no address when the key
- * isn't configured — the request wizard falls back to manual address entry.
+ * Server-side reverse geocoding for the request form: Google when a Maps key
+ * is configured, OpenStreetMap otherwise (see lib/geo/reverse-geocode.ts), so
+ * no key ever reaches the browser. Returns `{ demo: true }` with no address
+ * only when neither provider answers; the wizard then keeps the coordinates
+ * and asks the customer to confirm the spot.
  */
 export async function GET(req: NextRequest) {
-  const lat = req.nextUrl.searchParams.get("lat");
-  const lng = req.nextUrl.searchParams.get("lng");
+  const lat = Number(req.nextUrl.searchParams.get("lat"));
+  const lng = Number(req.nextUrl.searchParams.get("lng"));
 
-  if (!lat || !lng) {
+  if (!Number.isFinite(lat) || !Number.isFinite(lng)) {
     return NextResponse.json({ error: "lat and lng are required" }, { status: 400 });
   }
 
-  const key = env.googleMapsServerApiKey || env.googleMapsApiKey;
-  if (!key) {
-    return NextResponse.json({ demo: true, address: null });
-  }
-
-  try {
-    const res = await fetch(
-      `https://maps.googleapis.com/maps/api/geocode/json?latlng=${encodeURIComponent(lat)},${encodeURIComponent(lng)}&key=${key}`
-    );
-    const data = await res.json();
-    const address = data?.results?.[0]?.formatted_address ?? null;
-    return NextResponse.json({ demo: false, address });
-  } catch {
-    return NextResponse.json({ demo: true, address: null });
-  }
+  const result = await reverseGeocode(lat, lng);
+  if (!result) return NextResponse.json({ demo: true, address: null });
+  return NextResponse.json({ demo: false, address: result.address, provider: result.provider });
 }

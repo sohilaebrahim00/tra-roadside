@@ -76,7 +76,7 @@ export function HeroVisual({ svc }: { svc: ServiceContent }) {
       <div className="absolute inset-0 bg-gradient-to-br from-ink-950/10 via-transparent to-ink-950/85" />
 
       <div className="relative flex h-full flex-col items-center justify-center gap-4 px-8">
-        <span className="flex h-24 w-24 items-center justify-center rounded-3xl border border-red-500/30 bg-ink-950/60 text-red-500 shadow-[0_0_40px_-8px_rgba(224,32,43,0.6)]">
+        <span className="flex h-24 w-24 items-center justify-center rounded-3xl border border-red-500/30 bg-ink-950/60 text-red-500 shadow-[0_0_40px_-8px_rgba(224,19,28,0.6)]">
           <Icon className="h-12 w-12" />
         </span>
         <p className="font-display text-xl font-bold uppercase tracking-wide text-white/90">

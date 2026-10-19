@@ -17,7 +17,8 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  /* Brand — derived from the TRA logo (deep black / emergency red / amber-orange / clean white) */
+  /* Brand — red, orange and yellow sampled from the owner's TRA logo file
+     (2026-10-19), with deep black and clean white. */
   --color-ink-950: #0a0a0b;
   --color-ink-900: #121214;
   --color-ink-800: #1c1c1f;
@@ -32,12 +33,12 @@
 
   --color-red-700: #a3121a;
   --color-red-600: #c81721;
-  --color-red-500: #e0202b;
+  --color-red-500: #e0131c;
   --color-red-400: #ea4a52;
 
   --color-amber-600: #c96a12;
-  --color-amber-500: #f2941c;
-  --color-amber-400: #f8b03e;
+  --color-amber-500: #f2840c;
+  --color-amber-400: #efab23;
 
   --color-success-600: #1a7f4e;
   --color-success-500: #22a566;
@@ -200,10 +201,10 @@
     }
   }
 
-  /* The logo monogram tile; see components/brand/brand-pattern.tsx. */
+  /* The logo emblem tile (a 2x PNG); see components/brand/brand-pattern.tsx. */
   .brand-pattern {
-    background-image: url("/images/brand/tra-pattern.svg");
-    background-size: 96px 96px;
+    background-image: url("/images/brand/tra-pattern.png");
+    background-size: 112px 112px;
   }
 
   .text-balance {

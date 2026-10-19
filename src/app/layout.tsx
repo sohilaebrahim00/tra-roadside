@@ -57,8 +57,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
   },
-  // No `icons` here: favicon.ico, icon.svg and apple-icon.png in this folder
-  // are picked up by file convention and drawn from the logo glyph.
+  // No `icons` here: favicon.ico, icon.png and apple-icon.png in this folder
+  // are picked up by file convention; all are cut from the owner's logo.
   robots: {
     index: true,
     follow: true,

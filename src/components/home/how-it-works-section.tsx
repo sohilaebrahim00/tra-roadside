@@ -109,7 +109,7 @@ export function HowItWorksSection() {
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -left-1/4 top-0 h-full w-1/2 bg-[radial-gradient(ellipse_at_top,rgba(224,32,43,0.16),transparent_60%)]"
+        className="pointer-events-none absolute -left-1/4 top-0 h-full w-1/2 bg-[radial-gradient(ellipse_at_top,rgba(224,19,28,0.16),transparent_60%)]"
       />
 
       <Container className="relative">

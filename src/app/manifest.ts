@@ -2,9 +2,9 @@ import type { MetadataRoute } from "next";
 
 /**
  * Web app manifest, so "Add to Home Screen" shows the TRA logo and name
- * instead of a screenshot of the page. The icons are drawn from the logo glyph
- * in src/components/brand/logo-mark.tsx, the same mark as the browser tab icon
- * (src/app/icon.svg, favicon.ico, apple-icon.png).
+ * instead of a screenshot of the page. The icons are the emblem from the
+ * owner's logo (tire, wrenches and road) on a white tile, the same artwork as
+ * the browser tab icon (src/app/favicon.ico, icon.png, apple-icon.png).
  */
 export default function manifest(): MetadataRoute.Manifest {
   return {

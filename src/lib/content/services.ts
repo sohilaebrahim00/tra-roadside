@@ -516,10 +516,15 @@ export const SERVICES: ServiceContent[] = [
     name: "Towing",
     shortName: "Towing",
     needsDestination: true,
-    priceLines: [{ amount: "$5 per mile", note: "from your vehicle's location to the destination" }],
-    priceBadge: "$5 / mile",
-    priceNote: "Charged per mile from where your vehicle is to where you want it taken.",
-    summary: "Light and medium-duty towing to the destination of your choice, at $5 per mile.",
+    // Owner's rate as of 2026-10-19: a base charge, then a per-mile charge.
+    priceLines: [
+      { label: "Base rate", amount: "$120" },
+      { label: "Then per mile", amount: "$5 per mile", note: "from your vehicle's location to the destination" },
+    ],
+    priceBadge: "$120 + $5/mile",
+    priceFrom: 120,
+    priceNote: "A $120 base rate, then $5 per mile from where your vehicle is to where you want it taken.",
+    summary: "Light and medium-duty towing to the destination of your choice: $120, then $5 per mile.",
     heroLine: "Your vehicle, moved safely to wherever it needs to go.",
     problem:
       "Some breakdowns can't be fixed roadside — a dead transmission, a collision, or a vehicle that won't safely restart. When that happens, your car needs to move, not get patched on the shoulder.",
@@ -537,7 +542,7 @@ export const SERVICES: ServiceContent[] = [
     faqs: [
       {
         q: "How is towing priced?",
-        a: "At $5 per mile, measured from your vehicle's location to the destination you choose. Tell us the destination in the request and dispatch confirms the distance before the driver sets off.",
+        a: "A $120 base rate, then $5 per mile, measured from your vehicle's location to the destination you choose. Tell us the destination in the request and dispatch confirms the distance before the driver sets off.",
       },
       {
         q: "Can you tow to any shop?",

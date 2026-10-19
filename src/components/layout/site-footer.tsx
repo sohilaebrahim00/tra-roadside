@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Phone, Mail, Clock, PenLine, MapPin } from "lucide-react";
 import { FacebookIcon, InstagramIcon, YoutubeIcon } from "@/components/brand/social-icons";
-import { LogoLockup } from "@/components/brand/logo-mark";
+import { FullLogo } from "@/components/brand/logo-mark";
 import { BrandPattern } from "@/components/brand/brand-pattern";
 import { BUSINESS, SERVICE_AREAS } from "@/lib/content/business";
 import { SERVICES } from "@/lib/content/services";
@@ -13,7 +13,7 @@ export function SiteFooter() {
       <BrandPattern strength={0.06} />
       <Container className="grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-5 lg:gap-8">
         <div className="lg:col-span-2">
-          <LogoLockup className="text-white" />
+          <FullLogo onDark className="w-40" />
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/60">
             {BUSINESS.dispatchNote}. Fast, upfront-priced roadside assistance across the
             Dallas–Fort Worth Metroplex, available around the clock.

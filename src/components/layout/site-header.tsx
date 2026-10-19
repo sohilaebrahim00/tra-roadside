@@ -12,10 +12,10 @@ import { MobileMenu } from "./mobile-menu";
  */
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 h-(--header-height) border-b border-white/10 bg-ink-950/90 text-white backdrop-blur supports-[backdrop-filter]:bg-ink-950/75">
+    <header className="sticky top-0 z-50 h-(--header-height) border-b border-white/10 bg-ink-950/95 text-white backdrop-blur supports-[backdrop-filter]:bg-ink-950/85">
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="text-white" aria-label="TRA — Texas Roadside Assistance home">
-          <LogoLockup />
+          <LogoLockup onDark priority />
         </Link>
 
         <nav aria-label="Primary" className="hidden items-center gap-7 lg:flex">

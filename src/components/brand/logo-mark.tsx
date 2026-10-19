@@ -1,54 +1,83 @@
+import Image from "next/image";
 import { cn } from "@/lib/utils/cn";
 
 /**
- * Lightweight SVG recreation of the TRA mark (tire arc + wrenches over a
- * road) for use as a scalable, crisp favicon-adjacent glyph in the header
- * and footer. This is a stand-in for the official raster logo files supplied
- * by the brand — drop the source PNG/SVG into /public/brand/ and swap this
- * component's usage if pixel-exact reproduction of the original artwork is
- * required (e.g. for print or the OG image).
+ * The owner's TRA logo (supplied 2026-10-19), cut from the original artwork
+ * into transparent files in public/brand/:
+ *
+ *   tra-logo.png        the full stacked logo
+ *   tra-emblem.png      tire, wrenches and road
+ *   tra-wordmark.png    the TRA letters
+ *
+ * Each has a "-dark" twin for dark backgrounds, identical except that the
+ * black asphalt is a dark gray, so the road still reads on ink. The white
+ * background, the gaps in the tire tread and the letter counters are
+ * transparent in both; the road's center dashes and edge lines are kept.
  */
-export function LogoGlyph({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 48 48" className={className} aria-hidden="true">
-      <defs>
-        <linearGradient id="tra-accent" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#e0202b" />
-          <stop offset="100%" stopColor="#f2941c" />
-        </linearGradient>
-      </defs>
-      <path
-        d="M24 4a20 20 0 0 1 20 20h-6a14 14 0 0 0-28 0H4A20 20 0 0 1 24 4Z"
-        fill="currentColor"
-      />
-      <path d="M6 34 24 20l18 14" stroke="url(#tra-accent)" strokeWidth="3.5" strokeLinecap="round" fill="none" />
-      <circle cx="24" cy="24" r="3" fill="url(#tra-accent)" />
-    </svg>
-  );
-}
+const EMBLEM = { width: 317, height: 160 };
+const WORDMARK = { width: 351, height: 80 };
+export const FULL_LOGO = { width: 800, height: 699 };
 
-export function Wordmark({ className, subline = true }: { className?: string; subline?: boolean }) {
-  return (
-    <span className={cn("inline-flex flex-col leading-none", className)}>
-      <span className="font-display text-2xl font-bold tracking-tight">
-        TR<span className="text-red-500">A</span>
-      </span>
-      {/* The subline inherits the lockup color at 60% so it clears 4.5:1 on the
-          white header and the dark footer alike; a fixed gray failed on the dark one. */}
-      {subline && (
-        <span className="mt-0.5 text-[0.55rem] font-semibold uppercase tracking-[0.22em] opacity-60">
-          Texas Roadside Assistance
-        </span>
-      )}
-    </span>
-  );
-}
-
-export function LogoLockup({ className, subline = true }: { className?: string; subline?: boolean }) {
+/** Horizontal lockup for the header and app shells: emblem, then TRA over the tagline. */
+export function LogoLockup({
+  className,
+  subline = true,
+  onDark = false,
+  priority = false,
+}: {
+  className?: string;
+  subline?: boolean;
+  /** Use the dark-background version of the artwork. */
+  onDark?: boolean;
+  /** Preload, for the copy in the header. */
+  priority?: boolean;
+}) {
+  const sfx = onDark ? "-dark" : "";
   return (
     <span className={cn("inline-flex items-center gap-2.5", className)}>
-      <LogoGlyph className="h-9 w-9 shrink-0" />
-      <Wordmark subline={subline} />
+      <Image
+        src={`/brand/tra-emblem${sfx}.png`}
+        alt=""
+        width={EMBLEM.width}
+        height={EMBLEM.height}
+        priority={priority}
+        className="h-9 w-auto shrink-0 sm:h-10"
+      />
+      <span className="inline-flex flex-col items-start leading-none">
+        <Image
+          src={`/brand/tra-wordmark${sfx}.png`}
+          alt="TRA"
+          width={WORDMARK.width}
+          height={WORDMARK.height}
+          priority={priority}
+          className="h-[1.3rem] w-auto sm:h-6"
+        />
+        {subline && (
+          // The logo's own tagline color family: red-orange on light, the
+          // logo orange on dark, each clearing 4.5:1 at this size.
+          <span
+            className={cn(
+              "mt-1 text-[0.52rem] font-bold uppercase tracking-[0.2em]",
+              onDark ? "text-amber-500" : "text-red-600"
+            )}
+          >
+            Texas Roadside Assistance
+          </span>
+        )}
+      </span>
     </span>
+  );
+}
+
+/** The full stacked logo, for the footer and anywhere the brand gets room. */
+export function FullLogo({ className, onDark = false }: { className?: string; onDark?: boolean }) {
+  return (
+    <Image
+      src={`/brand/tra-logo${onDark ? "-dark" : ""}.png`}
+      alt="TRA — Texas Roadside Assistance"
+      width={FULL_LOGO.width}
+      height={FULL_LOGO.height}
+      className={cn("h-auto", className)}
+    />
   );
 }

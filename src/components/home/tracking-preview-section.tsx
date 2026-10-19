@@ -50,13 +50,13 @@ export function TrackingPreviewSection() {
                   <path
                     d="M20 170 C 80 140, 60 90, 130 80 S 220 60, 260 30"
                     fill="none"
-                    stroke="#f2941c"
+                    stroke="#f2840c"
                     strokeWidth="3"
                     strokeDasharray="8 8"
                     className="route-flow"
                   />
-                  <circle cx="20" cy="170" r="6" fill="#e0202b" />
-                  <circle cx="260" cy="30" r="6" fill="#f2941c" />
+                  <circle cx="20" cy="170" r="6" fill="#e0131c" />
+                  <circle cx="260" cy="30" r="6" fill="#f2840c" />
                 </svg>
                 <span className="absolute right-3 top-3 flex items-center gap-1.5 rounded-full bg-success-600/90 px-2.5 py-1 text-[0.65rem] font-semibold text-white">
                   <span className="h-1.5 w-1.5 rounded-full bg-white" /> Live

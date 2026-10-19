@@ -38,7 +38,7 @@ export function TrackingMap({ pickup, driver }: { pickup: Point; driver: Point |
     pickupMarkerRef.current = new window.google.maps.Marker({
       position: pickup,
       map,
-      icon: { path: window.google.maps.SymbolPath.CIRCLE, scale: 8, fillColor: "#e0202b", fillOpacity: 1, strokeColor: "#fff", strokeWeight: 2 },
+      icon: { path: window.google.maps.SymbolPath.CIRCLE, scale: 8, fillColor: "#e0131c", fillOpacity: 1, strokeColor: "#fff", strokeWeight: 2 },
     });
     if (driver) {
       driverMarkerRef.current = new window.google.maps.Marker({ position: driver, map });
@@ -97,7 +97,7 @@ function AbstractRouteMap({ pickup, driver }: { pickup: Point; driver: Point | n
             y1={driverPos.y}
             x2={pickupPos.x}
             y2={pickupPos.y}
-            stroke="#f2941c"
+            stroke="#f2840c"
             strokeWidth="0.8"
             strokeDasharray="2 2"
             vectorEffect="non-scaling-stroke"

@@ -73,7 +73,7 @@ export function AdminShell({
       <div className="flex">
         <aside className="hidden w-64 shrink-0 flex-col bg-ink-950 py-6 text-white lg:flex">
           <div className="px-5 pb-6">
-            <LogoLockup className="text-white" />
+            <LogoLockup onDark />
           </div>
           {nav}
           <div className="mt-auto border-t border-white/10 px-5 pt-4">

@@ -42,7 +42,7 @@ export function BatteryPromoSection() {
 
             {/* Both strings come from SERVICES, so a price change reaches this
                 section without anyone remembering it exists. */}
-            <div className="mt-5 max-w-md rounded-2xl border border-white/15 bg-gradient-to-br from-white/[0.09] to-white/[0.02] p-5 shadow-[0_20px_50px_-25px_rgba(224,32,43,0.6)] sm:mt-7 sm:p-6">
+            <div className="mt-5 max-w-md rounded-2xl border border-white/15 bg-gradient-to-br from-white/[0.09] to-white/[0.02] p-5 shadow-[0_20px_50px_-25px_rgba(224,19,28,0.6)] sm:mt-7 sm:p-6">
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">Car batteries from</p>

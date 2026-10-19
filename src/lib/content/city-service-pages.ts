@@ -321,9 +321,9 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     h1: "Towing Service in Dallas, TX",
     title: "Towing Service Dallas TX",
     metaDescription:
-      "Need a tow in Dallas? TRA provides light and medium-duty towing to the shop, dealership or address you choose. Charged per mile, distance confirmed first.",
+      "Need a tow in Dallas? Light and medium-duty towing to the shop, dealership or address you choose. A base rate plus per mile, distance confirmed first.",
     intro:
-      "Some breakdowns cannot be fixed at the roadside: a failed transmission, collision damage, or an engine that will not run safely. Then the car needs to be moved, and the only questions are where to and how far. Tell us the destination when you request help. Because the charge is per mile from where the car is to where it is going, dispatch confirms the distance with you before a truck is sent.",
+      "Some breakdowns cannot be fixed at the roadside: a failed transmission, collision damage, or an engine that will not run safely. Then the car needs to be moved, and the only questions are where to and how far. Tell us the destination when you request help. Because the price is a base rate plus a charge per mile from where the car is to where it is going, dispatch confirms the distance with you before a truck is sent.",
     scenarios: [
       "A car that will not restart after overheating on I-35E or I-30.",
       "Warning lights you would rather not risk on the LBJ Freeway, even if the car still runs.",
@@ -335,7 +335,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     faqs: [
       {
         q: "How is the tow priced?",
-        a: "Per mile, measured from where your vehicle is to the destination you choose. The rate is shown on this page, and dispatch confirms the distance with you before the truck is sent, so the total does not come as a surprise.",
+        a: "A base rate plus a per-mile charge, measured from where your vehicle is to the destination you choose. Both are shown on this page, and dispatch confirms the distance with you before the truck is sent, so the total does not come as a surprise.",
       },
       {
         q: "Can you tow to any shop or dealership?",

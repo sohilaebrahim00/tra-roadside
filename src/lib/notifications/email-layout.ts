@@ -59,7 +59,7 @@ const C = {
   muted: "#6b6b75",
   line: "#e6e6ea",
   paper: "#f6f6f8",
-  red: "#e0202b",
+  red: "#e0131c",
   white: "#ffffff",
 } as const;
 

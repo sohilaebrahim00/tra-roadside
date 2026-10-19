@@ -11,8 +11,9 @@ const FADES = {
 } as const;
 
 /**
- * The TRA monogram pattern: the logo glyph (logo-mark.tsx) as white line art
- * on a staggered grid (public/images/brand/tra-pattern.svg). Decorative only.
+ * The TRA pattern: the logo's emblem (tire, wrenches and road) as a white
+ * silhouette on a staggered grid (public/images/brand/tra-pattern.png, cut
+ * from the owner's logo). Decorative only.
  *
  * Place it inside a `relative isolate overflow-hidden` dark or red section.
  * It sits at -z-10, which inside that isolated stacking context is above the

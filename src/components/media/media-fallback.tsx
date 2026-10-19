@@ -37,7 +37,7 @@ export function MediaFallback({
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_40%,rgba(224,32,43,0.12),transparent)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_40%,rgba(224,19,28,0.12),transparent)]"
       />
       <Film className={cn("relative h-6 w-6", tone === "dark" ? "text-white/20" : "text-ink-950/15")} aria-hidden="true" />
       {isDev && label && (

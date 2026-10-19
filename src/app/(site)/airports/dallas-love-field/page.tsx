@@ -263,7 +263,7 @@ export default function DallasLoveFieldPage() {
           </div>
 
           {/* ---------------- Sidebar ---------------- */}
-          <aside className="space-y-6">
+          <div className="space-y-6">
             <div className="rounded-2xl bg-red-600 p-6 text-white">
               <h3 className="font-display text-base font-semibold">Standing at the car right now?</h3>
               <p className="mt-2 text-sm text-white/85">
@@ -320,7 +320,7 @@ export default function DallasLoveFieldPage() {
                 <p className="mt-2 text-sm text-ink-600 dark:text-ink-200">{local.corridors.join(" · ")}</p>
               </div>
             )}
-          </aside>
+          </div>
         </Container>
       </section>
     </>

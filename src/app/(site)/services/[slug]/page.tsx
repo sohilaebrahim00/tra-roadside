@@ -207,7 +207,7 @@ export default async function ServicePage({
             )}
           </div>
 
-          <aside className="space-y-6">
+          <div className="space-y-6">
             <div className="rounded-2xl border border-ink-950/8 bg-paper-50 p-6 dark:border-white/10 dark:bg-ink-900">
               <h3 className="flex items-center gap-2 font-display text-base font-semibold text-ink-950 dark:text-white">
                 <ClipboardList className="h-4.5 w-4.5 text-red-600" aria-hidden="true" /> What we&apos;ll need
@@ -239,7 +239,7 @@ export default async function ServicePage({
                 Request Help
               </Button>
             </div>
-          </aside>
+          </div>
         </Container>
       </section>
 

@@ -109,7 +109,7 @@ export default async function ServiceAreaPage({
             </div>
           </div>
 
-          <aside className="space-y-6">
+          <div className="space-y-6">
             {/*
               Location hubs inside this city's limits, from LOCATION_HUBS. Data
               driven, so no city is special-cased here: a city with no hub
@@ -161,7 +161,7 @@ export default async function ServiceAreaPage({
                 Request Help
               </Button>
             </div>
-          </aside>
+          </div>
         </Container>
       </section>
     </>

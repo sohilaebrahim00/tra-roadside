@@ -9,7 +9,7 @@ export async function GallerySection() {
   const items = await getGalleryItems();
 
   return (
-    <section className="border-y border-ink-950/8 bg-paper-50 py-20 sm:py-28">
+    <section className="border-y border-ink-950/8 bg-paper-50 py-12 sm:py-28">
       <Container>
         <SectionHeading eyebrow="Real Work" title="On the job across DFW" align="center" />
 

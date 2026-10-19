@@ -22,7 +22,9 @@ export function BatteryStrip() {
   if (!price) return null;
 
   return (
-    <div className="h-(--battery-strip-height) bg-ink-950 text-white">
+    // An aside so the strip sits in a landmark like the rest of the page
+    // (axe region rule); it is supplementary to every page it appears on.
+    <aside aria-label="Battery offer" className="h-(--battery-strip-height) bg-ink-950 text-white">
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
         <p className="flex min-w-0 items-center gap-2 text-xs sm:text-sm">
           <BatteryFull className="h-4 w-4 shrink-0 text-amber-400" aria-hidden="true" />
@@ -42,6 +44,6 @@ export function BatteryStrip() {
           <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
         </Link>
       </div>
-    </div>
+    </aside>
   );
 }

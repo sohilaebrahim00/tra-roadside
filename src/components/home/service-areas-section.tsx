@@ -6,7 +6,7 @@ import { SERVICE_AREAS } from "@/lib/content/business";
 
 export function ServiceAreasSection() {
   return (
-    <section className="py-20 sm:py-28">
+    <section className="py-12 sm:py-28">
       <Container>
         <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
           <SectionHeading

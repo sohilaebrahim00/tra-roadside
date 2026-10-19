@@ -8,7 +8,7 @@ export async function FaqPreviewSection() {
   const faqs = await getFaqs();
 
   return (
-    <section className="py-20 sm:py-28">
+    <section className="py-12 sm:py-28">
       <Container size="narrow">
         <SectionHeading eyebrow="Questions" title="Frequently asked questions" align="center" />
         <div className="mt-10 rounded-2xl border border-ink-950/8 px-6 dark:border-white/10">

@@ -50,14 +50,14 @@ export function SectionHeading({
       {eyebrow && <Eyebrow tone={tone === "light" ? "light" : "red"}>{eyebrow}</Eyebrow>}
       <Heading
         className={cn(
-          "mt-3 font-display text-3xl font-semibold uppercase tracking-tight text-balance sm:text-4xl",
+          "mt-2.5 font-display text-[1.6rem] font-semibold uppercase leading-tight tracking-tight text-balance sm:mt-3 sm:text-4xl",
           tone === "dark" ? "text-ink-950 dark:text-white" : "text-white"
         )}
       >
         {title}
       </Heading>
       {description && (
-        <p className={cn("mt-4 text-base leading-relaxed sm:text-lg", tone === "dark" ? "text-ink-600 dark:text-ink-200" : "text-white/75")}>
+        <p className={cn("mt-3 text-[0.95rem] leading-relaxed sm:mt-4 sm:text-lg", tone === "dark" ? "text-ink-600 dark:text-ink-200" : "text-white/75")}>
           {description}
         </p>
       )}

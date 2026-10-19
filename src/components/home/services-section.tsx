@@ -11,7 +11,7 @@ import { SERVICES, type ServiceContent } from "@/lib/content/services";
 import { SERVICE_ICONS } from "@/lib/content/service-icons";
 import { gsap, ScrollTrigger, registerGsap } from "@/lib/gsap/register";
 import { PricingDisclaimer } from "@/components/ui/pricing-disclaimer";
-import type { ServiceTypeSlug } from "@/lib/types/domain";
+
 
 /**
  * The services, directly under the hero, as photo cards: what a customer came
@@ -23,23 +23,14 @@ import type { ServiceTypeSlug } from "@/lib/types/domain";
  * Battery replacement goes first: it is the service the business earns most
  * from.
  *
- * Photos are the business's own. A service uses its first SERVICES photo;
- * the tire services without an exact photo borrow a tire-work shot from the
- * same set. Services with no photo yet show a plain branded tile, and pick up
- * a photo automatically when one is added to SERVICES.
+ * Photos are the business's own: each card uses its service's first SERVICES
+ * photo. Services with no photo yet (lockout and towing, as of 2026-10-19)
+ * show a plain branded tile and pick up a photo automatically when one is
+ * added to SERVICES.
  */
 
-type CardPhoto = { src: string; width: number; height: number };
-
-const BORROWED: Partial<Record<ServiceTypeSlug, CardPhoto>> = {
-  "tire-repair-plug-patch": { src: "/images/tire-wheel-tools.webp", width: 1200, height: 800 },
-  "tire-replacement": { src: "/images/tire-shoulder-night.webp", width: 1200, height: 800 },
-  "stuck-screw-in-tire": { src: "/images/field/field-tire-wheel.webp", width: 1080, height: 1350 },
-};
-
-function cardPhoto(s: ServiceContent): CardPhoto | undefined {
-  const own = s.photos?.[0];
-  return own ? { src: own.src, width: own.width, height: own.height } : BORROWED[s.slug];
+function cardPhoto(s: ServiceContent) {
+  return s.photos?.[0];
 }
 
 const ORDERED = [
@@ -102,7 +93,7 @@ export function ServicesSection() {
                 className="group flex flex-col overflow-hidden rounded-2xl border border-ink-950/10 bg-white shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-shadow hover:shadow-lg hover:shadow-ink-950/5"
               >
                 <Link href={`/services/${service.slug}`} className="block">
-                  <div className="relative aspect-[4/3] overflow-hidden bg-ink-950">
+                  <div className="relative aspect-[3/2] overflow-hidden bg-ink-950 sm:aspect-[4/3]">
                     {photo ? (
                       <Image
                         src={photo.src}

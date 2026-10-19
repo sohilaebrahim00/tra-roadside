@@ -12,7 +12,7 @@ const TIMELINE_PREVIEW = [
 
 export function TrackingPreviewSection() {
   return (
-    <section className="py-20 sm:py-28">
+    <section className="py-12 sm:py-28">
       <Container className="grid items-center gap-12 lg:grid-cols-2">
         <div className="order-2 lg:order-1">
           <SectionHeading

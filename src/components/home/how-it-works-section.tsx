@@ -97,7 +97,7 @@ export function HowItWorksSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden bg-ink-950 py-20 text-white sm:py-28"
+      className="relative overflow-hidden bg-ink-950 py-12 text-white sm:py-28"
     >
       <div
         aria-hidden="true"

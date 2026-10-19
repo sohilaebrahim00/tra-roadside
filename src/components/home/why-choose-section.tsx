@@ -27,7 +27,7 @@ const POINTS = [
 
 export function WhyChooseSection() {
   return (
-    <section className="bg-ink-950 py-20 text-white sm:py-28">
+    <section className="bg-ink-950 py-12 text-white sm:py-28">
       <Container className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:gap-16">
         <SectionHeading
           eyebrow="Why TRA"

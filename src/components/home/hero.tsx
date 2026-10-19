@@ -84,18 +84,18 @@ export function Hero() {
 
           <h1
             ref={headlineRef}
-            className="mt-6 font-display text-[2.6rem] font-bold uppercase leading-[1.02] tracking-tight text-balance sm:text-6xl lg:text-[3.4rem]"
+            className="mt-5 font-display text-[2.15rem] font-bold uppercase leading-[1.04] tracking-tight text-balance sm:text-6xl lg:text-[3.4rem]"
           >
             Stranded? Help Is Already
             <span className="text-red-500"> Closer</span> Than You Think.
           </h1>
 
-          <p ref={paraRef} className="mt-5 max-w-lg text-lg text-white/70">
+          <p ref={paraRef} className="mt-4 max-w-lg text-base text-white/70 sm:mt-5 sm:text-lg">
             Fast 24/7 roadside assistance across Dallas–Fort Worth, with live driver
             tracking from the moment help is on the way.
           </p>
 
-          <div ref={ctaRef} className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div ref={ctaRef} className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row">
             <MagneticButton>
               <Button href="/request" size="xl" icon={<LifeBuoy className="h-5 w-5" aria-hidden="true" />}>
                 Request Roadside Help
@@ -114,7 +114,7 @@ export function Hero() {
             </MagneticButton>
           </div>
 
-          <dl ref={statsRef} className="mt-10 grid max-w-md grid-cols-2 gap-x-6 gap-y-4 border-t border-white/10 pt-6 text-sm sm:grid-cols-2">
+          <dl ref={statsRef} className="mt-7 grid max-w-md grid-cols-2 gap-x-6 gap-y-4 border-t border-white/10 pt-6 text-sm sm:grid-cols-2">
             <div>
               <dt className="text-white/50">Average arrival</dt>
               <dd className="mt-0.5 font-display text-xl font-semibold">~30 minutes</dd>

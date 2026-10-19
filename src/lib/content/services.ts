@@ -242,6 +242,15 @@ export const SERVICES: ServiceContent[] = [
     priceLines: [{ amount: "$65–70" }],
     priceBadge: "$65–70",
     priceFrom: 65,
+    // A frame from the business's own footage (owner confirmed the rights).
+    photos: [
+      {
+        src: "/images/tire-repair-inflate.webp",
+        alt: "A technician in high-visibility workwear kneeling at a car's front tire, with a portable air compressor and hose beside him.",
+        width: 1080,
+        height: 720,
+      },
+    ],
     summary: "Puncture repaired roadside with a plug or patch, when the damage allows it.",
     heroLine: "Small puncture, fixed roadside.",
     problem:
@@ -333,6 +342,16 @@ export const SERVICES: ServiceContent[] = [
     priceBadge: "From $189",
     priceFrom: 189,
     priceNote: "Tire supplied by TRA. Price is set by wheel size.",
+    // A landscape crop of the business's own field photo field-tire-jack.webp,
+    // so this card no longer repeats the flat tire set's night photo.
+    photos: [
+      {
+        src: "/images/tire-jack-sedan.webp",
+        alt: "A technician in high-visibility workwear kneeling beside a black sedan, setting a floor jack under the car next to its front wheel.",
+        width: 1080,
+        height: 720,
+      },
+    ],
     summary: "A tire supplied by TRA and installed at your location, priced by wheel size.",
     heroLine: "A tire, installed where you're parked.",
     problem:
@@ -366,6 +385,17 @@ export const SERVICES: ServiceContent[] = [
     priceLines: [{ amount: "$70" }],
     priceBadge: "$70",
     priceFrom: 70,
+    // A landscape crop of the business's own field photo field-tire-wheel.webp:
+    // the tread up close. It shows the tire, not a screw, and the alt text
+    // says only what is in the frame.
+    photos: [
+      {
+        src: "/images/tire-tread-closeup.webp",
+        alt: "Close-up of a car tire's tread and alloy wheel, with a floor jack set under the car beside it.",
+        width: 1080,
+        height: 720,
+      },
+    ],
     summary: "A screw or nail lodged in your tire, removed and the tire made safe.",
     heroLine: "Something in your tire? We'll get it out.",
     problem:

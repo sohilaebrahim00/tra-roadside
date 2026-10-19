@@ -6,7 +6,7 @@ import { BUSINESS } from "@/lib/content/business";
 
 export function FinalCtaSection() {
   return (
-    <section className="relative overflow-hidden bg-red-600 py-16 text-white sm:py-20">
+    <section className="relative overflow-hidden bg-red-600 py-12 text-white sm:py-20">
       <div
         aria-hidden="true"
         className="absolute inset-0 road-lines opacity-[0.06]"

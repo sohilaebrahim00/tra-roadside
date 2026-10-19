@@ -28,7 +28,7 @@ export async function VideoSection() {
   const videos = [...localVideos, ...dbVideos];
 
   return (
-    <section className="py-20 sm:py-28">
+    <section className="py-12 sm:py-28">
       <Container>
         <SectionHeading eyebrow="Watch" title="See TRA in action" align="center" />
 

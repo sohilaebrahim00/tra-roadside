@@ -117,7 +117,7 @@ async function loadReviews(): Promise<{ rating: number; total: number; asOf?: st
       .slice(0, MAX_REVIEWS)
       .map((r) => {
         const { shown, truncated } = truncate(r.text!.trim());
-        return { author: shortName(r.author_name!), rating: r.rating!, text: shown, moreUrl: truncated ? r.author_url ?? BUSINESS.googleListingUrl : undefined };
+        return { author: shortName(r.author_name!), rating: r.rating!, text: shown, moreUrl: truncated || shown.length > 220 ? r.author_url ?? BUSINESS.googleListingUrl : undefined };
       });
     if (reviews.length > 0) return { rating: live.rating, total: live.user_ratings_total, reviews };
   }
@@ -129,77 +129,100 @@ async function loadReviews(): Promise<{ rating: number; total: number; asOf?: st
       author: r.author,
       rating: r.rating,
       text: r.text,
-      moreUrl: r.excerpt ? BUSINESS.googleListingUrl : undefined,
+      // Long reviews are clamped in the card, so they get the link too.
+      moreUrl: r.excerpt || r.text.length > 220 ? BUSINESS.googleListingUrl : undefined,
     })),
   };
 }
 
+/** Muted, distinct initials-badge colors, picked by name so a reviewer keeps theirs. */
+const BADGE_COLORS = ["#b91c1c", "#0a0a0b", "#b45309", "#166534", "#1e3a8a", "#6b21a8"];
+function badgeColor(name: string): string {
+  let h = 0;
+  for (const ch of name) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
+  return BADGE_COLORS[h % BADGE_COLORS.length];
+}
+
 export async function GoogleReviewsSection() {
   const { rating, total, asOf, reviews } = await loadReviews();
-  const [lead, ...rest] = reviews;
 
   return (
-    <section aria-labelledby="google-reviews-heading" className="bg-paper-50 py-16 sm:py-20">
+    <section aria-labelledby="google-reviews-heading" className="border-y border-ink-950/8 bg-white py-12 sm:py-20">
       <Container>
-        {/* The frame: a hairline outer border with an inset inner panel, so the
-            reviews read as one held object rather than loose cards. */}
-        <div className="rounded-[2rem] border border-ink-950/15 p-2 sm:p-3">
-          <div className="rounded-[1.6rem] border border-ink-950/10 bg-white px-5 py-8 sm:px-10 sm:py-12">
-            <div className="flex flex-col gap-6 border-b border-ink-950/10 pb-8 md:flex-row md:items-end md:justify-between">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-widest text-red-600">Google reviews</p>
-                <h2 id="google-reviews-heading" className="mt-2 font-display text-3xl font-bold text-ink-950 sm:text-4xl">
-                  What drivers say after we leave
-                </h2>
-                <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1">
-                  <span className="font-display text-4xl font-bold leading-none text-ink-950">{rating.toFixed(1)}</span>
-                  <Stars rating={rating} size="h-5 w-5" />
-                  <span className="text-sm text-ink-600">
-                    {total} Google {total === 1 ? "review" : "reviews"}
-                    {asOf ? ` · as of ${asOf}` : ""}
-                  </span>
+        <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-red-600">Google reviews</p>
+            <h2 id="google-reviews-heading" className="mt-2 font-display text-[1.6rem] font-semibold uppercase leading-tight tracking-tight text-ink-950 sm:text-4xl">
+              What drivers say about us
+            </h2>
+          </div>
+
+          {/* Rating summary: one compact, framed line. */}
+          <div className="flex items-center gap-4 rounded-2xl border border-ink-950/10 bg-paper-50 px-4 py-3 sm:px-5">
+            <span className="font-display text-4xl font-bold leading-none text-ink-950">{rating.toFixed(1)}</span>
+            <span className="min-w-0">
+              <Stars rating={rating} size="h-[1.1rem] w-[1.1rem]" />
+              <span className="mt-1 block text-xs text-ink-600">
+                {total} {total === 1 ? "review" : "reviews"} on Google{asOf ? ` · ${asOf}` : ""}
+              </span>
+            </span>
+          </div>
+        </div>
+
+        {/*
+          Phones: one swipeable row, each card 85% wide so the next one peeks
+          in and says "swipe". From sm up, a plain grid. Cards share a height
+          and the quote is clamped, so a long review cannot make the row ragged;
+          the full text is one tap away on Google.
+        */}
+        <ul className="-mx-4 mt-6 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-3 [scrollbar-width:none] sm:mx-0 sm:mt-8 sm:grid sm:grid-cols-2 sm:gap-4 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-3">
+          {reviews.map((review, i) => (
+            <li key={`${review.author}-${i}`} className="w-[85%] shrink-0 snap-start sm:w-auto">
+              <figure className="flex h-full flex-col rounded-2xl border border-ink-950/10 bg-white p-5 shadow-[0_1px_3px_rgba(10,10,11,0.06)]">
+                <div className="flex items-center justify-between gap-3">
+                  <Stars rating={review.rating} />
+                  <Quote className="h-5 w-5 text-ink-950/15" aria-hidden="true" />
                 </div>
-              </div>
-              <div className="flex flex-wrap gap-3">
-                <Button href={BUSINESS.googleReviewUrl} size="md" icon={<PenLine className="h-4 w-4" aria-hidden="true" />}>
-                  Review us on Google
-                </Button>
-                <Button href={BUSINESS.googleListingUrl} size="md" variant="outline" icon={<ExternalLink className="h-4 w-4" aria-hidden="true" />}>
-                  Read all reviews
-                </Button>
-              </div>
+                <blockquote className="mt-3 line-clamp-6 flex-1 text-[0.95rem] leading-relaxed text-ink-700">{review.text}</blockquote>
+                <ReviewCaption review={review} />
+              </figure>
+            </li>
+          ))}
+          {/* The last tile asks for a review. With five reviews it fills the
+              sixth slot of both grids, and on phones it ends the swipe row. */}
+          <li className="w-[85%] shrink-0 snap-start sm:w-auto">
+            <div className="flex h-full flex-col items-start justify-center rounded-2xl border border-dashed border-ink-950/20 bg-paper-50 p-5">
+              <span className="grid h-10 w-10 place-items-center rounded-full bg-red-600/10 text-red-600">
+                <PenLine className="h-5 w-5" aria-hidden="true" />
+              </span>
+              <p className="mt-4 font-display text-lg font-semibold uppercase leading-tight text-ink-950">
+                Had help from TRA?
+              </p>
+              <p className="mt-1.5 text-sm leading-relaxed text-ink-600">
+                Tell other Dallas–Fort Worth drivers how it went. Your review goes straight to our
+                Google listing.
+              </p>
+              <Button href={BUSINESS.googleReviewUrl} size="sm" className="mt-4" icon={<PenLine className="h-4 w-4" aria-hidden="true" />}>
+                Write a review
+              </Button>
             </div>
+          </li>
+        </ul>
 
-            <div className="mt-8 grid gap-4 lg:grid-cols-[1.25fr_1fr]">
-              {lead && (
-                <figure className="relative flex flex-col rounded-2xl bg-ink-950 p-6 text-white sm:p-8">
-                  <Quote className="h-8 w-8 text-red-500" aria-hidden="true" />
-                  <blockquote className="mt-4 flex-1 text-lg leading-relaxed text-white/90">{lead.text}</blockquote>
-                  <ReviewCaption review={lead} tone="dark" />
-                </figure>
-              )}
-              <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-                {rest.map((review, i) => (
-                  // Phones show the lead review and two more; the full set
-                  // from sm up. "Read all reviews" covers the rest.
-                  <li key={`${review.author}-${i}`} className={i >= 2 ? "hidden sm:block" : undefined}>
-                    <figure className="flex h-full flex-col rounded-2xl border border-ink-950/10 bg-paper-50 p-5">
-                      <Stars rating={review.rating} />
-                      <blockquote className="mt-3 flex-1 text-[0.95rem] leading-relaxed text-ink-700">{review.text}</blockquote>
-                      <ReviewCaption review={review} tone="light" />
-                    </figure>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Attribution: the source is named and linked in both modes. */}
-            <p className="mt-6 text-xs text-ink-500">
-              Reviews from Google, shown with reviewers&apos; first name and last initial.{" "}
-              <a href={BUSINESS.googleListingUrl} target="_blank" rel="noopener noreferrer" className="underline hover:text-ink-700">
-                See every review on Google
-              </a>
-            </p>
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          {/* Attribution: the source is named and linked in both modes. */}
+          <p className="text-xs text-ink-500">
+            Real reviews from our Google listing, shown with first name and last initial.
+          </p>
+          <div className="flex flex-wrap gap-2.5">
+            {/* Phones keep this button in view; from sm up the review tile
+                in the grid carries it. */}
+            <Button href={BUSINESS.googleReviewUrl} size="sm" className="sm:hidden" icon={<PenLine className="h-4 w-4" aria-hidden="true" />}>
+              Write a review
+            </Button>
+            <Button href={BUSINESS.googleListingUrl} size="sm" variant="outline" icon={<ExternalLink className="h-4 w-4" aria-hidden="true" />}>
+              See all on Google
+            </Button>
           </div>
         </div>
       </Container>
@@ -207,23 +230,22 @@ export async function GoogleReviewsSection() {
   );
 }
 
-function ReviewCaption({ review, tone }: { review: FrameReview; tone: "dark" | "light" }) {
-  const dark = tone === "dark";
+function ReviewCaption({ review }: { review: FrameReview }) {
   return (
-    <figcaption className="mt-5 flex items-center gap-3">
+    <figcaption className="mt-4 flex items-center gap-3 border-t border-ink-950/8 pt-4">
       <span
         aria-hidden="true"
-        className={`grid h-9 w-9 shrink-0 place-items-center rounded-full text-xs font-bold ${dark ? "bg-white/10 text-white" : "bg-ink-950 text-white"}`}
+        className="grid h-9 w-9 shrink-0 place-items-center rounded-full text-xs font-bold text-white"
+        style={{ backgroundColor: badgeColor(review.author) }}
       >
         {initials(review.author)}
       </span>
       <span className="min-w-0">
-        <span className={`block text-sm font-semibold ${dark ? "text-white" : "text-ink-950"}`}>{review.author}</span>
-        <span className={`flex items-center gap-2 text-xs ${dark ? "text-white/60" : "text-ink-500"}`}>
-          {dark && <Stars rating={review.rating} size="h-3.5 w-3.5" />}
+        <span className="block text-sm font-semibold text-ink-950">{review.author}</span>
+        <span className="flex items-center gap-2 text-xs text-ink-500">
           Google review
           {review.moreUrl && (
-            <a href={review.moreUrl} target="_blank" rel="noopener noreferrer" className={`underline ${dark ? "hover:text-white" : "hover:text-ink-700"}`}>
+            <a href={review.moreUrl} target="_blank" rel="noopener noreferrer" className="font-medium text-red-600 underline-offset-2 hover:underline">
               Read in full
             </a>
           )}

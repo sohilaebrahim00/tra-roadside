@@ -10,6 +10,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { SERVICES, type ServiceContent } from "@/lib/content/services";
 import { SERVICE_ICONS } from "@/lib/content/service-icons";
 import { SERVICE_PROBLEM } from "@/lib/content/service-problems";
+import { ServiceSearch } from "@/components/search/service-search";
 import { gsap, ScrollTrigger, registerGsap } from "@/lib/gsap/register";
 import { PricingDisclaimer } from "@/components/ui/pricing-disclaimer";
 import { BrandPattern } from "@/components/brand/brand-pattern";
@@ -72,7 +73,7 @@ export function ServicesSection() {
           <SectionHeading
             eyebrow="Our Services"
             title="What do you need help with?"
-            description="Roadside help across Dallas–Fort Worth, 24/7. Tap a service to see how it works and what it costs, or request it right away."
+            description="Roadside help across Dallas–Fort Worth, 24/7. Type what happened, or tap a service to see how it works and what it costs."
           />
           <Link
             href="/services"
@@ -81,6 +82,10 @@ export function ServicesSection() {
             View all services <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
           </Link>
         </div>
+
+        {/* Search by the problem, in the driver's own words; results carry
+            their price and a one-tap Request. */}
+        <ServiceSearch className="mt-6 max-w-2xl sm:mt-8" />
 
         <ul className="mt-7 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-4 md:grid-cols-3 lg:grid-cols-5">
           {ORDERED.map((service, i) => {

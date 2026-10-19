@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { BatteryFull, ShieldCheck, LifeBuoy, Check, ArrowRight, Star } from "lucide-react";
 import { Container } from "@/components/ui/container";
+import { BrandPattern } from "@/components/brand/brand-pattern";
 import { Button } from "@/components/ui/button";
 import { getService } from "@/lib/content/services";
 import { batteryReview } from "@/lib/content/google-reviews";
@@ -23,7 +24,8 @@ export function BatteryPromoSection() {
   const review = batteryReview();
 
   return (
-    <section className="border-b border-ink-950/8 bg-ink-950 py-12 text-white sm:py-16">
+    <section className="relative isolate overflow-hidden border-b border-ink-950/8 bg-ink-950 py-12 text-white sm:py-16">
+      <BrandPattern />
       <Container>
         <div className="grid items-center gap-8 sm:gap-10 lg:grid-cols-[1fr_auto]">
           <div>

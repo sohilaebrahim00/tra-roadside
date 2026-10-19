@@ -1,6 +1,7 @@
 import { MapPinned, ShieldCheck, Receipt, Satellite } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { BrandPattern } from "@/components/brand/brand-pattern";
 
 const POINTS = [
   {
@@ -27,7 +28,8 @@ const POINTS = [
 
 export function WhyChooseSection() {
   return (
-    <section className="bg-ink-950 py-12 text-white sm:py-28">
+    <section className="relative isolate overflow-hidden bg-ink-950 py-12 text-white sm:py-28">
+      <BrandPattern fade="bottom-left" />
       <Container className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:gap-16">
         <SectionHeading
           eyebrow="Why TRA"

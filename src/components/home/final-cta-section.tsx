@@ -3,15 +3,12 @@ import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 import { BUSINESS } from "@/lib/content/business";
+import { BrandPattern } from "@/components/brand/brand-pattern";
 
 export function FinalCtaSection() {
   return (
-    <section className="relative overflow-hidden bg-red-600 py-12 text-white sm:py-20">
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 road-lines opacity-[0.06]"
-        style={{ transform: "rotate(-8deg) scale(1.5)" }}
-      />
+    <section className="relative isolate overflow-hidden bg-red-600 py-12 text-white sm:py-20">
+      <BrandPattern fade="none" strength={0.1} />
       <Container className="relative flex flex-col items-center gap-6 text-center">
         <h2 className="font-display text-3xl font-bold uppercase tracking-tight text-balance sm:text-4xl">
           Don&apos;t wait it out. Get help moving.

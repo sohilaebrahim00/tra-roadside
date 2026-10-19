@@ -11,6 +11,7 @@ import { SERVICES, type ServiceContent } from "@/lib/content/services";
 import { SERVICE_ICONS } from "@/lib/content/service-icons";
 import { gsap, ScrollTrigger, registerGsap } from "@/lib/gsap/register";
 import { PricingDisclaimer } from "@/components/ui/pricing-disclaimer";
+import { BrandPattern } from "@/components/brand/brand-pattern";
 
 
 /**
@@ -104,12 +105,11 @@ export function ServicesSection() {
                         priority={i < 2}
                       />
                     ) : (
-                      // No photo yet: the site's dark tile with one thin dashed
-                      // road line (the .road-lines utility is meant to be drawn
-                      // as a thin strip, not a fill).
-                      <div className="absolute inset-0 flex items-center justify-center bg-ink-950">
-                        <div className="absolute inset-x-0 top-1/2 h-1 -translate-y-1/2 opacity-30 road-lines" aria-hidden="true" />
-                        <span className="relative grid h-14 w-14 place-items-center rounded-full bg-ink-900 ring-1 ring-white/20">
+                      // No photo yet: the dark tile with the logo monogram
+                      // pattern, so the card reads as branded rather than empty.
+                      <div className="absolute inset-0 isolate flex items-center justify-center bg-ink-950">
+                        <BrandPattern fade="none" strength={0.14} />
+                        <span className="relative grid h-14 w-14 place-items-center rounded-full bg-red-600 shadow-lg shadow-red-950/40 ring-4 ring-white/10">
                           <Icon className="h-7 w-7 text-white" aria-hidden="true" />
                         </span>
                       </div>

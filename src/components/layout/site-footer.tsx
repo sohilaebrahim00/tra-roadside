@@ -2,13 +2,15 @@ import Link from "next/link";
 import { Phone, Mail, Clock, PenLine, MapPin } from "lucide-react";
 import { FacebookIcon, InstagramIcon, YoutubeIcon } from "@/components/brand/social-icons";
 import { LogoLockup } from "@/components/brand/logo-mark";
+import { BrandPattern } from "@/components/brand/brand-pattern";
 import { BUSINESS, SERVICE_AREAS } from "@/lib/content/business";
 import { SERVICES } from "@/lib/content/services";
 import { Container } from "@/components/ui/container";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-white/10 bg-ink-950 text-white">
+    <footer className="relative isolate overflow-hidden border-t border-white/10 bg-ink-950 text-white">
+      <BrandPattern strength={0.06} />
       <Container className="grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-5 lg:gap-8">
         <div className="lg:col-span-2">
           <LogoLockup className="text-white" />

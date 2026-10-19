@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { SERVICE_ICONS } from "@/lib/content/service-icons";
 import type { ServiceContent } from "@/lib/content/services";
+import { BrandPattern } from "@/components/brand/brand-pattern";
 
 /**
  * The visual half of the City x Service hero.
@@ -11,7 +12,7 @@ import type { ServiceContent } from "@/lib/content/services";
  *      that is only battery-replacement, which has six. The photo and its alt
  *      text both come from SERVICES, so nothing is authored here.
  *   2. A branded panel built from existing tokens — the service icon over the
- *      `road-lines` motif from globals.css. No stock photography and no
+ *      TRA monogram pattern (components/brand/brand-pattern.tsx). No stock photography and no
  *      generated imagery is used for services that have no owned asset.
  *
  * Because both states fill the same box, adding an approved photo to a service
@@ -63,15 +64,12 @@ export function HeroVisual({ svc }: { svc: ServiceContent }) {
 
   return (
     <div
-      className="relative hidden aspect-[3/2] overflow-hidden rounded-3xl border border-white/12 bg-ink-900 lg:block"
+      className="relative isolate hidden aspect-[3/2] overflow-hidden rounded-3xl border border-white/12 bg-ink-900 lg:block"
       aria-hidden="true"
     >
-      {/* Layered road-marking motif from the existing .road-lines utility: a
-          bright center line with a dimmer lane either side, so the panel reads
-          as a deliberate graphic rather than an empty box waiting for a photo. */}
-      <div className="absolute inset-x-0 top-[28%] h-1 opacity-[0.12] road-lines" />
-      <div className="absolute inset-x-0 top-1/2 h-1.5 -translate-y-1/2 opacity-30 road-lines" />
-      <div className="absolute inset-x-0 bottom-[28%] h-1 opacity-[0.12] road-lines" />
+      {/* The logo monogram pattern, so the panel reads as a deliberate
+          brand graphic rather than an empty box waiting for a photo. */}
+      <BrandPattern fade="center" strength={0.12} />
 
       {/* Red bloom behind the mark, then a corner falloff for depth. */}
       <div className="absolute left-1/2 top-1/2 h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full bg-red-600/20 blur-3xl" />

@@ -181,6 +181,12 @@
     );
   }
 
+  /* The logo monogram tile; see components/brand/brand-pattern.tsx. */
+  .brand-pattern {
+    background-image: url("/images/brand/tra-pattern.svg");
+    background-size: 96px 96px;
+  }
+
   .text-balance {
     text-wrap: balance;
   }

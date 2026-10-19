@@ -70,7 +70,7 @@ export function TrackingView({ token }: { token: string }) {
         <span
           className={cn(
             "flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold",
-            connectionOk ? "bg-success-600/10 text-success-600" : "bg-amber-500/10 text-amber-600"
+            connectionOk ? "bg-success-600/10 text-emerald-800" : "bg-amber-500/10 text-amber-800"
           )}
         >
           {connectionOk ? <Wifi className="h-3.5 w-3.5" aria-hidden="true" /> : <WifiOff className="h-3.5 w-3.5" aria-hidden="true" />}

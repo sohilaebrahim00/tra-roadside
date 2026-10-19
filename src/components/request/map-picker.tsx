@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { LocateFixed, MapPin, Search, AlertTriangle } from "lucide-react";
 import { loadGoogleMaps } from "@/lib/maps/load-google-maps";
+import { OsmPickerMap } from "@/components/maps/osm-maps";
 import { useGeolocation } from "@/lib/hooks/use-geolocation";
 import { cn } from "@/lib/utils/cn";
 import type { LocationSource } from "@/lib/types/domain";
@@ -150,7 +151,7 @@ export function MapPicker({
       const data = await res.json();
       if (data.demo) {
         setDemoNotice(true);
-        const fallback = coords ?? DALLAS_CENTER;
+        const fallback = value ?? coords ?? DALLAS_CENTER;
         applyLocation(fallback.lat, fallback.lng, manualAddress, "typed");
       } else {
         if (data.provider === "osm") setOsmCredit(true);
@@ -188,11 +189,22 @@ export function MapPicker({
 
       {mapsReady ? (
         <div ref={mapRef} className="h-64 w-full overflow-hidden rounded-xl border border-ink-950/10" />
-      ) : (
+      ) : MAPS_KEY ? (
         <div className="flex h-40 w-full flex-col items-center justify-center gap-2 rounded-xl border border-dashed border-ink-950/15 text-ink-400">
           <MapPin className="h-6 w-6" aria-hidden="true" />
-          <p className="text-xs">
-            {MAPS_KEY ? "Loading map…" : "Map preview unavailable (Google Maps not configured) — use the address field below."}
+          <p className="text-xs">Loading map…</p>
+        </div>
+      ) : (
+        // No Google key: the free OpenStreetMap map, with the same draggable
+        // pin. Moving it looks the address up through /api/geocode/reverse.
+        <div>
+          <OsmPickerMap
+            value={value}
+            fallbackCenter={coords ?? DALLAS_CENTER}
+            onPinMoved={(lat, lng) => reverseGeocodeAndSet(lat, lng, "pin_adjusted")}
+          />
+          <p className="mt-1.5 text-xs text-ink-500 dark:text-ink-300">
+            {value ? "Drag the pin or tap the map to set your exact spot." : "Tap the map at your location, or use GPS or the address below."}
           </p>
         </div>
       )}
@@ -246,7 +258,7 @@ export function MapPicker({
         {!mapsReady && !searchResults.length && (
           <button
             type="button"
-            onClick={() => manualAddress.trim().length >= 3 && applyLocation(coords?.lat ?? DALLAS_CENTER.lat, coords?.lng ?? DALLAS_CENTER.lng, manualAddress, "typed")}
+            onClick={() => manualAddress.trim().length >= 3 && applyLocation(value?.lat ?? coords?.lat ?? DALLAS_CENTER.lat, value?.lng ?? coords?.lng ?? DALLAS_CENTER.lng, manualAddress, "typed")}
             className={cn("mt-2 text-xs font-medium text-red-600 hover:underline", manualAddress.trim().length < 3 && "hidden")}
           >
             Use this address as typed

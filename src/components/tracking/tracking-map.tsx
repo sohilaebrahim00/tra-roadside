@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { loadGoogleMaps } from "@/lib/maps/load-google-maps";
+import { OsmTrackingMap } from "@/components/maps/osm-maps";
 
 const MAPS_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? "";
 
@@ -61,13 +62,16 @@ export function TrackingMap({ pickup, driver }: { pickup: Point; driver: Point |
   }, [driver]);
 
   if (!mapsReady) {
+    // No Google key: a real, free OpenStreetMap map. With a key, the abstract
+    // drawing only shows for the moment Google Maps takes to load.
+    if (!MAPS_KEY) return <OsmTrackingMap pickup={pickup} driver={driver} />;
     return <AbstractRouteMap pickup={pickup} driver={driver} />;
   }
 
   return <div ref={mapRef} className="h-full w-full" />;
 }
 
-/** Fallback when Google Maps isn't configured — a to-scale-ish abstract
+/** Placeholder while Google Maps loads — a to-scale-ish abstract
  * visualization (not a fake screenshot) built from the same coordinates. */
 function AbstractRouteMap({ pickup, driver }: { pickup: Point; driver: Point | null }) {
   const points = driver ? [pickup, driver] : [pickup];

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Oswald, IBM_Plex_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { env } from "@/lib/env";
 import { BUSINESS } from "@/lib/content/business";
@@ -8,23 +8,34 @@ import { ServiceWorkerRegister } from "@/components/pwa/sw-register";
 import { GoogleAdsTag } from "@/components/analytics/google-ads";
 import { OPEN_GRAPH_DEFAULTS } from "@/lib/seo";
 
-const inter = Inter({
+/*
+ * Self-hosted fonts (app/fonts/), so the build never fetches Google Fonts.
+ * On 2026-10-25 Vercel's build failed fetching Oswald from Google Fonts
+ * (Turbopack "Can't resolve @vercel/turbopack-next/internal/font/google/font")
+ * while the same code built locally. These are the same Google Fonts files
+ * (all SIL Open Font License), Latin subset only, as next/font/google served
+ * them: Inter and Oswald variable, IBM Plex Mono at 500 and 600.
+ */
+const inter = localFont({
+  src: "./fonts/inter-latin-var.woff2",
   variable: "--font-inter",
-  subsets: ["latin"],
+  weight: "100 900",
   display: "swap",
 });
 
-const oswald = Oswald({
+const oswald = localFont({
+  src: "./fonts/oswald-latin-var.woff2",
   variable: "--font-oswald",
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: "200 700",
   display: "swap",
 });
 
-const plexMono = IBM_Plex_Mono({
+const plexMono = localFont({
+  src: [
+    { path: "./fonts/ibm-plex-mono-latin-500.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/ibm-plex-mono-latin-600.woff2", weight: "600", style: "normal" },
+  ],
   variable: "--font-mono-data",
-  subsets: ["latin"],
-  weight: ["500", "600"],
   display: "swap",
 });
 

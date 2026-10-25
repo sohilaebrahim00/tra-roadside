@@ -52,9 +52,10 @@ Drivers are added the same way with role `driver`, or from the admin dashboard.
 RESEND_FROM_EMAIL = Texas Roadside Assistance <dispatch@txroadsideassistance.com>
 ```
 
-- That domain has no mailbox (no MX record), so every email sets **Reply-To**
-  to `info@texasroadside-assistance.com`, the Hostinger inbox. Customer replies
-  land there.
+- Since 2026-10-25 the business mailbox is `info@txroadsideassistance.com`
+  (Hostinger mail on the same domain). Every email sets **Reply-To** to it, so
+  customer replies land there. Set `DISPATCH_EMAIL` on Vercel to it as well,
+  or delete that variable so the code's default (the same address) applies.
 - The older `texasroadside-assistance.com` entry in Resend can be left as it is.
   Nothing sends from it any more.
 

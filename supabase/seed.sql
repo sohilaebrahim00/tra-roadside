@@ -118,7 +118,7 @@ on conflict (slug) do nothing;
 
 insert into site_settings (key, value) values
   ('demo_mode_banner', '{"enabled": true, "message": "This install is running on seed/demo data. Connect Supabase, Google Maps, Twilio, and Resend to go live."}'),
-  ('dispatch_notification_email', '"info@texasroadside-assistance.com"'),
+  ('dispatch_notification_email', '"info@txroadsideassistance.com"'),
   ('unaccepted_request_timeout_minutes', '10')
 on conflict (key) do update set value = excluded.value;
 

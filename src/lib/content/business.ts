@@ -13,8 +13,10 @@ export const BUSINESS = {
   shortName: "TRA",
   phoneDisplay: "(945) 412-1215",
   phoneHref: "tel:+19454121215",
-  // Verified against the business's own published contact details.
-  email: "info@texasroadside-assistance.com",
+  // The business mailbox on the site's own domain (Hostinger mail), from
+  // 2026-10-25. Shown on the site, in the schema, and set as Reply-To on
+  // every email the site sends.
+  email: "info@txroadsideassistance.com",
   hours: "Open 24/7, 365 days a year",
   dispatchNote: "Local Dallas–Fort Worth dispatch — not an out-of-state call center",
   /**

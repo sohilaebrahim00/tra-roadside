@@ -51,7 +51,7 @@ export async function reverseGeocode(lat: number, lng: number): Promise<ReverseG
 }
 
 const OSM_HEADERS = {
-  "User-Agent": "TRA Roadside website (https://www.txroadsideassistance.com; info@texasroadside-assistance.com)",
+  "User-Agent": "TRA Roadside website (https://www.txroadsideassistance.com; info@txroadsideassistance.com)",
   "Accept-Language": "en-US",
 };
 

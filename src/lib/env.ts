@@ -71,9 +71,9 @@ export const env = {
   twilioFromNumber: readServer("TWILIO_FROM_NUMBER"),
 
   resendApiKey: readServer("RESEND_API_KEY"),
-  // txroadsideassistance.com is the domain verified in Resend (2026-10-18).
-  // texasroadside-assistance.com keeps the business mailbox, so replies are
-  // routed there with Reply-To (see notifications/email.ts).
+  // txroadsideassistance.com is the domain verified in Resend (2026-10-18),
+  // and from 2026-10-25 it also holds the business mailbox, so replies go to
+  // info@txroadsideassistance.com through Reply-To (see notifications/email.ts).
   resendFromEmail: readServer("RESEND_FROM_EMAIL") || "Texas Roadside Assistance <dispatch@txroadsideassistance.com>",
 
   /** Was NEXT_PUBLIC_APP_URL/APP_URL explicitly set, as opposed to falling back? Used for config validation, not for building links. */
@@ -83,7 +83,7 @@ export const env = {
   // Business's own published contact info is the default so dispatch
   // notifications work out of the box; DISPATCH_EMAIL/DISPATCH_PHONE let a
   // real deployment route internal alerts elsewhere without touching code.
-  dispatchEmail: readServer("DISPATCH_EMAIL") || "info@texasroadside-assistance.com",
+  dispatchEmail: readServer("DISPATCH_EMAIL") || "info@txroadsideassistance.com",
   dispatchPhoneRaw: readServer("DISPATCH_PHONE") || "+19454121215",
 
   gaMeasurementId: readPublic(process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID),

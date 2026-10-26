@@ -29,7 +29,7 @@ export async function generateMetadata({
   if (!city) return {};
   return {
     title: `Roadside Assistance in ${city.name}, TX`,
-    description: `24/7 roadside assistance in ${city.name}, Texas — towing, jump starts, flat tires, fuel delivery, and more. Request help online with live driver tracking.`,
+    description: `24/7 roadside assistance in ${city.name}, Texas — jump starts, battery replacement, flat tires, lockouts, fuel delivery, and more. Request help online with live driver tracking.`,
     ...pageUrls(`/service-areas/${city.slug}`),
   };
 }
@@ -66,7 +66,7 @@ export default async function ServiceAreaPage({
           </h1>
           <p className="mt-4 max-w-xl text-white/70">
             TRA dispatches 24/7 roadside assistance to {city.name} and the surrounding area —
-            towing, jump starts, flat tires, fuel delivery, lockouts, and more, with live driver
+            jump starts, battery replacement, flat tires, fuel delivery, lockouts, and more, with live driver
             tracking once help is on the way.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">

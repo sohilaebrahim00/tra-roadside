@@ -79,7 +79,7 @@ export interface GeneratedVideoItem {
   altText: string;
   category: VideoCategory;
   placement: VideoPlacement;
-  /** For category "service" — ties a clip to a specific service slug (e.g. "towing") without touching component code. */
+  /** For category "service" — ties a clip to a specific service slug (e.g. "jump-start") without touching component code. */
   serviceSlug?: string;
   priority: number;
   durationSeconds?: number;

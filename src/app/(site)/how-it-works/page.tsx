@@ -24,7 +24,7 @@ const STEPS = [
   {
     icon: ClipboardList,
     title: "Tell us what's wrong",
-    body: "Pick the service you need — jump start, flat tire, fuel delivery, towing, and more — then add your vehicle details and any photos that help.",
+    body: "Pick the service you need — jump start, battery, flat tire, lockout, fuel delivery, and more — then add your vehicle details and any photos that help.",
   },
   {
     icon: UserCheck,
@@ -39,7 +39,7 @@ const STEPS = [
   {
     icon: CheckCircle2,
     title: "Get back on the road",
-    body: "Your driver completes the service on site (or tows your vehicle to your chosen destination), and your request is marked complete.",
+    body: "Your driver completes the service on site, and your request is marked complete.",
   },
 ];
 

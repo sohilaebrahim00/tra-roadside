@@ -54,7 +54,7 @@ export default function TermsPage() {
       <h2>Limitation of liability</h2>
       <p>
         <LegalPlaceholder>
-          Standard liability limitation language for a licensed towing/roadside operator should be
+          Standard liability limitation language for a licensed roadside assistance operator should be
           added here in consultation with legal counsel.
         </LegalPlaceholder>
       </p>

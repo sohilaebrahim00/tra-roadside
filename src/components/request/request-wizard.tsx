@@ -55,7 +55,7 @@ export function RequestWizard({ initialService }: { initialService?: string }) {
   //
   // The service in the link the visitor just clicked (?service=...) always
   // beats the one saved in an older draft. Restoring the draft wholesale made
-  // "Need a tow" open the form on Battery Replacement for anyone who had
+  // "Flat tire" open the form on Battery Replacement for anyone who had
   // started a battery request before. When the service changes, the rest of
   // the draft (location, contact) is kept but the form starts from step one.
   useEffect(() => {

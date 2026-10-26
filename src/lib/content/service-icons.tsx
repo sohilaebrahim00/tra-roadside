@@ -1,5 +1,5 @@
 import {
-  Truck, BatteryCharging, CircleDot, Fuel, KeyRound, Disc3,
+  BatteryCharging, CircleDot, Fuel, KeyRound, Disc3,
   BatteryFull, Drill, Wrench, Lock,
   type LucideIcon,
 } from "lucide-react";
@@ -15,5 +15,4 @@ export const SERVICE_ICONS: Record<ServiceTypeSlug, LucideIcon> = {
   "stuck-screw-in-tire": Wrench,
   "rim-lock-removal": Lock,
   "fuel-delivery": Fuel,
-  towing: Truck,
 };

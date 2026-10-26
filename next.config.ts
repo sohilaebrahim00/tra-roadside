@@ -2,8 +2,9 @@ import type { NextConfig } from "next";
 import path from "node:path";
 
 /**
- * Services removed from the definitive list in migration 0008. Their pages
- * were indexed, so they redirect to the services index rather than 404 —
+ * Services no longer offered: the six removed from the definitive list in
+ * migration 0008, and towing, retired on 2026-10-26 (migration 0016). Their
+ * pages were indexed, so they redirect to the services index rather than 404 —
  * a 404 discards whatever ranking the URL had and hands anyone with a
  * bookmark a dead end.
  *
@@ -19,7 +20,15 @@ const REMOVED_SERVICE_SLUGS = [
   "minor-repair",
   "truck-assistance",
   "other-roadside-service",
+  "towing",
 ];
+
+/**
+ * Retired services that also had City x Service pages. Only Dallas had a
+ * towing page, but the pattern covers any city, and each one redirects to its
+ * own city hub, which is the closest page still answering the local intent.
+ */
+const REMOVED_CITY_SERVICE_SLUGS = ["towing"];
 
 const nextConfig: NextConfig = {
   turbopack: {
@@ -48,11 +57,18 @@ const nextConfig: NextConfig = {
   },
 
   async redirects() {
-    return REMOVED_SERVICE_SLUGS.map((slug) => ({
-      source: `/services/${slug}`,
-      destination: "/services",
-      statusCode: 301 as const,
-    }));
+    return [
+      ...REMOVED_SERVICE_SLUGS.map((slug) => ({
+        source: `/services/${slug}`,
+        destination: "/services",
+        statusCode: 301 as const,
+      })),
+      ...REMOVED_CITY_SERVICE_SLUGS.map((slug) => ({
+        source: `/service-areas/:city/${slug}`,
+        destination: "/service-areas/:city",
+        statusCode: 301 as const,
+      })),
+    ];
   },
 };
 

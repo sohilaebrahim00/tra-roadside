@@ -1,0 +1,12 @@
+-- Towing is no longer offered (owner's decision, 2026-10-26).
+--
+-- Deactivated, never deleted, for the same reason as migration 0008:
+-- service_requests.service_type_id is a NOT NULL foreign key with no ON
+-- DELETE behaviour, so deleting the row would either fail or destroy the
+-- history of every past towing request. active = false takes it off the site
+-- while those requests stay readable in the admin dashboard.
+--
+-- The site already stopped offering towing in code (SERVICES and
+-- SERVICE_TYPE_SLUGS no longer list it, and the API rejects it). This keeps
+-- the database's own list in step with that.
+update service_types set active = false where slug = 'towing';

@@ -14,7 +14,9 @@ export const SERVICE_TYPE_SLUGS = [
   "stuck-screw-in-tire",
   "rim-lock-removal",
   "fuel-delivery",
-  "towing",
+  // "towing" was retired on 2026-10-26 at the owner's request. Its
+  // service_types row is deactivated (migration 0016), never deleted, so past
+  // towing requests stay readable in the admin dashboard.
 ] as const;
 
 export type ServiceTypeSlug = (typeof SERVICE_TYPE_SLUGS)[number];

@@ -13,7 +13,7 @@ const QUICK: ServiceTypeSlug[] = [
   "lockout",
   "flat-tire-change",
   "fuel-delivery",
-  "towing",
+  "tire-repair-plug-patch",
 ];
 
 /**

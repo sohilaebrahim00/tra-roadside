@@ -19,7 +19,7 @@ import { ServiceSearch } from "@/components/search/service-search";
 export const metadata: Metadata = {
   title: "Roadside Assistance Services",
   description:
-    "Towing, jump starts, flat tire changes, fuel delivery, lockouts, winching, and more — 24/7 roadside assistance across the Dallas–Fort Worth Metroplex.",
+    "Jump starts, battery replacement, lockouts, flat tire changes, tire repair and fuel delivery — 24/7 roadside assistance across the Dallas–Fort Worth Metroplex.",
   ...pageUrls("/services"),
 };
 

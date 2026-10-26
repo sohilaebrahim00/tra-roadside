@@ -11,7 +11,7 @@ import type { ServiceContent } from "@/lib/content/services";
  * shapes that exist in the data today:
  *
  *   {amount}                      jump start, tire repair, stuck screw, rim lock
- *   {amount, note}                flat tire, fuel delivery, towing, battery
+ *   {amount, note}                flat tire, fuel delivery, battery
  *   {label, amount} x2            tire replacement, priced by wheel size
  *   {amount} then {label, amount} lockout — a door, then the trunk
  *

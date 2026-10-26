@@ -15,5 +15,4 @@ export const SERVICE_PROBLEM: Record<ServiceTypeSlug, string> = {
   "stuck-screw-in-tire": "Screw in the tire",
   "rim-lock-removal": "Lost wheel lock key",
   "fuel-delivery": "Out of gas",
-  towing: "Need a tow",
 };

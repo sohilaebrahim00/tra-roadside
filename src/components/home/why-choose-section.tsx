@@ -13,7 +13,7 @@ const POINTS = [
   {
     icon: ShieldCheck,
     title: "Licensed & insured",
-    body: "TRA operates fully licensed and insured for towing and roadside work in Texas.",
+    body: "TRA operates fully licensed and insured for roadside assistance work in Texas.",
   },
   {
     icon: Receipt,

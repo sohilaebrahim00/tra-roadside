@@ -12,13 +12,13 @@ import { HeroBackdrop } from "@/components/brand/hero-backdrop";
 
 export const metadata: Metadata = {
   title: "About TRA",
-  description: "TRA is a Dallas–Fort Worth based roadside assistance company providing 24/7 towing, jump starts, tire service, and more with live driver tracking.",
+  description: "TRA is a Dallas–Fort Worth based roadside assistance company providing 24/7 jump starts, battery replacement, tire service, lockouts, fuel delivery and more with live driver tracking.",
   ...pageUrls("/about"),
 };
 
 const POINTS = [
   { icon: MapPinned, title: "Local dispatch", body: "Requests are handled by dispatch based in the Dallas–Fort Worth area, not routed through an out-of-state call center." },
-  { icon: ShieldCheck, title: "Licensed & insured", body: "TRA operates fully licensed and insured for towing and roadside assistance work in Texas." },
+  { icon: ShieldCheck, title: "Licensed & insured", body: "TRA operates fully licensed and insured for roadside assistance work in Texas." },
   { icon: Clock, title: "Always on", body: "Dispatch runs 24 hours a day, 365 days a year — breakdowns don't wait for business hours, and neither do we." },
   { icon: Receipt, title: "Upfront pricing", body: "Pricing is confirmed with you before a driver is dispatched, with no surprise fees added afterward." },
 ];
@@ -34,7 +34,7 @@ export default function AboutPage() {
             as="h1"
             eyebrow="About TRA"
             title="Roadside assistance built for the DFW Metroplex"
-            description={`${BUSINESS.legalName} provides 24/7 emergency roadside assistance across ${SERVICE_AREAS.length} cities in the Dallas–Fort Worth area — towing, jump starts, flat tire changes, fuel delivery, lockouts, and more.`}
+            description={`${BUSINESS.legalName} provides 24/7 emergency roadside assistance across ${SERVICE_AREAS.length} cities in the Dallas–Fort Worth area — jump starts, battery replacement, flat tire changes, fuel delivery, lockouts, and more.`}
             tone="light"
           />
         </Container>

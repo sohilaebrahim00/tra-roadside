@@ -57,7 +57,7 @@ export async function GET(_req: NextRequest, { params }: { params: Promise<{ tok
       pickupLng: payload.pickupLng,
       destinationAddress: payload.destinationAddress ?? null,
       driver: TRACKING_LIVE_STATUSES.includes(status)
-        ? { firstName: "Marcus", photoUrl: null, vehicleDescription: "Tow Truck #04", phone: null }
+        ? { firstName: "Marcus", photoUrl: null, vehicleDescription: "Service Van #04", phone: null }
         : null,
       driverPosition,
       etaMinutes: TRACKING_LIVE_STATUSES.includes(status) ? etaMinutes : null,

@@ -164,7 +164,6 @@
       "altText": "Test Clip — TRA roadside assistance",
       "category": "service",
       "placement": "service-card-preview",
-      "serviceSlug": "towing",
       "priority": 0,
       "durationSeconds": 8,
       "aspectRatio": "960:720",
@@ -181,7 +180,7 @@
       "originalSizeBytes": 61142339,
       "format": "mp4",
       "warnings": [
-        "Disabled: this is a generic placeholder (\"Test Clip\"), not real Towing footage — showing it publicly violates the site's no-placeholder-media policy (see supabase/seed.sql). Re-enable only after registering authentic Towing footage in its place."
+        "Disabled: this is a generic placeholder (\"Test Clip\"), not real service footage — showing it publicly violates the site's no-placeholder-media policy (see supabase/seed.sql). Towing, the service it was once tied to, was retired on 2026-10-26; re-enable only with authentic footage for a current service."
       ],
       "registeredAt": "2026-08-02T23:52:05.854Z"
     }

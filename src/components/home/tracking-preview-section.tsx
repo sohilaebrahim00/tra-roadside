@@ -78,7 +78,7 @@ export function TrackingPreviewSection() {
                   </span>
                   <div className="flex-1">
                     <p className="text-sm font-semibold text-ink-950 dark:text-white">Driver: Marcus</p>
-                    <p className="text-xs text-ink-500 dark:text-ink-200">2.4 mi away · Tow Truck #04</p>
+                    <p className="text-xs text-ink-500 dark:text-ink-200">2.4 mi away · Service Van #04</p>
                   </div>
                   <span className="flex h-8 w-8 items-center justify-center rounded-full bg-success-600 text-white">
                     <Phone className="h-3.5 w-3.5" aria-hidden="true" />

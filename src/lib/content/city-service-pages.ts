@@ -178,7 +178,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     faqs: [
       {
         q: "What if I don't have a spare?",
-        a: "Then a spare cannot be put on, and the options are a replacement tire supplied by us or a tow. Tell dispatch when you call so the right thing is sent the first time.",
+        a: "Then a spare cannot be put on, and the answer is a replacement tire supplied by us. Tell dispatch when you call so the right thing is sent the first time.",
       },
       {
         q: "Is it safe to wait on the shoulder?",
@@ -236,11 +236,13 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     intent: "Emergency, stranded-now, fuel-type-specific.",
     sourceUrls: ["allhoursroadside.com/emergency-fuel-delivery-dallas/"],
   },
-  // The three Dallas pages below have no competitor source page. Dallas tire
+  // The two Dallas pages below have no competitor source page. Dallas tire
   // repair was flagged as a gap when the pilot was built, and tire replacement
-  // and towing are real TRA services with clear local search intent in TRA's
-  // largest market. They are written from SERVICES and Dallas's verified
-  // local-data entry only, so `sourceUrls` is empty by design.
+  // is a real TRA service with clear local search intent in TRA's largest
+  // market. They are written from SERVICES and Dallas's verified local-data
+  // entry only, so `sourceUrls` is empty by design. (A Dallas towing page sat
+  // here until towing was retired on 2026-10-26; its URL now redirects to the
+  // Dallas hub — see next.config.ts.)
   {
     city: "dallas",
     service: "tire-repair-plug-patch",
@@ -313,43 +315,6 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     secondaryKeywords: ["mobile tire replacement Dallas", "roadside tire replacement Dallas", "tire blowout help Dallas", "no spare tire help Dallas"],
     longTail: ["blown tire on highway Dallas", "need a tire replaced at home Dallas", "sidewall damage tire Dallas TX"],
     intent: "Emergency, no-spare or damage-beyond-repair. No competitor source page; built from the TRA service catalog.",
-    sourceUrls: [],
-  },
-  {
-    city: "dallas",
-    service: "towing",
-    h1: "Towing Service in Dallas, TX",
-    title: "Towing Service Dallas TX",
-    metaDescription:
-      "Need a tow in Dallas? Light and medium-duty towing to the shop, dealership or address you choose. A base rate plus per mile, distance confirmed first.",
-    intro:
-      "Some breakdowns cannot be fixed at the roadside: a failed transmission, collision damage, or an engine that will not run safely. Then the car needs to be moved, and the only questions are where to and how far. Tell us the destination when you request help. Because the price is a base rate plus a charge per mile from where the car is to where it is going, dispatch confirms the distance with you before a truck is sent.",
-    scenarios: [
-      "A car that will not restart after overheating on I-35E or I-30.",
-      "Warning lights you would rather not risk on the LBJ Freeway, even if the car still runs.",
-      "A car that needs to go from a home in Lakewood or Oak Cliff to a dealership or repair shop across the city.",
-      "A vehicle left undrivable by a minor collision, once everyone is safe and the scene is clear.",
-    ],
-    localContext:
-      "Dallas is big enough that distance matters. The city spreads across five counties, and a tow from a side street in Oak Cliff to a shop off US-75 is a very different trip from one inside Uptown. I-35E, I-30, I-45, I-20, the LBJ Freeway, US-75 and the Dallas North Tollway carry most of those runs, and dispatch works out the route and mileage with you before anyone sets off.",
-    faqs: [
-      {
-        q: "How is the tow priced?",
-        a: "A base rate plus a per-mile charge, measured from where your vehicle is to the destination you choose. Both are shown on this page, and dispatch confirms the distance with you before the truck is sent, so the total does not come as a surprise.",
-      },
-      {
-        q: "Can you tow to any shop or dealership?",
-        a: "Yes. You choose the destination, whether that is home, your own mechanic or a dealership. Have the address ready when you call.",
-      },
-      {
-        q: "Can you tow a larger vehicle or one that will not roll?",
-        a: "Choose your vehicle type in the request form and add details such as all-wheel drive, a lowered suspension, or wheels that will not turn. Dispatch confirms the equipment suits your vehicle before accepting the job.",
-      },
-    ],
-    primaryKeyword: "towing service Dallas TX",
-    secondaryKeywords: ["tow truck Dallas", "car towing Dallas", "24 hour towing Dallas", "light duty towing Dallas TX"],
-    longTail: ["tow my car to a mechanic Dallas", "towing near me Dallas TX", "car broke down need tow Dallas"],
-    intent: "Emergency, cannot-be-fixed-roadside, destination-specific. No competitor source page; built from the TRA service catalog.",
     sourceUrls: [],
   },
 
@@ -679,7 +644,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       },
       {
         q: "What if there's no spare in the car?",
-        a: "Then putting one on is not an option and you need either a replacement tire supplied by us or a tow. Say so when you call so the right vehicle is sent first time.",
+        a: "Then putting one on is not an option and you need a replacement tire supplied by us. Say so when you call so the right vehicle is sent first time.",
       },
       {
         q: "Can you change a tire inside a parking garage?",
@@ -872,7 +837,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       },
       {
         q: "What if I don't have a spare?",
-        a: "Then the spare cannot be put on, and the answer is a replacement tire supplied by us or a tow. Tell dispatch when you call so the right help is sent first time.",
+        a: "Then the spare cannot be put on, and the answer is a replacement tire supplied by us. Tell dispatch when you call so the right help is sent first time.",
       },
       {
         q: "How long can I drive on the spare?",
@@ -1255,7 +1220,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       },
       {
         q: "What if there is no spare in the car?",
-        a: "Then putting one on is not an option, and the answer is a replacement tire supplied by us or a tow. Tell dispatch when you call so the right help is sent first time.",
+        a: "Then putting one on is not an option, and the answer is a replacement tire supplied by us. Tell dispatch when you call so the right help is sent first time.",
       },
       {
         q: "How far can I drive on the spare?",
@@ -1634,7 +1599,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     faqs: [
       {
         q: "What if I do not have a spare?",
-        a: "Then the spare cannot be put on, and the options are a replacement tire supplied by us or a tow. Say so when you call so the right help is sent first time.",
+        a: "Then the spare cannot be put on, and the answer is a replacement tire supplied by us. Say so when you call so the right help is sent first time.",
       },
       {
         q: "Is it safe to change a wheel on a tollway shoulder?",
@@ -2022,7 +1987,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       },
       {
         q: "What if there is no usable spare?",
-        a: "Then putting one on is not an option and the answer is a replacement tire supplied by us or a tow. Tell dispatch so the right help is sent first time.",
+        a: "Then putting one on is not an option and the answer is a replacement tire supplied by us. Tell dispatch so the right help is sent first time.",
       },
     ],
     primaryKeyword: "flat tire change The Colony TX",
@@ -2173,7 +2138,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       },
       {
         q: "What if there is no spare in the car?",
-        a: "Then putting one on is not an option, and the answer is a replacement tire supplied by us or a tow. Say so when you call so the right help is sent first time.",
+        a: "Then putting one on is not an option, and the answer is a replacement tire supplied by us. Say so when you call so the right help is sent first time.",
       },
       {
         q: "How far can I drive on the spare?",
@@ -2439,7 +2404,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       },
       {
         q: "What if I have no spare?",
-        a: "Then the spare cannot be put on, and the options are a replacement tire supplied by us or a tow. Tell dispatch so the right help is sent first time.",
+        a: "Then the spare cannot be put on, and the answer is a replacement tire supplied by us. Tell dispatch so the right help is sent first time.",
       },
       {
         q: "How long can I run on the spare afterwards?",
@@ -2547,7 +2512,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
     faqs: [
       {
         q: "What if I do not have a usable spare?",
-        a: "Then putting one on is not possible, and the answer is a replacement tire supplied by us or a tow. Tell dispatch when you call so the right help comes first time.",
+        a: "Then putting one on is not possible, and the answer is a replacement tire supplied by us. Tell dispatch when you call so the right help comes first time.",
       },
       {
         q: "Could the tire be repaired instead?",
@@ -2663,7 +2628,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       },
       {
         q: "What if there is no spare in the car?",
-        a: "Then it cannot be put on, and the options are a replacement tire from us or a tow. Mention it on the call so the right help is sent.",
+        a: "Then it cannot be put on, and the answer is a replacement tire from us. Mention it on the call so the right help is sent.",
       },
       {
         q: "Is it safe to change it on the TX-360 shoulder?",
@@ -2777,7 +2742,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       },
       {
         q: "What if there is no spare?",
-        a: "Then it cannot be put on, and the answer is a replacement tire supplied by us or a tow. Say so on the call so the right help is sent first time.",
+        a: "Then it cannot be put on, and the answer is a replacement tire supplied by us. Say so on the call so the right help is sent first time.",
       },
       {
         q: "Can you change a tire in a parking garage?",
@@ -3043,7 +3008,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       },
       {
         q: "What if I have no spare?",
-        a: "Then there is nothing to fit, and it becomes either a replacement tire from us or a tow. Mention it when you call so the right truck comes out.",
+        a: "Then there is nothing to put on, and the answer is a replacement tire from us. Mention it when you call so the right truck comes out.",
       },
       {
         q: "How far will the spare get me?",
@@ -3196,7 +3161,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       },
       {
         q: "What if there is no spare?",
-        a: "Then there is nothing to put on, and it is either a tire supplied by us or a tow. Tell dispatch on the call so the right help sets off.",
+        a: "Then there is nothing to put on, and the answer is a tire supplied by us. Tell dispatch on the call so the right help sets off.",
       },
       {
         q: "Is it safe to get out and look?",
@@ -3351,7 +3316,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       },
       {
         q: "What if there is no usable spare?",
-        a: "Then it cannot be put on, and the answer is a replacement tire supplied by us or a tow. Mention it on the call so the right help is sent.",
+        a: "Then it cannot be put on, and the answer is a replacement tire supplied by us. Mention it on the call so the right help is sent.",
       },
     ],
     primaryKeyword: "flat tire change Rowlett TX",
@@ -3611,7 +3576,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       },
       {
         q: "What if there is no spare in the car?",
-        a: "Then there is nothing to put on, so it is a replacement tire from us or a tow. Say which when you call.",
+        a: "Then there is nothing to put on, so the answer is a replacement tire from us. Say so when you call.",
       },
       {
         q: "Could the tire be repaired instead?",
@@ -3842,7 +3807,7 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
       },
       {
         q: "What if there is no usable spare?",
-        a: "Then there is nothing to fit, and the choice is a replacement tire from us or a tow. Say so on the call so the right vehicle is sent.",
+        a: "Then there is nothing to put on, and the answer is a replacement tire from us. Say so on the call so the right vehicle is sent.",
       },
     ],
     primaryKeyword: "flat tire change Rockwall TX",

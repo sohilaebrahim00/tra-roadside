@@ -29,7 +29,7 @@ const battery = getService("battery-replacement");
 
 export const metadata: Metadata = {
   title: "Roadside Assistance Prices in Dallas–Fort Worth",
-  description: `Published prices for every TRA roadside service across Dallas–Fort Worth: car batteries ${battery?.priceBadge?.replace(/^Battery /, "") ?? ""}, jump starts, lockouts, flat tires, fuel delivery and towing.`,
+  description: `Published prices for every TRA roadside service across Dallas–Fort Worth: car batteries ${battery?.priceBadge?.replace(/^Battery /, "") ?? ""}, jump starts, lockouts, flat tires, tire repair and fuel delivery.`,
   ...pageUrls("/pricing", shareImageFor("battery-replacement")),
 };
 

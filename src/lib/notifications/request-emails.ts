@@ -116,12 +116,11 @@ const DISPATCH_CHECKS: Record<string, string[]> = {
   "battery-replacement": ["Quote installation for this vehicle before a driver sets off.", "Confirm the battery fit from year, make and model, or the VIN."],
   lockout: ["Ask whether the keys are in the cabin or the trunk. The trunk is priced separately.", "Remind the customer to have ID to prove ownership on site."],
   "tire-repair-plug-patch": ["Ask where the damage is. Tread punctures can be repaired; sidewall damage cannot."],
-  "flat-tire-change": ["Confirm there is a usable spare in the vehicle. Without one, offer tire replacement or a tow."],
+  "flat-tire-change": ["Confirm there is a usable spare in the vehicle. Without one, offer tire replacement."],
   "tire-replacement": ["Get the wheel size off the tire sidewall. The price is set by wheel size."],
   "stuck-screw-in-tire": ["Ask which tire it is."],
   "rim-lock-removal": ["Ask whether the customer has the wheel lock key at all."],
   "fuel-delivery": ["Confirm gas or diesel before the driver leaves."],
-  towing: ["Confirm the destination and whether the vehicle rolls or has to be loaded."],
 };
 
 function vehicleLine(s: RequestSnapshot): string {
@@ -165,7 +164,6 @@ export function mapsUrlFor(s: RequestSnapshot): string {
 export function customerConfirmationEmail(s: RequestSnapshot, intro: string): RichEmail {
   const firstName = s.fullName.split(/\s+/)[0] || s.fullName;
   const vehicle = vehicleLine(s);
-  const isTow = s.service.slug === "towing";
 
   const vehicleRows: EmailRow[] = [
     { label: "Vehicle", value: [vehicle || "Not provided", s.vehicle.color].filter(Boolean).join(", ") },
@@ -173,7 +171,7 @@ export function customerConfirmationEmail(s: RequestSnapshot, intro: string): Ri
   ];
   if (s.vehicle.plate) vehicleRows.push({ label: "License plate", value: s.vehicle.plate });
   if (s.vehicle.vin) vehicleRows.push({ label: "VIN", value: s.vehicle.vin });
-  if (isTow || s.vehicle.isDrivable !== null) vehicleRows.push({ label: "Drivable", value: drivableLabel(s.vehicle.isDrivable) });
+  if (s.vehicle.isDrivable !== null) vehicleRows.push({ label: "Drivable", value: drivableLabel(s.vehicle.isDrivable) });
 
   const locationRows: EmailRow[] = [{ label: "Pickup", value: s.pickup.address, href: mapsSearch(s.pickup.lat, s.pickup.lng) }];
   if (s.destination.address) locationRows.push({ label: "Destination", value: s.destination.address });
@@ -225,7 +223,6 @@ export function customerConfirmationEmail(s: RequestSnapshot, intro: string): Ri
 
 export function dispatchAlertEmail(s: RequestSnapshot, intro: string): RichEmail {
   const vehicle = vehicleLine(s);
-  const isTow = s.service.slug === "towing";
   const isBattery = s.service.slug === "battery-replacement";
   const tel = `tel:${phoneDigits(s.phone)}`;
 
@@ -245,7 +242,6 @@ export function dispatchAlertEmail(s: RequestSnapshot, intro: string): RichEmail
   if (!vehicle) missing.push("Vehicle year, make and model were not given.");
   if (isBattery && !s.vehicle.vin) missing.push("No VIN: confirm the battery fit from year, make and model.");
   if (!s.vehicle.plate) missing.push("No license plate given. Ask for it, or for the color, to spot the car.");
-  if (isTow && !s.destination.address) missing.push("No tow destination given.");
   if (s.pickup.source === "typed") missing.push("Pickup was typed by hand. Confirm the exact spot by phone.");
 
   const customerRows: EmailRow[] = [
@@ -261,12 +257,13 @@ export function dispatchAlertEmail(s: RequestSnapshot, intro: string): RichEmail
     { label: "Coordinates", value: `${s.pickup.lat.toFixed(6)}, ${s.pickup.lng.toFixed(6)}`, href: mapsDirections(s.pickup.lat, s.pickup.lng) },
   ];
   if (s.pickup.source) locationRows.push({ label: "Pin source", value: `${LOCATION_SOURCE_LABELS[s.pickup.source]} (${PIN_TRUST[s.pickup.source]})`, emphasis: s.pickup.source === "typed" });
-  if (s.destination.address || isTow) {
+  // Towing was the only service with a destination and is retired, so this
+  // shows only on older requests that carried one.
+  if (s.destination.address) {
     locationRows.push({
-      label: "Tow to",
-      value: s.destination.address || "Not given",
+      label: "Destination",
+      value: s.destination.address,
       href: s.destination.lat != null && s.destination.lng != null ? mapsSearch(s.destination.lat, s.destination.lng) : undefined,
-      emphasis: !s.destination.address,
     });
   }
   if (s.destination.notes) locationRows.push({ label: "Destination notes", value: s.destination.notes });

@@ -12,8 +12,8 @@ insert into service_types (slug, name, needs_destination, description, sort_orde
   ('tire-replacement', 'Tire Replacement', false, 'Tire supplied by TRA and fitted on site — 15 to 20 inch $189, 21 inch and larger $230.', 6),
   ('stuck-screw-in-tire', 'Stuck Screw in Tire', false, 'Screw or nail removed from the tire and the tire made safe, $70.', 7),
   ('rim-lock-removal', 'Rim Lock Removal', false, 'Seized or keyless wheel lock removed so the wheel can come off, $70.', 8),
-  ('fuel-delivery', 'Fuel Delivery', false, 'Gas or diesel delivered roadside, $65 plus the cost of the fuel.', 9),
-  ('towing', 'Towing', true, 'Light and medium-duty towing to the destination of your choice: $120, then $5 per mile.', 10)
+  ('fuel-delivery', 'Fuel Delivery', false, 'Gas or diesel delivered roadside, $65 plus the cost of the fuel.', 9)
+-- Towing is not seeded: it was retired on 2026-10-26 (migration 0016).
 on conflict (slug) do update set
   name = excluded.name,
   needs_destination = excluded.needs_destination,

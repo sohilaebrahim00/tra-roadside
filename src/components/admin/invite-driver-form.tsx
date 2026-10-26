@@ -85,7 +85,7 @@ export function InviteDriverForm() {
             <Field label="Full name" name="fullName" required />
             <Field label="Email" name="email" type="email" required />
             <Field label="Phone" name="phone" type="tel" required />
-            <Field label="Vehicle description" name="vehicleDescription" placeholder="e.g. Ford F-350 Tow Truck #04" />
+            <Field label="Vehicle description" name="vehicleDescription" placeholder="e.g. Kia Sedona Service Van #04" />
             <Field label="License plate" name="licensePlate" />
             {error && <p className="text-sm text-red-600">{error}</p>}
             <button

@@ -5,8 +5,7 @@ import type { ServiceTypeSlug } from "@/lib/types/domain";
 /**
  * The words drivers actually type when something goes wrong, per service.
  * Several services share a phrase on purpose ("dead battery" is a jump start
- * or a new battery; "won't start" may need a tow), so the search can offer
- * both and let the driver choose.
+ * or a new battery), so the search can offer both and let the driver choose.
  */
 const KEYWORDS: Record<ServiceTypeSlug, string[]> = {
   "battery-replacement": [
@@ -30,10 +29,6 @@ const KEYWORDS: Record<ServiceTypeSlug, string[]> = {
   "stuck-screw-in-tire": ["screw", "screw in tire", "nail", "nail in tire", "stuck screw", "something in tire"],
   "rim-lock-removal": ["wheel lock", "rim lock", "locking lug nut", "lug nut", "wheel lock key", "lug key", "lost wheel lock key"],
   "fuel-delivery": ["out of gas", "gas", "fuel", "fuel delivery", "ran out of gas", "empty tank", "diesel", "gasoline", "no gas"],
-  towing: [
-    "tow", "towing", "tow truck", "need a tow", "accident", "crash", "broke down", "breakdown", "wont start",
-    "transmission", "overheating", "wrecker", "car stopped",
-  ],
 };
 
 /** Words too common to tell services apart ("my car has no gas" is about gas). */
@@ -47,7 +42,7 @@ export function normalizeQuery(s: string): string {
 /**
  * Ranks services for a free-text query. A whole phrase match counts most,
  * then each word the driver typed that starts a word in a phrase, so partial
- * typing ("batt", "tow") already finds the right service.
+ * typing ("batt", "fla") already finds the right service.
  */
 export function searchServices(query: string, limit = 5): ServiceContent[] {
   const q = normalizeQuery(query);
@@ -80,4 +75,4 @@ export function searchServices(query: string, limit = 5): ServiceContent[] {
 }
 
 /** One-tap starting points shown under the search box. */
-export const POPULAR_SEARCHES = ["Dead battery", "Flat tire", "Locked out", "Out of gas", "Need a tow", "Wheel lock key"];
+export const POPULAR_SEARCHES = ["Dead battery", "Flat tire", "Locked out", "Out of gas", "Nail in tire", "Wheel lock key"];

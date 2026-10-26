@@ -521,59 +521,6 @@ export const SERVICES: ServiceContent[] = [
       },
     ],
   },
-  {
-    slug: "towing",
-    name: "Towing",
-    shortName: "Towing",
-    needsDestination: true,
-    // Owner's rate as of 2026-10-19: a base charge, then a per-mile charge.
-    priceLines: [
-      { label: "Base rate", amount: "$120" },
-      { label: "Then per mile", amount: "$5 per mile", note: "from your vehicle's location to the destination" },
-    ],
-    priceBadge: "$120 + $5/mile",
-    priceFrom: 120,
-    priceNote: "A $120 base rate, then $5 per mile from where your vehicle is to where you want it taken.",
-    // Supplied by the owner on 2026-10-19 (cropped to 3:2). Not a TRA job
-    // photo, so the alt text describes only what is in the frame.
-    photos: [
-      {
-        src: "/images/towing-flatbed.webp",
-        alt: "A white SUV loaded on the tilted bed of a red and white flatbed tow truck on a highway.",
-        width: 553,
-        height: 369,
-      },
-    ],
-    summary: "Light and medium-duty towing to the destination of your choice: $120, then $5 per mile.",
-    heroLine: "Your vehicle, moved safely to wherever it needs to go.",
-    problem:
-      "Some breakdowns can't be fixed roadside — a dead transmission, a collision, or a vehicle that won't safely restart. When that happens, your car needs to move, not get patched on the shoulder.",
-    whileYouWait: [
-      "Move as far from traffic as safely possible and turn on hazard lights.",
-      "Stay inside the vehicle with your seatbelt on if you're on a highway shoulder.",
-      "Have your destination (home, shop, dealership) ready to share with dispatch.",
-    ],
-    whatWeNeed: [
-      "Your exact location or a shareable GPS pin",
-      "Vehicle year, make, and model",
-      "Whether the vehicle is drivable or needs to be loaded",
-      "Your preferred destination",
-    ],
-    faqs: [
-      {
-        q: "How is towing priced?",
-        a: "A $120 base rate, then $5 per mile, measured from your vehicle's location to the destination you choose. Tell us the destination in the request and dispatch confirms the distance before the driver sets off.",
-      },
-      {
-        q: "Can you tow to any shop?",
-        a: "Yes — tell us the destination during the request and we'll confirm distance and details before dispatching.",
-      },
-      {
-        q: "Do you tow motorcycles or larger vehicles?",
-        a: "Select your vehicle type in the request form and add notes; dispatch will confirm equipment fit before accepting.",
-      },
-    ],
-  },
 ];
 
 export function getService(slug: string) {

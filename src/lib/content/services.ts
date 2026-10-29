@@ -55,6 +55,12 @@ export interface ServiceContent {
   priceFrom?: number;
   /** Qualifier shown beneath the price block. */
   priceNote?: string;
+  /**
+   * Total for a semi truck (vehicle type "semi_truck") where it differs, e.g.
+   * a heavy-duty jump start. The texts for that request show this figure.
+   * It must also appear in priceLines so the site publishes it.
+   */
+  semiTruckPrice?: string;
   /** Photographs of this service being performed, for a constrained grid. */
   photos?: ServicePhoto[];
 }
@@ -65,9 +71,15 @@ export const SERVICES: ServiceContent[] = [
     name: "Jump Start",
     shortName: "Jump Start",
     needsDestination: false,
-    priceLines: [{ amount: "$55–65" }],
+    // Semi trucks and 18-wheelers were added at $140 on 2026-10-29, at the
+    // owner's request, in place of the towing the site no longer offers.
+    priceLines: [
+      { amount: "$55–65" },
+      { label: "Semi trucks and 18-wheelers", amount: "$140" },
+    ],
     priceBadge: "$55–65",
     priceFrom: 55,
+    semiTruckPrice: "$140",
     // From the business's own footage; the owner confirmed the rights to it
     // on 2026-10-18. The hero on every jump start page.
     photos: [
@@ -81,7 +93,7 @@ export const SERVICES: ServiceContent[] = [
     summary: "Dead battery? We'll get your engine running again on the spot.",
     heroLine: "A dead battery shouldn't end your day.",
     problem:
-      "Lights left on, extreme temperatures, or an aging battery can leave you with a car that won't start. A jump start gets most vehicles running again in minutes.",
+      "Lights left on, extreme temperatures, or an aging battery can leave you with a car that won't start. A jump start gets most vehicles running again in minutes, from cars and pickups to semi trucks and 18-wheelers.",
     whileYouWait: [
       "Turn off all electronics and accessories to avoid draining further.",
       "Pop the hood if it's safe to do so before your driver arrives.",
@@ -100,6 +112,10 @@ export const SERVICES: ServiceContent[] = [
       {
         q: "Does this work for hybrid or electric vehicles?",
         a: "Add your vehicle type and any details in the notes field so we can dispatch the right equipment.",
+      },
+      {
+        q: "Can you jump start a semi truck or an 18-wheeler?",
+        a: "Yes. A heavy-duty jump start for a semi truck, an 18-wheeler or another big rig is $140. Choose Semi truck as the vehicle type when you request, and add the unit number and exactly where the truck is parked: the yard, truck stop or mile marker.",
       },
     ],
   },

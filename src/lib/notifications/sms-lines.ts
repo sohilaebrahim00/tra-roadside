@@ -15,16 +15,19 @@ interface PricedService {
   slug: string;
   priceBadge?: string;
   priceFrom?: number;
+  semiTruckPrice?: string;
 }
 
 /**
  * A service's price for a text message, from SERVICES so it never drifts:
  * "$55-65", "$120 + $5/mile", "From $189 (battery only, installation quoted)".
- * En and em dashes become hyphens, because either one would switch the whole
- * text to UCS-2 and halve the characters per SMS part.
+ * A semi truck gets its own figure where the service has one ("$140" for a
+ * jump start). En and em dashes become hyphens, because either one would
+ * switch the whole text to UCS-2 and halve the characters per SMS part.
  */
-export function smsPrice(service: PricedService): string {
+export function smsPrice(service: PricedService, vehicleType?: string): string {
   const ascii = (s: string) => s.replace(/[–—]/g, "-");
+  if (vehicleType === "semi_truck" && service.semiTruckPrice) return ascii(service.semiTruckPrice);
   if (service.slug === "battery-replacement" && service.priceFrom) {
     return `From $${service.priceFrom} (battery only, installation quoted)`;
   }

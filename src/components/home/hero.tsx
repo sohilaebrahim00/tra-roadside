@@ -91,7 +91,7 @@ export function Hero() {
 
           <p ref={paraRef} className="mt-4 max-w-lg text-base text-white/75 sm:mt-6 sm:text-lg">
             Local roadside assistance across Dallas–Fort Worth. Request help, share your location, and
-            track your driver from the moment they&apos;re dispatched.
+            a driver comes to you. We text you when they&apos;re on the way.
           </p>
 
           <p className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-semibold text-white/90">
@@ -131,7 +131,7 @@ export function Hero() {
             <Fact label="Dispatch" value="24/7" />
             <Fact label="DFW cities" value={String(SERVICE_AREAS.length)} />
             {batteryPrice && <Fact label="Battery" value={batteryPrice} note={DISPATCH_FEE_TAG} />}
-            <Fact label="Driver tracking" value="Live" accent />
+            <Fact label="Membership" value="None" accent />
           </dl>
           {/* The pricing banner from the owner's brief: the fee on its own, so
               no figure on the page reads as the whole bill. */}

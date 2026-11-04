@@ -14,8 +14,8 @@ const STEPS = [
   },
   {
     icon: Navigation,
-    title: "Follow your driver live",
-    text: "A tracking link shows your driver on the way, with an average 30-minute arrival. Actual time depends on location and traffic.",
+    title: "Hear when they're on the way",
+    text: "We text or call you when your driver is heading to you. Average arrival is 30 minutes; actual time depends on location and traffic.",
   },
   {
     icon: Wrench,

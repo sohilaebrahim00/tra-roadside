@@ -34,7 +34,7 @@ export default function PrivacyPolicyPage() {
       <ul>
         <li>To dispatch a driver and provide the roadside assistance service you requested.</li>
         <li>To send status updates via email and SMS (only with your consent for SMS).</li>
-        <li>To provide live tracking of your assigned driver via a secure, time-limited link.</li>
+        <li>To show the status of your request via a secure, time-limited link.</li>
         <li>To improve our service and respond to support inquiries.</li>
       </ul>
 

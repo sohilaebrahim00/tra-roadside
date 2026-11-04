@@ -22,10 +22,7 @@ const QUICK: ServiceTypeSlug[] = [
  * that starts a request in one tap. Each tile opens the request form with
  * that service already chosen, and shows the price from SERVICES, so the
  * figures can never drift from the rest of the site. The strip at the bottom
- * says what happens next: a live tracking link.
- *
- * It replaced an abstract route drawing, which said "tracking" but gave the
- * visitor nothing to do.
+ * says what happens next.
  */
 export function HeroQuickRequest() {
   const tiles = QUICK.map((slug) => getService(slug)).filter((s) => s !== undefined);
@@ -72,15 +69,14 @@ export function HeroQuickRequest() {
         })}
       </ul>
 
-      {/* What happens after the request: the tracking link, with a small
-          moving route so the promise reads at a glance. */}
+      {/* What happens after the request, with a small route so it reads at a glance. */}
       <div className="relative mt-4 flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-3">
         <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-white/10 text-amber-400">
           <Navigation className="h-5 w-5" aria-hidden="true" />
         </span>
         <span className="min-w-0 flex-1">
-          <span className="block text-sm font-semibold">Track your driver live</span>
-          <span className="block text-xs text-white/60">Link by text and email once a driver is on the way</span>
+          <span className="block text-sm font-semibold">We text you when your driver is on the way</span>
+          <span className="block text-xs text-white/60">Dispatch confirms your price before a driver is sent</span>
         </span>
         <svg viewBox="0 0 96 32" className="hidden h-8 w-24 shrink-0 xl:block" aria-hidden="true">
           <path d="M4 26 C 24 26, 30 8, 50 12 S 78 22, 92 6" fill="none" stroke="#f2840c" strokeWidth="2.5" strokeDasharray="5 5" strokeLinecap="round" className="route-flow" />

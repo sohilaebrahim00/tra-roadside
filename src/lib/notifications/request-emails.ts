@@ -184,8 +184,8 @@ export function customerConfirmationEmail(s: RequestSnapshot, intro: string): Ri
         { label: "Request number", value: s.requestNumber },
         { label: "Submitted", value: central(s.createdAt) },
         { label: "Service", value: s.service.name },
-        { label: "Published price", value: priceText(s.service) || "Confirmed by dispatch" },
-        { label: "Final price", value: "Confirmed by dispatch for your vehicle and location" },
+        // No figures in the customer's copy (owner, 2026-11-04). Dispatch's email keeps them.
+        { label: "Price", value: "Dispatch confirms it for your vehicle and location" },
       ],
     },
     { title: "Your vehicle", rows: vehicleRows },
@@ -195,20 +195,19 @@ export function customerConfirmationEmail(s: RequestSnapshot, intro: string): Ri
       bullets: [
         "A dispatcher reviews your request and assigns the nearest available driver.",
         "We'll message you when a driver is assigned and again when they're on the way.",
-        "Follow your driver live from the tracking link. No account or login needed.",
       ],
     },
   ];
   if (s.service.whileYouWait.length) sections.push({ title: "While you wait", bullets: s.service.whileYouWait });
 
   return {
-    preheader: `${s.requestNumber}: your ${s.service.name.toLowerCase()} request is in. Track it live from this email.`,
+    preheader: `${s.requestNumber}: your ${s.service.name.toLowerCase()} request is in.`,
     eyebrow: "Request received",
     heading: `We've got your request, ${firstName}.`,
     badge: STATUS_META.new.customerLabel,
     intro,
     buttons: [
-      { label: "Track your request live", href: s.trackingUrl },
+      { label: "View your request", href: s.trackingUrl },
       { label: `Call ${BUSINESS.phoneDisplay}`, href: BUSINESS.phoneHref, tone: "secondary" },
     ],
     sections,

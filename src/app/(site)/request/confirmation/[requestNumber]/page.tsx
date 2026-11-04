@@ -118,7 +118,7 @@ export default async function ConfirmationPage({
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
             {token && (
               <Button href={`/t/${token}`} size="lg">
-                View Live Tracking
+                View Request Status
               </Button>
             )}
             <Button href={BUSINESS.phoneHref} variant="outline" size="lg" icon={<Phone className="h-4 w-4" aria-hidden="true" />}>
@@ -127,8 +127,7 @@ export default async function ConfirmationPage({
           </div>
 
           <p className="mt-8 text-sm text-ink-500 dark:text-ink-300">
-            Save this page or the link sent to you — you can reopen your tracking link anytime before
-            your request is completed.{" "}
+            Save this page. You can reopen your request status anytime before your request is completed.{" "}
             <Link href="/" className="font-medium text-red-600 hover:underline">
               Return home
             </Link>

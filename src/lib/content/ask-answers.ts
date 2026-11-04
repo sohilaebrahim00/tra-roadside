@@ -59,7 +59,7 @@ export function answerQuestion(raw: string): AskAnswer {
   const city = SERVICE_AREAS.find((c) => q.includes(normalizeQuery(c.name)));
   if (city) {
     return {
-      text: `Yes, we cover ${city.name}, 24 hours a day. A driver comes to wherever the car is, and you can follow them live once they're dispatched.`,
+      text: `Yes, we cover ${city.name}, 24 hours a day. A driver comes to wherever the car is, and we'll let you know when they're on the way.`,
       link: { href: `/service-areas/${city.slug}`, label: `Roadside help in ${city.name}` },
     };
   }
@@ -72,7 +72,7 @@ export function answerQuestion(raw: string): AskAnswer {
     };
   }
   if (has(/\b(fast|long|soon|eta|arrive|arrival|quick|quickly|wait|minutes)\b/)) {
-    return { text: "Our average is a 30-minute arrival. The actual time depends on your location and traffic, and you can follow your driver live once they're dispatched.", service: svc };
+    return { text: "Our average is a 30-minute arrival. The actual time depends on your location and traffic, and we'll let you know when your driver is on the way.", service: svc };
   }
   if (has(/\b(open|hours|tonight|night|weekend|weekends|holiday|holidays|sunday|24)\b/)) {
     return { text: "Yes, we're open 24 hours a day, 365 days a year, including nights, weekends and holidays.", service: svc };

@@ -39,7 +39,7 @@ const labelClass = "block text-sm font-semibold text-ink-900";
  * The short request form: everything on one screen, a request away from a real
  * dispatcher. It sends to the same /api/requests as the full form, so dispatch
  * gets the same text and email, and the customer lands on the same confirmation
- * and tracking pages.
+ * page.
  *
  * Urgency, the kind of spot and the safety flag have no database columns; they
  * travel in the request notes, which dispatch already reads.
@@ -500,7 +500,7 @@ export function QuickRequestSheet({ initialService, onClose }: { initialService?
 
           <div>
             <label htmlFor="qr-email" className={labelClass}>
-              Email <span className="font-normal text-ink-500">(optional, for your confirmation and tracking link)</span>
+              Email <span className="font-normal text-ink-500">(optional, for your confirmation)</span>
             </label>
             <input id="qr-email" value={email} onChange={(e) => setEmail(e.target.value)} type="email" inputMode="email" autoComplete="email" className={inputClass} />
             {errors.email && <FieldError>{errors.email}</FieldError>}

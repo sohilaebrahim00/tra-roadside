@@ -6,7 +6,6 @@ import { BatteryPromoSection } from "@/components/home/battery-promo-section";
 import { TrustStrip } from "@/components/home/trust-strip";
 import { SignatureWordSection } from "@/components/home/signature-word-section";
 import { RoadsideRevealSection } from "@/components/home/roadside-reveal-section";
-import { TrackingPreviewSection } from "@/components/home/tracking-preview-section";
 import { WhyChooseSection } from "@/components/home/why-choose-section";
 import { ServiceAreasSection } from "@/components/home/service-areas-section";
 import { GallerySection } from "@/components/home/gallery-section";
@@ -54,7 +53,6 @@ export default function HomePage() {
       <SignatureWordSection />
       <RoadsideRevealSection />
       <HowItWorksSection />
-      <TrackingPreviewSection />
       <WhyChooseSection />
       <ServiceAreasSection />
       <GallerySection />

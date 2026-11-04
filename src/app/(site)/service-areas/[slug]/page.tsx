@@ -68,8 +68,8 @@ export default async function ServiceAreaPage({
           </h1>
           <p className="mt-4 max-w-xl text-white/70">
             TRA dispatches 24/7 roadside assistance to {city.name} and the surrounding area —
-            jump starts, battery replacement, flat tires, tire repair, lockouts, and more, with live driver
-            tracking once help is on the way.
+            jump starts, battery replacement, flat tires, tire repair, lockouts, and more, with no
+            membership.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Button href="/request" size="lg" icon={<LifeBuoy className="h-4 w-4" aria-hidden="true" />}>

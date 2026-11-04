@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { decodeDemoToken } from "@/lib/demo/demo-token";
-import { simulatedStatusAt, simulatedDriverPosition, simulatedEtaMinutes } from "@/lib/demo/tracking-simulation";
+import { simulatedStatusAt, } from "@/lib/demo/tracking-simulation";
 import { STATUS_META, TRACKING_LIVE_STATUSES, type RequestStatus } from "@/lib/types/domain";
 import { createAdminSupabaseClient } from "@/lib/supabase/admin";
 import { isDemoMode } from "@/lib/env";
@@ -37,8 +37,6 @@ export async function GET(_req: NextRequest, { params }: { params: Promise<{ tok
     const createdAt = new Date(payload.createdAt);
     const now = new Date();
     const status = simulatedStatusAt(createdAt, now);
-    const driverPosition = simulatedDriverPosition({ lat: payload.pickupLat, lng: payload.pickupLng }, createdAt, now);
-    const etaMinutes = simulatedEtaMinutes(createdAt, now);
     const meta = STATUS_META[status];
 
     const order: RequestStatus[] = ["new", "reviewing", "accepted", "driver_assigned", "driver_en_route", "driver_nearby", "arrived", "in_progress", "completed"];
@@ -59,8 +57,8 @@ export async function GET(_req: NextRequest, { params }: { params: Promise<{ tok
       driver: TRACKING_LIVE_STATUSES.includes(status)
         ? { firstName: "Marcus", photoUrl: null, vehicleDescription: "Service Van #04", phone: null }
         : null,
-      driverPosition,
-      etaMinutes: TRACKING_LIVE_STATUSES.includes(status) ? etaMinutes : null,
+      driverPosition: null,
+      etaMinutes: null,
       lastUpdated: now.toISOString(),
       timeline,
       isLive: TRACKING_LIVE_STATUSES.includes(status),
@@ -101,8 +99,6 @@ export async function GET(_req: NextRequest, { params }: { params: Promise<{ tok
       .order("created_at", { ascending: true });
 
     let driver: TrackingData["driver"] = null;
-    let driverPosition: TrackingData["driverPosition"] = null;
-    const etaMinutes: number | null = null;
 
     if (request.assigned_driver_id) {
       const { data: driverRow } = await supabase
@@ -120,16 +116,6 @@ export async function GET(_req: NextRequest, { params }: { params: Promise<{ tok
           phone: driverRow.profiles?.phone ?? null,
         };
       }
-
-      const { data: locationRow } = await supabase
-        .from("driver_locations")
-        .select("lat, lng, recorded_at")
-        .eq("request_id", tokenRow.request_id)
-        .order("recorded_at", { ascending: false })
-        .limit(1)
-        .maybeSingle();
-
-      if (locationRow) driverPosition = { lat: locationRow.lat, lng: locationRow.lng };
     }
 
     const status = request.status;
@@ -148,8 +134,11 @@ export async function GET(_req: NextRequest, { params }: { params: Promise<{ tok
       pickupLng: request.pickup_lng,
       destinationAddress: request.destination_address,
       driver,
-      driverPosition,
-      etaMinutes,
+      // Customers never see where the driver is, or an ETA worked out from it
+      // (owner, 2026-11-04): a driver may have another job on the way to them.
+      // Dispatch's own map still has the position.
+      driverPosition: null,
+      etaMinutes: null,
       lastUpdated: request.updated_at,
       timeline: (history ?? []).map((h) => ({
         status: h.new_status,

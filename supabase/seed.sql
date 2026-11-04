@@ -54,14 +54,14 @@ on conflict (slug) do update set name = excluded.name, sort_order = excluded.sor
 -- Notification templates — one row per (event, channel). {{placeholders}}
 -- are substituted by src/lib/notifications/render.ts.
 insert into notification_templates (event, channel, subject, body) values
-  ('request_received', 'email', 'We received your {{serviceName}} request — {{requestNumber}}', 'Hi {{customerName}}, thanks for choosing TRA. Your request is with our local Dallas–Fort Worth dispatch team now. Everything you sent us is below, with your live tracking link.'),
-  ('request_received', 'sms', null, E'TRA Roadside: Request received\nService: {{serviceShort}}{{priceLine}}{{vehicleLine}}\nLocation: {{pickupAddress}}\nRef: {{requestNumber}}\nTrack live: {{trackingUrl}}\nQuestions: {{supportPhone}}\nReply STOP to opt out.'),
-  ('request_accepted', 'email', 'Your request has been accepted — {{requestNumber}}', 'Hi {{customerName}}, dispatch has accepted your request and is assigning a driver. Track live status: {{trackingUrl}}. Questions? Call {{supportPhone}}.'),
-  ('request_accepted', 'sms', null, E'TRA Roadside: Request accepted\nService: {{serviceShort}}\nRef: {{requestNumber}}\nWe\'re assigning a driver now.\nTrack live: {{trackingUrl}}\nReply STOP to opt out.'),
-  ('driver_assigned', 'email', 'A driver has been assigned — {{requestNumber}}', 'Hi {{customerName}}, {{driverName}} has been assigned to your request. Track live location: {{trackingUrl}}. Questions? Call {{supportPhone}}.'),
-  ('driver_assigned', 'sms', null, E'TRA Roadside: Driver assigned\nService: {{serviceShort}}{{driverLine}}\nTrack live: {{trackingUrl}}\nReply STOP to opt out.'),
-  ('driver_en_route', 'email', 'Your driver is on the way — {{requestNumber}}', 'Hi {{customerName}}, {{driverName}} is on the way. ETA: {{eta}}. Track live: {{trackingUrl}}. Questions? Call {{supportPhone}}.'),
-  ('driver_en_route', 'sms', null, E'TRA Roadside: Driver on the way\nService: {{serviceShort}}{{driverLine}}\nLive location and ETA: {{trackingUrl}}\nReply STOP to opt out.'),
+  ('request_received', 'email', 'We received your {{serviceName}} request — {{requestNumber}}', 'Hi {{customerName}}, thanks for choosing TRA. Your request is with our local Dallas–Fort Worth dispatch team now. Everything you sent us is below.'),
+  ('request_received', 'sms', null, E'TRA Roadside: Request received\nService: {{serviceShort}}{{vehicleLine}}\nLocation: {{pickupAddress}}\nRef: {{requestNumber}}\nQuestions: {{supportPhone}}\nReply STOP to opt out.'),
+  ('request_accepted', 'email', 'Your request has been accepted — {{requestNumber}}', 'Hi {{customerName}}, dispatch has accepted your request and is assigning a driver. Questions? Call {{supportPhone}}.'),
+  ('request_accepted', 'sms', null, E'TRA Roadside: Request accepted\nService: {{serviceShort}}\nRef: {{requestNumber}}\nWe\'re assigning a driver now.\nReply STOP to opt out.'),
+  ('driver_assigned', 'email', 'A driver has been assigned — {{requestNumber}}', 'Hi {{customerName}}, {{driverName}} has been assigned to your request. Questions? Call {{supportPhone}}.'),
+  ('driver_assigned', 'sms', null, E'TRA Roadside: Driver assigned\nService: {{serviceShort}}{{driverLine}}\nReply STOP to opt out.'),
+  ('driver_en_route', 'email', 'Your driver is on the way — {{requestNumber}}', 'Hi {{customerName}}, {{driverName}} is on the way. Questions? Call {{supportPhone}}.'),
+  ('driver_en_route', 'sms', null, E'TRA Roadside: Driver on the way\nService: {{serviceShort}}{{driverLine}}\nReply STOP to opt out.'),
   ('driver_nearby', 'email', 'Your driver is nearby — {{requestNumber}}', 'Hi {{customerName}}, {{driverName}} is almost at your location. Please stay in a safe, visible spot. Questions? Call {{supportPhone}}.'),
   ('driver_nearby', 'sms', null, E'TRA Roadside: Driver nearby\nService: {{serviceShort}}{{driverLine}}\nYour driver is almost there. Please wait in a safe, visible spot.\nReply STOP to opt out.'),
   ('driver_arrived', 'email', 'Your driver has arrived — {{requestNumber}}', 'Hi {{customerName}}, {{driverName}} has arrived at your location. Questions? Call {{supportPhone}}.'),
@@ -80,7 +80,7 @@ insert into notification_templates (event, channel, subject, body) values
 on conflict (event, channel) do update set body = excluded.body, subject = excluded.subject;
 
 insert into faqs (category, question, answer, sort_order) values
-  ('General', 'What areas do you serve?', 'We serve the Dallas–Fort Worth Metroplex, including Dallas, Arlington, Plano, Frisco, and 23 other nearby cities. See the full Service Areas page for the complete list.', 1),
+  ('General', 'What areas do you serve?', 'We serve the Dallas–Fort Worth Metroplex. See the Service Areas page for the complete list of cities.', 1),
   ('General', 'Are you available 24/7?', 'Yes — TRA dispatches roadside assistance 24 hours a day, 365 days a year.', 2),
   ('Service Requests', 'How do I request help?', 'Use the "Request Help" button to share your location, pick a service, and submit — most requests take under two minutes. You can also call us directly.', 3),
   ('Service Requests', 'Do I need to create an account?', 'No. You can submit a request and track it with a secure link sent to your phone or email — no account required.', 4),

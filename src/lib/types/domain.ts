@@ -177,7 +177,7 @@ export const STATUS_META: Record<RequestStatus, StatusMeta> = {
   driver_en_route: {
     label: "Driver En Route",
     customerLabel: "Driver is on the way",
-    description: "Your driver is on the way. Live location is available below.",
+    description: "Your driver is on the way.",
   },
   driver_nearby: {
     label: "Driver Nearby",

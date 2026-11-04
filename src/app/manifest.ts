@@ -10,7 +10,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "TRA — Texas Roadside Assistance",
     short_name: "TRA Roadside",
-    description: "24/7 roadside assistance across Dallas–Fort Worth, with live driver tracking.",
+    description: "24/7 roadside assistance across Dallas–Fort Worth, with no membership.",
     start_url: "/",
     display: "standalone",
     background_color: "#0a0a0b",

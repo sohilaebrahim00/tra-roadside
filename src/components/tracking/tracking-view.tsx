@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Phone, Clock3, CheckCircle2, XCircle, AlertTriangle, Wifi, WifiOff } from "lucide-react";
-import { TrackingMap } from "./tracking-map";
+import { Phone, CheckCircle2, XCircle, AlertTriangle, Wifi, WifiOff } from "lucide-react";
 import { BUSINESS } from "@/lib/content/business";
 import { cn } from "@/lib/utils/cn";
 import type { TrackingResponse } from "@/lib/tracking/types";
@@ -81,18 +80,11 @@ export function TrackingView({ token }: { token: string }) {
 
       {data.demo && (
         <p className="mt-3 rounded-lg bg-amber-500/10 px-3 py-2 text-xs text-amber-700 dark:text-amber-400">
-          Demo simulation — this status and driver position update automatically as a preview.
-          Connect Supabase, the driver app, and Google Maps for real live tracking.
+          Demo simulation: this status updates automatically as a preview.
         </p>
       )}
 
-      {!isTerminal && data.isLive && (
-        <div className="mt-6 h-64 overflow-hidden rounded-2xl border border-ink-950/10 sm:h-80">
-          <TrackingMap pickup={{ lat: data.pickupLat, lng: data.pickupLng }} driver={data.driverPosition} />
-        </div>
-      )}
-
-      {/* Informational only — never replaces the live map/data once tracking is actually live. */}
+      {/* Informational only, until a driver is on the job. */}
       {!isTerminal && !data.isLive && infoVideo && (
         <div className="mt-6">
           <VideoPosterCard
@@ -118,11 +110,6 @@ export function TrackingView({ token }: { token: string }) {
             <p className="font-semibold text-ink-950 dark:text-white">{data.driver.firstName}</p>
             <p className="text-sm text-ink-500 dark:text-ink-300">{data.driver.vehicleDescription ?? "En route to you"}</p>
           </div>
-          {data.etaMinutes !== null && (
-            <div className="flex items-center gap-1.5 rounded-full bg-red-600/10 px-3 py-1.5 text-sm font-bold text-red-600">
-              <Clock3 className="h-4 w-4" aria-hidden="true" /> ETA {data.etaMinutes}m
-            </div>
-          )}
           {data.driver.phone && (
             <a href={`tel:${data.driver.phone}`} className="flex h-10 w-10 items-center justify-center rounded-full bg-success-600 text-white" aria-label="Call driver">
               <Phone className="h-4 w-4" aria-hidden="true" />
@@ -164,9 +151,9 @@ export function TrackingView({ token }: { token: string }) {
 
 function TrackingErrorState({ reason }: { reason: "invalid" | "expired" | "revoked" }) {
   const copy = {
-    invalid: { icon: AlertTriangle, title: "Tracking link not found", body: "This link doesn't match an active request. Double-check the link or call dispatch for help." },
-    expired: { icon: XCircle, title: "This tracking link has expired", body: "Tracking links are only active for a limited time after a request is completed." },
-    revoked: { icon: CheckCircle2, title: "This request is closed", body: "This request has been completed or canceled, so live tracking is no longer available." },
+    invalid: { icon: AlertTriangle, title: "Link not found", body: "This link doesn't match an active request. Double-check the link or call dispatch for help." },
+    expired: { icon: XCircle, title: "This link has expired", body: "Status links are only active for a limited time after a request is completed." },
+    revoked: { icon: CheckCircle2, title: "This request is closed", body: "This request has been completed or canceled, so this link is no longer active." },
   }[reason];
 
   const Icon = copy.icon;

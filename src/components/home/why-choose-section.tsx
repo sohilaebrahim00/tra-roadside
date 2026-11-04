@@ -1,4 +1,4 @@
-import { MapPinned, ShieldCheck, Receipt, Satellite } from "lucide-react";
+import { BadgeCheck, MapPinned, ShieldCheck, Receipt } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { BrandPattern } from "@/components/brand/brand-pattern";
@@ -21,9 +21,9 @@ const POINTS = [
     body: "Pricing is confirmed before a driver is dispatched — no surprise fees after the fact.",
   },
   {
-    icon: Satellite,
-    title: "Real-time tracking",
-    body: "A secure live tracking link shows your driver's location and ETA the moment the trip starts.",
+    icon: BadgeCheck,
+    title: "No membership",
+    body: "No dues, no contract and no account. You pay only for the job you asked for.",
   },
 ];
 

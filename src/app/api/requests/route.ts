@@ -172,7 +172,8 @@ export async function POST(req: NextRequest) {
         serviceShort: service.shortName,
         vehicleClause: vehicleClause(input),
         vehicleText: vehicleShort(input) || "Not provided",
-        priceLine: smsLine("Price", smsPrice(service, input.vehicleType)),
+        // The customer's text carries no price (owner, 2026-11-04). Dispatch's does.
+        priceLine: "",
         vehicleLine: smsLine("Vehicle", vehicleShort(input)),
         statusLabel: STATUS_META.new.customerLabel,
         supportPhone: BUSINESS.phoneDisplay,
@@ -288,7 +289,8 @@ export async function POST(req: NextRequest) {
         serviceShort: service.shortName,
         vehicleClause: vehicleClause(input),
         vehicleText: vehicleShort(input) || "Not provided",
-        priceLine: smsLine("Price", smsPrice(service, input.vehicleType)),
+        // The customer's text carries no price (owner, 2026-11-04). Dispatch's does.
+        priceLine: "",
         vehicleLine: smsLine("Vehicle", vehicleShort(input)),
         statusLabel: STATUS_META.new.customerLabel,
         supportPhone: BUSINESS.phoneDisplay,

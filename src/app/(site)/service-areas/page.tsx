@@ -12,7 +12,7 @@ import { HeroBackdrop } from "@/components/brand/hero-backdrop";
 export const metadata: Metadata = {
   title: "Service Areas — Dallas–Fort Worth Metroplex",
   description:
-    "TRA provides 24/7 roadside assistance across 27 cities in the Dallas–Fort Worth Metroplex, including Dallas, Arlington, Plano, Frisco, and McKinney.",
+    `TRA provides 24/7 roadside assistance across ${SERVICE_AREAS.length} cities in the Dallas–Fort Worth Metroplex, including Dallas, Arlington, Plano, Frisco, and McKinney.`,
   ...pageUrls("/service-areas"),
 };
 
@@ -31,7 +31,7 @@ export default function ServiceAreasPage() {
           <SectionHeading
             as="h1"
             eyebrow="Coverage"
-            title="27 cities across the DFW Metroplex"
+            title={`${SERVICE_AREAS.length} cities across the DFW Metroplex`}
             description="Dispatch will always confirm exact coverage for your location when you request help — this list reflects our currently confirmed service area."
             tone="light"
           />

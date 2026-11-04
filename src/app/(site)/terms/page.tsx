@@ -6,7 +6,7 @@ import { BUSINESS } from "@/lib/content/business";
 export const metadata: Metadata = {
   title: "Terms and Conditions",
   description:
-    "The terms for requesting roadside assistance from Texas Roadside Assistance LLC, covering service requests, pricing, cancellations, live tracking and liability.",
+    "The terms for requesting roadside assistance from Texas Roadside Assistance LLC, covering service requests, pricing, cancellations, request status links and liability.",
   robots: { index: true, follow: true },
   ...pageUrls("/terms"),
 };
@@ -44,10 +44,9 @@ export default function TermsPage() {
         </LegalPlaceholder>
       </p>
 
-      <h2>Live tracking</h2>
+      <h2>Request status links</h2>
       <p>
-        Live tracking links are provided for convenience once a driver is assigned and begins the
-        trip. Links are unique to your request, expire after a limited period, and stop functioning
+        Request status links are provided for convenience. Links are unique to your request, expire after a limited period, and stop functioning
         once your request is completed or canceled.
       </p>
 

@@ -35,7 +35,7 @@ export default function SmsTermsPage() {
       <h2>Consent is not required for service</h2>
       <p>
         SMS consent is optional. You can still request and receive roadside assistance, including
-        email updates and a live tracking link, without opting in to SMS.
+        email updates and a link to your request status, without opting in to SMS.
       </p>
 
       <h2>Consent record</h2>

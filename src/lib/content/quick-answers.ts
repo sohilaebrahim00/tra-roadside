@@ -110,7 +110,7 @@ function coverageLine(): string {
 export function homeAnswer(): QuickAnswerContent {
   return {
     question: "Who can I call for roadside help in Dallas right now?",
-    answer: `Texas Roadside Assistance sends a technician to your car anywhere in ${DFW}, 24 hours a day, with no membership: ${pricesInWords()}. Request online or call ${BUSINESS.phoneDisplay}, and track your driver live from the moment they're dispatched.`,
+    answer: `Texas Roadside Assistance sends a technician to your car anywhere in ${DFW}, 24 hours a day, with no membership: ${pricesInWords()}. Request online or call ${BUSINESS.phoneDisplay}.`,
     facts: [
       { label: "Hours", value: AVAILABILITY },
       { label: "Service area", value: coverageLine() },
@@ -193,7 +193,7 @@ export function cityServiceFaqs(svc: ServiceContent, city: ServiceArea, existing
         ]),
     {
       q: `Is there a 24 hour ${service} service near me in ${city.name}?`,
-      a: `Yes. TRA dispatches 24 hours a day, 365 days a year, and the driver comes to wherever the car is in ${city.name}. There's no membership and no account: share your location, and follow your driver live from the moment they're dispatched.`,
+      a: `Yes. TRA dispatches 24 hours a day, 365 days a year, and the driver comes to wherever the car is in ${city.name}. There's no membership and no account: share your location, and we'll let you know when your driver is on the way.`,
     },
   ];
 }
@@ -215,7 +215,7 @@ export function roadsideFaqs(): FaqItem[] {
   const faq = (id: string, category: string, question: string, answer: string): FaqItem => ({ id: `roadside-${id}`, category, question, answer });
 
   return [
-    faq("right-now", "Getting Help Right Now", "Can someone come to me right now?", `Yes. TRA dispatches 24 hours a day across ${DFW}, and you don't need a membership or an account. Send a request with your location, or call ${BUSINESS.phoneDisplay}. Dispatch confirms the price before a driver is sent, and you can follow your driver live.`),
+    faq("right-now", "Getting Help Right Now", "Can someone come to me right now?", `Yes. TRA dispatches 24 hours a day across ${DFW}, and you don't need a membership or an account. Send a request with your location, or call ${BUSINESS.phoneDisplay}. Dispatch confirms the price before a driver is sent, and lets you know when they're on the way.`),
     faq("need", "Getting Help Right Now", "What do you need from me when I ask for help?", "Your location (an address, cross streets or a map pin), the vehicle's year, make and model, and what happened. That's enough to send the right driver with the right equipment."),
     faq("cost", "What It Costs", "How much does roadside assistance cost in Dallas?", `Jump starts are ${jump}, lockouts ${lockout}, tire repair ${repair}, a spare tire change ${flat}, a new tire installed ${tire}, and a new battery installed ${battery} for eligible vehicles. A flat ${fee} dispatch fee is added once per job.`),
     faq("dispatch", "What It Costs", `What is the ${fee} dispatch fee?`, `${DISPATCH_FEE_EXPLAINER} It is added to the service price, never charged twice on one job, and never the whole cost of the service.`),

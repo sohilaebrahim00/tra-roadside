@@ -11,7 +11,7 @@ import { HeroBackdrop } from "@/components/brand/hero-backdrop";
 
 export const metadata: Metadata = {
   title: "How It Works",
-  description: "How to request 24/7 roadside assistance from TRA — share your location, pick a service, get matched with a driver, and track live.",
+  description: "How to request 24/7 roadside assistance from TRA — share your location, pick a service, and get matched with a driver.",
   ...pageUrls("/how-it-works"),
 };
 
@@ -33,8 +33,8 @@ const STEPS = [
   },
   {
     icon: Navigation,
-    title: "Track your driver live",
-    body: "Once your driver starts the trip, a secure tracking link is sent by text and email. Watch their location, ETA, and status update automatically — no login required.",
+    title: "Hear when your driver is on the way",
+    body: "Dispatch keeps you posted by text or phone, and tells you when your driver is heading to you. No login required.",
   },
   {
     icon: CheckCircle2,

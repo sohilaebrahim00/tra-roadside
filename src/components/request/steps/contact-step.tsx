@@ -28,7 +28,7 @@ export function ContactStep({ onNext, onBack }: { onNext: () => void; onBack: ()
   }
 
   return (
-    <StepShell title="How can we reach you?" description="We'll use this to send updates and your live tracking link." onBack={onBack}>
+    <StepShell title="How can we reach you?" description="We'll use this to send you updates about your request." onBack={onBack}>
       <div className="space-y-4">
         <Field label="Full name" error={errors.fullName?.message}>
           <input {...register("fullName")} autoComplete="name" className={inputClass} />
@@ -47,7 +47,7 @@ export function ContactStep({ onNext, onBack }: { onNext: () => void; onBack: ()
             className={inputClass}
           />
           <span id="email-hint" className="mt-1.5 block text-xs font-normal text-ink-500">
-            Your confirmation and live tracking link are sent here.
+            Your confirmation is sent here.
           </span>
         </Field>
 

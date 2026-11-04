@@ -10,7 +10,7 @@ import { HeroBackdrop } from "@/components/brand/hero-backdrop";
 
 export const metadata: Metadata = {
   title: "FAQs",
-  description: "Answers to common questions about TRA roadside assistance — service areas, arrival time, pricing, tracking, and more.",
+  description: "Answers to common questions about TRA roadside assistance — service areas, arrival time, pricing, and more.",
   ...pageUrls("/faq"),
 };
 

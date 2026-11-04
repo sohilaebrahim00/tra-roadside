@@ -30,8 +30,8 @@ export default async function RequestPage({
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-red-400">24/7 roadside dispatch</p>
           <p className="mt-2 font-display text-3xl font-bold uppercase tracking-tight sm:text-4xl">Request roadside help</p>
           <p className="mt-2 text-sm text-white/70">
-            Share your location and what happened. You&apos;ll get a live tracking link by text and email
-            once a driver is on the way.
+            Share your location and what happened. We&apos;ll let you know by text or phone
+            when a driver is on the way.
           </p>
         </Container>
       </div>

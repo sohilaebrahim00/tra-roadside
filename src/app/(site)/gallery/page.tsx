@@ -19,7 +19,7 @@ import { HeroBackdrop } from "@/components/brand/hero-backdrop";
 export const metadata: Metadata = {
   title: "Gallery",
   description:
-    "Photos of TRA at work across the Dallas–Fort Worth Metroplex: battery replacement, flat tires, jump starts, fuel delivery and the gear our drivers carry.",
+    "Photos of TRA at work across the Dallas–Fort Worth Metroplex: battery replacement, flat tires, jump starts and the gear our drivers carry.",
   ...pageUrls("/gallery"),
 };
 
@@ -47,7 +47,7 @@ export default async function GalleryPage() {
             as="h1"
             eyebrow="Gallery"
             title="TRA at work across DFW"
-            description="Our crew and the equipment they bring: battery replacement, flat tires, jump starts and fuel delivery, from our own job photos and footage."
+            description="Our crew and the equipment they bring: battery replacement, flat tires and jump starts, from our own job photos and footage."
             tone="light"
           />
         </Container>

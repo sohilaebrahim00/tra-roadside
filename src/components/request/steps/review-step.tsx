@@ -4,6 +4,7 @@ import { useFormContext } from "react-hook-form";
 import { Loader2 } from "lucide-react";
 import { StepShell } from "../step-shell";
 import { getService } from "@/lib/content/services";
+import { DISPATCH_FEE_USD, TAX_NOTE, expectedTotal, lineForVehicle, servicePrice } from "@/lib/content/pricing";
 import type { CreateRequestInput } from "@/lib/validation/request";
 import type { RequestStep } from "@/lib/validation/request";
 
@@ -23,13 +24,16 @@ export function ReviewStep({
   const { getValues } = useFormContext<CreateRequestInput>();
   const values = getValues();
   const service = getService(values.serviceSlug);
+  // The price that applies to this request: the semi truck line for a semi
+  // truck jump start, the headline price otherwise.
+  const line = service ? lineForVehicle(service, values.vehicleType) : undefined;
 
   return (
     <StepShell title="Review your request" description="Confirm everything looks right before submitting." onBack={onBack}>
       <div className="space-y-4">
         <SummaryRow
           label="Service"
-          value={service?.priceBadge ? `${service.name} · ${service.priceBadge}` : service?.name ?? "—"}
+          value={service && line ? `${service.name} · ${servicePrice(line)} + tax` : service?.name ?? "—"}
           onEdit={() => onEdit("service")}
         />
         <SummaryRow label="Location" value={values.pickupAddress || "—"} onEdit={() => onEdit("location")} />
@@ -50,22 +54,29 @@ export function ReviewStep({
         />
       </div>
 
-      {service?.priceLines && (
+      {service && line && (
         <div className="mt-4 rounded-xl border border-ink-950/8 bg-paper-50 px-4 py-3 dark:border-white/10 dark:bg-white/5">
-          <ul className="space-y-1">
-            {service.priceLines.map((line) => (
-              <li key={line.label ?? line.amount} className="text-sm text-ink-900 dark:text-white">
-                <span className="font-semibold">{line.amount}</span>
-                {line.label && <span className="text-ink-600 dark:text-ink-200"> — {line.label}</span>}
-                {line.note && <span className="text-ink-500 dark:text-ink-300"> ({line.note})</span>}
-              </li>
-            ))}
-          </ul>
+          <p className="text-sm font-semibold text-ink-900 dark:text-white">Expected total</p>
+          <dl className="mt-1.5 space-y-1 text-sm text-ink-900 dark:text-white">
+            <div className="flex justify-between gap-4">
+              <dt className="text-ink-600 dark:text-ink-200">{line.label ?? service.name}</dt>
+              <dd className="font-semibold">{servicePrice(line)}</dd>
+            </div>
+            <div className="flex justify-between gap-4">
+              <dt className="text-ink-600 dark:text-ink-200">Dispatch fee, once per job</dt>
+              <dd className="font-semibold">{DISPATCH_FEE_USD}</dd>
+            </div>
+            <div className="flex justify-between gap-4 border-t border-ink-950/8 pt-1 dark:border-white/10">
+              <dt className="font-semibold">Total</dt>
+              <dd className="font-bold">{expectedTotal(line)} + tax</dd>
+            </div>
+          </dl>
+          {line.note && <p className="mt-1.5 text-xs text-ink-500 dark:text-ink-300">Service price: {line.note}.</p>}
           {service.priceNote && (
             <p className="mt-1.5 text-xs text-ink-500 dark:text-ink-300">{service.priceNote}</p>
           )}
           <p className="mt-1 text-xs text-ink-500 dark:text-ink-300">
-            Final price may vary depending on vehicle, location, and service requirements.
+            {TAX_NOTE} Dispatch confirms the final price for your vehicle before a driver is sent.
           </p>
         </div>
       )}

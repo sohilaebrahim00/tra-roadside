@@ -6,17 +6,16 @@ import { BrandPattern } from "@/components/brand/brand-pattern";
 import { Button } from "@/components/ui/button";
 import { getService } from "@/lib/content/services";
 import { batteryReview } from "@/lib/content/google-reviews";
+import { DISPATCH_FEE_TAG, expectedTotal, servicePrice } from "@/lib/content/pricing";
 
 /**
  * The commercial center of the home page — batteries are the highest-margin
  * service, so this gets a full section directly below the Hero rather than
  * being one card among many in the services grid.
  *
- * The published figure is the price of the BATTERY ALONE and never appears
- * without the qualifier that says so. The site's own promise is upfront
- * pricing with no surprise fees; a bare "$189" followed by an installation
- * quote on the phone would read as a bait and cost more trust than the
- * attractive number wins.
+ * The published figure is the battery replacement service price, before tax,
+ * and never appears without the dispatch fee next to it: the site promises
+ * upfront pricing, so the fee and the tax are stated where the price is.
  */
 export function BatteryPromoSection() {
   const service = getService("battery-replacement");
@@ -45,10 +44,11 @@ export function BatteryPromoSection() {
             <div className="mt-5 max-w-md rounded-2xl border border-white/15 bg-gradient-to-br from-white/[0.09] to-white/[0.02] p-5 shadow-[0_20px_50px_-25px_rgba(224,19,28,0.6)] sm:mt-7 sm:p-6">
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">Car batteries from</p>
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">Battery replacement</p>
                   <p className="mt-1.5 font-display text-6xl font-bold leading-none text-white sm:text-7xl">
-                    ${service.priceFrom}
+                    {servicePrice(service.priceLines[0])}
                   </p>
+                  <p className="mt-2 text-sm font-semibold text-white/85">+ tax {DISPATCH_FEE_TAG} = {expectedTotal(service.priceLines[0])} + tax</p>
                 </div>
                 <span className="mt-0.5 inline-flex shrink-0 items-center gap-1.5 rounded-full bg-red-600 px-3 py-1.5 text-[0.68rem] font-bold uppercase tracking-wider text-white">
                   <ShieldCheck className="h-3.5 w-3.5" aria-hidden="true" />

@@ -2,26 +2,23 @@ import { Info } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
 import { PricingDisclaimer } from "@/components/ui/pricing-disclaimer";
 import type { ServiceContent } from "@/lib/content/services";
+import { DISPATCH_FEE_USD, TAX_NOTE, expectedTotal, servicePrice } from "@/lib/content/pricing";
 
 /**
  * Pricing for a City x Service page, rendered entirely from SERVICES.
  *
- * Every figure on screen comes from `svc.priceLines` / `svc.priceNote`. Nothing
- * is hard-coded, because one component has to be correct for four different
- * shapes that exist in the data today:
+ * Every figure on screen comes from `svc.priceLines` / `svc.priceNote` through
+ * the helpers in src/lib/content/pricing.ts. The first line is the headline
+ * service price; any further line is a variant priced differently (the semi
+ * truck jump start, the trunk lockout) and gets its own row, so it can never
+ * read as the starting price.
  *
- *   {amount}                      jump start, tire repair, stuck screw, rim lock
- *   {amount, note}                flat tire, fuel delivery, battery
- *   {label, amount} x2            tire replacement, priced by wheel size
- *   {amount} then {label, amount} lockout — a door, then the trunk
+ * Under the service price sits the dispatch fee, on its own and charged once
+ * per job, then the expected total before tax (owner's pricing brief,
+ * 2026-11-03, and the tax decision of 2026-11-04).
  *
- * The first line is the headline figure. Any further line is a variant priced
- * differently and is shown as its own row rather than folded into the headline,
- * so "$120 keys locked in the trunk" can never read as the starting price.
- *
- * `priceNote` is the qualifier that must not get lost — it is the field that
- * says "battery only, installation quoted by dispatch" and "the fuel itself is
- * added at cost". It is given its own flagged row for that reason.
+ * `priceNote` is the qualifier that must not get lost (battery fitment, tire
+ * availability), so it gets its own flagged row.
  */
 export function PricePanel({
   svc,
@@ -52,7 +49,7 @@ export function PricePanel({
           onDark ? "text-white/50" : "text-ink-400"
         )}
       >
-        Starting price
+        Service price
       </p>
 
       {/* Headline figure. baseline alignment keeps a long note from shifting it. */}
@@ -63,8 +60,9 @@ export function PricePanel({
             onDark ? "text-white" : "text-ink-950"
           )}
         >
-          {headline.amount}
+          {servicePrice(headline)}
         </span>
+        <span className={cn("text-sm font-semibold", onDark ? "text-white/80" : "text-ink-700")}>+ tax</span>
         {headline.label && (
           <span className={cn("text-sm font-semibold", onDark ? "text-white/90" : "text-ink-800")}>
             {headline.label}
@@ -82,7 +80,7 @@ export function PricePanel({
         <ul className={cn("mt-4 space-y-2 border-t pt-3", onDark ? "border-white/10" : "border-ink-950/8")}>
           {variants.map((line) => (
             <li
-              key={line.label ?? line.amount}
+              key={line.label ?? line.min}
               className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-0.5"
             >
               <span className={cn("text-sm", onDark ? "text-white/80" : "text-ink-700")}>
@@ -94,12 +92,25 @@ export function PricePanel({
                   onDark ? "text-white" : "text-ink-950"
                 )}
               >
-                {line.amount}
+                {servicePrice(line)} + tax
               </span>
             </li>
           ))}
         </ul>
       )}
+
+      {/* The dispatch fee on its own, and the expected total. */}
+      <dl className={cn("mt-4 space-y-1.5 border-t pt-3 text-sm", onDark ? "border-white/10" : "border-ink-950/8")}>
+        <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+          <dt className={onDark ? "text-white/80" : "text-ink-700"}>Dispatch fee, once per job</dt>
+          <dd className={cn("font-display text-base font-bold tabular-nums", onDark ? "text-white" : "text-ink-950")}>+ {DISPATCH_FEE_USD}</dd>
+        </div>
+        <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+          <dt className={cn("font-semibold", onDark ? "text-white" : "text-ink-950")}>Expected total</dt>
+          <dd className={cn("font-display text-base font-bold tabular-nums", onDark ? "text-white" : "text-ink-950")}>{expectedTotal(headline)} + tax</dd>
+        </div>
+      </dl>
+      <p className={cn("mt-2 text-xs", onDark ? "text-white/60" : "text-ink-500")}>{TAX_NOTE}</p>
 
       {/* The qualifier. Flagged, because this is the line that prevents a
           customer reading the headline figure as the whole bill. */}

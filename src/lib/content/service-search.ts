@@ -28,10 +28,9 @@ const KEYWORDS: Record<ServiceTypeSlug, string[]> = {
   "tire-replacement": ["tire replacement", "new tire", "replace tire", "damaged tire", "sidewall", "no spare", "tire"],
   "stuck-screw-in-tire": ["screw", "screw in tire", "nail", "nail in tire", "stuck screw", "something in tire"],
   "rim-lock-removal": ["wheel lock", "rim lock", "locking lug nut", "lug nut", "wheel lock key", "lug key", "lost wheel lock key"],
-  "fuel-delivery": ["out of gas", "gas", "fuel", "fuel delivery", "ran out of gas", "empty tank", "diesel", "gasoline", "no gas"],
 };
 
-/** Words too common to tell services apart ("my car has no gas" is about gas). */
+/** Words too common to tell services apart ("my car has a flat" is about the flat). */
 const FILLER = new Set(["the", "and", "car", "my", "has", "its", "was", "for", "got", "truck", "vehicle", "help", "need"]);
 
 /** Lowercase, apostrophes dropped ("won't" -> "wont"), everything else to spaces. */
@@ -75,4 +74,4 @@ export function searchServices(query: string, limit = 5): ServiceContent[] {
 }
 
 /** One-tap starting points shown under the search box. */
-export const POPULAR_SEARCHES = ["Dead battery", "Flat tire", "Locked out", "Out of gas", "Nail in tire", "Wheel lock key"];
+export const POPULAR_SEARCHES = ["Dead battery", "Flat tire", "Locked out", "No spare", "Nail in tire", "Wheel lock key"];

@@ -58,36 +58,38 @@ export const GUIDES: Guide[] = [
     title: "Car Battery Replacement Cost in DFW",
     h1: "What a car battery replacement costs in DFW, and why the total varies",
     metaDescription:
-      "What mobile car battery replacement costs in Dallas–Fort Worth: TRA batteries from {{price:battery-replacement}}, why installation is quoted per vehicle, and what changes the total.",
+      "What mobile car battery replacement costs in Dallas–Fort Worth: {{price:battery-replacement}} + tax, installed, for eligible vehicles, plus a {{dispatchFee}} dispatch fee charged once.",
     topic: "Battery guide",
-    dek: "Two things make up the bill: the battery, and the labor to install it. The battery has a set price. The labor depends mostly on where your car keeps its battery, which is why we quote it for your vehicle instead of guessing.",
+    dek: "Two things make up the bill: the battery replacement, which covers the new battery and installing it, and a dispatch fee for sending a technician to you. The replacement price is a range because cars take different batteries and keep them in different places, so dispatch confirms what fits yours, and your total, before anyone sets off.",
     updated: UPDATED,
     image: {
       ...UNDER_SEAT_PHOTO,
-      caption: "A battery under the rear seat. The seat has to come out before the battery can, which is labor a battery under the hood never needs.",
+      caption: "A battery under the rear seat. The seat has to come out before the battery can, one of the reasons battery pricing varies by vehicle.",
     },
     sections: [
       {
-        heading: "The battery: a published price",
+        heading: "The battery replacement price",
         paragraphs: [
-          "TRA batteries start at {{price:battery-replacement}}. That figure is for the battery alone. It does not include installation, and we never show it without saying so.",
+          "Battery replacement is {{price:battery-replacement}} + tax for eligible vehicles and batteries. That price covers the new battery and installing it in your car.",
+          "It is a range rather than one figure because battery pricing varies by vehicle and battery type. Dispatch confirms which battery fits your vehicle before a driver is sent.",
           "Every battery we install carries a 1-year warranty. Keep the invoice, because a warranty claim is checked against it.",
         ],
       },
       {
-        heading: "Installation: quoted for your vehicle",
+        heading: "The dispatch fee: charged once per job",
         paragraphs: [
-          "On many cars the battery sits at the front of the engine bay and comes out in minutes. On others it is in the trunk, under the floor of the cargo area, under a seat, or behind a panel inside the wheel well, and trim or a seat has to come out first.",
-          "One flat labor figure would be too high for the easy cars and too low for the hard ones, so we don't publish one. Dispatch quotes installation from your year, make and model, and you know the full price before a driver sets off.",
+          "A {{dispatchFee}} dispatch fee is added once to the job, on top of the battery replacement price. It covers sending a technician to where the car is. It is not the cost of the battery, and it is not charged a second time for the same job.",
+          "Put the two together and the expected total for a battery replacement is {{total:battery-replacement}}, plus tax. Prices are before sales tax; tax is added to the final bill. Dispatch confirms compatibility and your total before a driver sets off.",
         ],
       },
       {
         heading: "What changes the total",
-        paragraphs: ["The same few things decide almost every quote:"],
+        paragraphs: [
+          "Battery pricing varies by vehicle and battery type, which is why the price is a range for eligible vehicles and batteries. Two things decide most of it:",
+        ],
         list: [
-          "Where the battery is mounted, and how much has to be removed to reach it.",
-          "The size and type of battery your vehicle needs. {{price:battery-replacement}} is where prices start, and some vehicles take a larger battery.",
-          "Whether the car is somewhere a driver can work safely beside it, like a driveway, a parking lot or a garage with room to open the doors.",
+          "The size and type of battery your vehicle needs. Some vehicles take a larger battery, or a different type.",
+          "Where the battery is mounted. On many cars it sits at the front of the engine bay and comes out in minutes. On others it is in the trunk, under the floor of the cargo area, under a seat, or behind a panel inside the wheel well, and trim or a seat has to come out first.",
         ],
       },
       {
@@ -99,7 +101,7 @@ export const GUIDES: Guide[] = [
       },
       {
         heading: "What to have ready when you call",
-        paragraphs: ["A quote takes a minute if you have these:"],
+        paragraphs: ["Have these ready and dispatch can confirm the right battery and your total:"],
         list: [
           "The year, make and model.",
           "The VIN if you can reach it easily. It confirms the exact battery fit, but it is optional.",
@@ -110,14 +112,14 @@ export const GUIDES: Guide[] = [
     faqs: [
       {
         q: "Is installation included in the battery price?",
-        a: "No. The battery price covers the battery only. Dispatch quotes installation for your vehicle, and you hear the full figure before anyone is sent.",
+        a: "Yes. For eligible vehicles and batteries, the battery replacement price of {{price:battery-replacement}} + tax covers the battery and installing it. The {{dispatchFee}} dispatch fee is separate and charged once per job, and dispatch confirms your total before anyone is sent.",
       },
       {
         q: "Is there a warranty on the new battery?",
         a: "Yes, a 1-year warranty. Keep your invoice, since that is what a warranty claim is checked against.",
       },
       {
-        q: "Do I need my VIN to get a quote?",
+        q: "Do I need my VIN to get a price?",
         a: "No. Year, make and model are enough to start. The VIN only confirms the exact fit, so send it if it's easy to reach.",
       },
     ],
@@ -190,7 +192,7 @@ export const GUIDES: Guide[] = [
     title: "Where Is My Car Battery? Hood, Trunk or Seat",
     h1: "Where your car battery is, and why it changes the job",
     metaDescription:
-      "Not every car battery is under the hood. Some sit in the trunk, the cargo floor or under a seat, and that changes how long replacement takes and what it costs.",
+      "Not every car battery is under the hood. Some sit in the trunk, the cargo floor or under a seat, which changes the job and is part of why pricing varies.",
     topic: "Battery guide",
     dek: "Open the hood on a lot of cars and the battery is right there. On plenty of others it isn't. The one in this photo sits in the floor under the rear seat.",
     updated: UPDATED,
@@ -218,10 +220,10 @@ export const GUIDES: Guide[] = [
         ],
       },
       {
-        heading: "Why it changes the price",
+        heading: "What it means for the price",
         paragraphs: [
           "A battery at the front of the engine bay can be swapped in minutes. One under a seat means the seat comes out first. One in a wheel well can mean removing the wheel liner. It's the same battery and a very different amount of work.",
-          "That is why installation is quoted for your vehicle, while the battery itself has a published price starting at {{price:battery-replacement}}. You know the full figure before a driver sets off.",
+          "That is one reason battery pricing varies by vehicle and battery type. Battery replacement is {{price:battery-replacement}} + tax for eligible vehicles and batteries, installation included, plus the {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery that fits your car, and your total, before a driver sets off.",
         ],
       },
       {
@@ -234,7 +236,7 @@ export const GUIDES: Guide[] = [
     faqs: [
       {
         q: "Is a battery under a seat harder to replace?",
-        a: "It takes longer, because the seat or trim has to come out first. That's the main reason installation is quoted for your vehicle rather than listed as one price.",
+        a: "It takes longer, because the seat or trim has to come out first. Battery pricing varies by vehicle and battery type, so dispatch confirms compatibility and your total before a driver sets off.",
       },
       {
         q: "Can I check where my battery is before I call?",
@@ -248,7 +250,7 @@ export const GUIDES: Guide[] = [
     title: "Lost Your Wheel Lock Key? What to Do",
     h1: "Lost the wheel lock key? How a locked wheel comes off",
     metaDescription:
-      "No wheel lock key means the wheel can't come off for a flat. Where the key usually hides, what not to try, and how TRA removes a locking lug nut for {{price:rim-lock-removal}}.",
+      "No wheel lock key means the wheel can't come off for a flat. Where the key usually hides, what not to try, and how TRA removes a locking lug nut on site.",
     topic: "Tire guide",
     dek: "A wheel lock is one special lug nut per wheel that only turns with its matching key. Most of the time nobody thinks about it, until a tire goes flat and the key is nowhere to be found.",
     updated: "2026-10-19",
@@ -280,7 +282,7 @@ export const GUIDES: Guide[] = [
       {
         heading: "How we remove it",
         paragraphs: [
-          "A driver removes the locking lug nut on site so the wheel can come off. Wheel lock removal is {{price:rim-lock-removal}}.",
+          "A driver removes the locking lug nut on site so the wheel can come off. Wheel lock removal is {{price:rim-lock-removal}} + tax, plus the {{dispatchFee}} dispatch fee charged once per job ({{total:rim-lock-removal}} in total, plus tax).",
           "If you also need the spare put on, say so in your request so the driver comes ready for both jobs.",
         ],
       },
@@ -294,7 +296,7 @@ export const GUIDES: Guide[] = [
     faqs: [
       {
         q: "How much does wheel lock removal cost?",
-        a: "{{price:rim-lock-removal}}, the published price. Dispatch confirms it when you request help.",
+        a: "{{price:rim-lock-removal}} + tax, the published price, plus the {{dispatchFee}} dispatch fee charged once per job, so {{total:rim-lock-removal}} in total, plus tax. Dispatch confirms it when you request help.",
       },
       {
         q: "Can you change my flat at the same visit?",

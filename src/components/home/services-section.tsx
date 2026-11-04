@@ -15,6 +15,7 @@ import { gsap, ScrollTrigger, registerGsap } from "@/lib/gsap/register";
 import { PricingDisclaimer } from "@/components/ui/pricing-disclaimer";
 import { BrandPattern } from "@/components/brand/brand-pattern";
 import { Icon3D } from "@/components/ui/icon-3d";
+import { priceBadge } from "@/lib/content/pricing";
 
 
 /**
@@ -121,9 +122,9 @@ export function ServicesSection() {
                     {/* The price is part of the picture: a dark fade along the
                         bottom edge and the figure in large type on top of it. */}
                     <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-ink-950/90 via-ink-950/40 to-transparent" />
-                    {service.priceBadge && (
+                    {priceBadge(service) && (
                       <span className="absolute bottom-2 left-2.5 font-display text-base font-bold leading-none text-white drop-shadow sm:bottom-3 sm:left-3.5 sm:text-xl">
-                        {service.priceBadge}
+                        {priceBadge(service)}
                       </span>
                     )}
                     {photo && (

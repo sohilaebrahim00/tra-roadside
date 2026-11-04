@@ -50,13 +50,12 @@ export const metadata: Metadata = {
     template: "%s | TRA Roadside",
   },
   description:
-    "24/7 roadside help across Dallas–Fort Worth: car batteries, jump starts, flat tires, lockouts and fuel delivery. Request online with live driver tracking.",
+    "24/7 roadside help across Dallas–Fort Worth: car batteries, jump starts, flat tires, tire repair and lockouts. Request online with live driver tracking.",
   applicationName: "TRA — Texas Roadside Assistance",
   keywords: [
     "roadside assistance Dallas",
     "flat tire change",
     "jump start service",
-    "fuel delivery Texas",
     "emergency roadside help",
   ],
   authors: [{ name: BUSINESS.legalName }],

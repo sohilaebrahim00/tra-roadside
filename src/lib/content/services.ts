@@ -1,19 +1,60 @@
-import type { ServiceTypeSlug } from "@/lib/types/domain";
+import type { ServiceTypeSlug, VehicleType } from "@/lib/types/domain";
+import { formatAmount, usd } from "./price-format";
 
 /**
- * One published price line.
+ * The dispatch (trip) fee, in whole USD: what it costs to send a technician
+ * to the customer's location. It is added ONCE per dispatched job, on top of
+ * the service price, and is never the whole cost of a job (owner's pricing
+ * brief, 2026-11-03).
  *
- * `amount` is a display string rather than a number because most of TRA's
- * prices are not single figures — they are ranges ("$55–65"), rates ("$5 per
- * mile"), or size tiers. It is always a TOTAL the customer pays.
- * Parts-and-labor breakdowns are deliberately never published: the customer
- * wants one number, not an itemization to audit.
+ * This is the only place the figure is written. Every price display, expected
+ * total, FAQ answer, text message and email derives it from here, so a change
+ * is one edit. src/lib/content/pricing.ts holds the helpers that format it.
+ */
+export const DISPATCH_FEE = 19;
+
+/**
+ * One published SERVICE price, in whole USD and BEFORE sales tax (owner's
+ * decision, 2026-11-04: tax is added to the final bill). It never includes the
+ * dispatch fee, which is shown separately and added once per job.
+ *
+ * Numbers rather than display strings, so the site, the request form, the
+ * texts and the emails all format the same figure the same way and can add
+ * the dispatch fee to it:
+ *
+ *   { min: 49, max: 75 }      "$49–$75"     a range
+ *   { min: 75, from: true }   "From $75"    an open-ended starting price
+ *   { min: 140 }              "$140"        a single figure
  */
 export interface PriceLine {
-  /** Tier name. Omitted when a service has a single published total. */
+  /** Tier name. Omitted on a service's headline (first) line. */
   label?: string;
-  amount: string;
+  min: number;
+  /** Top of the range. */
+  max?: number;
+  /** An open-ended starting price: "From $75". */
+  from?: boolean;
   note?: string;
+  /**
+   * This line is the price for requests with this vehicle type (the semi
+   * truck jump start), so the request form total and the texts use it.
+   */
+  vehicleType?: VehicleType;
+}
+
+/**
+ * Service prices that FAQ answers quote. Named once here so an answer and the
+ * price line it describes cannot disagree.
+ */
+const BATTERY_REPLACEMENT: PriceLine = { min: 239, max: 255, note: "eligible vehicles and batteries" };
+const JUMP_START_SEMI: PriceLine = { label: "Semi trucks and 18-wheelers", min: 140, vehicleType: "semi_truck" };
+const LOCKOUT_TRUNK: PriceLine = { label: "Keys locked in the trunk", min: 120 };
+const SPARE_TIRE_CHANGE: PriceLine = { min: 75, from: true, note: "using the spare carried in your vehicle" };
+const TIRE_REPLACEMENT: PriceLine = { min: 129, from: true, note: "tire availability varies" };
+
+/** "$140 + tax, plus the $19 dispatch fee" — service price first, fee on its own. */
+function quote(line: PriceLine): string {
+  return `${formatAmount(line, "–", "from")} + tax, plus the ${usd(DISPATCH_FEE)} dispatch fee`;
 }
 
 /**
@@ -43,24 +84,20 @@ export interface ServiceContent {
   whileYouWait: string[];
   whatWeNeed: string[];
   faqs: { q: string; a: string }[];
-  /** Published totals for this service. */
-  priceLines?: PriceLine[];
-  /** Compact badge for service cards, e.g. "Battery from $189" or "$55–65". */
-  priceBadge?: string;
   /**
-   * Lowest published total in whole USD, used ONLY for the JSON-LD Offer,
-   * which requires a number. Omitted where a single figure would misrepresent
-   * the price — a per-mile rate, or a charge that excludes the cost of fuel.
+   * Published service prices, before tax and without the dispatch fee. The
+   * first line is the headline price (cards, badges, texts); any further line
+   * is a variant priced differently, e.g. keys locked in the trunk.
    */
-  priceFrom?: number;
+  priceLines?: PriceLine[];
+  /**
+   * What the service price covers, shown with it, so the customer can see the
+   * dispatch fee is the trip and the service price is the work. Each one says
+   * only what that service already promises.
+   */
+  priceCovers?: string;
   /** Qualifier shown beneath the price block. */
   priceNote?: string;
-  /**
-   * Total for a semi truck (vehicle type "semi_truck") where it differs, e.g.
-   * a heavy-duty jump start. The texts for that request show this figure.
-   * It must also appear in priceLines so the site publishes it.
-   */
-  semiTruckPrice?: string;
   /** Photographs of this service being performed, for a constrained grid. */
   photos?: ServicePhoto[];
 }
@@ -71,15 +108,12 @@ export const SERVICES: ServiceContent[] = [
     name: "Jump Start",
     shortName: "Jump Start",
     needsDestination: false,
-    // Semi trucks and 18-wheelers were added at $140 on 2026-10-29, at the
-    // owner's request, in place of the towing the site no longer offers.
-    priceLines: [
-      { amount: "$55–65" },
-      { label: "Semi trucks and 18-wheelers", amount: "$140" },
-    ],
-    priceBadge: "$55–65",
-    priceFrom: 55,
-    semiTruckPrice: "$140",
+    // $49–$75 from the owner's pricing brief (2026-11-03). Semi trucks and
+    // 18-wheelers were added at $140 on 2026-10-29, at the owner's request, in
+    // place of the towing the site no longer offers; the dispatch fee is added
+    // to that job like any other.
+    priceLines: [{ min: 49, max: 75 }, JUMP_START_SEMI],
+    priceCovers: "The jump start itself, labor included.",
     // From the business's own footage; the owner confirmed the rights to it
     // on 2026-10-18. The hero on every jump start page.
     photos: [
@@ -115,7 +149,7 @@ export const SERVICES: ServiceContent[] = [
       },
       {
         q: "Can you jump start a semi truck or an 18-wheeler?",
-        a: "Yes. A heavy-duty jump start for a semi truck, an 18-wheeler or another big rig is $140. Choose Semi truck as the vehicle type when you request, and add the unit number and exactly where the truck is parked: the yard, truck stop or mile marker.",
+        a: `Yes. A heavy-duty jump start for a semi truck, an 18-wheeler or another big rig is ${quote(JUMP_START_SEMI)}. Choose Semi truck as the vehicle type when you request, and add the unit number and exactly where the truck is parked: the yard, truck stop or mile marker.`,
       },
     ],
   },
@@ -124,20 +158,17 @@ export const SERVICES: ServiceContent[] = [
     name: "Battery Replacement",
     shortName: "Battery Replacement",
     needsDestination: false,
-    // $189 is the price of the BATTERY ALONE — no labor, no service call, no
-    // installation. It is never published as a bare figure: the site promises
-    // upfront pricing with no surprise fees, and a customer who reads $189 and
-    // is then quoted for installation would fairly call that a bait. The
-    // qualifier travels with the number everywhere it appears.
-    priceLines: [
-      { amount: "From $189", note: "Battery only — installation quoted by dispatch" },
-    ],
-    priceBadge: "Battery from $189",
-    priceFrom: 189,
-    priceNote: "Battery only — installation is quoted by dispatch for your vehicle.",
+    // $239–$255 for eligible vehicles and batteries, from the owner's pricing
+    // brief (2026-11-03), replacing the old "$189, battery only, installation
+    // quoted". It is the battery replacement — the battery and installing it —
+    // so the expected total is that range plus the dispatch fee, once. The
+    // note below is the owner's wording and travels with the price everywhere.
+    priceLines: [BATTERY_REPLACEMENT],
+    priceCovers: "The new battery and installing it, for eligible vehicles and batteries.",
+    priceNote: "Battery pricing varies by vehicle and battery type. Confirm compatibility and total cost before dispatch.",
     // First is the business's own job photo (1200x800, October 2026) and is
-    // what every battery page shows as its hero. It also shows why
-    // installation is quoted: this battery sits under the rear seat, not under
+    // what every battery page shows as its hero. It also shows why the battery
+    // is confirmed per vehicle: this one sits under the rear seat, not under
     // the hood. The six after it are 612x408 native, supplied by the owner,
     // who confirmed the rights on 2026-10-18. The home page battery section
     // uses its own portrait crop of the same job photo.
@@ -185,7 +216,7 @@ export const SERVICES: ServiceContent[] = [
         height: 408,
       },
     ],
-    summary: "Mobile battery replacement at your location. Battery from $189 — installation quoted by dispatch.",
+    summary: "Mobile battery replacement at your location: a new battery, installed, for eligible vehicles and batteries.",
     heroLine: "A new battery, installed right where you are.",
     problem:
       "A battery that won't hold a charge, or one that's already failed a jump start, usually needs to be replaced rather than jumped again. We bring a new battery to you and install it on site.",
@@ -201,8 +232,8 @@ export const SERVICES: ServiceContent[] = [
     ],
     faqs: [
       {
-        q: "Does $189 include installation?",
-        a: "No. $189 is the price of the battery itself. Installation depends on how the battery is mounted and how much has to come apart to reach it, so dispatch quotes it for your vehicle before a driver is sent — you will know the full figure before anyone sets off.",
+        q: "Will the battery fit my vehicle, and what will it cost?",
+        a: `Battery pricing varies by vehicle and battery type. Battery replacement is ${quote(BATTERY_REPLACEMENT)}, for eligible vehicles and batteries, and covers the battery and installing it. Give us the year, make and model, and the VIN if you can reach it: dispatch confirms the battery is compatible and tells you the total cost before a driver is sent.`,
       },
       {
         q: "What does the warranty cover?",
@@ -219,12 +250,10 @@ export const SERVICES: ServiceContent[] = [
     name: "Vehicle Lockout",
     shortName: "Lockout",
     needsDestination: false,
-    priceLines: [
-      { amount: "$55–65" },
-      { label: "Keys locked in the trunk", amount: "$120" },
-    ],
-    priceBadge: "$55–65",
-    priceFrom: 55,
+    // From $50 from the owner's pricing brief (2026-11-03). The trunk line is
+    // unchanged at $120, plus the dispatch fee like any other job.
+    priceLines: [{ min: 50, from: true }, LOCKOUT_TRUNK],
+    priceCovers: "Opening the vehicle. Keys locked in the trunk are a separate job.",
     // Supplied by the owner on 2026-10-19 (cropped to 3:2). Not a TRA job
     // photo, so the alt text describes only what is in the frame.
     photos: [
@@ -251,12 +280,12 @@ export const SERVICES: ServiceContent[] = [
     ],
     faqs: [
       {
-        q: "Do you need proof I own the car?",
-        a: "Yes, for everyone's safety our driver will ask for ID or another way to confirm ownership before unlocking a vehicle.",
+        q: "What do you need from me for a lockout?",
+        a: "The vehicle's exact location, and ID or another way to prove the vehicle is yours. For everyone's safety the driver confirms ownership before unlocking anything.",
       },
       {
         q: "Why do keys locked in the trunk cost more?",
-        a: "Trunk access is a different job from opening a door — it takes longer and needs different tools, so it is priced separately at $120.",
+        a: `Trunk access is a different job from opening a door — it takes longer and needs different tools, so it is priced separately at ${quote(LOCKOUT_TRUNK)}.`,
       },
     ],
   },
@@ -265,9 +294,9 @@ export const SERVICES: ServiceContent[] = [
     name: "Tire Repair — Plug & Patch",
     shortName: "Tire Repair",
     needsDestination: false,
-    priceLines: [{ amount: "$65–70" }],
-    priceBadge: "$65–70",
-    priceFrom: 65,
+    // Mobile tire repair, $54–$60 in the owner's pricing brief (2026-11-03).
+    priceLines: [{ min: 54, max: 60 }],
+    priceCovers: "The plug or patch repair, when the puncture is in the tread.",
     // A frame from the business's own footage (owner confirmed the rights).
     photos: [
       {
@@ -290,7 +319,7 @@ export const SERVICES: ServiceContent[] = [
     faqs: [
       {
         q: "Can every puncture be plugged or patched?",
-        a: "No — damage near the sidewall or beyond a certain size can't be safely repaired. Your driver will advise on site if a tire change or replacement is needed instead.",
+        a: "No. Only a puncture in the tread area can be repaired. Any damage in or near the sidewall, or a hole beyond a certain size, can't be safely repaired, and the tire needs replacing instead. Your driver checks before starting and tells you which it is.",
       },
     ],
   },
@@ -299,9 +328,9 @@ export const SERVICES: ServiceContent[] = [
     name: "Flat Tire Change",
     shortName: "Flat Tire",
     needsDestination: false,
-    priceLines: [{ amount: "$65", note: "using the spare carried in your vehicle" }],
-    priceBadge: "$65",
-    priceFrom: 65,
+    // The brief's "spare tire change": from $75 (2026-11-03).
+    priceLines: [SPARE_TIRE_CHANGE],
+    priceCovers: "Putting on the spare you already carry.",
     // The business's own job photos (October 2026), 1200x800. The first is
     // the hero on every flat tire page. The license plate in the freeway
     // photo was blurred before export.
@@ -348,7 +377,7 @@ export const SERVICES: ServiceContent[] = [
     faqs: [
       {
         q: "What if I don't have a spare?",
-        a: "Select Tire Replacement instead — we supply the tire and install it on site, priced by wheel size.",
+        a: `A flat tire change puts on the spare you already carry. Without a usable spare, select Tire Replacement instead: we supply a tire and install it on site, ${quote(TIRE_REPLACEMENT)}. Tire availability varies, so dispatch confirms a tire is available before a driver is sent.`,
       },
       {
         q: "Can you repair the flat instead of swapping it?",
@@ -361,13 +390,11 @@ export const SERVICES: ServiceContent[] = [
     name: "Tire Replacement",
     shortName: "Tire Replacement",
     needsDestination: false,
-    priceLines: [
-      { label: '15" to 20" wheels', amount: "$189" },
-      { label: '21" and larger', amount: "$230" },
-    ],
-    priceBadge: "From $189",
-    priceFrom: 189,
-    priceNote: "Tire supplied by TRA. Price is set by wheel size.",
+    // From $129 in the owner's pricing brief (2026-11-03), replacing the old
+    // wheel-size tiers ($189 for 15" to 20", $230 for 21" and larger).
+    priceLines: [TIRE_REPLACEMENT],
+    priceCovers: "The tire, supplied by TRA, and installing it.",
+    priceNote: "Tire availability varies. Dispatch confirms a tire is available, and your total, before a driver is sent.",
     // A landscape crop of the business's own field photo field-tire-jack.webp,
     // so this card no longer repeats the flat tire set's night photo.
     photos: [
@@ -378,7 +405,7 @@ export const SERVICES: ServiceContent[] = [
         height: 720,
       },
     ],
-    summary: "A tire supplied by TRA and installed at your location, priced by wheel size.",
+    summary: "A tire supplied by TRA and installed at your location. Tire availability varies.",
     heroLine: "A tire, installed where you're parked.",
     problem:
       "When a tire is damaged beyond a safe repair — a sidewall tear, a blowout, or a puncture too large to plug — it has to be replaced rather than patched. We supply the tire and install it on site, so you don't need a usable spare in the vehicle.",
@@ -395,11 +422,11 @@ export const SERVICES: ServiceContent[] = [
     faqs: [
       {
         q: "How is the price decided?",
-        a: "By wheel size. A 15 to 20 inch wheel is $189 and a 21 inch or larger wheel is $230, tire supplied and installed.",
+        a: `Tire replacement is ${quote(TIRE_REPLACEMENT)}, with the tire supplied and installed. Tire availability varies by size, so dispatch confirms a tire is available, and your total, before a driver is sent.`,
       },
       {
         q: "What if I already have a spare in the car?",
-        a: "Then Flat Tire Change is the cheaper option at $65 — we put on the spare you are already carrying.",
+        a: `Then Flat Tire Change is usually the cheaper option, ${quote(SPARE_TIRE_CHANGE)}: we put on the spare you are already carrying.`,
       },
     ],
   },
@@ -408,9 +435,9 @@ export const SERVICES: ServiceContent[] = [
     name: "Stuck Screw in Tire",
     shortName: "Stuck Screw",
     needsDestination: false,
-    priceLines: [{ amount: "$70" }],
-    priceBadge: "$70",
-    priceFrom: 70,
+    // Not in the 2026-11-03 brief: the price stays, plus the dispatch fee.
+    priceLines: [{ min: 70 }],
+    priceCovers: "Removing the screw or nail and making the tire safe.",
     // A landscape crop of the business's own field photo field-tire-wheel.webp:
     // the tread up close. It shows the tire, not a screw, and the alt text
     // says only what is in the frame.
@@ -452,9 +479,9 @@ export const SERVICES: ServiceContent[] = [
     name: "Rim Lock Removal",
     shortName: "Rim Lock",
     needsDestination: false,
-    priceLines: [{ amount: "$70" }],
-    priceBadge: "$70",
-    priceFrom: 70,
+    // Not in the 2026-11-03 brief: the price stays, plus the dispatch fee.
+    priceLines: [{ min: 70 }],
+    priceCovers: "Removing the wheel lock so the wheel can come off.",
     // The business's own job photos (owner, 2026-10-19).
     photos: [
       {
@@ -491,49 +518,6 @@ export const SERVICES: ServiceContent[] = [
       {
         q: "Do I need this as well as a tire change?",
         a: "If your wheel lock key is missing, yes — the lock has to come off before the wheel can. Mention it in the notes when you request a tire service.",
-      },
-    ],
-  },
-  {
-    slug: "fuel-delivery",
-    name: "Fuel Delivery",
-    shortName: "Fuel Delivery",
-    needsDestination: false,
-    priceLines: [{ amount: "$65", note: "plus the cost of the fuel" }],
-    priceBadge: "$65 + fuel",
-    priceNote: "The $65 is the delivery charge. The fuel itself is added at cost.",
-    // From the business's own footage; the owner confirmed the rights to it
-    // on 2026-10-18. The hero on the fuel delivery pages.
-    photos: [
-      {
-        src: "/images/fuel-pour.webp",
-        alt: "A technician in high-visibility workwear pouring fuel from a red gas can into the open fuel door of a dark vehicle.",
-        width: 1080,
-        height: 720,
-      },
-    ],
-    summary: "Ran out of gas or diesel? We'll bring enough to get you to a station.",
-    heroLine: "Out of fuel, not out of options.",
-    problem:
-      "Running out of gas or diesel happens. We deliver enough fuel to get your vehicle safely to the nearest station.",
-    whileYouWait: [
-      "Move to the shoulder or a parking area if possible.",
-      "Keep hazard lights on and stay visible.",
-      "Confirm whether your vehicle takes gasoline or diesel before requesting.",
-    ],
-    whatWeNeed: [
-      "Your exact location",
-      "Vehicle year, make, and model",
-      "Fuel type — gas or diesel",
-    ],
-    faqs: [
-      {
-        q: "How much fuel do you bring?",
-        a: "Enough to safely reach the nearest station — full fill-ups aren't provided roadside.",
-      },
-      {
-        q: "Is the fuel included in the $65?",
-        a: "No. $65 is the delivery charge, and the fuel is added at cost — so you only pay for what actually goes in the tank.",
       },
     ],
   },

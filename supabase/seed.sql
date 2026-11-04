@@ -4,16 +4,16 @@
 -- install — replace via the admin CMS before going live.
 
 insert into service_types (slug, name, needs_destination, description, sort_order) values
-  ('jump-start', 'Jump Start', false, 'Dead battery jump start, $55-65.', 1),
-  ('battery-replacement', 'Battery Replacement', false, 'Mobile battery replacement at your location. Battery from $189 — battery only, installation quoted by dispatch.', 2),
-  ('lockout', 'Vehicle Lockout', false, 'Non-destructive lockout entry, $55-65. Keys locked in the trunk, $120.', 3),
-  ('tire-repair-plug-patch', 'Tire Repair — Plug & Patch', false, 'Puncture repaired roadside with a plug or patch, $65-70.', 4),
-  ('flat-tire-change', 'Flat Tire Change', false, 'Swap to the spare carried in your vehicle, $65.', 5),
-  ('tire-replacement', 'Tire Replacement', false, 'Tire supplied by TRA and fitted on site — 15 to 20 inch $189, 21 inch and larger $230.', 6),
-  ('stuck-screw-in-tire', 'Stuck Screw in Tire', false, 'Screw or nail removed from the tire and the tire made safe, $70.', 7),
-  ('rim-lock-removal', 'Rim Lock Removal', false, 'Seized or keyless wheel lock removed so the wheel can come off, $70.', 8),
-  ('fuel-delivery', 'Fuel Delivery', false, 'Gas or diesel delivered roadside, $65 plus the cost of the fuel.', 9)
--- Towing is not seeded: it was retired on 2026-10-26 (migration 0016).
+  ('jump-start', 'Jump Start', false, 'Dead battery jump start, $49-$75 plus the $19 dispatch fee, before tax.', 1),
+  ('battery-replacement', 'Battery Replacement', false, 'Mobile battery replacement at your location, $239-$255 for eligible vehicles and batteries, plus the $19 dispatch fee, before tax.', 2),
+  ('lockout', 'Vehicle Lockout', false, 'Non-destructive lockout entry, from $50. Keys locked in the trunk, $120. Plus the $19 dispatch fee, before tax.', 3),
+  ('tire-repair-plug-patch', 'Tire Repair — Plug & Patch', false, 'Puncture repaired roadside with a plug or patch, $54-$60 plus the $19 dispatch fee, before tax.', 4),
+  ('flat-tire-change', 'Flat Tire Change', false, 'Swap to the spare carried in your vehicle, from $75 plus the $19 dispatch fee, before tax.', 5),
+  ('tire-replacement', 'Tire Replacement', false, 'Tire supplied by TRA and fitted on site, from $129 plus the $19 dispatch fee, before tax; tire availability varies.', 6),
+  ('stuck-screw-in-tire', 'Stuck Screw in Tire', false, 'Screw or nail removed from the tire and the tire made safe, $70 plus the $19 dispatch fee, before tax.', 7),
+  ('rim-lock-removal', 'Rim Lock Removal', false, 'Seized or keyless wheel lock removed so the wheel can come off, $70 plus the $19 dispatch fee, before tax.', 8)
+-- Towing and fuel delivery are not seeded: they were retired on 2026-10-26
+-- (migration 0016) and 2026-11-03 (migration 0017).
 on conflict (slug) do update set
   name = excluded.name,
   needs_destination = excluded.needs_destination,

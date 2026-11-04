@@ -97,7 +97,7 @@ export default async function CityServicePage({
         description={content.metaDescription}
         path={`/service-areas/${city.slug}/${svc.slug}`}
         areaServed={`${city.name}, TX`}
-        priceFrom={svc.priceFrom}
+        service={svc}
       />
       <FaqJsonLd items={content.faqs} />
 

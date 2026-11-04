@@ -15,11 +15,12 @@ import { CinematicBackgroundVideo } from "@/components/media/cinematic-backgroun
 import { PricingDisclaimer } from "@/components/ui/pricing-disclaimer";
 import { Icon3D } from "@/components/ui/icon-3d";
 import { ServiceSearch } from "@/components/search/service-search";
+import { priceBadge } from "@/lib/content/pricing";
 
 export const metadata: Metadata = {
   title: "Roadside Assistance Services",
   description:
-    "Jump starts, battery replacement, lockouts, flat tire changes, tire repair and fuel delivery — 24/7 roadside assistance across the Dallas–Fort Worth Metroplex.",
+    "Jump starts, battery replacement, lockouts, flat tire changes and tire repair — 24/7 roadside assistance across the Dallas–Fort Worth Metroplex.",
   ...pageUrls("/services"),
 };
 
@@ -93,9 +94,9 @@ export default function ServicesPage() {
                         </div>
                       )}
                       <div aria-hidden="true" className="absolute inset-x-0 bottom-0 hidden h-1/2 bg-gradient-to-t from-ink-950/85 to-transparent sm:block" />
-                      {service.priceBadge && (
+                      {priceBadge(service) && (
                         <span className="absolute bottom-3 left-4 hidden font-display text-xl font-bold text-white drop-shadow sm:block">
-                          {service.priceBadge}
+                          {priceBadge(service)}
                         </span>
                       )}
                       {photo && <Icon3D icon={Icon} size="sm" className="absolute right-3 top-3 hidden sm:inline-grid" />}
@@ -107,7 +108,7 @@ export default function ServicesPage() {
                       <h2 className="mt-0.5 font-display text-base font-semibold leading-snug text-ink-950 group-hover:text-red-600 sm:mt-1 sm:text-xl dark:text-white">
                         {service.name}
                       </h2>
-                      <p className="mt-1 text-sm font-bold text-ink-950 sm:hidden dark:text-white">{service.priceBadge}</p>
+                      <p className="mt-1 text-sm font-bold text-ink-950 sm:hidden dark:text-white">{priceBadge(service)}</p>
                       <p className="mt-1.5 hidden text-sm leading-relaxed text-ink-600 sm:block dark:text-ink-200">{service.summary}</p>
                     </div>
                   </Link>

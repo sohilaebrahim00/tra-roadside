@@ -51,7 +51,7 @@ export const FIELD_PHOTO_GROUPS: FieldPhotoGroup[] = [
   {
     id: "battery",
     title: "Battery replacement",
-    caption: "Not every battery is under the hood. This one sits under the rear seat, which is why installation is quoted for each vehicle.",
+    caption: "Not every battery is under the hood. This one sits under the rear seat, which is why the battery and the total are confirmed for each vehicle before a driver sets off.",
     service: "battery-replacement",
     photos: [
       {
@@ -169,26 +169,6 @@ export const FIELD_PHOTO_GROUPS: FieldPhotoGroup[] = [
     ],
   },
   {
-    id: "fuel",
-    title: "Fuel delivery",
-    caption: "Enough fuel to reach a station, carried to the car and poured in by the driver.",
-    service: "fuel-delivery",
-    photos: [
-      {
-        src: "/images/field/field-fuel-pour.webp",
-        alt: "A technician in high-visibility workwear pouring fuel from a red gas can into the open fuel door of a dark vehicle.",
-        width: W,
-        height: H,
-      },
-      {
-        src: "/images/field/field-fuel-can.webp",
-        alt: "A technician in high-visibility workwear bending to pick up a red gas can from the ground in a parking lot.",
-        width: W,
-        height: H,
-      },
-    ],
-  },
-  {
     id: "arrival",
     title: "Arriving equipped",
     caption: "The jump pack, tools and gear travel with the driver, in the vehicle that brings them to you.",
@@ -213,7 +193,7 @@ export const FIELD_PHOTO_GROUPS: FieldPhotoGroup[] = [
  * Four photos for the compact four-up preview on the home page: one per
  * service, battery first, so the preview never shows two tire shots.
  */
-const PREVIEW_GROUPS = ["battery", "tire-roadside", "jump-start", "fuel"];
+const PREVIEW_GROUPS = ["battery", "tire-roadside", "jump-start", "rim-lock"];
 
 export function fieldPhotoPreview(): (FieldPhoto & { title: string })[] {
   return PREVIEW_GROUPS.map((id) => {

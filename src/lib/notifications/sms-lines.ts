@@ -1,3 +1,6 @@
+import { DISPATCH_FEE, type ServiceContent } from "@/lib/content/services";
+import { formatAmount, plus } from "@/lib/content/price-format";
+
 /**
  * One labeled line of a text message, with its own leading line break:
  * "\nVehicle: 2019 Toyota Camry", or "" when there is no value. Templates
@@ -11,27 +14,25 @@ export function smsLine(label: string, value: string | null | undefined): string
   return v ? `\n${label}: ${v}` : "";
 }
 
-interface PricedService {
-  slug: string;
-  priceBadge?: string;
-  priceFrom?: number;
-  semiTruckPrice?: string;
-}
-
 /**
- * A service's price for a text message, from SERVICES so it never drifts:
- * "$55-65", "$120 + $5/mile", "From $189 (battery only, installation quoted)".
- * A semi truck gets its own figure where the service has one ("$140" for a
- * jump start). En and em dashes become hyphens, because either one would
- * switch the whole text to UCS-2 and halve the characters per SMS part.
+ * The price breakdown for a text message, from SERVICES so it never drifts:
+ * the service price, the dispatch fee on its own (added once), and the total,
+ * with tax added to the final bill (owner's brief, 2026-11-03 and 2026-11-04):
+ *
+ *   "$49-$75 + $19 dispatch = $68-$94, plus tax"
+ *   "$140 + $19 dispatch = $159, plus tax"           a semi truck jump start
+ *   "From $129 + $19 dispatch = from $148, plus tax"
+ *
+ * A semi truck gets the line published for semi trucks where the service has
+ * one. Ranges use a hyphen, never an en dash: either dash would switch the
+ * whole text to UCS-2 and halve the characters per SMS part. This file stays
+ * ASCII-only; scripts/check-sms-gsm7.mjs fails the build if it does not.
  */
-export function smsPrice(service: PricedService, vehicleType?: string): string {
-  const ascii = (s: string) => s.replace(/[–—]/g, "-");
-  if (vehicleType === "semi_truck" && service.semiTruckPrice) return ascii(service.semiTruckPrice);
-  if (service.slug === "battery-replacement" && service.priceFrom) {
-    return `From $${service.priceFrom} (battery only, installation quoted)`;
-  }
-  const badge = service.priceBadge ? ascii(service.priceBadge) : service.priceFrom ? `From $${service.priceFrom}` : "";
-  if (service.slug === "tire-replacement" && badge) return `${badge} (by wheel size)`;
-  return badge;
+export function smsPrice(service: Pick<ServiceContent, "priceLines">, vehicleType?: string): string {
+  const lines = service.priceLines ?? [];
+  const line = lines.find((l) => l.vehicleType && l.vehicleType === vehicleType) ?? lines[0];
+  if (!line) return "";
+  const price = formatAmount(line, "-");
+  const total = formatAmount(plus(line, DISPATCH_FEE), "-", "from");
+  return `${price} + $${DISPATCH_FEE} dispatch = ${total}, plus tax`;
 }

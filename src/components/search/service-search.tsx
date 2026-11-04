@@ -11,6 +11,7 @@ import { SERVICE_PROBLEM } from "@/lib/content/service-problems";
 import { BUSINESS } from "@/lib/content/business";
 import { Icon3D } from "@/components/ui/icon-3d";
 import { cn } from "@/lib/utils/cn";
+import { priceSummary } from "@/lib/content/pricing";
 
 /**
  * "What happened?" search: the driver types the problem in their own words
@@ -137,7 +138,7 @@ export function ServiceSearch({ tone = "light", className }: { tone?: "light" | 
                             {SERVICE_PROBLEM[service.slug]}
                           </span>
                           <span className={cn("block truncate text-xs", dark ? "text-white/60" : "text-ink-500")}>
-                            {service.name} · {service.priceBadge}
+                            {service.name} · {priceSummary(service)}
                           </span>
                         </span>
                       </Link>

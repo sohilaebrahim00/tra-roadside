@@ -1,3 +1,5 @@
+import type { ServiceContent } from "@/lib/content/services";
+import { offerJsonLd } from "@/lib/content/pricing";
 import { BUSINESS, SERVICE_AREAS } from "@/lib/content/business";
 import { env } from "@/lib/env";
 
@@ -63,7 +65,7 @@ export function ServiceJsonLd({
   description,
   path,
   areaServed,
-  priceFrom,
+  service,
 }: {
   name: string;
   description: string;
@@ -76,9 +78,13 @@ export function ServiceJsonLd({
   path: string;
   /** Defaults to every served city. City pages pass their own city. */
   areaServed?: string;
-  /** Lowest published total in whole USD, when one can be stated without misleading. */
-  priceFrom?: number;
+  /**
+   * The service whose published price becomes the Offer: the service price
+   * plus the dispatch fee (once), before tax. Omit for pages with no price.
+   */
+  service?: ServiceContent;
 }) {
+  const offer = service ? offerJsonLd(service) : undefined;
   const data = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -89,19 +95,9 @@ export function ServiceJsonLd({
       ? { "@type": "City", name: areaServed }
       : SERVICE_AREAS.map((c) => c.name),
     url: `${env.siteUrl}${path}`,
-    ...(priceFrom
+    ...(offer
       ? {
-          offers: {
-            "@type": "Offer",
-            priceCurrency: "USD",
-            price: priceFrom,
-            priceSpecification: {
-              "@type": "UnitPriceSpecification",
-              price: priceFrom,
-              priceCurrency: "USD",
-              description: "Published total from this figure. Final price depends on vehicle and location.",
-            },
-          },
+          offers: offer,
         }
       : {}),
   };

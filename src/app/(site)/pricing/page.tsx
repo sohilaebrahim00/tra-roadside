@@ -9,6 +9,7 @@ import { FaqAccordion } from "@/components/faq/faq-accordion";
 import { PricePanel } from "@/components/city-service/price-panel";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { SERVICES, getService } from "@/lib/content/services";
+import { DISPATCH_FEE_EXPLAINER, DISPATCH_FEE_HEADLINE, DISPATCH_FEE_USD, TAX_NOTE, exampleTotal, headlineLine, servicePrice } from "@/lib/content/pricing";
 import { BUSINESS } from "@/lib/content/business";
 import { batteryReview } from "@/lib/content/google-reviews";
 import { guidesForService } from "@/lib/content/guides";
@@ -21,30 +22,54 @@ import { HeroBackdrop } from "@/components/brand/hero-backdrop";
  * label and qualifier renders from SERVICES through the same PricePanel the
  * service pages use, so this page cannot disagree with them.
  *
- * Battery replacement leads, because it is the business's main earner and the
- * one price that needs the most explaining (battery only, installation quoted).
+ * Battery replacement leads, because it is the business's main earner. Every
+ * price is a service price before tax, plus the dispatch fee once per job
+ * (owner's pricing brief, 2026-11-03; tax decision, 2026-11-04).
  */
 
 const battery = getService("battery-replacement");
 
 export const metadata: Metadata = {
   title: "Roadside Assistance Prices in Dallas–Fort Worth",
-  description: `Published prices for every TRA roadside service across Dallas–Fort Worth: car batteries ${battery?.priceBadge?.replace(/^Battery /, "") ?? ""}, jump starts, lockouts, flat tires, tire repair and fuel delivery.`,
+  description: `TRA roadside prices across Dallas–Fort Worth: ${DISPATCH_FEE_HEADLINE.toLowerCase()}. Car batteries ${battery && headlineLine(battery) ? servicePrice(headlineLine(battery)!) : ""}, jump starts, lockouts, flat tires and tire repair.`,
   ...pageUrls("/pricing", shareImageFor("battery-replacement")),
+};
+
+const tire = getService("tire-replacement");
+const priceOf = (slug: Parameters<typeof getService>[0]) => {
+  const svc = getService(slug);
+  const line = svc && headlineLine(svc);
+  return line ? servicePrice(line) : "";
 };
 
 const FAQS = [
   {
-    q: "Why isn't battery installation listed with a price?",
-    a: "Because it depends on where your car keeps its battery. Some come out in minutes; others sit under a seat or in the trunk behind trim. Dispatch quotes installation for your vehicle, and you know the full figure before a driver is sent.",
+    q: `What is the ${DISPATCH_FEE_USD} dispatch fee?`,
+    a: `${DISPATCH_FEE_EXPLAINER} It is added to the service price, never charged twice on one job, and never the whole cost of the service.`,
+  },
+  {
+    q: "Is tax included in these prices?",
+    a: `No. ${TAX_NOTE}`,
   },
   {
     q: "How do I get an exact price for my situation?",
-    a: "Request help online or call us. Dispatch confirms the price for your service, vehicle and location when you request it.",
+    a: "Request help online or call us. The request form shows the expected total for your service before you send it, and dispatch confirms the price for your vehicle and location before a driver is sent.",
   },
   {
-    q: "Is the fuel included in the fuel delivery price?",
-    a: "No. The published figure is the delivery charge, and the fuel itself is added at cost.",
+    q: "Do you bring a spare tire?",
+    a: `A spare tire change (${priceOf("flat-tire-change")}) uses the spare carried in your vehicle. If you have no usable spare, a tire replacement starts ${tire && headlineLine(tire) ? servicePrice(headlineLine(tire)!).toLowerCase() : ""}, and tire availability varies, so dispatch confirms a tire is available before a driver is sent.`,
+  },
+  {
+    q: "Can my flat tire be repaired, or does it need replacing?",
+    a: `A puncture in the tread, such as a nail or screw, can usually be plugged or patched (${priceOf("tire-repair-plug-patch")}). Damage to the sidewall or shoulder, a large cut, or a tire that was driven flat needs a replacement instead. The technician checks the tire before any work is done.`,
+  },
+  {
+    q: "Will the battery fit my vehicle?",
+    a: `${battery?.priceNote ?? ""} Tell us the year, make and model, or the VIN, when you request help.`,
+  },
+  {
+    q: "What do you need for a lockout?",
+    a: `The vehicle's location, and proof that it is yours, such as an ID that matches the registration. A door lockout starts at ${priceOf("lockout")}; keys locked in the trunk are priced separately, as listed.`,
   },
 ];
 
@@ -65,9 +90,18 @@ export default function PricingPage() {
             as="h1"
             eyebrow="Pricing"
             title="Roadside prices, published"
-            description="Every service has a listed price. Where the total depends on your vehicle or the distance, the page says so, and dispatch confirms it when you request help."
+            description="Every service has a listed price. Where the total depends on your vehicle, the page says so, and dispatch confirms it when you request help."
             tone="light"
           />
+          <div className="mt-8 max-w-3xl rounded-2xl border border-white/15 bg-white/[0.06] p-5">
+            <p className="font-display text-xl font-bold text-white sm:text-2xl">{DISPATCH_FEE_HEADLINE}</p>
+            <p className="mt-2 text-sm leading-relaxed text-white/80">{DISPATCH_FEE_EXPLAINER} {TAX_NOTE}</p>
+            <ul className="mt-3 grid gap-1 text-sm text-white/90 sm:grid-cols-2">
+              {SERVICES.filter((svc) => headlineLine(svc)).map((svc) => (
+                <li key={svc.slug}>{exampleTotal(svc.shortName, headlineLine(svc)!)}</li>
+              ))}
+            </ul>
+          </div>
         </Container>
       </section>
 

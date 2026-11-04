@@ -10,8 +10,7 @@ import type { ServiceArea } from "@/lib/content/business";
  * Closing conversion band.
  *
  * Every line of language here already existed. `svc.heroLine` is the approved
- * one-liner from SERVICES ("Locked out, not locked down.", "Out of fuel, not out
- * of options."), and the heading and supporting sentence are the strings the old
+ * one-liner from SERVICES ("Locked out, not locked down."), and the heading and supporting sentence are the strings the old
  * sidebar CTA used. Nothing is authored, and in particular there is no response
  * time, no arrival window and no guarantee — none of which the business has
  * published.

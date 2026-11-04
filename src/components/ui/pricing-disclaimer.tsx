@@ -1,6 +1,7 @@
 import { Phone } from "lucide-react";
 import { BUSINESS } from "@/lib/content/business";
 import { cn } from "@/lib/utils/cn";
+import { DISPATCH_FEE_USD } from "@/lib/content/pricing";
 
 /**
  * Shared pricing disclaimer + phone CTA, used everywhere starting prices are
@@ -12,7 +13,10 @@ import { cn } from "@/lib/utils/cn";
 export function PricingDisclaimer({ className, tone = "dark" }: { className?: string; tone?: "dark" | "light" }) {
   return (
     <div className={cn("text-xs", tone === "light" ? "text-white/60" : "text-ink-500 dark:text-ink-300", className)}>
-      <p>Prices start at the listed amount. Final price depends on your vehicle and location.</p>
+      <p>
+        Service prices are before sales tax, plus a {DISPATCH_FEE_USD} dispatch fee charged once per job. Dispatch
+        confirms the final price for your vehicle and location before a driver is sent.
+      </p>
       <a
         href={BUSINESS.phoneHref}
         className={cn(

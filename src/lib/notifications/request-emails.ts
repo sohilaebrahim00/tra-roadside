@@ -2,6 +2,7 @@ import "server-only";
 import type { CreateRequestInput } from "@/lib/validation/request";
 import type { ServiceContent } from "@/lib/content/services";
 import { BUSINESS } from "@/lib/content/business";
+import { DISPATCH_FEE_USD, expectedTotal, servicePrice } from "@/lib/content/pricing";
 import { LOCATION_SOURCE_LABELS, STATUS_META, type ContactMethod, type LocationSource, type VehicleType } from "@/lib/types/domain";
 import type { EmailRow, EmailSection, RichEmail } from "./email-layout";
 
@@ -120,7 +121,6 @@ const DISPATCH_CHECKS: Record<string, string[]> = {
   "tire-replacement": ["Get the wheel size off the tire sidewall. The price is set by wheel size."],
   "stuck-screw-in-tire": ["Ask which tire it is."],
   "rim-lock-removal": ["Ask whether the customer has the wheel lock key at all."],
-  "fuel-delivery": ["Confirm gas or diesel before the driver leaves."],
 };
 
 function vehicleLine(s: RequestSnapshot): string {
@@ -145,7 +145,8 @@ function central(d: Date): string {
 
 function priceText(service: ServiceContent): string {
   return (service.priceLines ?? [])
-    .map((p) => `${p.label ? `${p.label}: ` : ""}${p.amount}${p.note ? ` (${p.note})` : ""}`)
+    .map((p) => `${p.label ? `${p.label}: ` : ""}${servicePrice(p)} + tax${p.note ? ` (${p.note})` : ""}`)
+    .concat(service.priceLines?.length ? [`Dispatch fee: ${DISPATCH_FEE_USD}, once per job`, `Expected total: ${expectedTotal(service.priceLines[0])} + tax`] : [])
     .join("\n");
 }
 

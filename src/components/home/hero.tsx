@@ -10,6 +10,7 @@ import { MagneticButton } from "@/components/ui/magnetic-button";
 import { CinematicBackgroundVideo } from "@/components/media/cinematic-background-video";
 import { HeroQuickRequest } from "./hero-quick-request";
 import { gsap } from "@/lib/gsap/register";
+import { DISPATCH_FEE_HEADLINE, DISPATCH_FEE_TAG, headlineLine, servicePrice } from "@/lib/content/pricing";
 
 /**
  * The home hero: what we do, where, roughly what it costs, and how to ask for
@@ -31,7 +32,8 @@ export function Hero() {
   const factsRef = useRef<HTMLDListElement>(null);
   const graphicRef = useRef<HTMLDivElement>(null);
 
-  const batteryFrom = getService("battery-replacement")?.priceFrom;
+  const batteryService = getService("battery-replacement");
+  const batteryLine = batteryService && headlineLine(batteryService);
 
   useGSAP(
     () => {
@@ -114,9 +116,15 @@ export function Hero() {
           >
             <Fact label="Dispatch" value="24/7" />
             <Fact label="DFW cities" value={String(SERVICE_AREAS.length)} />
-            {batteryFrom && <Fact label="Batteries from" value={`$${batteryFrom}`} note="battery only" />}
+            {batteryLine && <Fact label="Battery replacement" value={servicePrice(batteryLine)} note={`+ tax ${DISPATCH_FEE_TAG}`} />}
             <Fact label="Driver tracking" value="Live" accent />
           </dl>
+          {/* The pricing banner from the owner's brief: the fee on its own, so
+              no figure on the page reads as the whole bill. */}
+          <p className="mt-4 inline-flex flex-wrap items-center gap-x-2 gap-y-1 rounded-xl bg-red-600 px-4 py-2 text-sm font-semibold text-white">
+            <span className="font-display font-bold">{DISPATCH_FEE_HEADLINE}</span>
+            <span className="font-normal text-white/90">charged once per job · prices before tax</span>
+          </p>
         </div>
 
         {/* Desktop: the quick-request card over the video. */}

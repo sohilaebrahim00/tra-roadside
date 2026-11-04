@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { FaqAccordion } from "@/components/faq/faq-accordion";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd } from "@/components/seo/json-ld";
 import { SERVICES, getService } from "@/lib/content/services";
+import { DISPATCH_FEE_USD, TAX_NOTE, expectedTotal, servicePrice } from "@/lib/content/pricing";
 import { SERVICE_ICONS } from "@/lib/content/service-icons";
 import { BUSINESS, SERVICE_AREAS } from "@/lib/content/business";
 import { citiesForService } from "@/lib/content/city-service-pages";
@@ -68,7 +69,7 @@ export default async function ServicePage({
           { name: service.name, url: `${env.siteUrl}/services/${service.slug}` },
         ]}
       />
-      <ServiceJsonLd name={service.name} description={service.summary} path={`/services/${service.slug}`} priceFrom={service.priceFrom} />
+      <ServiceJsonLd name={service.name} description={service.summary} path={`/services/${service.slug}`} service={service} />
       {faqItems.length > 0 && <FaqJsonLd items={service.faqs} />}
 
       <section className="relative overflow-hidden border-b border-ink-950/8 bg-ink-950 py-14 text-white sm:py-20">
@@ -87,13 +88,22 @@ export default async function ServicePage({
               <div className="mt-5 max-w-lg rounded-2xl bg-white/10 p-4">
                 <ul className="space-y-2">
                   {service.priceLines.map((line) => (
-                    <li key={line.label ?? line.amount} className="flex flex-wrap items-baseline gap-x-3 gap-y-0.5">
-                      <span className="font-display text-xl font-bold text-white">{line.amount}</span>
+                    <li key={line.label ?? line.min} className="flex flex-wrap items-baseline gap-x-3 gap-y-0.5">
+                      <span className="font-display text-xl font-bold text-white">{servicePrice(line)} <span className="text-base font-semibold">+ tax</span></span>
                       {line.label && <span className="text-sm font-semibold text-white/90">{line.label}</span>}
                       {line.note && <span className="text-sm text-white/70">{line.note}</span>}
                     </li>
                   ))}
+                  <li className="flex flex-wrap items-baseline gap-x-3 gap-y-0.5 border-t border-white/15 pt-2">
+                    <span className="font-display text-xl font-bold text-white">+ {DISPATCH_FEE_USD}</span>
+                    <span className="text-sm font-semibold text-white/90">Dispatch fee, once per job</span>
+                  </li>
                 </ul>
+                <p className="mt-3 text-sm font-semibold text-white">
+                  Expected total: {expectedTotal(service.priceLines[0])} + tax
+                  {service.priceLines.length > 1 && service.priceLines[1].label ? ` (${service.priceLines[1].label.toLowerCase()}: ${expectedTotal(service.priceLines[1])} + tax)` : ""}
+                </p>
+                <p className="mt-1 text-sm text-white/70">{TAX_NOTE}</p>
                 {service.priceNote && <p className="mt-3 text-sm text-white/70">{service.priceNote}</p>}
               </div>
             )}

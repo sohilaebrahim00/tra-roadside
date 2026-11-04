@@ -3,7 +3,8 @@ import path from "node:path";
 
 /**
  * Services no longer offered: the six removed from the definitive list in
- * migration 0008, and towing, retired on 2026-10-26 (migration 0016). Their
+ * migration 0008, towing, retired on 2026-10-26 (migration 0016), and fuel
+ * delivery, retired on 2026-11-03 (migration 0017). Their
  * pages were indexed, so they redirect to the services index rather than 404 —
  * a 404 discards whatever ranking the URL had and hands anyone with a
  * bookmark a dead end.
@@ -21,6 +22,7 @@ const REMOVED_SERVICE_SLUGS = [
   "truck-assistance",
   "other-roadside-service",
   "towing",
+  "fuel-delivery",
 ];
 
 /**
@@ -28,7 +30,7 @@ const REMOVED_SERVICE_SLUGS = [
  * towing page, but the pattern covers any city, and each one redirects to its
  * own city hub, which is the closest page still answering the local intent.
  */
-const REMOVED_CITY_SERVICE_SLUGS = ["towing"];
+const REMOVED_CITY_SERVICE_SLUGS = ["towing", "fuel-delivery"];
 
 const nextConfig: NextConfig = {
   turbopack: {

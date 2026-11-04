@@ -19,6 +19,10 @@
  *   2. every service `shortName` (interpolated as {{serviceShort}})
  *   3. every STATUS_META `customerLabel` (interpolated as {{statusLabel}})
  *   4. BUSINESS.phoneDisplay (interpolated as {{supportPhone}})
+ *   4b. the code that builds {{priceLine}} (src/lib/notifications/sms-lines.ts
+ *      and src/lib/content/price-format.ts): prices are numbers, so the only
+ *      text in that line is what those two files write, and both must stay
+ *      ASCII. A range written with an en dash there would reach every text.
  *   5. the rule that no SMS template may reference {{serviceName}} or
  *      {{vehicleDetails}} — those fields are ALLOWED to contain non-GSM-7
  *      characters (the display name's em dash, the VIN separator), so they are
@@ -75,9 +79,18 @@ for (const [, event, raw] of smsRows) {
 // 2. Service short names.
 const services = read("src/lib/content/services.ts");
 for (const m of services.matchAll(/^    shortName: "([^"]+)",$/gm)) check(`service shortName "${m[1]}"`, m[1]);
-// Prices go into texts through smsPrice() (src/lib/notifications/sms-lines.ts),
-// which turns en and em dashes into hyphens; everything else must already be GSM-7.
-for (const m of services.matchAll(/^    priceBadge: "([^"]+)",$/gm)) check(`SMS price "${m[1]}"`, m[1].replace(/[–—]/g, "-"));
+
+// 4b. Prices reach texts through smsPrice() (src/lib/notifications/sms-lines.ts).
+// Service prices are numbers in SERVICES, so every character of the price line
+// comes from the code of these two files. Comments are stripped first; what is
+// left must be plain ASCII, which GSM-7 covers (a backtick can only appear as
+// template-literal syntax, never in the output).
+for (const file of ["src/lib/notifications/sms-lines.ts", "src/lib/content/price-format.ts"]) {
+  const code = read(file).replace(/\/\*[\s\S]*?\*\//g, "").replace(/^\s*\/\/.*$/gm, "");
+  const bad = [...new Set([...code].filter((ch) => ch.codePointAt(0) > 0x7e))];
+  if (bad.length) failures.push(`${file} builds the SMS price line but contains ${bad.map((ch) => `${JSON.stringify(ch)} (U+${ch.codePointAt(0).toString(16).toUpperCase().padStart(4, "0")})`).join(", ")} outside comments`);
+  if (!code.includes("formatAmount")) failures.push(`${file}: expected the SMS price code here; the check would pass vacuously`);
+}
 
 // 3. Customer-facing status labels.
 const domain = read("src/lib/types/domain.ts");

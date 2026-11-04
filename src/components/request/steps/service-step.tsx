@@ -4,6 +4,7 @@ import { useFormContext } from "react-hook-form";
 import { Check } from "lucide-react";
 import { StepShell } from "../step-shell";
 import { SERVICES } from "@/lib/content/services";
+import { DISPATCH_FEE_TAG, TAX_NOTE, priceBadge } from "@/lib/content/pricing";
 import { SERVICE_ICONS } from "@/lib/content/service-icons";
 import { cn } from "@/lib/utils/cn";
 import type { CreateRequestInput } from "@/lib/validation/request";
@@ -44,13 +45,16 @@ export function ServiceStep({ onNext, onBack }: { onNext: () => void; onBack: ()
               )}
               <Icon3D icon={Icon} size="md" muted={!isSelected} />
               <span className="text-sm font-semibold text-ink-900 dark:text-white">{service.shortName}</span>
-              {service.priceBadge && (
-                <span className="text-xs font-medium text-ink-500 dark:text-ink-300">{service.priceBadge}</span>
+              {priceBadge(service) && (
+                <span className="text-xs font-medium text-ink-500 dark:text-ink-300">{priceBadge(service)}</span>
               )}
             </button>
           );
         })}
       </div>
+      <p className="mt-3 text-xs text-ink-500 dark:text-ink-300">
+        Every service: {DISPATCH_FEE_TAG}, charged once per job. {TAX_NOTE}
+      </p>
       {errors.serviceSlug && <p className="mt-3 text-sm text-red-600">{errors.serviceSlug.message}</p>}
     </StepShell>
   );

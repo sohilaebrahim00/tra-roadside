@@ -6,6 +6,7 @@ import { StepShell } from "../step-shell";
 import { VEHICLE_TYPES, type VehicleType } from "@/lib/types/domain";
 import { cn } from "@/lib/utils/cn";
 import { getService } from "@/lib/content/services";
+import { DISPATCH_FEE_TAG, servicePrice } from "@/lib/content/pricing";
 import { VIN_LENGTH, type CreateRequestInput } from "@/lib/validation/request";
 
 const VEHICLE_TYPE_LABELS: Record<VehicleType, string> = {
@@ -48,7 +49,7 @@ export function VehicleStep({ onNext, onBack }: { onNext: () => void; onBack: ()
             <div>
               <p className="font-display text-base font-bold">Battery Replacement</p>
               <p className="mt-0.5 text-sm text-white/90">
-                {selectedService.priceLines.map((l) => `${l.label ?? "Total"} ${l.amount}`).join(" · ")}
+                {selectedService.priceLines.map((l) => `${l.label ? `${l.label} ` : ""}${servicePrice(l)} + tax`).join(" · ")} {DISPATCH_FEE_TAG}
               </p>
             </div>
           </div>

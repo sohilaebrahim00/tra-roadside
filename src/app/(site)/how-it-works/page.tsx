@@ -24,7 +24,7 @@ const STEPS = [
   {
     icon: ClipboardList,
     title: "Tell us what's wrong",
-    body: "Pick the service you need — jump start, battery, flat tire, lockout, fuel delivery, and more — then add your vehicle details and any photos that help.",
+    body: "Pick the service you need — jump start, battery, flat tire, lockout, and more — then add your vehicle details and any photos that help.",
   },
   {
     icon: UserCheck,

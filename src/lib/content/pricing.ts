@@ -69,6 +69,24 @@ export function lineForVehicle(svc: ServiceContent, vehicleType?: VehicleType | 
   return svc.priceLines?.find((l) => l.vehicleType && l.vehicleType === vehicleType) ?? headlineLine(svc);
 }
 
+/**
+ * The low figure a service is advertised at: "from $49" for a range or an
+ * open-ended price, "$70" for a single one. Titles and the at-a-glance lists
+ * lead with it, and the fee stays beside it (owner, 2026-11-04: low price
+ * first, $19 added, as competitors show it). The expected total appears where
+ * the customer confirms: the request form, the texts and the emails.
+ */
+export function lowPrice(svc: ServiceContent): string | undefined {
+  const line = headlineLine(svc);
+  if (!line) return undefined;
+  return line.max !== undefined || line.from ? `from ${usd(line.min)}` : usd(line.min);
+}
+
+/** "Jump Start from $49 · Lockout from $50 · ...": the at-a-glance line. */
+export function glanceLine(services: ServiceContent[]): string {
+  return services.flatMap((svc) => (lowPrice(svc) ? [`${svc.shortName} ${lowPrice(svc)}`] : [])).join(" · ");
+}
+
 /** "$49–$75 + tax" — the badge on cards and tiles. */
 export function priceBadge(svc: ServiceContent): string | undefined {
   const line = headlineLine(svc);

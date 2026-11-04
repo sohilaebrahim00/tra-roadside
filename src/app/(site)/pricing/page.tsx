@@ -9,7 +9,7 @@ import { FaqAccordion } from "@/components/faq/faq-accordion";
 import { PricePanel } from "@/components/city-service/price-panel";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { SERVICES, getService } from "@/lib/content/services";
-import { DISPATCH_FEE_EXPLAINER, DISPATCH_FEE_HEADLINE, DISPATCH_FEE_USD, TAX_NOTE, exampleTotal, headlineLine, servicePrice } from "@/lib/content/pricing";
+import { DISPATCH_FEE_EXPLAINER, DISPATCH_FEE_HEADLINE, DISPATCH_FEE_USD, TAX_NOTE, exampleTotal, headlineLine, lowPrice, servicePrice } from "@/lib/content/pricing";
 import { BUSINESS } from "@/lib/content/business";
 import { batteryReview } from "@/lib/content/google-reviews";
 import { guidesForService } from "@/lib/content/guides";
@@ -36,6 +36,7 @@ export const metadata: Metadata = {
 };
 
 const tire = getService("tire-replacement");
+const jumpStart = getService("jump-start");
 const priceOf = (slug: Parameters<typeof getService>[0]) => {
   const svc = getService(slug);
   const line = svc && headlineLine(svc);
@@ -45,7 +46,7 @@ const priceOf = (slug: Parameters<typeof getService>[0]) => {
 const FAQS = [
   {
     q: `What is the ${DISPATCH_FEE_USD} dispatch fee?`,
-    a: `${DISPATCH_FEE_EXPLAINER} It is added to the service price, never charged twice on one job, and never the whole cost of the service.`,
+    a: `${DISPATCH_FEE_EXPLAINER} It is added to the service price, never charged twice on one job, and never the whole cost of the service. For example: ${jumpStart && headlineLine(jumpStart) ? exampleTotal("a jump start", headlineLine(jumpStart)!) : ""}.`,
   },
   {
     q: "Is tax included in these prices?",
@@ -96,9 +97,12 @@ export default function PricingPage() {
           <div className="mt-8 max-w-3xl rounded-2xl border border-white/15 bg-white/[0.06] p-5">
             <p className="font-display text-xl font-bold text-white sm:text-2xl">{DISPATCH_FEE_HEADLINE}</p>
             <p className="mt-2 text-sm leading-relaxed text-white/80">{DISPATCH_FEE_EXPLAINER} {TAX_NOTE}</p>
-            <ul className="mt-3 grid gap-1 text-sm text-white/90 sm:grid-cols-2">
-              {SERVICES.filter((svc) => headlineLine(svc)).map((svc) => (
-                <li key={svc.slug}>{exampleTotal(svc.shortName, headlineLine(svc)!)}</li>
+            <ul className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
+              {SERVICES.filter((svc) => lowPrice(svc)).map((svc) => (
+                <li key={svc.slug} className="rounded-xl bg-white/[0.07] px-3 py-2.5">
+                  <span className="block text-xs text-white/70">{svc.shortName}</span>
+                  <span className="mt-0.5 block font-display text-lg font-bold text-white">{lowPrice(svc)}</span>
+                </li>
               ))}
             </ul>
           </div>

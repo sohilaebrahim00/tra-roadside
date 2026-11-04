@@ -2,7 +2,7 @@ import { Info } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
 import { PricingDisclaimer } from "@/components/ui/pricing-disclaimer";
 import type { ServiceContent } from "@/lib/content/services";
-import { DISPATCH_FEE_USD, TAX_NOTE, expectedTotal, servicePrice } from "@/lib/content/pricing";
+import { DISPATCH_FEE_USD, TAX_NOTE, servicePrice } from "@/lib/content/pricing";
 
 /**
  * Pricing for a City x Service page, rendered entirely from SERVICES.
@@ -14,8 +14,8 @@ import { DISPATCH_FEE_USD, TAX_NOTE, expectedTotal, servicePrice } from "@/lib/c
  * read as the starting price.
  *
  * Under the service price sits the dispatch fee, on its own and charged once
- * per job, then the expected total before tax (owner's pricing brief,
- * 2026-11-03, and the tax decision of 2026-11-04).
+ * per job (owner's pricing brief, 2026-11-03, and 2026-11-04). The expected
+ * total is shown on the request form, before the customer sends a request.
  *
  * `priceNote` is the qualifier that must not get lost (battery fitment, tire
  * availability), so it gets its own flagged row.
@@ -99,15 +99,11 @@ export function PricePanel({
         </ul>
       )}
 
-      {/* The dispatch fee on its own, and the expected total. */}
+      {/* The dispatch fee on its own. */}
       <dl className={cn("mt-4 space-y-1.5 border-t pt-3 text-sm", onDark ? "border-white/10" : "border-ink-950/8")}>
         <div className="flex flex-wrap items-baseline justify-between gap-x-4">
           <dt className={onDark ? "text-white/80" : "text-ink-700"}>Dispatch fee, once per job</dt>
           <dd className={cn("font-display text-base font-bold tabular-nums", onDark ? "text-white" : "text-ink-950")}>+ {DISPATCH_FEE_USD}</dd>
-        </div>
-        <div className="flex flex-wrap items-baseline justify-between gap-x-4">
-          <dt className={cn("font-semibold", onDark ? "text-white" : "text-ink-950")}>Expected total</dt>
-          <dd className={cn("font-display text-base font-bold tabular-nums", onDark ? "text-white" : "text-ink-950")}>{expectedTotal(headline)} + tax</dd>
         </div>
       </dl>
       <p className={cn("mt-2 text-xs", onDark ? "text-white/60" : "text-ink-500")}>{TAX_NOTE}</p>

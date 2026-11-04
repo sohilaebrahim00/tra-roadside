@@ -6,7 +6,7 @@ import { BrandPattern } from "@/components/brand/brand-pattern";
 import { Button } from "@/components/ui/button";
 import { getService } from "@/lib/content/services";
 import { batteryReview } from "@/lib/content/google-reviews";
-import { DISPATCH_FEE_TAG, expectedTotal, servicePrice } from "@/lib/content/pricing";
+import { DISPATCH_FEE_TAG, servicePrice } from "@/lib/content/pricing";
 
 /**
  * The commercial center of the home page — batteries are the highest-margin
@@ -48,7 +48,7 @@ export function BatteryPromoSection() {
                   <p className="mt-1.5 font-display text-6xl font-bold leading-none text-white sm:text-7xl">
                     {servicePrice(service.priceLines[0])}
                   </p>
-                  <p className="mt-2 text-sm font-semibold text-white/85">+ tax {DISPATCH_FEE_TAG} = {expectedTotal(service.priceLines[0])} + tax</p>
+                  <p className="mt-2 text-sm font-semibold text-white/85">+ tax {DISPATCH_FEE_TAG}</p>
                 </div>
                 <span className="mt-0.5 inline-flex shrink-0 items-center gap-1.5 rounded-full bg-red-600 px-3 py-1.5 text-[0.68rem] font-bold uppercase tracking-wider text-white">
                   <ShieldCheck className="h-3.5 w-3.5" aria-hidden="true" />

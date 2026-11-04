@@ -7,6 +7,7 @@ import { OrganizationJsonLd } from "@/components/seo/json-ld";
 import { ServiceWorkerRegister } from "@/components/pwa/sw-register";
 import { GoogleAdsTag } from "@/components/analytics/google-ads";
 import { OPEN_GRAPH_DEFAULTS } from "@/lib/seo";
+import { SERVICES } from "@/lib/content/services";
 
 /*
  * Self-hosted fonts (app/fonts/), so the build never fetches Google Fonts.
@@ -39,6 +40,8 @@ const plexMono = localFont({
   display: "swap",
 });
 
+const LOWEST_PRICE = Math.min(...SERVICES.flatMap((svc) => (svc.priceLines?.[0] ? [svc.priceLines[0].min] : [])));
+
 export const metadata: Metadata = {
   metadataBase: new URL(env.siteUrl),
   // The suffix used to be " | TRA — Texas Roadside Assistance" (34 characters),
@@ -46,7 +49,8 @@ export const metadata: Metadata = {
   // full business name still appears in og:site_name and the LocalBusiness
   // schema.
   title: {
-    default: "24/7 Roadside Assistance in Dallas–Fort Worth | TRA Roadside",
+    // The lowest published price, from SERVICES, so a price change reaches it.
+    default: `24/7 Roadside Assistance in Dallas–Fort Worth, from $${LOWEST_PRICE} | TRA Roadside`,
     template: "%s | TRA Roadside",
   },
   description:

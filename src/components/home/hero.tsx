@@ -10,7 +10,7 @@ import { MagneticButton } from "@/components/ui/magnetic-button";
 import { CinematicBackgroundVideo } from "@/components/media/cinematic-background-video";
 import { HeroQuickRequest } from "./hero-quick-request";
 import { gsap } from "@/lib/gsap/register";
-import { DISPATCH_FEE_HEADLINE, DISPATCH_FEE_TAG, headlineLine, servicePrice } from "@/lib/content/pricing";
+import { DISPATCH_FEE_HEADLINE, DISPATCH_FEE_TAG, glanceLine, headlineLine, servicePrice } from "@/lib/content/pricing";
 
 /**
  * The home hero: what we do, where, roughly what it costs, and how to ask for
@@ -32,6 +32,7 @@ export function Hero() {
   const factsRef = useRef<HTMLDListElement>(null);
   const graphicRef = useRef<HTMLDivElement>(null);
 
+  const GLANCE = ["jump-start", "lockout", "tire-repair-plug-patch", "battery-replacement"].flatMap((slug) => getService(slug) ?? []);
   const batteryService = getService("battery-replacement");
   const batteryLine = batteryService && headlineLine(batteryService);
 
@@ -121,7 +122,8 @@ export function Hero() {
           </dl>
           {/* The pricing banner from the owner's brief: the fee on its own, so
               no figure on the page reads as the whole bill. */}
-          <p className="mt-4 inline-flex flex-wrap items-center gap-x-2 gap-y-1 rounded-xl bg-red-600 px-4 py-2 text-sm font-semibold text-white">
+          <p className="mt-4 max-w-2xl text-sm font-semibold text-white/90">{glanceLine(GLANCE)}</p>
+          <p className="mt-2 inline-flex flex-wrap items-center gap-x-2 gap-y-1 rounded-xl bg-red-600 px-4 py-2 text-sm font-semibold text-white">
             <span className="font-display font-bold">{DISPATCH_FEE_HEADLINE}</span>
             <span className="font-normal text-white/90">charged once per job · prices before tax</span>
           </p>

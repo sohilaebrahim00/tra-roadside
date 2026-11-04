@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { FaqAccordion } from "@/components/faq/faq-accordion";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd } from "@/components/seo/json-ld";
 import { SERVICES, getService } from "@/lib/content/services";
-import { DISPATCH_FEE_USD, TAX_NOTE, expectedTotal, servicePrice } from "@/lib/content/pricing";
+import { DISPATCH_FEE_USD, TAX_NOTE, lowPrice, servicePrice } from "@/lib/content/pricing";
 import { SERVICE_ICONS } from "@/lib/content/service-icons";
 import { BUSINESS, SERVICE_AREAS } from "@/lib/content/business";
 import { citiesForService } from "@/lib/content/city-service-pages";
@@ -38,7 +38,7 @@ export async function generateMetadata({
   // description added the same 85-character tail to all ten summaries, which
   // put every one past 160 characters.
   return {
-    title: `${service.name} in Dallas–Fort Worth, 24/7`,
+    title: `${service.name}${lowPrice(service) ? ` ${lowPrice(service)}` : ""} in Dallas–Fort Worth, 24/7`,
     description: `${service.summary} Available 24/7 across Dallas–Fort Worth.`,
     ...pageUrls(`/services/${service.slug}`, shareImageFor(service.slug)),
   };
@@ -99,11 +99,7 @@ export default async function ServicePage({
                     <span className="text-sm font-semibold text-white/90">Dispatch fee, once per job</span>
                   </li>
                 </ul>
-                <p className="mt-3 text-sm font-semibold text-white">
-                  Expected total: {expectedTotal(service.priceLines[0])} + tax
-                  {service.priceLines.length > 1 && service.priceLines[1].label ? ` (${service.priceLines[1].label.toLowerCase()}: ${expectedTotal(service.priceLines[1])} + tax)` : ""}
-                </p>
-                <p className="mt-1 text-sm text-white/70">{TAX_NOTE}</p>
+                <p className="mt-3 text-sm text-white/70">{TAX_NOTE}</p>
                 {service.priceNote && <p className="mt-3 text-sm text-white/70">{service.priceNote}</p>}
               </div>
             )}

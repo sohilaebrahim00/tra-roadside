@@ -2,7 +2,7 @@ import { Info } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
 import { PricingDisclaimer } from "@/components/ui/pricing-disclaimer";
 import type { ServiceContent } from "@/lib/content/services";
-import { DISPATCH_FEE_USD, TAX_NOTE, servicePrice } from "@/lib/content/pricing";
+import { DISPATCH_FEE_USD, lowOf, servicePrice } from "@/lib/content/pricing";
 
 /**
  * Pricing for a City x Service page, rendered entirely from SERVICES.
@@ -13,9 +13,10 @@ import { DISPATCH_FEE_USD, TAX_NOTE, servicePrice } from "@/lib/content/pricing"
  * truck jump start, the trunk lockout) and gets its own row, so it can never
  * read as the starting price.
  *
- * Under the service price sits the dispatch fee, on its own and charged once
- * per job (owner's pricing brief, 2026-11-03, and 2026-11-04). The expected
- * total is shown on the request form, before the customer sends a request.
+ * The low figure leads and the full range sits beside it. Under the service
+ * price sits the dispatch fee, on its own and charged once per job (owner's
+ * pricing brief, 2026-11-03, and 2026-11-04). The expected total is shown on
+ * the request form, before the customer sends a request.
  *
  * `priceNote` is the qualifier that must not get lost (battery fitment, tire
  * availability), so it gets its own flagged row.
@@ -60,9 +61,11 @@ export function PricePanel({
             onDark ? "text-white" : "text-ink-950"
           )}
         >
-          {servicePrice(headline)}
+          {lowOf(headline)}
         </span>
-        <span className={cn("text-sm font-semibold", onDark ? "text-white/80" : "text-ink-700")}>+ tax</span>
+        {headline.max !== undefined && (
+          <span className={cn("text-sm font-semibold", onDark ? "text-white/80" : "text-ink-700")}>{servicePrice(headline)}</span>
+        )}
         {headline.label && (
           <span className={cn("text-sm font-semibold", onDark ? "text-white/90" : "text-ink-800")}>
             {headline.label}
@@ -92,7 +95,7 @@ export function PricePanel({
                   onDark ? "text-white" : "text-ink-950"
                 )}
               >
-                {servicePrice(line)} + tax
+                {servicePrice(line)}
               </span>
             </li>
           ))}
@@ -106,7 +109,6 @@ export function PricePanel({
           <dd className={cn("font-display text-base font-bold tabular-nums", onDark ? "text-white" : "text-ink-950")}>+ {DISPATCH_FEE_USD}</dd>
         </div>
       </dl>
-      <p className={cn("mt-2 text-xs", onDark ? "text-white/60" : "text-ink-500")}>{TAX_NOTE}</p>
 
       {/* The qualifier. Flagged, because this is the line that prevents a
           customer reading the headline figure as the whole bill. */}

@@ -87,7 +87,7 @@ export const contactSchema = z.object({
   companyWebsite: z.string().max(200).optional().or(z.literal("")),
 });
 
-export const createRequestSchema = locationSchema
+const requestFields = locationSchema
   .merge(serviceSchema)
   .merge(vehicleSchema)
   .merge(destinationSchema)
@@ -95,33 +95,49 @@ export const createRequestSchema = locationSchema
   .merge(contactSchema)
   .extend({
     clientRequestId: z.string().uuid(),
-  })
-  .superRefine((data, ctx) => {
-    // A VIN is optional everywhere, but if one is supplied it must be a real
-    // 17-character VIN. I, O and Q are excluded from the VIN alphabet by
-    // standard precisely because they are confusable with 1 and 0.
-    const vin = data.vehicleVin?.trim().toUpperCase();
-    if (vin && !VIN_PATTERN.test(vin)) {
-      ctx.addIssue({
-        code: "custom",
-        path: ["vehicleVin"],
-        message:
-          "That VIN doesn't look right. Enter all 17 characters (letters and numbers, no I, O or Q), or leave it blank.",
-      });
-    }
-    // Battery fitment is determined by year/make/model, which a customer can
-    // answer from the driver's seat. The VIN above only refines that guess.
-    if (data.serviceSlug === "battery-replacement") {
-      const required = [
-        ["vehicleYear", data.vehicleYear, "Enter the vehicle year so we bring a battery that fits."],
-        ["vehicleMake", data.vehicleMake, "Enter the vehicle make so we bring a battery that fits."],
-        ["vehicleModel", data.vehicleModel, "Enter the vehicle model so we bring a battery that fits."],
-      ] as const;
-      for (const [path, value, message] of required) {
-        if (!value?.trim()) ctx.addIssue({ code: "custom", path: [path], message });
-      }
-    }
   });
+
+function checkVehicle(data: z.infer<typeof requestFields>, ctx: z.RefinementCtx) {
+  // A VIN is optional everywhere, but if one is supplied it must be a real
+  // 17-character VIN. I, O and Q are excluded from the VIN alphabet by
+  // standard precisely because they are confusable with 1 and 0.
+  const vin = data.vehicleVin?.trim().toUpperCase();
+  if (vin && !VIN_PATTERN.test(vin)) {
+    ctx.addIssue({
+      code: "custom",
+      path: ["vehicleVin"],
+      message:
+        "That VIN doesn't look right. Enter all 17 characters (letters and numbers, no I, O or Q), or leave it blank.",
+    });
+  }
+  // Battery fitment is determined by year/make/model, which a customer can
+  // answer from the driver's seat. The VIN above only refines that guess.
+  if (data.serviceSlug === "battery-replacement") {
+    const required = [
+      ["vehicleYear", data.vehicleYear, "Enter the vehicle year so we bring a battery that fits."],
+      ["vehicleMake", data.vehicleMake, "Enter the vehicle make so we bring a battery that fits."],
+      ["vehicleModel", data.vehicleModel, "Enter the vehicle model so we bring a battery that fits."],
+    ] as const;
+    for (const [path, value, message] of required) {
+      if (!value?.trim()) ctx.addIssue({ code: "custom", path: [path], message });
+    }
+  }
+}
+
+export const createRequestSchema = requestFields.superRefine(checkVehicle);
+
+/**
+ * The short form in quick-request-sheet.tsx. The same request, except that email
+ * is optional: someone stranded at the roadside should not have to type one
+ * (owner, 2026-11-04: match the competitor's short form). The full form still
+ * requires it, per the decision noted on contactSchema.
+ */
+export const quickRequestSchema = requestFields
+  .extend({
+    email: z.string().trim().email("Enter a valid email").max(200).or(z.literal("")),
+    quick: z.literal(true),
+  })
+  .superRefine(checkVehicle);
 
 export type CreateRequestInput = z.infer<typeof createRequestSchema>;
 

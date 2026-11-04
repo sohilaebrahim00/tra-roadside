@@ -14,9 +14,8 @@ import { formatAmount, usd } from "./price-format";
 export const DISPATCH_FEE = 19;
 
 /**
- * One published SERVICE price, in whole USD and BEFORE sales tax (owner's
- * decision, 2026-11-04: tax is added to the final bill). It never includes the
- * dispatch fee, which is shown separately and added once per job.
+ * One published SERVICE price, in whole USD. It never includes the dispatch
+ * fee, which is shown separately and added once per job.
  *
  * Numbers rather than display strings, so the site, the request form, the
  * texts and the emails all format the same figure the same way and can add
@@ -52,9 +51,9 @@ const LOCKOUT_TRUNK: PriceLine = { label: "Keys locked in the trunk", min: 120 }
 const SPARE_TIRE_CHANGE: PriceLine = { min: 75, from: true, note: "using the spare carried in your vehicle" };
 const TIRE_REPLACEMENT: PriceLine = { min: 129, from: true, note: "tire availability varies" };
 
-/** "$140 + tax, plus the $19 dispatch fee" — service price first, fee on its own. */
+/** "$140, plus the $19 dispatch fee" — service price first, fee on its own. */
 function quote(line: PriceLine): string {
-  return `${formatAmount(line, "–", "from")} + tax, plus the ${usd(DISPATCH_FEE)} dispatch fee`;
+  return `${formatAmount(line, "–", "from")}, plus the ${usd(DISPATCH_FEE)} dispatch fee`;
 }
 
 /**
@@ -85,7 +84,7 @@ export interface ServiceContent {
   whatWeNeed: string[];
   faqs: { q: string; a: string }[];
   /**
-   * Published service prices, before tax and without the dispatch fee. The
+   * Published service prices, without the dispatch fee. The
    * first line is the headline price (cards, badges, texts); any further line
    * is a variant priced differently, e.g. keys locked in the trunk.
    */

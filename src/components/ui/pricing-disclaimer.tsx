@@ -14,7 +14,7 @@ export function PricingDisclaimer({ className, tone = "dark" }: { className?: st
   return (
     <div className={cn("text-xs", tone === "light" ? "text-white/60" : "text-ink-500 dark:text-ink-300", className)}>
       <p>
-        Service prices are before sales tax, plus a {DISPATCH_FEE_USD} dispatch fee charged once per job. Dispatch
+        Service prices are plus a {DISPATCH_FEE_USD} dispatch fee charged once per job. Dispatch
         confirms the final price for your vehicle and location before a driver is sent.
       </p>
       <a

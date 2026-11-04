@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { createRequestSchema } from "@/lib/validation/request";
+import { createRequestSchema, quickRequestSchema } from "@/lib/validation/request";
 import { isDemoMode, env, buildUrl, dispatchPhoneE164, getProductionReadiness } from "@/lib/env";
 import { createAdminSupabaseClient } from "@/lib/supabase/admin";
 import { generateRequestNumber, generateTrackingToken } from "@/lib/utils/request-number";
@@ -67,7 +67,10 @@ function buildDispatchVars(input: CreateRequestInput, service: ServiceContent, r
     serviceShort: service.shortName,
     vehicleClause: vehicleClause(input),
     priceLine: smsLine("Price", smsPrice(service, input.vehicleType)),
-    vehicleLine: smsLine("Vehicle", vehicleShort(input)),
+    // The notes ride on this line because the template lives in the database:
+    // the quick form puts the urgency and the unsafe-spot flag there, and dispatch
+    // has to see them on the text, not only in the email.
+    vehicleLine: smsLine("Vehicle", vehicleShort(input)) + smsLine("Note", input.notes?.slice(0, 120)),
     destinationLine: smsLine("To", input.destinationAddress),
     customerNotes: input.notes || "None",
     trackingUrl,
@@ -113,11 +116,11 @@ export async function POST(req: NextRequest) {
   }
 
   const body = await req.json().catch(() => null);
-  const parsed = createRequestSchema.safeParse(body);
+  const parsed = (body?.quick === true ? quickRequestSchema : createRequestSchema).safeParse(body);
   if (!parsed.success) {
     return NextResponse.json({ error: "Invalid request. Please check the form and try again." }, { status: 400 });
   }
-  const input = parsed.data;
+  const input: CreateRequestInput = parsed.data;
 
   if (input.companyWebsite) {
     // Honeypot tripped — pretend success so the bot doesn't learn anything, but do nothing.

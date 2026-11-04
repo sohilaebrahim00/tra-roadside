@@ -145,8 +145,8 @@ function central(d: Date): string {
 
 function priceText(service: ServiceContent): string {
   return (service.priceLines ?? [])
-    .map((p) => `${p.label ? `${p.label}: ` : ""}${servicePrice(p)} + tax${p.note ? ` (${p.note})` : ""}`)
-    .concat(service.priceLines?.length ? [`Dispatch fee: ${DISPATCH_FEE_USD}, once per job`, `Expected total: ${expectedTotal(service.priceLines[0])} + tax`] : [])
+    .map((p) => `${p.label ? `${p.label}: ` : ""}${servicePrice(p)}${p.note ? ` (${p.note})` : ""}`)
+    .concat(service.priceLines?.length ? [`Dispatch fee: ${DISPATCH_FEE_USD}, once per job`, `Expected total: ${expectedTotal(service.priceLines[0])}`] : [])
     .join("\n");
 }
 
@@ -248,7 +248,7 @@ export function dispatchAlertEmail(s: RequestSnapshot, intro: string): RichEmail
   const customerRows: EmailRow[] = [
     { label: "Name", value: s.fullName },
     { label: "Phone", value: s.phone, href: tel },
-    { label: "Email", value: s.email, href: `mailto:${s.email}` },
+    { label: "Email", value: s.email || "Not given", href: s.email ? `mailto:${s.email}` : undefined },
     { label: "Prefers", value: CONTACT_LABELS[s.preferredContactMethod] },
     { label: "Texts allowed", value: s.smsConsent ? "Yes" : "No, call or email only", emphasis: !s.smsConsent },
   ];

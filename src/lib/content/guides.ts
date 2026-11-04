@@ -58,7 +58,7 @@ export const GUIDES: Guide[] = [
     title: "Car Battery Replacement Cost in DFW",
     h1: "What a car battery replacement costs in DFW, and why the total varies",
     metaDescription:
-      "What mobile car battery replacement costs in Dallas–Fort Worth: {{price:battery-replacement}} + tax, installed, for eligible vehicles, plus a {{dispatchFee}} dispatch fee charged once.",
+      "What mobile car battery replacement costs in Dallas–Fort Worth: {{price:battery-replacement}}, installed, for eligible vehicles, plus a {{dispatchFee}} dispatch fee charged once.",
     topic: "Battery guide",
     dek: "Two things make up the bill: the battery replacement, which covers the new battery and installing it, and a dispatch fee for sending a technician to you. The replacement price is a range because cars take different batteries and keep them in different places, so dispatch confirms what fits yours, and your total, before anyone sets off.",
     updated: UPDATED,
@@ -70,7 +70,7 @@ export const GUIDES: Guide[] = [
       {
         heading: "The battery replacement price",
         paragraphs: [
-          "Battery replacement is {{price:battery-replacement}} + tax for eligible vehicles and batteries. That price covers the new battery and installing it in your car.",
+          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries. That price covers the new battery and installing it in your car.",
           "It is a range rather than one figure because battery pricing varies by vehicle and battery type. Dispatch confirms which battery fits your vehicle before a driver is sent.",
           "Every battery we install carries a 1-year warranty. Keep the invoice, because a warranty claim is checked against it.",
         ],
@@ -79,7 +79,7 @@ export const GUIDES: Guide[] = [
         heading: "The dispatch fee: charged once per job",
         paragraphs: [
           "A {{dispatchFee}} dispatch fee is added once to the job, on top of the battery replacement price. It covers sending a technician to where the car is. It is not the cost of the battery, and it is not charged a second time for the same job.",
-          "Put the two together and the expected total for a battery replacement is {{total:battery-replacement}}, plus tax. Prices are before sales tax; tax is added to the final bill. Dispatch confirms compatibility and your total before a driver sets off.",
+          "Put the two together and the expected total for a battery replacement is {{total:battery-replacement}}. Dispatch confirms compatibility and your total before a driver sets off.",
         ],
       },
       {
@@ -112,7 +112,7 @@ export const GUIDES: Guide[] = [
     faqs: [
       {
         q: "Is installation included in the battery price?",
-        a: "Yes. For eligible vehicles and batteries, the battery replacement price of {{price:battery-replacement}} + tax covers the battery and installing it. The {{dispatchFee}} dispatch fee is separate and charged once per job, and dispatch confirms your total before anyone is sent.",
+        a: "Yes. For eligible vehicles and batteries, the battery replacement price of {{price:battery-replacement}} covers the battery and installing it. The {{dispatchFee}} dispatch fee is separate and charged once per job, and dispatch confirms your total before anyone is sent.",
       },
       {
         q: "Is there a warranty on the new battery?",
@@ -223,7 +223,7 @@ export const GUIDES: Guide[] = [
         heading: "What it means for the price",
         paragraphs: [
           "A battery at the front of the engine bay can be swapped in minutes. One under a seat means the seat comes out first. One in a wheel well can mean removing the wheel liner. It's the same battery and a very different amount of work.",
-          "That is one reason battery pricing varies by vehicle and battery type. Battery replacement is {{price:battery-replacement}} + tax for eligible vehicles and batteries, installation included, plus the {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery that fits your car, and your total, before a driver sets off.",
+          "That is one reason battery pricing varies by vehicle and battery type. Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installation included, plus the {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery that fits your car, and your total, before a driver sets off.",
         ],
       },
       {
@@ -282,7 +282,7 @@ export const GUIDES: Guide[] = [
       {
         heading: "How we remove it",
         paragraphs: [
-          "A driver removes the locking lug nut on site so the wheel can come off. Wheel lock removal is {{price:rim-lock-removal}} + tax, plus the {{dispatchFee}} dispatch fee charged once per job ({{total:rim-lock-removal}} in total, plus tax).",
+          "A driver removes the locking lug nut on site so the wheel can come off. Wheel lock removal is {{price:rim-lock-removal}}, plus the {{dispatchFee}} dispatch fee charged once per job ({{total:rim-lock-removal}} in total).",
           "If you also need the spare put on, say so in your request so the driver comes ready for both jobs.",
         ],
       },
@@ -296,7 +296,7 @@ export const GUIDES: Guide[] = [
     faqs: [
       {
         q: "How much does wheel lock removal cost?",
-        a: "{{price:rim-lock-removal}} + tax, the published price, plus the {{dispatchFee}} dispatch fee charged once per job, so {{total:rim-lock-removal}} in total, plus tax. Dispatch confirms it when you request help.",
+        a: "{{price:rim-lock-removal}}, the published price, plus the {{dispatchFee}} dispatch fee charged once per job, so {{total:rim-lock-removal}} in total. Dispatch confirms it when you request help.",
       },
       {
         q: "Can you change my flat at the same visit?",

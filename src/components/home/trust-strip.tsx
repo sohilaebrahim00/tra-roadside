@@ -1,4 +1,4 @@
-import { ShieldCheck, Timer, Clock, Receipt } from "lucide-react";
+import { BadgeCheck, ShieldCheck, Timer, Clock, Receipt } from "lucide-react";
 import { Container } from "@/components/ui/container";
 
 const ITEMS = [
@@ -6,6 +6,7 @@ const ITEMS = [
   { icon: ShieldCheck, label: "100% Licensed & Insured" },
   { icon: Clock, label: "Available 24/7, 365 Days" },
   { icon: Receipt, label: "Upfront Pricing, No Surprise Fees" },
+  { icon: BadgeCheck, label: "No Membership, Pay Per Job" },
 ];
 
 export function TrustStrip() {

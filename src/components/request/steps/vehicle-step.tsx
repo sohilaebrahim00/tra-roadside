@@ -3,22 +3,11 @@
 import { useFormContext } from "react-hook-form";
 import { BatteryFull, ShieldCheck } from "lucide-react";
 import { StepShell } from "../step-shell";
-import { VEHICLE_TYPES, type VehicleType } from "@/lib/types/domain";
+import { VEHICLE_TYPES, VEHICLE_TYPE_LABELS } from "@/lib/types/domain";
 import { cn } from "@/lib/utils/cn";
 import { getService } from "@/lib/content/services";
 import { DISPATCH_FEE_TAG, servicePrice } from "@/lib/content/pricing";
 import { VIN_LENGTH, type CreateRequestInput } from "@/lib/validation/request";
-
-const VEHICLE_TYPE_LABELS: Record<VehicleType, string> = {
-  sedan: "Sedan",
-  suv: "SUV",
-  pickup_truck: "Pickup Truck",
-  van: "Van",
-  motorcycle: "Motorcycle",
-  box_truck: "Box Truck",
-  semi_truck: "Semi / 18-Wheeler",
-  other: "Other",
-};
 
 export function VehicleStep({ onNext, onBack }: { onNext: () => void; onBack: () => void }) {
   const { register, watch, setValue, trigger, formState: { errors } } = useFormContext<CreateRequestInput>();
@@ -49,7 +38,7 @@ export function VehicleStep({ onNext, onBack }: { onNext: () => void; onBack: ()
             <div>
               <p className="font-display text-base font-bold">Battery Replacement</p>
               <p className="mt-0.5 text-sm text-white/90">
-                {selectedService.priceLines.map((l) => `${l.label ? `${l.label} ` : ""}${servicePrice(l)} + tax`).join(" · ")} {DISPATCH_FEE_TAG}
+                {selectedService.priceLines.map((l) => `${l.label ? `${l.label} ` : ""}${servicePrice(l)}`).join(" · ")} {DISPATCH_FEE_TAG}
               </p>
             </div>
           </div>

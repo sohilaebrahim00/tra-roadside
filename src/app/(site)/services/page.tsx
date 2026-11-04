@@ -15,12 +15,12 @@ import { CinematicBackgroundVideo } from "@/components/media/cinematic-backgroun
 import { PricingDisclaimer } from "@/components/ui/pricing-disclaimer";
 import { Icon3D } from "@/components/ui/icon-3d";
 import { ServiceSearch } from "@/components/search/service-search";
-import { priceBadge } from "@/lib/content/pricing";
+import { DISPATCH_FEE_USD, priceBadge, pricedTitle, startingPrice } from "@/lib/content/pricing";
+import { leadGlance } from "@/lib/content/quick-answers";
 
 export const metadata: Metadata = {
-  title: "Roadside Assistance Services",
-  description:
-    "Jump starts, battery replacement, lockouts, flat tire changes and tire repair — 24/7 roadside assistance across the Dallas–Fort Worth Metroplex.",
+  title: { absolute: pricedTitle("Roadside Assistance Services DFW", startingPrice()) },
+  description: `${leadGlance()}, plus a flat ${DISPATCH_FEE_USD} dispatch fee. 24/7 roadside assistance across the Dallas–Fort Worth Metroplex. No membership.`,
   ...pageUrls("/services"),
 };
 

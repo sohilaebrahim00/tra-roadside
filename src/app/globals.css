@@ -51,7 +51,7 @@
   /* Layout constants referenced by fixed/sticky UI */
   --battery-strip-height: 2.5rem;
   --header-height: 4rem;
-  --mobile-action-bar-height: 4.25rem;
+  --mobile-action-bar-height: 5.5rem;
   --safe-bottom: env(safe-area-inset-bottom, 0px);
 }
 

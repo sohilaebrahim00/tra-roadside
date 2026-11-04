@@ -15,6 +15,8 @@ import { GoogleReviewsSection } from "@/components/home/google-reviews-section";
 import { FaqPreviewSection } from "@/components/home/faq-preview-section";
 import { FinalCtaSection } from "@/components/home/final-cta-section";
 import { ServicesSection } from "@/components/home/services-section";
+import { QuickAnswer } from "@/components/ui/quick-answer";
+import { homeAnswer } from "@/lib/content/quick-answers";
 
 // Code-split the GSAP ScrollTrigger section below the fold so its JS loads as
 // a separate chunk instead of bloating the bundle the hero/CTAs need to
@@ -43,6 +45,7 @@ export default function HomePage() {
       {/* Services first, so a customer sees what we do and can order it
           without scrolling past anything else; the battery offer follows. */}
       <ServicesSection />
+      <QuickAnswer content={homeAnswer()} framed />
       <BatteryPromoSection />
       <TrustStrip />
       {/* Social proof directly under the trust strip: live Places data when

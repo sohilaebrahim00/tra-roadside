@@ -80,7 +80,7 @@ export function ServiceJsonLd({
   areaServed?: string;
   /**
    * The service whose published price becomes the Offer: the service price
-   * plus the dispatch fee (once), before tax. Omit for pages with no price.
+   * plus the dispatch fee (once). Omit for pages with no price.
    */
   service?: ServiceContent;
 }) {

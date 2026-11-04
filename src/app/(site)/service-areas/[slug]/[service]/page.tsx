@@ -8,6 +8,10 @@ import { ScenarioCards, WhatWeNeed } from "@/components/city-service/scenario-ca
 import { LocalSection } from "@/components/city-service/local-section";
 import { ServiceNav } from "@/components/city-service/service-nav";
 import { FinalCta } from "@/components/city-service/final-cta";
+import { QuickAnswer } from "@/components/ui/quick-answer";
+import { ServiceCallSteps } from "@/components/ui/service-call-steps";
+import { DISPATCH_FEE_TAG, lowPrice, pricedTitle } from "@/lib/content/pricing";
+import { cityServiceAnswer, cityServiceFaqs } from "@/lib/content/quick-answers";
 import { getServiceArea, nearbyAreas } from "@/lib/content/business";
 import { getService } from "@/lib/content/services";
 import { getLocalArea } from "@/lib/content/local-data";
@@ -46,13 +50,18 @@ export async function generateMetadata({
   const content = getCityServicePage(slug, service);
   if (!content) return {};
   const url = `/service-areas/${slug}/${service}`;
+  const svc = getService(service);
+  const price = svc && lowPrice(svc);
+  const title = pricedTitle(content.title, price);
+  // The price leads, so it survives where Google cuts a long description.
+  const description = price ? `${svc.shortName} ${price} ${DISPATCH_FEE_TAG}. ${content.metaDescription}` : content.metaDescription;
   return {
-    title: content.title,
-    description: content.metaDescription,
+    title: { absolute: title },
+    description,
     alternates: { canonical: url },
     openGraph: {
-      title: content.title,
-      description: content.metaDescription,
+      title,
+      description,
       url,
       type: "website",
       images: [shareImageFor(service)],
@@ -75,7 +84,8 @@ export default async function CityServicePage({
   const nearby = nearbyAreas(city.slug, 4);
   const siblings = servicesForCity(city.slug).filter((p) => p.service !== service);
   const base = `${env.siteUrl}`;
-  const faqItems = content.faqs.map((f, i) => ({
+  const faqs = [...content.faqs, ...cityServiceFaqs(svc, city, content.faqs)];
+  const faqItems = faqs.map((f, i) => ({
     id: `${city.slug}-${svc.slug}-${i}`,
     category: `${svc.name} — ${city.name}`,
     question: f.q,
@@ -99,7 +109,7 @@ export default async function CityServicePage({
         areaServed={`${city.name}, TX`}
         service={svc}
       />
-      <FaqJsonLd items={content.faqs} />
+      <FaqJsonLd items={faqs} />
 
       <ServiceHero city={city} svc={svc} h1={content.h1} intro={content.intro} />
 
@@ -109,6 +119,8 @@ export default async function CityServicePage({
           the closing band already cover. */}
       <section className="bg-paper-50 py-14 sm:py-18">
         <Container size="narrow" className="max-w-4xl space-y-14 sm:space-y-18">
+          <QuickAnswer content={cityServiceAnswer(svc, city, local, nearby)} />
+
           <ScenarioCards city={city} scenarios={content.scenarios} />
 
           <LocalSection
@@ -120,6 +132,8 @@ export default async function CityServicePage({
           />
 
           <WhatWeNeed svc={svc} />
+
+          <ServiceCallSteps title={`How a ${city.name} service call works`} />
 
           <section>
             <h2 className="font-display text-2xl font-semibold text-ink-950 sm:text-[1.75rem]">

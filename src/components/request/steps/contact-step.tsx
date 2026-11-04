@@ -3,6 +3,7 @@
 import { useFormContext } from "react-hook-form";
 import Link from "next/link";
 import { StepShell } from "../step-shell";
+import { SmsConsentText } from "../sms-consent-text";
 import { CONTACT_METHODS, type ContactMethod } from "@/lib/types/domain";
 import { cn } from "@/lib/utils/cn";
 import type { CreateRequestInput } from "@/lib/validation/request";
@@ -84,20 +85,7 @@ export function ContactStep({ onNext, onBack }: { onNext: () => void; onBack: ()
             onChange={(e) => setValue("smsConsent", e.target.checked)}
             className="mt-0.5 h-5 w-5 shrink-0 rounded border-ink-950/25 text-red-600 focus:ring-red-600"
           />
-          <span>
-            I agree to receive automated SMS updates about my request from TRA. Message frequency
-            varies with the status of your request (typically 4&ndash;6 messages per request).
-            Message and data rates may apply. Reply STOP to opt out, HELP for help. Consent is
-            optional and is not required to request or receive service. See{" "}
-            <Link href="/sms-terms" className="underline">
-              SMS Terms
-            </Link>{" "}
-            and{" "}
-            <Link href="/privacy-policy" className="underline">
-              Privacy Policy
-            </Link>
-            .
-          </span>
+          <SmsConsentText />
         </label>
 
         <label className="flex items-start gap-3 text-sm text-ink-700 dark:text-ink-200">

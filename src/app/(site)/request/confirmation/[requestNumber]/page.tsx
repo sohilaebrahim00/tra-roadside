@@ -21,6 +21,7 @@ export default async function ConfirmationPage({
     token?: string;
     demo?: string;
     emailLive?: string;
+    quick?: string;
     smsLive?: string;
     name?: string;
     service?: string;
@@ -28,7 +29,7 @@ export default async function ConfirmationPage({
   }>;
 }) {
   const { requestNumber } = await params;
-  const { token, demo, emailLive, smsLive, name, service, pickup } = await searchParams;
+  const { token, demo, emailLive, smsLive, name, service, pickup, quick } = await searchParams;
   const isDemo = demo === "1";
   const emailNotDelivered = !isDemo && emailLive === "0";
   const smsNotDelivered = !isDemo && smsLive === "0";
@@ -52,7 +53,7 @@ export default async function ConfirmationPage({
           </h1>
           <p className="mt-2 text-ink-600 dark:text-ink-200">
             Status: <span className="font-semibold text-ink-950 dark:text-white">Received</span> — dispatch is
-            reviewing it now. We&apos;ll text and email you as soon as a driver is on the way.
+            reviewing it now. We&apos;ll {quick ? "call or text" : "text and email"} you as soon as a driver is on the way.
           </p>
 
           <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-ink-950/10 px-4 py-2 font-mono text-sm font-semibold text-ink-900 dark:border-white/15 dark:text-white">

@@ -14,6 +14,8 @@ import { locationHubsForCity } from "@/lib/content/location-hubs";
 import { env } from "@/lib/env";
 import { Icon3D } from "@/components/ui/icon-3d";
 import { HeroBackdrop } from "@/components/brand/hero-backdrop";
+import { pricedTitle, startingPrice } from "@/lib/content/pricing";
+import { pricesInWords } from "@/lib/content/quick-answers";
 
 export function generateStaticParams() {
   return SERVICE_AREAS.map((c) => ({ slug: c.slug }));
@@ -28,8 +30,8 @@ export async function generateMetadata({
   const city = getServiceArea(slug);
   if (!city) return {};
   return {
-    title: `Roadside Assistance in ${city.name}, TX`,
-    description: `24/7 roadside assistance in ${city.name}, Texas — jump starts, battery replacement, flat tires, tire repair, lockouts, and more. Request help online with live driver tracking.`,
+    title: { absolute: pricedTitle(`Roadside Assistance ${city.name} TX`, startingPrice()) },
+    description: `24/7 roadside assistance in ${city.name}, Texas: ${pricesInWords()}. No membership. Call ${BUSINESS.phoneDisplay}.`,
     ...pageUrls(`/service-areas/${city.slug}`),
   };
 }

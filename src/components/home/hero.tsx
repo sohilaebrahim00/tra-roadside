@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef } from "react";
-import { Phone, LifeBuoy, Radio } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Phone, LifeBuoy, Radio, Star } from "lucide-react";
 import { useGSAP } from "@gsap/react";
 import { Button } from "@/components/ui/button";
 import { BUSINESS, SERVICE_AREAS } from "@/lib/content/business";
@@ -10,7 +10,8 @@ import { MagneticButton } from "@/components/ui/magnetic-button";
 import { CinematicBackgroundVideo } from "@/components/media/cinematic-background-video";
 import { HeroQuickRequest } from "./hero-quick-request";
 import { gsap } from "@/lib/gsap/register";
-import { DISPATCH_FEE_HEADLINE, DISPATCH_FEE_TAG, glanceLine, headlineLine, servicePrice } from "@/lib/content/pricing";
+import { REVIEW_SNAPSHOT } from "@/lib/content/google-reviews";
+import { DISPATCH_FEE_HEADLINE, DISPATCH_FEE_TAG, glanceLine, lowPrice } from "@/lib/content/pricing";
 
 /**
  * The home hero: what we do, where, roughly what it costs, and how to ask for
@@ -34,7 +35,7 @@ export function Hero() {
 
   const GLANCE = ["jump-start", "lockout", "tire-repair-plug-patch", "battery-replacement"].flatMap((slug) => getService(slug) ?? []);
   const batteryService = getService("battery-replacement");
-  const batteryLine = batteryService && headlineLine(batteryService);
+  const batteryPrice = batteryService && lowPrice(batteryService);
 
   useGSAP(
     () => {
@@ -69,7 +70,8 @@ export function Hero() {
             className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-white/85"
           >
             <Radio className="h-3.5 w-3.5 animate-pulse text-amber-400 motion-reduce:animate-none" aria-hidden="true" />
-            24/7 Roadside Assistance
+            Open 24/7
+            <DallasTime />
           </span>
 
           <h1
@@ -90,6 +92,17 @@ export function Hero() {
           <p ref={paraRef} className="mt-4 max-w-lg text-base text-white/75 sm:mt-6 sm:text-lg">
             Local roadside assistance across Dallas–Fort Worth. Request help, share your location, and
             track your driver from the moment they&apos;re dispatched.
+          </p>
+
+          <p className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-semibold text-white/90">
+            <span className="inline-flex items-center gap-1">
+              <Star className="h-4 w-4 fill-amber-400 text-amber-400" aria-hidden="true" />
+              {REVIEW_SNAPSHOT.rating.toFixed(1)} on Google ({REVIEW_SNAPSHOT.total}+ reviews)
+            </span>
+            <span aria-hidden="true">·</span>
+            <span>No membership</span>
+            <span aria-hidden="true">·</span>
+            <span>Local DFW dispatch</span>
           </p>
 
           <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row">
@@ -117,7 +130,7 @@ export function Hero() {
           >
             <Fact label="Dispatch" value="24/7" />
             <Fact label="DFW cities" value={String(SERVICE_AREAS.length)} />
-            {batteryLine && <Fact label="Battery replacement" value={servicePrice(batteryLine)} note={`+ tax ${DISPATCH_FEE_TAG}`} />}
+            {batteryPrice && <Fact label="Battery" value={batteryPrice} note={DISPATCH_FEE_TAG} />}
             <Fact label="Driver tracking" value="Live" accent />
           </dl>
           {/* The pricing banner from the owner's brief: the fee on its own, so
@@ -125,7 +138,7 @@ export function Hero() {
           <p className="mt-4 max-w-2xl text-sm font-semibold text-white/90">{glanceLine(GLANCE)}</p>
           <p className="mt-2 inline-flex flex-wrap items-center gap-x-2 gap-y-1 rounded-xl bg-red-600 px-4 py-2 text-sm font-semibold text-white">
             <span className="font-display font-bold">{DISPATCH_FEE_HEADLINE}</span>
-            <span className="font-normal text-white/90">charged once per job · prices before tax</span>
+            <span className="font-normal text-white/90">charged once per job</span>
           </p>
         </div>
 
@@ -136,6 +149,21 @@ export function Hero() {
       </div>
     </section>
   );
+}
+
+/** The time in Dallas right now: it tells a driver at 2 a.m. that "open" means now. Client-only, so it can't mismatch the server's render. */
+function DallasTime() {
+  const [time, setTime] = useState<string | null>(null);
+  useEffect(() => {
+    const tick = () => setTime(new Date().toLocaleTimeString("en-US", { timeZone: "America/Chicago", hour: "numeric", minute: "2-digit" }));
+    const first = setTimeout(tick, 0);
+    const every = setInterval(tick, 30_000);
+    return () => {
+      clearTimeout(first);
+      clearInterval(every);
+    };
+  }, []);
+  return time ? <span className="text-white/65">· {time} in Dallas</span> : null;
 }
 
 function Fact({ label, value, note, accent = false }: { label: string; value: string; note?: string; accent?: boolean }) {

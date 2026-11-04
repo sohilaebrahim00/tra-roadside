@@ -9,7 +9,9 @@ import { Button } from "@/components/ui/button";
 import { FaqAccordion } from "@/components/faq/faq-accordion";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd } from "@/components/seo/json-ld";
 import { SERVICES, getService } from "@/lib/content/services";
-import { DISPATCH_FEE_USD, TAX_NOTE, lowPrice, servicePrice } from "@/lib/content/pricing";
+import { DISPATCH_FEE_TAG, DISPATCH_FEE_USD, lowOf, lowPrice, pricedTitle, servicePrice } from "@/lib/content/pricing";
+import { serviceAnswer } from "@/lib/content/quick-answers";
+import { QuickAnswer } from "@/components/ui/quick-answer";
 import { SERVICE_ICONS } from "@/lib/content/service-icons";
 import { BUSINESS, SERVICE_AREAS } from "@/lib/content/business";
 import { citiesForService } from "@/lib/content/city-service-pages";
@@ -38,8 +40,8 @@ export async function generateMetadata({
   // description added the same 85-character tail to all ten summaries, which
   // put every one past 160 characters.
   return {
-    title: `${service.name}${lowPrice(service) ? ` ${lowPrice(service)}` : ""} in Dallas–Fort Worth, 24/7`,
-    description: `${service.summary} Available 24/7 across Dallas–Fort Worth.`,
+    title: { absolute: pricedTitle(`${service.name} DFW 24/7`, lowPrice(service)) },
+    description: `${service.name} ${lowPrice(service) ?? ""} ${DISPATCH_FEE_TAG}, 24/7 across Dallas–Fort Worth. ${service.summary} No membership. Call ${BUSINESS.phoneDisplay}.`,
     ...pageUrls(`/services/${service.slug}`, shareImageFor(service.slug)),
   };
 }
@@ -89,7 +91,8 @@ export default async function ServicePage({
                 <ul className="space-y-2">
                   {service.priceLines.map((line) => (
                     <li key={line.label ?? line.min} className="flex flex-wrap items-baseline gap-x-3 gap-y-0.5">
-                      <span className="font-display text-xl font-bold text-white">{servicePrice(line)} <span className="text-base font-semibold">+ tax</span></span>
+                      <span className="font-display text-xl font-bold text-white">{lowOf(line)}</span>
+                      {line.max !== undefined && <span className="text-sm font-semibold text-white/90">{servicePrice(line)}</span>}
                       {line.label && <span className="text-sm font-semibold text-white/90">{line.label}</span>}
                       {line.note && <span className="text-sm text-white/70">{line.note}</span>}
                     </li>
@@ -99,7 +102,6 @@ export default async function ServicePage({
                     <span className="text-sm font-semibold text-white/90">Dispatch fee, once per job</span>
                   </li>
                 </ul>
-                <p className="mt-3 text-sm text-white/70">{TAX_NOTE}</p>
                 {service.priceNote && <p className="mt-3 text-sm text-white/70">{service.priceNote}</p>}
               </div>
             )}
@@ -117,6 +119,8 @@ export default async function ServicePage({
           </div>
         </Container>
       </section>
+
+      <QuickAnswer content={serviceAnswer(service)} framed />
 
       {service.photos && (
         <section className="border-b border-ink-950/8 bg-paper-50 py-14 sm:py-20 dark:border-white/10 dark:bg-white/5">

@@ -6,16 +6,16 @@ import { BrandPattern } from "@/components/brand/brand-pattern";
 import { Button } from "@/components/ui/button";
 import { getService } from "@/lib/content/services";
 import { batteryReview } from "@/lib/content/google-reviews";
-import { DISPATCH_FEE_TAG, servicePrice } from "@/lib/content/pricing";
+import { DISPATCH_FEE_TAG, lowOf, servicePrice } from "@/lib/content/pricing";
 
 /**
  * The commercial center of the home page — batteries are the highest-margin
  * service, so this gets a full section directly below the Hero rather than
  * being one card among many in the services grid.
  *
- * The published figure is the battery replacement service price, before tax,
- * and never appears without the dispatch fee next to it: the site promises
- * upfront pricing, so the fee and the tax are stated where the price is.
+ * The published figure is the battery replacement service price, low end
+ * first, and never appears without the dispatch fee next to it: the site
+ * promises upfront pricing, so the fee is stated where the price is.
  */
 export function BatteryPromoSection() {
   const service = getService("battery-replacement");
@@ -46,9 +46,9 @@ export function BatteryPromoSection() {
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">Battery replacement</p>
                   <p className="mt-1.5 font-display text-6xl font-bold leading-none text-white sm:text-7xl">
-                    {servicePrice(service.priceLines[0])}
+                    {lowOf(service.priceLines[0])}
                   </p>
-                  <p className="mt-2 text-sm font-semibold text-white/85">+ tax {DISPATCH_FEE_TAG}</p>
+                  <p className="mt-2 text-sm font-semibold text-white/85">{servicePrice(service.priceLines[0])} {DISPATCH_FEE_TAG}</p>
                 </div>
                 <span className="mt-0.5 inline-flex shrink-0 items-center gap-1.5 rounded-full bg-red-600 px-3 py-1.5 text-[0.68rem] font-bold uppercase tracking-wider text-white">
                   <ShieldCheck className="h-3.5 w-3.5" aria-hidden="true" />

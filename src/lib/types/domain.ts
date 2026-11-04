@@ -83,6 +83,17 @@ export const VEHICLE_TYPES = [
 ] as const;
 export type VehicleType = (typeof VEHICLE_TYPES)[number];
 
+export const VEHICLE_TYPE_LABELS: Record<VehicleType, string> = {
+  sedan: "Sedan",
+  suv: "SUV",
+  pickup_truck: "Pickup Truck",
+  van: "Van",
+  motorcycle: "Motorcycle",
+  box_truck: "Box Truck",
+  semi_truck: "Semi / 18-Wheeler",
+  other: "Other",
+};
+
 export const CONTACT_METHODS = ["call", "sms", "email"] as const;
 export type ContactMethod = (typeof CONTACT_METHODS)[number];
 

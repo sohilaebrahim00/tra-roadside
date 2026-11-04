@@ -4,7 +4,7 @@ import { useFormContext } from "react-hook-form";
 import { Loader2 } from "lucide-react";
 import { StepShell } from "../step-shell";
 import { getService } from "@/lib/content/services";
-import { DISPATCH_FEE_USD, TAX_NOTE, expectedTotal, lineForVehicle, servicePrice } from "@/lib/content/pricing";
+import { DISPATCH_FEE_USD, expectedTotal, lineForVehicle, servicePrice } from "@/lib/content/pricing";
 import type { CreateRequestInput } from "@/lib/validation/request";
 import type { RequestStep } from "@/lib/validation/request";
 
@@ -33,7 +33,7 @@ export function ReviewStep({
       <div className="space-y-4">
         <SummaryRow
           label="Service"
-          value={service && line ? `${service.name} · ${servicePrice(line)} + tax` : service?.name ?? "—"}
+          value={service && line ? `${service.name} · ${servicePrice(line)}` : service?.name ?? "—"}
           onEdit={() => onEdit("service")}
         />
         <SummaryRow label="Location" value={values.pickupAddress || "—"} onEdit={() => onEdit("location")} />
@@ -68,7 +68,7 @@ export function ReviewStep({
             </div>
             <div className="flex justify-between gap-4 border-t border-ink-950/8 pt-1 dark:border-white/10">
               <dt className="font-semibold">Total</dt>
-              <dd className="font-bold">{expectedTotal(line)} + tax</dd>
+              <dd className="font-bold">{expectedTotal(line)}</dd>
             </div>
           </dl>
           {line.note && <p className="mt-1.5 text-xs text-ink-500 dark:text-ink-300">Service price: {line.note}.</p>}
@@ -76,7 +76,7 @@ export function ReviewStep({
             <p className="mt-1.5 text-xs text-ink-500 dark:text-ink-300">{service.priceNote}</p>
           )}
           <p className="mt-1 text-xs text-ink-500 dark:text-ink-300">
-            {TAX_NOTE} Dispatch confirms the final price for your vehicle before a driver is sent.
+            Dispatch confirms the final price for your vehicle before a driver is sent.
           </p>
         </div>
       )}

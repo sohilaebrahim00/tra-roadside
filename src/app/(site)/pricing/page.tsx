@@ -9,7 +9,10 @@ import { FaqAccordion } from "@/components/faq/faq-accordion";
 import { PricePanel } from "@/components/city-service/price-panel";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { SERVICES, getService } from "@/lib/content/services";
-import { DISPATCH_FEE_EXPLAINER, DISPATCH_FEE_HEADLINE, DISPATCH_FEE_USD, TAX_NOTE, exampleTotal, headlineLine, lowPrice, servicePrice } from "@/lib/content/pricing";
+import { DISPATCH_FEE_EXPLAINER, DISPATCH_FEE_HEADLINE, DISPATCH_FEE_USD, exampleTotal, headlineLine, lowPrice, pricedTitle, servicePrice, startingPrice } from "@/lib/content/pricing";
+import { pricesInWords, pricingAnswer, roadsideFaqs } from "@/lib/content/quick-answers";
+import { QuickAnswer } from "@/components/ui/quick-answer";
+import { ServiceCallSteps } from "@/components/ui/service-call-steps";
 import { BUSINESS } from "@/lib/content/business";
 import { batteryReview } from "@/lib/content/google-reviews";
 import { guidesForService } from "@/lib/content/guides";
@@ -23,15 +26,15 @@ import { HeroBackdrop } from "@/components/brand/hero-backdrop";
  * service pages use, so this page cannot disagree with them.
  *
  * Battery replacement leads, because it is the business's main earner. Every
- * price is a service price before tax, plus the dispatch fee once per job
- * (owner's pricing brief, 2026-11-03; tax decision, 2026-11-04).
+ * price is a service price, plus the dispatch fee once per job (owner's pricing
+ * brief, 2026-11-03).
  */
 
 const battery = getService("battery-replacement");
 
 export const metadata: Metadata = {
-  title: "Roadside Assistance Prices in Dallas–Fort Worth",
-  description: `TRA roadside prices across Dallas–Fort Worth: ${DISPATCH_FEE_HEADLINE.toLowerCase()}. Car batteries ${battery && headlineLine(battery) ? servicePrice(headlineLine(battery)!) : ""}, jump starts, lockouts, flat tires and tire repair.`,
+  title: { absolute: pricedTitle("Roadside Assistance Prices Dallas", startingPrice()) },
+  description: `Roadside prices across Dallas–Fort Worth, published: ${pricesInWords()}. No membership. Call ${BUSINESS.phoneDisplay}.`,
   ...pageUrls("/pricing", shareImageFor("battery-replacement")),
 };
 
@@ -43,15 +46,15 @@ const priceOf = (slug: Parameters<typeof getService>[0]) => {
   return line ? servicePrice(line) : "";
 };
 
+const ROADSIDE = roadsideFaqs();
+const shared = (...ids: string[]) => ROADSIDE.filter((f) => ids.includes(f.id)).map((f) => ({ q: f.question, a: f.answer }));
+
 const FAQS = [
   {
     q: `What is the ${DISPATCH_FEE_USD} dispatch fee?`,
     a: `${DISPATCH_FEE_EXPLAINER} It is added to the service price, never charged twice on one job, and never the whole cost of the service. For example: ${jumpStart && headlineLine(jumpStart) ? exampleTotal("a jump start", headlineLine(jumpStart)!) : ""}.`,
   },
-  {
-    q: "Is tax included in these prices?",
-    a: `No. ${TAX_NOTE}`,
-  },
+  ...shared("roadside-tow", "roadside-membership"),
   {
     q: "How do I get an exact price for my situation?",
     a: "Request help online or call us. The request form shows the expected total for your service before you send it, and dispatch confirms the price for your vehicle and location before a driver is sent.",
@@ -96,7 +99,7 @@ export default function PricingPage() {
           />
           <div className="mt-8 max-w-3xl rounded-2xl border border-white/15 bg-white/[0.06] p-5">
             <p className="font-display text-xl font-bold text-white sm:text-2xl">{DISPATCH_FEE_HEADLINE}</p>
-            <p className="mt-2 text-sm leading-relaxed text-white/80">{DISPATCH_FEE_EXPLAINER} {TAX_NOTE}</p>
+            <p className="mt-2 text-sm leading-relaxed text-white/80">{DISPATCH_FEE_EXPLAINER}</p>
             <ul className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
               {SERVICES.filter((svc) => lowPrice(svc)).map((svc) => (
                 <li key={svc.slug} className="rounded-xl bg-white/[0.07] px-3 py-2.5">
@@ -108,6 +111,8 @@ export default function PricingPage() {
           </div>
         </Container>
       </section>
+
+      <QuickAnswer content={pricingAnswer()} framed />
 
       {battery && (
         <section className="border-b border-ink-950/8 bg-paper-50 py-14 sm:py-20" aria-labelledby="battery-price">
@@ -190,6 +195,12 @@ export default function PricingPage() {
               </li>
             ))}
           </ul>
+        </Container>
+      </section>
+
+      <section className="border-t border-ink-950/8 py-14 sm:py-20">
+        <Container size="narrow" className="max-w-4xl">
+          <ServiceCallSteps title="What happens after you call or send a request" />
         </Container>
       </section>
 

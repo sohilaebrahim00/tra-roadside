@@ -2,6 +2,8 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { MobileActionBar } from "@/components/layout/mobile-action-bar";
 import { BatteryStrip } from "@/components/layout/battery-strip";
+import { QuickRequestHost } from "@/components/request/quick-request-host";
+import { AskLauncher } from "@/components/ask/ask-launcher";
 
 export default function SiteLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -25,6 +27,8 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
       </main>
       <SiteFooter />
       <MobileActionBar />
+      <AskLauncher />
+      <QuickRequestHost />
     </>
   );
 }

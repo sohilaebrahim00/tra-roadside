@@ -16,12 +16,12 @@ export function smsLine(label: string, value: string | null | undefined): string
 
 /**
  * The price breakdown for a text message, from SERVICES so it never drifts:
- * the service price, the dispatch fee on its own (added once), and the total,
- * with tax added to the final bill (owner's brief, 2026-11-03 and 2026-11-04):
+ * the service price, the dispatch fee on its own (added once), and the total
+ * (owner's brief, 2026-11-03):
  *
- *   "$49-$75 + $19 dispatch = $68-$94, plus tax"
- *   "$140 + $19 dispatch = $159, plus tax"           a semi truck jump start
- *   "From $129 + $19 dispatch = from $148, plus tax"
+ *   "$49-$75 + $19 dispatch = $68-$94"
+ *   "$140 + $19 dispatch = $159"           a semi truck jump start
+ *   "From $129 + $19 dispatch = from $148"
  *
  * A semi truck gets the line published for semi trucks where the service has
  * one. Ranges use a hyphen, never an en dash: either dash would switch the
@@ -34,5 +34,5 @@ export function smsPrice(service: Pick<ServiceContent, "priceLines">, vehicleTyp
   if (!line) return "";
   const price = formatAmount(line, "-");
   const total = formatAmount(plus(line, DISPATCH_FEE), "-", "from");
-  return `${price} + $${DISPATCH_FEE} dispatch = ${total}, plus tax`;
+  return `${price} + $${DISPATCH_FEE} dispatch = ${total}`;
 }

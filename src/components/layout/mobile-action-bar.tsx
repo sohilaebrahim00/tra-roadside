@@ -2,15 +2,14 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { Phone, LifeBuoy } from "lucide-react";
+import { Phone, MessageSquareText } from "lucide-react";
 import { BUSINESS } from "@/lib/content/business";
+import { NO_FLOATING_ACTIONS } from "@/lib/quick-request";
 import { cn } from "@/lib/utils/cn";
-
-const HIDDEN_PREFIXES = ["/admin", "/driver", "/request", "/track"];
 
 export function MobileActionBar() {
   const pathname = usePathname();
-  const hidden = HIDDEN_PREFIXES.some((p) => pathname?.startsWith(p));
+  const hidden = NO_FLOATING_ACTIONS.some((p) => pathname?.startsWith(p));
 
   if (hidden) return null;
 
@@ -44,10 +43,10 @@ export function MobileActionBar() {
         role="region"
         aria-label="Emergency actions"
       >
-        <div className="grid h-full grid-cols-2 gap-2 px-3 pt-2.5">
+        <div className="grid h-[3.25rem] grid-cols-2 gap-2 px-3 pt-2.5">
           <a
             href={BUSINESS.phoneHref}
-            className="flex items-center justify-center gap-2 rounded-xl border-2 border-ink-950 text-ink-950 text-base font-bold uppercase tracking-tight active:bg-ink-950/5"
+            className="flex items-center justify-center gap-2 whitespace-nowrap rounded-xl border-2 border-ink-950 text-ink-950 text-[0.82rem] font-bold uppercase tracking-tight active:bg-ink-950/5 min-[360px]:text-base"
           >
             <Phone className="h-5 w-5" aria-hidden="true" />
             Call Now
@@ -55,14 +54,17 @@ export function MobileActionBar() {
           <Link
             href="/request"
             className={cn(
-              "relative flex items-center justify-center gap-2 rounded-xl bg-red-600 text-base font-bold uppercase tracking-tight text-white active:bg-red-700",
+              "relative flex items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-red-600 text-[0.82rem] font-bold uppercase tracking-tight text-white active:bg-red-700 min-[360px]:text-base",
               "animate-pulse-ring"
             )}
           >
-            <LifeBuoy className="h-5 w-5" aria-hidden="true" />
-            Request Help
+            <MessageSquareText className="h-5 w-5" aria-hidden="true" />
+            Text a Request
           </Link>
         </div>
+        <p className="mt-1.5 truncate px-3 text-center text-[0.7rem] font-medium text-ink-600">
+          A real dispatcher replies, 24/7. No membership needed.
+        </p>
       </div>
     </>
   );

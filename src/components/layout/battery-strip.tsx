@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { BatteryFull, ArrowRight } from "lucide-react";
 import { getService } from "@/lib/content/services";
-import { DISPATCH_FEE_TAG, headlineLine, servicePrice } from "@/lib/content/pricing";
+import { DISPATCH_FEE_TAG, DISPATCH_FEE_USD, lowPrice } from "@/lib/content/pricing";
 
 /**
  * Slim commercial strip pinned above the site header.
@@ -20,9 +20,8 @@ export function BatteryStrip() {
   // From SERVICES rather than a literal, so a price change cannot leave the
   // one strip on every page quoting the old figure.
   const service = getService("battery-replacement");
-  const line = service && headlineLine(service);
-  if (!line) return null;
-  const price = servicePrice(line);
+  const price = service && lowPrice(service);
+  if (!price) return null;
 
   return (
     // An aside so the strip sits in a landmark like the rest of the page
@@ -33,8 +32,8 @@ export function BatteryStrip() {
           <BatteryFull className="h-4 w-4 shrink-0 text-amber-400" aria-hidden="true" />
           <span className="truncate">
             <span className="font-semibold">Car batteries</span>
-            <span className="hidden sm:inline"> {price} + tax, installed · {DISPATCH_FEE_TAG}</span>
-            <span className="sm:hidden"> {price} + tax · {DISPATCH_FEE_TAG}</span>
+            <span className="hidden sm:inline"> {price}, installed · {DISPATCH_FEE_TAG}</span>
+            <span className="sm:hidden"> {price} + {DISPATCH_FEE_USD}</span>
           </span>
         </p>
 

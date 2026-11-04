@@ -8,6 +8,7 @@ import { SERVICES, getService } from "@/lib/content/services";
 import { SERVICE_ICONS } from "@/lib/content/service-icons";
 import { DISPATCH_FEE_TAG, expectedTotal, lineForVehicle, priceBadge, servicePrice } from "@/lib/content/pricing";
 import { useGeolocation } from "@/lib/hooks/use-geolocation";
+import type { QuickRequestVehicle } from "@/lib/quick-request";
 import { quickRequestSchema, VIN_LENGTH } from "@/lib/validation/request";
 import { VEHICLE_TYPES, VEHICLE_TYPE_LABELS, type LocationSource, type VehicleType } from "@/lib/types/domain";
 import { cn } from "@/lib/utils/cn";
@@ -22,6 +23,36 @@ const URGENCY = [
   { value: "Scheduled", hint: "Flexible" },
 ];
 const SPOTS = ["Driveway", "Parking lot", "Street", "Highway shoulder", "Garage"];
+
+/** Name, phone, email and vehicle, kept on the customer's own device for the next time. */
+const REMEMBER_KEY = "tra-quick-request-me";
+
+interface RememberedMe {
+  fullName?: string;
+  phone?: string;
+  email?: string;
+  vehicleYear?: string;
+  vehicleMake?: string;
+  vehicleModel?: string;
+  vehicleType?: VehicleType;
+}
+
+function loadMe(): RememberedMe {
+  try {
+    return JSON.parse(window.localStorage.getItem(REMEMBER_KEY) ?? "{}") as RememberedMe;
+  } catch {
+    return {};
+  }
+}
+
+function saveMe(me: RememberedMe | null) {
+  try {
+    if (me) window.localStorage.setItem(REMEMBER_KEY, JSON.stringify(me));
+    else window.localStorage.removeItem(REMEMBER_KEY);
+  } catch {
+    // Private browsing: the form simply won't remember.
+  }
+}
 
 interface AddressMatch {
   address: string;
@@ -47,7 +78,7 @@ const labelClass = "block text-sm font-semibold text-ink-900";
  * A native <dialog>, for its built-in focus trap, Esc to close and top-layer
  * stacking. Forced to the light scheme, like the rest of the public site.
  */
-export function QuickRequestSheet({ initialService, onClose }: { initialService?: string; onClose: () => void }) {
+export function QuickRequestSheet({ initialService, initialVehicle, onClose }: { initialService?: string; initialVehicle?: QuickRequestVehicle; onClose: () => void }) {
   const router = useRouter();
   const dialogRef = useRef<HTMLDialogElement>(null);
   const clientRequestId = useRef(crypto.randomUUID()).current;
@@ -59,14 +90,17 @@ export function QuickRequestSheet({ initialService, onClose }: { initialService?
   const [coords, setCoords] = useState<{ lat: number; lng: number } | null>(null);
   const [locationSource, setLocationSource] = useState<LocationSource>("typed");
   const [matches, setMatches] = useState<AddressMatch[]>([]);
-  const [fullName, setFullName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
-  const [vehicleYear, setVehicleYear] = useState("");
-  const [vehicleMake, setVehicleMake] = useState("");
-  const [vehicleModel, setVehicleModel] = useState("");
+  // The sheet only ever renders in the browser (ssr: false in the host).
+  const [me] = useState(loadMe);
+  const [remembered, setRemembered] = useState(Boolean(me.phone));
+  const [fullName, setFullName] = useState(me.fullName ?? "");
+  const [phone, setPhone] = useState(me.phone ?? "");
+  const [email, setEmail] = useState(me.email ?? "");
+  const [vehicleYear, setVehicleYear] = useState(initialVehicle?.year ?? me.vehicleYear ?? "");
+  const [vehicleMake, setVehicleMake] = useState(initialVehicle?.make ?? me.vehicleMake ?? "");
+  const [vehicleModel, setVehicleModel] = useState(initialVehicle?.model ?? me.vehicleModel ?? "");
   const [vehicleVin, setVehicleVin] = useState("");
-  const [vehicleType, setVehicleType] = useState<VehicleType>("sedan");
+  const [vehicleType, setVehicleType] = useState<VehicleType>(me.vehicleType ?? "sedan");
   const [spot, setSpot] = useState("");
   const [unsafe, setUnsafe] = useState(false);
   const [method, setMethod] = useState<"sms" | "call">("sms");
@@ -216,6 +250,7 @@ export function QuickRequestSheet({ initialService, onClose }: { initialService?
         throw new Error(err.error ?? "Something went wrong. Please try again.");
       }
       const data = await res.json();
+      saveMe({ fullName: fullName.trim(), phone: phone.trim(), email: email.trim(), vehicleYear: vehicleYear.trim(), vehicleMake: vehicleMake.trim(), vehicleModel: vehicleModel.trim(), vehicleType });
       const params = new URLSearchParams({ token: data.trackingToken, quick: "1" });
       if (data.demo) params.set("demo", "1");
       if (data.channelsLive?.sms === false) params.set("smsLive", "0");
@@ -366,6 +401,29 @@ export function QuickRequestSheet({ initialService, onClose }: { initialService?
             )}
             {errors.pickupAddress && <FieldError>Enter where the vehicle is, or tap Use my current location.</FieldError>}
           </div>
+
+          {remembered && (
+            <p className="flex items-center justify-between gap-3 rounded-xl bg-white px-3.5 py-2.5 text-sm text-ink-700">
+              Welcome back. We filled in your details from this phone.
+              <button
+                type="button"
+                onClick={() => {
+                  saveMe(null);
+                  setRemembered(false);
+                  setFullName("");
+                  setPhone("");
+                  setEmail("");
+                  setVehicleYear("");
+                  setVehicleMake("");
+                  setVehicleModel("");
+                  setVehicleType("sedan");
+                }}
+                className="shrink-0 font-semibold text-red-600 underline"
+              >
+                Not you?
+              </button>
+            </p>
+          )}
 
           <div className="grid gap-3 sm:grid-cols-2">
             <div>

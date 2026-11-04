@@ -15,6 +15,7 @@ import { FaqPreviewSection } from "@/components/home/faq-preview-section";
 import { FinalCtaSection } from "@/components/home/final-cta-section";
 import { ServicesSection } from "@/components/home/services-section";
 import { QuickAnswer } from "@/components/ui/quick-answer";
+import { PopularPagesSection } from "@/components/home/popular-pages-section";
 import { homeAnswer } from "@/lib/content/quick-answers";
 
 // Code-split the GSAP ScrollTrigger section below the fold so its JS loads as
@@ -58,6 +59,7 @@ export default function HomePage() {
       <GallerySection />
       <VideoSection />
       <FaqPreviewSection />
+      <PopularPagesSection />
       <FinalCtaSection />
     </>
   );

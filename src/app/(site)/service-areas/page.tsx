@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { SERVICE_AREAS } from "@/lib/content/business";
 import { env } from "@/lib/env";
 import { HeroBackdrop } from "@/components/brand/hero-backdrop";
+import { CoverageMapLoader } from "@/components/maps/coverage-map-loader";
 
 export const metadata: Metadata = {
   title: "Service Areas — Dallas–Fort Worth Metroplex",
@@ -39,7 +40,8 @@ export default function ServiceAreasPage() {
       </section>
 
       <section className="py-16 sm:py-24">
-        <Container>
+        <Container className="space-y-10">
+          <CoverageMapLoader />
           <div className="grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
             {SERVICE_AREAS.map((city) => (
               <Link

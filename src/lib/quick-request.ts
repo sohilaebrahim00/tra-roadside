@@ -7,12 +7,23 @@ const QUICK_REQUEST_EVENT = "tra:quick-request";
 /** Routes that have no floating Call / Text / Ask actions. */
 export const NO_FLOATING_ACTIONS = ["/admin", "/driver", "/request", "/track"];
 
-export function openQuickRequest(service?: string) {
-  window.dispatchEvent(new CustomEvent(QUICK_REQUEST_EVENT, { detail: { service } }));
+export interface QuickRequestVehicle {
+  year: string;
+  make: string;
+  model: string;
 }
 
-export function onQuickRequest(listener: (service?: string) => void): () => void {
-  const handler = (e: Event) => listener((e as CustomEvent<{ service?: string }>).detail?.service);
+export interface QuickRequestOpen {
+  service?: string;
+  vehicle?: QuickRequestVehicle;
+}
+
+export function openQuickRequest(service?: string, vehicle?: QuickRequestVehicle) {
+  window.dispatchEvent(new CustomEvent<QuickRequestOpen>(QUICK_REQUEST_EVENT, { detail: { service, vehicle } }));
+}
+
+export function onQuickRequest(listener: (open: QuickRequestOpen) => void): () => void {
+  const handler = (e: Event) => listener((e as CustomEvent<QuickRequestOpen>).detail ?? {});
   window.addEventListener(QUICK_REQUEST_EVENT, handler);
   return () => window.removeEventListener(QUICK_REQUEST_EVENT, handler);
 }

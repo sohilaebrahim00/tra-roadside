@@ -12,6 +12,7 @@ import { SERVICES, getService } from "@/lib/content/services";
 import { DISPATCH_FEE_TAG, DISPATCH_FEE_USD, lowOf, lowPrice, pricedTitle, servicePrice } from "@/lib/content/pricing";
 import { serviceAnswer } from "@/lib/content/quick-answers";
 import { QuickAnswer } from "@/components/ui/quick-answer";
+import { topicsForService } from "@/lib/content/topic-pages";
 import { SERVICE_ICONS } from "@/lib/content/service-icons";
 import { BUSINESS, SERVICE_AREAS } from "@/lib/content/business";
 import { citiesForService } from "@/lib/content/city-service-pages";
@@ -41,7 +42,7 @@ export async function generateMetadata({
   // put every one past 160 characters.
   return {
     title: { absolute: pricedTitle(`${service.name} DFW 24/7`, lowPrice(service)) },
-    description: `${service.name} ${lowPrice(service) ?? ""} ${DISPATCH_FEE_TAG}, 24/7 across Dallas–Fort Worth. ${service.summary} No membership. Call ${BUSINESS.phoneDisplay}.`,
+    description: `${service.name}${lowPrice(service) ? ` ${lowPrice(service)} ${DISPATCH_FEE_TAG}` : ""}, 24/7 across Dallas–Fort Worth. ${service.summary} No membership. Call ${BUSINESS.phoneDisplay}.`,
     ...pageUrls(`/services/${service.slug}`, shareImageFor(service.slug)),
   };
 }
@@ -152,6 +153,37 @@ export default async function ServicePage({
                     unoptimized
                     className="h-auto w-full"
                   />
+                </li>
+              ))}
+            </ul>
+          </Container>
+        </section>
+      )}
+
+      {service.slug === "battery-replacement" && (
+        <section className="border-b border-ink-950/8 bg-paper-50 py-10 sm:py-12">
+          <Container className="flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <h2 className="font-display text-2xl font-semibold text-ink-950">Which battery fits your car?</h2>
+              <p className="mt-1 text-sm text-ink-600">Pick your vehicle or enter your VIN to see its battery size.</p>
+            </div>
+            <Button href="/battery-finder" variant="dark" size="md">
+              Open the Battery Finder
+            </Button>
+          </Container>
+        </section>
+      )}
+
+      {topicsForService(service.slug).length > 0 && (
+        <section className="border-b border-ink-950/8 py-12 sm:py-14 dark:border-white/10">
+          <Container>
+            <h2 className="font-display text-2xl font-semibold text-ink-950 dark:text-white">Common situations</h2>
+            <ul className="mt-5 flex flex-wrap gap-2">
+              {topicsForService(service.slug).map((t) => (
+                <li key={t.slug}>
+                  <Link href={`/roadside/${t.slug}`} className="inline-block rounded-full border border-ink-950/10 bg-white px-3.5 py-2 text-sm font-semibold text-ink-800 hover:border-red-600/40">
+                    {t.h1}
+                  </Link>
                 </li>
               ))}
             </ul>

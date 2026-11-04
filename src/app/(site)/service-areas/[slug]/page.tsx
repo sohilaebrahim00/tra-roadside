@@ -15,7 +15,10 @@ import { env } from "@/lib/env";
 import { Icon3D } from "@/components/ui/icon-3d";
 import { HeroBackdrop } from "@/components/brand/hero-backdrop";
 import { pricedTitle, startingPrice } from "@/lib/content/pricing";
-import { pricesInWords } from "@/lib/content/quick-answers";
+import { cityAnswer, pricesInWords } from "@/lib/content/quick-answers";
+import { getLocalArea } from "@/lib/content/local-data";
+import { topicsForCity } from "@/lib/content/topic-pages";
+import { QuickAnswer } from "@/components/ui/quick-answer";
 
 export function generateStaticParams() {
   return SERVICE_AREAS.map((c) => ({ slug: c.slug }));
@@ -46,7 +49,10 @@ export default async function ServiceAreaPage({
   if (!city) notFound();
 
   const nearby = nearbyAreas(city.slug, 5);
-  const hubs = locationHubsForCity(city.slug);
+  const hubs = [
+    ...locationHubsForCity(city.slug),
+    ...topicsForCity(city.slug).map((t) => ({ path: `/roadside/${t.slug}`, city: city.slug, name: t.h1, summary: t.eyebrow })),
+  ];
 
   return (
     <>
@@ -81,6 +87,8 @@ export default async function ServiceAreaPage({
           </div>
         </Container>
       </section>
+
+      <QuickAnswer content={cityAnswer(city, getLocalArea(city.slug), nearby)} framed />
 
       <section className="py-14 sm:py-20">
         <Container className="grid gap-12 lg:grid-cols-[1.4fr_1fr]">

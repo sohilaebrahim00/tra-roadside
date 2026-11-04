@@ -12,7 +12,7 @@ import type { LocalArea } from "@/lib/content/local-data";
  * dataset is deliberately uneven and must be allowed to be:
  *
  *   - corridors  : 2 (Bedford) to 7 (Dallas, Grand Prairie)
- *   - districts  : 11 (Dallas) down to none at all (18 of the 27 cities)
+ *   - districts  : 11 (Dallas) down to none at all (most of the smaller cities)
  *   - neighbors  : 3 for Dallas, exactly 1 for Arlington / Wylie / NRH /
  *                  Rockwall, and none for Denton
  *

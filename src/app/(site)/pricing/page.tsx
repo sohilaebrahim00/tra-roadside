@@ -13,6 +13,7 @@ import { DISPATCH_FEE_EXPLAINER, DISPATCH_FEE_HEADLINE, DISPATCH_FEE_USD, exampl
 import { pricesInWords, pricingAnswer, roadsideFaqs } from "@/lib/content/quick-answers";
 import { QuickAnswer } from "@/components/ui/quick-answer";
 import { ServiceCallSteps } from "@/components/ui/service-call-steps";
+import { PriceComparison } from "@/components/ui/price-comparison";
 import { BUSINESS } from "@/lib/content/business";
 import { batteryReview } from "@/lib/content/google-reviews";
 import { guidesForService } from "@/lib/content/guides";
@@ -113,6 +114,12 @@ export default function PricingPage() {
       </section>
 
       <QuickAnswer content={pricingAnswer()} framed />
+
+      <section className="border-b border-ink-950/8 py-12 sm:py-16">
+        <Container size="narrow" className="max-w-4xl">
+          <PriceComparison />
+        </Container>
+      </section>
 
       {battery && (
         <section className="border-b border-ink-950/8 bg-paper-50 py-14 sm:py-20" aria-labelledby="battery-price">

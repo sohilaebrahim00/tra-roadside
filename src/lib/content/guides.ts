@@ -16,6 +16,11 @@
  *    explaining something, not like marketing.
  */
 import type { ServiceTypeSlug } from "@/lib/types/domain";
+import { GUIDES_BATTERY } from "./guides-battery";
+import { GUIDES_ROADSIDE } from "./guides-roadside";
+import { GUIDES_SEASONAL } from "./guides-seasonal";
+import { GUIDES_VEHICLES } from "./guides-vehicles";
+import { GUIDES_HOWTO } from "./guides-howto";
 
 export interface GuideSection {
   heading: string;
@@ -52,7 +57,7 @@ const UNDER_SEAT_PHOTO = {
   height: 800,
 };
 
-export const GUIDES: Guide[] = [
+const CORE_GUIDES: Guide[] = [
   {
     slug: "car-battery-replacement-cost",
     title: "Car Battery Replacement Cost in DFW",
@@ -360,6 +365,8 @@ export const GUIDES: Guide[] = [
     services: ["jump-start", "battery-replacement"],
   },
 ];
+
+export const GUIDES: Guide[] = [...CORE_GUIDES, ...GUIDES_BATTERY, ...GUIDES_ROADSIDE, ...GUIDES_SEASONAL, ...GUIDES_VEHICLES, ...GUIDES_HOWTO];
 
 export function getGuide(slug: string): Guide | undefined {
   return GUIDES.find((g) => g.slug === slug);

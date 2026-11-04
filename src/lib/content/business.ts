@@ -77,7 +77,10 @@ export interface ServiceArea {
   county?: string;
 }
 
-/** The 27 DFW-area cities listed on the live site. */
+/**
+ * The 55 DFW-area cities TRA serves: the 27 originally listed on the live
+ * site, then 28 more added on 2026-11-04 (Fort Worth through Benbrook).
+ */
 export const SERVICE_AREAS: ServiceArea[] = [
   { slug: "dallas", name: "Dallas" },
   { slug: "arlington", name: "Arlington" },
@@ -106,6 +109,34 @@ export const SERVICE_AREAS: ServiceArea[] = [
   { slug: "rowlett", name: "Rowlett" },
   { slug: "sachse", name: "Sachse" },
   { slug: "wylie", name: "Wylie" },
+  { slug: "fort-worth", name: "Fort Worth" },
+  { slug: "southlake", name: "Southlake" },
+  { slug: "keller", name: "Keller" },
+  { slug: "colleyville", name: "Colleyville" },
+  { slug: "flower-mound", name: "Flower Mound" },
+  { slug: "mansfield", name: "Mansfield" },
+  { slug: "burleson", name: "Burleson" },
+  { slug: "cedar-hill", name: "Cedar Hill" },
+  { slug: "desoto", name: "DeSoto" },
+  { slug: "duncanville", name: "Duncanville" },
+  { slug: "lancaster", name: "Lancaster" },
+  { slug: "prosper", name: "Prosper" },
+  { slug: "celina", name: "Celina" },
+  { slug: "anna", name: "Anna" },
+  { slug: "melissa", name: "Melissa" },
+  { slug: "princeton", name: "Princeton" },
+  { slug: "waxahachie", name: "Waxahachie" },
+  { slug: "midlothian", name: "Midlothian" },
+  { slug: "red-oak", name: "Red Oak" },
+  { slug: "crowley", name: "Crowley" },
+  { slug: "kennedale", name: "Kennedale" },
+  { slug: "highland-park", name: "Highland Park" },
+  { slug: "university-park", name: "University Park" },
+  { slug: "little-elm", name: "Little Elm" },
+  { slug: "forney", name: "Forney" },
+  { slug: "haltom-city", name: "Haltom City" },
+  { slug: "saginaw", name: "Saginaw" },
+  { slug: "benbrook", name: "Benbrook" },
 ];
 
 export function getServiceArea(slug: string) {

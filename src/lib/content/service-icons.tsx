@@ -1,6 +1,6 @@
 import {
   BatteryCharging, CircleDot, KeyRound, Disc3,
-  BatteryFull, Drill, Wrench, Lock,
+  BatteryFull, Drill, Wrench, Lock, Nut, Gauge,
   type LucideIcon,
 } from "lucide-react";
 import type { ServiceTypeSlug } from "@/lib/types/domain";
@@ -14,4 +14,6 @@ export const SERVICE_ICONS: Record<ServiceTypeSlug, LucideIcon> = {
   "tire-replacement": Disc3,
   "stuck-screw-in-tire": Wrench,
   "rim-lock-removal": Lock,
+  "stripped-lug-nut-removal": Nut,
+  "valve-stem-replacement": Gauge,
 };

@@ -27,7 +27,9 @@ const KEYWORDS: Record<ServiceTypeSlug, string[]> = {
   "flat-tire-change": ["flat tire", "flat", "spare tire", "spare", "change tire", "tire change", "blown tire", "blowout"],
   "tire-replacement": ["tire replacement", "new tire", "replace tire", "damaged tire", "sidewall", "no spare", "tire"],
   "stuck-screw-in-tire": ["screw", "screw in tire", "nail", "nail in tire", "stuck screw", "something in tire"],
-  "rim-lock-removal": ["wheel lock", "rim lock", "locking lug nut", "lug nut", "wheel lock key", "lug key", "lost wheel lock key"],
+  "rim-lock-removal": ["wheel lock", "rim lock", "locking lug nut", "wheel lock key", "lug key", "lost wheel lock key"],
+  "stripped-lug-nut-removal": ["stripped lug", "stripped lug nut", "lug nut", "rounded lug nut", "seized lug nut", "lug nut wont come off", "stuck lug nut", "wrench slipping"],
+  "valve-stem-replacement": ["valve stem", "valve", "stem", "tire keeps losing air", "slow leak no nail", "cracked valve", "tpms stem", "air leak"],
 };
 
 /** Words too common to tell services apart ("my car has a flat" is about the flat). */

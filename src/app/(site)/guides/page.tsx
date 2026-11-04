@@ -14,11 +14,12 @@ import { HeroBackdrop } from "@/components/brand/hero-backdrop";
 export const metadata: Metadata = {
   title: "Car Battery and Roadside Guides",
   description:
-    "Plain answers from a DFW roadside crew: car battery costs and warning signs, jump starting an electric car, and what to do about a lost wheel lock key.",
+    "Plain answers from a DFW roadside crew: car battery costs and warning signs, flat tires, lockouts, jump starting an electric car, and what to do about a lost wheel lock key.",
   ...pageUrls("/guides", shareImageFor("battery-replacement")),
 };
 
 export default function GuidesPage() {
+  const topics = [...new Set(GUIDES.map((g) => g.topic))];
   return (
     <>
       <BreadcrumbJsonLd items={[{ name: "Home", url: env.siteUrl }, { name: "Guides", url: `${env.siteUrl}/guides` }]} />
@@ -36,9 +37,12 @@ export default function GuidesPage() {
       </section>
 
       <section className="py-14 sm:py-20">
-        <Container>
-          <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {GUIDES.map((g) => (
+        <Container className="space-y-14">
+          {topics.map((topic) => (
+          <div key={topic}>
+          <h2 className="font-display text-2xl font-semibold text-ink-950 sm:text-3xl">{topic}s</h2>
+          <ul className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {GUIDES.filter((g) => g.topic === topic).map((g) => (
               <li key={g.slug}>
                 <Link
                   href={`/guides/${g.slug}`}
@@ -56,7 +60,7 @@ export default function GuidesPage() {
                   )}
                   <div className="flex flex-1 flex-col p-5">
                     <p className="text-xs font-semibold uppercase tracking-widest text-red-600">{g.topic}</p>
-                    <h2 className="mt-2 font-display text-xl font-semibold text-ink-950 group-hover:text-red-600">{g.h1}</h2>
+                    <h3 className="mt-2 font-display text-xl font-semibold text-ink-950 group-hover:text-red-600">{g.h1}</h3>
                     <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-600">{fillPrices(g.metaDescription)}</p>
                     <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-red-600">
                       Read the guide <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -66,6 +70,8 @@ export default function GuidesPage() {
               </li>
             ))}
           </ul>
+          </div>
+          ))}
         </Container>
       </section>
     </>

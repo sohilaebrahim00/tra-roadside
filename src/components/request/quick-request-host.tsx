@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
-import { NO_FLOATING_ACTIONS, onQuickRequest } from "@/lib/quick-request";
+import { NO_FLOATING_ACTIONS, onQuickRequest, type QuickRequestOpen } from "@/lib/quick-request";
 
 // Loaded on first open, so the form adds nothing to the page's first load.
 const QuickRequestSheet = dynamic(() => import("./quick-request-sheet").then((m) => m.QuickRequestSheet), { ssr: false });
@@ -17,12 +17,12 @@ const QuickRequestSheet = dynamic(() => import("./quick-request-sheet").then((m)
  */
 export function QuickRequestHost() {
   const pathname = usePathname();
-  const [open, setOpen] = useState<{ service?: string } | null>(null);
+  const [open, setOpen] = useState<QuickRequestOpen | null>(null);
   const enabled = !NO_FLOATING_ACTIONS.some((p) => pathname?.startsWith(p));
 
   useEffect(() => {
     if (!enabled) return;
-    const stopListening = onQuickRequest((service) => setOpen({ service }));
+    const stopListening = onQuickRequest(setOpen);
 
     function onClick(e: MouseEvent) {
       if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
@@ -43,5 +43,5 @@ export function QuickRequestHost() {
   }, [enabled]);
 
   if (!enabled || !open) return null;
-  return <QuickRequestSheet initialService={open.service} onClose={() => setOpen(null)} />;
+  return <QuickRequestSheet initialService={open.service} initialVehicle={open.vehicle} onClose={() => setOpen(null)} />;
 }

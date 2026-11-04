@@ -520,6 +520,92 @@ export const SERVICES: ServiceContent[] = [
       },
     ],
   },
+  {
+    slug: "stripped-lug-nut-removal",
+    name: "Stripped Lug Nut Removal",
+    shortName: "Stripped Lug",
+    needsDestination: false,
+    // Added 2026-11-04 at the owner's request. No published price until the owner
+    // sets one: dispatch quotes it, plus the dispatch fee.
+    priceNote: "The price depends on how damaged the nut is and how many there are. Dispatch confirms it before a driver is sent.",
+    photos: [
+      {
+        src: "/images/rim-lock-wheel.webp",
+        alt: "A wheel lock lug nut recessed in the spoke of a dark alloy wheel, with scuffing around the lug hole.",
+        width: 810,
+        height: 540,
+      },
+    ],
+    summary: "A stripped, rounded or seized lug nut taken off so the wheel can come off.",
+    heroLine: "One bad lug nut shouldn't stop a tire change.",
+    problem:
+      "A lug wrench that keeps slipping usually means the nut is rounded off, often from an impact gun at a past tire job, or from rust. Forcing it makes it worse and can damage the stud or the wheel. A driver brings the tools to get it off where the car sits, so the tire job can go ahead.",
+    whileYouWait: [
+      "Stop turning the wrench: every slip rounds the nut a little more.",
+      "Check how many nuts on that wheel look damaged, so you can tell dispatch.",
+      "Stay clear of the roadway while you wait.",
+    ],
+    whatWeNeed: [
+      "Your exact location",
+      "Vehicle year, make, and model",
+      "How many lug nuts are damaged, and on which wheel",
+    ],
+    faqs: [
+      {
+        q: "Can I keep trying with a bigger wrench?",
+        a: "It's better not to. A wrench that slips rounds the nut further, and heavy force can snap the stud, which turns a small job into a repair.",
+      },
+      {
+        q: "Is this the same as losing my wheel lock key?",
+        a: "No. A wheel lock is a special locking nut that needs its key, and removing one is a separate service. A stripped lug nut is an ordinary nut that has been damaged. If you're not sure which you have, describe it when you request help.",
+      },
+      {
+        q: "Do I need this as well as a tire change?",
+        a: "If a damaged nut is stopping the wheel from coming off, yes. Mention it when you request a tire service so the driver comes prepared.",
+      },
+    ],
+  },
+  {
+    slug: "valve-stem-replacement",
+    name: "Valve Stem Replacement",
+    shortName: "Valve Stem",
+    needsDestination: false,
+    // Added 2026-11-04 at the owner's request. No published price until the owner
+    // sets one: dispatch quotes it, plus the dispatch fee.
+    priceNote: "The price depends on the type of stem: rubber, metal or one with a TPMS sensor. Dispatch confirms it before a driver is sent.",
+    photos: [
+      {
+        src: "/images/tire-repair-inflate.webp",
+        alt: "A technician in high-visibility workwear kneeling at a car's front tire, with a portable air compressor beside it.",
+        width: 1080,
+        height: 720,
+      },
+    ],
+    summary: "A cracked or leaking valve stem replaced at your car.",
+    heroLine: "A slow leak that isn't a puncture.",
+    problem:
+      "When a tire keeps losing air and there's no nail in it, the valve stem is a common cause. Rubber stems dry out and crack in the Texas heat, and a damaged stem can't hold pressure. Replacing the stem stops the leak without replacing the tire.",
+    whileYouWait: [
+      "Listen at the valve for a hiss, or brush on soapy water and look for bubbles.",
+      "Don't drive far on a tire that's losing air quickly.",
+      "Stay clear of the roadway while you wait.",
+    ],
+    whatWeNeed: [
+      "Your exact location",
+      "Vehicle year, make, and model",
+      "Which tire is losing air, and how fast",
+    ],
+    faqs: [
+      {
+        q: "How do I know it's the valve stem and not a puncture?",
+        a: "Soapy water brushed over the stem will bubble if that's where the air is escaping. If you can't tell, say so when you request help: a nail or screw is a different job.",
+      },
+      {
+        q: "Does my car have TPMS stems?",
+        a: "Most newer cars do, because the tire pressure sensor is built into the stem. Tell dispatch your vehicle's year, make and model and they can confirm the price for that type.",
+      },
+    ],
+  },
 ];
 
 export function getService(slug: string) {

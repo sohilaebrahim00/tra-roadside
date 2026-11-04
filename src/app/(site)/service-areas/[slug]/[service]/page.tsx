@@ -12,6 +12,7 @@ import { QuickAnswer } from "@/components/ui/quick-answer";
 import { ServiceCallSteps } from "@/components/ui/service-call-steps";
 import { DISPATCH_FEE_TAG, lowPrice, pricedTitle } from "@/lib/content/pricing";
 import { cityServiceAnswer, cityServiceFaqs } from "@/lib/content/quick-answers";
+import { bloqueCiudadServicio } from "@/lib/content/spanish";
 import { getServiceArea, nearbyAreas } from "@/lib/content/business";
 import { getService } from "@/lib/content/services";
 import { getLocalArea } from "@/lib/content/local-data";
@@ -85,6 +86,7 @@ export default async function CityServicePage({
   const siblings = servicesForCity(city.slug).filter((p) => p.service !== service);
   const base = `${env.siteUrl}`;
   const faqs = [...content.faqs, ...cityServiceFaqs(svc, city, content.faqs)];
+  const espanol = bloqueCiudadServicio(svc, city.name);
   const faqItems = faqs.map((f, i) => ({
     id: `${city.slug}-${svc.slug}-${i}`,
     category: `${svc.name} — ${city.name}`,
@@ -146,6 +148,13 @@ export default async function CityServicePage({
               <FaqAccordion items={faqItems} />
             </div>
           </section>
+
+          {espanol && (
+            <section lang="es" className="rounded-2xl border border-ink-950/8 bg-white p-5 sm:p-6">
+              <h2 className="font-display text-xl font-semibold text-ink-950">{espanol.titulo}</h2>
+              <p className="mt-2 text-sm leading-relaxed text-ink-600">{espanol.texto}</p>
+            </section>
+          )}
 
           <ServiceNav city={city} svc={svc} siblings={siblings} />
         </Container>

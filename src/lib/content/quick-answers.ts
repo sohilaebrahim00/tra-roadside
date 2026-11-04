@@ -53,6 +53,8 @@ const PRICE_QUESTION: Record<ServiceTypeSlug, string> = {
   "tire-replacement": "How much is a mobile tire replacement",
   "stuck-screw-in-tire": "How much does it cost to get a screw out of a tire",
   "rim-lock-removal": "How much is wheel lock removal",
+  "stripped-lug-nut-removal": "How much is stripped lug nut removal",
+  "valve-stem-replacement": "How much is a valve stem replacement",
 };
 
 /** How people ask who can help. */
@@ -65,6 +67,8 @@ const WHO_QUESTION: Record<ServiceTypeSlug, string> = {
   "tire-replacement": "Who brings and installs a new tire",
   "stuck-screw-in-tire": "Who can get a screw out of my tire",
   "rim-lock-removal": "Who can remove a wheel lock",
+  "stripped-lug-nut-removal": "Who can remove a stripped lug nut",
+  "valve-stem-replacement": "Who replaces a valve stem on site",
 };
 
 /** A service's price as a sentence reads it: "$49–$75, or $140 for semi trucks and 18-wheelers". */
@@ -74,6 +78,13 @@ function priceWords(svc: ServiceContent): string {
   const first = formatAmount(headline, "–", "from");
   const rest = variants.map((v) => `${formatAmount(v, "–", "from")} for ${(v.label ?? "").toLowerCase()}`);
   return [first, ...rest].join(", or ");
+}
+
+/** "Jump Start is $49–$75, plus the flat $19 dispatch fee charged once per job." */
+function priceSentence(svc: ServiceContent): string {
+  return headlineLine(svc)
+    ? `${svc.name} is ${priceWords(svc)}, plus the flat ${DISPATCH_FEE_USD} dispatch fee charged once per job.`
+    : `Dispatch confirms the price of ${svc.name.toLowerCase()} for your vehicle, plus the flat ${DISPATCH_FEE_USD} dispatch fee charged once per job.`;
 }
 
 function priceOf(slug: ServiceTypeSlug): string {
@@ -144,7 +155,7 @@ export function pricingAnswer(): QuickAnswerContent {
 export function serviceAnswer(svc: ServiceContent): QuickAnswerContent {
   return {
     question: `${PRICE_QUESTION[svc.slug]} in ${DFW}?`,
-    answer: `${svc.name} is ${priceWords(svc)}, plus the flat ${DISPATCH_FEE_USD} dispatch fee charged once per job. ${svc.priceCovers ?? ""} TRA comes to your car anywhere in ${DFW}, 24 hours a day, with no membership. Request online or call ${BUSINESS.phoneDisplay}.`.replace(/\s+/g, " "),
+    answer: `${priceSentence(svc)} ${svc.priceCovers ?? ""} TRA comes to your car anywhere in ${DFW}, 24 hours a day, with no membership. Request online or call ${BUSINESS.phoneDisplay}.`.replace(/\s+/g, " "),
     facts: [
       { label: "Service", value: svc.summary },
       { label: "Service area", value: coverageLine() },
@@ -162,16 +173,36 @@ export function cityServiceAnswer(svc: ServiceContent, city: ServiceArea, local:
   const neighbors = nearby.map((c) => c.name).join(", ");
   return {
     question: `${WHO_QUESTION[svc.slug]} in ${city.name}?`,
-    answer: `Texas Roadside Assistance sends a technician to your car in ${city.name}, TX, 24 hours a day, with no membership. ${svc.name} is ${priceWords(svc)}, plus the flat ${DISPATCH_FEE_USD} dispatch fee. Request online or call ${BUSINESS.phoneDisplay}.`,
+    answer: `Texas Roadside Assistance sends a technician to your car in ${city.name}, TX, 24 hours a day, with no membership. ${priceSentence(svc)} Request online or call ${BUSINESS.phoneDisplay}.`,
     facts: [
       { label: "Service", value: svc.summary },
       { label: "Service area", value: [`${city.name}, TX`, corridors && `including ${corridors}`, neighbors && `and nearby ${neighbors}`].filter(Boolean).join(", ") },
+      ...(local.zips?.length ? [{ label: "ZIP codes", value: local.zips.join(", ") }] : []),
       { label: "Availability", value: AVAILABILITY },
       { label: "Starting price", value: priceSummary(svc) ?? "Confirmed by dispatch" },
       { label: "Membership", value: MEMBERSHIP },
       CONTACT,
     ],
     note: svc.priceNote ?? NOTE,
+  };
+}
+
+export function cityAnswer(city: ServiceArea, local: LocalArea | undefined, nearby: readonly ServiceArea[]): QuickAnswerContent {
+  const facts: QuickFact[] = [
+    { label: "Hours", value: AVAILABILITY },
+    { label: "Starting prices", value: leadGlance() },
+    { label: "Dispatch fee", value: `${DISPATCH_FEE_USD} flat, once per job` },
+  ];
+  if (local?.corridors.length) facts.push({ label: "Major roads", value: local.corridors.slice(0, 6).join(", ") });
+  if (local?.districts.length) facts.push({ label: "Areas", value: local.districts.slice(0, 6).join(", ") });
+  if (local?.zips?.length) facts.push({ label: "ZIP codes", value: local.zips.join(", ") });
+  if (nearby.length) facts.push({ label: "Nearby", value: nearby.map((c) => c.name).join(", ") });
+  facts.push({ label: "Membership", value: MEMBERSHIP }, CONTACT);
+  return {
+    question: `Who can I call for roadside help in ${city.name}?`,
+    answer: `Texas Roadside Assistance sends a technician to your car in ${city.name}, TX, 24 hours a day, with no membership: ${pricesInWords()}. Request online or call ${BUSINESS.phoneDisplay}.`,
+    facts,
+    note: NOTE,
   };
 }
 
@@ -188,7 +219,7 @@ export function cityServiceFaqs(svc: ServiceContent, city: ServiceArea, existing
       : [
           {
             q: `${PRICE_QUESTION[svc.slug]} in ${city.name}?`,
-            a: `${svc.name} is ${priceWords(svc)}, plus the flat ${DISPATCH_FEE_USD} dispatch fee charged once per job. The price list is the same across ${DFW}, and dispatch confirms the price for your vehicle before a driver is sent.`,
+            a: `${priceSentence(svc)} The price list is the same across ${DFW}, and dispatch confirms the price for your vehicle before a driver is sent.`,
           },
         ]),
     {

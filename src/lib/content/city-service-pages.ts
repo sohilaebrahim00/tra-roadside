@@ -22,6 +22,11 @@
  *    page targets. They are not rendered as a keyword list.
  */
 
+import { PAGES_CORE } from "./city-service-pages-core";
+import { PAGES_TARRANT } from "./city-service-pages-tarrant";
+import { PAGES_SOUTH } from "./city-service-pages-south";
+import { PAGES_NORTH } from "./city-service-pages-north";
+
 export interface CityServiceContent {
   city: string;
   service: string;
@@ -45,7 +50,7 @@ export interface CityServiceContent {
   sourceUrls: string[];
 }
 
-export const CITY_SERVICE_PAGES: CityServiceContent[] = [
+const WRITTEN_FIRST: CityServiceContent[] = [
   // ===================== DALLAS =====================
   {
     city: "dallas",
@@ -3907,6 +3912,8 @@ export const CITY_SERVICE_PAGES: CityServiceContent[] = [
   // corridors for Farmers Branch, two for Sachse, no districts), and every
   // road on it already appears on the pages of the cities they border.
 ];
+
+export const CITY_SERVICE_PAGES: CityServiceContent[] = [...WRITTEN_FIRST, ...PAGES_CORE, ...PAGES_TARRANT, ...PAGES_SOUTH, ...PAGES_NORTH];
 
 const BY_KEY = new Map(CITY_SERVICE_PAGES.map((p) => [`${p.city}/${p.service}`, p]));
 

@@ -6,6 +6,7 @@ import { getBlogPosts } from "@/lib/data/blog";
 import { cityServicePairs } from "@/lib/content/city-service-pages";
 import { LOCATION_HUBS } from "@/lib/content/location-hubs";
 import { GUIDES } from "@/lib/content/guides";
+import { TOPIC_PAGES } from "@/lib/content/topic-pages";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = env.siteUrl;
@@ -17,6 +18,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/services",
     "/pricing",
     "/guides",
+    "/roadside",
+    "/es",
+    "/battery-finder",
     "/service-areas",
     "/how-it-works",
     "/about",
@@ -73,6 +77,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
+  const topicRoutes = TOPIC_PAGES.map((t) => ({
+    url: `${base}/roadside/${t.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
   const guideRoutes = GUIDES.map((g) => ({
     url: `${base}/guides/${g.slug}`,
     lastModified: new Date(`${g.updated}T12:00:00Z`),
@@ -93,6 +104,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...areaRoutes,
     ...cityServiceRoutes,
     ...locationHubRoutes,
+    ...topicRoutes,
     ...guideRoutes,
     ...postRoutes,
   ];

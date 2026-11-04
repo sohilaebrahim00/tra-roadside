@@ -220,11 +220,20 @@ export async function POST(req: NextRequest) {
       customerId = newCustomer.id;
     }
 
-    const { data: serviceTypeRow } = await supabase
+    let { data: serviceTypeRow } = await supabase
       .from("service_types")
       .select("id")
       .eq("slug", input.serviceSlug)
       .maybeSingle();
+    // A service added to SERVICES before its row exists still takes the request:
+    // a stranded customer shouldn't pay for a migration that hasn't run yet.
+    if (!serviceTypeRow) {
+      ({ data: serviceTypeRow } = await supabase
+        .from("service_types")
+        .insert({ slug: service.slug, name: service.name, needs_destination: service.needsDestination, description: service.summary, sort_order: 100 })
+        .select("id")
+        .single());
+    }
     if (!serviceTypeRow) {
       return NextResponse.json({ error: "Service is temporarily unavailable." }, { status: 400 });
     }

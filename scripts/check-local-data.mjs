@@ -9,7 +9,7 @@
  * build failure.
  *
  * Checks:
- *   1. exactly 27 areas, matching SERVICE_AREAS one-for-one
+ *   1. exactly 55 areas, matching SERVICE_AREAS one-for-one
  *   2. no unknown neighbour slugs
  *   3. no self-neighbours
  *   4. no duplicate neighbours
@@ -43,9 +43,9 @@ const areas = blocks.map((m) => ({
 const failures = [];
 const fail = (msg) => failures.push(msg);
 
-// 1. Exactly 27, matching SERVICE_AREAS.
-if (areas.length !== 27) fail(`expected 27 areas, parsed ${areas.length}`);
-if (SERVICE_SLUGS.length !== 27) fail(`expected 27 SERVICE_AREAS, found ${SERVICE_SLUGS.length}`);
+// 1. Exactly 55, matching SERVICE_AREAS.
+if (areas.length !== 55) fail(`expected 55 areas, parsed ${areas.length}`);
+if (SERVICE_SLUGS.length !== 55) fail(`expected 55 SERVICE_AREAS, found ${SERVICE_SLUGS.length}`);
 const known = new Set(areas.map((a) => a.slug));
 for (const s of SERVICE_SLUGS) if (!known.has(s)) fail(`SERVICE_AREAS has "${s}" with no local-data entry`);
 for (const a of areas) if (!SERVICE_SLUGS.includes(a.slug)) fail(`local-data has "${a.slug}" which is not a served city`);

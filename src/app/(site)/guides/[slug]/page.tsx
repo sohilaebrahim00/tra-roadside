@@ -48,7 +48,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
 
   const main = getService(guide.services[0]);
   const path = `/guides/${guide.slug}`;
-  const others = GUIDES.filter((g) => g.slug !== guide.slug);
+  const others = GUIDES.filter((g) => g.slug !== guide.slug && g.services.some((s) => guide.services.includes(s))).slice(0, 6);
   const faqs = guide.faqs.map((f) => ({ q: fillPrices(f.q), a: fillPrices(f.a) }));
 
   return (

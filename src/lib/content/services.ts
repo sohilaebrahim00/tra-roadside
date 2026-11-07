@@ -253,6 +253,16 @@ export const SERVICES: ServiceContent[] = [
     // (owner): the same price as the jump start's semi truck line.
     priceLines: [{ min: JUMP_START_SEMI.min, from: true, vehicleType: "semi_truck" }],
     priceCovers: "A heavy-duty jump start for the truck's batteries, labor included.",
+    // The business's own jump start footage (owner, 2026-10-18). No truck photo yet:
+    // replace it when the owner sends one.
+    photos: [
+      {
+        src: "/images/field/field-jump-start-booster.webp",
+        alt: "A technician in a high-visibility shirt and cap setting a red portable jump pack on the engine of a vehicle with its hood raised.",
+        width: 1080,
+        height: 1350,
+      },
+    ],
     priceNote: "The price depends on the truck and how many batteries it carries. Dispatch confirms it before a driver is sent.",
     summary: "Heavy-duty jump starts for semi trucks, 18-wheelers and other big rigs.",
     heroLine: "A big rig that won't start, started where it's parked.",

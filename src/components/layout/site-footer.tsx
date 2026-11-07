@@ -133,6 +133,7 @@ export function SiteFooter() {
             <li><Link href="/pricing" className="hover:text-white">Pricing</Link></li>
             <li><Link href="/roadside" className="hover:text-white">Roadside Help by Problem</Link></li>
             <li><Link href="/battery-finder" className="hover:text-white">Battery Finder</Link></li>
+            <li><Link href="/glossary" className="hover:text-white">Roadside Glossary</Link></li>
             <li><Link href="/guides" className="hover:text-white">Battery &amp; Roadside Guides</Link></li>
             <li><Link href="/es" lang="es" className="hover:text-white">En español</Link></li>
             <li><Link href="/gallery" className="hover:text-white">Gallery</Link></li>

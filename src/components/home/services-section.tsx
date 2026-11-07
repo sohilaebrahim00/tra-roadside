@@ -37,9 +37,11 @@ function cardPhoto(s: ServiceContent) {
   return s.photos?.[0];
 }
 
+/** Battery first, the main service, and the big-rig jump start beside it (owner, 2026-11-07). */
+const FIRST = ["battery-replacement", "semi-truck-jump-start"];
 const ORDERED = [
-  ...SERVICES.filter((s) => s.slug === "battery-replacement"),
-  ...SERVICES.filter((s) => s.slug !== "battery-replacement"),
+  ...FIRST.flatMap((slug) => SERVICES.filter((s) => s.slug === slug)),
+  ...SERVICES.filter((s) => !FIRST.includes(s.slug)),
 ];
 
 export function ServicesSection() {

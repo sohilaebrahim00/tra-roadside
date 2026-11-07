@@ -13,6 +13,8 @@ import { DISPATCH_FEE_TAG, DISPATCH_FEE_USD, lowOf, lowPrice, pricedTitle, servi
 import { serviceAnswer } from "@/lib/content/quick-answers";
 import { QuickAnswer } from "@/components/ui/quick-answer";
 import { topicsForService } from "@/lib/content/topic-pages";
+import { SERVICE_EXPLAINERS } from "@/lib/content/service-explainers";
+import { fillPrices } from "@/lib/content/price-tokens";
 import { SERVICE_ICONS } from "@/lib/content/service-icons";
 import { BUSINESS, SERVICE_AREAS } from "@/lib/content/business";
 import { citiesForService } from "@/lib/content/city-service-pages";
@@ -61,7 +63,9 @@ export default async function ServicePage({
   const withPage = new Set(citiesForService(service.slug));
   const guides = guidesForService(service.slug);
   const localCities = SERVICE_AREAS.filter((c) => withPage.has(c.slug));
-  const faqItems = service.faqs.map((f, i) => ({ id: `${service.slug}-${i}`, category: service.name, question: f.q, answer: f.a }));
+  const explainer = SERVICE_EXPLAINERS[service.slug];
+  const faqs = [...service.faqs, ...(explainer?.faqs ?? []).map((f) => ({ q: fillPrices(f.q), a: fillPrices(f.a) }))];
+  const faqItems = faqs.map((f, i) => ({ id: `${service.slug}-${i}`, category: service.name, question: f.q, answer: f.a }));
 
   return (
     <>
@@ -73,7 +77,7 @@ export default async function ServicePage({
         ]}
       />
       <ServiceJsonLd name={service.name} description={service.summary} path={`/services/${service.slug}`} service={service} />
-      {faqItems.length > 0 && <FaqJsonLd items={service.faqs} />}
+      {faqItems.length > 0 && <FaqJsonLd items={faqs} />}
 
       <section className="relative overflow-hidden border-b border-ink-950/8 bg-ink-950 py-14 text-white sm:py-20">
         <CinematicBackgroundVideo placement="service-detail-hero" video={getServiceVideo(service.slug)} overlay="strong" />
@@ -235,6 +239,24 @@ export default async function ServicePage({
                 </li>
               ))}
             </ul>
+
+            {explainer?.sections.map((section) => (
+              <div key={section.heading}>
+                <h2 className="mt-10 font-display text-2xl font-semibold text-ink-950 dark:text-white">{section.heading}</h2>
+                {section.paragraphs.map((p) => (
+                  <p key={p} className="mt-3 text-base leading-relaxed text-ink-600 dark:text-ink-200">
+                    {fillPrices(p)}
+                  </p>
+                ))}
+                {section.list && (
+                  <ul className="mt-3 list-disc space-y-1.5 pl-5 text-base leading-relaxed text-ink-600 dark:text-ink-200">
+                    {section.list.map((item) => (
+                      <li key={item}>{fillPrices(item)}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
 
             {faqItems.length > 0 && (
               <>

@@ -9,7 +9,7 @@ import { SERVICE_ICONS } from "@/lib/content/service-icons";
 import { DISPATCH_FEE_TAG, expectedTotal, lineForVehicle, priceBadge, servicePrice } from "@/lib/content/pricing";
 import { useGeolocation } from "@/lib/hooks/use-geolocation";
 import type { QuickRequestVehicle } from "@/lib/quick-request";
-import { quickRequestSchema, VIN_LENGTH } from "@/lib/validation/request";
+import { quickRequestSchema, VIN_LENGTH, cleanVin } from "@/lib/validation/request";
 import { VEHICLE_TYPES, VEHICLE_TYPE_LABELS, type LocationSource, type VehicleType } from "@/lib/types/domain";
 import { cn } from "@/lib/utils/cn";
 import { SmsConsentText } from "./sms-consent-text";
@@ -476,7 +476,7 @@ export function QuickRequestSheet({ initialService, initialVehicle, onClose }: {
                 <input
                   aria-label="VIN, optional"
                   value={vehicleVin}
-                  onChange={(e) => setVehicleVin(e.target.value.toUpperCase())}
+                  onChange={(e) => setVehicleVin(cleanVin(e.target.value))}
                   maxLength={VIN_LENGTH}
                   autoCapitalize="characters"
                   placeholder="VIN (optional, helps us bring the right battery)"

@@ -20,7 +20,7 @@ export function smsLine(label: string, value: string | null | undefined): string
  * (owner's brief, 2026-11-03):
  *
  *   "$49-$75 + $19 dispatch = $68-$94"
- *   "$140 + $19 dispatch = $159"           a semi truck jump start
+ *   "From $90 + $19 dispatch = from $109"  a semi truck jump start
  *   "From $129 + $19 dispatch = from $148"
  *
  * A semi truck gets the line published for semi trucks where the service has

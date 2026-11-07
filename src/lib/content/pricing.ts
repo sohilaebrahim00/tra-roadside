@@ -48,7 +48,7 @@ export const DISPATCH_FEE_EXPLAINER =
 /** "+ $19 dispatch" — the fee on its own, next to a service price. */
 export const DISPATCH_FEE_TAG = `+ ${DISPATCH_FEE_USD} dispatch`;
 
-/** "$49–$75", "From $75", "$140": a service price, without the fee. */
+/** "$49–$75", "From $75", "$70": a service price, without the fee. */
 export function servicePrice(a: Amount): string {
   return formatAmount(a, DASH);
 }

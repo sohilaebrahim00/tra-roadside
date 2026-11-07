@@ -8,6 +8,7 @@ import type { ServiceTypeSlug } from "@/lib/types/domain";
 export const SERVICE_PROBLEM: Record<ServiceTypeSlug, string> = {
   "battery-replacement": "Need a new battery",
   "jump-start": "Car won't start",
+  "semi-truck-jump-start": "Big rig won't start",
   lockout: "Locked out",
   "tire-repair-plug-patch": "Nail or slow leak",
   "flat-tire-change": "Flat tire",

@@ -10,7 +10,7 @@ import { formatAmount } from "./price-format";
  *   {{total:<service-slug>}}  that price with the dispatch fee added once:
  *                             "$258–$274", "$89", "from $148"
  *   {{price2:<service-slug>}}  the service's second line: the semi truck jump
- *                             start, the trunk lockout: "$140", "$120"
+ *                             start, the trunk lockout: "from $90", "$120"
  *   {{total2:<service-slug>}}  that line with the dispatch fee added once
  *   {{dispatchFee}}           "$19"
  *

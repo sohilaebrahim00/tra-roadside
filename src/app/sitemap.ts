@@ -21,6 +21,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/roadside",
     "/es",
     "/battery-finder",
+    "/glossary",
     "/service-areas",
     "/how-it-works",
     "/about",

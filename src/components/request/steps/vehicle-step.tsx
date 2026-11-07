@@ -7,7 +7,7 @@ import { VEHICLE_TYPES, VEHICLE_TYPE_LABELS } from "@/lib/types/domain";
 import { cn } from "@/lib/utils/cn";
 import { getService } from "@/lib/content/services";
 import { DISPATCH_FEE_TAG, servicePrice } from "@/lib/content/pricing";
-import { VIN_LENGTH, type CreateRequestInput } from "@/lib/validation/request";
+import { VIN_LENGTH, cleanVin, type CreateRequestInput } from "@/lib/validation/request";
 
 export function VehicleStep({ onNext, onBack }: { onNext: () => void; onBack: () => void }) {
   const { register, watch, setValue, trigger, formState: { errors } } = useFormContext<CreateRequestInput>();
@@ -117,9 +117,9 @@ export function VehicleStep({ onNext, onBack }: { onNext: () => void; onBack: ()
             <input
               {...vinField}
               onChange={(e) => {
-                // Uppercase as they type. Cursor stays put because the value
-                // is the same length — this is a case fold, not a reformat.
-                e.target.value = e.target.value.toUpperCase();
+                // Uppercase as they type, with O, Q and I read as the digits
+                // a VIN would have there.
+                e.target.value = cleanVin(e.target.value);
                 vinField.onChange(e);
               }}
               maxLength={VIN_LENGTH}

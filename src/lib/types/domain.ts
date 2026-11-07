@@ -7,6 +7,7 @@
 export const SERVICE_TYPE_SLUGS = [
   "battery-replacement",
   "jump-start",
+  "semi-truck-jump-start",
   "lockout",
   "tire-repair-plug-patch",
   "flat-tire-change",

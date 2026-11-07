@@ -7,7 +7,7 @@ import { BUSINESS } from "@/lib/content/business";
 import { getService } from "@/lib/content/services";
 import { DISPATCH_FEE_TAG, priceSummary } from "@/lib/content/pricing";
 import { openQuickRequest } from "@/lib/quick-request";
-import { VIN_LENGTH, VIN_PATTERN } from "@/lib/validation/request";
+import { VIN_LENGTH, VIN_PATTERN, cleanVin } from "@/lib/validation/request";
 
 interface EngineRule {
   liters?: string;
@@ -92,9 +92,9 @@ export function BatteryFinder() {
   const row = make && model && year ? findRow(make, model, Number(year), engine) : undefined;
 
   async function decodeVin() {
-    const value = vin.trim().toUpperCase();
+    const value = cleanVin(vin);
     if (!VIN_PATTERN.test(value)) {
-      setVinStatus("That doesn't look like a VIN. It has 17 letters and numbers, with no I, O or Q.");
+      setVinStatus(`That's ${value.length} characters. A VIN has 17 letters and numbers.`);
       return;
     }
     setLooking(true);
@@ -192,7 +192,7 @@ export function BatteryFinder() {
           <input
             id="finder-vin"
             value={vin}
-            onChange={(e) => setVin(e.target.value.toUpperCase())}
+            onChange={(e) => setVin(cleanVin(e.target.value))}
             maxLength={VIN_LENGTH}
             autoCapitalize="characters"
             autoComplete="off"

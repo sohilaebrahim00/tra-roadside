@@ -17,6 +17,7 @@ export function precio(a: Amount): string {
 
 const WORDS: Record<ServiceTypeSlug, { titulo: (ciudad: string) => string; nombre: string; costo: string }> = {
   "jump-start": { titulo: (c) => `Paso de corriente a domicilio en ${c}`, nombre: "Paso de corriente", costo: "Un paso de corriente cuesta" },
+  "semi-truck-jump-start": { titulo: (c) => `Paso de corriente para tráileres en ${c}`, nombre: "Paso de corriente para tráiler", costo: "Un paso de corriente para tráiler cuesta" },
   "battery-replacement": { titulo: (c) => `Cambio de batería a domicilio en ${c}`, nombre: "Batería nueva instalada", costo: "Una batería nueva instalada cuesta" },
   lockout: { titulo: (c) => `¿Se quedó fuera de su carro en ${c}?`, nombre: "Abrir su carro", costo: "Abrir su carro cuesta" },
   "tire-repair-plug-patch": { titulo: (c) => `Llantera a domicilio 24 horas en ${c}`, nombre: "Reparar una llanta ponchada", costo: "Reparar una llanta ponchada cuesta" },

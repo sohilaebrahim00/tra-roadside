@@ -8,6 +8,16 @@ import { SERVICE_TYPE_SLUGS, VEHICLE_TYPES, CONTACT_METHODS, LOCATION_SOURCES } 
 export const VIN_PATTERN = /^[A-HJ-NPR-Z0-9]{17}$/;
 export const VIN_LENGTH = 17;
 
+/**
+ * A VIN as typed, made valid where the typo is certain: uppercase, spaces and
+ * dashes dropped, and the three letters a VIN never uses read as the digits
+ * people mean (O and Q as 0, I as 1). A customer on 2026-11-06 typed
+ * "...EBO..." for "...EB0..." and the finder found nothing.
+ */
+export function cleanVin(input: string): string {
+  return input.toUpperCase().replace(/[^A-Z0-9]/g, "").replace(/[OQ]/g, "0").replace(/I/g, "1");
+}
+
 export const locationSchema = z.object({
   pickupLat: z.number().min(-90).max(90),
   pickupLng: z.number().min(-180).max(180),

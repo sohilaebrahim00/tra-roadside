@@ -16,6 +16,7 @@ const KEYWORDS: Record<ServiceTypeSlug, string[]> = {
     "jump", "jump start", "jumpstart", "boost", "dead battery", "car wont start", "wont start",
     "clicking", "no power", "left lights on", "battery died",
   ],
+  "semi-truck-jump-start": ["semi", "semi truck", "18 wheeler", "18-wheeler", "big rig", "tractor trailer", "truck wont start", "diesel truck", "commercial truck", "box truck"],
   lockout: [
     "locked out", "lockout", "keys locked", "keys inside", "locked keys", "key fob", "unlock",
     "unlock car", "keys in trunk", "door locked", "locked in car",

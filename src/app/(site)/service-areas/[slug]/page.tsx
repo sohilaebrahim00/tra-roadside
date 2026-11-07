@@ -19,6 +19,9 @@ import { cityAnswer, pricesInWords } from "@/lib/content/quick-answers";
 import { getLocalArea } from "@/lib/content/local-data";
 import { topicsForCity } from "@/lib/content/topic-pages";
 import { QuickAnswer } from "@/components/ui/quick-answer";
+import { FaqAccordion } from "@/components/faq/faq-accordion";
+import { FaqJsonLd } from "@/components/seo/json-ld";
+import { getCityHub } from "@/lib/content/city-hubs";
 
 export function generateStaticParams() {
   return SERVICE_AREAS.map((c) => ({ slug: c.slug }));
@@ -49,6 +52,7 @@ export default async function ServiceAreaPage({
   if (!city) notFound();
 
   const nearby = nearbyAreas(city.slug, 5);
+  const hub = getCityHub(city.slug);
   const hubs = [
     ...locationHubsForCity(city.slug),
     ...topicsForCity(city.slug).map((t) => ({ path: `/roadside/${t.slug}`, city: city.slug, name: t.h1, summary: t.eyebrow })),
@@ -88,7 +92,30 @@ export default async function ServiceAreaPage({
         </Container>
       </section>
 
+      {hub && hub.faqs.length > 0 && <FaqJsonLd items={hub.faqs} />}
       <QuickAnswer content={cityAnswer(city, getLocalArea(city.slug), nearby)} framed />
+
+      {hub && (
+        <section className="border-b border-ink-950/8 py-12 sm:py-16">
+          <Container size="narrow" className="max-w-3xl space-y-4">
+            <h2 className="font-display text-2xl font-semibold text-ink-950 sm:text-[1.75rem]">Roadside help in {city.name}</h2>
+            <p className="text-base leading-relaxed text-ink-700">{hub.intro}</p>
+            {hub.local.map((p) => (
+              <p key={p} className="text-base leading-relaxed text-ink-700">
+                {p}
+              </p>
+            ))}
+            {hub.faqs.length > 0 && (
+              <div className="pt-4">
+                <h3 className="font-display text-xl font-semibold text-ink-950">{city.name} questions</h3>
+                <div className="mt-4 rounded-2xl border border-ink-950/8 bg-white px-5 sm:px-6">
+                  <FaqAccordion items={hub.faqs.map((f, i) => ({ id: `${city.slug}-hub-${i}`, category: city.name, question: f.q, answer: f.a }))} />
+                </div>
+              </div>
+            )}
+          </Container>
+        </section>
+      )}
 
       <section className="py-14 sm:py-20">
         <Container className="grid gap-12 lg:grid-cols-[1.4fr_1fr]">

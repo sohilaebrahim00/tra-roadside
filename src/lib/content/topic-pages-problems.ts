@@ -1390,7 +1390,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
     eyebrow: "Semi trucks",
     intro:
       "A dead battery on a tractor-trailer shouldn't cost you a day. We do heavy-duty jump starts for semi trucks and 18-wheelers wherever the truck sits: a yard, a truck stop, a mile marker on the highway. Call or send a request and choose Semi truck as the vehicle type.",
-    service: "jump-start",
+    service: "semi-truck-jump-start",
     alsoServices: ["lockout", "battery-replacement"],
     sections: [
       {

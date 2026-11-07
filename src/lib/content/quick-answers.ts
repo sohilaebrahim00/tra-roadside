@@ -46,6 +46,7 @@ const CONTACT: QuickFact = { label: "Contact", value: `Request online or call ${
 /** How people ask what a service costs. */
 const PRICE_QUESTION: Record<ServiceTypeSlug, string> = {
   "jump-start": "How much is a jump start",
+  "semi-truck-jump-start": "How much is a semi truck jump start",
   "battery-replacement": "How much is a car battery replacement",
   lockout: "How much does it cost to unlock a car",
   "tire-repair-plug-patch": "How much is a flat tire repair",
@@ -60,6 +61,7 @@ const PRICE_QUESTION: Record<ServiceTypeSlug, string> = {
 /** How people ask who can help. */
 const WHO_QUESTION: Record<ServiceTypeSlug, string> = {
   "jump-start": "Who can jump start my car",
+  "semi-truck-jump-start": "Who jump starts semi trucks",
   "battery-replacement": "Who replaces a car battery on site",
   lockout: "Who can unlock my car",
   "tire-repair-plug-patch": "Who repairs a flat tire on site",
@@ -71,7 +73,7 @@ const WHO_QUESTION: Record<ServiceTypeSlug, string> = {
   "valve-stem-replacement": "Who replaces a valve stem on site",
 };
 
-/** A service's price as a sentence reads it: "$49–$75, or $140 for semi trucks and 18-wheelers". */
+/** A service's price as a sentence reads it: "$49–$75, or from $90 for semi trucks and 18-wheelers". */
 function priceWords(svc: ServiceContent): string {
   const [headline, ...variants] = svc.priceLines ?? [];
   if (!headline) return "";

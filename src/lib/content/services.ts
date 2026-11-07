@@ -23,7 +23,7 @@ export const DISPATCH_FEE = 19;
  *
  *   { min: 49, max: 75 }      "$49–$75"     a range
  *   { min: 75, from: true }   "From $75"    an open-ended starting price
- *   { min: 140 }              "$140"        a single figure
+ *   { min: 70 }               "$70"         a single figure
  */
 export interface PriceLine {
   /** Tier name. Omitted on a service's headline (first) line. */
@@ -46,12 +46,12 @@ export interface PriceLine {
  * price line it describes cannot disagree.
  */
 const BATTERY_REPLACEMENT: PriceLine = { min: 239, max: 255, note: "eligible vehicles and batteries" };
-const JUMP_START_SEMI: PriceLine = { label: "Semi trucks and 18-wheelers", min: 140, vehicleType: "semi_truck" };
+const JUMP_START_SEMI: PriceLine = { label: "Semi trucks and 18-wheelers", min: 90, from: true, vehicleType: "semi_truck" };
 const LOCKOUT_TRUNK: PriceLine = { label: "Keys locked in the trunk", min: 120 };
 const SPARE_TIRE_CHANGE: PriceLine = { min: 75, from: true, note: "using the spare carried in your vehicle" };
 const TIRE_REPLACEMENT: PriceLine = { min: 129, from: true, note: "tire availability varies" };
 
-/** "$140, plus the $19 dispatch fee" — service price first, fee on its own. */
+/** "from $90, plus the $19 dispatch fee" — service price first, fee on its own. */
 function quote(line: PriceLine): string {
   return `${formatAmount(line, "–", "from")}, plus the ${usd(DISPATCH_FEE)} dispatch fee`;
 }
@@ -108,7 +108,7 @@ export const SERVICES: ServiceContent[] = [
     shortName: "Jump Start",
     needsDestination: false,
     // $49–$75 from the owner's pricing brief (2026-11-03). Semi trucks and
-    // 18-wheelers were added at $140 on 2026-10-29, at the owner's request, in
+    // 18-wheelers were added on 2026-10-29 at the owner's request, in
     // place of the towing the site no longer offers; the dispatch fee is added
     // to that job like any other.
     priceLines: [{ min: 49, max: 75 }, JUMP_START_SEMI],
@@ -241,6 +241,45 @@ export const SERVICES: ServiceContent[] = [
       {
         q: "What if my car just needs a jump, not a full replacement?",
         a: "Select Jump Start instead — your driver can advise on site if a replacement turns out to be needed.",
+      },
+    ],
+  },
+  {
+    slug: "semi-truck-jump-start",
+    name: "Semi Truck Jump Start",
+    shortName: "Semi Truck Jump",
+    needsDestination: false,
+    // Its own service from 2026-11-07, so big-rig drivers find it in the list
+    // (owner): the same price as the jump start's semi truck line.
+    priceLines: [{ min: JUMP_START_SEMI.min, from: true, vehicleType: "semi_truck" }],
+    priceCovers: "A heavy-duty jump start for the truck's batteries, labor included.",
+    priceNote: "The price depends on the truck and how many batteries it carries. Dispatch confirms it before a driver is sent.",
+    summary: "Heavy-duty jump starts for semi trucks, 18-wheelers and other big rigs.",
+    heroLine: "A big rig that won't start, started where it's parked.",
+    problem:
+      "A tractor with dead batteries holds up a load, a schedule and sometimes a whole dock. Big rigs run several batteries together, and a car-sized jump pack won't turn a diesel that size over. A driver brings heavy-duty jump equipment to the yard, the truck stop or the shoulder, so the truck can run again without waiting on a tow.",
+    whileYouWait: [
+      "Switch off the lights, the heater or AC and anything else drawing power.",
+      "Note the unit number and exactly where the truck is: the yard, the dock, the truck stop or the mile marker.",
+      "On a shoulder, set out your warning triangles if you can do it safely.",
+    ],
+    whatWeNeed: [
+      "Where the truck is, as exactly as you can give it",
+      "The truck's make and model, and the unit number",
+      "Whether the truck has been sitting, or died while running",
+    ],
+    faqs: [
+      {
+        q: "Can you jump a truck with more than one battery?",
+        a: "Yes. That's what the heavy-duty equipment is for. Tell dispatch the make and model so the driver comes ready for that truck.",
+      },
+      {
+        q: "What if the batteries won't hold a charge afterward?",
+        a: "A jump gets the truck running, but it can't fix batteries that are worn out. If the truck dies again, the batteries or the charging system need a shop.",
+      },
+      {
+        q: "Do you come to truck stops and yards?",
+        a: "Yes, wherever the truck can be reached safely. If a yard or stop has its own rules about who can come in, let dispatch know.",
       },
     ],
   },

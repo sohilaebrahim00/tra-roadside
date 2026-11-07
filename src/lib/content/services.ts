@@ -525,9 +525,10 @@ export const SERVICES: ServiceContent[] = [
     name: "Stripped Lug Nut Removal",
     shortName: "Stripped Lug",
     needsDestination: false,
-    // Added 2026-11-04 at the owner's request. No published price until the owner
-    // sets one: dispatch quotes it, plus the dispatch fee.
-    priceNote: "The price depends on how damaged the nut is and how many there are. Dispatch confirms it before a driver is sent.",
+    // Added 2026-11-04; $55 set by the owner on 2026-11-07.
+    priceLines: [{ min: 55 }],
+    priceCovers: "Getting the damaged lug nut off so the wheel can come off.",
+    priceNote: "If several nuts are damaged, dispatch confirms the price before a driver is sent.",
     photos: [
       {
         src: "/images/rim-lock-wheel.webp",
@@ -570,9 +571,9 @@ export const SERVICES: ServiceContent[] = [
     name: "Valve Stem Replacement",
     shortName: "Valve Stem",
     needsDestination: false,
-    // Added 2026-11-04 at the owner's request. No published price until the owner
-    // sets one: dispatch quotes it, plus the dispatch fee.
-    priceNote: "The price depends on the type of stem: rubber, metal or one with a TPMS sensor. Dispatch confirms it before a driver is sent.",
+    // Added 2026-11-04; $55 set by the owner on 2026-11-07.
+    priceLines: [{ min: 55 }],
+    priceCovers: "Replacing the leaking valve stem on the wheel.",
     photos: [
       {
         src: "/images/tire-repair-inflate.webp",

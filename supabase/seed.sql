@@ -12,8 +12,8 @@ insert into service_types (slug, name, needs_destination, description, sort_orde
   ('tire-replacement', 'Tire Replacement', false, 'Tire supplied by TRA and fitted on site, from $129 plus the $19 dispatch fee; tire availability varies.', 6),
   ('stuck-screw-in-tire', 'Stuck Screw in Tire', false, 'Screw or nail removed from the tire and the tire made safe, $70 plus the $19 dispatch fee.', 7),
   ('rim-lock-removal', 'Rim Lock Removal', false, 'Seized or keyless wheel lock removed so the wheel can come off, $70 plus the $19 dispatch fee.', 8),
-  ('stripped-lug-nut-removal', 'Stripped Lug Nut Removal', false, 'A stripped, rounded or seized lug nut taken off so the wheel can come off. Dispatch confirms the price.', 9),
-  ('valve-stem-replacement', 'Valve Stem Replacement', false, 'A cracked or leaking valve stem replaced at your car. Dispatch confirms the price.', 10)
+  ('stripped-lug-nut-removal', 'Stripped Lug Nut Removal', false, 'A stripped, rounded or seized lug nut taken off so the wheel can come off, $55 plus the $19 dispatch fee.', 9),
+  ('valve-stem-replacement', 'Valve Stem Replacement', false, 'A cracked or leaking valve stem replaced at your car, $55 plus the $19 dispatch fee.', 10)
 -- Towing and fuel delivery are not seeded: they were retired on 2026-10-26
 -- (migration 0016) and 2026-11-03 (migration 0017).
 on conflict (slug) do update set

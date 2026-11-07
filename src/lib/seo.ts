@@ -55,6 +55,29 @@ export const OPEN_GRAPH_DEFAULTS = {
  * the canonical www host without hard-coding it. `image` overrides the default
  * share image, e.g. the battery photo on the battery service page.
  */
+/** Longest meta description Google reliably shows in full. */
+const DESCRIPTION_MAX = 158;
+
+/**
+ * A meta description that fits: the part that must be there, then each optional
+ * sentence in turn, kept only while the whole still fits. The crawl of
+ * 2026-11-07 found 225 descriptions past 170 characters, cut off mid-sentence in
+ * results.
+ */
+export function fitDescription(required: string, optional: string[] = []): string {
+  let out = required.trim();
+  for (const part of optional) {
+    const next = `${out} ${part.trim()}`;
+    if (next.length <= DESCRIPTION_MAX) out = next;
+  }
+  return out;
+}
+
+/** "One. Two." as ["One.", "Two."], for fitDescription's optional parts. */
+export function sentences(text: string): string[] {
+  return text.match(/[^.!?]+[.!?]+/g)?.map((s) => s.trim()) ?? [text];
+}
+
 export function pageUrls(path: string, image?: ShareImage): Pick<Metadata, "alternates" | "openGraph"> {
   return {
     alternates: { canonical: path },

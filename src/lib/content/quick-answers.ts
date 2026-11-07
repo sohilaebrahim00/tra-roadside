@@ -106,6 +106,11 @@ export function pricesInWords(): string {
   return `jump starts from ${lowOfSlug("jump-start")}, lockouts from ${lowOfSlug("lockout")}, tire repair from ${lowOfSlug("tire-repair-plug-patch")}, spare tire changes from ${lowOfSlug("flat-tire-change")}, and batteries installed from ${lowOfSlug("battery-replacement")}, plus a flat ${DISPATCH_FEE_USD} dispatch fee`;
 }
 
+/** The short form, for meta descriptions: "jump starts from $49, lockouts from $50, tire repair from $54, batteries from $239, + $19 dispatch". */
+export function pricesShort(): string {
+  return `jump starts from ${lowOfSlug("jump-start")}, lockouts from ${lowOfSlug("lockout")}, tire repair from ${lowOfSlug("tire-repair-plug-patch")}, batteries from ${lowOfSlug("battery-replacement")}, + ${DISPATCH_FEE_USD} dispatch`;
+}
+
 const LEAD_SERVICES: ServiceTypeSlug[] = ["jump-start", "lockout", "tire-repair-plug-patch", "flat-tire-change", "battery-replacement"];
 
 /** The at-a-glance line for the five calls that cover most breakdowns. */

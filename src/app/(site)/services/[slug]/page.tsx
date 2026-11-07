@@ -11,6 +11,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd } from "@/components/seo/jso
 import { SERVICES, getService } from "@/lib/content/services";
 import { DISPATCH_FEE_TAG, DISPATCH_FEE_USD, lowOf, lowPrice, pricedTitle, servicePrice } from "@/lib/content/pricing";
 import { serviceAnswer } from "@/lib/content/quick-answers";
+import { fitDescription, sentences } from "@/lib/seo";
 import { QuickAnswer } from "@/components/ui/quick-answer";
 import { topicsForService } from "@/lib/content/topic-pages";
 import { SERVICE_EXPLAINERS } from "@/lib/content/service-explainers";
@@ -44,7 +45,7 @@ export async function generateMetadata({
   // put every one past 160 characters.
   return {
     title: { absolute: pricedTitle(`${service.name} DFW 24/7`, lowPrice(service)) },
-    description: `${service.name}${lowPrice(service) ? ` ${lowPrice(service)} ${DISPATCH_FEE_TAG}` : ""}, 24/7 across Dallas–Fort Worth. ${service.summary} No membership. Call ${BUSINESS.phoneDisplay}.`,
+    description: fitDescription(`${service.name}${lowPrice(service) ? ` ${lowPrice(service)} ${DISPATCH_FEE_TAG}` : ""}, 24/7 across Dallas–Fort Worth.`, [...sentences(service.summary), "No membership.", `Call ${BUSINESS.phoneDisplay}.`]),
     ...pageUrls(`/services/${service.slug}`, shareImageFor(service.slug)),
   };
 }

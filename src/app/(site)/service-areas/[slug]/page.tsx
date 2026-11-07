@@ -15,7 +15,8 @@ import { env } from "@/lib/env";
 import { Icon3D } from "@/components/ui/icon-3d";
 import { HeroBackdrop } from "@/components/brand/hero-backdrop";
 import { pricedTitle, startingPrice } from "@/lib/content/pricing";
-import { cityAnswer, pricesInWords } from "@/lib/content/quick-answers";
+import { cityAnswer, pricesShort } from "@/lib/content/quick-answers";
+import { fitDescription } from "@/lib/seo";
 import { getLocalArea } from "@/lib/content/local-data";
 import { topicsForCity } from "@/lib/content/topic-pages";
 import { QuickAnswer } from "@/components/ui/quick-answer";
@@ -37,7 +38,7 @@ export async function generateMetadata({
   if (!city) return {};
   return {
     title: { absolute: pricedTitle(`Roadside Assistance ${city.name} TX`, startingPrice()) },
-    description: `24/7 roadside assistance in ${city.name}, Texas: ${pricesInWords()}. No membership. Call ${BUSINESS.phoneDisplay}.`,
+    description: fitDescription(`Roadside help in ${city.name}, TX, 24/7: ${pricesShort()}.`, ["No membership.", `Call ${BUSINESS.phoneDisplay}.`]),
     ...pageUrls(`/service-areas/${city.slug}`),
   };
 }

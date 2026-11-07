@@ -8,7 +8,8 @@ import { ServiceWorkerRegister } from "@/components/pwa/sw-register";
 import { GoogleAdsTag } from "@/components/analytics/google-ads";
 import { OPEN_GRAPH_DEFAULTS } from "@/lib/seo";
 import { pricedTitle, startingPrice } from "@/lib/content/pricing";
-import { pricesInWords } from "@/lib/content/quick-answers";
+import { pricesShort } from "@/lib/content/quick-answers";
+import { fitDescription } from "@/lib/seo";
 
 /*
  * Self-hosted fonts (app/fonts/), so the build never fetches Google Fonts.
@@ -52,7 +53,7 @@ export const metadata: Metadata = {
     default: pricedTitle("24/7 Roadside Assistance Dallas", startingPrice()),
     template: "%s | TRA Roadside",
   },
-  description: `24/7 roadside help across Dallas–Fort Worth: ${pricesInWords()}. No membership. Call ${BUSINESS.phoneDisplay}.`,
+  description: fitDescription(`24/7 roadside help across DFW: ${pricesShort()}.`, ["No membership.", `Call ${BUSINESS.phoneDisplay}.`]),
   applicationName: "TRA — Texas Roadside Assistance",
   keywords: [
     "roadside assistance Dallas",

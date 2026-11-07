@@ -10,7 +10,8 @@ import { PricePanel } from "@/components/city-service/price-panel";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { SERVICES, getService } from "@/lib/content/services";
 import { DISPATCH_FEE_EXPLAINER, DISPATCH_FEE_HEADLINE, DISPATCH_FEE_USD, exampleTotal, headlineLine, lowPrice, pricedTitle, servicePrice, startingPrice } from "@/lib/content/pricing";
-import { pricesInWords, pricingAnswer, roadsideFaqs } from "@/lib/content/quick-answers";
+import { pricesShort, pricingAnswer, roadsideFaqs } from "@/lib/content/quick-answers";
+import { fitDescription } from "@/lib/seo";
 import { QuickAnswer } from "@/components/ui/quick-answer";
 import { ServiceCallSteps } from "@/components/ui/service-call-steps";
 import { PriceComparison } from "@/components/ui/price-comparison";
@@ -35,7 +36,7 @@ const battery = getService("battery-replacement");
 
 export const metadata: Metadata = {
   title: { absolute: pricedTitle("Roadside Assistance Prices Dallas", startingPrice()) },
-  description: `Roadside prices across Dallas–Fort Worth, published: ${pricesInWords()}. No membership. Call ${BUSINESS.phoneDisplay}.`,
+  description: fitDescription(`Roadside prices across DFW: ${pricesShort()}.`, ["No membership.", `Call ${BUSINESS.phoneDisplay}.`]),
   ...pageUrls("/pricing", shareImageFor("battery-replacement")),
 };
 

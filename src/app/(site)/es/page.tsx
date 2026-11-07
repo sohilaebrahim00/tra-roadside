@@ -17,7 +17,7 @@ const desde = startingPrice().replace(/^from /, "desde ");
 
 export const metadata: Metadata = {
   title: { absolute: pricedTitle("Asistencia en Carretera Dallas 24 Horas", desde) },
-  description: `Asistencia en carretera las 24 horas en Dallas y Fort Worth, sin membresía: llantas, baterías, paso de corriente y carros cerrados, ${desde} más ${DISPATCH_FEE_USD} de envío. Llame al ${BUSINESS.phoneDisplay}.`,
+  description: `Asistencia en carretera 24 horas en Dallas y Fort Worth, sin membresía: llantas, baterías y carros cerrados, ${desde} + ${DISPATCH_FEE_USD} de envío.`,
   ...pageUrls("/es"),
 };
 

@@ -205,6 +205,7 @@ export function BatteryFinder() {
           </button>
         </div>
         {vinStatus && <p className="mt-2 text-sm text-ink-700">{vinStatus}</p>}
+        <p className="mt-2 text-xs text-ink-500">Your VIN goes only to NHTSA&apos;s free decoder, to read the year, make and model. We don&apos;t save it unless you send a request.</p>
       </form>
 
       <div aria-live="polite">

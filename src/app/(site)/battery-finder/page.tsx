@@ -14,7 +14,7 @@ const battery = getService("battery-replacement");
 
 export const metadata: Metadata = {
   title: { absolute: pricedTitle("Car Battery Finder DFW", battery && lowPrice(battery)) },
-  description: `Which battery does your car take? Pick your vehicle or enter your VIN. New battery installed where you're parked, ${battery ? lowPrice(battery) : ""} ${DISPATCH_FEE_TAG}. 24/7 across Dallas–Fort Worth.`,
+  description: `Which battery does your car take? Pick your vehicle or enter your VIN, then have it installed where you're parked, ${battery ? lowPrice(battery) : ""} ${DISPATCH_FEE_TAG}.`,
   ...pageUrls("/battery-finder", shareImageFor("battery-replacement")),
 };
 

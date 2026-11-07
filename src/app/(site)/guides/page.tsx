@@ -13,8 +13,7 @@ import { HeroBackdrop } from "@/components/brand/hero-backdrop";
 
 export const metadata: Metadata = {
   title: "Car Battery and Roadside Guides",
-  description:
-    "Plain answers from a DFW roadside crew: car battery costs and warning signs, flat tires, lockouts, jump starting an electric car, and what to do about a lost wheel lock key.",
+  description: "Plain answers from a DFW roadside crew: battery costs and warning signs, flat tires, lockouts, safety and what each job costs.",
   ...pageUrls("/guides", shareImageFor("battery-replacement")),
 };
 

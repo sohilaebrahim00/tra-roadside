@@ -18,7 +18,7 @@ import { getService } from "@/lib/content/services";
 import { getLocalArea } from "@/lib/content/local-data";
 import { cityServicePairs, getCityServicePage, servicesForCity } from "@/lib/content/city-service-pages";
 import { env } from "@/lib/env";
-import { shareImageFor } from "@/lib/seo";
+import { fitDescription, sentences, shareImageFor } from "@/lib/seo";
 
 /**
  * City x Service landing pages, nested under the existing city hubs so no
@@ -55,7 +55,10 @@ export async function generateMetadata({
   const price = svc && lowPrice(svc);
   const title = pricedTitle(content.title, price);
   // The price leads, so it survives where Google cuts a long description.
-  const description = price ? `${svc.shortName} ${price} ${DISPATCH_FEE_TAG}. ${content.metaDescription}` : content.metaDescription;
+  const priced = price ? fitDescription(`${svc.shortName} ${price} ${DISPATCH_FEE_TAG}.`, sentences(content.metaDescription)) : "";
+  // When the written description's first sentence is too long to follow the
+  // price, the written description alone reads better than a bare price.
+  const description = priced.length >= 90 || content.metaDescription.length > 158 ? priced || content.metaDescription : content.metaDescription;
   return {
     title: { absolute: title },
     description,

@@ -86,7 +86,7 @@ insert into faqs (category, question, answer, sort_order) values
   ('General', 'Are you available 24/7?', 'Yes — TRA dispatches roadside assistance 24 hours a day, 365 days a year.', 2),
   ('Service Requests', 'How do I request help?', 'Use the "Request Help" button to share your location, pick a service, and submit — most requests take under two minutes. You can also call us directly.', 3),
   ('Service Requests', 'Do I need to create an account?', 'No. You can submit a request and track it with a secure link sent to your phone or email — no account required.', 4),
-  ('Arrival Time', 'How long until a driver arrives?', 'TRA''s stated average is a 30-minute arrival window; actual time depends on your location, traffic, and current demand.', 5),
+  ('Arrival Time', 'How long until a driver arrives?', 'We send the nearest available driver as soon as possible.', 5),
   ('Pricing', 'How much does a service cost?', 'TRA advertises upfront pricing with no surprise fees. Exact pricing is confirmed by dispatch based on your service and location before a driver is sent — this page will be updated with a live rate card.', 6),
   ('Tracking', 'How do I track my driver?', 'Once a driver is assigned and starts the trip, a live tracking link is sent by SMS and email. No login is required.', 7),
   ('Tracking', 'Does the tracking link expire?', 'Yes, tracking links are scoped to a single request and stop working after the job is completed, canceled, or the link expires.', 8),

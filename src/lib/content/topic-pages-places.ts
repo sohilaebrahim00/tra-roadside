@@ -49,7 +49,7 @@ export const TOPICS_PLACES: TopicPage[] = [
         heading: "What the tire change costs",
         paragraphs: [
           "Putting on the spare you already carry is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once. With no usable spare, we can supply a tire and install it for {{price:tire-replacement}}, plus the same fee, once dispatch confirms a tire is available.",
-          "We text or call you when the driver is on the way. Our average arrival is 30 minutes; the actual time depends on where you are and the traffic.",
+          "We text or call you when the driver is on the way. We send the nearest available driver as soon as possible.",
         ],
       },
     ],
@@ -135,7 +135,7 @@ export const TOPICS_PLACES: TopicPage[] = [
       },
       {
         q: "How soon will help come, and how will I know?",
-        a: "Once a driver is on the way, you get a text or a call. Average arrival is 30 minutes, with the real figure set by your location and the traffic. I-35W runs through Fort Worth, Burleson and Denton, and we serve all three.",
+        a: "Once a driver is on the way, you get a text or a call. We send the nearest available driver as soon as possible. I-35W runs through Fort Worth, Burleson and Denton, and we serve all three.",
       },
     ],
   },
@@ -178,7 +178,7 @@ export const TOPICS_PLACES: TopicPage[] = [
         heading: "Cost and arrival",
         paragraphs: [
           "A jump start is {{price:jump-start}}, plus a {{dispatchFee}} dispatch fee charged once. If the battery won't hold a charge, a replacement is {{price:battery-replacement}} plus the same fee, for eligible vehicles and batteries. Dispatch confirms the battery is compatible, and your total, before a driver is sent.",
-          "You will get a text or a call when the driver heads your way. Arrival averages 30 minutes, but where you are and how the traffic runs decide the real time.",
+          "You will get a text or a call when the driver heads your way. We send the nearest available driver as soon as possible.",
         ],
       },
     ],
@@ -241,7 +241,7 @@ export const TOPICS_PLACES: TopicPage[] = [
         heading: "What it costs",
         paragraphs: [
           "The spare you already carry goes on for {{price:flat-tire-change}}, and a {{dispatchFee}} dispatch fee is added once for sending the driver. A puncture in the tread may be repairable with a plug or patch, {{price:tire-repair-plug-patch}} plus the fee. With no usable spare, we supply a tire and install it, {{price:tire-replacement}} plus the fee, once dispatch confirms a tire is available.",
-          "A text or a call tells you the driver is on the way. Our average arrival is 30 minutes, and your location and the traffic set the actual time.",
+          "A text or a call tells you the driver is on the way. We send the nearest available driver as soon as possible.",
         ],
       },
     ],
@@ -302,7 +302,7 @@ export const TOPICS_PLACES: TopicPage[] = [
       {
         heading: "While you wait",
         paragraphs: [
-          "Watch your phone for a text or a call once the driver is on the way. The average arrival is 30 minutes, though the real time depends on where you are and the traffic.",
+          "Watch your phone for a text or a call once the driver is on the way. We send the nearest available driver as soon as possible.",
           "Keep the hazards on and turn off other electronics so you don't drain the battery further. Stay belted in, or well away from the lanes if you have safely gotten out.",
         ],
       },
@@ -365,7 +365,7 @@ export const TOPICS_PLACES: TopicPage[] = [
         heading: "Before and after you call",
         paragraphs: [
           "Look for where the spare is stored, and whether your wheels have locking nuts and you have the key. Tell dispatch both. A missing key is a separate service, and it is better to say so now than when the driver arrives.",
-          "When the driver is on the way, we text or call to tell you. Average arrival is 30 minutes; actual time depends on your location and traffic.",
+          "When the driver is on the way, we text or call to tell you. We send the nearest available driver as soon as possible.",
         ],
       },
     ],
@@ -433,7 +433,7 @@ export const TOPICS_PLACES: TopicPage[] = [
       {
         heading: "After you call",
         paragraphs: [
-          "A text or a call comes when the driver is on the way. Arrival averages 30 minutes, and the actual time depends on your location and the traffic.",
+          "A text or a call comes when the driver is on the way. We send the nearest available driver as soon as possible.",
         ],
       },
     ],
@@ -495,7 +495,7 @@ export const TOPICS_PLACES: TopicPage[] = [
         heading: "What a tire change costs",
         paragraphs: [
           "Swapping on the spare you already carry is a flat tire change at {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once. A puncture in the tread may be repairable with a plug or patch, {{price:tire-repair-plug-patch}} plus the fee. Without a usable spare, we supply a tire and install it, {{price:tire-replacement}} plus the fee, once dispatch confirms a tire is available.",
-          "We will text or call when the driver is on the way. Our average arrival is 30 minutes, though your location and the traffic decide the actual time.",
+          "We will text or call when the driver is on the way. We send the nearest available driver as soon as possible.",
         ],
       },
     ],
@@ -557,7 +557,7 @@ export const TOPICS_PLACES: TopicPage[] = [
         heading: "Where to wait",
         paragraphs: [
           "A shoulder is better than a lane, and an exit or lot is better than a shoulder. Skip ramps: traffic is merging or leaving at speed there. Hazards on, parking brake set, and everyone out on the side away from traffic, unless the shoulder is too narrow, in which case stay belted in.",
-          "Expect a text or a call once the driver is on the way. Our arrival average is 30 minutes; the actual time varies with your location and traffic. Meanwhile, shut off the radio, climate control and anything else drawing power.",
+          "Expect a text or a call once the driver is on the way. We send the nearest available driver as soon as possible. Meanwhile, shut off the radio, climate control and anything else drawing power.",
         ],
       },
     ],
@@ -618,7 +618,7 @@ export const TOPICS_PLACES: TopicPage[] = [
       {
         heading: "After you call",
         paragraphs: [
-          "When a driver is on the way, you hear from us by text or call. Our average arrival is 30 minutes. Where you are and how traffic is moving set the actual time.",
+          "When a driver is on the way, you hear from us by text or call. We send the nearest available driver as soon as possible. Where you are and how traffic is moving set the actual time.",
           "Turn off the radio, the climate control and anything else drawing power, so there is as much charge left as possible when the driver arrives.",
         ],
       },
@@ -686,7 +686,7 @@ export const TOPICS_PLACES: TopicPage[] = [
       {
         heading: "After you call",
         paragraphs: [
-          "We text or call once the driver is on the way. Average arrival is 30 minutes, and the actual time depends on where you are and traffic.",
+          "We text or call once the driver is on the way. We send the nearest available driver as soon as possible.",
         ],
       },
     ],
@@ -752,7 +752,7 @@ export const TOPICS_PLACES: TopicPage[] = [
         heading: "Cost and arrival",
         paragraphs: [
           "A jump start is {{price:jump-start}}, plus a {{dispatchFee}} dispatch fee charged once. If the battery won't hold a charge afterward, a replacement is {{price:battery-replacement}} plus the same fee, for eligible vehicles and batteries, and dispatch confirms your total before a driver is sent.",
-          "We text or call you when the driver is on the way. Our average arrival is 30 minutes; the actual time depends on where you are and the traffic.",
+          "We text or call you when the driver is on the way. We send the nearest available driver as soon as possible.",
         ],
       },
     ],
@@ -817,7 +817,7 @@ export const TOPICS_PLACES: TopicPage[] = [
         heading: "Waiting safely, and the cost",
         paragraphs: [
           "Wait somewhere well lit, near the car but out of the way of traffic, and ideally with someone. If a child or pet is locked inside, or anyone is in danger, call 911 first. Don't wait for a driver.",
-          "Opening the vehicle so you can reach keys in the cabin is {{price:lockout}}, plus a {{dispatchFee}} dispatch fee charged once. Keys locked in the trunk are a separate job, so tell dispatch which one you have. A text or a call tells you the driver is on the way. Average arrival is 30 minutes, and your location and the traffic set the real time.",
+          "Opening the vehicle so you can reach keys in the cabin is {{price:lockout}}, plus a {{dispatchFee}} dispatch fee charged once. Keys locked in the trunk are a separate job, so tell dispatch which one you have. A text or a call tells you the driver is on the way. We send the nearest available driver as soon as possible.",
         ],
       },
     ],
@@ -879,7 +879,7 @@ export const TOPICS_PLACES: TopicPage[] = [
         heading: "Cost and arrival",
         paragraphs: [
           "A jump start is {{price:jump-start}}, plus a {{dispatchFee}} dispatch fee charged once. A battery replacement is {{price:battery-replacement}} plus the fee, for eligible vehicles and batteries, and dispatch confirms the battery is compatible and your total before a driver is sent.",
-          "A text or a call comes once the driver is on the way. Our average arrival is 30 minutes, though the real time depends on your location and traffic. Keep your phone nearby, and turn off the lights and the radio in the meantime.",
+          "A text or a call comes once the driver is on the way. We send the nearest available driver as soon as possible. Keep your phone nearby, and turn off the lights and the radio in the meantime.",
         ],
       },
     ],
@@ -937,7 +937,7 @@ export const TOPICS_PLACES: TopicPage[] = [
         heading: "Cost and arrival",
         paragraphs: [
           "Putting on the spare you already carry is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once. With no usable spare, we supply a tire and install it, {{price:tire-replacement}} plus the same fee, once dispatch confirms a tire is available.",
-          "A text or a call tells you the driver is on the way. Our average arrival is 30 minutes, and the actual time depends on your location and traffic.",
+          "A text or a call tells you the driver is on the way. We send the nearest available driver as soon as possible.",
         ],
       },
     ],
@@ -998,7 +998,7 @@ export const TOPICS_PLACES: TopicPage[] = [
         heading: "Cost and arrival",
         paragraphs: [
           "Opening the vehicle for keys in the cabin is {{price:lockout}}, plus a {{dispatchFee}} dispatch fee charged once. Keys locked in the trunk are a separate job, and dispatch confirms your total before a driver is sent.",
-          "You will get a text or a call when the driver is on the way. Our average arrival is 30 minutes; the actual time depends on your location and traffic. Stay near the car, but out of the way of passing traffic.",
+          "You will get a text or a call when the driver is on the way. We send the nearest available driver as soon as possible. Stay near the car, but out of the way of passing traffic.",
         ],
       },
     ],
@@ -1056,7 +1056,7 @@ export const TOPICS_PLACES: TopicPage[] = [
         heading: "Cost and arrival",
         paragraphs: [
           "A battery replacement is {{price:battery-replacement}}, plus a {{dispatchFee}} dispatch fee charged once, for eligible vehicles and batteries. If a jump start is all the car needs, that is {{price:jump-start}} plus the same fee.",
-          "Once the driver is on the way, we text or call you. Our average arrival is 30 minutes, though the real time depends on your location and traffic.",
+          "Once the driver is on the way, we text or call you. We send the nearest available driver as soon as possible.",
         ],
       },
     ],
@@ -1118,7 +1118,7 @@ export const TOPICS_PLACES: TopicPage[] = [
         heading: "We are not part of the property, and the cost",
         paragraphs: [
           "TRA is independent, with no arrangement with any property manager, building or lot in Las Colinas. A driver gets in the way any other customer would. If the lot restricts access, dispatch will tell you plainly whether a driver can reach it or whether to meet somewhere nearby. If anyone is in danger, call 911 first.",
-          "A jump start is {{price:jump-start}}, plus a {{dispatchFee}} dispatch fee charged once. A battery replacement is {{price:battery-replacement}} plus the fee, for eligible vehicles and batteries. We text or call when the driver is on the way. Average arrival is 30 minutes, and the actual time depends on your location and traffic.",
+          "A jump start is {{price:jump-start}}, plus a {{dispatchFee}} dispatch fee charged once. A battery replacement is {{price:battery-replacement}} plus the fee, for eligible vehicles and batteries. We text or call when the driver is on the way. We send the nearest available driver as soon as possible.",
         ],
       },
     ],
@@ -1175,7 +1175,7 @@ export const TOPICS_PLACES: TopicPage[] = [
         heading: "Cost and arrival",
         paragraphs: [
           "A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once. If a puncture is in the tread, a plug or patch may do it, {{price:tire-repair-plug-patch}} plus the fee. With no usable spare, tire replacement is {{price:tire-replacement}} plus the fee, once dispatch confirms a tire is available.",
-          "A text or a call tells you the driver is on the way. Our average arrival is 30 minutes, and your location and the traffic set the actual time.",
+          "A text or a call tells you the driver is on the way. We send the nearest available driver as soon as possible.",
         ],
       },
     ],
@@ -1238,7 +1238,7 @@ export const TOPICS_PLACES: TopicPage[] = [
         heading: "Cost and arrival",
         paragraphs: [
           "A jump start is {{price:jump-start}}, plus a {{dispatchFee}} dispatch fee charged once. A battery replacement is {{price:battery-replacement}} plus the fee, for eligible vehicles and batteries, and dispatch confirms your total before a driver is sent.",
-          "We text or call you when the driver is on the way. Our average arrival is 30 minutes, though the real time depends on your location and traffic.",
+          "We text or call you when the driver is on the way. We send the nearest available driver as soon as possible.",
         ],
       },
     ],
@@ -1304,7 +1304,7 @@ export const TOPICS_PLACES: TopicPage[] = [
         heading: "Cost and arrival",
         paragraphs: [
           "A jump start is {{price:jump-start}}, plus a {{dispatchFee}} dispatch fee charged once, the same published prices as anywhere else we work. A battery replacement is {{price:battery-replacement}} plus the fee, for eligible vehicles and batteries, and dispatch confirms your total before a driver is sent.",
-          "We text or call you when the driver is on the way. Our average arrival is 30 minutes. At an airport the real time also depends on how easily a driver can reach your lot.",
+          "We text or call you when the driver is on the way. We send the nearest available driver as soon as possible. At an airport the real time also depends on how easily a driver can reach your lot.",
         ],
       },
     ],

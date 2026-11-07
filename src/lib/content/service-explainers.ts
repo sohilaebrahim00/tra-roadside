@@ -12,8 +12,8 @@ import type { GuideSection } from "./guides";
  *    {{price2:jump-start}}, {{price2:lockout}}, {{dispatchFee}}.
  *  - Describe the job as it is done on any car, and what TRA offers as
  *    services.ts states it. No equipment brands, certifications, warranties
- *    beyond services.ts, after-hours pricing, payment methods or response times
- *    other than the published 30-minute average.
+ *    beyond services.ts, after-hours pricing or arrival times: the nearest
+ *    driver is sent as soon as possible, and customers pay in cash.
  *  - Customers do not follow the driver: we text or call when they are on the way.
  *  - US English, plain sentences.
  */
@@ -102,7 +102,7 @@ export const SERVICE_EXPLAINERS: Partial<Record<ServiceTypeSlug, ServiceExplaine
       },
       {
         q: "Will I be told when the driver is on the way?",
-        a: "Yes. We text or call you when the driver is on the way. The average arrival time is 30 minutes.",
+        a: "Yes. We text or call you when the driver is on the way. We send the nearest available driver as soon as possible.",
       },
     ],
   },
@@ -175,7 +175,7 @@ export const SERVICE_EXPLAINERS: Partial<Record<ServiceTypeSlug, ServiceExplaine
       },
       {
         q: "Will I be told when the driver is on the way?",
-        a: "Yes. We text or call when the driver is on the way. The average arrival time is 30 minutes.",
+        a: "Yes. We text or call when the driver is on the way. We send the nearest available driver as soon as possible.",
       },
     ],
   },
@@ -251,7 +251,7 @@ export const SERVICE_EXPLAINERS: Partial<Record<ServiceTypeSlug, ServiceExplaine
       },
       {
         q: "Will I be told when the driver is on the way?",
-        a: "Yes. We text or call when the driver is on the way. The average arrival time is 30 minutes.",
+        a: "Yes. We text or call when the driver is on the way. We send the nearest available driver as soon as possible.",
       },
     ],
   },
@@ -330,7 +330,7 @@ export const SERVICE_EXPLAINERS: Partial<Record<ServiceTypeSlug, ServiceExplaine
       },
       {
         q: "Will I be told when the driver is on the way?",
-        a: "Yes. We text or call when the driver is on the way. The average arrival time is 30 minutes.",
+        a: "Yes. We text or call when the driver is on the way. We send the nearest available driver as soon as possible.",
       },
     ],
   },
@@ -414,7 +414,7 @@ export const SERVICE_EXPLAINERS: Partial<Record<ServiceTypeSlug, ServiceExplaine
       },
       {
         q: "Will I be told when the driver is on the way?",
-        a: "Yes. We text or call when the driver is on the way. The average arrival time is 30 minutes.",
+        a: "Yes. We text or call when the driver is on the way. We send the nearest available driver as soon as possible.",
       },
     ],
   },
@@ -493,7 +493,7 @@ export const SERVICE_EXPLAINERS: Partial<Record<ServiceTypeSlug, ServiceExplaine
       },
       {
         q: "Will I be told when the driver is on the way?",
-        a: "Yes. We text or call when the driver is on the way. The average arrival time is 30 minutes.",
+        a: "Yes. We text or call when the driver is on the way. We send the nearest available driver as soon as possible.",
       },
     ],
   },
@@ -565,7 +565,7 @@ export const SERVICE_EXPLAINERS: Partial<Record<ServiceTypeSlug, ServiceExplaine
       },
       {
         q: "Will I be told when the driver is on the way?",
-        a: "Yes. We text or call when the driver is on the way. The average arrival time is 30 minutes.",
+        a: "Yes. We text or call when the driver is on the way. We send the nearest available driver as soon as possible.",
       },
     ],
   },
@@ -640,7 +640,7 @@ export const SERVICE_EXPLAINERS: Partial<Record<ServiceTypeSlug, ServiceExplaine
       },
       {
         q: "Will I be told when the driver is on the way?",
-        a: "Yes. We text or call when the driver is on the way. The average arrival time is 30 minutes.",
+        a: "Yes. We text or call when the driver is on the way. We send the nearest available driver as soon as possible.",
       },
     ],
   },
@@ -716,7 +716,7 @@ export const SERVICE_EXPLAINERS: Partial<Record<ServiceTypeSlug, ServiceExplaine
       },
       {
         q: "Will I be told when the driver is on the way?",
-        a: "Yes. We text or call when the driver is on the way. The average arrival time is 30 minutes.",
+        a: "Yes. We text or call when the driver is on the way. We send the nearest available driver as soon as possible.",
       },
     ],
   },
@@ -789,7 +789,7 @@ export const SERVICE_EXPLAINERS: Partial<Record<ServiceTypeSlug, ServiceExplaine
       },
       {
         q: "Will I be told when the driver is on the way?",
-        a: "Yes. We text or call when the driver is on the way. The average arrival time is 30 minutes.",
+        a: "Yes. We text or call when the driver is on the way. We send the nearest available driver as soon as possible.",
       },
     ],
   },
@@ -863,7 +863,7 @@ export const SERVICE_EXPLAINERS: Partial<Record<ServiceTypeSlug, ServiceExplaine
       },
       {
         q: "Will I be told when the driver is on the way?",
-        a: "Yes. We text or call when the driver is on the way. The average arrival time is 30 minutes.",
+        a: "Yes. We text or call when the driver is on the way. We send the nearest available driver as soon as possible.",
       },
     ],
   },

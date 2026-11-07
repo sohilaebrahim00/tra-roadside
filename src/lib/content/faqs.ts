@@ -15,7 +15,7 @@ export const FAQS_FALLBACK: FaqItem[] = [
   { id: "hours", category: "General", question: "Are you available 24/7?", answer: "Yes — TRA dispatches roadside assistance 24 hours a day, 365 days a year." },
   { id: "how-to-request", category: "Service Requests", question: "How do I request help?", answer: "Use the \"Request Help\" button to share your location, pick a service, and submit — most requests take under two minutes. You can also call us directly." },
   { id: "account", category: "Service Requests", question: "Do I need to create an account?", answer: "No. You can submit a request without one, and we reach you by text, phone or email." },
-  { id: "arrival-time", category: "Arrival Time", question: "How long until a driver arrives?", answer: "TRA's stated average is a 30-minute arrival window; actual time depends on your location, traffic, and current demand." },
+  { id: "arrival-time", category: "Arrival Time", question: "How long until a driver arrives?", answer: "We send the nearest available driver as soon as possible." },
   { id: "pricing", category: "Pricing", question: "How much does a service cost?", answer: "TRA advertises upfront pricing with no surprise fees. Exact pricing is confirmed by dispatch based on your service and location before a driver is sent." },
   { id: "cancel", category: "Cancellations", question: "Can I cancel my request?", answer: "Yes. Call dispatch as soon as possible if you no longer need assistance." },
   { id: "safety", category: "Safety", question: "What should I do while waiting?", answer: "Stay in a safe, visible location away from moving traffic whenever possible, and keep your hazard lights on." },

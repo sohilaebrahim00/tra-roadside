@@ -15,7 +15,7 @@ const STEPS = [
   {
     icon: Navigation,
     title: "Hear when they're on the way",
-    text: "We text or call you when your driver is heading to you. Average arrival is 30 minutes; actual time depends on location and traffic.",
+    text: "We send the nearest available driver as soon as possible, and text or call you when they're heading to you.",
   },
   {
     icon: Wrench,

@@ -43,7 +43,7 @@ export const GUIDES_SEASONAL: Guide[] = [
       {
         heading: "How long it takes, and who controls the lot",
         paragraphs: [
-          "Our average arrival is 30 minutes, and the real time depends on where you are and the traffic. When a big fair night lets out, the streets around Fair Park back up, so allow longer than that.",
+          "We send the nearest available driver as soon as possible. When a big fair night lets out, the streets around Fair Park back up, so allow longer than that.",
           "TRA has no connection to the State Fair or to Fair Park, and the fair's own rules may limit where any driver can go. That is why an exact spot matters more here than it would at a driveway. If any part of the car is in a lane of traffic, or anyone feels unsafe, call 911 before anything else.",
         ],
       },
@@ -99,7 +99,7 @@ export const GUIDES_SEASONAL: Guide[] = [
       {
         heading: "Waiting for the crowd and for the driver",
         paragraphs: [
-          "Our average arrival is 30 minutes, but a stadium emptying onto Arlington's roads is not an average night. In heavy event traffic, expect it to take longer. We text or call when the driver is on the way, so keep your ringer on and your phone charged.",
+          "We send the nearest available driver as soon as possible. In heavy event traffic, expect it to take longer. We text or call when the driver is on the way, so keep your ringer on and your phone charged.",
           "If the car is parked safely out of the way, there is nothing wrong with letting the exits clear before the driver comes in. If any part of the car is in a lane of traffic, or anyone is in danger, call 911 first.",
         ],
       },
@@ -156,7 +156,7 @@ export const GUIDES_SEASONAL: Guide[] = [
         heading: "Leaving the car, and leaving the area",
         paragraphs: [
           "If you'd rather not wait around, DART's Green and Orange Lines stop at Victory station near the arena, so the rest of your group can get home while one person waits with the car. Check with the garage before leaving a car overnight, since its rules are its own.",
-          "Our average arrival is 30 minutes, though downtown after an event is slower than average and it can take longer. TRA has no connection with the arena or the garages around it, so a garage's gates and height limits may decide how a driver reaches you. You'll get a text or a call from us once the driver is on the way. If the car dies in an exit lane with traffic behind you, put the hazards on and call 911 if anyone is at risk.",
+          "We send the nearest available driver as soon as possible. TRA has no connection with the arena or the garages around it, so a garage's gates and height limits may decide how a driver reaches you. You'll get a text or a call from us once the driver is on the way. If the car dies in an exit lane with traffic behind you, put the hazards on and call 911 if anyone is at risk.",
         ],
       },
     ],
@@ -211,7 +211,7 @@ export const GUIDES_SEASONAL: Guide[] = [
       {
         heading: "Waiting out the traffic",
         paragraphs: [
-          "Our average arrival is 30 minutes, with the real time depending on location and traffic. Race-weekend traffic on I-35W and the roads near the track can stretch that a lot, and a driver may need extra time to reach you. Once a driver is on the way, you will get a text or a call from us.",
+          "We send the nearest available driver as soon as possible. Race-weekend traffic on I-35W and the roads near the track can stretch that a lot, and a driver may need extra time to reach you. Once a driver is on the way, you will get a text or a call from us.",
           "If the car is parked safely and nobody is stuck, let the lot empty first. A half-empty lot is easier for anyone to drive through. Keep the phone charged, because a long day of photos and texts is how phones die at the worst moment.",
         ],
       },
@@ -268,7 +268,7 @@ export const GUIDES_SEASONAL: Guide[] = [
         heading: "Coats, keys and waiting in the cold",
         paragraphs: [
           "Winter coats are where keys disappear: a fob in a pocket, the coat tossed on the seat, the door shut behind it. Opening the car is {{price:lockout}} and keys locked in the trunk are {{price2:lockout}}, each plus the dispatch fee. Have ID handy, because the driver confirms the car is yours before opening it. A child or a pet locked in the car is an emergency in the cold too, and the call goes to 911 first.",
-          "Our average arrival is 30 minutes, and on a busy show weekend it can take longer. You'll hear from us by text or call once the driver is on the way. While you wait, stay somewhere warm and near the car, and keep the phone charged.",
+          "We send the nearest available driver as soon as possible. You'll hear from us by text or call once the driver is on the way. While you wait, stay somewhere warm and near the car, and keep the phone charged.",
         ],
       },
     ],
@@ -324,7 +324,7 @@ export const GUIDES_SEASONAL: Guide[] = [
         heading: "Weather, distance and who sets the rules",
         paragraphs: [
           "Spring in North Texas can bring storms with little warning. If lightning is close, wait in a vehicle or a shelter. Never drive into water over a road, and if a low spot in the field or on the way out floods, stay out of it and wait for help from higher ground.",
-          "Our average arrival is 30 minutes. The real time depends on where you are and the traffic, and a country road with a festival letting out is slower than most, so allow longer. We text or call as soon as the driver is headed your way. The festival's own staff and rules decide where drivers can go, and TRA has no connection with the festival.",
+          "We send the nearest available driver as soon as possible. The real time depends on where you are and the traffic, and a country road with a festival letting out is slower than most, so allow longer. We text or call as soon as the driver is headed your way. The festival's own staff and rules decide where drivers can go, and TRA has no connection with the festival.",
         ],
       },
     ],
@@ -386,7 +386,7 @@ export const GUIDES_SEASONAL: Guide[] = [
       {
         heading: "If the car quits close to home",
         paragraphs: [
-          "Our service area is the Dallas–Fort Worth Metroplex. Dispatch is open every day of the year, holidays included, and our average arrival is 30 minutes. On the busiest travel days, traffic can make it longer. We text or call as the driver heads to you. If you are in a lane of traffic, or anyone is in danger, call 911 first.",
+          "Our service area is the Dallas–Fort Worth Metroplex. We send the nearest available driver as soon as possible. On the busiest travel days, traffic can make it longer. We text or call as the driver heads to you. If you are in a lane of traffic, or anyone is in danger, call 911 first.",
           "Loading the trunk is also when keys get locked inside. Unlocking the car is {{price:lockout}}, and a trunk lockout is {{price2:lockout}}, each plus the dispatch fee.",
         ],
       },
@@ -448,7 +448,7 @@ export const GUIDES_SEASONAL: Guide[] = [
       {
         heading: "Waiting in a lot at night",
         paragraphs: [
-          "Our average arrival is 30 minutes, depending on location and traffic, and dispatch is open around the clock. Airport roads can add time. A text or call from us tells you the driver is on the way.",
+          "We send the nearest available driver as soon as possible. Airport roads can add time. A text or call from us tells you the driver is on the way.",
           "Wait somewhere well lit with other people around, near the shuttle stop or an entrance, and keep your luggage with you. If there is a gate or a ticket at the exit that a driver would have to pass, mention it to dispatch.",
         ],
       },
@@ -504,7 +504,7 @@ export const GUIDES_SEASONAL: Guide[] = [
       {
         heading: "Getting help after a storm",
         paragraphs: [
-          "A car in a lane of traffic, or anyone in danger, means a call to 911 first. After a big storm, signals may be out and roads closed, so our average arrival of 30 minutes can stretch. The real time depends on location and traffic, and we text or call when the driver is on the way.",
+          "A car in a lane of traffic, or anyone in danger, means a call to 911 first. We send the nearest available driver as soon as possible. The real time depends on location and traffic, and we text or call when the driver is on the way.",
           "A driver can't get through a flooded or closed road, so tell dispatch if water or debris sits between you and the nearest dry street. Keep the phone charged, since a power outage can mean you can't recharge it at home.",
         ],
       },
@@ -560,7 +560,7 @@ export const GUIDES_SEASONAL: Guide[] = [
       {
         heading: "Timing around pickup",
         paragraphs: [
-          "Streets around a school clog at drop-off and pickup, and a driver is stuck in them too. Our average arrival is 30 minutes, and near a school at those times it can be longer. Expect a text or a call from us when the driver is on the way.",
+          "Streets around a school clog at drop-off and pickup, and a driver is stuck in them too. We send the nearest available driver as soon as possible. Expect a text or a call from us when the driver is on the way.",
           "Give dispatch the school's cross street and the side of the building the car is on, such as the east parking lot or the bus loop, and say if the lot is gated. If a driver can't get onto campus, the school's rules may be why.",
         ],
       },
@@ -617,7 +617,7 @@ export const GUIDES_SEASONAL: Guide[] = [
         heading: "Waiting out the rush",
         paragraphs: [
           "Give dispatch the nearest store entrance or numbered light pole, and photograph it. If the mall has a garage, give the level. Mall security can help with things like where to wait, but the lot's rules are the property's, not ours, and TRA has no connection with any mall.",
-          "Our average arrival is 30 minutes, and on a busy weekend traffic in and out of the lot can make it longer. Watch for a text or call from us when the driver is on the way. Wait inside the mall with your bags and keep your phone on.",
+          "We send the nearest available driver as soon as possible. Watch for a text or call from us when the driver is on the way. Wait inside the mall with your bags and keep your phone on.",
         ],
       },
     ],
@@ -672,7 +672,7 @@ export const GUIDES_SEASONAL: Guide[] = [
       {
         heading: "Before you call",
         paragraphs: [
-          "Check whether your car insurance, your parents' policy or a credit card includes roadside help. If it does, it might cost you nothing, so it can be worth a few minutes. If the wait is long or it doesn't cover the problem, call us. We dispatch across DFW, our average arrival is 30 minutes, and the real time depends on location and traffic. We'll text or call when the driver is on the way.",
+          "Check whether your car insurance, your parents' policy or a credit card includes roadside help. If it does, it might cost you nothing, so it can be worth a few minutes. If the wait is long or it doesn't cover the problem, call us. We send the nearest available driver as soon as possible. We'll text or call when the driver is on the way.",
           "Have the year, make and model ready, plus a photo of where the car is. If the problem might be more than a battery or a tire, say what the car is doing. We don't tow or do mechanical repair.",
         ],
       },

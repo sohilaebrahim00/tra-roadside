@@ -1,8 +1,9 @@
-import { BadgeCheck, ShieldCheck, Timer, Clock, Receipt } from "lucide-react";
+import { BadgeCheck, Languages, ShieldCheck, Timer, Clock, Receipt } from "lucide-react";
 import { Container } from "@/components/ui/container";
 
 const ITEMS = [
-  { icon: Timer, label: "Average 30-Minute Arrival" },
+  { icon: Timer, label: "Nearest Driver Sent ASAP" },
+  { icon: Languages, label: "Se Habla Español" },
   { icon: ShieldCheck, label: "100% Licensed & Insured" },
   { icon: Clock, label: "Available 24/7, 365 Days" },
   { icon: Receipt, label: "Upfront Pricing, No Surprise Fees" },

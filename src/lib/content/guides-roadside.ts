@@ -52,7 +52,7 @@ export const GUIDES_ROADSIDE: Guide[] = [
         heading: "What TRA does for a flat",
         paragraphs: [
           "TRA dispatches from Dallas–Fort Worth around the clock. A flat tire change puts on the spare you already carry and is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. A repair for a tread puncture is {{price:tire-repair-plug-patch}}, and a tire supplied and installed is {{price:tire-replacement}}. Dispatch confirms a tire is available before a driver is sent.",
-          "Our average arrival is 30 minutes, though the actual time depends on where you are and the traffic. We text or call when the driver is on the way. We don't tow, so if the car can't be driven, you'll need a tow company.",
+          "We send the nearest available driver as soon as possible. We text or call when the driver is on the way. We don't tow, so if the car can't be driven, you'll need a tow company.",
         ],
       },
     ],
@@ -480,7 +480,7 @@ export const GUIDES_ROADSIDE: Guide[] = [
         heading: "Getting the wheel back on",
         paragraphs: [
           "A blown tire can't be repaired, so the choices are the spare or a new tire. TRA's flat tire change puts on the spare you already carry. It's {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. If there's no usable spare, we supply a tire and install it on site, and that's {{price:tire-replacement}}.",
-          "Tell dispatch the road, the direction, the nearest exit or mile marker, and which side of the road you're on. We text or call when the driver is on the way. Our average arrival is 30 minutes, with the actual time depending on location and traffic.",
+          "Tell dispatch the road, the direction, the nearest exit or mile marker, and which side of the road you're on. We text or call when the driver is on the way. We send the nearest available driver as soon as possible.",
           "Afterward, take a second look at the other tires. A tire that blew was sometimes underinflated or worn, and the rest may be in the same shape. Check the pressure and tread on all four, and on the spare, before you drive on.",
         ],
       },
@@ -649,7 +649,7 @@ export const GUIDES_ROADSIDE: Guide[] = [
         heading: "Getting it opened",
         paragraphs: [
           "When you call, have your exact location, the year, make and model, and whether the keys are in the cabin or the trunk ready. Keep your ID handy. For everyone's safety, the driver confirms the vehicle is yours before unlocking it.",
-          "Our average arrival is 30 minutes, and how long it takes to reach you depends on where you are and the traffic between us and you. We text or call when the driver is on the way, so keep your phone with you instead of leaving it inside the car with the keys.",
+          "We send the nearest available driver as soon as possible. We text or call when the driver is on the way, so keep your phone with you instead of leaving it inside the car with the keys.",
           "TRA's drivers use non-destructive entry methods whenever possible. A vehicle lockout is {{price:lockout}}, plus a {{dispatchFee}} dispatch fee charged once per job. Keys in the trunk are a separate, longer job at {{price2:lockout}}, plus the dispatch fee. We open vehicles. We don't cut or program keys.",
         ],
       },
@@ -905,7 +905,7 @@ export const GUIDES_ROADSIDE: Guide[] = [
       {
         heading: "What TRA can and can't do",
         paragraphs: [
-          "TRA can put on your spare, which is {{price:flat-tire-change}}, or jump a dead battery, which is {{price:jump-start}}, each plus a {{dispatchFee}} dispatch fee charged once per job. Arrival averages 30 minutes, with the actual time set by your location and the traffic. We text or call when the driver is on the way.",
+          "TRA can put on your spare, which is {{price:flat-tire-change}}, or jump a dead battery, which is {{price:jump-start}}, each plus a {{dispatchFee}} dispatch fee charged once per job. We send the nearest available driver as soon as possible. We text or call when the driver is on the way.",
           "We don't tow and we don't repair engines. If the car overheated, lost power or has a failed transmission, you'll need a tow company.",
         ],
       },
@@ -1302,7 +1302,7 @@ export const GUIDES_ROADSIDE: Guide[] = [
         heading: "Getting back on the road",
         paragraphs: [
           "Think about which kind of problem you have. A dead battery, a flat tire with a good spare, a screw in a tire or a locked door can all be fixed where the car sits, and the shift can resume. An overheated engine or a failed transmission can't, and means a tow. We don't tow, so for those you'll need a tow company or the one your insurer sends.",
-          "For the jobs we do, the prices are published. A jump start is {{price:jump-start}} and a flat tire change is {{price:flat-tire-change}}, each plus a {{dispatchFee}} dispatch fee charged once per job. When you call, give the exact location, the year, make and model, and what the car is doing. We text or call when the driver is on the way. On average a driver arrives in about 30 minutes, though the actual time depends on your location and the traffic.",
+          "For the jobs we do, the prices are published. A jump start is {{price:jump-start}} and a flat tire change is {{price:flat-tire-change}}, each plus a {{dispatchFee}} dispatch fee charged once per job. When you call, give the exact location, the year, make and model, and what the car is doing. We text or call when the driver is on the way. We send the nearest available driver as soon as possible.",
         ],
       },
       {
@@ -1509,7 +1509,7 @@ export const GUIDES_ROADSIDE: Guide[] = [
       {
         heading: "Heat and the usual suspects",
         paragraphs: [
-          "Heat is hard on batteries and on tires that are already low, and summer is when both fail. A dead battery gets a jump start, which is {{price:jump-start}}, and a flat tire gets a spare change, which is {{price:flat-tire-change}}, each plus a {{dispatchFee}} dispatch fee charged once per job. We're open around the clock, and our average arrival is 30 minutes, with the actual time depending on location and traffic.",
+          "Heat is hard on batteries and on tires that are already low, and summer is when both fail. A dead battery gets a jump start, which is {{price:jump-start}}, and a flat tire gets a spare change, which is {{price:flat-tire-change}}, each plus a {{dispatchFee}} dispatch fee charged once per job. We send the nearest available driver as soon as possible.",
         ],
       },
     ],

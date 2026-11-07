@@ -64,7 +64,7 @@ export const BUSINESS = {
     facebook: "https://www.facebook.com/share/196PJcoEgP/?mibextid=wwXIfr",
   },
   trustClaims: [
-    { id: "arrival", label: "Average 30-Minute Arrival" },
+    { id: "arrival", label: "Nearest Driver Sent ASAP" },
     { id: "licensed", label: "100% Licensed & Insured" },
     { id: "available", label: "Available 24/7, 365 Days" },
     { id: "pricing", label: "Upfront Pricing — No Surprise Fees" },

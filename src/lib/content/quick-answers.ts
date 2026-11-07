@@ -14,9 +14,9 @@ import type { ServiceTypeSlug } from "@/lib/types/domain";
  *
  * Every figure comes from SERVICES and every geographic fact from local-data,
  * so nothing here can go stale. It states only what the site already stands
- * behind. Things still unconfirmed by the owner are deliberately absent: an
- * after-hours policy, payment methods, and an arrival time better than the
- * published 30-minute average.
+ * behind. Things still unconfirmed by the owner are deliberately absent, such as
+ * an after-hours policy. The owner's answers of 2026-11-07: no arrival figure
+ * (the nearest driver is sent as soon as possible), cash, and Spanish spoken.
  *
  * The city-page answers repeat a sentence pattern across cities on purpose.
  * They are short facts sitting above the prose that city-service-pages.ts
@@ -39,8 +39,10 @@ export interface QuickAnswerContent {
 const DFW = "Dallas–Fort Worth";
 const AVAILABILITY = "Open 24 hours a day, 365 days a year, including nights, weekends and holidays";
 const MEMBERSHIP = "None. No sign-up and no annual dues: you pay only for the job.";
-const ARRIVAL = "Average 30-minute arrival. Actual time depends on your location and traffic.";
+const ARRIVAL = "We send the nearest available driver as soon as possible. Actual time depends on your location and traffic.";
 const NOTE = `Prices are starting prices. Dispatch confirms the price for your vehicle and location before a driver is sent.`;
+const PAYMENT = "Cash";
+const LANGUAGES = "English and Spanish (se habla español)";
 const CONTACT: QuickFact = { label: "Contact", value: `Request online or call ${BUSINESS.phoneDisplay}`, href: BUSINESS.phoneHref };
 
 /** How people ask what a service costs. */
@@ -138,6 +140,8 @@ export function homeAnswer(): QuickAnswerContent {
       { label: "Arrival", value: ARRIVAL },
       { label: "Membership", value: MEMBERSHIP },
       { label: "Company", value: `${BUSINESS.dispatchNote}. Licensed and insured.` },
+      { label: "Payment", value: PAYMENT },
+      { label: "Languages", value: LANGUAGES },
       CONTACT,
     ],
     note: NOTE,
@@ -153,6 +157,7 @@ export function pricingAnswer(): QuickAnswerContent {
       { label: "Dispatch fee", value: `${DISPATCH_FEE_USD} flat, once per job` },
       { label: "Service area", value: coverageLine() },
       { label: "Hours", value: AVAILABILITY },
+      { label: "Payment", value: PAYMENT },
       CONTACT,
     ],
     note: NOTE,
@@ -256,6 +261,8 @@ export function roadsideFaqs(): FaqItem[] {
     faq("right-now", "Getting Help Right Now", "Can someone come to me right now?", `Yes. TRA dispatches 24 hours a day across ${DFW}, and you don't need a membership or an account. Send a request with your location, or call ${BUSINESS.phoneDisplay}. Dispatch confirms the price before a driver is sent, and lets you know when they're on the way.`),
     faq("need", "Getting Help Right Now", "What do you need from me when I ask for help?", "Your location (an address, cross streets or a map pin), the vehicle's year, make and model, and what happened. That's enough to send the right driver with the right equipment."),
     faq("cost", "What It Costs", "How much does roadside assistance cost in Dallas?", `Jump starts are ${jump}, lockouts ${lockout}, tire repair ${repair}, a spare tire change ${flat}, a new tire installed ${tire}, and a new battery installed ${battery} for eligible vehicles. A flat ${fee} dispatch fee is added once per job.`),
+    faq("pay", "What It Costs", "How do I pay?", "In cash. Dispatch confirms the price before a driver is sent, so you know the amount to have ready."),
+    faq("spanish", "Getting Help Right Now", "Do you speak Spanish?", `Yes. Se habla español: call ${BUSINESS.phoneDisplay} and ask for help in Spanish.`),
     faq("dispatch", "What It Costs", `What is the ${fee} dispatch fee?`, `${DISPATCH_FEE_EXPLAINER} It is added to the service price, never charged twice on one job, and never the whole cost of the service.`),
     faq("tow", "What It Costs", "Is a roadside call cheaper than a tow and a shop visit?", `For a job we can finish where the car sits, you skip the tow and the trip to the shop. A tire plug or patch is ${repair}, putting on your spare is ${flat}, a new tire installed is ${tire}, and a battery installed is ${battery}, plus the ${fee} dispatch fee. We don't tow, so a car that needs a shop is the one case we can't fix at the roadside.`),
     faq("membership", "What It Costs", "Do I need a membership or a contract?", "No. There's no membership, no annual dues and no contract. You pay for the job you asked for, and you don't need an auto club or an insurance claim to call us."),

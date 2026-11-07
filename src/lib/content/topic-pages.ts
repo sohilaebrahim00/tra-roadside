@@ -14,8 +14,8 @@ import { TOPICS_PLACES } from "./topic-pages-places";
  *    {{total:<service-slug>}} or {{dispatchFee}}; the page renders them from
  *    SERVICES.
  *  - State only what TRA actually does (services.ts, business.ts) and general
- *    automotive facts. No response times beyond the published 30-minute average,
- *    no invented statistics, no reviews, no named customers.
+ *    automotive facts. No arrival times (the nearest driver is sent as soon as
+ *    possible), no invented statistics, no reviews, no named customers.
  *  - A place page may name only what local-data.ts records, and must never imply
  *    a permit, an authorization, or a partnership with an airport, a venue or a
  *    road authority.

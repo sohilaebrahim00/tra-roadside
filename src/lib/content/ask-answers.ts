@@ -72,7 +72,7 @@ export function answerQuestion(raw: string): AskAnswer {
     };
   }
   if (has(/\b(fast|long|soon|eta|arrive|arrival|quick|quickly|wait|minutes)\b/)) {
-    return { text: "Our average is a 30-minute arrival. The actual time depends on your location and traffic, and we'll let you know when your driver is on the way.", service: svc };
+    return { text: "We send the nearest available driver as soon as possible. The actual time depends on your location and traffic, and we'll let you know when your driver is on the way.", service: svc };
   }
   if (has(/\b(open|hours|tonight|night|weekend|weekends|holiday|holidays|sunday|24)\b/)) {
     return { text: "Yes, we're open 24 hours a day, 365 days a year, including nights, weekends and holidays.", service: svc };
@@ -86,8 +86,11 @@ export function answerQuestion(raw: string): AskAnswer {
       link: { href: "/service-areas", label: "See all service areas" },
     };
   }
+  if (has(/\b(spanish|espanol|habla)\b/)) {
+    return { text: `Yes, se habla español. Call ${BUSINESS.phoneDisplay} and ask for help in Spanish.` };
+  }
   if (has(/\b(pay|payment|card|cash|apple|zelle)\b/)) {
-    return { text: `Dispatch can tell you the payment options when you request help, or call ${BUSINESS.phoneDisplay}.` };
+    return { text: "We take cash. Dispatch confirms the price before a driver is sent, so you know the amount to have ready." };
   }
 
   if (svc) return serviceAnswer(svc);

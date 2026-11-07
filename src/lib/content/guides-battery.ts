@@ -188,7 +188,7 @@ export const GUIDES_BATTERY: Guide[] = [
         heading: "A slow crank is a warning",
         paragraphs: [
           "If the engine turns over, but slowly, in a long drawn-out rurr-rurr-rurr, the battery is weak but not finished. That is the sound to act on before it turns into clicking. Weeks of slow cranking are the best warning you will get, and replacing a battery on a day you choose beats doing it in a parking lot at night.",
-          "If the car clicks and you'd like it running, a jump start is {{price:jump-start}}, plus the {{dispatchFee}} dispatch fee, which covers sending the driver to you. Average arrival is 30 minutes, and the actual time depends on your location and traffic. Tell dispatch what the lights did, so the driver knows whether a jump is likely to work.",
+          "If the car clicks and you'd like it running, a jump start is {{price:jump-start}}, plus the {{dispatchFee}} dispatch fee, which covers sending the driver to you. We send the nearest available driver as soon as possible. Tell dispatch what the lights did, so the driver knows whether a jump is likely to work.",
         ],
       },
     ],
@@ -520,7 +520,7 @@ export const GUIDES_BATTERY: Guide[] = [
       {
         heading: "If you'd rather not do it in the rain",
         paragraphs: [
-          "You don't have to. A jump start is {{price:jump-start}}, plus the {{dispatchFee}} dispatch fee, which covers sending the driver to you. We text or call when the driver is on the way. On average a driver arrives in 30 minutes, though the actual time depends on your location and traffic. Wait in the car with the hazard lights on if you are somewhere that isn't safe to stand. Mention the rain when you request help, so the driver knows what to expect when they get there.",
+          "You don't have to. A jump start is {{price:jump-start}}, plus the {{dispatchFee}} dispatch fee, which covers sending the driver to you. We text or call when the driver is on the way. We send the nearest available driver as soon as possible. Wait in the car with the hazard lights on if you are somewhere that isn't safe to stand. Mention the rain when you request help, so the driver knows what to expect when they get there.",
         ],
       },
     ],
@@ -1256,7 +1256,7 @@ export const GUIDES_BATTERY: Guide[] = [
       {
         heading: "The price, and what happens next",
         paragraphs: [
-          "A heavy-duty jump start for a semi truck, an 18-wheeler or another big rig is {{price2:jump-start}}, plus the {{dispatchFee}} dispatch fee charged once per job. That is a separate price from a car's jump start, which is {{price:jump-start}}, so request it as a semi truck. Our average arrival is 30 minutes, and the actual time depends on the location and traffic. We text or call when the driver is on the way.",
+          "A heavy-duty jump start for a semi truck, an 18-wheeler or another big rig is {{price2:jump-start}}, plus the {{dispatchFee}} dispatch fee charged once per job. That is a separate price from a car's jump start, which is {{price:jump-start}}, so request it as a semi truck. We send the nearest available driver as soon as possible. We text or call when the driver is on the way.",
           "Once it is running, give the air pressure time to build before you try to move, since the spring brakes won't release until it does. Don't shut it off at the first stop. A truck that needed a jump had a reason, so have the batteries and the charging system checked.",
         ],
       },
@@ -1322,7 +1322,7 @@ export const GUIDES_BATTERY: Guide[] = [
       {
         heading: "If it won't start anyway",
         paragraphs: [
-          "Dispatch is open 24/7, 365 days a year. A jump start is {{price:jump-start}}, plus the {{dispatchFee}} dispatch fee, charged once, and a battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installation included. Arrival averages 30 minutes, with the actual time depending on location and traffic. We text or call when the driver is on the way. Wait inside the car where it is safe, and hold off on more cranking in the meantime. Each long attempt drains what the battery has left and makes the jump harder.",
+          "Dispatch is open 24/7, 365 days a year. A jump start is {{price:jump-start}}, plus the {{dispatchFee}} dispatch fee, charged once, and a battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installation included. We send the nearest available driver as soon as possible. We text or call when the driver is on the way. Wait inside the car where it is safe, and hold off on more cranking in the meantime. Each long attempt drains what the battery has left and makes the jump harder.",
         ],
       },
     ],

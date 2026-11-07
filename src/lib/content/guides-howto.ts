@@ -49,7 +49,7 @@ export const GUIDES_HOWTO: Guide[] = [
         heading: "Coverage is a different question from cost",
         paragraphs: [
           "The word cover can also mean insurance. Some auto policies, car makers and credit cards include roadside help, with limits on which services count, how many calls you get a year and how far a tow goes. Ask what is included before you count on it.",
-          "TRA is pay per use, so there's no plan to be covered by. You request the job and pay for it. A jump start costs {{price:jump-start}}, plus a {{dispatchFee}} dispatch fee charged once per job, and dispatch confirms your total when you request help. Our average arrival is 30 minutes, with the actual time depending on your location and traffic. We text or call when the driver is on the way.",
+          "TRA is pay per use, so there's no plan to be covered by. You request the job and pay for it. A jump start costs {{price:jump-start}}, plus a {{dispatchFee}} dispatch fee charged once per job, and dispatch confirms your total when you request help. We send the nearest available driver as soon as possible. We text or call when the driver is on the way.",
         ],
       },
       {
@@ -129,7 +129,7 @@ export const GUIDES_HOWTO: Guide[] = [
       {
         heading: "If you would rather not do it yourself",
         paragraphs: [
-          "A jump start from TRA costs {{price:jump-start}}, plus a {{dispatchFee}} dispatch fee charged once per job. We text or call when the driver is on the way. Our average arrival is 30 minutes, with the actual time depending on your location and traffic.",
+          "A jump start from TRA costs {{price:jump-start}}, plus a {{dispatchFee}} dispatch fee charged once per job. We text or call when the driver is on the way. We send the nearest available driver as soon as possible.",
         ],
       },
     ],
@@ -814,7 +814,7 @@ export const GUIDES_HOWTO: Guide[] = [
       {
         heading: "Know who you're expecting",
         paragraphs: [
-          "When you request help from TRA, we text or call when the driver is on the way, so you know a driver is coming. Our average arrival is 30 minutes, though the actual time depends on your location and traffic.",
+          "When you request help from TRA, we text or call when the driver is on the way, so you know a driver is coming. We send the nearest available driver as soon as possible.",
           "If a vehicle pulls up that you didn't call, don't open the door. Ask through the window which company it is and who sent it. If the answer doesn't match the company you called, phone the number you used to request help before you do anything else.",
         ],
       },
@@ -889,7 +889,7 @@ export const GUIDES_HOWTO: Guide[] = [
       {
         heading: "What a call to us looks like",
         paragraphs: [
-          "For a flat tire with a good spare in the car, a flat tire change costs {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job, and dispatch confirms the total when help is requested. We need the exact location, the vehicle, and what's wrong, and we text or call when the driver is on the way. Our average arrival is 30 minutes, with the actual time depending on location and traffic.",
+          "For a flat tire with a good spare in the car, a flat tire change costs {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job, and dispatch confirms the total when help is requested. We need the exact location, the vehicle, and what's wrong, and we text or call when the driver is on the way. We send the nearest available driver as soon as possible.",
         ],
       },
     ],
@@ -1023,7 +1023,7 @@ export const GUIDES_HOWTO: Guide[] = [
       {
         heading: "Telling dispatch where you're waiting",
         paragraphs: [
-          "Say whether you're in the car or behind a barrier, and which side of the road you're on. We text or call when the driver is on the way, and our average arrival is 30 minutes, with the actual time depending on location and traffic.",
+          "Say whether you're in the car or behind a barrier, and which side of the road you're on. We send a driver as soon as possible, and we text or call you when they are on the way.",
         ],
       },
     ],
@@ -1211,7 +1211,7 @@ export const GUIDES_HOWTO: Guide[] = [
       {
         heading: "Ask who is coming, and how you'll know",
         paragraphs: [
-          "Get the company name and what to expect. We text or call when the driver is on the way, and our average arrival is 30 minutes, with the actual time depending on location and traffic. Be wary of an arrival time so exact it sounds like a promise.",
+          "Get the company name and what to expect. We send a driver as soon as possible, and we text or call you when they are on the way. Be wary of an arrival time so exact it sounds like a promise.",
           "Write down the time of the call, the name of the person, and the total. Compare all three with the invoice at the end.",
         ],
       },

@@ -43,7 +43,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
         paragraphs: [
           "Choose the closest match and describe what you see. The price for your vehicle is confirmed before a driver is sent. If you ask for a repair, the driver checks the tire before starting and tells you whether it can be done. Damage in or near the sidewall can't be repaired safely.",
           "Please don't keep driving on the flat to reach a shop. It ruins the tire and can damage the wheel, which turns a small bill into a bigger one.",
-          "You'll get a text or a call when the driver is on the way. Our average arrival is 30 minutes, and the actual time depends on your location and traffic.",
+          "You'll get a text or a call when the driver is on the way. We send the nearest available driver as soon as possible.",
         ],
       },
       {
@@ -108,7 +108,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
         paragraphs: [
           "On a road, landmarks beat addresses. Give dispatch the road name, which direction you're facing, the nearest exit or cross street, and any mile marker you can read. Say that you're on a shoulder or in a hazard, and say whether there's a spare in the car.",
           "If your wheels have locking nuts, say whether you have the key. A missing key means the lock has to come off before the wheel can, which is {{price:rim-lock-removal}} plus the dispatch fee. It is better to tell dispatch now than to find out when the driver arrives.",
-          "We text or call you when the driver is on the way. Our average arrival is 30 minutes, though the real time depends on where you are and the traffic. Stay somewhere safe until then.",
+          "We text or call you when the driver is on the way. We send the nearest available driver as soon as possible. Stay somewhere safe until then.",
         ],
       },
       {
@@ -129,7 +129,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
       },
       {
         q: "How soon can a driver get to me?",
-        a: "Our average arrival is 30 minutes. The actual time depends on your location and traffic, and we text or call you when the driver is on the way.",
+        a: "We send the nearest available driver as soon as possible. The actual time depends on your location and traffic, and we text or call you when the driver is on the way.",
       },
       {
         q: "Will you work on a highway shoulder?",
@@ -238,7 +238,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
       {
         heading: "What to expect when you call",
         paragraphs: [
-          "Tell us where the car is, the year, make and model, and what's wrong with the tire. Dispatch confirms the service price and the dispatch fee for your vehicle before a driver is sent. We text or call when the driver is on the way. Our average arrival is 30 minutes, and the actual time depends on where you are and the traffic.",
+          "Tell us where the car is, the year, make and model, and what's wrong with the tire. Dispatch confirms the service price and the dispatch fee for your vehicle before a driver is sent. We text or call when the driver is on the way. We send the nearest available driver as soon as possible.",
           "Not sure what to ask for at that hour? Say what you see: a tire that's completely flat, one that's losing air slowly, a nail in the tread. That's enough for dispatch to pick the right job.",
         ],
       },
@@ -306,7 +306,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
       {
         heading: "Don't drive on it to find a shop",
         paragraphs: [
-          "The shops are closed, and driving on a flat toward one that might be open ruins the tire and can damage the wheel. We text or call you when the driver is on the way. Our average arrival is 30 minutes; the actual time depends on your location and traffic.",
+          "The shops are closed, and driving on a flat toward one that might be open ruins the tire and can damage the wheel. We text or call you when the driver is on the way. We send the nearest available driver as soon as possible.",
           "That text or call is also your cue. If you're alone in the dark, you'll know to expect someone before anyone walks up to the car.",
         ],
       },
@@ -811,9 +811,9 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
       {
         heading: "Local dispatch, open any hour",
         paragraphs: [
-          "Dispatch is local to Dallas–Fort Worth, not an out-of-state call center, and we're open 24/7, 365 days a year. Average arrival is 30 minutes; the real time depends on where you are and the traffic. We text or call you when the driver is on the way.",
+          "Dispatch is local to Dallas–Fort Worth, not an out-of-state call center, and we're open 24/7, 365 days a year. We send the nearest available driver as soon as possible. We text or call you when the driver is on the way.",
           "We don't have a walk-in location, so there's nothing to drive to. Near me, here, means a driver sent to wherever you are.",
-          "Traffic and weather change how long any drive takes, which is why the 30 minutes is an average, not a promise for your call.",
+          "We send the nearest available driver as soon as possible.",
         ],
       },
       {
@@ -959,7 +959,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
       {
         heading: "What to have ready at any hour",
         paragraphs: [
-          "The year, make and model, where the car is, and the VIN if you can reach it. Dispatch confirms the battery is compatible, and your total, before a driver is sent. We text or call when the driver is on the way. Average arrival is 30 minutes, depending on location and traffic.",
+          "The year, make and model, where the car is, and the VIN if you can reach it. Dispatch confirms the battery is compatible, and your total, before a driver is sent. We text or call when the driver is on the way. We send the nearest available driver as soon as possible.",
           "While you wait, turn off the lights and accessories, and stay somewhere well lit and visible. After dark, keep the doors locked until you know the driver has arrived.",
         ],
       },
@@ -1164,7 +1164,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
       {
         heading: "How fast, and what it costs",
         paragraphs: [
-          "We're open 24/7, 365 days a year. Our average arrival is 30 minutes, though the real time depends on your location and traffic, and we text or call when the driver is on the way.",
+          "We're open 24/7, 365 days a year. We send a driver as soon as possible, and we text or call you when they are on the way.",
           "Opening the vehicle is {{price:lockout}}, plus the {{dispatchFee}} dispatch fee, charged once. Keys locked in the trunk are a different job at {{price2:lockout}}. Dispatch confirms your price before a driver is sent.",
         ],
       },
@@ -1176,7 +1176,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
       },
       {
         q: "How fast can you get here?",
-        a: "Our average arrival is 30 minutes. The actual time depends on your location and traffic, and we text or call you when the driver is on the way.",
+        a: "We send the nearest available driver as soon as possible. The actual time depends on your location and traffic, and we text or call you when the driver is on the way.",
       },
       {
         q: "What if my ID is locked inside?",
@@ -1284,7 +1284,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
         heading: "How to ask for help",
         paragraphs: [
           "Call or send a request online. Give your exact location, the vehicle's year, make and model, and what's wrong. Dispatch confirms the service price and the dispatch fee for your vehicle before a driver is sent, and we text or call you when the driver is on the way.",
-          "Dispatch is based in Dallas–Fort Worth rather than in an out-of-state call center. Our average arrival is 30 minutes; the actual time depends on where you are and the traffic.",
+          "Dispatch is based in Dallas–Fort Worth rather than in an out-of-state call center. We send the nearest available driver as soon as possible.",
           "Not sure how to describe it? Pick the symptom that sounds closest: the car won't start, a tire is flat, you're locked out, or a wheel lock won't open. Dispatch works out the job from there.",
         ],
       },
@@ -1350,7 +1350,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
         heading: "What to tell us when you call",
         paragraphs: [
           "Where the car is, the year, make and model, and what happened. That's all dispatch needs to pick the right job. For a semi truck, choose that vehicle type, because it has its own jump start price.",
-          "A text or a call tells you when the driver is on the way. Our average arrival is 30 minutes, and the actual time depends on your location and traffic.",
+          "A text or a call tells you when the driver is on the way. We send the nearest available driver as soon as possible.",
         ],
       },
       {
@@ -1678,7 +1678,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
         heading: "Keep the details ready",
         paragraphs: [
           "Save the car's year, make and model, and the tire size (it's on the sticker in the driver's door jamb) in a note on your phone. When the car stops, you can send the whole request in a minute. Give an exact location, such as a cross street or a store name, not just a neighborhood.",
-          "We text or call when your driver is on the way. Average arrival is 30 minutes; the actual time depends on location and traffic. No membership needed.",
+          "We text or call when your driver is on the way. We send the nearest available driver as soon as possible. No membership needed.",
         ],
       },
     ],

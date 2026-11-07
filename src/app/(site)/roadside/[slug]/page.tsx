@@ -12,7 +12,8 @@ import { HeroBackdrop } from "@/components/brand/hero-backdrop";
 import { BUSINESS, SERVICE_AREAS } from "@/lib/content/business";
 import { getService } from "@/lib/content/services";
 import { fillPrices } from "@/lib/content/price-tokens";
-import { DISPATCH_FEE_TAG, lowPrice, pricedTitle } from "@/lib/content/pricing";
+import { feeTagFor, lowPrice, pricedTitle } from "@/lib/content/pricing";
+import { PriceFigure } from "@/components/ui/price-figure";
 import { TOPIC_PAGES, getTopicPage } from "@/lib/content/topic-pages";
 import { env } from "@/lib/env";
 import { pageUrls, shareImageFor } from "@/lib/seo";
@@ -71,7 +72,8 @@ export default async function TopicPageRoute({ params }: { params: Promise<{ slu
             <h1 className="mt-2 font-display text-3xl font-bold uppercase tracking-tight sm:text-5xl">{topic.h1}</h1>
             <p className="mt-4 max-w-xl text-base leading-relaxed text-white/80 sm:text-lg">{fillPrices(topic.intro)}</p>
             <p className="mt-4 font-display text-xl font-bold text-white">
-              {svc.shortName} {lowPrice(svc)} {DISPATCH_FEE_TAG}
+              {svc.shortName} <PriceFigure svc={svc}>{lowPrice(svc)}</PriceFigure>
+              {feeTagFor(svc) && <> {feeTagFor(svc)}</>}
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <Button href={`/request?service=${svc.slug}`} size="lg" icon={<LifeBuoy className="h-4 w-4" aria-hidden="true" />}>
@@ -129,7 +131,7 @@ export default async function TopicPageRoute({ params }: { params: Promise<{ slu
                   <li key={s.slug}>
                     <Link href={`/services/${s.slug}`} className="flex items-center justify-between gap-3 rounded-xl border border-ink-950/10 bg-white px-4 py-3 text-sm font-semibold text-ink-900 hover:border-red-600/40">
                       <span>
-                        {s.name} <span className="font-normal text-ink-500">{lowPrice(s)}</span>
+                        {s.name} <PriceFigure svc={s} inLink className="font-normal text-ink-500">{lowPrice(s)}</PriceFigure>
                       </span>
                       <ArrowUpRight className="h-4 w-4 shrink-0 text-red-600" aria-hidden="true" />
                     </Link>

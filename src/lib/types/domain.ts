@@ -7,7 +7,6 @@
 export const SERVICE_TYPE_SLUGS = [
   "battery-replacement",
   "jump-start",
-  "semi-truck-jump-start",
   "lockout",
   "tire-repair-plug-patch",
   "flat-tire-change",
@@ -16,6 +15,8 @@ export const SERVICE_TYPE_SLUGS = [
   "rim-lock-removal",
   "stripped-lug-nut-removal",
   "valve-stem-replacement",
+  // Last wherever services are listed (owner, 2026-11-07), as in SERVICES.
+  "semi-truck-jump-start",
   // "towing" was retired on 2026-10-26 and "fuel-delivery" on 2026-11-03, both
   // at the owner's request. Their service_types rows are deactivated
   // (migrations 0016 and 0017), never deleted, so past requests for them stay

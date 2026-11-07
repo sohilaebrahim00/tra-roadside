@@ -84,12 +84,19 @@ function priceWords(svc: ServiceContent): string {
   return [first, ...rest].join(", or ");
 }
 
-/** "Jump Start is $49–$75, plus the flat $19 dispatch fee charged once per job." */
+/**
+ * "Jump Start is $49–$75, plus the flat $19 dispatch fee charged once per job."
+ * Battery replacement reads "Battery Replacement is $239.": its fee is not
+ * attached to its price (owner, 2026-11-07), and an answer about what it costs
+ * leaves the fee to the booking step (owner, 2026-11-07).
+ */
 function priceSentence(svc: ServiceContent): string {
-  return headlineLine(svc)
-    ? `${svc.name} is ${priceWords(svc)}, plus the flat ${DISPATCH_FEE_USD} dispatch fee charged once per job.`
-    : `Dispatch confirms the price of ${svc.name.toLowerCase()} for your vehicle, plus the flat ${DISPATCH_FEE_USD} dispatch fee charged once per job.`;
+  if (!headlineLine(svc)) return `Dispatch confirms the price of ${svc.name.toLowerCase()} for your vehicle, plus the flat ${DISPATCH_FEE_USD} dispatch fee charged once per job.`;
+  return svc.feeAtBooking
+    ? `${svc.name} is ${priceWords(svc)}.`
+    : `${svc.name} is ${priceWords(svc)}, plus the flat ${DISPATCH_FEE_USD} dispatch fee charged once per job.`;
 }
+
 
 function priceOf(slug: ServiceTypeSlug): string {
   const svc = getService(slug);
@@ -103,14 +110,18 @@ function lowOfSlug(slug: ServiceTypeSlug): string {
   return line ? `$${line.min}` : "";
 }
 
-/** The sentence used wherever the whole price list is quoted in words. */
+/**
+ * The sentence used wherever the whole price list is quoted in words. The
+ * battery leads, on its own, so the dispatch fee that closes the list never
+ * reads as attached to the battery price (owner, 2026-11-07).
+ */
 export function pricesInWords(): string {
-  return `jump starts from ${lowOfSlug("jump-start")}, lockouts from ${lowOfSlug("lockout")}, tire repair from ${lowOfSlug("tire-repair-plug-patch")}, spare tire changes from ${lowOfSlug("flat-tire-change")}, and batteries installed from ${lowOfSlug("battery-replacement")}, plus a flat ${DISPATCH_FEE_USD} dispatch fee`;
+  return `batteries installed for ${lowOfSlug("battery-replacement")}; jump starts from ${lowOfSlug("jump-start")}, lockouts from ${lowOfSlug("lockout")}, tire repair from ${lowOfSlug("tire-repair-plug-patch")} and spare tire changes from ${lowOfSlug("flat-tire-change")}, plus a flat ${DISPATCH_FEE_USD} dispatch fee`;
 }
 
-/** The short form, for meta descriptions: "jump starts from $49, lockouts from $50, tire repair from $54, batteries from $239, + $19 dispatch". */
+/** The short form, for meta descriptions: "batteries $239; jump starts from $49, lockouts from $50, tire repair from $54 + $19 dispatch". */
 export function pricesShort(): string {
-  return `jump starts from ${lowOfSlug("jump-start")}, lockouts from ${lowOfSlug("lockout")}, tire repair from ${lowOfSlug("tire-repair-plug-patch")}, batteries from ${lowOfSlug("battery-replacement")}, + ${DISPATCH_FEE_USD} dispatch`;
+  return `batteries ${lowOfSlug("battery-replacement")}; jump starts from ${lowOfSlug("jump-start")}, lockouts from ${lowOfSlug("lockout")}, tire repair from ${lowOfSlug("tire-repair-plug-patch")} + ${DISPATCH_FEE_USD} dispatch`;
 }
 
 const LEAD_SERVICES: ServiceTypeSlug[] = ["jump-start", "lockout", "tire-repair-plug-patch", "flat-tire-change", "battery-replacement"];
@@ -231,7 +242,7 @@ export function cityServiceFaqs(svc: ServiceContent, city: ServiceArea, existing
       : [
           {
             q: `${PRICE_QUESTION[svc.slug]} in ${city.name}?`,
-            a: `${priceSentence(svc)} The price list is the same across ${DFW}, and dispatch confirms the price for your vehicle before a driver is sent.`,
+            a: `${priceSentence(svc)} The price list is the same across ${DFW}, and dispatch confirms the price for your vehicle before a driver is sent.`.replace(/\s+/g, " "),
           },
         ]),
     {
@@ -264,12 +275,12 @@ export function roadsideFaqs(): FaqItem[] {
     faq("pay", "What It Costs", "How do I pay?", "In cash. Dispatch confirms the price before a driver is sent, so you know the amount to have ready."),
     faq("spanish", "Getting Help Right Now", "Do you speak Spanish?", `Yes. Se habla español: call ${BUSINESS.phoneDisplay} and ask for help in Spanish.`),
     faq("dispatch", "What It Costs", `What is the ${fee} dispatch fee?`, `${DISPATCH_FEE_EXPLAINER} It is added to the service price, never charged twice on one job, and never the whole cost of the service.`),
-    faq("tow", "What It Costs", "Is a roadside call cheaper than a tow and a shop visit?", `For a job we can finish where the car sits, you skip the tow and the trip to the shop. A tire plug or patch is ${repair}, putting on your spare is ${flat}, a new tire installed is ${tire}, and a battery installed is ${battery}, plus the ${fee} dispatch fee. We don't tow, so a car that needs a shop is the one case we can't fix at the roadside.`),
+    faq("tow", "What It Costs", "Is a roadside call cheaper than a tow and a shop visit?", `For a job we can finish where the car sits, you skip the tow and the trip to the shop. A battery installed is ${battery}, a tire plug or patch is ${repair}, putting on your spare is ${flat} and a new tire installed is ${tire}. The ${fee} dispatch fee is added once per job. We don't tow, so a car that needs a shop is the one case we can't fix at the roadside.`),
     faq("membership", "What It Costs", "Do I need a membership or a contract?", "No. There's no membership, no annual dues and no contract. You pay for the job you asked for, and you don't need an auto club or an insurance claim to call us."),
     faq("tire-24", "Flat Tires", "Is there a 24 hour tire service near me?", `Yes. TRA's drivers come to you at any hour across ${DFW}, in a driveway, a parking lot, a garage or on the shoulder, so you don't have to wait for a tire shop to open. Putting on your spare is ${flat} and a repair is ${repair}, plus the ${fee} dispatch fee.`),
     faq("keep-driving", "Flat Tires", "Should I keep driving on a flat tire?", "No. A few more miles on a flat can ruin the tire and damage the wheel, turning a repair into a replacement. Get to a safe spot and turn on your hazards. If you're on a highway shoulder, stay buckled in until the driver arrives."),
     faq("no-spare", "Flat Tires", "What if I don't have a spare?", `A new tire can be supplied and installed where you're parked, ${tire}, plus the ${fee} dispatch fee. Tire availability varies, so tell dispatch your tire size. It's printed on the sidewall, for example 235/55R18.`),
-    faq("jump-or-new", "Batteries and Jump Starts", "Do I need a jump start or a new battery?", `If the battery still holds a charge, a jump start (${jump}) gets you going. If it won't hold one, your driver can advise on site, and a new battery installed is ${battery} for eligible vehicles, plus the ${fee} dispatch fee.`),
+    faq("jump-or-new", "Batteries and Jump Starts", "Do I need a jump start or a new battery?", `If the battery still holds a charge, a jump start (${jump}) gets you going. If it won't hold one, your driver can advise on site, and a new battery installed is ${battery} for eligible vehicles.`),
     faq("died-again", "Batteries and Jump Starts", "My car died again after a jump. What now?", "Usually the battery no longer holds a charge, or the alternator isn't recharging it. Request a battery replacement and tell dispatch what happened. A new battery won't fix a bad alternator, so ask your driver to advise before you buy one."),
     faq("unlock-cost", "Car Lockouts", "How much does it cost to unlock my car?", `A door lockout is ${lockout}${trunk ? `, and keys locked in the trunk are ${servicePrice(trunk)}` : ""}, plus the ${fee} dispatch fee. Have an ID ready that matches the registration.`),
     faq("child", "Car Lockouts", "A child or pet is locked in the car. What should I do?", `If anyone is in danger, call 911 first. Then call ${BUSINESS.phoneDisplay}: we treat it as urgent and route it to the nearest driver first.`),

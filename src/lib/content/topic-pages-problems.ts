@@ -765,7 +765,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
         heading: "After the jump",
         paragraphs: [
           "Don't shut the car off right away. Drive it instead of idling in the lot so it can put some charge back, and know that a short trip may not fully recharge a weak battery.",
-          "A battery that has already failed a jump start usually needs replacing rather than another jump. We bring a new one and install it on site: {{price:battery-replacement}} for eligible vehicles and batteries, plus a {{dispatchFee}} dispatch fee.",
+          "A battery that has already failed a jump start usually needs replacing rather than another jump. We bring a new one and install it on site: {{price:battery-replacement}} for eligible vehicles and batteries.",
         ],
       },
       {
@@ -849,7 +849,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
       },
       {
         q: "What if the jump doesn't hold?",
-        a: "If the battery won't hold a charge, the driver can advise whether it needs replacing. A new battery installed on site is {{price:battery-replacement}} for eligible vehicles and batteries, plus the dispatch fee.",
+        a: "If the battery won't hold a charge, the driver can advise whether it needs replacing. A new battery installed on site is {{price:battery-replacement}} for eligible vehicles and batteries.",
       },
       {
         q: "Do you jump start at night?",
@@ -867,7 +867,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
     title: "Mobile Battery Replacement",
     h1: "Car battery replacement at your location",
     metaDescription:
-      "{{price:battery-replacement}} + {{dispatchFee}} dispatch. A new car battery, installed where you're parked, for eligible vehicles and batteries.",
+      "{{price:battery-replacement}}: a new car battery, installed where you're parked, for eligible vehicles and batteries.",
     eyebrow: "New battery",
     intro:
       "We bring a new battery to your car and install it on site, in your driveway, at work or wherever it stopped. Give dispatch the year, make and model, and they confirm the battery is compatible, and your total, before a driver is sent.",
@@ -884,7 +884,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
       {
         heading: "The price and what it covers",
         paragraphs: [
-          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, and it covers the new battery and installing it. Battery pricing varies by vehicle and battery type. With the {{dispatchFee}} dispatch fee added once, the expected total is {{total:battery-replacement}}.",
+          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, and it covers the new battery, the core charge and installing it. Battery pricing varies by vehicle and battery type. With the {{dispatchFee}} dispatch fee added once, the expected total is {{total:battery-replacement}}.",
           "A replacement battery carries a 1-year warranty. Keep your invoice for warranty service.",
           "The price is for the battery and its installation. It doesn't cover other work on the car, since we don't do mechanical repair, so a problem beyond the battery is a job for a shop.",
         ],
@@ -899,7 +899,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
         ],
       },
       {
-        heading: "Why the price is a range",
+        heading: "Why dispatch asks about your car",
         paragraphs: [
           "On some cars the battery sits under the hood and comes out in minutes. On others it's under the rear seat, in the trunk or behind a panel, and trim or a seat has to come out first. That's part of why battery pricing varies by vehicle.",
           "You don't need tools or a garage. You need the car, the details above, and a phone that can take a text or a call when the driver is on the way.",
@@ -931,7 +931,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
     title: "24 Hour Car Battery Service",
     h1: "24-hour car battery service, any time of night",
     metaDescription:
-      "{{price:battery-replacement}} + {{dispatchFee}} dispatch. 24-hour car battery service: a new battery installed at your car, any hour.",
+      "{{price:battery-replacement}}, installed at your car, any hour. 24-hour car battery service across Dallas–Fort Worth.",
     eyebrow: "24/7 battery",
     intro:
       "Batteries don't wait for business hours. We're open 24/7, 365 days a year, and a driver comes to the car with a new battery and installs it, or jump starts it if that will do. Call or send a request at any hour.",
@@ -978,7 +978,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
       },
       {
         q: "Is a jump start cheaper than a replacement?",
-        a: "Yes: {{price:jump-start}} against {{price:battery-replacement}}, each plus the {{dispatchFee}} dispatch fee. But a jump only helps if the battery can hold a charge.",
+        a: "Yes: {{price:jump-start}} against {{price:battery-replacement}}, and the {{dispatchFee}} dispatch fee is the same for either job. But a jump only helps if the battery can hold a charge.",
       },
       {
         q: "I'm not sure what battery my car takes. Is that a problem?",
@@ -1463,7 +1463,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
         heading: "Two batteries, one we can help with",
         paragraphs: [
           "The big high-voltage battery drives the wheels and is refilled at a charger. We don't work on it, and a roadside jump doesn't charge it. The small 12-volt battery wakes the car up and runs the locks and the screens, and it's the one a jump start is for.",
-          "Once the car is on, the main battery keeps the 12-volt battery charged again. If the small battery keeps running down anyway, it may be worn out. Ask the driver whether it needs replacing; a battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, plus the dispatch fee.",
+          "Once the car is on, the main battery keeps the 12-volt battery charged again. If the small battery keeps running down anyway, it may be worn out. Ask the driver whether it needs replacing; a battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries.",
         ],
       },
       {
@@ -1671,7 +1671,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
       {
         heading: "Don't let it happen twice",
         paragraphs: [
-          "A jump gets you moving. It doesn't make an old battery new. A battery that has already failed a jump start usually needs replacing rather than another jump, and a replacement is {{price:battery-replacement}} for eligible vehicles and batteries, plus the {{dispatchFee}} dispatch fee, with a 1-year warranty. For a car you earn in, it's worth asking the driver whether the battery should be replaced, because a second breakdown costs more hours.",
+          "A jump gets you moving. It doesn't make an old battery new. A battery that has already failed a jump start usually needs replacing rather than another jump, and a replacement is {{price:battery-replacement}} for eligible vehicles and batteries, with a 1-year warranty. For a car you earn in, it's worth asking the driver whether the battery should be replaced, because a second breakdown costs more hours.",
         ],
       },
       {

@@ -16,6 +16,7 @@ import { PricingDisclaimer } from "@/components/ui/pricing-disclaimer";
 import { BrandPattern } from "@/components/brand/brand-pattern";
 import { Icon3D } from "@/components/ui/icon-3d";
 import { priceBadge } from "@/lib/content/pricing";
+import { totalOnClick } from "@/lib/content/battery-total";
 
 
 /**
@@ -37,8 +38,12 @@ function cardPhoto(s: ServiceContent) {
   return s.photos?.[0];
 }
 
-/** Battery first, the main service, and the big-rig jump start beside it (owner, 2026-11-07). */
-const FIRST = ["battery-replacement", "semi-truck-jump-start"];
+/**
+ * Battery first, the main service; the rest in their SERVICES order, which
+ * ends with the semi truck jump start (owner, 2026-11-07: last, so the car
+ * jump start price is the one drivers see first).
+ */
+const FIRST = ["battery-replacement"];
 const ORDERED = [
   ...FIRST.flatMap((slug) => SERVICES.filter((s) => s.slug === slug)),
   ...SERVICES.filter((s) => !FIRST.includes(s.slug)),
@@ -125,7 +130,7 @@ export function ServicesSection() {
                         bottom edge and the figure in large type on top of it. */}
                     <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-ink-950/90 via-ink-950/40 to-transparent" />
                     {priceBadge(service) && (
-                      <span className="absolute bottom-2 left-2.5 font-display text-base font-bold leading-none text-white drop-shadow sm:bottom-3 sm:left-3.5 sm:text-xl">
+                      <span {...totalOnClick(service)} className="absolute bottom-2 left-2.5 font-display text-base font-bold leading-none text-white drop-shadow sm:bottom-3 sm:left-3.5 sm:text-xl">
                         {priceBadge(service)}
                       </span>
                     )}

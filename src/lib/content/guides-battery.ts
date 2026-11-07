@@ -55,7 +55,7 @@ export const GUIDES_BATTERY: Guide[] = [
         heading: "When to replace it",
         paragraphs: [
           "The easy time to replace a battery is before it fails. If it is turning over slowly, or it is four years old heading into another summer, pick a day that suits you instead of waiting for it to pick one for you.",
-          "We replace batteries where the car is parked. Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, with the new battery and the installation included, plus the {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery that fits your car, and your total, before a driver is sent.",
+          "We replace batteries where the car is parked. Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, with the new battery and the installation included. Dispatch confirms the battery that fits your car, and your total, before a driver is sent.",
         ],
       },
     ],
@@ -386,7 +386,7 @@ export const GUIDES_BATTERY: Guide[] = [
         heading: "Why a second jump isn't the answer",
         paragraphs: [
           "Every time a lead-acid battery is drained all the way down it loses some of its life, so a second jump on a battery that keeps dying brings it closer to the end. Ask what happened. Did it die while driving, or only after sitting? Did anything stay on? How old is the battery? If it is old, replace it.",
-          "If a battery is the answer, replacement is {{price:battery-replacement}} for eligible vehicles and batteries, with the installation covered, plus the {{dispatchFee}} dispatch fee, charged once. If you need a jump just to get moving first, that is {{price:jump-start}}, plus the same fee. Tell dispatch it is a repeat, and they will confirm the battery that fits your car and your total before a driver is sent.",
+          "If a battery is the answer, replacement is {{price:battery-replacement}} for eligible vehicles and batteries, with the installation covered. If you need a jump just to get moving first, that is {{price:jump-start}}, plus the {{dispatchFee}} dispatch fee, charged once. Tell dispatch it is a repeat, and they will confirm the battery that fits your car and your total before a driver is sent.",
         ],
       },
     ],
@@ -655,7 +655,7 @@ export const GUIDES_BATTERY: Guide[] = [
       {
         heading: "Price and fit",
         paragraphs: [
-          "AGM costs more than a regular battery, which is part of why battery pricing varies by vehicle and battery type. Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installation included, plus the {{dispatchFee}} dispatch fee charged once per job. Tell dispatch your year, make and model, and whether the car has start-stop. Dispatch confirms the battery is compatible and tells you the total cost before a driver is sent.",
+          "AGM costs more than a regular battery, which is part of why battery pricing varies by vehicle and battery type. Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installation included. Tell dispatch your year, make and model, and whether the car has start-stop. Dispatch confirms the battery is compatible and tells you the total cost before a driver is sent.",
         ],
       },
     ],
@@ -921,7 +921,7 @@ export const GUIDES_BATTERY: Guide[] = [
         heading: "Other things that have to match",
         paragraphs: [
           "Terminal type matters too: top posts or side posts. A battery in the trunk or inside the cabin usually has a vent tube that carries gas outside, and the replacement has to have the matching vent port. The hold-down has to grip it, and it has to clear whatever sits above it. If you are comparing prices, compare the group first. A battery in the wrong group isn't a bargain at any price.",
-          "You don't need to know your group number to request a replacement. Year, make and model are enough to start, and the VIN helps if it is easy to reach. Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, which covers the battery and installing it, plus the {{dispatchFee}} dispatch fee, added once to the job. Dispatch will confirm the battery is compatible with your vehicle and tell you the total before a driver is sent.",
+          "You don't need to know your group number to request a replacement. Year, make and model are enough to start, and the VIN helps if it is easy to reach. Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, which covers the battery and installing it. Dispatch will confirm the battery is compatible with your vehicle and tell you the total before a driver is sent.",
         ],
       },
     ],
@@ -988,7 +988,7 @@ export const GUIDES_BATTERY: Guide[] = [
         heading: "Having it installed where the car is",
         paragraphs: [
           "This is built for the days when the car won't start and a shop isn't practical: at home, in the office lot, in a parking garage. We are a service-area business with no walk-in location, so the driver comes to you.",
-          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, with the new battery and the installation included, plus the {{dispatchFee}} dispatch fee charged once per job. The expected total is {{total:battery-replacement}}. The new battery carries a 1-year warranty, so keep your invoice. The trade-off is a short conversation first, since dispatch confirms compatibility, and your total, before a driver is sent.",
+          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, with the new battery and the installation included. The new battery carries a 1-year warranty, so keep your invoice. The trade-off is a short conversation first, since dispatch confirms compatibility, and your total, before a driver is sent.",
           "A simple way to choose: if the car runs and the afternoon is yours, a shop or a DIY swap is fine. If the car doesn't run, or the afternoon isn't yours, it makes sense to bring the battery to the car.",
         ],
       },
@@ -996,7 +996,7 @@ export const GUIDES_BATTERY: Guide[] = [
     faqs: [
       {
         q: "Is mobile replacement more expensive than a shop?",
-        a: "It depends on the shop and the battery. Compare the all-in totals instead of the battery's sticker price. Ours is a published price that includes installation, with a dispatch fee added once per job.",
+        a: "It depends on the shop and the battery. Compare what each one comes to once every charge is added, not just the battery's sticker price. Ours is a published price that includes installation, with a dispatch fee added once per job.",
       },
       {
         q: "Can every battery be replaced on site?",

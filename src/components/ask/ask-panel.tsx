@@ -7,6 +7,7 @@ import { ASK_SUGGESTIONS, answerQuestion, type AskAnswer } from "@/lib/content/a
 import { BUSINESS } from "@/lib/content/business";
 import { priceSummary } from "@/lib/content/pricing";
 import { openQuickRequest } from "@/lib/quick-request";
+import { totalOnClick } from "@/lib/content/battery-total";
 
 interface Exchange {
   question: string;
@@ -92,6 +93,7 @@ export function AskPanel({ onClose }: { onClose: () => void }) {
                 <div className="mt-2.5 flex flex-wrap gap-2">
                   <button
                     type="button"
+                    {...totalOnClick(answer.service)}
                     onClick={() => requestHelp(answer.service?.slug)}
                     className="inline-flex items-center gap-1.5 rounded-full bg-red-600 px-3.5 py-2 text-sm font-bold text-white hover:bg-red-700"
                   >

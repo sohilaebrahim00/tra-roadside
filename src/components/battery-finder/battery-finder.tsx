@@ -5,7 +5,9 @@ import { BatteryFull, MessageSquareText, Phone, Search } from "lucide-react";
 import fitment from "@/data/battery-fitment.json";
 import { BUSINESS } from "@/lib/content/business";
 import { getService } from "@/lib/content/services";
-import { DISPATCH_FEE_TAG, priceSummary } from "@/lib/content/pricing";
+import { priceSummary } from "@/lib/content/pricing";
+import { totalOnClick } from "@/lib/content/battery-total";
+import { PriceFigure } from "@/components/ui/price-figure";
 import { openQuickRequest } from "@/lib/quick-request";
 import { VIN_LENGTH, VIN_PATTERN, cleanVin } from "@/lib/validation/request";
 
@@ -220,15 +222,16 @@ export function BatteryFinder() {
             {row.agm === "required" && <p className="mt-2 text-sm text-white/90">This vehicle needs an AGM battery.</p>}
             {row.agm === "some" && <p className="mt-2 text-sm text-white/90">Some versions of this vehicle need an AGM battery.</p>}
             {row.note && <p className="mt-2 text-sm text-white/75">{row.note}</p>}
-            {service && (
+            {service && priceSummary(service) && (
               <p className="mt-3 font-display text-lg font-bold">
-                New battery, installed: {priceSummary(service) ?? DISPATCH_FEE_TAG}
+                New battery, installed: <PriceFigure svc={service}>{priceSummary(service)}</PriceFigure>
               </p>
             )}
             <p className="mt-1 text-xs text-white/65">Dispatch confirms the battery and the price for your exact vehicle before a driver is sent.</p>
             <div className="mt-4 flex flex-col gap-2 sm:flex-row">
               <button
                 type="button"
+                {...totalOnClick(service)}
                 onClick={() => openQuickRequest("battery-replacement", { year, make, model })}
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-red-600 px-5 py-3 text-sm font-bold text-white hover:bg-red-700"
               >

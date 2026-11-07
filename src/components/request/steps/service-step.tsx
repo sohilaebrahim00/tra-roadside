@@ -6,6 +6,7 @@ import { StepShell } from "../step-shell";
 import { SERVICES } from "@/lib/content/services";
 import { DISPATCH_FEE_TAG, priceBadge } from "@/lib/content/pricing";
 import { SERVICE_ICONS } from "@/lib/content/service-icons";
+import { totalOnClick } from "@/lib/content/battery-total";
 import { cn } from "@/lib/utils/cn";
 import type { CreateRequestInput } from "@/lib/validation/request";
 import { Icon3D } from "@/components/ui/icon-3d";
@@ -30,6 +31,8 @@ export function ServiceStep({ onNext, onBack }: { onNext: () => void; onBack: ()
             <button
               key={service.slug}
               type="button"
+              // Battery replacement shows its total before it is chosen (owner, 2026-11-07).
+              {...(isSelected ? {} : totalOnClick(service))}
               onClick={() => handleSelect(service.slug)}
               className={cn(
                 "relative flex flex-col items-center gap-2 rounded-2xl border-2 px-3 py-5 text-center transition-colors",

@@ -3,6 +3,7 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { MobileActionBar } from "@/components/layout/mobile-action-bar";
 import { BatteryStrip } from "@/components/layout/battery-strip";
 import { QuickRequestHost } from "@/components/request/quick-request-host";
+import { BatteryTotalGuard } from "@/components/request/battery-total";
 import { AskLauncher } from "@/components/ask/ask-launcher";
 
 export default function SiteLayout({ children }: { children: React.ReactNode }) {
@@ -29,6 +30,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
       <MobileActionBar />
       <AskLauncher />
       <QuickRequestHost />
+      <BatteryTotalGuard />
     </>
   );
 }

@@ -18,6 +18,13 @@ import type { VehicleType } from "@/lib/types/domain";
  * owner's market show it. The total appears where the customer confirms: the
  * request forms, the texts and the emails.
  *
+ * Battery replacement is the exception (owner, 2026-11-07): its price is shown
+ * alone, "$239", with no fee beside it. The fee is still charged, and the
+ * customer is told it with the total when they choose to book the battery
+ * (components/request/battery-total.tsx) and on the request form before
+ * sending. Use feeTagFor() and priceSummary() rather than DISPATCH_FEE_TAG
+ * beside a service's price, so that exception holds everywhere.
+ *
  * No price mentions tax. An earlier version did, after the "$420 plus tax" in
  * one voice note was taken for an instruction; the owner corrected that on
  * 2026-11-04. It was an example of how a low figure reads.
@@ -104,10 +111,32 @@ export function priceBadge(svc: ServiceContent): string | undefined {
   return low && low.charAt(0).toUpperCase() + low.slice(1);
 }
 
-/** "From $49 + $19 dispatch" — for one-line places such as search results. */
+/**
+ * "+ $19 dispatch" for a service whose price carries the fee beside it, and ""
+ * for one whose fee is told at booking instead (battery replacement).
+ */
+export function feeTagFor(svc: Pick<ServiceContent, "feeAtBooking">): string {
+  return svc.feeAtBooking ? "" : DISPATCH_FEE_TAG;
+}
+
+/** A price with the fee tag beside it where the service carries one: "From $49 + $19 dispatch", "$239". */
+export function withFeeTag(svc: Pick<ServiceContent, "feeAtBooking">, price: string): string {
+  const tag = feeTagFor(svc);
+  return tag ? `${price} ${tag}` : price;
+}
+
+/** "From $49 + $19 dispatch", or "$239" for battery replacement — for one-line places such as search results. */
 export function priceSummary(svc: ServiceContent): string | undefined {
   const badge = priceBadge(svc);
-  return badge ? `${badge} ${DISPATCH_FEE_TAG}` : undefined;
+  return badge ? withFeeTag(svc, badge) : undefined;
+}
+
+/**
+ * "Battery $239 + $19 dispatch = $258 total": the line a request form shows
+ * just before the customer sends a battery request.
+ */
+export function checkoutLine(label: string, a: Amount): string {
+  return `${label} ${servicePrice(a)} ${DISPATCH_FEE_TAG} = ${expectedTotal(a)} total`;
 }
 
 /** "Jump start from $49 + $19 = $68" — the brief's example sentence. */

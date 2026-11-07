@@ -45,10 +45,10 @@ export interface PriceLine {
  * Service prices that FAQ answers quote. Named once here so an answer and the
  * price line it describes cannot disagree.
  */
-const BATTERY_REPLACEMENT: PriceLine = { min: 239, max: 255, note: "eligible vehicles and batteries" };
+const BATTERY_REPLACEMENT: PriceLine = { min: 239, note: "eligible vehicles and batteries" };
 const JUMP_START_SEMI: PriceLine = { label: "Semi trucks and 18-wheelers", min: 90, from: true, vehicleType: "semi_truck" };
 const LOCKOUT_TRUNK: PriceLine = { label: "Keys locked in the trunk", min: 120 };
-const SPARE_TIRE_CHANGE: PriceLine = { min: 75, from: true, note: "using the spare carried in your vehicle" };
+const SPARE_TIRE_CHANGE: PriceLine = { min: 50, from: true, note: "using the spare carried in your vehicle" };
 const TIRE_REPLACEMENT: PriceLine = { min: 129, from: true, note: "tire availability varies" };
 
 /** "from $90, plus the $19 dispatch fee" — service price first, fee on its own. */
@@ -97,6 +97,14 @@ export interface ServiceContent {
   priceCovers?: string;
   /** Qualifier shown beneath the price block. */
   priceNote?: string;
+  /**
+   * The price is advertised on its own, with no "+ $19 dispatch" beside it
+   * (owner, 2026-11-07, for battery replacement). The fee is still charged:
+   * the customer is told it, with the total, when they choose to book the
+   * service (the battery total dialog) and again on the request form before
+   * sending. Explanations of fees (FAQs, the pricing page) still state it.
+   */
+  feeAtBooking?: boolean;
   /** Photographs of this service being performed, for a constrained grid. */
   photos?: ServicePhoto[];
 }
@@ -157,13 +165,15 @@ export const SERVICES: ServiceContent[] = [
     name: "Battery Replacement",
     shortName: "Battery Replacement",
     needsDestination: false,
-    // $239–$255 for eligible vehicles and batteries, from the owner's pricing
-    // brief (2026-11-03), replacing the old "$189, battery only, installation
-    // quoted". It is the battery replacement — the battery and installing it —
-    // so the expected total is that range plus the dispatch fee, once. The
-    // note below is the owner's wording and travels with the price everywhere.
+    // $239 for eligible vehicles and batteries (owner, 2026-11-07; it was
+    // $239–$255 from the pricing brief of 2026-11-03). It covers the battery,
+    // the core charge and installing it, so the expected total is $239 plus
+    // the dispatch fee, once. The note below is the owner's wording and
+    // travels with the price everywhere. The fee is not printed beside this
+    // price; see feeAtBooking.
     priceLines: [BATTERY_REPLACEMENT],
-    priceCovers: "The new battery and installing it, for eligible vehicles and batteries.",
+    feeAtBooking: true,
+    priceCovers: "The new battery, the core charge and installing it, for eligible vehicles and batteries.",
     priceNote: "Battery pricing varies by vehicle and battery type. Confirm compatibility and total cost before dispatch.",
     // First is the business's own job photo (1200x800, October 2026) and is
     // what every battery page shows as its hero. It also shows why the battery
@@ -232,7 +242,7 @@ export const SERVICES: ServiceContent[] = [
     faqs: [
       {
         q: "Will the battery fit my vehicle, and what will it cost?",
-        a: `Battery pricing varies by vehicle and battery type. Battery replacement is ${quote(BATTERY_REPLACEMENT)}, for eligible vehicles and batteries, and covers the battery and installing it. Give us the year, make and model, and the VIN if you can reach it: dispatch confirms the battery is compatible and tells you the total cost before a driver is sent.`,
+        a: `Battery pricing varies by vehicle and battery type. Battery replacement is ${formatAmount(BATTERY_REPLACEMENT, "–", "from")} for eligible vehicles and batteries, and covers the battery, the core charge and installing it. Give us the year, make and model, and the VIN if you can reach it: dispatch confirms the battery is compatible and tells you the total cost before a driver is sent.`,
       },
       {
         q: "What does the warranty cover?",
@@ -241,55 +251,6 @@ export const SERVICES: ServiceContent[] = [
       {
         q: "What if my car just needs a jump, not a full replacement?",
         a: "Select Jump Start instead — your driver can advise on site if a replacement turns out to be needed.",
-      },
-    ],
-  },
-  {
-    slug: "semi-truck-jump-start",
-    name: "Semi Truck Jump Start",
-    shortName: "Semi Truck Jump",
-    needsDestination: false,
-    // Its own service from 2026-11-07, so big-rig drivers find it in the list
-    // (owner): the same price as the jump start's semi truck line.
-    priceLines: [{ min: JUMP_START_SEMI.min, from: true, vehicleType: "semi_truck" }],
-    priceCovers: "A heavy-duty jump start for the truck's batteries, labor included.",
-    // The business's own jump start footage (owner, 2026-10-18). No truck photo yet:
-    // replace it when the owner sends one.
-    photos: [
-      {
-        src: "/images/field/field-jump-start-booster.webp",
-        alt: "A technician in a high-visibility shirt and cap setting a red portable jump pack on the engine of a vehicle with its hood raised.",
-        width: 1080,
-        height: 1350,
-      },
-    ],
-    priceNote: "The price depends on the truck and how many batteries it carries. Dispatch confirms it before a driver is sent.",
-    summary: "Heavy-duty jump starts for semi trucks, 18-wheelers and other big rigs.",
-    heroLine: "A big rig that won't start, started where it's parked.",
-    problem:
-      "A tractor with dead batteries holds up a load, a schedule and sometimes a whole dock. Big rigs run several batteries together, and a car-sized jump pack won't turn a diesel that size over. A driver brings heavy-duty jump equipment to the yard, the truck stop or the shoulder, so the truck can run again without waiting on a tow.",
-    whileYouWait: [
-      "Switch off the lights, the heater or AC and anything else drawing power.",
-      "Note the unit number and exactly where the truck is: the yard, the dock, the truck stop or the mile marker.",
-      "On a shoulder, set out your warning triangles if you can do it safely.",
-    ],
-    whatWeNeed: [
-      "Where the truck is, as exactly as you can give it",
-      "The truck's make and model, and the unit number",
-      "Whether the truck has been sitting, or died while running",
-    ],
-    faqs: [
-      {
-        q: "Can you jump a truck with more than one battery?",
-        a: "Yes. That's what the heavy-duty equipment is for. Tell dispatch the make and model so the driver comes ready for that truck.",
-      },
-      {
-        q: "What if the batteries won't hold a charge afterward?",
-        a: "A jump gets the truck running, but it can't fix batteries that are worn out. If the truck dies again, the batteries or the charging system need a shop.",
-      },
-      {
-        q: "Do you come to truck stops and yards?",
-        a: "Yes, wherever the truck can be reached safely. If a yard or stop has its own rules about who can come in, let dispatch know.",
       },
     ],
   },
@@ -376,7 +337,8 @@ export const SERVICES: ServiceContent[] = [
     name: "Flat Tire Change",
     shortName: "Flat Tire",
     needsDestination: false,
-    // The brief's "spare tire change": from $75 (2026-11-03).
+    // The brief's "spare tire change": from $75 (2026-11-03), lowered to
+    // from $50 by the owner on 2026-11-07.
     priceLines: [SPARE_TIRE_CHANGE],
     priceCovers: "Putting on the spare you already carry.",
     // The business's own job photos (October 2026), 1200x800. The first is
@@ -653,6 +615,58 @@ export const SERVICES: ServiceContent[] = [
       {
         q: "Does my car have TPMS stems?",
         a: "Most newer cars do, because the tire pressure sensor is built into the stem. Tell dispatch your vehicle's year, make and model and they can confirm the price for that type.",
+      },
+    ],
+  },
+  {
+    slug: "semi-truck-jump-start",
+    name: "Semi Truck Jump Start",
+    shortName: "Semi Truck Jump",
+    needsDestination: false,
+    // Its own service from 2026-11-07, so big-rig drivers find it in the list
+    // (owner): the same price as the jump start's semi truck line. Last in
+    // SERVICES, and so last in every list, grid and picker (owner,
+    // 2026-11-07): drivers mistook it for the car jump start, whose price
+    // should be the one they see first. Keep it at the end.
+    priceLines: [{ min: JUMP_START_SEMI.min, from: true, vehicleType: "semi_truck" }],
+    priceCovers: "A heavy-duty jump start for the truck's batteries, labor included.",
+    // The business's own jump start footage (owner, 2026-10-18). No truck photo yet:
+    // replace it when the owner sends one.
+    photos: [
+      {
+        src: "/images/field/field-jump-start-booster.webp",
+        alt: "A technician in a high-visibility shirt and cap setting a red portable jump pack on the engine of a vehicle with its hood raised.",
+        width: 1080,
+        height: 1350,
+      },
+    ],
+    priceNote: "The price depends on the truck and how many batteries it carries. Dispatch confirms it before a driver is sent.",
+    summary: "Heavy-duty jump starts for semi trucks, 18-wheelers and other big rigs.",
+    heroLine: "A big rig that won't start, started where it's parked.",
+    problem:
+      "A tractor with dead batteries holds up a load, a schedule and sometimes a whole dock. Big rigs run several batteries together, and a car-sized jump pack won't turn a diesel that size over. A driver brings heavy-duty jump equipment to the yard, the truck stop or the shoulder, so the truck can run again without waiting on a tow.",
+    whileYouWait: [
+      "Switch off the lights, the heater or AC and anything else drawing power.",
+      "Note the unit number and exactly where the truck is: the yard, the dock, the truck stop or the mile marker.",
+      "On a shoulder, set out your warning triangles if you can do it safely.",
+    ],
+    whatWeNeed: [
+      "Where the truck is, as exactly as you can give it",
+      "The truck's make and model, and the unit number",
+      "Whether the truck has been sitting, or died while running",
+    ],
+    faqs: [
+      {
+        q: "Can you jump a truck with more than one battery?",
+        a: "Yes. That's what the heavy-duty equipment is for. Tell dispatch the make and model so the driver comes ready for that truck.",
+      },
+      {
+        q: "What if the batteries won't hold a charge afterward?",
+        a: "A jump gets the truck running, but it can't fix batteries that are worn out. If the truck dies again, the batteries or the charging system need a shop.",
+      },
+      {
+        q: "Do you come to truck stops and yards?",
+        a: "Yes, wherever the truck can be reached safely. If a yard or stop has its own rules about who can come in, let dispatch know.",
       },
     ],
   },

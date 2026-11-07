@@ -132,9 +132,9 @@ const WRITTEN_FIRST: CityServiceContent[] = [
     h1: "Mobile Battery Replacement in Dallas, TX",
     title: "Car Battery Replacement Dallas TX",
     metaDescription:
-      "Need a car battery in Dallas? TRA installs it where the car sits, no tow needed. Battery and installation priced upfront, plus a one-time dispatch fee.",
+      "Need a car battery in Dallas? TRA installs it where the car sits, no tow needed. Battery and installation priced upfront.",
     intro:
-      "When a battery has stopped holding charge, jumping it again only buys you until the next cold morning. We bring a replacement to the car and install it there, whether that is a driveway in Lakewood or a garage level downtown. The price range on this page covers the battery and installing it, for eligible vehicles and batteries. Cars take different batteries and mount them in different places, so dispatch confirms the right battery for yours, and your total, before a driver sets off.",
+      "When a battery has stopped holding charge, jumping it again only buys you until the next cold morning. We bring a replacement to the car and install it there, whether that is a driveway in Lakewood or a garage level downtown. The price on this page covers the battery and installing it, for eligible vehicles and batteries. Cars take different batteries and mount them in different places, so dispatch confirms the right battery for yours, and your total, before a driver sets off.",
     scenarios: [
       "A battery that needed a jump twice in the same week.",
       "A car that has sat at Love Field long-term parking and will not wake up.",
@@ -145,8 +145,8 @@ const WRITTEN_FIRST: CityServiceContent[] = [
       "Dallas drivers cover long daily distances on I-635, I-30 and the Dallas North Tollway, and a marginal battery tends to fail at the least convenient point of that run. We install batteries across the city, from the Design District and Fair Park to Bishop Arts and the residential streets of Oak Cliff.",
     faqs: [
       {
-        q: "Why is the price a range rather than one figure?",
-        a: "Because cars differ. Some take a larger battery or a different type, and some batteries sit on top of the engine and take minutes while others are under a seat or behind panels and take considerably longer. The range covers the battery and installing it for eligible vehicles and batteries, and dispatch checks which battery yours takes before anyone drives out.",
+        q: "Why does the battery depend on the car?",
+        a: "Because cars differ. Some take a larger battery or a different type, and some batteries sit on top of the engine and take minutes while others are under a seat or behind panels and take considerably longer. The price covers the battery and installing it for eligible vehicles and batteries, and dispatch checks which battery yours takes before anyone drives out.",
       },
       {
         q: "Do I need to know which battery my car takes?",
@@ -553,7 +553,7 @@ const WRITTEN_FIRST: CityServiceContent[] = [
     metaDescription:
       "Need a battery in Irving? TRA brings it to the car and installs it on site — Las Colinas, Valley Ranch or the airport approaches. Total confirmed upfront.",
     intro:
-      "If a battery has already failed once after sitting, replacing it is usually cheaper than repeating the exercise every time the car is parked for a week. We bring the battery to the vehicle and install it there. The price range shown here includes the battery and installing it, for eligible vehicles and batteries. How a battery is mounted, and which type a car takes, varies enormously, so dispatch confirms compatibility for your vehicle and the total before a driver is sent.",
+      "If a battery has already failed once after sitting, replacing it is usually cheaper than repeating the exercise every time the car is parked for a week. We bring the battery to the vehicle and install it there. The price shown here includes the battery and installing it, for eligible vehicles and batteries. How a battery is mounted, and which type a car takes, varies enormously, so dispatch confirms compatibility for your vehicle and the total before a driver is sent.",
     scenarios: [
       "A car that needed a jump on returning from a trip, and again a few days later.",
       "A vehicle regularly left for long periods in airport-area parking.",
@@ -746,7 +746,7 @@ const WRITTEN_FIRST: CityServiceContent[] = [
     metaDescription:
       "Car battery failing in Plano? TRA brings the battery to you and installs it where the car is parked. Installation included, 1-year warranty.",
     intro:
-      "Replacing a battery normally means surrendering the car for half a day. We bring the battery to the vehicle instead and install it where it sits, which for most Plano customers means it happens during a working day rather than instead of one. The published price range covers the battery and installing it for eligible vehicles, and dispatch confirms the right battery and your total before a driver sets off.",
+      "Replacing a battery normally means surrendering the car for half a day. We bring the battery to the vehicle instead and install it where it sits, which for most Plano customers means it happens during a working day rather than instead of one. The published price covers the battery and installing it for eligible vehicles, and dispatch confirms the right battery and your total before a driver sets off.",
     scenarios: [
       "A battery that has now needed jumping more than once.",
       "A car that fails to start after sitting over a long weekend.",
@@ -1319,7 +1319,7 @@ const WRITTEN_FIRST: CityServiceContent[] = [
     metaDescription:
       "Need a car battery in Richardson? TRA brings it to you and installs it on site — office lots off US-75 or at home. Your total is confirmed before dispatch.",
     intro:
-      "Replacing a battery normally means surrendering the car for half a day, which is awkward when the car is the thing that will not start. We bring the battery to the vehicle instead. The price range on this page covers the battery and installing it for eligible vehicles. Access and battery type vary so much between models that dispatch confirms compatibility and your total before a driver heads your way.",
+      "Replacing a battery normally means surrendering the car for half a day, which is awkward when the car is the thing that will not start. We bring the battery to the vehicle instead. The price on this page covers the battery and installing it for eligible vehicles. Access and battery type vary so much between models that dispatch confirms compatibility and your total before a driver heads your way.",
     scenarios: [
       "A battery that has now needed jumping more than once.",
       "A car that fails to start after sitting in a company lot over a long weekend.",
@@ -1720,8 +1720,8 @@ const WRITTEN_FIRST: CityServiceContent[] = [
         a: "Yes, provided the vehicle is somewhere a driver can work safely. On a live highway shoulder we will assess the situation first — sometimes moving the vehicle is the safer first step.",
       },
       {
-        q: "Why doesn't the page show one fixed price?",
-        a: "Because vehicles take different batteries and mount them in different places — some reached in minutes, others under a seat or behind panels. The range covers eligible vehicles and batteries with installation included, and dispatch confirms what your car takes and the total before anyone heads out.",
+        q: "Why does dispatch need my year, make and model?",
+        a: "Because vehicles take different batteries and mount them in different places — some reached in minutes, others under a seat or behind panels. The price covers eligible vehicles and batteries with installation included, and dispatch confirms what your car takes and the total before anyone heads out.",
       },
       {
         q: "Do I need the VIN?",
@@ -1892,7 +1892,7 @@ const WRITTEN_FIRST: CityServiceContent[] = [
     metaDescription:
       "The Colony car battery dead after sitting? TRA installs a new one at the house or off FM 423. Total confirmed before dispatch, 1-year warranty.",
     intro:
-      "Batteries on vehicles that stand still age differently from batteries on daily drivers — they are rarely fully charged, and they fail earlier. We bring the replacement to the vehicle and install it where it is parked. The price range on this page includes installing the battery for eligible vehicles; dispatch confirms which battery your car takes and your total before anyone is sent.",
+      "Batteries on vehicles that stand still age differently from batteries on daily drivers — they are rarely fully charged, and they fail earlier. We bring the replacement to the vehicle and install it where it is parked. The price on this page includes installing the battery for eligible vehicles; dispatch confirms which battery your car takes and your total before anyone is sent.",
     scenarios: [
       "A weekend or towing vehicle that now needs jumping every time it comes out.",
       "A car that failed to start twice in the same month.",
@@ -2316,7 +2316,7 @@ const WRITTEN_FIRST: CityServiceContent[] = [
     metaDescription:
       "Carrollton car battery giving up? TRA brings a new one to your driveway or a lot off I-35E and installs it there. Labor in the price, 1-year warranty.",
     intro:
-      "Once a battery has been jumped more than once, it is telling you it will not last the winter. We arrive with the battery and change it in your driveway or in the lot. The price range on this page covers both the battery and the labor for eligible vehicles. Access and battery type differ enormously between models, so dispatch confirms the fit and your total before a driver leaves.",
+      "Once a battery has been jumped more than once, it is telling you it will not last the winter. We arrive with the battery and change it in your driveway or in the lot. The price on this page covers both the battery and the labor for eligible vehicles. Access and battery type differ enormously between models, so dispatch confirms the fit and your total before a driver leaves.",
     scenarios: [
       "A second jump start on the same vehicle inside a month.",
       "A car that will not start after sitting over a holiday weekend.",
@@ -2541,7 +2541,7 @@ const WRITTEN_FIRST: CityServiceContent[] = [
     metaDescription:
       "Need a car battery in Euless? TRA brings it to the car and installs it on site near the airport or at home. Fit and total confirmed before dispatch.",
     intro:
-      "Cars parked near an airport sit for days at a time, and sitting is what finishes a battery that was already weak. We bring the replacement out and install it where the car has been sitting. The price range on this page covers the battery and installing it for eligible vehicles, and dispatch checks the fit and your total before anyone drives out.",
+      "Cars parked near an airport sit for days at a time, and sitting is what finishes a battery that was already weak. We bring the replacement out and install it where the car has been sitting. The price on this page covers the battery and installing it for eligible vehicles, and dispatch checks the fit and your total before anyone drives out.",
     scenarios: [
       "A car that would not start on returning from a trip, and struggled again days later.",
       "A vehicle parked long-term near the airport boundary.",
@@ -2669,8 +2669,8 @@ const WRITTEN_FIRST: CityServiceContent[] = [
         a: "Usually yes, provided the driver can work safely around the vehicle. Give dispatch the operator, lot and level when you call.",
       },
       {
-        q: "Why does the price have a low end and a high end?",
-        a: "Because reaching the battery is a short job on some vehicles and a long one on others, and cars take different sizes and types of battery. The range covers eligible vehicles and batteries, installation included, and dispatch confirms the battery your car needs and your total before anyone sets off.",
+        q: "Why does dispatch ask about my car first?",
+        a: "Because reaching the battery is a short job on some vehicles and a long one on others, and cars take different sizes and types of battery. The price covers eligible vehicles and batteries, installation included, and dispatch confirms the battery your car needs and your total before anyone sets off.",
       },
       {
         q: "What warranty is included?",
@@ -2920,7 +2920,7 @@ const WRITTEN_FIRST: CityServiceContent[] = [
     metaDescription:
       "Arlington car battery dead again? TRA brings the replacement to the car — Entertainment District lot, I-20 or your driveway — and installs it on the spot.",
     intro:
-      "A battery that has already been jumped once will usually need it again, and the second time is rarely convenient. We bring the replacement out and install it where the car already sits. You see the price range up front, and it includes installing the battery for eligible vehicles. Pricing varies with the battery your car takes and how buried it is, so dispatch confirms compatibility and your total before a driver heads out.",
+      "A battery that has already been jumped once will usually need it again, and the second time is rarely convenient. We bring the replacement out and install it where the car already sits. You see the price up front, and it includes installing the battery for eligible vehicles. Pricing varies with the battery your car takes and how buried it is, so dispatch confirms compatibility and your total before a driver heads out.",
     scenarios: [
       "A battery jumped once in an event lot and again days later.",
       "A car that will not start after sitting over a holiday weekend.",
@@ -3239,8 +3239,8 @@ const WRITTEN_FIRST: CityServiceContent[] = [
         a: "Usually, but say so on the call so the driver knows before they arrive. The room to work around a hitched vehicle is not the same as on an open driveway.",
       },
       {
-        q: "Why isn't every vehicle the same price?",
-        a: "Because vehicles take different batteries and put them in different places. Some take minutes to reach and others need panels removed. The published range covers eligible vehicles and batteries, installation included, and on the call dispatch confirms the battery for your vehicle and your total, dispatch fee included, before a driver leaves.",
+        q: "Why does it matter which vehicle I have?",
+        a: "Because vehicles take different batteries and put them in different places. Some take minutes to reach and others need panels removed. The published price covers eligible vehicles and batteries, installation included, and on the call dispatch confirms the battery for your vehicle and your total, dispatch fee included, before a driver leaves.",
       },
       {
         q: "What warranty is included?",

@@ -14,7 +14,8 @@ import { env } from "@/lib/env";
 import { DEFAULT_SHARE_IMAGE } from "@/lib/seo";
 import { Icon3D } from "@/components/ui/icon-3d";
 import { HeroBackdrop } from "@/components/brand/hero-backdrop";
-import { DISPATCH_FEE_TAG, priceBadge } from "@/lib/content/pricing";
+import { priceBadge, priceSummary } from "@/lib/content/pricing";
+import { PriceFigure } from "@/components/ui/price-figure";
 
 /**
  * Dallas Love Field — a LOCATION hub, not a service page.
@@ -214,7 +215,7 @@ export default function DallasLoveFieldPage() {
                             {svc.shortName} in Dallas
                           </span>
                           {priceBadge(svc) && (
-                            <span className="text-ink-500 dark:text-ink-300">{priceBadge(svc)} {DISPATCH_FEE_TAG}</span>
+                            <PriceFigure svc={svc} inLink className="text-ink-500 dark:text-ink-300">{priceSummary(svc)}</PriceFigure>
                           )}
                         </p>
                       </div>

@@ -11,7 +11,8 @@ import { CinematicBackgroundVideo } from "@/components/media/cinematic-backgroun
 import { HeroQuickRequest } from "./hero-quick-request";
 import { gsap } from "@/lib/gsap/register";
 import { REVIEW_SNAPSHOT } from "@/lib/content/google-reviews";
-import { DISPATCH_FEE_HEADLINE, DISPATCH_FEE_TAG, glanceLine, lowPrice } from "@/lib/content/pricing";
+import { DISPATCH_FEE_HEADLINE, glanceLine, lowPrice } from "@/lib/content/pricing";
+import { PriceFigure } from "@/components/ui/price-figure";
 
 /**
  * The home hero: what we do, where, roughly what it costs, and how to ask for
@@ -130,7 +131,8 @@ export function Hero() {
           >
             <Fact label="Dispatch" value="24/7" />
             <Fact label="DFW cities" value={String(SERVICE_AREAS.length)} />
-            {batteryPrice && <Fact label="Battery" value={batteryPrice} note={DISPATCH_FEE_TAG} />}
+            {/* The battery price on its own (owner, 2026-11-07); a click shows the total. */}
+            {batteryService && batteryPrice && <Fact label="Battery" value={<PriceFigure svc={batteryService}>{batteryPrice}</PriceFigure>} note="Installed" />}
             <Fact label="Membership" value="None" accent />
           </dl>
           {/* The pricing banner from the owner's brief: the fee on its own, so
@@ -166,7 +168,7 @@ function DallasTime() {
   return time ? <span className="text-white/65">· {time} in Dallas</span> : null;
 }
 
-function Fact({ label, value, note, accent = false }: { label: string; value: string; note?: string; accent?: boolean }) {
+function Fact({ label, value, note, accent = false }: { label: string; value: React.ReactNode; note?: string; accent?: boolean }) {
   return (
     <div className="bg-ink-950/70 px-4 py-3 backdrop-blur-sm">
       <dt className="whitespace-nowrap text-[0.68rem] font-semibold uppercase tracking-[0.1em] text-white/55">{label}</dt>

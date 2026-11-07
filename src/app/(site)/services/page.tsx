@@ -16,6 +16,7 @@ import { PricingDisclaimer } from "@/components/ui/pricing-disclaimer";
 import { Icon3D } from "@/components/ui/icon-3d";
 import { ServiceSearch } from "@/components/search/service-search";
 import { priceBadge, pricedTitle, startingPrice } from "@/lib/content/pricing";
+import { totalOnClick } from "@/lib/content/battery-total";
 import { pricesShort } from "@/lib/content/quick-answers";
 import { fitDescription } from "@/lib/seo";
 
@@ -25,9 +26,12 @@ export const metadata: Metadata = {
   ...pageUrls("/services"),
 };
 
-/** Battery first, the main service; the rest in their SERVICES order. */
-/** Battery first, the main service, and the big-rig jump start beside it (owner, 2026-11-07). */
-const FIRST = ["battery-replacement", "semi-truck-jump-start"];
+/**
+ * Battery first, the main service; the rest in their SERVICES order, which
+ * ends with the semi truck jump start (owner, 2026-11-07: last, so the car
+ * jump start price is the one drivers see first).
+ */
+const FIRST = ["battery-replacement"];
 const ORDERED = [
   ...FIRST.flatMap((slug) => SERVICES.filter((s) => s.slug === slug)),
   ...SERVICES.filter((s) => !FIRST.includes(s.slug)),
@@ -98,7 +102,7 @@ export default function ServicesPage() {
                       )}
                       <div aria-hidden="true" className="absolute inset-x-0 bottom-0 hidden h-1/2 bg-gradient-to-t from-ink-950/85 to-transparent sm:block" />
                       {priceBadge(service) && (
-                        <span className="absolute bottom-3 left-4 hidden font-display text-xl font-bold text-white drop-shadow sm:block">
+                        <span {...totalOnClick(service)} className="absolute bottom-3 left-4 hidden font-display text-xl font-bold text-white drop-shadow sm:block">
                           {priceBadge(service)}
                         </span>
                       )}
@@ -111,7 +115,7 @@ export default function ServicesPage() {
                       <h2 className="mt-0.5 font-display text-base font-semibold leading-snug text-ink-950 group-hover:text-red-600 sm:mt-1 sm:text-xl dark:text-white">
                         {service.name}
                       </h2>
-                      <p className="mt-1 text-sm font-bold text-ink-950 sm:hidden dark:text-white">{priceBadge(service)}</p>
+                      <p {...totalOnClick(service)} className="mt-1 text-sm font-bold text-ink-950 sm:hidden dark:text-white">{priceBadge(service)}</p>
                       <p className="mt-1.5 hidden text-sm leading-relaxed text-ink-600 sm:block dark:text-ink-200">{service.summary}</p>
                     </div>
                   </Link>

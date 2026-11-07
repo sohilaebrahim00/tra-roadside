@@ -29,9 +29,17 @@ export const ASK_SUGGESTIONS = [
   "Do I need a membership?",
 ];
 
+/**
+ * A service, its price and its qualifier. Battery replacement's price stands
+ * alone (owner, 2026-11-07); asked what it costs, the answer adds the fee as a
+ * sentence of its own.
+ */
 function serviceAnswer(svc: ServiceContent): AskAnswer {
   const line = headlineLine(svc);
-  const price = line ? ` ${svc.name} is ${formatAmount(line, "–", "from")}, plus the flat ${DISPATCH_FEE_USD} dispatch fee.` : "";
+  const amount = line ? formatAmount(line, "–", "from") : "";
+  // The battery's fee is told when the customer books it (owner, 2026-11-07).
+  const fee = svc.feeAtBooking ? "" : `, plus the flat ${DISPATCH_FEE_USD} dispatch fee`;
+  const price = line ? (svc.feeAtBooking ? ` ${svc.name} is ${amount}.${fee}` : ` ${svc.name} is ${amount}${fee}.`) : "";
   return {
     text: `${svc.summary}${price}${svc.priceNote ? ` ${svc.priceNote}` : ""}`,
     service: svc,

@@ -10,7 +10,7 @@ import { ServiceNav } from "@/components/city-service/service-nav";
 import { FinalCta } from "@/components/city-service/final-cta";
 import { QuickAnswer } from "@/components/ui/quick-answer";
 import { ServiceCallSteps } from "@/components/ui/service-call-steps";
-import { DISPATCH_FEE_TAG, lowPrice, pricedTitle } from "@/lib/content/pricing";
+import { lowPrice, pricedTitle, withFeeTag } from "@/lib/content/pricing";
 import { cityServiceAnswer, cityServiceFaqs } from "@/lib/content/quick-answers";
 import { bloqueCiudadServicio } from "@/lib/content/spanish";
 import { getServiceArea, nearbyAreas } from "@/lib/content/business";
@@ -55,7 +55,7 @@ export async function generateMetadata({
   const price = svc && lowPrice(svc);
   const title = pricedTitle(content.title, price);
   // The price leads, so it survives where Google cuts a long description.
-  const priced = price ? fitDescription(`${svc.shortName} ${price} ${DISPATCH_FEE_TAG}.`, sentences(content.metaDescription)) : "";
+  const priced = price ? fitDescription(`${svc.shortName} ${withFeeTag(svc, price)}.`, sentences(content.metaDescription)) : "";
   // When the written description's first sentence is too long to follow the
   // price, the written description alone reads better than a bare price.
   const description = priced.length >= 90 || content.metaDescription.length > 158 ? priced || content.metaDescription : content.metaDescription;

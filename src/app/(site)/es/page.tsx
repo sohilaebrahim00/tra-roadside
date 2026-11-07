@@ -9,6 +9,7 @@ import { BUSINESS, SERVICE_AREAS } from "@/lib/content/business";
 import { DISPATCH_FEE_USD, pricedTitle, startingPrice } from "@/lib/content/pricing";
 import { listaDePrecios, preguntasFrecuentes } from "@/lib/content/spanish";
 import { env } from "@/lib/env";
+import { PriceFigure } from "@/components/ui/price-figure";
 import { pageUrls } from "@/lib/seo";
 
 /** The Spanish landing page. The request form itself is in English; the phone is the way in for Spanish speakers. */
@@ -58,7 +59,9 @@ export default function SpanishPage() {
               {listaDePrecios().map((row) => (
                 <div key={row.nombre} className="flex items-baseline justify-between gap-4 px-5 py-3">
                   <dt className="text-sm font-medium text-ink-800">{row.nombre}</dt>
-                  <dd className="whitespace-nowrap font-display text-base font-bold text-ink-950">{row.precio}</dd>
+                  <dd className="whitespace-nowrap font-display text-base font-bold text-ink-950">
+                    <PriceFigure svc={row.svc}>{row.precio}</PriceFigure>
+                  </dd>
                 </div>
               ))}
               <div className="flex items-baseline justify-between gap-4 bg-paper-50 px-5 py-3">

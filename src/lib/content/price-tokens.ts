@@ -6,9 +6,9 @@ import { formatAmount } from "./price-format";
  * Fills price tokens in editorial content from SERVICES, so a price change
  * cannot leave a stale number in an article:
  *
- *   {{price:<service-slug>}}  the service price, without the dispatch fee: "$239–$255", "$70", "from $129"
+ *   {{price:<service-slug>}}  the service price, without the dispatch fee: "$49–$75", "$239", "from $129"
  *   {{total:<service-slug>}}  that price with the dispatch fee added once:
- *                             "$258–$274", "$89", "from $148"
+ *                             "$68–$94", "$258", "from $148"
  *   {{price2:<service-slug>}}  the service's second line: the semi truck jump
  *                             start, the trunk lockout: "from $90", "$120"
  *   {{total2:<service-slug>}}  that line with the dispatch fee added once

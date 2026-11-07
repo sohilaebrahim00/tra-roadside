@@ -5,10 +5,10 @@
 
 insert into service_types (slug, name, needs_destination, description, sort_order) values
   ('jump-start', 'Jump Start', false, 'Dead battery jump start, $49-$75 plus the $19 dispatch fee.', 1),
-  ('battery-replacement', 'Battery Replacement', false, 'Mobile battery replacement at your location, $239-$255 for eligible vehicles and batteries, plus the $19 dispatch fee.', 2),
+  ('battery-replacement', 'Battery Replacement', false, 'Mobile battery replacement at your location, $239 for eligible vehicles and batteries, covering the battery, core charge and installation, plus the $19 dispatch fee.', 2),
   ('lockout', 'Vehicle Lockout', false, 'Non-destructive lockout entry, from $50. Keys locked in the trunk, $120. Plus the $19 dispatch fee.', 3),
   ('tire-repair-plug-patch', 'Tire Repair — Plug & Patch', false, 'Puncture repaired roadside with a plug or patch, $54-$60 plus the $19 dispatch fee.', 4),
-  ('flat-tire-change', 'Flat Tire Change', false, 'Swap to the spare carried in your vehicle, from $75 plus the $19 dispatch fee.', 5),
+  ('flat-tire-change', 'Flat Tire Change', false, 'Swap to the spare carried in your vehicle, from $50 plus the $19 dispatch fee.', 5),
   ('tire-replacement', 'Tire Replacement', false, 'Tire supplied by TRA and fitted on site, from $129 plus the $19 dispatch fee; tire availability varies.', 6),
   ('stuck-screw-in-tire', 'Stuck Screw in Tire', false, 'Screw or nail removed from the tire and the tire made safe, $70 plus the $19 dispatch fee.', 7),
   ('rim-lock-removal', 'Rim Lock Removal', false, 'Seized or keyless wheel lock removed so the wheel can come off, $70 plus the $19 dispatch fee.', 8),

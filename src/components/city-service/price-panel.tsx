@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils/cn";
 import { PricingDisclaimer } from "@/components/ui/pricing-disclaimer";
 import type { ServiceContent } from "@/lib/content/services";
 import { DISPATCH_FEE_USD, lowOf, servicePrice } from "@/lib/content/pricing";
+import { PriceFigure } from "@/components/ui/price-figure";
 
 /**
  * Pricing for a City x Service page, rendered entirely from SERVICES.
@@ -16,7 +17,9 @@ import { DISPATCH_FEE_USD, lowOf, servicePrice } from "@/lib/content/pricing";
  * The low figure leads and the full range sits beside it. Under the service
  * price sits the dispatch fee, on its own and charged once per job (owner's
  * pricing brief, 2026-11-03, and 2026-11-04). The expected total is shown on
- * the request form, before the customer sends a request.
+ * the request form, before the customer sends a request. Battery replacement
+ * has no fee row (owner, 2026-11-07): its price is a button that shows the
+ * battery total, fee included, and the request form repeats it.
  *
  * `priceNote` is the qualifier that must not get lost (battery fitment, tire
  * availability), so it gets its own flagged row.
@@ -55,14 +58,15 @@ export function PricePanel({
 
       {/* Headline figure. baseline alignment keeps a long note from shifting it. */}
       <div className="mt-2 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-        <span
+        <PriceFigure
+          svc={svc}
           className={cn(
             "font-display text-3xl font-bold leading-none sm:text-4xl",
             onDark ? "text-white" : "text-ink-950"
           )}
         >
           {lowOf(headline)}
-        </span>
+        </PriceFigure>
         {headline.max !== undefined && (
           <span className={cn("text-sm font-semibold", onDark ? "text-white/80" : "text-ink-700")}>{servicePrice(headline)}</span>
         )}
@@ -102,13 +106,15 @@ export function PricePanel({
         </ul>
       )}
 
-      {/* The dispatch fee on its own. */}
-      <dl className={cn("mt-4 space-y-1.5 border-t pt-3 text-sm", onDark ? "border-white/10" : "border-ink-950/8")}>
-        <div className="flex flex-wrap items-baseline justify-between gap-x-4">
-          <dt className={onDark ? "text-white/80" : "text-ink-700"}>Dispatch fee, once per job</dt>
-          <dd className={cn("font-display text-base font-bold tabular-nums", onDark ? "text-white" : "text-ink-950")}>+ {DISPATCH_FEE_USD}</dd>
-        </div>
-      </dl>
+      {/* The dispatch fee on its own, except beside the battery price. */}
+      {!svc.feeAtBooking && (
+        <dl className={cn("mt-4 space-y-1.5 border-t pt-3 text-sm", onDark ? "border-white/10" : "border-ink-950/8")}>
+          <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+            <dt className={onDark ? "text-white/80" : "text-ink-700"}>Dispatch fee, once per job</dt>
+            <dd className={cn("font-display text-base font-bold tabular-nums", onDark ? "text-white" : "text-ink-950")}>+ {DISPATCH_FEE_USD}</dd>
+          </div>
+        </dl>
+      )}
 
       {/* The qualifier. Flagged, because this is the line that prevents a
           customer reading the headline figure as the whole bill. */}
@@ -129,7 +135,7 @@ export function PricePanel({
         </div>
       )}
 
-      <PricingDisclaimer tone={tone} className="mt-4" />
+      <PricingDisclaimer tone={tone} withFee={!svc.feeAtBooking} className="mt-4" />
     </div>
   );
 }

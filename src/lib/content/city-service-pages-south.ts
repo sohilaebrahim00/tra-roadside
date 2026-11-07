@@ -48,7 +48,7 @@ export const PAGES_SOUTH: CityServiceContent[] = [
     metaDescription:
       "Battery failing in Cedar Hill? TRA brings a new one and installs it where your car is parked. The price covers both, with a 1-year warranty.",
     intro:
-      "A battery rarely fails on a convenient day. The usual story in Cedar Hill is a summer of short drives, then a car that only clicks in the driveway. We bring a replacement battery to the car and install it where it sits, so you skip the repair shop waiting room. The price range on this page covers the battery and installing it, for eligible vehicles and batteries, and dispatch confirms the right battery and your total before a driver is sent.",
+      "A battery rarely fails on a convenient day. The usual story in Cedar Hill is a summer of short drives, then a car that only clicks in the driveway. We bring a replacement battery to the car and install it where it sits, so you skip the repair shop waiting room. The price on this page covers the battery and installing it, for eligible vehicles and batteries, and dispatch confirms the right battery and your total before a driver is sent.",
     scenarios: [
       "A car that needed a jump twice in one week and will not hold a charge overnight.",
       "A battery worn down by short hops between Lake Ridge and the stores along US-67.",
@@ -422,7 +422,7 @@ export const PAGES_SOUTH: CityServiceContent[] = [
     metaDescription:
       "Weak battery in Waxahachie? TRA brings a new one and installs it at home, work or downtown. Price covers both, with a 1-year warranty.",
     intro:
-      "When a battery gives out in Waxahachie, the usual answers are a tow to a shop or a ride to buy one. We do something else: a TRA driver brings a new battery to the car, installs it where it is parked, and the car leaves under its own power. The price range on this page covers the battery and installing it, for eligible vehicles and batteries. Dispatch confirms the battery your car takes, and your total, before a driver is sent.",
+      "When a battery gives out in Waxahachie, the usual answers are a tow to a shop or a ride to buy one. We do something else: a TRA driver brings a new battery to the car, installs it where it is parked, and the car leaves under its own power. The price on this page covers the battery and installing it, for eligible vehicles and batteries. Dispatch confirms the battery your car takes, and your total, before a driver is sent.",
     scenarios: [
       "A pickup that needs a jump every other morning before work.",
       "A car that quit after an errand near the courthouse square and will not restart.",
@@ -609,7 +609,7 @@ export const PAGES_SOUTH: CityServiceContent[] = [
     metaDescription:
       "Dying battery in Duncanville? TRA installs a new one at your car, no tow needed. Price covers battery and installation. 1-year warranty.",
     intro:
-      "If a battery has already needed a jump, it has told you what comes next. In Duncanville we bring a new battery to the car and install it where it is parked: a driveway, an apartment space, a lot at work. The price range on this page covers the battery and installing it, for eligible vehicles and batteries, and dispatch confirms which battery your car takes, and your total, before anyone is sent.",
+      "If a battery has already needed a jump, it has told you what comes next. In Duncanville we bring a new battery to the car and install it where it is parked: a driveway, an apartment space, a lot at work. The price on this page covers the battery and installing it, for eligible vehicles and batteries, and dispatch confirms which battery your car takes, and your total, before anyone is sent.",
     scenarios: [
       "A car that needs a jump every few mornings before the I-20 commute.",
       "A battery that died in a shared parking lot where the car is boxed in by others.",
@@ -625,7 +625,7 @@ export const PAGES_SOUTH: CityServiceContent[] = [
       },
       {
         q: "What does eligible mean?",
-        a: "The price range applies to eligible vehicles and batteries, and battery pricing varies by vehicle and battery type. Give dispatch the year, make and model, and the VIN if you can reach it, and they confirm compatibility and your total before a driver is sent.",
+        a: "The price applies to eligible vehicles and batteries, and battery pricing varies by vehicle and battery type. Give dispatch the year, make and model, and the VIN if you can reach it, and they confirm compatibility and your total before a driver is sent.",
       },
       {
         q: "What should I do while I wait?",
@@ -722,7 +722,7 @@ export const PAGES_SOUTH: CityServiceContent[] = [
     metaDescription:
       "Failing battery in Lancaster? TRA installs a new one where your car is parked, from Downtown Lancaster to I-35E. 1-year warranty.",
     intro:
-      "Slow cranking, dim headlights, a clock that resets itself: a battery usually warns you a few days before it quits. If you are seeing those signs in Lancaster, replacing it on your schedule beats replacing it on a freeway shoulder. We bring the battery to the car and install it where it is parked. The price range on this page covers the battery and installing it, for eligible vehicles and batteries, and dispatch confirms your total before a driver is sent.",
+      "Slow cranking, dim headlights, a clock that resets itself: a battery usually warns you a few days before it quits. If you are seeing those signs in Lancaster, replacing it on your schedule beats replacing it on a freeway shoulder. We bring the battery to the car and install it where it is parked. The price on this page covers the battery and installing it, for eligible vehicles and batteries, and dispatch confirms your total before a driver is sent.",
     scenarios: [
       "A car that struggled to start at the end of a long shift and is now a gamble each morning.",
       "Dim headlights and slow windows on a car that is otherwise running fine.",
@@ -738,7 +738,7 @@ export const PAGES_SOUTH: CityServiceContent[] = [
       },
       {
         q: "Which batteries are eligible?",
-        a: "The price range applies to eligible vehicles and batteries, and that depends on the car. Give dispatch the year, make and model, and the VIN if you can reach it, and they confirm before sending a driver.",
+        a: "The price applies to eligible vehicles and batteries, and that depends on the car. Give dispatch the year, make and model, and the VIN if you can reach it, and they confirm before sending a driver.",
       },
       {
         q: "What if the new battery does not fix the problem?",
@@ -835,7 +835,7 @@ export const PAGES_SOUTH: CityServiceContent[] = [
     metaDescription:
       "Battery failing in Midlothian? TRA installs a new one at home or at work, near US-67 and US-287. Price covers both, with a 1-year warranty.",
     intro:
-      "Replacing a battery should not cost you a morning in a shop. In Midlothian we bring a replacement battery to the car, wherever it is parked, and install it there. The price range on this page covers the battery and installing it, for eligible vehicles and batteries. Dispatch confirms the battery your car takes, and your total, before a driver is sent.",
+      "Replacing a battery should not cost you a morning in a shop. In Midlothian we bring a replacement battery to the car, wherever it is parked, and install it there. The price on this page covers the battery and installing it, for eligible vehicles and batteries. Dispatch confirms the battery your car takes, and your total, before a driver is sent.",
     scenarios: [
       "A car that struggles to start after sitting all day in a lot near the Railport industrial park.",
       "A pickup that cranks slowly on every cold morning.",
@@ -948,7 +948,7 @@ export const PAGES_SOUTH: CityServiceContent[] = [
     metaDescription:
       "Weak battery in Red Oak? TRA installs a new one at your driveway or workplace, no tow needed. Price covers both, with a 1-year warranty.",
     intro:
-      "A battery that starts the car at home but fails in a parking garage downtown is a particular kind of trouble when home is 18 miles away. TRA brings a new battery to the car in Red Oak, or wherever the car sits, and installs it there. The price range on this page covers the battery and installing it, for eligible vehicles and batteries, and dispatch confirms the right battery and your total before a driver is sent.",
+      "A battery that starts the car at home but fails in a parking garage downtown is a particular kind of trouble when home is 18 miles away. TRA brings a new battery to the car in Red Oak, or wherever the car sits, and installs it there. The price on this page covers the battery and installing it, for eligible vehicles and batteries, and dispatch confirms the right battery and your total before a driver is sent.",
     scenarios: [
       "A car that started at home and would not restart at the end of a day in Dallas.",
       "Slow cranking when you back out of the driveway, getting worse each week.",
@@ -1061,7 +1061,7 @@ export const PAGES_SOUTH: CityServiceContent[] = [
     metaDescription:
       "Weak battery in Forney? TRA installs a new one at your home or work, no tow needed. Price covers battery and installation. 1-year warranty.",
     intro:
-      "In Forney, a dead battery does not have to mean arranging a tow. A TRA driver brings a new battery to the car and installs it where it is parked, so there is no trip to a shop and no day without a car. The price range on this page covers the battery and installing it, for eligible vehicles and batteries, and dispatch confirms the right battery and your total before a driver is sent.",
+      "In Forney, a dead battery does not have to mean arranging a tow. A TRA driver brings a new battery to the car and installs it where it is parked, so there is no trip to a shop and no day without a car. The price on this page covers the battery and installing it, for eligible vehicles and batteries, and dispatch confirms the right battery and your total before a driver is sent.",
     scenarios: [
       "A car that clicks instead of cranking after a week parked at home.",
       "A battery that died in a store lot after the engine was switched off for an errand.",

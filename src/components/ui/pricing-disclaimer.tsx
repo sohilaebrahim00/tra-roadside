@@ -9,13 +9,17 @@ import { DISPATCH_FEE_USD } from "@/lib/content/pricing";
  * at, not guaranteed" framing and the phone fallback stay consistent and
  * only need to change in one place. `tone="light"` is for dark-background
  * sections (e.g. the service-detail hero).
+ *
+ * `withFee={false}` leaves out the dispatch fee sentence, for a block that
+ * shows only the battery price: that fee is told when the battery is booked,
+ * not printed beside its price (owner, 2026-11-07).
  */
-export function PricingDisclaimer({ className, tone = "dark" }: { className?: string; tone?: "dark" | "light" }) {
+export function PricingDisclaimer({ className, tone = "dark", withFee = true }: { className?: string; tone?: "dark" | "light"; withFee?: boolean }) {
   return (
     <div className={cn("text-xs", tone === "light" ? "text-white/60" : "text-ink-500 dark:text-ink-300", className)}>
       <p>
-        Service prices are plus a {DISPATCH_FEE_USD} dispatch fee charged once per job. Dispatch
-        confirms the final price for your vehicle and location before a driver is sent.
+        {withFee && <>Service prices are plus a {DISPATCH_FEE_USD} dispatch fee charged once per job. </>}
+        Dispatch confirms the final price for your vehicle and location before a driver is sent.
       </p>
       <a
         href={BUSINESS.phoneHref}

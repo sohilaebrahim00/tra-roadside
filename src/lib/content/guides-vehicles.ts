@@ -53,7 +53,7 @@ export const GUIDES_VEHICLES: Guide[] = [
         heading: "What to tell dispatch",
         paragraphs: [
           "Give the year, cab and engine, plus the trim if you know it. If it is a diesel or a PowerBoost hybrid, say so, because those are matched from the VIN.",
-          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed, plus a {{dispatchFee}} dispatch fee charged once per job. A flat tire change is {{price:flat-tire-change}} plus the same fee. Dispatch confirms the battery and your total before a driver is sent. We send the nearest available driver as soon as possible. We text or call when the driver is on the way.",
+          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send the nearest available driver as soon as possible. We text or call when the driver is on the way.",
         ],
       },
     ],
@@ -112,7 +112,7 @@ export const GUIDES_VEHICLES: Guide[] = [
         heading: "What to tell dispatch",
         paragraphs: [
           "Say the year, engine and cab, and mention it if the truck is a diesel or has stop/start. Say where the truck is parked and whether the spare is under the bed.",
-          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. A flat tire change is {{price:flat-tire-change}} plus the same fee. We send a driver as soon as possible, and we text or call you when they are on the way.",
+          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. Dispatch confirms the battery and your total before a driver is sent. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. We send a driver as soon as possible, and we text or call you when they are on the way.",
         ],
       },
     ],
@@ -169,7 +169,7 @@ export const GUIDES_VEHICLES: Guide[] = [
         heading: "What to tell dispatch",
         paragraphs: [
           "Year, cab style and engine, and the VIN if it is easy to read from the dash or the door jamb. Tell us whether the truck is in a driveway, a lot or on a roadside.",
-          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed, plus a {{dispatchFee}} dispatch fee charged once per job. A flat tire change is {{price:flat-tire-change}} plus the same fee, using the spare already in the truck. Dispatch confirms the battery and your total before a driver is sent. We send a driver as soon as possible, and we text or call you when they are on the way.",
+          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job, using the spare already in the truck. Dispatch confirms the battery and your total before a driver is sent. We send a driver as soon as possible, and we text or call you when they are on the way.",
         ],
       },
     ],
@@ -227,7 +227,7 @@ export const GUIDES_VEHICLES: Guide[] = [
         heading: "What to tell dispatch",
         paragraphs: [
           "Year, engine, cab and trim, plus a note if the truck is a diesel or has stop/start. Add your location and whether a wheel lock key is in the truck.",
-          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed, plus a {{dispatchFee}} dispatch fee charged once per job. A flat tire change is {{price:flat-tire-change}} plus the same fee. Dispatch confirms the battery and your total before a driver is sent. We send the nearest available driver as soon as possible. We text or call when the driver is on the way.",
+          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send the nearest available driver as soon as possible. We text or call when the driver is on the way.",
         ],
       },
     ],
@@ -286,7 +286,7 @@ export const GUIDES_VEHICLES: Guide[] = [
         heading: "What to tell dispatch",
         paragraphs: [
           "Year, engine (V6 or 4-cylinder, or hybrid on the newest trucks), cab and trim. Tell us where the truck is and whether the spare is in place.",
-          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed, plus a {{dispatchFee}} dispatch fee charged once per job. A flat tire change is {{price:flat-tire-change}} plus the same fee. Dispatch confirms the battery and your total before a driver is sent. We send a driver as soon as possible, and we text or call you when they are on the way.",
+          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send a driver as soon as possible, and we text or call you when they are on the way.",
         ],
       },
     ],
@@ -344,7 +344,7 @@ export const GUIDES_VEHICLES: Guide[] = [
         heading: "What to tell dispatch",
         paragraphs: [
           "Year, engine, cab and trim, and the VIN if you can reach it. Say where the truck is parked.",
-          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed, plus a {{dispatchFee}} dispatch fee charged once per job. A flat tire change is {{price:flat-tire-change}} plus the same fee. Dispatch confirms the battery and your total before a driver is sent. We send a driver as soon as possible, and we text or call you when they are on the way.",
+          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send a driver as soon as possible, and we text or call you when they are on the way.",
         ],
       },
     ],
@@ -404,7 +404,7 @@ export const GUIDES_VEHICLES: Guide[] = [
         heading: "What to tell dispatch",
         paragraphs: [
           "Year, engine (4-cylinder, V6 or hybrid) and trim. For a hybrid, add the VIN if you can reach it.",
-          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed, plus a {{dispatchFee}} dispatch fee charged once per job. A flat tire change is {{price:flat-tire-change}} plus the same fee. Dispatch confirms the battery and your total before a driver is sent. We send the nearest available driver as soon as possible. We text or call when the driver is on the way.",
+          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send the nearest available driver as soon as possible. We text or call when the driver is on the way.",
         ],
       },
     ],
@@ -463,7 +463,7 @@ export const GUIDES_VEHICLES: Guide[] = [
         heading: "What to tell dispatch",
         paragraphs: [
           "Year, engine size or hybrid, and sedan or hatchback. Mention if you are in a garage or a tight spot.",
-          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed, plus a {{dispatchFee}} dispatch fee charged once per job. A flat tire change is {{price:flat-tire-change}} plus the same fee. Dispatch confirms the battery and your total before a driver is sent. We send a driver as soon as possible, and we text or call you when they are on the way.",
+          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send a driver as soon as possible, and we text or call you when they are on the way.",
         ],
       },
     ],
@@ -520,7 +520,7 @@ export const GUIDES_VEHICLES: Guide[] = [
         heading: "What to tell dispatch",
         paragraphs: [
           "Year, whether it is a hybrid, and trim. If you know it has start-stop, say so.",
-          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed, plus a {{dispatchFee}} dispatch fee charged once per job. A flat tire change is {{price:flat-tire-change}} plus the same fee. Dispatch confirms the battery and your total before a driver is sent. We send the nearest available driver as soon as possible. We text or call when the driver is on the way.",
+          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send the nearest available driver as soon as possible. We text or call when the driver is on the way.",
         ],
       },
     ],
@@ -578,7 +578,7 @@ export const GUIDES_VEHICLES: Guide[] = [
         heading: "What to tell dispatch",
         paragraphs: [
           "Year, trim, and whether it is a Type R or a hybrid. Say whether you found a spare or a kit.",
-          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed, plus a {{dispatchFee}} dispatch fee charged once per job. A flat tire change is {{price:flat-tire-change}} plus the same fee. Dispatch confirms the battery and your total before a driver is sent. We send a driver as soon as possible, and we text or call you when they are on the way.",
+          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send a driver as soon as possible, and we text or call you when they are on the way.",
         ],
       },
     ],
@@ -638,7 +638,7 @@ export const GUIDES_VEHICLES: Guide[] = [
         heading: "What to tell dispatch",
         paragraphs: [
           "Year, engine (1.5-liter, 2.0-liter, 4-cylinder or V6) and trim.",
-          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed, plus a {{dispatchFee}} dispatch fee charged once per job. A flat tire change is {{price:flat-tire-change}} plus the same fee. Dispatch confirms the battery and your total before a driver is sent. We send the nearest available driver as soon as possible. We text or call when the driver is on the way.",
+          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send the nearest available driver as soon as possible. We text or call when the driver is on the way.",
         ],
       },
     ],
@@ -693,7 +693,7 @@ export const GUIDES_VEHICLES: Guide[] = [
         heading: "What to tell dispatch",
         paragraphs: [
           "Year, trim and whether it is a hybrid. Add the VIN if you can reach it, because it is what lets the technician match a hybrid's different 12-volt battery. Tell us where the car is parked and whether you can open the hood.",
-          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed, plus a {{dispatchFee}} dispatch fee charged once per job. A flat tire change is {{price:flat-tire-change}} plus the same fee. Dispatch confirms the battery and your total before a driver is sent. We send a driver as soon as possible, and we text or call you when they are on the way.",
+          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send a driver as soon as possible, and we text or call you when they are on the way.",
         ],
       },
     ],
@@ -753,7 +753,7 @@ export const GUIDES_VEHICLES: Guide[] = [
         heading: "What to tell dispatch",
         paragraphs: [
           "Year, trim and engine. Say whether it is a hybrid, and where the car is parked, including whether it is in a garage or against a curb.",
-          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed, plus a {{dispatchFee}} dispatch fee charged once per job. A flat tire change is {{price:flat-tire-change}} plus the same fee. Dispatch confirms the battery and your total before a driver is sent. We send the nearest available driver as soon as possible. We text or call when the driver is on the way.",
+          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send the nearest available driver as soon as possible. We text or call when the driver is on the way.",
         ],
       },
     ],
@@ -813,7 +813,7 @@ export const GUIDES_VEHICLES: Guide[] = [
         heading: "What to tell dispatch",
         paragraphs: [
           "Year, trim and, if you can reach it, the VIN. It lets the technician confirm AGM on a 2021 or newer car. Also say where the car is parked, and whether you can open the hood and the doors.",
-          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed, plus a {{dispatchFee}} dispatch fee charged once per job. A flat tire change is {{price:flat-tire-change}} plus the same fee. Dispatch confirms the battery and your total before a driver is sent. We send a driver as soon as possible, and we text or call you when they are on the way.",
+          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send a driver as soon as possible, and we text or call you when they are on the way.",
         ],
       },
     ],
@@ -877,7 +877,7 @@ export const GUIDES_VEHICLES: Guide[] = [
         heading: "What to tell dispatch",
         paragraphs: [
           "Year, engine size, whether it is a turbo, and a hybrid note if it applies.",
-          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed, plus a {{dispatchFee}} dispatch fee charged once per job. A flat tire change is {{price:flat-tire-change}} plus the same fee. Dispatch confirms the battery and your total before a driver is sent. We send the nearest available driver as soon as possible. We text or call when the driver is on the way.",
+          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send the nearest available driver as soon as possible. We text or call when the driver is on the way.",
         ],
       },
     ],
@@ -935,7 +935,7 @@ export const GUIDES_VEHICLES: Guide[] = [
         heading: "What to tell dispatch",
         paragraphs: [
           "Year, trim, and whether it is a hybrid or plug-in. Add the VIN if you can reach it, because it lets the technician settle the AGM question on a newer car. Tell us where the car is parked and what you found when you looked for a spare or a kit.",
-          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed, plus a {{dispatchFee}} dispatch fee charged once per job. A flat tire change is {{price:flat-tire-change}} plus the same fee. Dispatch confirms the battery and your total before a driver is sent. We send a driver as soon as possible, and we text or call you when they are on the way.",
+          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send a driver as soon as possible, and we text or call you when they are on the way.",
         ],
       },
     ],
@@ -997,7 +997,7 @@ export const GUIDES_VEHICLES: Guide[] = [
         heading: "What to tell dispatch",
         paragraphs: [
           "Year, trim and whether it is a hybrid or plug-in. Say where the car is parked, and add the VIN if it is easy to reach.",
-          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed, plus a {{dispatchFee}} dispatch fee charged once per job. A flat tire change is {{price:flat-tire-change}} plus the same fee. Dispatch confirms the battery and your total before a driver is sent. We send the nearest available driver as soon as possible. We text or call when the driver is on the way.",
+          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send the nearest available driver as soon as possible. We text or call when the driver is on the way.",
         ],
       },
     ],
@@ -1058,7 +1058,7 @@ export const GUIDES_VEHICLES: Guide[] = [
         heading: "What to tell dispatch",
         paragraphs: [
           "Year, trim, engine, and whether you know of a second battery. Say whether it is a diesel or a hybrid.",
-          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed, plus a {{dispatchFee}} dispatch fee charged once per job. A flat tire change is {{price:flat-tire-change}} plus the same fee. Dispatch confirms the battery and your total before a driver is sent. We send a driver as soon as possible, and we text or call you when they are on the way.",
+          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send a driver as soon as possible, and we text or call you when they are on the way.",
         ],
       },
     ],
@@ -1116,7 +1116,7 @@ export const GUIDES_VEHICLES: Guide[] = [
         heading: "What to tell dispatch",
         paragraphs: [
           "Year, engine and trim. Say if it is a hybrid, a Police Interceptor or an ST.",
-          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed, plus a {{dispatchFee}} dispatch fee charged once per job. A flat tire change is {{price:flat-tire-change}} plus the same fee. Dispatch confirms the battery and your total before a driver is sent. We send the nearest available driver as soon as possible. We text or call when the driver is on the way.",
+          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send the nearest available driver as soon as possible. We text or call when the driver is on the way.",
         ],
       },
     ],
@@ -1174,7 +1174,7 @@ export const GUIDES_VEHICLES: Guide[] = [
         heading: "What to tell dispatch",
         paragraphs: [
           "Year, engine, and whether it is a 4xe, a diesel or has start-stop.",
-          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed, plus a {{dispatchFee}} dispatch fee charged once per job. A flat tire change is {{price:flat-tire-change}} plus the same fee. Dispatch confirms the battery and your total before a driver is sent. We send a driver as soon as possible, and we text or call you when they are on the way.",
+          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send a driver as soon as possible, and we text or call you when they are on the way.",
         ],
       },
     ],
@@ -1229,7 +1229,7 @@ export const GUIDES_VEHICLES: Guide[] = [
         heading: "What to tell dispatch",
         paragraphs: [
           "Year, engine and trim. If it is a police package car, say so, because those use a larger battery. Add where the car is parked and whether you can open the hood.",
-          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed, plus a {{dispatchFee}} dispatch fee charged once per job. A flat tire change is {{price:flat-tire-change}} plus the same fee. Dispatch confirms the battery and your total before a driver is sent. We send the nearest available driver as soon as possible. We text or call when the driver is on the way.",
+          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send the nearest available driver as soon as possible. We text or call when the driver is on the way.",
         ],
       },
     ],
@@ -1289,7 +1289,7 @@ export const GUIDES_VEHICLES: Guide[] = [
         heading: "What to tell dispatch",
         paragraphs: [
           "Year, model (C 300, AMG or a hybrid), and what you found when you looked for the spare. The VIN, if you can reach it.",
-          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed, plus a {{dispatchFee}} dispatch fee charged once per job. A flat tire change is {{price:flat-tire-change}} plus the same fee. Dispatch confirms the battery and your total before a driver is sent. We send a driver as soon as possible, and we text or call you when they are on the way.",
+          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send a driver as soon as possible, and we text or call you when they are on the way.",
         ],
       },
     ],

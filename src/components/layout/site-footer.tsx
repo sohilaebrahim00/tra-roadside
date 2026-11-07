@@ -7,6 +7,14 @@ import { BUSINESS, SERVICE_AREAS, addressLine } from "@/lib/content/business";
 import { SERVICES } from "@/lib/content/services";
 import { Container } from "@/components/ui/container";
 
+/**
+ * Seven services, in SERVICES order, with the semi truck jump start kept on
+ * the list and at its end (owner, 2026-11-07: last everywhere, so the car jump
+ * start is what drivers see first).
+ */
+const SEMI = "semi-truck-jump-start";
+const FOOTER_SERVICES = [...SERVICES.filter((s) => s.slug !== SEMI).slice(0, 6), ...SERVICES.filter((s) => s.slug === SEMI)];
+
 export function SiteFooter() {
   return (
     <footer className="relative isolate overflow-hidden border-t border-white/10 bg-ink-950 text-white">
@@ -92,7 +100,7 @@ export function SiteFooter() {
         <div>
           <h2 className="text-xs font-semibold uppercase tracking-[0.16em] text-white/50">Services</h2>
           <ul className="mt-4 space-y-2.5 text-sm text-white/70">
-            {SERVICES.slice(0, 7).map((s) => (
+            {FOOTER_SERVICES.map((s) => (
               <li key={s.slug}>
                 <Link href={`/services/${s.slug}`} className="hover:text-white">
                   {s.shortName}

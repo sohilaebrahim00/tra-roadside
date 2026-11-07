@@ -4,7 +4,7 @@ import { useFormContext } from "react-hook-form";
 import { Loader2 } from "lucide-react";
 import { StepShell } from "../step-shell";
 import { getService } from "@/lib/content/services";
-import { DISPATCH_FEE_USD, expectedTotal, lineForVehicle, servicePrice } from "@/lib/content/pricing";
+import { DISPATCH_FEE_USD, checkoutLine, expectedTotal, lineForVehicle, servicePrice } from "@/lib/content/pricing";
 import type { CreateRequestInput } from "@/lib/validation/request";
 import type { RequestStep } from "@/lib/validation/request";
 
@@ -83,6 +83,12 @@ export function ReviewStep({
 
       {submitError && (
         <p className="mt-4 rounded-lg bg-red-600/10 px-3 py-2.5 text-sm text-red-700 dark:text-red-400">{submitError}</p>
+      )}
+
+      {/* The battery total, in one line just before sending (owner, 2026-11-07):
+          the battery price is shown alone everywhere else on the site. */}
+      {service?.feeAtBooking && line && (
+        <p className="mt-6 rounded-xl bg-ink-950 px-4 py-3 text-center text-sm font-semibold text-white">{checkoutLine("Battery", line)}</p>
       )}
 
       <button

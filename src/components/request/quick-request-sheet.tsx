@@ -6,7 +6,8 @@ import { useRouter } from "next/navigation";
 import { AlertTriangle, LocateFixed, Send, X } from "lucide-react";
 import { SERVICES, getService } from "@/lib/content/services";
 import { SERVICE_ICONS } from "@/lib/content/service-icons";
-import { DISPATCH_FEE_TAG, expectedTotal, lineForVehicle, priceBadge, servicePrice } from "@/lib/content/pricing";
+import { DISPATCH_FEE_TAG, checkoutLine, expectedTotal, lineForVehicle, priceBadge, servicePrice } from "@/lib/content/pricing";
+import { totalOnClick } from "@/lib/content/battery-total";
 import { useGeolocation } from "@/lib/hooks/use-geolocation";
 import type { QuickRequestVehicle } from "@/lib/quick-request";
 import { quickRequestSchema, VIN_LENGTH, cleanVin } from "@/lib/validation/request";
@@ -77,6 +78,10 @@ const labelClass = "block text-sm font-semibold text-ink-900";
  *
  * A native <dialog>, for its built-in focus trap, Esc to close and top-layer
  * stacking. Forced to the light scheme, like the rest of the public site.
+ *
+ * Battery replacement (owner, 2026-11-07): its tile and summary show the
+ * price alone; choosing the tile opens the battery total first, and the
+ * total is spelled out just above Send to Dispatch.
  */
 export function QuickRequestSheet({ initialService, initialVehicle, onClose }: { initialService?: string; initialVehicle?: QuickRequestVehicle; onClose: () => void }) {
   const router = useRouter();
@@ -309,6 +314,8 @@ export function QuickRequestSheet({ initialService, initialVehicle, onClose }: {
                     key={svc.slug}
                     type="button"
                     aria-pressed={selected}
+                    // The battery tile shows the total before it is chosen; once chosen, a tap changes nothing.
+                    {...(selected ? {} : totalOnClick(svc))}
                     onClick={() => {
                       setServiceSlug(svc.slug);
                       setErrors((e) => ({ ...e, serviceSlug: undefined }));
@@ -331,7 +338,15 @@ export function QuickRequestSheet({ initialService, initialVehicle, onClose }: {
             {service && line && (
               <div className="mt-2 rounded-xl bg-white px-3.5 py-2.5 text-sm">
                 <p className="font-semibold">
-                  {line.label ?? service.name}: {servicePrice(line)} {DISPATCH_FEE_TAG} = {expectedTotal(line)}
+                  {service.feeAtBooking ? (
+                    <>
+                      {line.label ?? service.name}: {servicePrice(line)}
+                    </>
+                  ) : (
+                    <>
+                      {line.label ?? service.name}: {servicePrice(line)} {DISPATCH_FEE_TAG} = {expectedTotal(line)}
+                    </>
+                  )}
                 </p>
                 <p className="mt-0.5 text-xs text-ink-500">
                   {service.priceNote ?? "Dispatch confirms the price for your vehicle before a driver is sent."}
@@ -599,6 +614,9 @@ export function QuickRequestSheet({ initialService, initialVehicle, onClose }: {
             <p role="alert" className="mb-2 text-sm font-medium text-red-600">
               {submitError}
             </p>
+          )}
+          {service?.feeAtBooking && line && (
+            <p className="mb-2 rounded-xl bg-paper-50 px-3.5 py-2 text-center text-sm font-semibold text-ink-950">{checkoutLine("Battery", line)}</p>
           )}
           <button
             type="button"

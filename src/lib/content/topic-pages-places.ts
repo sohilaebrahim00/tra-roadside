@@ -177,7 +177,7 @@ export const TOPICS_PLACES: TopicPage[] = [
       {
         heading: "Cost and arrival",
         paragraphs: [
-          "A jump start is {{price:jump-start}}, plus a {{dispatchFee}} dispatch fee charged once. If the battery won't hold a charge, a replacement is {{price:battery-replacement}} plus the same fee, for eligible vehicles and batteries. Dispatch confirms the battery is compatible, and your total, before a driver is sent.",
+          "A jump start is {{price:jump-start}}, plus a {{dispatchFee}} dispatch fee charged once. If the battery won't hold a charge, a replacement is {{price:battery-replacement}} for eligible vehicles and batteries. Dispatch confirms the battery is compatible, and your total, before a driver is sent.",
           "You will get a text or a call when the driver heads your way. We send the nearest available driver as soon as possible.",
         ],
       },
@@ -189,7 +189,7 @@ export const TOPICS_PLACES: TopicPage[] = [
       },
       {
         q: "What if the car dies again after the jump?",
-        a: "Then the battery is probably not holding a charge, and a replacement is the better answer: {{price:battery-replacement}} plus the dispatch fee, for eligible vehicles and batteries. Dispatch confirms compatibility and your total first.",
+        a: "Then the battery is probably not holding a charge, and a replacement is the better answer: {{price:battery-replacement}} for eligible vehicles and batteries. Dispatch confirms compatibility and your total first.",
       },
       {
         q: "I'm on the Lake Ray Hubbard crossing. Does that change anything?",
@@ -296,7 +296,7 @@ export const TOPICS_PLACES: TopicPage[] = [
         heading: "What a jump start does and doesn't fix",
         paragraphs: [
           "A jump start fixes a dead battery. Tell dispatch what you saw: dim dash lights, clicking, a slow crank, or nothing at all. If the car quit while moving, say that too. We don't do mechanical repair and we don't deliver fuel, so an empty tank or a failed part is a job for someone else.",
-          "A jump start costs {{price:jump-start}} plus a {{dispatchFee}} dispatch fee charged once. If the battery has failed for good, a replacement is {{price:battery-replacement}} plus the fee, for eligible vehicles and batteries. Dispatch confirms compatibility and your total before a driver is sent.",
+          "A jump start costs {{price:jump-start}} plus a {{dispatchFee}} dispatch fee charged once. If the battery has failed for good, a replacement is {{price:battery-replacement}} for eligible vehicles and batteries. Dispatch confirms compatibility and your total before a driver is sent.",
         ],
       },
       {
@@ -318,7 +318,7 @@ export const TOPICS_PLACES: TopicPage[] = [
       },
       {
         q: "Will a jump start get me home?",
-        a: "Often, if the battery was the problem. If the car won't start again afterward, the battery needs replacing: {{price:battery-replacement}} plus the {{dispatchFee}} dispatch fee, for eligible vehicles and batteries.",
+        a: "Often, if the battery was the problem. If the car won't start again afterward, the battery needs replacing: {{price:battery-replacement}} for eligible vehicles and batteries.",
       },
       {
         q: "Can you bring gas if I ran out?",
@@ -543,7 +543,7 @@ export const TOPICS_PLACES: TopicPage[] = [
         heading: "Check before you call",
         paragraphs: [
           "A car that quits isn't always a dead battery. Glance at the fuel gauge first. We don't deliver fuel and we don't do mechanical repair, so an empty tank or a failed part means calling someone else.",
-          "A dead battery usually shows up as clicking, dim lights or a dark dash. The jump start is {{price:jump-start}}, and the {{dispatchFee}} dispatch fee is added once for sending the driver. If the car dies again soon after, a replacement is {{price:battery-replacement}} plus the fee, for eligible vehicles and batteries.",
+          "A dead battery usually shows up as clicking, dim lights or a dark dash. The jump start is {{price:jump-start}}, and the {{dispatchFee}} dispatch fee is added once for sending the driver. If the car dies again soon after, a replacement is {{price:battery-replacement}} for eligible vehicles and batteries.",
         ],
       },
       {
@@ -605,7 +605,7 @@ export const TOPICS_PLACES: TopicPage[] = [
         heading: "Start with what happened",
         paragraphs: [
           "A dead battery tends to announce itself: dim lights, a slow crank, clicking, or a dark dash. Heat shortens a battery's life, and a Texas summer is hard on one that was already weak. A jump start is {{price:jump-start}}, plus a {{dispatchFee}} dispatch fee charged once.",
-          "If the car starts but dies again soon, the battery has probably failed for good. A replacement is {{price:battery-replacement}} plus the fee, for eligible vehicles and batteries, and dispatch confirms compatibility and your total before a driver is sent.",
+          "If the car starts but dies again soon, the battery has probably failed for good. A replacement is {{price:battery-replacement}} for eligible vehicles and batteries, and dispatch confirms compatibility and your total before a driver is sent.",
         ],
       },
       {
@@ -634,7 +634,7 @@ export const TOPICS_PLACES: TopicPage[] = [
       },
       {
         q: "What if the jump start works but the car dies again?",
-        a: "Then the battery is not holding a charge. A replacement is {{price:battery-replacement}} plus the {{dispatchFee}} dispatch fee, for eligible vehicles and batteries.",
+        a: "Then the battery is not holding a charge. A replacement is {{price:battery-replacement}} for eligible vehicles and batteries.",
       },
       {
         q: "Which cities along the tollway do you serve?",
@@ -751,7 +751,7 @@ export const TOPICS_PLACES: TopicPage[] = [
       {
         heading: "Cost and arrival",
         paragraphs: [
-          "A jump start is {{price:jump-start}}, plus a {{dispatchFee}} dispatch fee charged once. If the battery won't hold a charge afterward, a replacement is {{price:battery-replacement}} plus the same fee, for eligible vehicles and batteries, and dispatch confirms your total before a driver is sent.",
+          "A jump start is {{price:jump-start}}, plus a {{dispatchFee}} dispatch fee charged once. If the battery won't hold a charge afterward, a replacement is {{price:battery-replacement}} for eligible vehicles and batteries, and dispatch confirms your total before a driver is sent.",
           "We text or call you when the driver is on the way. We send the nearest available driver as soon as possible.",
         ],
       },
@@ -771,7 +771,7 @@ export const TOPICS_PLACES: TopicPage[] = [
       },
       {
         q: "What if the jump start doesn't hold?",
-        a: "Then the battery has probably failed, and replacing it is the better answer: {{price:battery-replacement}} plus the {{dispatchFee}} dispatch fee, for eligible vehicles and batteries.",
+        a: "Then the battery has probably failed, and replacing it is the better answer: {{price:battery-replacement}} for eligible vehicles and batteries.",
       },
     ],
   },
@@ -878,7 +878,7 @@ export const TOPICS_PLACES: TopicPage[] = [
       {
         heading: "Cost and arrival",
         paragraphs: [
-          "A jump start is {{price:jump-start}}, plus a {{dispatchFee}} dispatch fee charged once. A battery replacement is {{price:battery-replacement}} plus the fee, for eligible vehicles and batteries, and dispatch confirms the battery is compatible and your total before a driver is sent.",
+          "A jump start is {{price:jump-start}}, plus a {{dispatchFee}} dispatch fee charged once. A battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, and dispatch confirms the battery is compatible and your total before a driver is sent.",
           "A text or a call comes once the driver is on the way. We send the nearest available driver as soon as possible. Keep your phone nearby, and turn off the lights and the radio in the meantime.",
         ],
       },
@@ -894,7 +894,7 @@ export const TOPICS_PLACES: TopicPage[] = [
       },
       {
         q: "Should I replace the battery instead?",
-        a: "If it has already been jumped once and died again, yes. A replacement is {{price:battery-replacement}} plus the {{dispatchFee}} dispatch fee, for eligible vehicles and batteries.",
+        a: "If it has already been jumped once and died again, yes. A replacement is {{price:battery-replacement}} for eligible vehicles and batteries.",
       },
     ],
   },
@@ -1023,7 +1023,7 @@ export const TOPICS_PLACES: TopicPage[] = [
     title: "Roadside Help in Lakewood Dallas",
     h1: "Dead battery at home in Lakewood, Dallas",
     metaDescription:
-      "{{price:battery-replacement}} + {{dispatchFee}} dispatch. Battery dead again in Lakewood? We bring a new one and install it at your car.",
+      "{{price:battery-replacement}} for a new battery. Battery dead again in Lakewood? We bring one and install it at your car.",
     eyebrow: "Lakewood",
     intro:
       "Lakewood is a residential neighborhood in Dallas, and a dead battery there usually means a car in a driveway or at the curb. Call or send a request, and a driver comes to you with a jump start or a new battery.",
@@ -1055,7 +1055,7 @@ export const TOPICS_PLACES: TopicPage[] = [
       {
         heading: "Cost and arrival",
         paragraphs: [
-          "A battery replacement is {{price:battery-replacement}}, plus a {{dispatchFee}} dispatch fee charged once, for eligible vehicles and batteries. If a jump start is all the car needs, that is {{price:jump-start}} plus the same fee.",
+          "A battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries. If a jump start is all the car needs, that is {{price:jump-start}}, plus a {{dispatchFee}} dispatch fee charged once.",
           "Once the driver is on the way, we text or call you. We send the nearest available driver as soon as possible.",
         ],
       },
@@ -1118,7 +1118,7 @@ export const TOPICS_PLACES: TopicPage[] = [
         heading: "We are not part of the property, and the cost",
         paragraphs: [
           "TRA is independent, with no arrangement with any property manager, building or lot in Las Colinas. A driver gets in the way any other customer would. If the lot restricts access, dispatch will tell you plainly whether a driver can reach it or whether to meet somewhere nearby. If anyone is in danger, call 911 first.",
-          "A jump start is {{price:jump-start}}, plus a {{dispatchFee}} dispatch fee charged once. A battery replacement is {{price:battery-replacement}} plus the fee, for eligible vehicles and batteries. We text or call when the driver is on the way. We send the nearest available driver as soon as possible.",
+          "A jump start is {{price:jump-start}}, plus a {{dispatchFee}} dispatch fee charged once. A battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries. We text or call when the driver is on the way. We send the nearest available driver as soon as possible.",
         ],
       },
     ],
@@ -1129,7 +1129,7 @@ export const TOPICS_PLACES: TopicPage[] = [
       },
       {
         q: "Can you replace the battery in the parking lot?",
-        a: "Yes, for eligible vehicles and batteries: {{price:battery-replacement}} plus the {{dispatchFee}} dispatch fee. Dispatch confirms the battery is compatible, and your total, before a driver is sent.",
+        a: "Yes, for eligible vehicles and batteries: {{price:battery-replacement}}. Dispatch confirms the battery is compatible, and your total, before a driver is sent.",
       },
       {
         q: "What if I don't know the lot's name?",
@@ -1237,7 +1237,7 @@ export const TOPICS_PLACES: TopicPage[] = [
       {
         heading: "Cost and arrival",
         paragraphs: [
-          "A jump start is {{price:jump-start}}, plus a {{dispatchFee}} dispatch fee charged once. A battery replacement is {{price:battery-replacement}} plus the fee, for eligible vehicles and batteries, and dispatch confirms your total before a driver is sent.",
+          "A jump start is {{price:jump-start}}, plus a {{dispatchFee}} dispatch fee charged once. A battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, and dispatch confirms your total before a driver is sent.",
           "We text or call you when the driver is on the way. We send the nearest available driver as soon as possible.",
         ],
       },
@@ -1253,7 +1253,7 @@ export const TOPICS_PLACES: TopicPage[] = [
       },
       {
         q: "Can you replace the battery in the parking lot?",
-        a: "Yes, for eligible vehicles and batteries: {{price:battery-replacement}} plus the {{dispatchFee}} dispatch fee. Dispatch confirms compatibility and your total before a driver is sent.",
+        a: "Yes, for eligible vehicles and batteries: {{price:battery-replacement}}. Dispatch confirms compatibility and your total before a driver is sent.",
       },
     ],
   },
@@ -1303,7 +1303,7 @@ export const TOPICS_PLACES: TopicPage[] = [
       {
         heading: "Cost and arrival",
         paragraphs: [
-          "A jump start is {{price:jump-start}}, plus a {{dispatchFee}} dispatch fee charged once, the same published prices as anywhere else we work. A battery replacement is {{price:battery-replacement}} plus the fee, for eligible vehicles and batteries, and dispatch confirms your total before a driver is sent.",
+          "A jump start is {{price:jump-start}}, plus a {{dispatchFee}} dispatch fee charged once, the same published prices as anywhere else we work. A battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, and dispatch confirms your total before a driver is sent.",
           "We text or call you when the driver is on the way. We send the nearest available driver as soon as possible. At an airport the real time also depends on how easily a driver can reach your lot.",
         ],
       },

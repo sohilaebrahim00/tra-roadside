@@ -6,7 +6,7 @@ import { StepShell } from "../step-shell";
 import { VEHICLE_TYPES, VEHICLE_TYPE_LABELS } from "@/lib/types/domain";
 import { cn } from "@/lib/utils/cn";
 import { getService } from "@/lib/content/services";
-import { DISPATCH_FEE_TAG, servicePrice } from "@/lib/content/pricing";
+import { servicePrice } from "@/lib/content/pricing";
 import { VIN_LENGTH, cleanVin, type CreateRequestInput } from "@/lib/validation/request";
 
 export function VehicleStep({ onNext, onBack }: { onNext: () => void; onBack: () => void }) {
@@ -38,7 +38,7 @@ export function VehicleStep({ onNext, onBack }: { onNext: () => void; onBack: ()
             <div>
               <p className="font-display text-base font-bold">Battery Replacement</p>
               <p className="mt-0.5 text-sm text-white/90">
-                {selectedService.priceLines.map((l) => `${l.label ? `${l.label} ` : ""}${servicePrice(l)}`).join(" · ")} {DISPATCH_FEE_TAG}
+                {selectedService.priceLines.map((l) => `${l.label ? `${l.label} ` : ""}${servicePrice(l)}`).join(" · ")}
               </p>
             </div>
           </div>

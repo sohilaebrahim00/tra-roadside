@@ -1323,7 +1323,7 @@ export const GUIDES_ROADSIDE: Guide[] = [
       },
       {
         q: "Is a battery replacement something I can have done on site?",
-        a: "Yes, for eligible vehicles and batteries. Battery replacement is {{price:battery-replacement}}, plus the {{dispatchFee}} dispatch fee. Dispatch confirms compatibility and your total before a driver is sent.",
+        a: "Yes, for eligible vehicles and batteries. Battery replacement is {{price:battery-replacement}}. Dispatch confirms compatibility and your total before a driver is sent.",
       },
       {
         q: "Will my personal roadside coverage apply while I'm working?",

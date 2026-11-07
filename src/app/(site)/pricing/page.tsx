@@ -10,6 +10,7 @@ import { PricePanel } from "@/components/city-service/price-panel";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { SERVICES, getService } from "@/lib/content/services";
 import { DISPATCH_FEE_EXPLAINER, DISPATCH_FEE_HEADLINE, DISPATCH_FEE_USD, exampleTotal, headlineLine, lowPrice, pricedTitle, servicePrice, startingPrice } from "@/lib/content/pricing";
+import { PriceFigure } from "@/components/ui/price-figure";
 import { pricesShort, pricingAnswer, roadsideFaqs } from "@/lib/content/quick-answers";
 import { fitDescription } from "@/lib/seo";
 import { QuickAnswer } from "@/components/ui/quick-answer";
@@ -29,7 +30,9 @@ import { HeroBackdrop } from "@/components/brand/hero-backdrop";
  *
  * Battery replacement leads, because it is the business's main earner. Every
  * price is a service price, plus the dispatch fee once per job (owner's pricing
- * brief, 2026-11-03).
+ * brief, 2026-11-03). The battery price is shown without the fee beside it
+ * (owner, 2026-11-07); this page's fee questions still say the fee applies to
+ * it, since this is where fees are explained.
  */
 
 const battery = getService("battery-replacement");
@@ -106,7 +109,7 @@ export default function PricingPage() {
               {SERVICES.filter((svc) => lowPrice(svc)).map((svc) => (
                 <li key={svc.slug} className="rounded-xl bg-white/[0.07] px-3 py-2.5">
                   <span className="block text-xs text-white/70">{svc.shortName}</span>
-                  <span className="mt-0.5 block font-display text-lg font-bold text-white">{lowPrice(svc)}</span>
+                  <PriceFigure svc={svc} className="mt-0.5 block font-display text-lg font-bold text-white">{lowPrice(svc)}</PriceFigure>
                 </li>
               ))}
             </ul>

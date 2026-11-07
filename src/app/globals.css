@@ -201,6 +201,14 @@
     }
   }
 
+  /* A dialog that rises into place as it opens (the battery total). Off for
+     reduced motion, so the dialog simply appears. */
+  @media (prefers-reduced-motion: no-preference) {
+    .dialog-rise[open] {
+      animation: dialog-rise 160ms ease-out;
+    }
+  }
+
   /* The logo emblem tile (a 2x PNG); see components/brand/brand-pattern.tsx. */
   .brand-pattern {
     background-image: url("/images/brand/tra-pattern.png");
@@ -213,6 +221,13 @@
 
   .safe-bottom {
     padding-bottom: var(--safe-bottom);
+  }
+}
+
+@keyframes dialog-rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
   }
 }
 

@@ -55,7 +55,7 @@ export const GUIDES_SEASONAL: Guide[] = [
       },
       {
         q: "My jump worked. Will the car start again tomorrow?",
-        a: "Maybe not. A battery that gave out after a day of heat is often old, and a short drive may not recharge it. If it won't restart, ask dispatch about a battery replacement, which is {{price:battery-replacement}} for eligible vehicles and batteries, plus the {{dispatchFee}} dispatch fee.",
+        a: "Maybe not. A battery that gave out after a day of heat is often old, and a short drive may not recharge it. If it won't restart, ask dispatch about a battery replacement, which is {{price:battery-replacement}} for eligible vehicles and batteries.",
       },
       {
         q: "My phone is nearly dead from taking photos. What matters most on the call?",
@@ -247,7 +247,7 @@ export const GUIDES_SEASONAL: Guide[] = [
         heading: "Why cold mornings find weak batteries",
         paragraphs: [
           "Cold slows the chemistry inside a battery, so it can deliver less at the exact moment a cold engine needs more. The wear that weakened it usually happened last summer. A battery that has been fine all fall can fail on the first hard-freeze morning of the show.",
-          "If the engine cranks slowly and then clicks, a jump start is {{price:jump-start}}, plus a {{dispatchFee}} dispatch fee charged once. If the car needed a jump and the battery is more than about three years old, ask dispatch about replacing it. Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, plus the same fee, and dispatch confirms the fit and your total before a driver is sent.",
+          "If the engine cranks slowly and then clicks, a jump start is {{price:jump-start}}, plus a {{dispatchFee}} dispatch fee charged once. If the car needed a jump and the battery is more than about three years old, ask dispatch about replacing it. Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, and dispatch confirms the fit and your total before a driver is sent.",
         ],
       },
       {
@@ -365,7 +365,7 @@ export const GUIDES_SEASONAL: Guide[] = [
       {
         heading: "The battery, and what belongs with a shop",
         paragraphs: [
-          "Most car batteries last three to five years, and Texas heat pushes that toward the short end. If yours is past three years, starts slowly or has needed a jump lately, get it tested before a long drive instead of after. Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, plus the dispatch fee, installed where the car is parked, and dispatch confirms the fit and your total first.",
+          "Most car batteries last three to five years, and Texas heat pushes that toward the short end. If yours is past three years, starts slowly or has needed a jump lately, get it tested before a long drive instead of after. Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed where the car is parked, and dispatch confirms the fit and your total first.",
           "Belts, hoses, brakes, coolant and oil are for a repair shop. We don't do mechanical repair, so if anything on that list has been bothering you, take it in before you leave, not on the way.",
         ],
       },
@@ -441,7 +441,7 @@ export const GUIDES_SEASONAL: Guide[] = [
       {
         heading: "What happens after the jump",
         paragraphs: [
-          "A jump start is {{price:jump-start}}, plus a {{dispatchFee}} dispatch fee charged once. It gets the car running, but it can't make a worn battery hold a charge. Ask the driver whether the battery looked like it would last. If it didn't, battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, plus the same fee, and the new battery is installed where the car is parked.",
+          "A jump start is {{price:jump-start}}, plus a {{dispatchFee}} dispatch fee charged once. It gets the car running, but it can't make a worn battery hold a charge. Ask the driver whether the battery looked like it would last. If it didn't, battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, and the new battery is installed where the car is parked.",
           "After a jump, don't shut the engine off at the first stop. Drive a while, and have the battery tested if you've needed a jump twice. If the lights are bright and nothing turns, or the engine turns but never catches, it isn't the battery. A jump won't fix that, and we don't tow or do mechanical repair.",
         ],
       },
@@ -554,7 +554,7 @@ export const GUIDES_SEASONAL: Guide[] = [
         heading: "A battery weakened by the summer",
         paragraphs: [
           "The first week of school is when a battery worn down by a hot summer, or one that sat while the family traveled, finally gives up. Slow cranking, dim dash lights and a clock that resets are the warning signs. A battery more than three years old that shows any of them is worth replacing.",
-          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, plus the dispatch fee, and dispatch confirms the fit and your total before a driver is sent. A flat tire change using the spare in the vehicle is {{price:flat-tire-change}}, plus the same fee. In a school lot, tell dispatch if the car is next to a curb, a bus lane or a fence, since that changes how a driver can work around it.",
+          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, and dispatch confirms the fit and your total before a driver is sent. A flat tire change using the spare in the vehicle is {{price:flat-tire-change}}, plus the {{dispatchFee}} dispatch fee. In a school lot, tell dispatch if the car is next to a curb, a bus lane or a fence, since that changes how a driver can work around it.",
         ],
       },
       {
@@ -652,7 +652,7 @@ export const GUIDES_SEASONAL: Guide[] = [
         heading: "The car that sat over break",
         paragraphs: [
           "A car in a dorm or apartment lot for a month is a battery problem waiting to happen. The clock, the alarm and the computers keep drawing a little power, a hot summer wears the battery, and a cold January shows it. If the engine only clicks or the dash is dim, a jump start is {{price:jump-start}}, plus a {{dispatchFee}} dispatch fee charged once.",
-          "A jump gets the car running but won't fix a worn battery. If it needed one after a long break, the battery is probably old. Replacing the battery is {{price:battery-replacement}} for eligible vehicles and batteries, plus the same fee, and dispatch confirms the fit and your total before anyone is sent.",
+          "A jump gets the car running but won't fix a worn battery. If it needed one after a long break, the battery is probably old. Replacing the battery is {{price:battery-replacement}} for eligible vehicles and batteries, and dispatch confirms the fit and your total before anyone is sent.",
         ],
       },
       {

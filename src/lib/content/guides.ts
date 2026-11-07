@@ -61,11 +61,11 @@ const CORE_GUIDES: Guide[] = [
   {
     slug: "car-battery-replacement-cost",
     title: "Car Battery Replacement Cost in DFW",
-    h1: "What a car battery replacement costs in DFW, and why the total varies",
+    h1: "What a car battery replacement costs in DFW, and what the total includes",
     metaDescription:
-      "What mobile car battery replacement costs in Dallas–Fort Worth: {{price:battery-replacement}}, installed, for eligible vehicles, plus a {{dispatchFee}} dispatch fee charged once.",
+      "What mobile car battery replacement costs in Dallas–Fort Worth: {{price:battery-replacement}}, installed, for eligible vehicles and batteries, and what your total includes.",
     topic: "Battery guide",
-    dek: "Two things make up the bill: the battery replacement, which covers the new battery and installing it, and a dispatch fee for sending a technician to you. The replacement price is a range because cars take different batteries and keep them in different places, so dispatch confirms what fits yours, and your total, before anyone sets off.",
+    dek: "Two things make up the bill: the battery replacement, which covers the new battery, the core charge and installing it, and a dispatch fee for sending a technician to you. Cars take different batteries and keep them in different places, so dispatch confirms what fits yours, and your total, before anyone sets off.",
     updated: UPDATED,
     image: {
       ...UNDER_SEAT_PHOTO,
@@ -75,8 +75,8 @@ const CORE_GUIDES: Guide[] = [
       {
         heading: "The battery replacement price",
         paragraphs: [
-          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries. That price covers the new battery and installing it in your car.",
-          "It is a range rather than one figure because battery pricing varies by vehicle and battery type. Dispatch confirms which battery fits your vehicle before a driver is sent.",
+          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries. That price covers the new battery, the core charge and installing it in your car.",
+          "The price is for eligible vehicles and batteries, and battery pricing varies by vehicle and battery type, so dispatch confirms which battery fits your vehicle before a driver is sent.",
           "Every battery we install carries a 1-year warranty. Keep the invoice, because a warranty claim is checked against it.",
         ],
       },
@@ -88,9 +88,9 @@ const CORE_GUIDES: Guide[] = [
         ],
       },
       {
-        heading: "What changes the total",
+        heading: "What dispatch checks about your car",
         paragraphs: [
-          "Battery pricing varies by vehicle and battery type, which is why the price is a range for eligible vehicles and batteries. Two things decide most of it:",
+          "Battery pricing varies by vehicle and battery type, which is why the price applies to eligible vehicles and batteries. Two things matter most:",
         ],
         list: [
           "The size and type of battery your vehicle needs. Some vehicles take a larger battery, or a different type.",
@@ -228,7 +228,7 @@ const CORE_GUIDES: Guide[] = [
         heading: "What it means for the price",
         paragraphs: [
           "A battery at the front of the engine bay can be swapped in minutes. One under a seat means the seat comes out first. One in a wheel well can mean removing the wheel liner. It's the same battery and a very different amount of work.",
-          "That is one reason battery pricing varies by vehicle and battery type. Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installation included, plus the {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery that fits your car, and your total, before a driver sets off.",
+          "That is one reason battery pricing varies by vehicle and battery type. Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installation included. Dispatch confirms the battery that fits your car, and your total, before a driver sets off.",
         ],
       },
       {

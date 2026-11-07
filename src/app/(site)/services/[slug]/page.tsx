@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { FaqAccordion } from "@/components/faq/faq-accordion";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd } from "@/components/seo/json-ld";
 import { SERVICES, getService } from "@/lib/content/services";
-import { DISPATCH_FEE_TAG, DISPATCH_FEE_USD, lowOf, lowPrice, pricedTitle, servicePrice } from "@/lib/content/pricing";
+import { DISPATCH_FEE_USD, lowOf, lowPrice, pricedTitle, servicePrice, withFeeTag } from "@/lib/content/pricing";
 import { serviceAnswer } from "@/lib/content/quick-answers";
 import { fitDescription, sentences } from "@/lib/seo";
 import { QuickAnswer } from "@/components/ui/quick-answer";
@@ -25,6 +25,7 @@ import { CinematicBackgroundVideo } from "@/components/media/cinematic-backgroun
 import { getServiceVideo } from "@/data/media-registry";
 import { PricingDisclaimer } from "@/components/ui/pricing-disclaimer";
 import { Icon3D } from "@/components/ui/icon-3d";
+import { PriceFigure } from "@/components/ui/price-figure";
 
 export function generateStaticParams() {
   return SERVICES.map((s) => ({ slug: s.slug }));
@@ -45,7 +46,7 @@ export async function generateMetadata({
   // put every one past 160 characters.
   return {
     title: { absolute: pricedTitle(`${service.name} DFW 24/7`, lowPrice(service)) },
-    description: fitDescription(`${service.name}${lowPrice(service) ? ` ${lowPrice(service)} ${DISPATCH_FEE_TAG}` : ""}, 24/7 across Dallas–Fort Worth.`, [...sentences(service.summary), "No membership.", `Call ${BUSINESS.phoneDisplay}.`]),
+    description: fitDescription(`${service.name}${lowPrice(service) ? ` ${withFeeTag(service, lowPrice(service)!)}` : ""}, 24/7 across Dallas–Fort Worth.`, [...sentences(service.summary), "No membership.", `Call ${BUSINESS.phoneDisplay}.`]),
     ...pageUrls(`/services/${service.slug}`, shareImageFor(service.slug)),
   };
 }
@@ -97,16 +98,20 @@ export default async function ServicePage({
                 <ul className="space-y-2">
                   {service.priceLines.map((line) => (
                     <li key={line.label ?? line.min} className="flex flex-wrap items-baseline gap-x-3 gap-y-0.5">
-                      <span className="font-display text-xl font-bold text-white">{lowOf(line)}</span>
+                      <PriceFigure svc={service} className="font-display text-xl font-bold text-white">{lowOf(line)}</PriceFigure>
                       {line.max !== undefined && <span className="text-sm font-semibold text-white/90">{servicePrice(line)}</span>}
                       {line.label && <span className="text-sm font-semibold text-white/90">{line.label}</span>}
                       {line.note && <span className="text-sm text-white/70">{line.note}</span>}
                     </li>
                   ))}
-                  <li className="flex flex-wrap items-baseline gap-x-3 gap-y-0.5 border-t border-white/15 pt-2">
-                    <span className="font-display text-xl font-bold text-white">+ {DISPATCH_FEE_USD}</span>
-                    <span className="text-sm font-semibold text-white/90">Dispatch fee, once per job</span>
-                  </li>
+                  {/* The fee on its own row, except beside the battery price: that
+                      is told when the battery is booked (owner, 2026-11-07). */}
+                  {!service.feeAtBooking && (
+                    <li className="flex flex-wrap items-baseline gap-x-3 gap-y-0.5 border-t border-white/15 pt-2">
+                      <span className="font-display text-xl font-bold text-white">+ {DISPATCH_FEE_USD}</span>
+                      <span className="text-sm font-semibold text-white/90">Dispatch fee, once per job</span>
+                    </li>
+                  )}
                 </ul>
                 {service.priceNote && <p className="mt-3 text-sm text-white/70">{service.priceNote}</p>}
               </div>
@@ -121,7 +126,7 @@ export default async function ServicePage({
               </Button>
             </div>
 
-            {service.priceLines && <PricingDisclaimer tone="light" className="mt-5 max-w-md" />}
+            {service.priceLines && <PricingDisclaimer tone="light" withFee={!service.feeAtBooking} className="mt-5 max-w-md" />}
           </div>
         </Container>
       </section>

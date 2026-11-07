@@ -6,7 +6,7 @@ import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { HeroBackdrop } from "@/components/brand/hero-backdrop";
 import { BatteryFinder } from "@/components/battery-finder/battery-finder";
 import { getService } from "@/lib/content/services";
-import { DISPATCH_FEE_TAG, lowPrice, pricedTitle } from "@/lib/content/pricing";
+import { lowPrice, pricedTitle, withFeeTag } from "@/lib/content/pricing";
 import { env } from "@/lib/env";
 import { pageUrls, shareImageFor } from "@/lib/seo";
 
@@ -14,7 +14,7 @@ const battery = getService("battery-replacement");
 
 export const metadata: Metadata = {
   title: { absolute: pricedTitle("Car Battery Finder DFW", battery && lowPrice(battery)) },
-  description: `Which battery does your car take? Pick your vehicle or enter your VIN, then have it installed where you're parked, ${battery ? lowPrice(battery) : ""} ${DISPATCH_FEE_TAG}.`,
+  description: `Which battery does your car take? Pick your vehicle or enter your VIN, then have it installed where you're parked, ${battery && lowPrice(battery) ? withFeeTag(battery, lowPrice(battery)!) : ""}.`,
   ...pageUrls("/battery-finder", shareImageFor("battery-replacement")),
 };
 

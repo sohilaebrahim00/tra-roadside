@@ -212,7 +212,7 @@ export const SERVICE_EXPLAINERS: Partial<Record<ServiceTypeSlug, ServiceExplaine
       {
         heading: "What the battery price includes",
         paragraphs: [
-          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries. That covers the new battery and installing it. A {{dispatchFee}} dispatch fee is added once for the trip, so the total is {{total:battery-replacement}}.",
+          "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries. That covers the new battery, the core charge and installing it.",
           "Pricing varies by vehicle and battery type, so dispatch confirms that the battery is compatible, and your total cost, before a driver is sent. If your vehicle or battery type isn't eligible, dispatch tells you at that point.",
         ],
       },

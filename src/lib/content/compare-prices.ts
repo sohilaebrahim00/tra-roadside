@@ -19,7 +19,6 @@ const THEIR_DISPATCH_FEE = 19;
 const ROWS: { service: ServiceTypeSlug; label: string; theirPrice: Amount }[] = [
   { service: "jump-start", label: "Jump start", theirPrice: { min: 60, max: 75 } },
   { service: "lockout", label: "Car lockout, doors", theirPrice: { min: 65, max: 89 } },
-  { service: "battery-replacement", label: "New battery, installed", theirPrice: { min: 249, max: 289 } },
 ];
 
 export interface ComparisonRow {

@@ -36,15 +36,16 @@ export function bloqueCiudadServicio(svc: ServiceContent, ciudad: string): { tit
   const w = WORDS[svc.slug];
   return {
     titulo: w.titulo(ciudad),
-    texto: `Texas Roadside Assistance llega hasta su carro en ${ciudad}, las 24 horas, sin membresía. ${w.costo} ${precio(line)}, más ${DISPATCH_FEE_USD} de envío. Atendemos en español. Llame al ${BUSINESS.phoneDisplay} o envíe su solicitud en línea.`,
+    // The battery price stands alone, as in English (owner, 2026-11-07).
+    texto: `Texas Roadside Assistance llega hasta su carro en ${ciudad}, las 24 horas, sin membresía. ${w.costo} ${precio(line)}${svc.feeAtBooking ? "" : `, más ${DISPATCH_FEE_USD} de envío`}. Atendemos en español. Llame al ${BUSINESS.phoneDisplay} o envíe su solicitud en línea.`,
   };
 }
 
-/** Every published price, for the Spanish page. */
-export function listaDePrecios(): { nombre: string; precio: string }[] {
+/** Every published price, for the Spanish page, with its service. */
+export function listaDePrecios(): { nombre: string; precio: string; svc: ServiceContent }[] {
   return SERVICES.flatMap((svc) => {
     const line = headlineLine(svc);
-    return line ? [{ nombre: WORDS[svc.slug].nombre, precio: precio(line) }] : [];
+    return line ? [{ nombre: WORDS[svc.slug].nombre, precio: precio(line), svc }] : [];
   });
 }
 

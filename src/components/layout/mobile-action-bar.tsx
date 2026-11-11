@@ -10,6 +10,8 @@ import { cn } from "@/lib/utils/cn";
 export function MobileActionBar() {
   const pathname = usePathname();
   const hidden = NO_FLOATING_ACTIONS.some((p) => pathname?.startsWith(p));
+  // The Spanish pages get the bar in Spanish; the form behind it is in English.
+  const es = pathname === "/es" || Boolean(pathname?.startsWith("/es/"));
 
   if (hidden) return null;
 
@@ -41,7 +43,7 @@ export function MobileActionBar() {
       <div
         className="fixed inset-x-0 bottom-0 z-40 h-[calc(var(--mobile-action-bar-height)+env(safe-area-inset-bottom))] border-t border-ink-950/10 bg-white/95 backdrop-blur pb-[env(safe-area-inset-bottom)] shadow-[0_-4px_20px_rgba(0,0,0,0.08)] md:hidden"
         role="region"
-        aria-label="Emergency actions"
+        aria-label={es ? "Pedir ayuda" : "Emergency actions"}
       >
         <div className="grid h-[3.25rem] grid-cols-2 gap-2 px-3 pt-2.5">
           <a
@@ -49,7 +51,7 @@ export function MobileActionBar() {
             className="flex items-center justify-center gap-2 whitespace-nowrap rounded-xl border-2 border-ink-950 text-ink-950 text-[0.82rem] font-bold uppercase tracking-tight active:bg-ink-950/5 min-[360px]:text-base"
           >
             <Phone className="h-5 w-5" aria-hidden="true" />
-            Call Now
+            {es ? "Llamar" : "Call Now"}
           </a>
           <Link
             href="/request"
@@ -59,11 +61,11 @@ export function MobileActionBar() {
             )}
           >
             <MessageSquareText className="h-5 w-5" aria-hidden="true" />
-            Text a Request
+            {es ? "Pedir ayuda" : "Text a Request"}
           </Link>
         </div>
         <p className="mt-1.5 truncate px-3 text-center text-[0.7rem] font-medium text-ink-600">
-          A real dispatcher replies, 24/7. No membership needed.
+          {es ? "Le contesta una persona, las 24 horas. Sin membresía." : "A real dispatcher replies, 24/7. No membership needed."}
         </p>
       </div>
     </>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { LifeBuoy, Phone } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
@@ -7,10 +8,13 @@ import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { HeroBackdrop } from "@/components/brand/hero-backdrop";
 import { BUSINESS, SERVICE_AREAS } from "@/lib/content/business";
 import { DISPATCH_FEE_USD, pricedTitle, startingPrice } from "@/lib/content/pricing";
-import { listaDePrecios, preguntasFrecuentes } from "@/lib/content/spanish";
+import { listaDePrecios, nombreServicio, preguntasFrecuentes } from "@/lib/content/spanish";
+import { SERVICES } from "@/lib/content/services";
+import { getServicioEs } from "@/lib/content/es/servicios";
+import { getCiudadEs } from "@/lib/content/es/ciudades";
 import { env } from "@/lib/env";
 import { PriceFigure } from "@/components/ui/price-figure";
-import { pageUrls } from "@/lib/seo";
+import { bilingualUrls } from "@/lib/seo";
 
 /** The Spanish landing page. The request form itself is in English; the phone is the way in for Spanish speakers. */
 
@@ -19,7 +23,7 @@ const desde = startingPrice().replace(/^from /, "desde ");
 export const metadata: Metadata = {
   title: { absolute: pricedTitle("Asistencia en Carretera Dallas 24 Horas", desde) },
   description: `Asistencia en carretera 24 horas en Dallas y Fort Worth, sin membresía: llantas, baterías y carros cerrados, ${desde} + ${DISPATCH_FEE_USD} de envío.`,
-  ...pageUrls("/es"),
+  ...bilingualUrls({ en: "/", es: "/es" }, "es"),
 };
 
 export default function SpanishPage() {
@@ -73,15 +77,41 @@ export default function SpanishPage() {
           </div>
 
           <div>
+            <h2 className="font-display text-2xl font-semibold text-ink-950 sm:text-3xl">Servicios</h2>
+            <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+              {SERVICES.filter((s) => getServicioEs(s.slug)).map((s) => (
+                <li key={s.slug}>
+                  <Link href={`/es/services/${s.slug}`} className="block rounded-xl border border-ink-950/8 bg-white p-4 text-sm font-semibold text-ink-900 hover:border-red-600/30 hover:text-red-600">
+                    {nombreServicio(s.slug)}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
             <h2 className="font-display text-2xl font-semibold text-ink-950 sm:text-3xl">Preguntas frecuentes</h2>
             <div className="mt-5 rounded-2xl border border-ink-950/8 bg-white px-5 sm:px-6">
               <FaqAccordion items={faqs.map((f, i) => ({ id: `es-${i}`, category: "Español", question: f.q, answer: f.a }))} />
             </div>
           </div>
 
-          <p className="text-sm leading-relaxed text-ink-600">
-            Damos servicio en {SERVICE_AREAS.length} ciudades de Dallas–Fort Worth, entre ellas {SERVICE_AREAS.slice(0, 9).map((c) => c.name).join(", ")}.
-          </p>
+          <div>
+            <h2 className="font-display text-2xl font-semibold text-ink-950 sm:text-3xl">Ciudades</h2>
+            <p className="mt-3 text-sm leading-relaxed text-ink-600">
+              Damos servicio en {SERVICE_AREAS.length} ciudades de Dallas–Fort Worth.{" "}
+              <Link href="/es/service-areas" className="font-semibold text-red-600 hover:text-red-700">Ver todas las ciudades</Link>
+            </p>
+            <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
+              {SERVICE_AREAS.filter((c) => getCiudadEs(c.slug)).map((c) => (
+                <li key={c.slug}>
+                  <Link href={`/es/service-areas/${c.slug}`} className="text-sm text-ink-600 hover:text-red-600">
+                    {c.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </Container>
       </section>
     </div>

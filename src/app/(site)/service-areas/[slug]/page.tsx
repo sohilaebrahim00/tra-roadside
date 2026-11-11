@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { pageUrls } from "@/lib/seo";
+import { bilingualUrls, pageUrls } from "@/lib/seo";
+import { getCiudadEs } from "@/lib/content/es/ciudades";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Phone, LifeBuoy, MapPin, ArrowUpRight } from "lucide-react";
@@ -40,7 +41,9 @@ export async function generateMetadata({
   return {
     title: { absolute: pricedTitle(`Roadside Assistance ${city.name} TX`, startingPrice()) },
     description: fitDescription(`Roadside help in ${city.name}, TX, 24/7: ${pricesShort()}.`, ["No membership.", `Call ${BUSINESS.phoneDisplay}.`]),
-    ...pageUrls(`/service-areas/${city.slug}`),
+    ...(getCiudadEs(city.slug)
+      ? bilingualUrls({ en: `/service-areas/${city.slug}`, es: `/es/service-areas/${city.slug}` }, "en")
+      : pageUrls(`/service-areas/${city.slug}`)),
   };
 }
 
@@ -91,6 +94,13 @@ export default async function ServiceAreaPage({
               Call Now
             </Button>
           </div>
+          {getCiudadEs(city.slug) && (
+            <p className="mt-5 text-sm text-white/60">
+              <Link href={`/es/service-areas/${city.slug}`} lang="es" hrefLang="es" className="underline hover:text-white">
+                Esta página en español
+              </Link>
+            </p>
+          )}
         </Container>
       </section>
 

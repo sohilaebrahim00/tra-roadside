@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { pageUrls } from "@/lib/seo";
+import { bilingualUrls } from "@/lib/seo";
 import dynamic from "next/dynamic";
 import { Hero } from "@/components/home/hero";
 import { BatteryPromoSection } from "@/components/home/battery-promo-section";
@@ -35,7 +35,7 @@ const HowItWorksSection = dynamic(() => import("@/components/home/how-it-works-s
  * (env.siteUrl), so they follow the canonical host rather than hard-coding it.
  */
 export const metadata: Metadata = {
-  ...pageUrls("/"),
+  ...bilingualUrls({ en: "/", es: "/es" }, "en"),
 };
 
 export default function HomePage() {

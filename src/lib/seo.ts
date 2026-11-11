@@ -84,3 +84,27 @@ export function pageUrls(path: string, image?: ShareImage): Pick<Metadata, "alte
     openGraph: { ...OPEN_GRAPH_DEFAULTS, url: path, ...(image ? { images: [image] } : {}) },
   };
 }
+
+/**
+ * pageUrls for a page that exists in English and Spanish: the canonical is
+ * the page itself, and hreflang links point each language at the other, so
+ * Google shows Spanish searchers the /es page and English searchers the
+ * English one instead of treating them as duplicates.
+ */
+export function bilingualUrls(
+  paths: { en: string; es: string },
+  lang: "en" | "es",
+  image?: ShareImage
+): Pick<Metadata, "alternates" | "openGraph"> {
+  const self = lang === "es" ? paths.es : paths.en;
+  return {
+    alternates: { canonical: self, languages: { "en-US": paths.en, "es-US": paths.es, "x-default": paths.en } },
+    openGraph: {
+      ...OPEN_GRAPH_DEFAULTS,
+      url: self,
+      locale: lang === "es" ? "es_US" : "en_US",
+      alternateLocale: lang === "es" ? "en_US" : "es_US",
+      ...(image ? { images: [image] } : {}),
+    },
+  };
+}

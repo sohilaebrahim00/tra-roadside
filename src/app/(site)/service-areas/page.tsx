@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { pageUrls } from "@/lib/seo";
+import { bilingualUrls } from "@/lib/seo";
 import Link from "next/link";
 import { MapPin } from "lucide-react";
 import { Container } from "@/components/ui/container";
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: "Service Areas — Dallas–Fort Worth Metroplex",
   description:
     `TRA provides 24/7 roadside assistance across ${SERVICE_AREAS.length} cities in the Dallas–Fort Worth Metroplex, including Dallas, Arlington, Plano, Frisco, and McKinney.`,
-  ...pageUrls("/service-areas"),
+  ...bilingualUrls({ en: "/service-areas", es: "/es/service-areas" }, "en"),
 };
 
 export default function ServiceAreasPage() {

@@ -7,6 +7,8 @@ import { cityServicePairs } from "@/lib/content/city-service-pages";
 import { LOCATION_HUBS } from "@/lib/content/location-hubs";
 import { GUIDES } from "@/lib/content/guides";
 import { TOPIC_PAGES } from "@/lib/content/topic-pages";
+import { getServicioEs } from "@/lib/content/es/servicios";
+import { getCiudadEs } from "@/lib/content/es/ciudades";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = env.siteUrl;
@@ -42,6 +44,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: "weekly" as const,
     priority: path === "" ? 1 : 0.7,
   }));
+
+  // Spanish pages and their English pairs, with hreflang alternates on both.
+  const pairs: { en: string; es: string; priority: number }[] = [
+    { en: "", es: "/es", priority: 0.7 },
+    { en: "/service-areas", es: "/es/service-areas", priority: 0.6 },
+    ...SERVICES.filter((s) => getServicioEs(s.slug)).map((s) => ({ en: `/services/${s.slug}`, es: `/es/services/${s.slug}`, priority: 0.7 })),
+    ...SERVICE_AREAS.filter((c) => getCiudadEs(c.slug)).map((c) => ({ en: `/service-areas/${c.slug}`, es: `/es/service-areas/${c.slug}`, priority: 0.6 })),
+  ];
+  const languagesFor = (p: { en: string; es: string }) => ({ languages: { "en-US": `${base}${p.en}`, "es-US": `${base}${p.es}` } });
+  const bilingual = new Map(pairs.map((p) => [`${base}${p.en}`, p]));
+  const spanishRoutes = pairs
+    .filter((p) => p.es !== "/es")
+    .map((p) => ({ url: `${base}${p.es}`, lastModified: now, changeFrequency: "monthly" as const, priority: p.priority, alternates: languagesFor(p) }));
 
   const serviceRoutes = SERVICES.map((s) => ({
     url: `${base}/services/${s.slug}`,
@@ -99,7 +114,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.5,
   }));
 
-  return [
+  const routes = [
     ...staticRoutes,
     ...serviceRoutes,
     ...areaRoutes,
@@ -109,4 +124,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...guideRoutes,
     ...postRoutes,
   ];
+  // An English page with a Spanish twin (and /es itself) lists both languages.
+  const withLanguages = routes.map((r) => {
+    const pair = bilingual.get(r.url) ?? (r.url === `${base}/es` ? pairs[0] : undefined);
+    return pair ? { ...r, alternates: languagesFor(pair) } : r;
+  });
+  return [...withLanguages, ...spanishRoutes];
 }

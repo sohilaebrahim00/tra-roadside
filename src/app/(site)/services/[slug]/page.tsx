@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { pageUrls, shareImageFor } from "@/lib/seo";
+import { bilingualUrls, pageUrls, shareImageFor } from "@/lib/seo";
+import { getServicioEs } from "@/lib/content/es/servicios";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -47,7 +48,9 @@ export async function generateMetadata({
   return {
     title: { absolute: pricedTitle(`${service.name} DFW 24/7`, lowPrice(service)) },
     description: fitDescription(`${service.name}${lowPrice(service) ? ` ${withFeeTag(service, lowPrice(service)!)}` : ""}, 24/7 across Dallas–Fort Worth.`, [...sentences(service.summary), "No membership.", `Call ${BUSINESS.phoneDisplay}.`]),
-    ...pageUrls(`/services/${service.slug}`, shareImageFor(service.slug)),
+    ...(getServicioEs(service.slug)
+      ? bilingualUrls({ en: `/services/${service.slug}`, es: `/es/services/${service.slug}` }, "en", shareImageFor(service.slug))
+      : pageUrls(`/services/${service.slug}`, shareImageFor(service.slug))),
   };
 }
 
@@ -127,6 +130,13 @@ export default async function ServicePage({
             </div>
 
             {service.priceLines && <PricingDisclaimer tone="light" withFee={!service.feeAtBooking} className="mt-5 max-w-md" />}
+            {getServicioEs(service.slug) && (
+              <p className="mt-5 text-sm text-white/60">
+                <Link href={`/es/services/${service.slug}`} lang="es" hrefLang="es" className="underline hover:text-white">
+                  Esta página en español
+                </Link>
+              </p>
+            )}
           </div>
         </Container>
       </section>

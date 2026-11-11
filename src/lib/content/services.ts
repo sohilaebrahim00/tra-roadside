@@ -45,11 +45,11 @@ export interface PriceLine {
  * Service prices that FAQ answers quote. Named once here so an answer and the
  * price line it describes cannot disagree.
  */
-const BATTERY_REPLACEMENT: PriceLine = { min: 239, note: "eligible vehicles and batteries" };
-const JUMP_START_SEMI: PriceLine = { label: "Semi trucks and 18-wheelers", min: 90, from: true, vehicleType: "semi_truck" };
-const LOCKOUT_TRUNK: PriceLine = { label: "Keys locked in the trunk", min: 120 };
-const SPARE_TIRE_CHANGE: PriceLine = { min: 50, from: true, note: "using the spare carried in your vehicle" };
-const TIRE_REPLACEMENT: PriceLine = { min: 129, from: true, note: "tire availability varies" };
+export const BATTERY_REPLACEMENT: PriceLine = { min: 239, note: "eligible vehicles and batteries" };
+export const JUMP_START_SEMI: PriceLine = { label: "Semi trucks and 18-wheelers", min: 90, from: true, vehicleType: "semi_truck" };
+export const LOCKOUT_TRUNK: PriceLine = { label: "Keys locked in the trunk", min: 120 };
+export const SPARE_TIRE_CHANGE: PriceLine = { min: 50, from: true, note: "using the spare carried in your vehicle" };
+export const TIRE_REPLACEMENT: PriceLine = { min: 129, from: true, note: "tire availability varies" };
 
 /** "from $90, plus the $19 dispatch fee" — service price first, fee on its own. */
 function quote(line: PriceLine): string {

@@ -15,6 +15,11 @@ export function precio(a: Amount): string {
   return formatAmount(a, "–", "from").replace(/^from /, "desde ");
 }
 
+/** "desde $90, más $19 de envío": the service price first, the trip fee on its own. */
+export function precioConEnvio(a: Amount): string {
+  return `${precio(a)}, más ${DISPATCH_FEE_USD} de envío`;
+}
+
 const WORDS: Record<ServiceTypeSlug, { titulo: (ciudad: string) => string; nombre: string; costo: string }> = {
   "jump-start": { titulo: (c) => `Paso de corriente a domicilio en ${c}`, nombre: "Paso de corriente", costo: "Un paso de corriente cuesta" },
   "semi-truck-jump-start": { titulo: (c) => `Paso de corriente para tráileres en ${c}`, nombre: "Paso de corriente para tráiler", costo: "Un paso de corriente para tráiler cuesta" },
@@ -28,6 +33,36 @@ const WORDS: Record<ServiceTypeSlug, { titulo: (ciudad: string) => string; nombr
   "stripped-lug-nut-removal": { titulo: (c) => `Birlo barrido en ${c}`, nombre: "Sacar un birlo barrido", costo: "Sacar un birlo barrido cuesta" },
   "valve-stem-replacement": { titulo: (c) => `Cambio de válvula de llanta en ${c}`, nombre: "Cambiar la válvula de la llanta", costo: "Cambiar la válvula de la llanta cuesta" },
 };
+
+/** "Paso de corriente": the service's name in Spanish. */
+export function nombreServicio(slug: ServiceTypeSlug): string {
+  return WORDS[slug].nombre;
+}
+
+/** "Paso de corriente a domicilio en Plano": a page title in Spanish. */
+export function tituloServicio(slug: ServiceTypeSlug, ciudad: string): string {
+  return WORDS[slug].titulo(ciudad);
+}
+
+/** Price tier labels from services.ts, in Spanish. A label missing here falls back to the English. */
+const ETIQUETAS: Record<string, string> = {
+  "Semi trucks and 18-wheelers": "Tráileres y camiones de 18 ruedas",
+  "Keys locked in the trunk": "Llaves adentro de la cajuela",
+};
+
+export function etiquetaPrecio(label: string): string {
+  return ETIQUETAS[label] ?? label;
+}
+
+/** "paso de corriente desde $49, abrir su carro desde $50 ...": the short price line for Spanish meta descriptions. */
+export function preciosCortos(): string {
+  const desde = (slug: ServiceTypeSlug) => {
+    const svc = getService(slug);
+    const line = svc && headlineLine(svc);
+    return line ? `desde ${formatAmount({ min: line.min }, "–", "from")}` : "";
+  };
+  return `paso de corriente ${desde("jump-start")}, abrir su carro ${desde("lockout")}, reparar una llanta ${desde("tire-repair-plug-patch")} + ${DISPATCH_FEE_USD} de envío`;
+}
 
 /** The short Spanish block on a city and service page. */
 export function bloqueCiudadServicio(svc: ServiceContent, ciudad: string): { titulo: string; texto: string } | undefined {

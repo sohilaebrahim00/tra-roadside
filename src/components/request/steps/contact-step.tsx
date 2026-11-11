@@ -36,18 +36,17 @@ export function ContactStep({ onNext, onBack }: { onNext: () => void; onBack: ()
         <Field label="Mobile number" error={errors.phone?.message}>
           <input {...register("phone")} type="tel" inputMode="tel" autoComplete="tel" placeholder="(555) 123-4567" className={inputClass} />
         </Field>
-        <Field label="Email" error={errors.email?.message}>
+        <Field label="Email (optional)" error={errors.email?.message}>
           <input
             {...register("email")}
             type="email"
             inputMode="email"
             autoComplete="email"
-            required
             aria-describedby="email-hint"
             className={inputClass}
           />
           <span id="email-hint" className="mt-1.5 block text-xs font-normal text-ink-500">
-            Your confirmation is sent here.
+            Optional. Your confirmation comes by text.
           </span>
         </Field>
 

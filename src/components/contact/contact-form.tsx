@@ -16,6 +16,7 @@ export function ContactForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: form.get("name"),
+          phone: form.get("phone"),
           email: form.get("email"),
           message: form.get("message"),
           companyWebsite: form.get("companyWebsite"),
@@ -46,8 +47,12 @@ export function ContactForm() {
         <input name="name" required className="mt-1.5 w-full rounded-xl border border-ink-950/15 px-3.5 py-3 focus:border-red-600 focus:outline-none dark:border-white/15 dark:bg-ink-900" />
       </label>
       <label className="block text-sm font-medium text-ink-800 dark:text-ink-100">
-        Email
-        <input name="email" type="email" required className="mt-1.5 w-full rounded-xl border border-ink-950/15 px-3.5 py-3 focus:border-red-600 focus:outline-none dark:border-white/15 dark:bg-ink-900" />
+        Mobile number
+        <input name="phone" type="tel" inputMode="tel" autoComplete="tel" required minLength={10} placeholder="(555) 123-4567" className="mt-1.5 w-full rounded-xl border border-ink-950/15 px-3.5 py-3 focus:border-red-600 focus:outline-none dark:border-white/15 dark:bg-ink-900" />
+      </label>
+      <label className="block text-sm font-medium text-ink-800 dark:text-ink-100">
+        Email <span className="font-normal text-ink-500">(optional)</span>
+        <input name="email" type="email" autoComplete="email" className="mt-1.5 w-full rounded-xl border border-ink-950/15 px-3.5 py-3 focus:border-red-600 focus:outline-none dark:border-white/15 dark:bg-ink-900" />
       </label>
       <label className="block text-sm font-medium text-ink-800 dark:text-ink-100">
         Message

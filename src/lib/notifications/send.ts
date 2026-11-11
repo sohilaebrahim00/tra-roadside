@@ -3,9 +3,9 @@ import { isDemoMode } from "@/lib/env";
 import { createAdminSupabaseClient } from "@/lib/supabase/admin";
 import { getFallbackTemplate } from "@/lib/content/notification-templates";
 import { renderTemplate } from "./render";
-import { sendEmail, type SendEmailResult } from "./email";
+import type { SendEmailResult } from "./email";
 import { sendSms, type SendSmsResult } from "./sms";
-import { renderRichEmailHtml, renderRichEmailText, type RichEmail } from "./email-layout";
+import type { RichEmail } from "./email-layout";
 import type { NotificationChannel, NotificationEvent } from "@/lib/types/domain";
 
 const RETRY_DELAYS_MS = [500, 1500]; // one immediate-ish retry, then one more before giving up
@@ -47,13 +47,20 @@ export interface NotifyParams {
  * event+channel+recipient for the same request) and logging the outcome.
  * In demo mode, "sending" just logs to the server console.
  */
-export async function notify({ event, requestId, channels, vars, richEmail }: NotifyParams) {
+export async function notify({ event, requestId, channels, vars }: NotifyParams) {
   const results: { channel: NotificationChannel; status: "sent" | "failed" | "skipped" }[] = [];
 
   const supabase = isDemoMode() ? null : createAdminSupabaseClient();
 
   for (const [channel, recipient] of Object.entries(channels) as [NotificationChannel, string | undefined][]) {
     if (!recipient) continue;
+
+    // Text messages only (owner, 2026-11-11): no confirmation or alert goes
+    // out by email, to the customer or to dispatch, from any of the sites.
+    if (channel === "email") {
+      results.push({ channel, status: "skipped" });
+      continue;
+    }
 
     if (supabase && requestId) {
       const { data: existing } = await supabase
@@ -92,16 +99,7 @@ export async function notify({ event, requestId, channels, vars, richEmail }: No
     }
 
     const body = renderTemplate(template.body, vars);
-    const subject = template.subject ? renderTemplate(template.subject, vars) : "";
-    const rich = channel === "email" && richEmail ? richEmail(body) : null;
-
-    const sendResult = await sendWithRetry(() =>
-      channel === "email"
-        ? rich
-          ? sendEmail(recipient, subject, renderRichEmailText(rich), renderRichEmailHtml(rich))
-          : sendEmail(recipient, subject, body)
-        : sendSms(recipient, body)
-    );
+    const sendResult = await sendWithRetry(() => sendSms(recipient, body));
 
     if (supabase) {
       const { error: insertError } = await supabase.from("notification_logs").insert({

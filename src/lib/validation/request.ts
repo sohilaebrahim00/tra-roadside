@@ -81,10 +81,9 @@ export const contactSchema = z.object({
     .min(10, "Enter a valid phone number")
     .max(20)
     .regex(/^[0-9()+\-.\s]+$/, "Enter a valid phone number"),
-  // Required (owner decision, 2026-10-18): every request gets its
-  // confirmation by email. The same schema validates
-  // the API route, so this is enforced on the server too.
-  email: z.string().trim().min(1, "Enter your email so we can send your confirmation").email("Enter a valid email").max(200),
+  // Optional: confirmations go by text only (owner, 2026-11-11), so the
+  // email is just another way for dispatch to reach the customer.
+  email: z.string().trim().email("Enter a valid email").max(200).optional().or(z.literal("")),
   preferredContactMethod: z.enum(CONTACT_METHODS),
   smsConsent: z.boolean(),
   termsAccepted: z.literal(true, { message: "You must accept the Terms and Privacy Policy" }),

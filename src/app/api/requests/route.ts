@@ -143,7 +143,8 @@ export async function POST(req: NextRequest) {
 
   const requestNumber = generateRequestNumber();
   const readiness = getProductionReadiness();
-  const channelsLive = { email: readiness.email, sms: readiness.sms };
+  // Confirmations go by text only (owner, 2026-11-11), so email is not reported.
+  const channelsLive = { sms: readiness.sms };
 
   if (isDemoMode()) {
     const token = encodeDemoToken({

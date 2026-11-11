@@ -573,7 +573,7 @@ export function QuickRequestSheet({ initialService, initialVehicle, onClose }: {
 
           <div>
             <label htmlFor="qr-email" className={labelClass}>
-              Email <span className="font-normal text-ink-500">(optional, for your confirmation)</span>
+              Email <span className="font-normal text-ink-500">(optional)</span>
             </label>
             <input id="qr-email" value={email} onChange={(e) => setEmail(e.target.value)} type="email" inputMode="email" autoComplete="email" className={inputClass} />
             {errors.email && <FieldError>{errors.email}</FieldError>}

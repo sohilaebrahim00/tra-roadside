@@ -32,7 +32,11 @@ export function GoogleAdsTag() {
       <Script
         id="google-ads-gtag-src"
         src={`https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(ids[0])}`}
-        strategy="afterInteractive"
+        // After the page has loaded: gtag.js is about 320 KB and held up a
+        // phone's first screen by roughly a second (Lighthouse, 2026-11-12).
+        // The init script below still runs early, so page views and
+        // conversions wait in dataLayer and are sent once it arrives.
+        strategy="lazyOnload"
       />
       <Script id="google-ads-gtag-init" strategy="afterInteractive">
         {`window.dataLayer = window.dataLayer || [];

@@ -1,10 +1,9 @@
 "use client";
 
 import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
 import { getVideoForPlacement } from "@/data/media-registry";
 import type { VideoPlacement } from "@/data/media-types";
-import { gsap, ScrollTrigger, registerGsap } from "@/lib/gsap/register";
+import { useLazyGsap } from "@/lib/gsap/use-lazy-gsap";
 import { InViewVideo } from "./in-view-video";
 import { MediaFallback } from "./media-fallback";
 import { Eyebrow } from "@/components/ui/section-heading";
@@ -34,9 +33,8 @@ export function CircularScrollVideo({
   const captionRef = useRef<HTMLDivElement>(null);
   const video = getVideoForPlacement(placement);
 
-  useGSAP(
-    () => {
-      registerGsap();
+  useLazyGsap(
+    ({ gsap, ScrollTrigger }) => {
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
       if (reduceMotion || !frameRef.current) {
@@ -97,7 +95,7 @@ export function CircularScrollVideo({
 
       return () => mm.revert();
     },
-    { scope: wrapperRef }
+    wrapperRef
   );
 
   return (

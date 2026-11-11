@@ -1,8 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
-import { gsap } from "@/lib/gsap/register";
+import { useLazyGsap } from "@/lib/gsap/use-lazy-gsap";
 
 /**
  * Desktop-only "magnetic" hover pull toward the cursor, using gsap.quickTo
@@ -13,8 +12,8 @@ import { gsap } from "@/lib/gsap/register";
 export function MagneticButton({ children, strength = 0.35 }: { children: React.ReactNode; strength?: number }) {
   const wrapperRef = useRef<HTMLDivElement>(null);
 
-  useGSAP(
-    () => {
+  useLazyGsap(
+    ({ gsap }) => {
       const el = wrapperRef.current;
       if (!el) return;
 
@@ -46,7 +45,7 @@ export function MagneticButton({ children, strength = 0.35 }: { children: React.
         el.removeEventListener("mouseleave", handleLeave);
       };
     },
-    { scope: wrapperRef }
+    wrapperRef
   );
 
   return (

@@ -4,14 +4,13 @@ import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, LifeBuoy } from "lucide-react";
-import { useGSAP } from "@gsap/react";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { SERVICES, type ServiceContent } from "@/lib/content/services";
 import { SERVICE_ICONS } from "@/lib/content/service-icons";
 import { SERVICE_PROBLEM } from "@/lib/content/service-problems";
 import { ServiceSearch } from "@/components/search/service-search";
-import { gsap, ScrollTrigger, registerGsap } from "@/lib/gsap/register";
+import { useLazyGsap } from "@/lib/gsap/use-lazy-gsap";
 import { PricingDisclaimer } from "@/components/ui/pricing-disclaimer";
 import { BrandPattern } from "@/components/brand/brand-pattern";
 import { Icon3D } from "@/components/ui/icon-3d";
@@ -53,12 +52,15 @@ export function ServicesSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const cardsRef = useRef<(HTMLLIElement | null)[]>([]);
 
-  useGSAP(
-    () => {
-      registerGsap();
+  useLazyGsap(
+    ({ gsap, ScrollTrigger }) => {
       const cards = cardsRef.current.filter(Boolean) as HTMLLIElement[];
       if (cards.length === 0) return;
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      // GSAP arrives after the page has loaded; cards already on screen by
+      // then stay as they are instead of vanishing and fading back in.
+      const top = sectionRef.current?.getBoundingClientRect().top ?? Infinity;
+      if (top < window.innerHeight * 0.85) return;
 
       gsap.set(cards, { opacity: 0, y: 18 });
       const trigger = ScrollTrigger.create({
@@ -71,7 +73,7 @@ export function ServicesSection() {
       });
       return () => trigger.kill();
     },
-    { scope: sectionRef }
+    sectionRef
   );
 
   return (

@@ -91,6 +91,7 @@
 
   --animate-pulse-ring: pulse-ring 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   --animate-marker-bob: marker-bob 2.4s ease-in-out infinite;
+  --animate-menu-drop: menu-drop 0.18s ease-out;
 }
 
 @layer base {
@@ -228,6 +229,15 @@
   from {
     opacity: 0;
     transform: translateY(8px);
+  }
+}
+
+/* The phone menu sliding in. Plain CSS instead of framer-motion, which put
+   about 40 KB of JavaScript on every page for this one panel (2026-11-12). */
+@keyframes menu-drop {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
   }
 }
 

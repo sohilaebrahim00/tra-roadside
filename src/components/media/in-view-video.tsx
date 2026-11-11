@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { preload } from "react-dom";
 import { cn } from "@/lib/utils/cn";
 import { requestPlayback, releasePlayback } from "@/lib/media/playback-manager";
 import { useReducedMotion } from "@/lib/hooks/use-reduced-motion";
@@ -63,6 +64,11 @@ export function InViewVideo({
 
   const showPoster = !avoidHeavyMedia && (priority || nearViewport);
 
+  // The hero poster is the largest thing on the first screen: ask for it in
+  // <head>, ahead of the fonts and scripts, instead of when the parser reaches
+  // the <video> tag.
+  if (priority && poster && !avoidHeavyMedia) preload(poster, { as: "image", fetchPriority: "high" });
+
   // Gate the poster fetch behind "near viewport" — <video poster> has no
   // native lazy-loading hook (unlike <img loading="lazy">), so without this
   // every below-the-fold video's poster downloads immediately on page load.
@@ -100,7 +106,12 @@ export function InViewVideo({
       },
       { threshold: visibilityThreshold }
     );
-    observer.observe(video);
+    // Start only once the page has loaded: a phone's hero clip is about 2 MB,
+    // and fetching it alongside the scripts held up the first screen. The
+    // poster shows until then.
+    const start = () => observer.observe(video);
+    if (document.readyState === "complete") start();
+    else window.addEventListener("load", start, { once: true });
 
     function handleVisibilityChange() {
       if (!video) return;
@@ -114,6 +125,7 @@ export function InViewVideo({
 
     return () => {
       observer.disconnect();
+      window.removeEventListener("load", start);
       document.removeEventListener("visibilitychange", handleVisibilityChange);
       releasePlayback(video);
     };

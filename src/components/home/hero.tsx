@@ -1,15 +1,13 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Phone, LifeBuoy, Radio, Star } from "lucide-react";
-import { useGSAP } from "@gsap/react";
 import { Button } from "@/components/ui/button";
 import { BUSINESS, SERVICE_AREAS } from "@/lib/content/business";
 import { getService } from "@/lib/content/services";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 import { CinematicBackgroundVideo } from "@/components/media/cinematic-background-video";
 import { HeroQuickRequest } from "./hero-quick-request";
-import { gsap } from "@/lib/gsap/register";
 import { REVIEW_SNAPSHOT } from "@/lib/content/google-reviews";
 import { DISPATCH_FEE_HEADLINE, glanceLine, lowPrice } from "@/lib/content/pricing";
 import { PriceFigure } from "@/components/ui/price-figure";
@@ -27,37 +25,14 @@ import { PriceFigure } from "@/components/ui/price-figure";
  * the site does not already make.
  */
 export function Hero() {
-  const rootRef = useRef<HTMLElement>(null);
-  const badgeRef = useRef<HTMLSpanElement>(null);
-  const headlineRef = useRef<HTMLHeadingElement>(null);
-  const paraRef = useRef<HTMLParagraphElement>(null);
-  const factsRef = useRef<HTMLDListElement>(null);
-  const graphicRef = useRef<HTMLDivElement>(null);
 
   const GLANCE = ["jump-start", "lockout", "tire-repair-plug-patch", "battery-replacement"].flatMap((slug) => getService(slug) ?? []);
   const batteryService = getService("battery-replacement");
   const batteryPrice = batteryService && lowPrice(batteryService);
 
-  useGSAP(
-    () => {
-      // CTAs are deliberately never animated: Request and Call must be visible
-      // and clickable from the very first paint, not fade in after JS runs.
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !headlineRef.current) return;
-      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-      gsap.set([badgeRef.current, headlineRef.current, paraRef.current, factsRef.current], { opacity: 0, y: 14 });
-      tl.to(badgeRef.current, { opacity: 1, y: 0, duration: 0.4 })
-        .to(headlineRef.current, { opacity: 1, y: 0, duration: 0.6 }, "-=0.2")
-        .to(paraRef.current, { opacity: 1, y: 0, duration: 0.45 }, "-=0.3")
-        .to(factsRef.current, { opacity: 1, y: 0, duration: 0.45 }, "-=0.25");
-      if (window.matchMedia("(min-width: 1024px)").matches) {
-        tl.from(graphicRef.current, { opacity: 0, y: 24, scale: 0.97, duration: 0.8 }, 0.15);
-      }
-    },
-    { scope: rootRef }
-  );
 
   return (
-    <section ref={rootRef} className="relative isolate overflow-hidden bg-ink-950 text-white">
+    <section className="relative isolate overflow-hidden bg-ink-950 text-white">
       <CinematicBackgroundVideo placement="home-hero-background" overlay="strong" priority />
       <div
         aria-hidden="true"
@@ -67,7 +42,7 @@ export function Hero() {
       <div className="relative z-10 mx-auto grid max-w-7xl gap-10 px-4 pt-10 pb-10 sm:px-6 sm:pb-16 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center lg:gap-14 lg:px-8 lg:pt-16 lg:pb-20">
         <div>
           <span
-            ref={badgeRef}
+           
             className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-white/85"
           >
             <Radio className="h-3.5 w-3.5 animate-pulse text-amber-400 motion-reduce:animate-none" aria-hidden="true" />
@@ -76,7 +51,7 @@ export function Hero() {
           </span>
 
           <h1
-            ref={headlineRef}
+           
             className="mt-5 font-display text-[2.6rem] font-bold uppercase leading-[0.98] tracking-tight sm:text-7xl lg:text-[4.6rem]"
           >
             {/* The space keeps "Stranded? We'll" apart in the page text that
@@ -90,7 +65,7 @@ export function Hero() {
             </span>
           </h1>
 
-          <p ref={paraRef} className="mt-4 max-w-lg text-base text-white/75 sm:mt-6 sm:text-lg">
+          <p className="mt-4 max-w-lg text-base text-white/75 sm:mt-6 sm:text-lg">
             Local roadside assistance across Dallas–Fort Worth. Request help, share your location, and
             a driver comes to you. We text you when they&apos;re on the way.
           </p>
@@ -126,7 +101,7 @@ export function Hero() {
           </div>
 
           <dl
-            ref={factsRef}
+           
             className="mt-7 grid max-w-2xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:mt-9 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4"
           >
             <Fact label="Dispatch" value="24/7" />
@@ -145,7 +120,7 @@ export function Hero() {
         </div>
 
         {/* Desktop: the quick-request card over the video. */}
-        <div ref={graphicRef} className="relative hidden lg:block">
+        <div className="relative hidden lg:block">
           <HeroQuickRequest />
         </div>
       </div>

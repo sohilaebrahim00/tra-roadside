@@ -1,11 +1,10 @@
 "use client";
 
 import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
 import { MapPin, ClipboardList, UserCheck, Navigation, CheckCircle2 } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { gsap, ScrollTrigger, registerGsap } from "@/lib/gsap/register";
+import { useLazyGsap } from "@/lib/gsap/use-lazy-gsap";
 
 const STEPS = [
   { icon: MapPin, title: "Share your location", body: "Allow GPS access or drop a pin — takes seconds." },
@@ -26,9 +25,8 @@ export function HowItWorksSection() {
   const mobileMarkers = useRef<(HTMLDivElement | null)[]>([]);
   const mobileIndices = useRef<(HTMLDivElement | null)[]>([]);
 
-  useGSAP(
-    () => {
-      registerGsap();
+  useLazyGsap(
+    ({ gsap, ScrollTrigger }) => {
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
       function activateUpTo(
@@ -91,7 +89,7 @@ export function HowItWorksSection() {
 
       return () => mm.revert();
     },
-    { scope: sectionRef }
+    sectionRef
   );
 
   return (

@@ -129,7 +129,7 @@ export const GUIDES_SEASONAL: Guide[] = [
     topic: "Seasonal guide",
     dek: "American Airlines Center sits in the Victory Park neighborhood of downtown Dallas. When a Mavericks or Stars game or a big concert lets out, a whole arena of people heads for the same few exits at once. If your car won't start, the hard part usually isn't the car. It is telling someone how to find it in a concrete garage.",
     updated: UPDATED,
-    cardImage: card("field-tire-spare-lot"),
+    cardImage: card("field-tire-shoulder-night"),
     sections: [
       {
         heading: "Give the level, the column and a photo",
@@ -353,7 +353,7 @@ export const GUIDES_SEASONAL: Guide[] = [
     topic: "Seasonal guide",
     dek: "Thanksgiving and Christmas send a lot of cars onto long highway drives, and many of them haven't been looked at since summer. Twenty minutes in the driveway the weekend before can head off most of what leaves families on the shoulder. Here is what to look at, in the order that matters.",
     updated: UPDATED,
-    cardImage: card("field-tire-spare-lot"),
+    cardImage: card("field-tire-jack"),
     sections: [
       {
         heading: "Tires first, then the spare",

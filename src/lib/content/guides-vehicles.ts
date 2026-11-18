@@ -78,7 +78,7 @@ export const GUIDES_VEHICLES: Guide[] = [
     topic: "Vehicle guide",
     dek: "A Silverado 1500 can take one of two battery sizes in the same model year, and the diesel takes a third. Knowing which applies to your truck saves a wrong-battery trip, and so does knowing your spare situation before the tire goes flat.",
     updated: UPDATED,
-    cardImage: card("field-tire-spare-lot"),
+    cardImage: card("field-tire-shoulder-night"),
     sections: [
       {
         heading: "Which battery a Silverado 1500 takes",
@@ -311,7 +311,7 @@ export const GUIDES_VEHICLES: Guide[] = [
     topic: "Vehicle guide",
     dek: "The Tundra changed batteries when it was redesigned for 2022. If yours is newer than our table, or sits in the long 2007 to 2021 stretch, the VIN is how dispatch makes sure the battery is right.",
     updated: UPDATED,
-    cardImage: card("field-battery-under-seat"),
+    cardImage: { src: "/images/battery-terminal.webp", width: 612, height: 408 },
     sections: [
       {
         heading: "Which battery a Tundra takes",
@@ -429,7 +429,7 @@ export const GUIDES_VEHICLES: Guide[] = [
     topic: "Vehicle guide",
     dek: "The Corolla is small and simple, yet its battery depends on the engine: since 2020 the 2.0-liter and the 1.8-liter or hybrid take different sizes. Two Corollas of the same year can need two different batteries.",
     updated: UPDATED,
-    cardImage: card("field-tire-spare-lot"),
+    cardImage: card("field-tire-jack"),
     sections: [
       {
         heading: "Which battery a Corolla takes",
@@ -488,7 +488,7 @@ export const GUIDES_VEHICLES: Guide[] = [
     topic: "Vehicle guide",
     dek: "Since 2019 a RAV4 can take one of three battery groups depending on whether it has auto start-stop and whether it is a hybrid. That makes the RAV4 one of the vehicles where the exact trim matters more than the year.",
     updated: UPDATED,
-    cardImage: card("field-battery-under-seat-detail"),
+    cardImage: { src: "/images/battery-install.webp", width: 612, height: 408 },
     sections: [
       {
         heading: "Which battery a RAV4 takes",
@@ -663,7 +663,7 @@ export const GUIDES_VEHICLES: Guide[] = [
     topic: "Vehicle guide",
     dek: "A 2020 or newer CR-V takes an AGM H5, and a hybrid takes something else again. Older ones use the 51R. If you are not sure which side of 2020 you are on, the VIN settles it.",
     updated: UPDATED,
-    cardImage: card("field-battery-under-seat"),
+    cardImage: { src: "/images/battery-fit.webp", width: 612, height: 408 },
     sections: [
       {
         heading: "Which battery a CR-V takes",
@@ -782,7 +782,7 @@ export const GUIDES_VEHICLES: Guide[] = [
     topic: "Vehicle guide",
     dek: "The Rogue went from a group 35 to an H6 in 2021, and the replacements listed for the newer one are AGM. Whether your car came with an AGM battery is something the technician checks from the VIN.",
     updated: UPDATED,
-    cardImage: card("field-tire-spare-lot"),
+    cardImage: card("field-tire-spare-lugs"),
     sections: [
       {
         heading: "Which battery a Rogue takes",
@@ -902,7 +902,7 @@ export const GUIDES_VEHICLES: Guide[] = [
     topic: "Vehicle guide",
     dek: "From 2017 on the Tucson takes an H6, which makes the choice easy until you ask whether the newest ones need AGM. Listings disagree, so the VIN decides.",
     updated: UPDATED,
-    cardImage: card("field-battery-under-seat-detail"),
+    cardImage: { src: "/images/battery-handover.webp", width: 612, height: 408 },
     sections: [
       {
         heading: "Which battery a Tucson takes",
@@ -1026,7 +1026,7 @@ export const GUIDES_VEHICLES: Guide[] = [
     topic: "Vehicle guide",
     dek: "A Tahoe can carry a second battery, and the sources do not agree on its size, so the technician reads its label instead of guessing. That is the main reason to describe your Tahoe carefully when you call.",
     updated: UPDATED,
-    cardImage: card("field-tire-spare-lot"),
+    cardImage: card("field-tire-wheel-tools"),
     sections: [
       {
         heading: "Which battery a Tahoe takes",
@@ -1083,7 +1083,7 @@ export const GUIDES_VEHICLES: Guide[] = [
     topic: "Vehicle guide",
     dek: "The Explorer's redesign for 2020 changed its battery from a group 65 to an AGM H6, and the 2025 ST takes an H7. Two Explorers a few years apart will not share a battery.",
     updated: UPDATED,
-    cardImage: card("field-battery-under-seat"),
+    cardImage: { src: "/images/battery-carry.webp", width: 612, height: 408 },
     sections: [
       {
         heading: "Which battery an Explorer takes",
@@ -1258,7 +1258,7 @@ export const GUIDES_VEHICLES: Guide[] = [
     topic: "Vehicle guide",
     dek: "Our table covers the C-Class from 2015 to 2021 with one answer: an AGM H7. For a different year, or a hybrid, the battery is matched from the VIN. Where the battery sits is a question to settle in the owner's manual.",
     updated: UPDATED,
-    cardImage: card("field-battery-under-seat"),
+    cardImage: { src: "/images/battery-test.webp", width: 612, height: 408 },
     sections: [
       {
         heading: "Which battery a C-Class takes",

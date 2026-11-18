@@ -147,7 +147,7 @@ export const GUIDES_ROADSIDE: Guide[] = [
     topic: "Tire guide",
     dek: "A compact spare is built to get you to a tire shop, not to carry on as normal. The sticker on the spare and your owner's manual give the real limits, and they're lower than most drivers expect.",
     updated: UPDATED,
-    cardImage: card("field-tire-spare-lot"),
+    cardImage: card("field-tire-wheel"),
     sections: [
       {
         heading: "Compact spare or full-size spare",

@@ -4,11 +4,13 @@ import type { ServiceTypeSlug } from "@/lib/types/domain";
  * The business's own job photos and stills from its video footage, for the
  * gallery and the home page gallery preview.
  *
- * PROVENANCE — JOB PHOTOS (battery and the two tire groups)
+ * PROVENANCE — JOB PHOTOS (the two flat tire groups)
  * Phone photos supplied by the owner in October 2026. The license plate and
  * dealer frame on the freeway-shoulder SUV were pixelated before export, and
  * the files carry no EXIF or location data. A fifth supplied photo was left
  * out: it is a crop of the same footage as field-jump-start-booster.webp.
+ * The battery, wheel lock and spare-in-a-lot photos were removed on
+ * 2026-11-18: another company publishes the same pictures as its own.
  *
  * PROVENANCE — FOOTAGE STILLS (every other group)
  * Each frame was pulled from a clip in /media-source — the same footage the
@@ -49,29 +51,9 @@ const H = 1350;
 
 export const FIELD_PHOTO_GROUPS: FieldPhotoGroup[] = [
   {
-    id: "battery",
-    title: "Battery replacement",
-    caption: "Not every battery is under the hood. This one sits under the rear seat, which is why the battery and the total are confirmed for each vehicle before a driver sets off.",
-    service: "battery-replacement",
-    photos: [
-      {
-        src: "/images/field/field-battery-under-seat.webp",
-        alt: "The rear seat area of a blue vehicle with the seat cushion lifted, showing a car battery set into the floor beside a blue body rail, with a ratchet and a shop towel nearby.",
-        width: W,
-        height: H,
-      },
-      {
-        src: "/images/field/field-battery-under-seat-detail.webp",
-        alt: "Close-up of a car battery mounted in the floor under a rear seat, with a red cover over the positive terminal.",
-        width: 560,
-        height: 700,
-      },
-    ],
-  },
-  {
     id: "tire-roadside",
     title: "Flat tires, wherever they happen",
-    caption: "A freeway shoulder after dark or a parking lot in daylight: the spare goes on where the car stopped.",
+    caption: "A freeway shoulder after dark or a street in daylight: the car goes up on a floor jack from a solid lifting point, right where it stopped.",
     service: "flat-tire-change",
     photos: [
       {
@@ -81,10 +63,10 @@ export const FIELD_PHOTO_GROUPS: FieldPhotoGroup[] = [
         height: H,
       },
       {
-        src: "/images/field/field-tire-spare-lot.webp",
-        alt: "A gray sedan in a parking space with a compact spare tire on the ground, a floor jack and a cordless impact wrench beside its rear wheel.",
-        width: 960,
-        height: 1200,
+        src: "/images/field/field-tire-jack.webp",
+        alt: "A technician kneeling beside a black sedan, positioning a red and black floor jack under the car next to its wheel.",
+        width: W,
+        height: H,
       },
     ],
   },
@@ -109,26 +91,6 @@ export const FIELD_PHOTO_GROUPS: FieldPhotoGroup[] = [
     ],
   },
   {
-    id: "rim-lock",
-    title: "Wheel locks",
-    caption: "A locking lug nut without its key stops a tire change cold. We remove it so the wheel can come off.",
-    service: "rim-lock-removal",
-    photos: [
-      {
-        src: "/images/field/field-rim-lock-honda.webp",
-        alt: "A locking lug nut with a star-shaped key pattern on a two-tone Honda alloy wheel.",
-        width: 614,
-        height: 768,
-      },
-      {
-        src: "/images/field/field-rim-lock-wheel.webp",
-        alt: "A wheel lock lug nut recessed in the spoke of a dark alloy wheel.",
-        width: 810,
-        height: 1012,
-      },
-    ],
-  },
-  {
     id: "jump-start",
     title: "Jump starts",
     caption: "A portable jump pack comes to the car, so a dead battery is dealt with where the car sits.",
@@ -143,26 +105,6 @@ export const FIELD_PHOTO_GROUPS: FieldPhotoGroup[] = [
       {
         src: "/images/field/field-jump-start-hood.webp",
         alt: "A technician in high-visibility workwear raising the hood of a blue sedan in a parking lot, with a red jump pack on the ground beside the car.",
-        width: W,
-        height: H,
-      },
-    ],
-  },
-  {
-    id: "tire",
-    title: "Tire service",
-    caption: "The car goes up on a floor jack from a solid lifting point before a wheel comes off.",
-    service: "flat-tire-change",
-    photos: [
-      {
-        src: "/images/field/field-tire-jack.webp",
-        alt: "A technician kneeling beside a black sedan, positioning a red and black floor jack under the car next to its wheel.",
-        width: W,
-        height: H,
-      },
-      {
-        src: "/images/field/field-tire-wheel.webp",
-        alt: "Close-up of a floor jack set under a black sedan beside its alloy wheel.",
         width: W,
         height: H,
       },
@@ -190,10 +132,10 @@ export const FIELD_PHOTO_GROUPS: FieldPhotoGroup[] = [
 ];
 
 /**
- * Four photos for the compact four-up preview on the home page: one per
- * service, battery first, so the preview never shows two tire shots.
+ * Four photos for the compact four-up preview on the home page, alternating
+ * tire and jump start so two similar shots never sit side by side.
  */
-const PREVIEW_GROUPS = ["battery", "tire-roadside", "jump-start", "rim-lock"];
+const PREVIEW_GROUPS = ["tire-roadside", "jump-start", "tire-spare", "arrival"];
 
 export function fieldPhotoPreview(): (FieldPhoto & { title: string })[] {
   return PREVIEW_GROUPS.map((id) => {

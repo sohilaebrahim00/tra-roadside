@@ -50,13 +50,6 @@ export interface Guide {
 
 const UPDATED = "2026-10-18";
 
-const UNDER_SEAT_PHOTO = {
-  src: "/images/battery-under-seat.webp",
-  alt: "A car battery set into the floor under the rear seat of a blue vehicle, with the seat cushion lifted and the red positive terminal cover visible.",
-  width: 1200,
-  height: 800,
-};
-
 const CORE_GUIDES: Guide[] = [
   {
     slug: "car-battery-replacement-cost",
@@ -67,10 +60,7 @@ const CORE_GUIDES: Guide[] = [
     topic: "Battery guide",
     dek: "Two things make up the bill: the battery replacement, which covers the new battery, the core charge and installing it, and a dispatch fee for sending a technician to you. Cars take different batteries and keep them in different places, so dispatch confirms what fits yours, and your total, before anyone sets off.",
     updated: UPDATED,
-    image: {
-      ...UNDER_SEAT_PHOTO,
-      caption: "A battery under the rear seat. The seat has to come out before the battery can, one of the reasons battery pricing varies by vehicle.",
-    },
+    cardImage: { src: "/images/battery-install.webp", width: 612, height: 408 },
     sections: [
       {
         heading: "The battery replacement price",
@@ -139,7 +129,7 @@ const CORE_GUIDES: Guide[] = [
     topic: "Battery guide",
     dek: "Batteries rarely die without warning. The warnings are just easy to explain away, especially in a Texas summer, when the car still starts fine every afternoon.",
     updated: UPDATED,
-    cardImage: { src: "/images/field/field-battery-under-seat-detail.webp", width: 560, height: 700 },
+    cardImage: { src: "/images/battery-test.webp", width: 612, height: 408 },
     sections: [
       {
         heading: "The signs",
@@ -199,12 +189,9 @@ const CORE_GUIDES: Guide[] = [
     metaDescription:
       "Not every car battery is under the hood. Some sit in the trunk, the cargo floor or under a seat, which changes the job and is part of why pricing varies.",
     topic: "Battery guide",
-    dek: "Open the hood on a lot of cars and the battery is right there. On plenty of others it isn't. The one in this photo sits in the floor under the rear seat.",
+    dek: "Open the hood on a lot of cars and the battery is right there. On plenty of others it isn't. It sits in the trunk, under the cargo floor or under a seat.",
     updated: UPDATED,
-    image: {
-      ...UNDER_SEAT_PHOTO,
-      caption: "One of our jobs: the rear seat cushion lifted to reach a battery mounted in the floor.",
-    },
+    cardImage: { src: "/images/battery-fit.webp", width: 612, height: 408 },
     sections: [
       {
         heading: "Where batteries usually are",
@@ -213,7 +200,7 @@ const CORE_GUIDES: Guide[] = [
           "Under the hood, at the front or side of the engine bay. This is the most common spot and the quickest to replace.",
           "In the trunk, often under the floor panel or behind a side trim panel.",
           "Under the floor of an SUV's cargo area.",
-          "Under a front or rear seat, like the one in the photo.",
+          "Under a front or rear seat.",
           "Behind a panel inside a front wheel well.",
         ],
       },
@@ -259,13 +246,7 @@ const CORE_GUIDES: Guide[] = [
     topic: "Tire guide",
     dek: "A wheel lock is one special lug nut per wheel that only turns with its matching key. Most of the time nobody thinks about it, until a tire goes flat and the key is nowhere to be found.",
     updated: "2026-10-19",
-    image: {
-      src: "/images/rim-lock-honda.webp",
-      alt: "A locking lug nut with a star-shaped key pattern on a two-tone Honda alloy wheel, next to four standard lug nuts.",
-      width: 1024,
-      height: 683,
-      caption: "A locking lug nut with a star-shaped pattern. Without its key, this wheel stays on the car.",
-    },
+    cardImage: { src: "/images/tire-spare-lugs.webp", width: 1200, height: 800 },
     sections: [
       {
         heading: "Check these places first",

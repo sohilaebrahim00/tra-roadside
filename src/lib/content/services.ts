@@ -175,19 +175,9 @@ export const SERVICES: ServiceContent[] = [
     feeAtBooking: true,
     priceCovers: "The new battery, the core charge and installing it, for eligible vehicles and batteries.",
     priceNote: "Battery pricing varies by vehicle and battery type. Confirm compatibility and total cost before dispatch.",
-    // First is the business's own job photo (1200x800, October 2026) and is
-    // what every battery page shows as its hero. It also shows why the battery
-    // is confirmed per vehicle: this one sits under the rear seat, not under
-    // the hood. The six after it are 612x408 native, supplied by the owner,
-    // who confirmed the rights on 2026-10-18. The home page battery section
-    // uses its own portrait crop of the same job photo.
+    // 612x408 native, supplied by the owner, who confirmed the rights on
+    // 2026-10-18. The first is the hero on every battery page.
     photos: [
-      {
-        src: "/images/battery-under-seat.webp",
-        alt: "A car battery set into the floor under the rear seat of a blue vehicle, with the seat cushion lifted, the red positive terminal cover visible, and a ratchet resting on a shop towel beside it.",
-        width: 1200,
-        height: 800,
-      },
       {
         src: "/images/battery-install.webp",
         alt: "A technician in a blue jacket tightening a battery terminal with a wrench under the open hood of a silver car.",
@@ -346,12 +336,6 @@ export const SERVICES: ServiceContent[] = [
     // photo was blurred before export.
     photos: [
       {
-        src: "/images/tire-spare-lot.webp",
-        alt: "A gray sedan in a parking space with a compact spare tire on the ground, a floor jack, a cordless impact wrench and a tool bag laid out beside its rear wheel.",
-        width: 1200,
-        height: 800,
-      },
-      {
         src: "/images/tire-shoulder-night.webp",
         alt: "A silver SUV on a freeway shoulder at night with its rear wheel removed and a floor jack under the body, beside a striped roadside barrier.",
         width: 1200,
@@ -492,21 +476,6 @@ export const SERVICES: ServiceContent[] = [
     // Not in the 2026-11-03 brief: the price stays, plus the dispatch fee.
     priceLines: [{ min: 70 }],
     priceCovers: "Removing the wheel lock so the wheel can come off.",
-    // The business's own job photos (owner, 2026-10-19).
-    photos: [
-      {
-        src: "/images/rim-lock-honda.webp",
-        alt: "A locking lug nut with a star-shaped key pattern on a two-tone Honda alloy wheel, next to four standard lug nuts.",
-        width: 1024,
-        height: 683,
-      },
-      {
-        src: "/images/rim-lock-wheel.webp",
-        alt: "A wheel lock lug nut recessed in the spoke of a dark alloy wheel, with scuffing around the lug hole.",
-        width: 810,
-        height: 540,
-      },
-    ],
     summary: "A seized or keyless wheel lock removed so the wheel can come off.",
     heroLine: "A wheel lock shouldn't strand you.",
     problem:
@@ -540,14 +509,6 @@ export const SERVICES: ServiceContent[] = [
     priceLines: [{ min: 55 }],
     priceCovers: "Getting the damaged lug nut off so the wheel can come off.",
     priceNote: "If several nuts are damaged, dispatch confirms the price before a driver is sent.",
-    photos: [
-      {
-        src: "/images/rim-lock-wheel.webp",
-        alt: "A wheel lock lug nut recessed in the spoke of a dark alloy wheel, with scuffing around the lug hole.",
-        width: 810,
-        height: 540,
-      },
-    ],
     summary: "A stripped, rounded or seized lug nut taken off so the wheel can come off.",
     heroLine: "One bad lug nut shouldn't stop a tire change.",
     problem:

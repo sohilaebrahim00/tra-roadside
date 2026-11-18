@@ -118,52 +118,44 @@ export function BatteryPromoSection() {
           </div>
 
           {/*
-            The business's own job photo, cropped to 2:3 for the one genuinely
-            vertical slot on the site. Capped at max-w-72 (288px) on phones and
-            max-w-104 (416px) above; the file is 816px wide, so it stays sharp
-            on 2x screens, and next/image serves smaller widths to phones.
+            The 408x612 portrait from the owner's battery set, for the one
+            genuinely vertical slot on the site. Capped at max-w-72 (288px) on
+            phones and max-w-102 (408px) above, so it never renders wider than
+            its native width.
 
-            The caption is the point of the picture. A battery under the rear
-            seat is why installation is quoted per vehicle rather than
-            published as one figure.
+            `unoptimized` because the file is already the optimized artifact
+            (webp from scripts/optimize-images.mjs); without it next/image would
+            emit srcset candidates far wider than the 408px source.
+
+            The caption is the point of the picture: where a battery sits is
+            why installation is quoted per vehicle rather than published as
+            one figure.
 
             Not marked priority: the hero above it already holds the priority
             slot for its background video, and a second preload would compete
             with the actual LCP element for bandwidth.
           */}
-          <figure className="mx-auto w-full max-w-72 sm:max-w-104 lg:mx-0">
-            {/* Two views of the same job: the wide shot behind, the close-up
-                overlapping its lower-left corner. The red outline is offset
-                behind the wide shot as a frame; it is decorative only. */}
-            <div className="relative pb-14 pl-12 pr-3 pt-3 sm:pb-16 sm:pl-16">
+          <figure className="mx-auto w-full max-w-72 sm:max-w-102 lg:mx-0">
+            {/* The red outline is offset behind the photo as a frame; it is
+                decorative only. */}
+            <div className="relative pb-5 pl-5">
               <div
                 aria-hidden="true"
-                className="absolute bottom-11 left-16 right-0 top-0 rounded-3xl border-2 border-red-600/80 sm:bottom-13 sm:left-20"
+                className="absolute bottom-0 left-0 right-5 top-5 rounded-3xl border-2 border-red-600/80"
               />
               <Image
-                src="/images/battery-under-seat-portrait.webp"
-                alt="A car battery set into the floor under the rear seat of a blue vehicle, with the seat cushion lifted and the red positive terminal cover visible."
-                width={816}
-                height={1224}
-                sizes="(min-width: 448px) 352px, calc(100vw - 6rem)"
+                src="/images/battery-trunk-portrait.webp"
+                alt="A technician in a blue jacket loosening the terminal on a white car battery sitting in an open car trunk, with a pair of work gloves resting beside it."
+                width={408}
+                height={612}
                 loading="lazy"
+                unoptimized
                 className="relative h-auto w-full rounded-3xl border border-white/15"
               />
-              <div className="absolute bottom-0 left-0 w-[48%] overflow-hidden rounded-2xl border-4 border-ink-950 shadow-[0_18px_40px_-12px_rgba(0,0,0,0.7)] ring-1 ring-white/25">
-                <Image
-                  src="/images/field/field-battery-under-seat-detail.webp"
-                  alt="Close-up of the same battery, with the red cover over its positive terminal."
-                  width={560}
-                  height={700}
-                  sizes="(min-width: 448px) 200px, 45vw"
-                  loading="lazy"
-                  className="h-auto w-full"
-                />
-              </div>
             </div>
             <figcaption className="mt-3 text-[0.8rem] leading-relaxed text-white/70 sm:mt-4 sm:text-sm">
-              Not every battery sits under the hood. This one is under the rear seat, which is why
-              installation is quoted for your vehicle before anyone sets off.
+              Not every battery sits under the hood. Some are in the trunk or under a seat, which is
+              why installation is quoted for your vehicle before anyone sets off.
             </figcaption>
           </figure>
         </div>

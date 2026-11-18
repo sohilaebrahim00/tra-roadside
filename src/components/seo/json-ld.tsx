@@ -21,7 +21,7 @@ export function OrganizationJsonLd() {
     alternateName: BUSINESS.shortName,
     url: env.siteUrl,
     // A real job photo (the same 1200x630 image used for link previews).
-    image: `${env.siteUrl}/images/og/og-default.jpg`,
+    image: `${env.siteUrl}/images/og/og-share.jpg`,
     // The owner's logo, transparent, 800px wide; Google can show it beside the
     // business in results and the knowledge panel.
     logo: `${env.siteUrl}/brand/tra-logo.png`,

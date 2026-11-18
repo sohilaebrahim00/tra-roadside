@@ -17,7 +17,7 @@ export const GUIDES_BATTERY: Guide[] = [
     topic: "Battery guide",
     dek: "A car battery has no expiration date printed on it, but in North Texas it does come with a hot summer, and the summer decides more than the calendar does. Here is what to expect, what speeds the wear up, and how to tell when yours is close to done.",
     updated: UPDATED,
-    cardImage: card("field-battery-under-seat-detail"),
+    cardImage: { src: "/images/battery-test.webp", width: 612, height: 408 },
     sections: [
       {
         heading: "The short answer",
@@ -286,7 +286,7 @@ export const GUIDES_BATTERY: Guide[] = [
     topic: "Battery guide",
     dek: "Both give you a car that won't start, so people replace the battery and the trouble comes back, or replace the alternator when the battery was the culprit. The difference is in when the car quits.",
     updated: UPDATED,
-    cardImage: card("field-battery-under-seat"),
+    cardImage: { src: "/images/battery-terminal.webp", width: 612, height: 408 },
     sections: [
       {
         heading: "What each one does",
@@ -617,7 +617,7 @@ export const GUIDES_BATTERY: Guide[] = [
     topic: "Battery guide",
     dek: "Most batteries look alike from the outside, and the label on the case is the only clue to what's inside. For many newer cars, which type goes in matters a lot.",
     updated: UPDATED,
-    cardImage: card("field-battery-under-seat"),
+    cardImage: { src: "/images/battery-install.webp", width: 612, height: 408 },
     sections: [
       {
         heading: "What AGM means",
@@ -750,7 +750,7 @@ export const GUIDES_BATTERY: Guide[] = [
     topic: "Battery guide",
     dek: "Every car draws a little power while parked, enough to keep the clock, the memory and the alarm alive. When the battery is dead by morning, either that draw has grown or the battery can no longer cover it.",
     updated: UPDATED,
-    cardImage: card("field-battery-under-seat-detail"),
+    cardImage: { src: "/images/battery-fit.webp", width: 612, height: 408 },
     sections: [
       {
         heading: "Normal draw versus a drain",
@@ -817,7 +817,7 @@ export const GUIDES_BATTERY: Guide[] = [
     topic: "Battery guide",
     dek: "The white, blue or green crust around the battery posts is more than a cosmetic problem. It can choke off the current the car needs to start, and sometimes it means the battery is seeping. It is also something you can often clean off yourself, carefully.",
     updated: UPDATED,
-    cardImage: card("field-battery-under-seat-detail"),
+    cardImage: { src: "/images/battery-handover.webp", width: 612, height: 408 },
     sections: [
       {
         heading: "What the crust is",
@@ -885,7 +885,7 @@ export const GUIDES_BATTERY: Guide[] = [
     topic: "Battery guide",
     dek: "Look at the label on a car battery and you will find a number like 24F, 35, 51R or 65. That is the group size, and it is the first thing that has to match when you replace a battery.",
     updated: UPDATED,
-    cardImage: card("field-battery-under-seat"),
+    cardImage: { src: "/images/battery-carry.webp", width: 612, height: 408 },
     sections: [
       {
         heading: "What the number covers",
@@ -1150,7 +1150,7 @@ export const GUIDES_BATTERY: Guide[] = [
     topic: "EV and hybrid guide",
     dek: "People assume the large hybrid battery does everything. It doesn't. A hybrid also carries an ordinary 12-volt battery, and when that one dies the car goes dark even though the big one may be fine.",
     updated: UPDATED,
-    cardImage: card("field-battery-under-seat"),
+    cardImage: { src: "/images/battery-test.webp", width: 612, height: 408 },
     sections: [
       {
         heading: "Two batteries, two jobs",

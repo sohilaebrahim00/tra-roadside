@@ -8,28 +8,23 @@ export interface ShareImage {
 }
 
 /**
- * Link-preview images, cut at 1200x630 from the business's own job photos.
+ * Link-preview image, cut at 1200x630 from a still of the business's own
+ * footage (the owner confirmed the rights on 2026-10-18).
  * JPEG rather than webp because some link unfurlers still reject webp. Paths
  * are relative and resolve against `metadataBase`, so they follow the
  * canonical www host like canonicals do.
  */
 export const DEFAULT_SHARE_IMAGE: ShareImage = {
-  url: "/images/og/og-default.jpg",
+  url: "/images/og/og-share.jpg",
   width: 1200,
   height: 630,
-  alt: "A compact spare tire, floor jack and impact wrench laid out beside a sedan's rear wheel in a parking lot.",
+  alt: "A technician in high-visibility workwear lifting a red jump pack out of the open rear hatch of a minivan in a parking lot.",
 };
 
-const BATTERY_SHARE_IMAGE: ShareImage = {
-  url: "/images/og/og-battery.jpg",
-  width: 1200,
-  height: 630,
-  alt: "A car battery set into the floor under the rear seat of a vehicle, with the seat cushion lifted.",
-};
-
-/** The share image for a service's pages: the battery photo for battery replacement, the default otherwise. */
+/** The share image for a service's pages. Every service uses the default for now. */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function shareImageFor(serviceSlug?: string): ShareImage {
-  return serviceSlug === "battery-replacement" ? BATTERY_SHARE_IMAGE : DEFAULT_SHARE_IMAGE;
+  return DEFAULT_SHARE_IMAGE;
 }
 
 /**

@@ -35,7 +35,7 @@ interface PlacesDetailsResponse {
   result?: { rating?: number; user_ratings_total?: number; reviews?: PlacesReview[] };
 }
 
-interface FrameReview {
+export interface FrameReview {
   author: string;
   rating: number;
   text: string;
@@ -94,7 +94,7 @@ function truncate(text: string): { shown: string; truncated: boolean } {
 }
 
 /** Stars derived from a real rating value, never a hardcoded count. */
-function Stars({ rating, size = "h-4 w-4" }: { rating: number; size?: string }) {
+export function Stars({ rating, size = "h-4 w-4" }: { rating: number; size?: string }) {
   const filled = Math.round(rating);
   return (
     <span className="flex items-center gap-0.5" role="img" aria-label={`${rating} out of 5 stars`}>
@@ -220,6 +220,9 @@ export async function GoogleReviewsSection() {
             <Button href={BUSINESS.googleReviewUrl} size="sm" className="sm:hidden" icon={<PenLine className="h-4 w-4" aria-hidden="true" />}>
               Write a review
             </Button>
+            <Button href="/reviews" size="sm" variant="outline">
+              Read all reviews
+            </Button>
             <Button href={BUSINESS.googleListingUrl} size="sm" variant="outline" icon={<ExternalLink className="h-4 w-4" aria-hidden="true" />}>
               See all on Google
             </Button>
@@ -230,7 +233,7 @@ export async function GoogleReviewsSection() {
   );
 }
 
-function ReviewCaption({ review }: { review: FrameReview }) {
+export function ReviewCaption({ review }: { review: FrameReview }) {
   return (
     <figcaption className="mt-4 flex items-center gap-3 border-t border-ink-950/8 pt-4">
       <span

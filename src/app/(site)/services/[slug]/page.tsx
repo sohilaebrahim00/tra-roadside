@@ -27,6 +27,8 @@ import { getServiceVideo } from "@/data/media-registry";
 import { PricingDisclaimer } from "@/components/ui/pricing-disclaimer";
 import { Icon3D } from "@/components/ui/icon-3d";
 import { PriceFigure } from "@/components/ui/price-figure";
+import { reviewsFor } from "@/lib/content/google-reviews";
+import { Stars, ReviewCaption } from "@/components/home/google-reviews-section";
 
 export function generateStaticParams() {
   return SERVICES.map((s) => ({ slug: s.slug }));
@@ -163,16 +165,47 @@ export default async function ServicePage({
             */}
             <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {service.photos.map((photo) => (
-                <li key={photo.src} className="overflow-hidden rounded-2xl border border-ink-950/8 dark:border-white/10">
-                  <Image
-                    src={photo.src}
-                    alt={photo.alt}
-                    width={photo.width}
-                    height={photo.height}
-                    loading="lazy"
-                    unoptimized
-                    className="h-auto w-full"
-                  />
+                <li key={photo.src} className="overflow-hidden rounded-2xl border border-ink-950/8 bg-white dark:border-white/10 dark:bg-white/5">
+                  <figure>
+                    <Image
+                      src={photo.src}
+                      alt={photo.alt}
+                      width={photo.width}
+                      height={photo.height}
+                      loading="lazy"
+                      unoptimized
+                      className="h-auto w-full"
+                    />
+                    {/* What the photo shows, in plain words: no invented
+                        customer, city or date. */}
+                    <figcaption className="px-4 py-3 text-sm leading-relaxed text-ink-600 dark:text-ink-300">{photo.alt}</figcaption>
+                  </figure>
+                </li>
+              ))}
+            </ul>
+          </Container>
+        </section>
+      )}
+
+      {reviewsFor(service.slug).length > 0 && (
+        <section aria-labelledby="service-reviews" className="border-b border-ink-950/8 py-12 sm:py-14 dark:border-white/10">
+          <Container>
+            <div className="flex flex-wrap items-end justify-between gap-3">
+              <h2 id="service-reviews" className="font-display text-2xl font-semibold text-ink-950 dark:text-white">
+                What customers said about this service
+              </h2>
+              <Link href="/reviews" className="text-sm font-semibold text-red-600 underline-offset-4 hover:underline">
+                All Google reviews
+              </Link>
+            </div>
+            <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {reviewsFor(service.slug).slice(0, 3).map((r) => (
+                <li key={r.author}>
+                  <figure className="flex h-full flex-col rounded-2xl border border-ink-950/10 bg-white p-5">
+                    <Stars rating={r.rating} />
+                    <blockquote className="mt-3 flex-1 text-[0.95rem] leading-relaxed text-ink-700">{r.text}</blockquote>
+                    <ReviewCaption review={{ author: r.author, rating: r.rating, text: r.text, moreUrl: r.excerpt ? BUSINESS.googleListingUrl : undefined }} />
+                  </figure>
                 </li>
               ))}
             </ul>

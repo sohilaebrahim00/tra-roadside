@@ -28,6 +28,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/how-it-works",
     "/about",
     "/gallery",
+    "/reviews",
     "/videos",
     // /blog is noindex while it has no articles, so it is listed only once
     // there is at least one published post to send a crawler to.

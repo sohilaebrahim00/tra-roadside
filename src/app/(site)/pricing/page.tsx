@@ -16,7 +16,7 @@ import { fitDescription } from "@/lib/seo";
 import { QuickAnswer } from "@/components/ui/quick-answer";
 import { ServiceCallSteps } from "@/components/ui/service-call-steps";
 import { PriceComparison } from "@/components/ui/price-comparison";
-import { BUSINESS } from "@/lib/content/business";
+import { BUSINESS, SERVICE_AREAS } from "@/lib/content/business";
 import { batteryReview } from "@/lib/content/google-reviews";
 import { guidesForService } from "@/lib/content/guides";
 import { env } from "@/lib/env";
@@ -45,6 +45,15 @@ export const metadata: Metadata = {
 };
 
 const tire = getService("tire-replacement");
+const SERVICE_COUNT = SERVICE_AREAS.length;
+
+/** Real job photos beside the price of the service they show. */
+const WORK = [
+  { slug: "flat-tire-change", src: "/images/tire-spare-lot.webp", w: 1200, h: 800, alt: "A compact spare, floor jack and impact wrench laid out beside a gray sedan in a parking lot." },
+  { slug: "battery-replacement", src: "/images/jobs/battery-tesla-frunk.webp", w: 1200, h: 900, alt: "A red Tesla with its front trunk open and a 12-volt battery set down on the ground beside it." },
+  { slug: "tire-repair-plug-patch", src: "/images/jobs/tire-plug-pliers.webp", w: 900, h: 1200, alt: "A plug being pressed into a puncture in the tread of a tire with pliers." },
+  { slug: "rim-lock-removal", src: "/images/jobs/impact-wrench-sockets.webp", w: 768, h: 512, alt: "An impact wrench and a row of sockets laid out for removing stuck lug nuts." },
+] as const;
 const jumpStart = getService("jump-start");
 const priceOf = (slug: Parameters<typeof getService>[0]) => {
   const svc = getService(slug);
@@ -76,6 +85,14 @@ const FAQS = [
   {
     q: "Will the battery fit my vehicle?",
     a: `${battery?.priceNote ?? ""} Tell us the year, make and model, or the VIN, when you request help.`,
+  },
+  {
+    q: "How do I pay?",
+    a: "In cash, to the technician. Dispatch confirms the total before a driver is sent, so you know the amount to have ready.",
+  },
+  {
+    q: "Is the price the same in every city you serve?",
+    a: `Yes. The prices on this page apply in all ${SERVICE_COUNT} Dallas–Fort Worth cities we serve, with the same ${DISPATCH_FEE_USD} dispatch fee once per job.`,
   },
   {
     q: "What do you need for a lockout?",
@@ -195,6 +212,11 @@ export default function PricingPage() {
               <li key={svc.slug} className="flex flex-col rounded-2xl border border-ink-950/10 bg-white p-6">
                 <h3 className="font-display text-xl font-semibold text-ink-950">{svc.name}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-ink-600">{svc.summary}</p>
+                {svc.priceCovers && (
+                  <p className="mt-2 text-sm leading-relaxed text-ink-700">
+                    <span className="font-semibold text-ink-950">The price covers:</span> {svc.priceCovers}
+                  </p>
+                )}
                 <PricePanel svc={svc} tone="dark" className="mt-5 flex-1" />
                 <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-3">
                   <Button href={`/request?service=${svc.slug}`} size="sm">
@@ -206,6 +228,38 @@ export default function PricingPage() {
                 </div>
               </li>
             ))}
+          </ul>
+        </Container>
+      </section>
+
+      <section className="border-t border-ink-950/8 bg-paper-50 py-14 sm:py-20" aria-labelledby="work-prices">
+        <Container>
+          <h2 id="work-prices" className="font-display text-2xl font-semibold text-ink-950 sm:text-3xl">
+            The work behind the prices
+          </h2>
+          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-ink-600">
+            Photos from our own jobs, each beside the published price of the service it shows.
+          </p>
+          <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {WORK.map((w) => {
+              const svc = getService(w.slug);
+              const line = svc && headlineLine(svc);
+              if (!svc || !line) return null;
+              return (
+                <li key={w.slug} className="overflow-hidden rounded-2xl border border-ink-950/10 bg-white">
+                  <figure>
+                    <Image src={w.src} alt={w.alt} width={w.w} height={w.h} sizes="(min-width: 1024px) 300px, (min-width: 640px) 50vw, 100vw" className="aspect-[4/3] w-full object-cover" />
+                    <figcaption className="p-4">
+                      <Link href={`/services/${svc.slug}`} className="font-display text-lg font-semibold text-ink-950 hover:text-red-600">
+                        {svc.name}
+                      </Link>
+                      <p className="mt-1 text-sm font-semibold text-red-600">{servicePrice(line)}</p>
+                      <p className="mt-2 text-sm leading-relaxed text-ink-600">{w.alt}</p>
+                    </figcaption>
+                  </figure>
+                </li>
+              );
+            })}
           </ul>
         </Container>
       </section>

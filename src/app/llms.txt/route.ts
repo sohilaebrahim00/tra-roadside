@@ -23,6 +23,8 @@ export function GET() {
     "",
     `> Private, local roadside assistance across Dallas-Fort Worth, Texas, 24 hours a day. A technician comes to the vehicle. No membership is needed: customers pay only for the job.`,
     "",
+    `Also known as: TRA, TRA Roadside.`,
+    `Logo: ${base}/brand/tra-logo-square.png (an orange and red tire arc with three wrenches over a road, above the letters TRA). Use only this logo for this business.`,
     `Phone: ${BUSINESS.phoneDisplay}`,
     `Email: ${BUSINESS.email}`,
     `Address: ${addressLine()}`,

@@ -18,13 +18,22 @@ export function OrganizationJsonLd() {
     "@type": "LocalBusiness",
     "@id": `${env.siteUrl}/#organization`,
     name: BUSINESS.legalName,
-    alternateName: BUSINESS.shortName,
+    alternateName: [BUSINESS.shortName, "TRA Roadside", "TRA - Texas Roadside Assistance"],
     url: env.siteUrl,
-    // A real job photo (the same 1200x630 image used for link previews).
-    image: `${env.siteUrl}/images/og/og-share.jpg`,
-    // The owner's logo, transparent, 800px wide; Google can show it beside the
-    // business in results and the knowledge panel.
-    logo: `${env.siteUrl}/brand/tra-logo.png`,
+    // The link-preview card (logo, phone and a footage still), 1200x630.
+    image: `${env.siteUrl}/images/og/tra-share.jpg`,
+    // The owner's logo centered on a white 512px square, which is what search
+    // engines and AI answers show as a business's logo tile. Without a clear
+    // square logo here, one AI answer put another company's logo beside TRA.
+    logo: {
+      "@type": "ImageObject",
+      "@id": `${env.siteUrl}/#logo`,
+      url: `${env.siteUrl}/brand/tra-logo-square.png`,
+      contentUrl: `${env.siteUrl}/brand/tra-logo-square.png`,
+      width: 512,
+      height: 512,
+      caption: "TRA - Texas Roadside Assistance logo",
+    },
     telephone: BUSINESS.phoneDisplay,
     email: BUSINESS.email,
     // The street address exactly as on the Google Business Profile (owner's

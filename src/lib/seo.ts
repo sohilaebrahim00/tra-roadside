@@ -8,17 +8,20 @@ export interface ShareImage {
 }
 
 /**
- * Link-preview image, cut at 1200x630 from a still of the business's own
- * footage (the owner confirmed the rights on 2026-10-18).
+ * Link-preview card, 1200x630: the TRA logo, phone and service line on the
+ * site's ink color, beside a still of the business's own footage (the owner
+ * confirmed the rights on 2026-10-18). Link previews and AI answers often
+ * take a business's picture from this image, so the logo is on it: without
+ * it, one AI answer showed another company's logo beside TRA (2026-11-19).
  * JPEG rather than webp because some link unfurlers still reject webp. Paths
  * are relative and resolve against `metadataBase`, so they follow the
  * canonical www host like canonicals do.
  */
 export const DEFAULT_SHARE_IMAGE: ShareImage = {
-  url: "/images/og/og-share.jpg",
+  url: "/images/og/tra-share.jpg",
   width: 1200,
   height: 630,
-  alt: "A technician in high-visibility workwear lifting a red jump pack out of the open rear hatch of a minivan in a parking lot.",
+  alt: "TRA, Texas Roadside Assistance: 24/7 roadside help across Dallas–Fort Worth, (945) 412-1215, beside a technician lifting a jump pack out of a minivan.",
 };
 
 /** The share image for a service's pages. Every service uses the default for now. */

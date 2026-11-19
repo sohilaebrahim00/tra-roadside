@@ -140,7 +140,15 @@ function DallasTime() {
       clearInterval(every);
     };
   }, []);
-  return time ? <span className="text-white/65">· {time} in Dallas</span> : null;
+  // The span is in the server HTML with a placeholder of the same length, kept
+  // invisible until the real time arrives, so the badge never changes size
+  // after load. When it appeared from nothing it wrapped the badge onto a
+  // second line on phones and pushed the whole hero down (CLS 0.2).
+  return (
+    <span className={time ? "text-white/65" : "invisible text-white/65"} aria-hidden={time ? undefined : true}>
+      · {time ?? "12:00 AM"} in Dallas
+    </span>
+  );
 }
 
 function Fact({ label, value, note, accent = false }: { label: string; value: React.ReactNode; note?: string; accent?: boolean }) {

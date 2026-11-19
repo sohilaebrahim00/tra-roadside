@@ -70,6 +70,12 @@ const nextConfig: NextConfig = {
         destination: "/service-areas/:city",
         statusCode: 301 as const,
       })),
+      // Words people and AI answers guess for the price page.
+      ...["/prices", "/price", "/rates", "/cost", "/costs", "/pricing-page"].map((source) => ({
+        source,
+        destination: "/pricing",
+        statusCode: 301 as const,
+      })),
     ];
   },
 };

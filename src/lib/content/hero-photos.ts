@@ -28,6 +28,7 @@ const POOLS: Record<HeroKind, string[]> = {
     P("battery-handover"),
   ],
   tire: [
+    P("tire-spare-lot"),
     P("jobs/flat-tire-black-sedan"),
     P("jobs/spare-change-black-sedan"),
     P("jobs/tire-change-white-car"),
@@ -56,6 +57,7 @@ const POOLS: Record<HeroKind, string[]> = {
     P("tire-shoulder-night"),
     P("jobs/battery-tesla-frunk"),
     P("jobs/tire-change-white-car"),
+    P("tire-spare-lot"),
   ],
 };
 

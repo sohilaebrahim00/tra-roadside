@@ -336,6 +336,12 @@ export const SERVICES: ServiceContent[] = [
     // photo was blurred before export.
     photos: [
       {
+        src: "/images/tire-spare-lot.webp",
+        alt: "A gray sedan in a parking space with a compact spare tire on the ground, a floor jack, a cordless impact wrench and a tool bag laid out beside its rear wheel.",
+        width: 1200,
+        height: 800,
+      },
+      {
         src: "/images/tire-shoulder-night.webp",
         alt: "A silver SUV on a freeway shoulder at night with its rear wheel removed and a floor jack under the body, beside a striped roadside barrier.",
         width: 1200,

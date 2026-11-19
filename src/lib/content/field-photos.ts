@@ -9,8 +9,10 @@ import type { ServiceTypeSlug } from "@/lib/types/domain";
  * dealer frame on the freeway-shoulder SUV were pixelated before export, and
  * the files carry no EXIF or location data. A fifth supplied photo was left
  * out: it is a crop of the same footage as field-jump-start-booster.webp.
- * The battery, wheel lock and spare-in-a-lot photos were removed on
- * 2026-11-18: another company publishes the same pictures as its own.
+ * The battery and wheel lock photos were removed on 2026-11-18: another
+ * company publishes the same pictures as its own. The spare-in-a-lot photo
+ * is also on that company's site, but the owner shot it (June 28, 2026, on
+ * his phone) and it went back up on 2026-11-19.
  *
  * PROVENANCE — FOOTAGE STILLS (every other group)
  * Each frame was pulled from a clip in /media-source — the same footage the
@@ -53,7 +55,7 @@ export const FIELD_PHOTO_GROUPS: FieldPhotoGroup[] = [
   {
     id: "tire-roadside",
     title: "Flat tires, wherever they happen",
-    caption: "A freeway shoulder after dark or a street in daylight: the car goes up on a floor jack from a solid lifting point, right where it stopped.",
+    caption: "A freeway shoulder after dark or a parking lot in daylight: the spare goes on where the car stopped.",
     service: "flat-tire-change",
     photos: [
       {
@@ -63,10 +65,10 @@ export const FIELD_PHOTO_GROUPS: FieldPhotoGroup[] = [
         height: H,
       },
       {
-        src: "/images/field/field-tire-jack.webp",
-        alt: "A technician kneeling beside a black sedan, positioning a red and black floor jack under the car next to its wheel.",
-        width: W,
-        height: H,
+        src: "/images/field/field-tire-spare-lot.webp",
+        alt: "A gray sedan in a parking space with a compact spare tire on the ground, a floor jack and a cordless impact wrench beside its rear wheel.",
+        width: 960,
+        height: 1200,
       },
     ],
   },
@@ -105,6 +107,26 @@ export const FIELD_PHOTO_GROUPS: FieldPhotoGroup[] = [
       {
         src: "/images/field/field-jump-start-hood.webp",
         alt: "A technician in high-visibility workwear raising the hood of a blue sedan in a parking lot, with a red jump pack on the ground beside the car.",
+        width: W,
+        height: H,
+      },
+    ],
+  },
+  {
+    id: "tire",
+    title: "Tire service",
+    caption: "The car goes up on a floor jack from a solid lifting point before a wheel comes off.",
+    service: "flat-tire-change",
+    photos: [
+      {
+        src: "/images/field/field-tire-jack.webp",
+        alt: "A technician kneeling beside a black sedan, positioning a red and black floor jack under the car next to its wheel.",
+        width: W,
+        height: H,
+      },
+      {
+        src: "/images/field/field-tire-wheel.webp",
+        alt: "Close-up of a floor jack set under a black sedan beside its alloy wheel.",
         width: W,
         height: H,
       },

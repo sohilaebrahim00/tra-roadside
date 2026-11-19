@@ -55,6 +55,20 @@ export default function AboutPage() {
         </Container>
       </section>
 
+      <section className="border-t border-ink-950/8 bg-paper-50 py-12 sm:py-16">
+        <Container size="narrow">
+          <h2 className="font-display text-2xl font-semibold text-ink-950">Our battery service: {BUSINESS.batteryService.name}</h2>
+          <p className="mt-3 leading-relaxed text-ink-600">
+            Batteries have a site of their own.{" "}
+            <a href={BUSINESS.batteryService.url} className="font-semibold text-red-600 underline-offset-4 hover:underline">
+              {BUSINESS.batteryService.name}
+            </a>{" "}
+            is run by {BUSINESS.legalName} and installed by the same technicians: every battery we carry, the exact fit for your
+            vehicle by year, make and model or VIN, and the installed price. For everything else on the road, this is the place.
+          </p>
+        </Container>
+      </section>
+
       <AboutStorySection />
 
       <section className="border-t border-ink-950/8 bg-white py-16 text-center">

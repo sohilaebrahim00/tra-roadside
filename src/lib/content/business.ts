@@ -40,6 +40,12 @@ export const BUSINESS = {
   geo: { latitude: 32.869322, longitude: -96.711846 },
   googleListingUrl: "https://maps.app.goo.gl/jArUadnLNCMviYTTA",
   /**
+   * TRA's battery service, run by the same company on its own site
+   * (owner, 2026-11-19). Linked where a driver would want it and named as a
+   * subOrganization in the business markup.
+   */
+  batteryService: { name: "Texas Battery Replacement", url: "https://texasbatteryreplacement.com/" },
+  /**
    * Opens Google's write-a-review box directly.
    *
    * NOT the only copy of this URL. The same literal is hardcoded in two other

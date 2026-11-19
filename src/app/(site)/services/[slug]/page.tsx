@@ -219,6 +219,13 @@ export default async function ServicePage({
             <div>
               <h2 className="font-display text-2xl font-semibold text-ink-950">Which battery fits your car?</h2>
               <p className="mt-1 text-sm text-ink-600">Pick your vehicle or enter your VIN to see its battery size.</p>
+              <p className="mt-2 max-w-2xl text-sm text-ink-600">
+                Want a specific battery, such as a Duralast Gold or a Platinum AGM?{" "}
+                <a href={BUSINESS.batteryService.url} className="font-semibold text-red-600 underline-offset-4 hover:underline">
+                  {BUSINESS.batteryService.name}
+                </a>
+                , our battery service, lists every one with its installed price.
+              </p>
             </div>
             <Button href="/battery-finder" variant="dark" size="md">
               Open the Battery Finder

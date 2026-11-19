@@ -36,6 +36,8 @@ export function OrganizationJsonLd() {
     },
     telephone: BUSINESS.phoneDisplay,
     email: BUSINESS.email,
+    // The battery service is the same company on its own site.
+    subOrganization: { "@type": "AutomotiveBusiness", name: BUSINESS.batteryService.name, url: BUSINESS.batteryService.url },
     // The street address exactly as on the Google Business Profile (owner's
     // decision, 2026-10-19), so the site and the listing agree. No geo
     // coordinates: Google places the business from this address, and the old

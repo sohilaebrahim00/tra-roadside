@@ -15,7 +15,7 @@ import { HeroBackdrop } from "@/components/brand/hero-backdrop";
 import { heroPhoto } from "@/lib/content/hero-photos";
 
 export const metadata: Metadata = {
-  title: "Videos",
+  title: "Roadside Help Videos: Jump Starts, Tires, Lockouts",
   description: "Watch TRA roadside assistance in action across the Dallas–Fort Worth Metroplex.",
   ...pageUrls("/videos"),
 };

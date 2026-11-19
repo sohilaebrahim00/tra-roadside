@@ -6,7 +6,7 @@ import { BUSINESS } from "@/lib/content/business";
 export const metadata: Metadata = {
   title: "Terms and Conditions",
   description:
-    "The terms for requesting roadside assistance from Texas Roadside Assistance LLC, covering service requests, pricing, cancellations, request status links and liability.",
+    "The terms for requesting roadside assistance from Texas Roadside Assistance LLC: service requests, pricing, cancellations, status links and liability.",
   robots: { index: true, follow: true },
   ...pageUrls("/terms"),
 };

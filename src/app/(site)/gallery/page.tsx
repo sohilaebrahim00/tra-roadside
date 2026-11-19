@@ -18,7 +18,7 @@ import { HeroBackdrop } from "@/components/brand/hero-backdrop";
 import { heroPhoto } from "@/lib/content/hero-photos";
 
 export const metadata: Metadata = {
-  title: "Gallery",
+  title: "Roadside Job Photos from Dallas–Fort Worth",
   description:
     "Photos of TRA at work across the Dallas–Fort Worth Metroplex: battery replacement, flat tires, jump starts and the gear our drivers carry.",
   ...pageUrls("/gallery"),

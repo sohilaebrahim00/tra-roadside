@@ -12,7 +12,7 @@ import { BUSINESS, addressLine } from "@/lib/content/business";
 import { env } from "@/lib/env";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Contact TRA: Call or Text for Roadside Help 24/7",
   description: "Contact TRA — 24/7 roadside assistance dispatch for the Dallas–Fort Worth Metroplex.",
   ...pageUrls("/contact"),
 };

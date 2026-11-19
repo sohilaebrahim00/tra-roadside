@@ -14,7 +14,7 @@ import { BUSINESS } from "@/lib/content/business";
 import { env } from "@/lib/env";
 
 export const metadata: Metadata = {
-  title: "Customer Reviews",
+  title: `TRA Reviews: ${REVIEW_SNAPSHOT.rating.toFixed(1)} Stars from DFW Drivers`,
   description: `What Dallas–Fort Worth drivers say about TRA roadside assistance: ${REVIEW_SNAPSHOT.rating.toFixed(1)} stars from ${REVIEW_SNAPSHOT.total} Google reviews, word for word.`,
   ...pageUrls("/reviews"),
 };

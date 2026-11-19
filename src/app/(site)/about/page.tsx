@@ -12,7 +12,7 @@ import { HeroBackdrop } from "@/components/brand/hero-backdrop";
 import { heroPhoto } from "@/lib/content/hero-photos";
 
 export const metadata: Metadata = {
-  title: "About TRA",
+  title: "About TRA: 24/7 Roadside Help in Dallas–Fort Worth",
   description: "TRA is a Dallas–Fort Worth based roadside assistance company providing 24/7 jump starts, battery replacement, tire service, lockouts and more, with no membership.",
   ...pageUrls("/about"),
 };

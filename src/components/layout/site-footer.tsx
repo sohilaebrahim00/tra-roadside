@@ -145,6 +145,7 @@ export function SiteFooter() {
             <li><Link href="/guides" className="hover:text-white">Battery &amp; Roadside Guides</Link></li>
             <li><Link href="/es" lang="es" className="hover:text-white">En español</Link></li>
             <li><Link href="/gallery" className="hover:text-white">Gallery</Link></li>
+            <li><Link href="/reviews" className="hover:text-white">Reviews</Link></li>
             <li><Link href="/videos" className="hover:text-white">Videos</Link></li>
             <li><Link href="/blog" className="hover:text-white">Blog</Link></li>
             <li><Link href="/faq" className="hover:text-white">FAQs</Link></li>

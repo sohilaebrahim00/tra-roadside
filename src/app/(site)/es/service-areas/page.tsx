@@ -4,6 +4,7 @@ import { MapPin } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { HeroBackdrop } from "@/components/brand/hero-backdrop";
+import { heroPhoto } from "@/lib/content/hero-photos";
 import { BUSINESS, SERVICE_AREAS } from "@/lib/content/business";
 import { getCiudadEs } from "@/lib/content/es/ciudades";
 import { bilingualUrls, fitDescription } from "@/lib/seo";
@@ -31,7 +32,7 @@ export default function CiudadesPage() {
         ]}
       />
       <section className="relative isolate overflow-hidden border-b border-ink-950/8 bg-ink-950 py-14 text-white sm:py-20">
-        <HeroBackdrop />
+        <HeroBackdrop photo={heroPhoto("/es/service-areas")} />
         <Container className="relative z-10">
           <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-400">
             <MapPin className="h-3.5 w-3.5" aria-hidden="true" /> Áreas de servicio

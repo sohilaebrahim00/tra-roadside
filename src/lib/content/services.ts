@@ -476,6 +476,22 @@ export const SERVICES: ServiceContent[] = [
     // Not in the 2026-11-03 brief: the price stays, plus the dispatch fee.
     priceLines: [{ min: 70 }],
     priceCovers: "Removing the wheel lock so the wheel can come off.",
+    // Job photos (owner, 2026-11-19): the tools that take a locked or seized
+    // lug nut off.
+    photos: [
+      {
+        src: "/images/jobs/impact-wrench-sockets.webp",
+        alt: "An impact wrench and a row of sockets laid out for removing stuck lug nuts.",
+        width: 768,
+        height: 512,
+      },
+      {
+        src: "/images/tire-spare-lugs.webp",
+        alt: "A gloved hand running a cordless impact wrench on the lug nuts of a steel spare wheel.",
+        width: 1200,
+        height: 800,
+      },
+    ],
     summary: "A seized or keyless wheel lock removed so the wheel can come off.",
     heroLine: "A wheel lock shouldn't strand you.",
     problem:
@@ -509,6 +525,21 @@ export const SERVICES: ServiceContent[] = [
     priceLines: [{ min: 55 }],
     priceCovers: "Getting the damaged lug nut off so the wheel can come off.",
     priceNote: "If several nuts are damaged, dispatch confirms the price before a driver is sent.",
+    // Job photos (owner, 2026-11-19).
+    photos: [
+      {
+        src: "/images/jobs/impact-wrench-sockets.webp",
+        alt: "An impact wrench and a row of sockets laid out for removing stuck lug nuts.",
+        width: 768,
+        height: 512,
+      },
+      {
+        src: "/images/tire-spare-lugs.webp",
+        alt: "A gloved hand running a cordless impact wrench on the lug nuts of a steel spare wheel.",
+        width: 1200,
+        height: 800,
+      },
+    ],
     summary: "A stripped, rounded or seized lug nut taken off so the wheel can come off.",
     heroLine: "One bad lug nut shouldn't stop a tire change.",
     problem:

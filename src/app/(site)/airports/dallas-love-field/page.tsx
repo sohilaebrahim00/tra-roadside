@@ -14,6 +14,7 @@ import { env } from "@/lib/env";
 import { DEFAULT_SHARE_IMAGE } from "@/lib/seo";
 import { Icon3D } from "@/components/ui/icon-3d";
 import { HeroBackdrop } from "@/components/brand/hero-backdrop";
+import { heroPhoto } from "@/lib/content/hero-photos";
 import { priceBadge, priceSummary } from "@/lib/content/pricing";
 import { PriceFigure } from "@/components/ui/price-figure";
 
@@ -136,7 +137,7 @@ export default function DallasLoveFieldPage() {
 
       {/* ---------------- Hero ---------------- */}
       <section className="relative isolate overflow-hidden border-b border-ink-950/8 bg-ink-950 py-14 text-white sm:py-20">
-        <HeroBackdrop />
+        <HeroBackdrop photo={heroPhoto("/airports/dallas-love-field")} />
         <Container>
           <p className="text-xs font-semibold uppercase tracking-widest text-red-400">
             <Link href="/service-areas" className="hover:underline">Service Areas</Link>

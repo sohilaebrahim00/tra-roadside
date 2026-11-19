@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { getBlogPosts } from "@/lib/data/blog";
 import { env } from "@/lib/env";
 import { HeroBackdrop } from "@/components/brand/hero-backdrop";
+import { heroPhoto } from "@/lib/content/hero-photos";
 
 export async function generateMetadata(): Promise<Metadata> {
   const posts = await getBlogPosts();
@@ -29,7 +30,7 @@ export default async function BlogIndexPage() {
     <>
       <BreadcrumbJsonLd items={[{ name: "Home", url: env.siteUrl }, { name: "Blog", url: `${env.siteUrl}/blog` }]} />
       <section className="relative isolate overflow-hidden border-b border-ink-950/8 bg-ink-950 py-16 text-white sm:py-20">
-        <HeroBackdrop />
+        <HeroBackdrop photo={heroPhoto("/blog")} />
         <Container>
           <SectionHeading as="h1" eyebrow="From TRA" title="Roadside safety & driving tips" tone="light" />
         </Container>

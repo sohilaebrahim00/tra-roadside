@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/container";
 import { RequestWizard } from "@/components/request/request-wizard";
 import { SERVICE_TYPE_SLUGS } from "@/lib/types/domain";
 import { HeroBackdrop } from "@/components/brand/hero-backdrop";
+import { heroPhoto } from "@/lib/content/hero-photos";
 
 export const metadata: Metadata = {
   title: "Request Roadside Help",
@@ -25,7 +26,7 @@ export default async function RequestPage({
       {/* A slim branded band above the form. Plain text, not a heading: each
           wizard step carries the page's heading itself. */}
       <div className="relative isolate overflow-hidden bg-ink-950 pt-8 pb-16 text-white sm:pt-10 sm:pb-20">
-        <HeroBackdrop />
+        <HeroBackdrop photo={heroPhoto("/request")} />
         <Container size="narrow">
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-red-400">24/7 roadside dispatch</p>
           <p className="mt-2 font-display text-3xl font-bold uppercase tracking-tight sm:text-4xl">Request roadside help</p>

@@ -9,6 +9,7 @@ import { PricePanel } from "@/components/city-service/price-panel";
 import { ServiceCallSteps } from "@/components/ui/service-call-steps";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd } from "@/components/seo/json-ld";
 import { HeroBackdrop } from "@/components/brand/hero-backdrop";
+import { heroPhoto, serviceKind } from "@/lib/content/hero-photos";
 import { BUSINESS, SERVICE_AREAS } from "@/lib/content/business";
 import { getService } from "@/lib/content/services";
 import { fillPrices } from "@/lib/content/price-tokens";
@@ -65,7 +66,7 @@ export default async function TopicPageRoute({ params }: { params: Promise<{ slu
       {faqs.length > 0 && <FaqJsonLd items={faqs} />}
 
       <section className="relative isolate overflow-hidden border-b border-ink-950/8 bg-ink-950 py-14 text-white sm:py-20">
-        <HeroBackdrop />
+        <HeroBackdrop photo={heroPhoto(topic.slug, serviceKind(svc.slug))} />
         <Container className="relative z-10 grid gap-8 lg:grid-cols-[1.1fr_minmax(0,26rem)] lg:items-center">
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-red-400">{topic.eyebrow}</p>

@@ -16,6 +16,7 @@ import { locationHubsForCity } from "@/lib/content/location-hubs";
 import { env } from "@/lib/env";
 import { Icon3D } from "@/components/ui/icon-3d";
 import { HeroBackdrop } from "@/components/brand/hero-backdrop";
+import { heroPhoto } from "@/lib/content/hero-photos";
 import { pricedTitle, startingPrice } from "@/lib/content/pricing";
 import { cityAnswer, pricesShort } from "@/lib/content/quick-answers";
 import { fitDescription } from "@/lib/seo";
@@ -73,7 +74,7 @@ export default async function ServiceAreaPage({
         ]}
       />
       <section className="relative isolate overflow-hidden border-b border-ink-950/8 bg-ink-950 py-16 text-white sm:py-20">
-        <HeroBackdrop />
+        <HeroBackdrop photo={heroPhoto(slug)} />
         <Container>
           <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-400">
             <MapPin className="h-3.5 w-3.5" aria-hidden="true" /> Service Area

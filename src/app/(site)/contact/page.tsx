@@ -7,6 +7,7 @@ import { Icon3D } from "@/components/ui/icon-3d";
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { ContactForm } from "@/components/contact/contact-form";
 import { HeroBackdrop } from "@/components/brand/hero-backdrop";
+import { heroPhoto } from "@/lib/content/hero-photos";
 import { BUSINESS, addressLine } from "@/lib/content/business";
 import { env } from "@/lib/env";
 
@@ -22,7 +23,7 @@ export default function ContactPage() {
       <BreadcrumbJsonLd items={[{ name: "Home", url: env.siteUrl }, { name: "Contact", url: `${env.siteUrl}/contact` }]} />
 
       <section className="relative isolate overflow-hidden border-b border-ink-950/8 bg-ink-950 py-14 text-white sm:py-20">
-        <HeroBackdrop />
+        <HeroBackdrop photo={heroPhoto("/contact")} />
         <Container>
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-red-400">Contact</p>
           <h1 className="mt-3 font-display text-4xl font-bold uppercase tracking-tight sm:text-5xl">Contact TRA</h1>

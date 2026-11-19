@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { FaqAccordion } from "@/components/faq/faq-accordion";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { HeroBackdrop } from "@/components/brand/hero-backdrop";
+import { heroPhoto } from "@/lib/content/hero-photos";
 import { BUSINESS, SERVICE_AREAS } from "@/lib/content/business";
 import { DISPATCH_FEE_USD, pricedTitle, startingPrice } from "@/lib/content/pricing";
 import { listaDePrecios, nombreServicio, preguntasFrecuentes } from "@/lib/content/spanish";
@@ -34,7 +35,7 @@ export default function SpanishPage() {
       <FaqJsonLd items={faqs} />
 
       <section className="relative isolate overflow-hidden border-b border-ink-950/8 bg-ink-950 py-14 text-white sm:py-20">
-        <HeroBackdrop />
+        <HeroBackdrop photo={heroPhoto("/es")} />
         <Container className="relative z-10">
           <p className="text-xs font-semibold uppercase tracking-widest text-red-400">En español</p>
           <h1 className="mt-2 max-w-3xl font-display text-3xl font-bold uppercase tracking-tight sm:text-5xl">Asistencia en carretera 24 horas en Dallas y Fort Worth</h1>

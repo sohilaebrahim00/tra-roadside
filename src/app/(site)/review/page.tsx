@@ -21,6 +21,16 @@ export default function ReviewPage() {
   return (
     <section className="py-14 sm:py-20">
       <Container size="narrow" className="max-w-md text-center">
+        {/* A short strip of one of our job photos, kept low so the QR code
+            still shows without scrolling on a phone. */}
+        <Image
+          src="/images/jobs/jump-pack-compressor.webp"
+          alt=""
+          width={602}
+          height={1200}
+          sizes="(min-width: 448px) 448px, 100vw"
+          className="mb-6 aspect-[5/2] w-full rounded-2xl object-cover object-[50%_40%]"
+        />
         <span className="flex justify-center gap-1" aria-hidden="true">
           {Array.from({ length: 5 }, (_, i) => (
             <Star key={i} className="h-7 w-7 fill-amber-400 text-amber-400" />

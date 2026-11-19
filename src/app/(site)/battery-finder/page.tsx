@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { HeroBackdrop } from "@/components/brand/hero-backdrop";
+import { heroPhoto } from "@/lib/content/hero-photos";
 import { BatteryFinder } from "@/components/battery-finder/battery-finder";
 import { getService } from "@/lib/content/services";
 import { lowPrice, pricedTitle, withFeeTag } from "@/lib/content/pricing";
@@ -23,7 +24,7 @@ export default function BatteryFinderPage() {
     <>
       <BreadcrumbJsonLd items={[{ name: "Home", url: env.siteUrl }, { name: "Battery Finder", url: `${env.siteUrl}/battery-finder` }]} />
       <section className="relative isolate overflow-hidden border-b border-ink-950/8 bg-ink-950 py-14 text-white sm:py-20">
-        <HeroBackdrop />
+        <HeroBackdrop photo={heroPhoto("/battery-finder", "battery")} />
         <Container>
           <SectionHeading as="h1" eyebrow="Battery finder" title="Which battery fits your car?" description="Pick your vehicle or enter your VIN to see its battery size, then have it installed where you're parked." tone="light" />
         </Container>

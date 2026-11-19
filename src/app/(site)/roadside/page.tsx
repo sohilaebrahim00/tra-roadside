@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { HeroBackdrop } from "@/components/brand/hero-backdrop";
+import { heroPhoto } from "@/lib/content/hero-photos";
 import { TOPIC_PAGES, type TopicKind } from "@/lib/content/topic-pages";
 import { pricedTitle, startingPrice } from "@/lib/content/pricing";
 import { env } from "@/lib/env";
@@ -28,7 +29,7 @@ export default function RoadsideIndexPage() {
     <>
       <BreadcrumbJsonLd items={[{ name: "Home", url: env.siteUrl }, { name: "Roadside Help", url: `${env.siteUrl}/roadside` }]} />
       <section className="relative isolate overflow-hidden border-b border-ink-950/8 bg-ink-950 py-16 text-white sm:py-20">
-        <HeroBackdrop />
+        <HeroBackdrop photo={heroPhoto("/roadside")} />
         <Container>
           <SectionHeading as="h1" eyebrow="Roadside help" title="Find your situation" description="What to do right now, what it costs, and how to get a driver to you." tone="light" />
         </Container>

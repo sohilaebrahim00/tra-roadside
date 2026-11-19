@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { BUSINESS } from "@/lib/content/business";
 import { env } from "@/lib/env";
 import { HeroBackdrop } from "@/components/brand/hero-backdrop";
+import { heroPhoto } from "@/lib/content/hero-photos";
 
 export const metadata: Metadata = {
   title: "How It Works",
@@ -48,7 +49,7 @@ export default function HowItWorksPage() {
     <>
       <BreadcrumbJsonLd items={[{ name: "Home", url: env.siteUrl }, { name: "How It Works", url: `${env.siteUrl}/how-it-works` }]} />
       <section className="relative isolate overflow-hidden border-b border-ink-950/8 bg-ink-950 py-16 text-white sm:py-20">
-        <HeroBackdrop />
+        <HeroBackdrop photo={heroPhoto("/how-it-works")} />
         <Container>
           <SectionHeading
             as="h1"

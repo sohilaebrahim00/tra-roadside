@@ -7,6 +7,7 @@ import { FaqPageClient } from "@/components/faq/faq-page-client";
 import { getFaqs } from "@/lib/data/faqs";
 import { env } from "@/lib/env";
 import { HeroBackdrop } from "@/components/brand/hero-backdrop";
+import { heroPhoto } from "@/lib/content/hero-photos";
 
 export const metadata: Metadata = {
   title: "FAQs",
@@ -23,7 +24,7 @@ export default async function FaqPage() {
       <FaqJsonLd items={faqs.map((f) => ({ q: f.question, a: f.answer }))} />
 
       <section className="relative isolate overflow-hidden border-b border-ink-950/8 bg-ink-950 py-16 text-white sm:py-20">
-        <HeroBackdrop />
+        <HeroBackdrop photo={heroPhoto("/faq")} />
         <Container>
           <SectionHeading as="h1" eyebrow="Questions" title="Frequently asked questions" tone="light" />
         </Container>

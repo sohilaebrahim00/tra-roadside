@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { FaqAccordion } from "@/components/faq/faq-accordion";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { HeroBackdrop } from "@/components/brand/hero-backdrop";
+import { heroPhoto, serviceKind } from "@/lib/content/hero-photos";
 import { PriceFigure } from "@/components/ui/price-figure";
 import { BUSINESS, SERVICE_AREAS } from "@/lib/content/business";
 import { SERVICES, getService } from "@/lib/content/services";
@@ -67,7 +68,7 @@ export default async function ServicioPage({ params }: { params: Promise<{ slug:
       {es.preguntas.length > 0 && <FaqJsonLd items={es.preguntas} />}
 
       <section className="relative isolate overflow-hidden border-b border-ink-950/8 bg-ink-950 py-14 text-white sm:py-20">
-        <HeroBackdrop />
+        <HeroBackdrop photo={heroPhoto(slug, serviceKind(slug))} />
         <Container className="relative z-10">
           <p className="text-xs font-semibold uppercase tracking-widest text-red-400">
             <Link href="/es" className="hover:text-red-300">Asistencia en carretera</Link> · Servicio

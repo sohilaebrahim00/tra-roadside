@@ -15,6 +15,7 @@ import { BUSINESS } from "@/lib/content/business";
 import { env } from "@/lib/env";
 import { pageUrls, shareImageFor } from "@/lib/seo";
 import { HeroBackdrop } from "@/components/brand/hero-backdrop";
+import { heroPhoto, serviceKind } from "@/lib/content/hero-photos";
 
 /**
  * One guide, rendered from src/lib/content/guides.ts. Every price in the copy
@@ -72,7 +73,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
       <FaqJsonLd items={faqs} />
 
       <section className="relative isolate overflow-hidden border-b border-ink-950/8 bg-ink-950 py-14 text-white sm:py-18">
-        <HeroBackdrop />
+        <HeroBackdrop photo={heroPhoto(guide.slug, serviceKind(guide.services[0]))} />
         <Container size="narrow" className="max-w-3xl">
           <nav aria-label="Breadcrumb" className="text-sm text-white/60">
             <Link href="/guides" className="hover:text-white">Guides</Link>

@@ -9,6 +9,7 @@ import { BUSINESS, SERVICE_AREAS } from "@/lib/content/business";
 import { env } from "@/lib/env";
 import { AboutStorySection } from "@/components/about/about-story-section";
 import { HeroBackdrop } from "@/components/brand/hero-backdrop";
+import { heroPhoto } from "@/lib/content/hero-photos";
 
 export const metadata: Metadata = {
   title: "About TRA",
@@ -28,7 +29,7 @@ export default function AboutPage() {
     <>
       <BreadcrumbJsonLd items={[{ name: "Home", url: env.siteUrl }, { name: "About", url: `${env.siteUrl}/about` }]} />
       <section className="relative isolate overflow-hidden border-b border-ink-950/8 bg-ink-950 py-16 text-white sm:py-20">
-        <HeroBackdrop />
+        <HeroBackdrop photo={heroPhoto("/about")} />
         <Container>
           <SectionHeading
             as="h1"

@@ -22,6 +22,7 @@ import { guidesForService } from "@/lib/content/guides";
 import { env } from "@/lib/env";
 import { pageUrls, shareImageFor } from "@/lib/seo";
 import { HeroBackdrop } from "@/components/brand/hero-backdrop";
+import { heroPhoto } from "@/lib/content/hero-photos";
 
 /**
  * Every published price on one page. Nothing here is typed in: each figure,
@@ -93,7 +94,7 @@ export default function PricingPage() {
       <FaqJsonLd items={FAQS} />
 
       <section className="relative isolate overflow-hidden border-b border-ink-950/8 bg-ink-950 py-16 text-white sm:py-20">
-        <HeroBackdrop />
+        <HeroBackdrop photo={heroPhoto("/pricing")} />
         <Container>
           <SectionHeading
             as="h1"

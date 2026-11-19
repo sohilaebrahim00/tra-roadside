@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
 import { HeroBackdrop } from "@/components/brand/hero-backdrop";
+import { heroPhoto } from "@/lib/content/hero-photos";
 import { GLOSSARY } from "@/lib/content/glossary";
 import { getService } from "@/lib/content/services";
 import { fillPrices } from "@/lib/content/price-tokens";
@@ -32,7 +33,7 @@ export default function GlossaryPage() {
       <BreadcrumbJsonLd items={[{ name: "Home", url: env.siteUrl }, { name: "Glossary", url: `${env.siteUrl}/glossary` }]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
       <section className="relative isolate overflow-hidden border-b border-ink-950/8 bg-ink-950 py-16 text-white sm:py-20">
-        <HeroBackdrop />
+        <HeroBackdrop photo={heroPhoto("/glossary", "tire")} />
         <Container>
           <SectionHeading as="h1" eyebrow="Glossary" title="Roadside words, in plain English" description="What the terms on a battery, a tire or a roadside bill mean." tone="light" />
         </Container>

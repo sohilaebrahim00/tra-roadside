@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { FaqAccordion } from "@/components/faq/faq-accordion";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/json-ld";
 import { HeroBackdrop } from "@/components/brand/hero-backdrop";
+import { heroPhoto } from "@/lib/content/hero-photos";
 import { PriceFigure } from "@/components/ui/price-figure";
 import { Icon3D } from "@/components/ui/icon-3d";
 import { BUSINESS, SERVICE_AREAS, getServiceArea } from "@/lib/content/business";
@@ -68,7 +69,7 @@ export default async function CiudadPage({ params }: { params: Promise<{ slug: s
       {hub.faqs.length > 0 && <FaqJsonLd items={hub.faqs} />}
 
       <section className="relative isolate overflow-hidden border-b border-ink-950/8 bg-ink-950 py-14 text-white sm:py-20">
-        <HeroBackdrop />
+        <HeroBackdrop photo={heroPhoto(slug)} />
         <Container className="relative z-10">
           <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-red-400">
             <MapPin className="h-3.5 w-3.5" aria-hidden="true" /> Área de servicio

@@ -12,6 +12,7 @@ import { YoutubeIcon } from "@/components/brand/social-icons";
 import { BUSINESS } from "@/lib/content/business";
 import { env } from "@/lib/env";
 import { HeroBackdrop } from "@/components/brand/hero-backdrop";
+import { heroPhoto } from "@/lib/content/hero-photos";
 
 export const metadata: Metadata = {
   title: "Videos",
@@ -37,7 +38,7 @@ export default async function VideosPage() {
     <>
       <BreadcrumbJsonLd items={[{ name: "Home", url: env.siteUrl }, { name: "Videos", url: `${env.siteUrl}/videos` }]} />
       <section className="relative isolate overflow-hidden border-b border-ink-950/8 bg-ink-950 py-16 text-white sm:py-20">
-        <HeroBackdrop />
+        <HeroBackdrop photo={heroPhoto("/videos")} />
         <Container>
           <SectionHeading as="h1" eyebrow="Watch" title="See TRA in action" tone="light" />
         </Container>

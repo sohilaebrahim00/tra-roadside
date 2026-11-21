@@ -92,7 +92,7 @@ const WRITTEN_FIRST: CityServiceContent[] = [
   {
     city: "dallas",
     service: "jump-start",
-    h1: "Jump Start Service in Dallas, TX",
+    h1: "Jump Start Help in Dallas, TX",
     title: "Jump Start Service Dallas TX",
     metaDescription:
       "Car won't start in Dallas? TRA brings a jump start to you on US-75, I-35E, the Tollway or wherever you're parked. Local DFW dispatch, 24/7. Call now.",
@@ -171,7 +171,7 @@ const WRITTEN_FIRST: CityServiceContent[] = [
     metaDescription:
       "Flat tire in Dallas? If you have a usable spare, TRA puts it on where you are and gets you moving. Freeway shoulders, garages and side streets across the city.",
     intro:
-      "If there is a serviceable spare in the vehicle, changing a flat at the roadside is usually the quickest way out of the situation. A driver comes to you, puts on the spare properly and torques it, and you drive on. No tow, and no changing a wheel yourself on the edge of a live traffic lane.",
+      "If there is a serviceable spare in the vehicle, changing a flat at the roadside is usually the quickest way out of the situation. A driver comes to you, puts on the spare properly and torques it, and you drive on. No tow, and no changing a wheel yourself on the edge of a travel lane.",
     scenarios: [
       "A blowout on a freeway shoulder where getting out of the car is the dangerous part.",
       "A flat found in a parking garage at the end of the working day.",
@@ -227,7 +227,7 @@ const WRITTEN_FIRST: CityServiceContent[] = [
       "Dallas drivers cover a lot of freeway miles. I-35E, I-30, I-45, I-20, the LBJ Freeway, US-75 and the Dallas North Tollway all cross the city, and debris on roads that busy is a common source of nails and screws. We repair tires wherever the car is parked, from office garages Downtown and in Uptown to driveways in Lakewood, Lake Highlands and Oak Cliff.",
     faqs: [
       {
-        q: "How do I know if my tire can be plugged or patched?",
+        q: "Can my tire be plugged or patched?",
         a: "It depends on where the damage is and how big it is. A small puncture in the tread is usually repairable. Anything in or near the sidewall, or a cut rather than a hole, is not. The driver checks before starting work and tells you which it is.",
       },
       {
@@ -324,7 +324,7 @@ const WRITTEN_FIRST: CityServiceContent[] = [
   {
     city: "garland",
     service: "jump-start",
-    h1: "Jump Start Service in Garland, TX",
+    h1: "Jump Start Help in Garland, TX",
     title: "Jump Start Service Garland TX",
     metaDescription:
       "Dead battery in Garland? TRA brings a jump start to your car on I-635, the Bush Turnpike or at home. Local dispatch across Garland, 24/7.",
@@ -511,7 +511,7 @@ const WRITTEN_FIRST: CityServiceContent[] = [
   {
     city: "irving",
     service: "jump-start",
-    h1: "Jump Start Service in Irving, TX",
+    h1: "Jump Start Help in Irving, TX",
     title: "Jump Start Service Irving TX",
     metaDescription:
       "Car won't start in Irving? TRA brings a jump start to Las Colinas, Valley Ranch or the airport approaches. Local DFW dispatch, 24/7. Call now.",
@@ -680,7 +680,7 @@ const WRITTEN_FIRST: CityServiceContent[] = [
       "A second vehicle that sat long enough for its fob battery to die.",
     ],
     localContext:
-      "Plano is the largest city in Texas without an interstate running through it — the traffic instead moves on US-75 Central Expressway, the Dallas North Tollway, the Sam Rayburn Tollway, the President George Bush Turnpike and Preston Road. Those tollways bound the city, and most of our lockout calls come from the commercial parking they feed, particularly around the Legacy Drive corporate corridor.",
+      "Plano is the largest city in Texas without an interstate running through it — the traffic instead moves on the Sam Rayburn Tollway, the Dallas North Tollway, US-75 Central Expressway, the President George Bush Turnpike and Preston Road. Those tollways bound the city, and most of our lockout calls come from the commercial parking they feed, particularly around the Legacy Drive corporate corridor.",
     faqs: [
       {
         q: "Can you come to an office parking lot?",
@@ -704,7 +704,7 @@ const WRITTEN_FIRST: CityServiceContent[] = [
   {
     city: "plano",
     service: "jump-start",
-    h1: "Jump Start Service in Plano, TX",
+    h1: "Jump Start Help in Plano, TX",
     title: "Jump Start Service Plano TX",
     metaDescription:
       "Car won't start in Plano? TRA brings a jump start to Legacy, Preston Road or your driveway. Local DFW dispatch, 24/7. Call now.",
@@ -897,7 +897,7 @@ const WRITTEN_FIRST: CityServiceContent[] = [
   {
     city: "mckinney",
     service: "jump-start",
-    h1: "Jump Start Service in McKinney, TX",
+    h1: "Jump Start Help in McKinney, TX",
     title: "Jump Start Service McKinney TX",
     metaDescription:
       "Dead battery in McKinney? TRA brings a jump start to you on US-75, US-380 or at home. Local DFW dispatch, 24/7. Call now.",
@@ -1090,7 +1090,7 @@ const WRITTEN_FIRST: CityServiceContent[] = [
   {
     city: "mesquite",
     service: "jump-start",
-    h1: "Jump Start Service in Mesquite, TX",
+    h1: "Jump Start Help in Mesquite, TX",
     title: "Jump Start Service Mesquite TX",
     metaDescription:
       "Dead battery in Mesquite? TRA brings a jump start to you on I-635, US-80 or at home. Local DFW dispatch, 24/7. Call now.",
@@ -1151,7 +1151,7 @@ const WRITTEN_FIRST: CityServiceContent[] = [
         a: "Battery pricing varies by vehicle and battery type, and where the battery is mounted is part of that: some sit on top of the engine, others under a seat or behind trim. Dispatch confirms which battery your car takes and your total, with the dispatch fee counted once, before anyone is sent.",
       },
       {
-        q: "What warranty comes with the battery?",
+        q: "How long is the battery warranty?",
         a: "A battery replacement includes a 1-year warranty. Keep your invoice — that is what any warranty claim is handled against.",
       },
     ],
@@ -1277,7 +1277,7 @@ const WRITTEN_FIRST: CityServiceContent[] = [
   {
     city: "richardson",
     service: "jump-start",
-    h1: "Jump Start Service in Richardson, TX",
+    h1: "Jump Start Help in Richardson, TX",
     title: "Jump Start Service Richardson TX",
     metaDescription:
       "Car won't start in Richardson? TRA brings a jump start to Telecom Corridor lots, Galatyn Park or your driveway. Local DFW dispatch, 24/7.",
@@ -1470,7 +1470,7 @@ const WRITTEN_FIRST: CityServiceContent[] = [
   {
     city: "frisco",
     service: "jump-start",
-    h1: "Jump Start Service in Frisco, TX",
+    h1: "Jump Start Help in Frisco, TX",
     title: "Jump Start Service Frisco TX",
     metaDescription:
       "Dead battery in Frisco? TRA brings a jump start to you on the Tollway, Preston Road or at home. Local DFW dispatch, 24/7. Call now.",
@@ -1663,7 +1663,7 @@ const WRITTEN_FIRST: CityServiceContent[] = [
   {
     city: "lewisville",
     service: "jump-start",
-    h1: "Jump Start Service in Lewisville, TX",
+    h1: "Jump Start Help in Lewisville, TX",
     title: "Jump Start Service Lewisville TX",
     metaDescription:
       "Car won't start in Lewisville? TRA brings a jump start to you on I-35E, Main Street or at home. Local DFW dispatch, 24/7. Call now.",
@@ -1850,7 +1850,7 @@ const WRITTEN_FIRST: CityServiceContent[] = [
   {
     city: "the-colony",
     service: "jump-start",
-    h1: "Jump Start Service in The Colony, TX",
+    h1: "Jump Start Help in The Colony, TX",
     title: "Jump Start Service The Colony TX",
     metaDescription:
       "Dead battery in The Colony? TRA brings a jump start to you along FM 423, the Sam Rayburn Tollway or at home. Local DFW dispatch, 24/7.",
@@ -2045,7 +2045,7 @@ const WRITTEN_FIRST: CityServiceContent[] = [
   {
     city: "addison",
     service: "jump-start",
-    h1: "Jump Start Service in Addison, TX",
+    h1: "Jump Start Help in Addison, TX",
     title: "Jump Start Service Addison TX",
     metaDescription:
       "Dead battery in Addison? TRA brings a jump start to Belt Line Road, the Dallas North Tollway or Addison Airport parking. Local DFW dispatch, 24/7.",
@@ -2261,7 +2261,7 @@ const WRITTEN_FIRST: CityServiceContent[] = [
         a: "Yes. Give dispatch the building and the row or level so the driver reaches the car rather than the entrance.",
       },
       {
-        q: "Do I have to be with the vehicle?",
+        q: "Do I need to be at the car?",
         a: "Yes — somebody who can show entitlement to it needs to be there, because that check happens before the car is opened.",
       },
     ],
@@ -2274,7 +2274,7 @@ const WRITTEN_FIRST: CityServiceContent[] = [
   {
     city: "carrollton",
     service: "jump-start",
-    h1: "Jump Start Service in Carrollton, TX",
+    h1: "Jump Start Help in Carrollton, TX",
     title: "Jump Start Service Carrollton TX",
     metaDescription:
       "Car won't start in Carrollton? TRA brings a jump start to you on I-35E, the Bush Turnpike or at home. Local DFW dispatch, 24/7. Call now.",
@@ -2786,7 +2786,7 @@ const WRITTEN_FIRST: CityServiceContent[] = [
         a: "Starting the engine takes a large amount out of the battery, and it takes sustained driving to put it back. A pattern of short local trips never quite catches up, which is why mid-cities batteries often fail earlier than commuter ones.",
       },
       {
-        q: "What warranty comes with the battery?",
+        q: "How long is the battery warranty?",
         a: "A battery replacement includes a 1-year warranty. Keep your invoice, as that is what warranty service is processed against.",
       },
     ],
@@ -2878,7 +2878,7 @@ const WRITTEN_FIRST: CityServiceContent[] = [
   {
     city: "arlington",
     service: "jump-start",
-    h1: "Jump Start Service in Arlington, TX",
+    h1: "Jump Start Help in Arlington, TX",
     title: "Jump Start Service Arlington TX",
     metaDescription:
       "Car won't start in Arlington? TRA brings a jump start to Entertainment District lots, I-20 or your driveway. Local DFW dispatch, 24/7.",
@@ -3031,7 +3031,7 @@ const WRITTEN_FIRST: CityServiceContent[] = [
   {
     city: "grand-prairie",
     service: "jump-start",
-    h1: "Jump Start Service in Grand Prairie, TX",
+    h1: "Jump Start Help in Grand Prairie, TX",
     title: "Jump Start Service Grand Prairie TX",
     metaDescription:
       "Dead battery in Grand Prairie? TRA brings a jump start to you on I-20, I-30, TX-360 or at home. Local DFW dispatch, 24/7. Call now.",
@@ -3182,7 +3182,7 @@ const WRITTEN_FIRST: CityServiceContent[] = [
   {
     city: "rowlett",
     service: "jump-start",
-    h1: "Jump Start Service in Rowlett, TX",
+    h1: "Jump Start Help in Rowlett, TX",
     title: "Jump Start Service Rowlett TX",
     metaDescription:
       "Dead battery in Rowlett? TRA brings a jump start to you on Lakeview Parkway, the Bush Turnpike or at home. Local DFW dispatch, 24/7.",
@@ -3333,7 +3333,7 @@ const WRITTEN_FIRST: CityServiceContent[] = [
   {
     city: "wylie",
     service: "jump-start",
-    h1: "Jump Start Service in Wylie, TX",
+    h1: "Jump Start Help in Wylie, TX",
     title: "Jump Start Service Wylie TX",
     metaDescription:
       "Dead battery in Wylie? TRA brings a jump start to you on TX-78, FM 544 or at home. Local DFW dispatch, 24/7. Call now.",
@@ -3431,7 +3431,7 @@ const WRITTEN_FIRST: CityServiceContent[] = [
       },
       {
         q: "Could the tire be repaired instead?",
-        a: "Often yes, if the puncture is in the tread and clear of the sidewall. Your driver will tell you once they have had a look.",
+        a: "Often yes, when the hole is in the tread and clear of the sidewall. Your driver will tell you once they have had a look.",
       },
     ],
     primaryKeyword: "flat tire change Wylie TX",
@@ -3832,7 +3832,7 @@ const WRITTEN_FIRST: CityServiceContent[] = [
   {
     city: "denton",
     service: "jump-start",
-    h1: "Jump Start Service in Denton, TX",
+    h1: "Jump Start Help in Denton, TX",
     title: "Jump Start Service Denton TX",
     metaDescription:
       "Denton car won't turn over? A TRA driver comes out with a jump start, whether you're near the Square, around UNT and TWU, or off I-35 and Loop 288. 24/7.",

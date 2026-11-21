@@ -37,8 +37,8 @@ export interface QuickAnswerContent {
 }
 
 const DFW = "Dallas–Fort Worth";
-const AVAILABILITY = "Open 24 hours a day, 365 days a year, including nights, weekends and holidays";
-const MEMBERSHIP = "None. No sign-up and no annual dues: you pay only for the job.";
+const AVAILABILITY = "Around the clock, every day of the year, holidays included";
+const MEMBERSHIP = "None. You pay per job, and there is no plan to buy.";
 const ARRIVAL = "We send the nearest available driver as soon as possible. Actual time depends on your location and traffic.";
 const NOTE = `Prices are starting prices. Dispatch confirms the price for your vehicle and location before a driver is sent.`;
 const PAYMENT = "Cash";
@@ -47,27 +47,27 @@ const CONTACT: QuickFact = { label: "Contact", value: `Request online or call ${
 
 /** How people ask what a service costs. */
 const PRICE_QUESTION: Record<ServiceTypeSlug, string> = {
-  "jump-start": "How much is a jump start",
-  "semi-truck-jump-start": "How much is a semi truck jump start",
-  "battery-replacement": "How much is a car battery replacement",
-  lockout: "How much does it cost to unlock a car",
-  "tire-repair-plug-patch": "How much is a flat tire repair",
-  "flat-tire-change": "How much is a flat tire change",
-  "tire-replacement": "How much is a mobile tire replacement",
+  "jump-start": "What do you charge for a jump start",
+  "semi-truck-jump-start": "What do you charge for a semi truck jump start",
+  "battery-replacement": "What do you charge for a car battery replacement",
+  lockout: "What do you charge for a car lockout",
+  "tire-repair-plug-patch": "What do you charge for a flat tire repair",
+  "flat-tire-change": "What do you charge for a flat tire change",
+  "tire-replacement": "What do you charge for a mobile tire replacement",
   "stuck-screw-in-tire": "How much does it cost to get a screw out of a tire",
-  "rim-lock-removal": "How much is wheel lock removal",
-  "stripped-lug-nut-removal": "How much is stripped lug nut removal",
-  "valve-stem-replacement": "How much is a valve stem replacement",
+  "rim-lock-removal": "What do you charge for wheel lock removal",
+  "stripped-lug-nut-removal": "What do you charge for stripped lug nut removal",
+  "valve-stem-replacement": "What do you charge for a valve stem replacement",
 };
 
 /** How people ask who can help. */
 const WHO_QUESTION: Record<ServiceTypeSlug, string> = {
-  "jump-start": "Who can jump start my car",
+  "jump-start": "Who comes out to jump-start a car",
   "semi-truck-jump-start": "Who jump starts semi trucks",
   "battery-replacement": "Who replaces a car battery on site",
-  lockout: "Who can unlock my car",
+  lockout: "Who comes out to unlock a car",
   "tire-repair-plug-patch": "Who repairs a flat tire on site",
-  "flat-tire-change": "Who changes a flat tire",
+  "flat-tire-change": "Who comes out to change a flat tire",
   "tire-replacement": "Who brings and installs a new tire",
   "stuck-screw-in-tire": "Who can get a screw out of my tire",
   "rim-lock-removal": "Who can remove a wheel lock",
@@ -141,7 +141,7 @@ function coverageLine(): string {
 export function homeAnswer(): QuickAnswerContent {
   return {
     question: "Who can I call for roadside help in Dallas right now?",
-    answer: `Texas Roadside Assistance sends a technician to your car anywhere in ${DFW}, 24 hours a day, with no membership: ${pricesInWords()}. Request online or call ${BUSINESS.phoneDisplay}.`,
+    answer: `Texas Roadside Assistance sends a technician to your car anywhere in ${DFW} at any hour, with nothing to sign up for: ${pricesInWords()}. Request online or call ${BUSINESS.phoneDisplay}.`,
     facts: [
       { label: "Hours", value: AVAILABILITY },
       { label: "Service area", value: coverageLine() },
@@ -178,7 +178,7 @@ export function pricingAnswer(): QuickAnswerContent {
 export function serviceAnswer(svc: ServiceContent): QuickAnswerContent {
   return {
     question: `${PRICE_QUESTION[svc.slug]} in ${DFW}?`,
-    answer: `${priceSentence(svc)} ${svc.priceCovers ?? ""} TRA comes to your car anywhere in ${DFW}, 24 hours a day, with no membership. Request online or call ${BUSINESS.phoneDisplay}.`.replace(/\s+/g, " "),
+    answer: `${priceSentence(svc)} ${svc.priceCovers ?? ""} TRA comes to your car anywhere in ${DFW} at any hour, with nothing to sign up for. Request online or call ${BUSINESS.phoneDisplay}.`.replace(/\s+/g, " "),
     facts: [
       { label: "Service", value: svc.summary },
       { label: "Service area", value: coverageLine() },
@@ -196,7 +196,7 @@ export function cityServiceAnswer(svc: ServiceContent, city: ServiceArea, local:
   const neighbors = nearby.map((c) => c.name).join(", ");
   return {
     question: `${WHO_QUESTION[svc.slug]} in ${city.name}?`,
-    answer: `Texas Roadside Assistance sends a technician to your car in ${city.name}, TX, 24 hours a day, with no membership. ${priceSentence(svc)} Request online or call ${BUSINESS.phoneDisplay}.`,
+    answer: `Texas Roadside Assistance sends a technician to your car in ${city.name}, TX at any hour, with nothing to sign up for. ${priceSentence(svc)} Request online or call ${BUSINESS.phoneDisplay}.`,
     facts: [
       { label: "Service", value: svc.summary },
       { label: "Service area", value: [`${city.name}, TX`, corridors && `including ${corridors}`, neighbors && `and nearby ${neighbors}`].filter(Boolean).join(", ") },
@@ -223,7 +223,7 @@ export function cityAnswer(city: ServiceArea, local: LocalArea | undefined, near
   facts.push({ label: "Membership", value: MEMBERSHIP }, CONTACT);
   return {
     question: `Who can I call for roadside help in ${city.name}?`,
-    answer: `Texas Roadside Assistance sends a technician to your car in ${city.name}, TX, 24 hours a day, with no membership: ${pricesInWords()}. Request online or call ${BUSINESS.phoneDisplay}.`,
+    answer: `Texas Roadside Assistance sends a technician to your car in ${city.name}, TX at any hour, with nothing to sign up for: ${pricesInWords()}. Request online or call ${BUSINESS.phoneDisplay}.`,
     facts,
     note: NOTE,
   };
@@ -272,18 +272,18 @@ export function roadsideFaqs(): FaqItem[] {
     faq("right-now", "Getting Help Right Now", "Can someone come to me right now?", `Yes. TRA dispatches 24 hours a day across ${DFW}, and you don't need a membership or an account. Send a request with your location, or call ${BUSINESS.phoneDisplay}. Dispatch confirms the price before a driver is sent, and lets you know when they're on the way.`),
     faq("need", "Getting Help Right Now", "What do you need from me when I ask for help?", "Your location (an address, cross streets or a map pin), the vehicle's year, make and model, and what happened. That's enough to send the right driver with the right equipment."),
     faq("cost", "What It Costs", "How much does roadside assistance cost in Dallas?", `Jump starts are ${jump}, lockouts ${lockout}, tire repair ${repair}, a spare tire change ${flat}, a new tire installed ${tire}, and a new battery installed ${battery} for eligible vehicles. A flat ${fee} dispatch fee is added once per job.`),
-    faq("pay", "What It Costs", "How do I pay?", "In cash. Dispatch confirms the price before a driver is sent, so you know the amount to have ready."),
+    faq("pay", "What It Costs", "What payment do you take?", "In cash. Dispatch confirms the price before a driver is sent, so you know the amount to have ready."),
     faq("spanish", "Getting Help Right Now", "Do you speak Spanish?", `Yes. Se habla español: call ${BUSINESS.phoneDisplay} and ask for help in Spanish.`),
     faq("dispatch", "What It Costs", `What is the ${fee} dispatch fee?`, `${DISPATCH_FEE_EXPLAINER} It is added to the service price, never charged twice on one job, and never the whole cost of the service.`),
     faq("tow", "What It Costs", "Is a roadside call cheaper than a tow and a shop visit?", `For a job we can finish where the car sits, you skip the tow and the trip to the shop. A battery installed is ${battery}, a tire plug or patch is ${repair}, putting on your spare is ${flat} and a new tire installed is ${tire}. The ${fee} dispatch fee is added once per job. We don't tow, so a car that needs a shop is the one case we can't fix at the roadside.`),
     faq("membership", "What It Costs", "Do I need a membership or a contract?", "No. There's no membership, no annual dues and no contract. You pay for the job you asked for, and you don't need an auto club or an insurance claim to call us."),
-    faq("tire-24", "Flat Tires", "Is there a 24 hour tire service near me?", `Yes. TRA's drivers come to you at any hour across ${DFW}, in a driveway, a parking lot, a garage or on the shoulder, so you don't have to wait for a tire shop to open. Putting on your spare is ${flat} and a repair is ${repair}, plus the ${fee} dispatch fee.`),
+    faq("tire-24", "Flat Tires", "Can I get a flat fixed in the middle of the night?", `Yes. TRA's drivers come to you at any hour across ${DFW}, in a driveway, a parking lot, a garage or on the shoulder, so you don't have to wait for a tire shop to open. Putting on your spare is ${flat} and a repair is ${repair}, plus the ${fee} dispatch fee.`),
     faq("keep-driving", "Flat Tires", "Should I keep driving on a flat tire?", "No. A few more miles on a flat can ruin the tire and damage the wheel, turning a repair into a replacement. Get to a safe spot and turn on your hazards. If you're on a highway shoulder, stay buckled in until the driver arrives."),
     faq("no-spare", "Flat Tires", "What if I don't have a spare?", `A new tire can be supplied and installed where you're parked, ${tire}, plus the ${fee} dispatch fee. Tire availability varies, so tell dispatch your tire size. It's printed on the sidewall, for example 235/55R18.`),
-    faq("jump-or-new", "Batteries and Jump Starts", "Do I need a jump start or a new battery?", `If the battery still holds a charge, a jump start (${jump}) gets you going. If it won't hold one, your driver can advise on site, and a new battery installed is ${battery} for eligible vehicles.`),
+    faq("jump-or-new", "Batteries and Jump Starts", "Do I need a jump start or a new battery?", `When the battery can still take a charge, a jump start (${jump}) gets you going. If it won't hold one, your driver can advise on site, and a new battery installed is ${battery} for eligible vehicles.`),
     faq("died-again", "Batteries and Jump Starts", "My car died again after a jump. What now?", "Usually the battery no longer holds a charge, or the alternator isn't recharging it. Request a battery replacement and tell dispatch what happened. A new battery won't fix a bad alternator, so ask your driver to advise before you buy one."),
     faq("unlock-cost", "Car Lockouts", "How much does it cost to unlock my car?", `A door lockout is ${lockout}${trunk ? `, and keys locked in the trunk are ${servicePrice(trunk)}` : ""}, plus the ${fee} dispatch fee. Have an ID ready that matches the registration.`),
-    faq("child", "Car Lockouts", "A child or pet is locked in the car. What should I do?", `If anyone is in danger, call 911 first. Then call ${BUSINESS.phoneDisplay}: we treat it as urgent and route it to the nearest driver first.`),
+    faq("child", "Car Lockouts", "A child or an animal is shut inside the car. What should I do?", `If someone could be hurt, call 911 before anything else. Then call ${BUSINESS.phoneDisplay}: we treat it as urgent and route it to the nearest driver first.`),
     faq("dont-do", "What We Don't Do", "Is there anything you don't do?", "We handle batteries, jump starts, lockouts and tires. We don't tow and we don't deliver fuel, so if that's what you need, we'll tell you right away instead of sending a driver you'd have to pay for."),
   ];
 }

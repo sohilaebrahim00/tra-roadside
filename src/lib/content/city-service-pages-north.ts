@@ -27,7 +27,7 @@ export const PAGES_NORTH: CityServiceContent[] = [
       },
       {
         q: "I'm on US-380 and can't get clear of the lane. What should I do?",
-        a: "If you're in a live traffic lane, or anyone is hurt or in danger, call 911 first. If you can reach a shoulder, turn on your hazards, stay buckled in and call us. Standing beside a car on a busy road is the dangerous part of a flat.",
+        a: "If you're in a travel lane, or someone could be hurt, call 911 before anything else. If you can reach a shoulder, turn on your hazards, stay buckled in and call us. Standing beside a car on a busy road is the dangerous part of a flat.",
       },
       {
         q: "What counts as a usable spare?",
@@ -96,7 +96,7 @@ export const PAGES_NORTH: CityServiceContent[] = [
       "Prosper is a Collin County town with a stretch in Denton County, bordered by Frisco, McKinney, Little Elm and Celina. Preston Road, US-380 and the Dallas North Tollway, which ends at First Street, are the routes between home and the shops. We open cars in parking lots along those roads and on the residential streets and driveways in between.",
     faqs: [
       {
-        q: "A child or pet is locked in the car. What do I do?",
+        q: "A child or an animal is shut inside the car. What do I do?",
         a: "If anyone inside is in danger, call 911 first. Then call us: we treat it as urgent and send the nearest driver first.",
       },
       {
@@ -117,7 +117,7 @@ export const PAGES_NORTH: CityServiceContent[] = [
   {
     city: "prosper",
     service: "jump-start",
-    h1: "Jump Start Service in Prosper, TX",
+    h1: "Jump Start Help in Prosper, TX",
     title: "Jump Start Service Prosper TX",
     metaDescription:
       "Car won't start in Prosper? TRA brings a jump start to your driveway, or a lot off Preston Road or US-380. Local DFW dispatch, 24/7.",
@@ -130,11 +130,11 @@ export const PAGES_NORTH: CityServiceContent[] = [
       "A vehicle that sat in the driveway while the family was away.",
     ],
     localContext:
-      "We jump start cars across Prosper, which lies in Collin and Denton counties and borders Frisco, McKinney, Little Elm and Celina. US-380 and Preston Road cross the town and the Dallas North Tollway ends at First Street. If the car has stopped in a live lane on any of them, or anyone is in danger, call 911 before you call us.",
+      "We jump start cars across Prosper, which lies in Collin and Denton counties and borders Frisco, McKinney, Little Elm and Celina. US-380 and Preston Road cross the town and the Dallas North Tollway ends at First Street. If the car has stopped in a travel lane on any of them, or someone could be hurt, call 911 before you call us.",
     faqs: [
       {
         q: "Is it safe to wait with the hood up on US-380?",
-        a: "Only if you are well clear of traffic. Turn on your hazards, stay in a visible spot and raise the hood only if it is safe to do so. If the car is in a live lane, call 911 first.",
+        a: "Only if you are well clear of traffic. Turn on your hazards, stay in a visible spot and raise the hood only if it is safe to do so. If the car is in a travel lane, call 911 first.",
       },
       {
         q: "How do I know it's the battery?",
@@ -214,7 +214,7 @@ export const PAGES_NORTH: CityServiceContent[] = [
       },
       {
         q: "Is it safe to change it myself on the shoulder?",
-        a: "If you're in a live traffic lane, or anyone is in danger, call 911 first. Otherwise stay buckled in with your hazards on and wait for the driver. Being out beside the car is the risky part.",
+        a: "If you're in a travel lane, or someone could be hurt, call 911 before anything else. Otherwise stay buckled in with your hazards on and wait for the driver. Being out beside the car is the risky part.",
       },
       {
         q: "What if my spare is flat or missing?",
@@ -254,7 +254,7 @@ export const PAGES_NORTH: CityServiceContent[] = [
         a: "No. Year, make and model are enough to start. The VIN confirms the exact battery if you can reach it easily, and dispatch confirms compatibility and your total before a driver is sent.",
       },
       {
-        q: "Is there a warranty on the new battery?",
+        q: "Does the new battery come with a warranty?",
         a: "A battery replacement includes a 1-year warranty. Keep your invoice, since that is what warranty service goes through.",
       },
     ],
@@ -304,7 +304,7 @@ export const PAGES_NORTH: CityServiceContent[] = [
   {
     city: "flower-mound",
     service: "jump-start",
-    h1: "Jump Start Service in Flower Mound, TX",
+    h1: "Jump Start Help in Flower Mound, TX",
     title: "Jump Start Service Flower Mound TX",
     metaDescription:
       "Car won't start in Flower Mound? TRA brings a jump start to your driveway, office lot or Parker Square. Local DFW dispatch, 24/7. Call now.",
@@ -317,7 +317,7 @@ export const PAGES_NORTH: CityServiceContent[] = [
       "A second car that is only driven on weekends.",
     ],
     localContext:
-      "We jump start vehicles across Flower Mound, in Denton County and the small Tarrant County part, from driveways to the Lakeside and Denton Creek business districts. US-377, FM 1171 (Cross Timbers Road), FM 2499 (Long Prairie) and FM 3040 carry the traffic, and Dallas/Fort Worth International Airport lies about 4 miles south. If the car has stopped in a live lane on any of them, call 911 first.",
+      "We jump start vehicles across Flower Mound, in Denton County and the small Tarrant County part, from driveways to the Lakeside and Denton Creek business districts. US-377, FM 1171 (Cross Timbers Road), FM 2499 (Long Prairie) and FM 3040 carry the traffic, and Dallas/Fort Worth International Airport lies about 4 miles south. If the car has stopped in a travel lane on any of them, call 911 first.",
     faqs: [
       {
         q: "My car sat for two weeks. Will a jump be enough?",
@@ -405,7 +405,7 @@ export const PAGES_NORTH: CityServiceContent[] = [
       },
       {
         q: "What if I'm on the tollway or US-75?",
-        a: "If you are in a live traffic lane, or anyone is in danger, call 911 first. If you can reach a shoulder, turn on your hazards, stay buckled in and call us.",
+        a: "If you are in a travel lane, or someone could be hurt, call 911 before anything else. If you can reach a shoulder, turn on your hazards, stay buckled in and call us.",
       },
     ],
     primaryKeyword: "flat tire change Highland Park TX",
@@ -437,12 +437,12 @@ export const PAGES_NORTH: CityServiceContent[] = [
         a: "It affects the job, not whether it can be done. On some cars the battery isn't under the hood. Tell dispatch the vehicle and they will confirm the right battery, and your total, before anyone is sent.",
       },
       {
-        q: "Is there a warranty on the new battery?",
+        q: "Does the new battery come with a warranty?",
         a: "A battery replacement includes a 1-year warranty. Keep your invoice, which is what warranty service is handled against.",
       },
       {
-        q: "Should I just get a jump start instead?",
-        a: "If the battery still holds a charge, a jump may be all you need. If it has already failed a jump, or you needed one more than once, replacement usually makes more sense. Your driver can advise on site.",
+        q: "Would a jump start be enough?",
+        a: "When the battery can still take a charge, a jump may be all you need. If it has already failed a jump, or you needed one more than once, replacement usually makes more sense. Your driver can advise on site.",
       },
     ],
     primaryKeyword: "car battery replacement Highland Park TX",
@@ -510,7 +510,7 @@ export const PAGES_NORTH: CityServiceContent[] = [
     faqs: [
       {
         q: "I'm on a tollway ramp near Mockingbird Lane. What do I do?",
-        a: "If you are in a live lane, or anyone is in danger, call 911 first. If you can reach a shoulder, put your hazards on, stay buckled in and tell dispatch which ramp or exit you are on.",
+        a: "If you are in a travel lane, or someone could be hurt, call 911 before anything else. If you can reach a shoulder, put your hazards on, stay buckled in and tell dispatch which ramp or exit you are on.",
       },
       {
         q: "Can you change a tire in a campus-area lot or garage?",
@@ -631,7 +631,7 @@ export const PAGES_NORTH: CityServiceContent[] = [
       },
       {
         q: "What if the tire goes on US-380 and I'm in a lane?",
-        a: "If you are in a live traffic lane, or anyone is in danger, call 911 first. Once you are on a shoulder, keep your hazards on, stay buckled in and call us.",
+        a: "If you are in a travel lane, or someone could be hurt, call 911 before anything else. Once you are on a shoulder, keep your hazards on, stay buckled in and call us.",
       },
     ],
     primaryKeyword: "flat tire change Little Elm TX",
@@ -739,8 +739,8 @@ export const PAGES_NORTH: CityServiceContent[] = [
         a: "Give the road name, the nearest cross street or address number, and your direction of travel. A landmark such as a business or a sign helps too.",
       },
       {
-        q: "Is it safe to wait in the car on Preston Road?",
-        a: "On a shoulder, yes: stay buckled in with the hazards on. If you are in a live traffic lane, or anyone is in danger, call 911 first.",
+        q: "Should I stay in the car while I wait on Preston Road?",
+        a: "On a shoulder, yes: stay buckled in with the hazards on. If you are in a travel lane, or someone could be hurt, call 911 before anything else.",
       },
       {
         q: "I'm not sure my spare has any air in it. Can that be checked?",
@@ -845,7 +845,7 @@ export const PAGES_NORTH: CityServiceContent[] = [
       "A spare that has not been checked since the day the car was bought.",
     ],
     localContext:
-      "Anna lies in northern Collin County and borders Melissa, the one served city beside it. US-75 runs through the west side of the town and TX-5 is the other main route. If a tire fails at highway speed on US-75, aim for the shoulder with the hazards on, and call 911 first if you are stuck in a live lane.",
+      "Anna lies in northern Collin County and borders Melissa, the one served city beside it. US-75 runs through the west side of the town and TX-5 is the other main route. If a tire fails at highway speed on US-75, aim for the shoulder with the hazards on, and call 911 first if you are stuck in a travel lane.",
     faqs: [
       {
         q: "How do I tell you where I am on US-75?",
@@ -1075,7 +1075,7 @@ export const PAGES_NORTH: CityServiceContent[] = [
     faqs: [
       {
         q: "I'm on US-380 and traffic is close. What should I do?",
-        a: "If you are in a live traffic lane, or anyone is in danger, call 911 first. If you can reach a shoulder, put your hazards on, stay buckled in and call us. Do not stand beside the car.",
+        a: "If you are in a travel lane, or someone could be hurt, call 911 before anything else. If you can reach a shoulder, put your hazards on, stay buckled in and call us. Do not stand beside the car.",
       },
       {
         q: "Should I drive the 8 miles to McKinney on the flat?",

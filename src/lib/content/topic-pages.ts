@@ -21,7 +21,7 @@ import { TOPICS_PLACES } from "./topic-pages-places";
  *    road authority.
  *  - Written from scratch. Competitor pages show which questions people ask,
  *    never the wording.
- *  - US English, plain sentences. In a live traffic lane the advice is always to
+ *  - US English, plain sentences. In a travel lane the advice is always to
  *    call 911 first.
  */
 

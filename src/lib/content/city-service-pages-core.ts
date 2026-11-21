@@ -68,7 +68,7 @@ export const PAGES_CORE: CityServiceContent[] = [
       },
       {
         q: "Can I drive to a shop on the flat?",
-        a: "No. Driving further on a flat damages the wheel as well as the tire. Pull as far from traffic as you can, turn on your hazards and call. If you are in a live lane, call 911 first.",
+        a: "No. Driving further on a flat damages the wheel as well as the tire. Pull as far from traffic as you can, turn on your hazards and call. If you are in a travel lane, call 911 first.",
       },
     ],
     primaryKeyword: "tire replacement Arlington TX",
@@ -261,7 +261,7 @@ export const PAGES_CORE: CityServiceContent[] = [
       },
       {
         q: "The tire went on the tollway. Where should I wait?",
-        a: "If you are in a live traffic lane, or anyone is in danger, call 911 first. Otherwise get as far from the lanes as you can, turn on your hazards and stay buckled in until the driver arrives.",
+        a: "If you are in a travel lane, or someone could be hurt, call 911 before anything else. Otherwise get as far from the lanes as you can, turn on your hazards and stay buckled in until the driver arrives.",
       },
     ],
     primaryKeyword: "tire replacement Plano TX",
@@ -353,7 +353,7 @@ export const PAGES_CORE: CityServiceContent[] = [
   {
     city: "allen",
     service: "jump-start",
-    h1: "Jump Start Service in Allen, TX",
+    h1: "Jump Start Help in Allen, TX",
     title: "Jump Start Service Allen TX",
     metaDescription:
       "Car won't start in Allen? TRA brings a jump start to your driveway or a lot off US-75 or the Sam Rayburn Tollway. Local DFW dispatch, 24/7.",
@@ -366,7 +366,7 @@ export const PAGES_CORE: CityServiceContent[] = [
       "A battery that cranked slowly on the first cold morning and quit by the afternoon.",
     ],
     localContext:
-      "Allen is in Collin County and is bordered by Plano, McKinney and Frisco. US-75 (Central Expressway) runs through the city and the Sam Rayburn Tollway (TX-121) crosses it. We jump start vehicles across town, from driveways to retail lots. If the car has stopped in a live lane on either road, call 911 first.",
+      "Allen is in Collin County and is bordered by Plano, McKinney and Frisco. US-75 (Central Expressway) runs through the city and the Sam Rayburn Tollway (TX-121) crosses it. We jump start vehicles across town, from driveways to retail lots. If the car has stopped in a travel lane on either road, call 911 first.",
     faqs: [
       {
         q: "Can something small really drain a battery overnight?",
@@ -407,7 +407,7 @@ export const PAGES_CORE: CityServiceContent[] = [
     faqs: [
       {
         q: "I found a screw in the tread but the tire still holds air. Should I do anything?",
-        a: "Leave it where it is. A screw can partly seal the hole, and pulling it out usually deflates the tire. Call, and if the puncture is in the tread the driver can repair it properly.",
+        a: "Leave it where it is. A screw can partly seal the hole, and pulling it out usually deflates the tire. Call, and when the hole is in the tread the driver can repair it properly.",
       },
       {
         q: "Where on the tire does the damage have to be?",
@@ -492,7 +492,7 @@ export const PAGES_CORE: CityServiceContent[] = [
         a: "Usually, if the driver can work safely around the car. Tell dispatch the lot, the nearest building and anything that limits space.",
       },
       {
-        q: "What if I'm in a live lane on the interstate?",
+        q: "What if I'm in a travel lane on the interstate?",
         a: "Call 911 first. If you can reach a shoulder, put your hazards on, stay buckled in and call us. Standing beside a car on an interstate is the dangerous part of a flat.",
       },
     ],

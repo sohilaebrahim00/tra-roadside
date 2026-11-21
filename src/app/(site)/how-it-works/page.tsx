@@ -39,7 +39,7 @@ const STEPS = [
   },
   {
     icon: CheckCircle2,
-    title: "Get back on the road",
+    title: "Done and driving",
     body: "Your driver completes the service on site, and your request is marked complete.",
   },
 ];

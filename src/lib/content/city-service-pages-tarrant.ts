@@ -29,7 +29,7 @@ export const PAGES_TARRANT: CityServiceContent[] = [
     faqs: [
       {
         q: "I'm on a freeway shoulder. What should I do while I wait?",
-        a: "Stay belted in with your hazards on, away from the traffic side of the car. If you couldn't clear a live lane, or anyone is in danger, call 911 first. Standing beside the car while traffic passes is the most dangerous part.",
+        a: "Stay belted in with your hazards on, away from the traffic side of the car. If you couldn't clear a travel lane, or someone could be hurt, call 911 before anything else. Standing beside the car while traffic passes is the most dangerous part.",
       },
       {
         q: "My car has no spare, only a sealant kit. Can you help?",
@@ -110,7 +110,7 @@ export const PAGES_TARRANT: CityServiceContent[] = [
         a: "Usually, if the driver can reach it. Give dispatch the garage or lot, the level and the space, plus any gate code or access instructions.",
       },
       {
-        q: "A child or pet is locked in the car. What should I do?",
+        q: "A child or an animal is shut inside the car. What should I do?",
         a: "If they are in danger, call 911 first. Then call us: we treat a child or pet locked in a car as urgent and route it to the nearest driver first.",
       },
     ],
@@ -123,7 +123,7 @@ export const PAGES_TARRANT: CityServiceContent[] = [
   {
     city: "fort-worth",
     service: "jump-start",
-    h1: "Jump Start Service in Fort Worth, TX",
+    h1: "Jump Start Help in Fort Worth, TX",
     title: "Jump Start Service Fort Worth TX",
     metaDescription:
       "Car won't start in Fort Worth? TRA brings a jump start to garages, lots and driveways across the city, semi trucks included. Open 24/7.",
@@ -176,7 +176,7 @@ export const PAGES_TARRANT: CityServiceContent[] = [
       "Fort Worth has plenty of highways for debris to land on: I-30, I-20, I-35W, the I-820 loop, US-287, US-377 and TX-183 all cross the city. A nail or screw picked up at highway speed is often found only later, in a garage near Sundance Square, in a driveway in Tanglewood or in a lot at the Stockyards. We repair the tire wherever the car is sitting.",
     faqs: [
       {
-        q: "How can I tell if the puncture is in the tread?",
+        q: "How can I tell whether the hole is in the tread?",
         a: "The tread is the part of the tire that meets the road. A nail or screw there is the repairable kind. Anything in or near the sidewall is not, and the driver checks before starting and tells you which it is.",
       },
       {
@@ -214,7 +214,7 @@ export const PAGES_TARRANT: CityServiceContent[] = [
     faqs: [
       {
         q: "I can't read the tire size safely. What can I tell dispatch?",
-        a: "The year, make and model, plus the size on the sticker inside the driver's door jamb if you can reach it. That is enough to start, and dispatch confirms the rest. Never lean into a live lane to read a sidewall.",
+        a: "The year, make and model, plus the size on the sticker inside the driver's door jamb if you can reach it. That is enough to start, and dispatch confirms the rest. Never lean into a travel lane to read a sidewall.",
       },
       {
         q: "My spare is flat too. Which service do I book?",
@@ -257,7 +257,7 @@ export const PAGES_TARRANT: CityServiceContent[] = [
       },
       {
         q: "Should I drive to a safer spot on the flat?",
-        a: "Only as far as you must. Get the car away from traffic as safely as you can, then stop, because driving on a flat damages the wheel as well as the tire. If you can't clear a live lane, or anyone is in danger, call 911 first.",
+        a: "Only as far as you must. Get the car away from traffic as safely as you can, then stop, because driving on a flat damages the wheel as well as the tire. If you can't clear a travel lane, or someone could be hurt, call 911 before anything else.",
       },
       {
         q: "My spare looks low on air. What then?",
@@ -347,7 +347,7 @@ export const PAGES_TARRANT: CityServiceContent[] = [
   {
     city: "southlake",
     service: "jump-start",
-    h1: "Jump Start Service in Southlake, TX",
+    h1: "Jump Start Help in Southlake, TX",
     title: "Jump Start Service Southlake TX",
     metaDescription:
       "Car won't start in Southlake? TRA brings a jump start to Town Square, Solana or your driveway. Local DFW dispatch, 24 hours a day.",
@@ -444,7 +444,7 @@ export const PAGES_TARRANT: CityServiceContent[] = [
       },
       {
         q: "Can the flat be repaired instead of swapped?",
-        a: "Often, if the puncture is in the tread. Tire repair is a separate service, and the driver can say which makes sense once they see the tire.",
+        a: "Often, when the hole is in the tread. Tire repair is a separate service, and the driver can say which makes sense once they see the tire.",
       },
       {
         q: "What should I have ready when the driver arrives?",
@@ -481,7 +481,7 @@ export const PAGES_TARRANT: CityServiceContent[] = [
       },
       {
         q: "Should I just get another jump instead?",
-        a: "If the battery still holds a charge, a jump start gets you moving. If it has already failed a jump or died again soon after, replacement is the better move. Your driver can advise on site if you're unsure.",
+        a: "When the battery can still take a charge, a jump start gets you moving. If it has already failed a jump or died again soon after, replacement is the better move. Your driver can advise on site if you're unsure.",
       },
       {
         q: "How long does the installation take?",
@@ -514,7 +514,7 @@ export const PAGES_TARRANT: CityServiceContent[] = [
     faqs: [
       {
         q: "The engine is still running and the doors are locked. Does that change anything?",
-        a: "It doesn't change how the car is opened. If the car is parked safely, stay nearby and wait. If it is in a live lane, or anyone is in danger, call 911 first.",
+        a: "It doesn't change how the car is opened. If the car is parked safely, stay nearby and wait. If it is in a travel lane, or someone could be hurt, call 911 before anything else.",
       },
       {
         q: "I don't have my ID with me. What then?",
@@ -534,7 +534,7 @@ export const PAGES_TARRANT: CityServiceContent[] = [
   {
     city: "keller",
     service: "jump-start",
-    h1: "Jump Start Service in Keller, TX",
+    h1: "Jump Start Help in Keller, TX",
     title: "Jump Start Service Keller TX",
     metaDescription:
       "Car won't start in Keller? TRA brings a jump start to your driveway, Davis Boulevard or Town Center. Local DFW dispatch, 24 hours a day.",
@@ -721,7 +721,7 @@ export const PAGES_TARRANT: CityServiceContent[] = [
   {
     city: "mansfield",
     service: "jump-start",
-    h1: "Jump Start Service in Mansfield, TX",
+    h1: "Jump Start Help in Mansfield, TX",
     title: "Jump Start Service Mansfield TX",
     metaDescription:
       "Car won't start in Mansfield? TRA brings a jump start to TX-360, US-287, Downtown Mansfield or your driveway. Local DFW dispatch, 24/7.",
@@ -738,11 +738,11 @@ export const PAGES_TARRANT: CityServiceContent[] = [
     faqs: [
       {
         q: "Do I need a jump start or a new battery?",
-        a: "If the battery still holds a charge, a jump start gets you moving. If it won't hold one, or it has needed several jumps, replacement is the better move. Your driver can advise on site.",
+        a: "When the battery can still take a charge, a jump start gets you moving. If it won't hold one, or it has needed several jumps, replacement is the better move. Your driver can advise on site.",
       },
       {
         q: "My car cut out while I was driving. Is that a jump start?",
-        a: "Maybe not. A jump start is for a battery that is out of charge, and a car that dies while moving can have another cause. Tell dispatch exactly what happened. If you are in a live lane, call 911 first.",
+        a: "Maybe not. A jump start is for a battery that is out of charge, and a car that dies while moving can have another cause. Tell dispatch exactly what happened. If you are in a travel lane, call 911 first.",
       },
       {
         q: "Can you jump a car parked tight against the curb downtown?",
@@ -763,7 +763,7 @@ export const PAGES_TARRANT: CityServiceContent[] = [
     metaDescription:
       "Nail in a tire in Mansfield? TRA plugs or patches the tread on site when the damage allows, at home, at work or downtown. Call or request online.",
     intro:
-      "A tire that is a little lower every morning has usually picked up a screw or nail. If the puncture is in the tread and small, a TRA driver can plug or patch it where the car sits in Mansfield, whether that is a driveway or a lot off TX-360. You keep the tire you have, and your spare stays in the trunk.",
+      "A tire that is a little lower every morning has usually picked up a screw or nail. When the hole is in the tread and small, a TRA driver can plug or patch it where the car sits in Mansfield, whether that is a driveway or a lot off TX-360. You keep the tire you have, and your spare stays in the trunk.",
     scenarios: [
       "A tire that needs air every few days with no visible cause.",
       "A nail spotted in the tread after a run on US-287.",
@@ -802,7 +802,7 @@ export const PAGES_TARRANT: CityServiceContent[] = [
     metaDescription:
       "Flat tire in Burleson? If you have a usable spare, TRA puts it on along I-35W, TX-174 or in Old Town. Request roadside help online or call.",
     intro:
-      "On I-35W, a flat tire is more than an inconvenience: it is a car stopped beside traffic moving at highway speed. If your vehicle has a usable spare, a TRA driver comes to Burleson, puts it on and tightens it properly, and you drive off without jacking the car up beside the lane. If you are in a live lane, or anyone is in danger, call 911 first.",
+      "On I-35W, a flat tire is more than an inconvenience: it is a car stopped beside traffic moving at highway speed. If your vehicle has a usable spare, a TRA driver comes to Burleson, puts it on and tightens it properly, and you drive off without jacking the car up beside the lane. If you are in a travel lane, or someone could be hurt, call 911 before anything else.",
     scenarios: [
       "A blowout on I-35W with the shoulder as the only place to stop.",
       "A flat on TX-174 on the way into town.",
@@ -814,7 +814,7 @@ export const PAGES_TARRANT: CityServiceContent[] = [
     faqs: [
       {
         q: "How do I wait safely beside I-35W?",
-        a: "Stay belted in with your hazards on, and don't stand beside the car while traffic passes. If you couldn't clear the lane, or anyone is in danger, call 911 first, then request help from us.",
+        a: "Stay belted in with your hazards on, and don't stand beside the car while traffic passes. If you couldn't clear the lane, or someone could be hurt, call 911 before anything else, then request help from us.",
       },
       {
         q: "Where would my spare be if my car has one?",
@@ -892,7 +892,7 @@ export const PAGES_TARRANT: CityServiceContent[] = [
       },
       {
         q: "Can you reach a car at a roadside stop off I-35W?",
-        a: "Yes. Give dispatch the exit, the direction you were heading and the business name or nearest cross street. If you are in a live lane, or anyone is in danger, call 911 first.",
+        a: "Yes. Give dispatch the exit, the direction you were heading and the business name or nearest cross street. If you are in a travel lane, or someone could be hurt, call 911 before anything else.",
       },
       {
         q: "A child is locked inside. What do I do?",
@@ -908,7 +908,7 @@ export const PAGES_TARRANT: CityServiceContent[] = [
   {
     city: "burleson",
     service: "jump-start",
-    h1: "Jump Start Service in Burleson, TX",
+    h1: "Jump Start Help in Burleson, TX",
     title: "Jump Start Service Burleson TX",
     metaDescription:
       "Car won't start in Burleson? TRA brings a jump start to I-35W, Old Town or your driveway, big rigs included. Local DFW dispatch, 24/7.",
@@ -925,7 +925,7 @@ export const PAGES_TARRANT: CityServiceContent[] = [
     faqs: [
       {
         q: "The car cut out while I was driving. Is a jump start the answer?",
-        a: "Maybe. A jump start is for a battery that is out of charge, and a car that dies while moving can have a different cause. Tell dispatch exactly what happened. If you are in a live lane, or anyone is in danger, call 911 first.",
+        a: "Maybe. A jump start is for a battery that is out of charge, and a car that dies while moving can have a different cause. Tell dispatch exactly what happened. If you are in a travel lane, or someone could be hurt, call 911 before anything else.",
       },
       {
         q: "My truck sat for two weeks. Will a jump start be enough?",
@@ -1005,7 +1005,7 @@ export const PAGES_TARRANT: CityServiceContent[] = [
       },
       {
         q: "My flat is on the traffic side of the car. Does that matter?",
-        a: "It matters to the driver, who decides where it is safe to work. If you are on a shoulder, stay belted in and let them handle it. If you are in a live lane, call 911 first.",
+        a: "It matters to the driver, who decides where it is safe to work. If you are on a shoulder, stay belted in and let them handle it. If you are in a travel lane, call 911 first.",
       },
       {
         q: "Can I wait at a nearby store instead of with the car?",
@@ -1118,7 +1118,7 @@ export const PAGES_TARRANT: CityServiceContent[] = [
       },
       {
         q: "How do I choose between a tire change, a repair and a replacement?",
-        a: "With a usable spare, a flat tire change puts it on. If the puncture is in the tread, a repair keeps your tire. With no usable spare, or a tire beyond repair, tire replacement supplies one. If you are unsure, describe it when you request help.",
+        a: "With a usable spare, a flat tire change puts it on. When the hole is in the tread, a repair keeps your tire. With no usable spare, or a tire beyond repair, tire replacement supplies one. If you are unsure, describe it when you request help.",
       },
       {
         q: "It's late and I can't see a thing. Can you still come?",
@@ -1215,7 +1215,7 @@ export const PAGES_TARRANT: CityServiceContent[] = [
     metaDescription:
       "Flat tire in Kennedale? If you have a usable spare, TRA puts it on along I-20, US-287 or at home. Request help online or call.",
     intro:
-      "I-20 and US-287 both cross Kennedale, and a flat on either puts you on a shoulder with highway traffic close by. If you are in a live lane, or anyone is in danger, call 911 first. Once you are stopped safely and there is a usable spare in the vehicle, a TRA driver comes to you, puts it on and tightens it properly, and you drive on.",
+      "I-20 and US-287 both cross Kennedale, and a flat on either puts you on a shoulder with highway traffic close by. If you are in a travel lane, or someone could be hurt, call 911 before anything else. Once you are stopped safely and there is a usable spare in the vehicle, a TRA driver comes to you, puts it on and tightens it properly, and you drive on.",
     scenarios: [
       "A blowout on I-20 where the shoulder is the only place to stop.",
       "A flat on US-287 near the Arlington line.",
@@ -1227,7 +1227,7 @@ export const PAGES_TARRANT: CityServiceContent[] = [
     faqs: [
       {
         q: "Should I call 911 or TRA for a flat on I-20?",
-        a: "Call 911 first if you are in a live lane, if anyone is hurt or if there is any danger. If you have reached a safe spot such as a shoulder, stay belted in with your hazards on and request help from us.",
+        a: "Call 911 first if you are in a travel lane, if anyone is hurt or if there is any danger. If you have reached a safe spot such as a shoulder, stay belted in with your hazards on and request help from us.",
       },
       {
         q: "I have a locking lug nut and can't find the key. What now?",
@@ -1268,7 +1268,7 @@ export const PAGES_TARRANT: CityServiceContent[] = [
       },
       {
         q: "Can you help if the car died on the I-20 shoulder?",
-        a: "If you are in a live lane or anyone is in danger, call 911 first. Once you have reached a safe spot, tell dispatch exactly where you are. Whether to jump or replace depends on the battery, and your driver can advise on site.",
+        a: "If you are stopped in moving traffic or someone could be hurt, call 911 before anything else. Once you have reached a safe spot, tell dispatch exactly where you are. Whether to jump or replace depends on the battery, and your driver can advise on site.",
       },
       {
         q: "How do I prepare the car before the driver comes?",
@@ -1328,7 +1328,7 @@ export const PAGES_TARRANT: CityServiceContent[] = [
     metaDescription:
       "Flat tire in Haltom City? If you have a usable spare, TRA puts it on along I-820, Denton Highway, TX-121 or TX-183. Call or request online.",
     intro:
-      "Four highways run through or alongside Haltom City: I-820, US-377 (Denton Highway), TX-121 and TX-183. A flat here usually happens in traffic, so the first job is getting safely out of the lane. If there is a usable spare in the vehicle, a TRA driver comes to you, puts it on and tightens it properly. In a live lane, or if anyone is in danger, call 911 first.",
+      "Four highways run through or alongside Haltom City: I-820, US-377 (Denton Highway), TX-121 and TX-183. A flat here usually happens in traffic, so the first job is getting safely out of the lane. If there is a usable spare in the vehicle, a TRA driver comes to you, puts it on and tightens it properly. In a travel lane, or if someone could be hurt, call 911 before anything else.",
     scenarios: [
       "A blowout on I-820 with traffic close on both sides.",
       "A flat on Denton Highway (US-377) in the middle of an errand.",
@@ -1344,7 +1344,7 @@ export const PAGES_TARRANT: CityServiceContent[] = [
       },
       {
         q: "Could the flat be repaired instead of swapped?",
-        a: "Often, if the puncture is in the tread. Tire repair is a separate service, and the driver can say which makes sense once they see the tire.",
+        a: "Often, when the hole is in the tread. Tire repair is a separate service, and the driver can say which makes sense once they see the tire.",
       },
       {
         q: "I think the spare is soft. Should I say so?",
@@ -1417,7 +1417,7 @@ export const PAGES_TARRANT: CityServiceContent[] = [
         a: "Yes, if the driver can reach it. Give dispatch the complex, the spot and any gate code.",
       },
       {
-        q: "A child or pet is locked in the car. What now?",
+        q: "A child or an animal is shut inside the car. What now?",
         a: "If they are in danger, call 911 first. Then call us: a child or pet locked in a car is treated as urgent.",
       },
       {
@@ -1461,7 +1461,7 @@ export const PAGES_TARRANT: CityServiceContent[] = [
       },
       {
         q: "How do I wait safely on I-820?",
-        a: "Stay belted in with your hazards on and away from the traffic side. If you couldn't clear a live lane, or anyone is in danger, call 911 first.",
+        a: "Stay belted in with your hazards on and away from the traffic side. If you couldn't clear a travel lane, or someone could be hurt, call 911 before anything else.",
       },
     ],
     primaryKeyword: "flat tire change Saginaw TX",
@@ -1554,7 +1554,7 @@ export const PAGES_TARRANT: CityServiceContent[] = [
     metaDescription:
       "Flat tire in Benbrook? If you have a usable spare, TRA puts it on along I-20, Benbrook Highway or near the lake. Call or request online.",
     intro:
-      "Benbrook sits in the southwestern corner of Tarrant County, with Benbrook Lake as its main body of water, and a flat here can come on I-20, on Benbrook Highway or on a road near the lake. If there is a usable spare in the vehicle, a TRA driver comes to you, puts it on and tightens it properly. In a live lane, or if anyone is in danger, call 911 first.",
+      "Benbrook sits in the southwestern corner of Tarrant County, with Benbrook Lake as its main body of water, and a flat here can come on I-20, on Benbrook Highway or on a road near the lake. If there is a usable spare in the vehicle, a TRA driver comes to you, puts it on and tightens it properly. In a travel lane, or if someone could be hurt, call 911 before anything else.",
     scenarios: [
       "A blowout on I-20 where the shoulder is the only place to stop.",
       "A flat on Benbrook Highway (US-377) while running errands.",

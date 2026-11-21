@@ -139,7 +139,7 @@ export default async function CityServicePage({
 
           <WhatWeNeed svc={svc} />
 
-          <ServiceCallSteps title={`How a ${city.name} service call works`} />
+          <ServiceCallSteps title={`Your ${city.name} call, step by step`} />
 
           <section>
             <h2 className="font-display text-2xl font-semibold text-ink-950 sm:text-[1.75rem]">

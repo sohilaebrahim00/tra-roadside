@@ -31,7 +31,7 @@ export const PAGES_SOUTH: CityServiceContent[] = [
       },
       {
         q: "What should I do if the flat happens on US-67?",
-        a: "If the car is stopped in a live traffic lane, or anyone is in danger, call 911 first. On a shoulder or in a lot, turn on the hazards, keep your seatbelt on if traffic is close, and call us. Standing beside the car is the risky part.",
+        a: "If the car is stopped in a travel lane, or someone could be hurt, call 911 before anything else. On a shoulder or in a lot, turn on the hazards, keep your seatbelt on if traffic is close, and call us. Standing beside the car is the risky part.",
       },
     ],
     primaryKeyword: "flat tire change Cedar Hill TX",
@@ -96,7 +96,7 @@ export const PAGES_SOUTH: CityServiceContent[] = [
       "Lockouts happen wherever a car is parked, and in Cedar Hill that means Cedar Hill City Center, Historic Downtown Cedar Hill, the retail frontage along US-67 and the streets around Lake Ridge. Wherever you are, give dispatch the lot or the street and the nearest cross street, so the driver goes straight to the car.",
     faqs: [
       {
-        q: "A child or pet is locked inside. Who do I call first?",
+        q: "A child or an animal is shut inside. Who do I call first?",
         a: "If a child or pet is in danger, call 911 first, because emergency crews can act immediately. Then call us and tell dispatch what is happening so it is handled as urgent.",
       },
       {
@@ -117,7 +117,7 @@ export const PAGES_SOUTH: CityServiceContent[] = [
   {
     city: "cedar-hill",
     service: "jump-start",
-    h1: "Jump Start Service in Cedar Hill, TX",
+    h1: "Jump Start Help in Cedar Hill, TX",
     title: "Jump Start Service Cedar Hill TX",
     metaDescription:
       "Car won't start in Cedar Hill? TRA brings a jump start to your driveway, a US-67 lot or Lake Ridge. Local DFW dispatch, 24/7. Request help or call.",
@@ -210,7 +210,7 @@ export const PAGES_SOUTH: CityServiceContent[] = [
     faqs: [
       {
         q: "What should I do while I wait on the I-35E shoulder?",
-        a: "If the car is stopped in a live lane, or anyone is in danger, call 911 first. On a shoulder, keep your seatbelt on, turn on the hazards and stay in the car. Standing beside the car is where most of the risk is.",
+        a: "If the car is stopped in a travel lane, or someone could be hurt, call 911 before anything else. On a shoulder, keep your seatbelt on, turn on the hazards and stay in the car. Standing beside the car is where most of the risk is.",
       },
       {
         q: "Do I need to have my own jack?",
@@ -251,7 +251,7 @@ export const PAGES_SOUTH: CityServiceContent[] = [
       },
       {
         q: "Should I try a jump start first?",
-        a: "If the battery still holds a charge, a jump start is the lighter fix. If this one has already needed a jump and will not hold a charge, replacing it is the better move. Tell dispatch what has happened and they will point you to the right service.",
+        a: "When the battery can still take a charge, a jump start is the lighter fix. If this one has already needed a jump and will not hold a charge, replacing it is the better move. Tell dispatch what has happened and they will point you to the right service.",
       },
       {
         q: "Is it worth replacing a battery before it fails?",
@@ -304,7 +304,7 @@ export const PAGES_SOUTH: CityServiceContent[] = [
   {
     city: "desoto",
     service: "jump-start",
-    h1: "Jump Start Service in DeSoto, TX",
+    h1: "Jump Start Help in DeSoto, TX",
     title: "Jump Start Service DeSoto TX",
     metaDescription:
       "Car won't start in DeSoto? TRA brings a jump start to your driveway, a Town Center lot or the I-35E shoulder. Local DFW dispatch, 24/7. Call now.",
@@ -321,7 +321,7 @@ export const PAGES_SOUTH: CityServiceContent[] = [
     faqs: [
       {
         q: "I am stopped on the I-35E shoulder with a dead battery. Is that a jump start call?",
-        a: "Yes, once you are out of traffic. If the car is in a live lane, or anyone is in danger, call 911 first. On a shoulder, stay belted in with the hazards on and call us.",
+        a: "Yes, once you are out of traffic. If the car is in a travel lane, or someone could be hurt, call 911 before anything else. On a shoulder, stay belted in with the hazards on and call us.",
       },
       {
         q: "Will a jump start fix a battery that keeps dying?",
@@ -393,7 +393,7 @@ export const PAGES_SOUTH: CityServiceContent[] = [
       "A flat in a driveway that you only discover once the car is loaded.",
     ],
     localContext:
-      "Tire trouble in Waxahachie can start on a fast bypass or on a slow street around the courthouse square in Downtown Waxahachie, and the help is the same in both. Midlothian and Red Oak are the cities beside it that we also cover, if a flat finds you on the way to either. If you are stopped in a live lane on any of these roads, call 911 before anything else.",
+      "Tire trouble in Waxahachie can start on a fast bypass or on a slow street around the courthouse square in Downtown Waxahachie, and the help is the same in both. Midlothian and Red Oak are the cities beside it that we also cover, if a flat finds you on the way to either. If you are stopped in a travel lane on any of these roads, call 911 before anything else.",
     faqs: [
       {
         q: "Can you change a tire near the courthouse square?",
@@ -491,7 +491,7 @@ export const PAGES_SOUTH: CityServiceContent[] = [
   {
     city: "waxahachie",
     service: "jump-start",
-    h1: "Jump Start Service in Waxahachie, TX",
+    h1: "Jump Start Help in Waxahachie, TX",
     title: "Jump Start Service Waxahachie TX",
     metaDescription:
       "Car won't start in Waxahachie? TRA jumps it downtown, in a driveway or at a US-287 stop. Local DFW dispatch, 24/7. Request help or call.",
@@ -545,7 +545,7 @@ export const PAGES_SOUTH: CityServiceContent[] = [
     faqs: [
       {
         q: "Can you repair a tire that has already gone flat?",
-        a: "Sometimes. If the tire was driven on while flat, the sidewall may be damaged, and that cannot be repaired. The driver checks and tells you. If it cannot be repaired, you choose between your spare and a replacement tire supplied by us.",
+        a: "Sometimes. If the car was driven on the flat, the sidewall may be damaged, and that cannot be repaired. The driver checks and tells you. If it cannot be repaired, you choose between your spare and a replacement tire supplied by us.",
       },
       {
         q: "What should I do with the tire until you arrive?",
@@ -553,7 +553,7 @@ export const PAGES_SOUTH: CityServiceContent[] = [
       },
       {
         q: "Is it better to repair or replace?",
-        a: "If the puncture is in the tread and within repairable limits, a repair is the simpler fix. Sidewall damage or a large hole means the tire has to be replaced.",
+        a: "When the hole is in the tread and within repairable limits, a repair is the simpler fix. Sidewall damage or a large hole means the tire has to be replaced.",
       },
     ],
     primaryKeyword: "mobile tire repair Waxahachie TX",
@@ -584,10 +584,10 @@ export const PAGES_SOUTH: CityServiceContent[] = [
     faqs: [
       {
         q: "I am stopped on the I-20 shoulder. What should I do?",
-        a: "If the car is in a live lane, or anyone is in danger, call 911 first. Otherwise turn on the hazards, keep your seatbelt on and stay in the car, then call us. Do not try to change it beside traffic.",
+        a: "If the car is in a travel lane, or someone could be hurt, call 911 before anything else. Otherwise turn on the hazards, keep your seatbelt on and stay in the car, then call us. Do not try to change it beside traffic.",
       },
       {
-        q: "What do you need to know when I call?",
+        q: "What will dispatch ask me when I call?",
         a: "Where the car is, its year, make and model, and whether there is a usable spare in the vehicle. If you are not sure the spare is there, say so and dispatch will plan for it.",
       },
       {
@@ -693,7 +693,7 @@ export const PAGES_SOUTH: CityServiceContent[] = [
       "A lug nut so rounded off that the wheel will not come off.",
     ],
     localContext:
-      "I-35E forms Lancaster's western boundary and I-20 crosses its far north, so a freeway flat here happens at the edge of the city. Dallas, DeSoto and Red Oak all border the city, so a tire that goes down near any of those lines is a call we take. If you are stopped in a live lane, call 911 before anything else.",
+      "I-35E forms Lancaster's western boundary and I-20 crosses its far north, so a freeway flat here happens at the edge of the city. Dallas, DeSoto and Red Oak all border the city, so a tire that goes down near any of those lines is a call we take. If you are stopped in a travel lane, call 911 before anything else.",
     faqs: [
       {
         q: "I am on I-35E and not sure whether I am in Lancaster. Does it matter?",
@@ -806,7 +806,7 @@ export const PAGES_SOUTH: CityServiceContent[] = [
       "A slow leak that finished overnight on a driveway before an early start.",
     ],
     localContext:
-      "Midlothian is in northwestern Ellis County at the junction of US-67 and US-287, with the Railport industrial park among its landmarks. Cedar Hill, Grand Prairie and Waxahachie all border the city, so a flat can find you on either road or a few miles over a city line. The driver comes to wherever the car stopped. If you are in a live lane, call 911 first.",
+      "Midlothian is in northwestern Ellis County at the junction of US-67 and US-287, with the Railport industrial park among its landmarks. Cedar Hill, Grand Prairie and Waxahachie all border the city, so a flat can find you on either road or a few miles over a city line. The driver comes to wherever the car stopped. If you are in a travel lane, call 911 first.",
     faqs: [
       {
         q: "What if I do not have a spare?",
@@ -919,7 +919,7 @@ export const PAGES_SOUTH: CityServiceContent[] = [
       "A flat on US-77 on a local errand.",
     ],
     localContext:
-      "Red Oak is on the northern edge of Ellis County, 18 miles south of downtown Dallas on I-35E, which has two exits in town. US-77 is the city's other route. Lancaster and Waxahachie both border Red Oak, so help for a flat on any of those stretches is the same call. If you are stopped in a live lane, call 911 before anything else.",
+      "Red Oak is on the northern edge of Ellis County, 18 miles south of downtown Dallas on I-35E, which has two exits in town. US-77 is the city's other route. Lancaster and Waxahachie both border Red Oak, so help for a flat on any of those stretches is the same call. If you are stopped in a travel lane, call 911 before anything else.",
     faqs: [
       {
         q: "I am already in Dallas when the tire goes. Do you still come?",
@@ -963,7 +963,7 @@ export const PAGES_SOUTH: CityServiceContent[] = [
         a: "Yes. Tell dispatch where the car is, including the building and the level or row. We dispatch across Dallas-Fort Worth, so the car does not have to be in Red Oak.",
       },
       {
-        q: "How do I know it is the battery and not the alternator?",
+        q: "Battery or alternator: how can I tell which one failed?",
         a: "A car that keeps dying after a jump, or one that starts and then loses power while running, may have a charging fault. The driver can advise, but we do not do mechanical repair, so an alternator would need a shop.",
       },
       {
@@ -1032,7 +1032,7 @@ export const PAGES_SOUTH: CityServiceContent[] = [
       "A spare in the trunk that has never been touched.",
     ],
     localContext:
-      "Forney is in northwestern Kaufman County, about 4 miles southeast of Lake Ray Hubbard, and US-80 passes through it as a limited-access highway. No other city we serve borders Forney, so a call from here is a call for Forney itself. On a limited-access highway the shoulder is usually the only place to stop, so if you are in a live lane, call 911 first, and otherwise stay belted in with the hazards on.",
+      "Forney is in northwestern Kaufman County, about 4 miles southeast of Lake Ray Hubbard, and US-80 passes through it as a limited-access highway. No other city we serve borders Forney, so a call from here is a call for Forney itself. On a limited-access highway the shoulder is usually the only place to stop, so if you are in a travel lane, call 911 first, and otherwise stay belted in with the hazards on.",
     faqs: [
       {
         q: "How do I tell dispatch where I am on US-80?",

@@ -113,7 +113,7 @@ export default function ContactPage() {
 
           <div>
             <div className="rounded-3xl border border-ink-950/8 bg-white p-6 shadow-sm sm:p-8 dark:border-white/10 dark:bg-ink-900">
-              <h2 className="font-display text-2xl font-semibold uppercase text-ink-950 dark:text-white">Send us a message</h2>
+              <h2 className="font-display text-2xl font-semibold uppercase text-ink-950 dark:text-white">Write to us</h2>
               <p className="mt-2 text-sm text-ink-600 dark:text-ink-200">
                 For non-urgent questions, feedback, or business inquiries. We&apos;ll respond as soon as possible.
               </p>

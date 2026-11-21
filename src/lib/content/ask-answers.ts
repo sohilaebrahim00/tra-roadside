@@ -26,7 +26,7 @@ export const ASK_SUGGESTIONS = [
   "I have a flat tire",
   "How much does it cost?",
   "How fast can you get here?",
-  "Do I need a membership?",
+  "Is there a membership to buy?",
 ];
 
 /**
@@ -55,7 +55,7 @@ export function answerQuestion(raw: string): AskAnswer {
   const svc = searchServices(topic, 1)[0];
 
   if (has(/\b(child|kid|kids|baby|infant|toddler|pet|dog|puppy|cat)\b/)) {
-    return { text: `If anyone is in danger, call 911 first. Then call ${BUSINESS.phoneDisplay}: we treat a child or pet locked in a car as urgent and route it to the nearest driver first.` };
+    return { text: `If someone could be hurt, call 911 before anything else. Then call ${BUSINESS.phoneDisplay}: we treat a child or pet locked in a car as urgent and route it to the nearest driver first.` };
   }
   if (has(/\b(tow|towing|towed|wrecker|flatbed)\b/)) {
     return { text: "We don't tow. We fix what can be fixed where the car sits: batteries, jump starts, lockouts and tires. If your car needs a tow, a towing company is the right call." };
@@ -83,7 +83,7 @@ export function answerQuestion(raw: string): AskAnswer {
     return { text: "We send the nearest available driver as soon as possible. The actual time depends on your location and traffic, and we'll let you know when your driver is on the way.", service: svc };
   }
   if (has(/\b(open|hours|tonight|night|weekend|weekends|holiday|holidays|sunday|24)\b/)) {
-    return { text: "Yes, we're open 24 hours a day, 365 days a year, including nights, weekends and holidays.", service: svc };
+    return { text: "Yes. Dispatch never closes: nights, weekends and holidays are ordinary working hours for us.", service: svc };
   }
   if (has(/\b(member|membership|memberships|aaa|club|dues|subscription|contract|insurance)\b/)) {
     return { text: "No membership needed. There are no annual dues and no contract: you pay only for the job you asked for." };

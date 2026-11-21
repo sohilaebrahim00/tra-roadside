@@ -110,7 +110,7 @@ const CORE_GUIDES: Guide[] = [
         a: "Yes. For eligible vehicles and batteries, the battery replacement price of {{price:battery-replacement}} covers the battery and installing it. The {{dispatchFee}} dispatch fee is separate and charged once per job, and dispatch confirms your total before anyone is sent.",
       },
       {
-        q: "Is there a warranty on the new battery?",
+        q: "Does the new battery come with a warranty?",
         a: "Yes, a 1-year warranty. Keep your invoice, since that is what a warranty claim is checked against.",
       },
       {
@@ -259,7 +259,7 @@ const CORE_GUIDES: Guide[] = [
         ],
       },
       {
-        heading: "What not to try",
+        heading: "Things to avoid",
         paragraphs: [
           "Hammering a regular socket onto a locking lug nut, or going at it with pliers, usually rounds the nut off and can scar the wheel. A rounded nut is harder to remove, not easier.",
           "If the key is missing, snapped or doesn't fit anymore, leave the nut alone and call for help before the job gets bigger.",
@@ -281,7 +281,7 @@ const CORE_GUIDES: Guide[] = [
     ],
     faqs: [
       {
-        q: "How much does wheel lock removal cost?",
+        q: "What do you charge for wheel lock removal?",
         a: "{{price:rim-lock-removal}}, the published price, plus the {{dispatchFee}} dispatch fee charged once per job, so {{total:rim-lock-removal}} in total. Dispatch confirms it when you request help.",
       },
       {

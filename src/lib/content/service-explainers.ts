@@ -132,7 +132,7 @@ export const SERVICE_EXPLAINERS: Partial<Record<ServiceTypeSlug, ServiceExplaine
           "Turn off the lights, the heater or air conditioning, and everything else that draws power.",
           "Write down your unit number and exactly where the truck is: the yard, the dock door, the truck stop or the mile marker.",
           "Note whether the truck died while running or has been sitting.",
-          "If you are on a shoulder, put out your warning triangles only if you can do it safely. In a live lane, or if anyone is in danger, call 911 first.",
+          "If you are on a shoulder, put out your warning triangles only if you can do it safely. In a travel lane, or if someone could be hurt, call 911 before anything else.",
           "Leave the hood or battery access clear so the driver can reach the connections.",
         ],
       },
@@ -291,7 +291,7 @@ export const SERVICE_EXPLAINERS: Partial<Record<ServiceTypeSlug, ServiceExplaine
           "Walk around and try every door and the trunk, in case one is unlocked.",
           "Check whether a spare key is with someone nearby who can bring it.",
           "Look through the glass to see exactly where the keys are, and tell dispatch.",
-          "If a child or a pet is locked inside, or anyone is in danger, call 911 first. Do not wait for us.",
+          "If a child or an animal is shut inside, or someone could be hurt, call 911 before anything else. Do not wait for us.",
           "Do not pry the door or force the window, as it risks damage that costs far more than a lockout.",
         ],
       },
@@ -325,7 +325,7 @@ export const SERVICE_EXPLAINERS: Partial<Record<ServiceTypeSlug, ServiceExplaine
         a: "No. We open the car but don't make keys, so a lost key needs a locksmith or the dealer.",
       },
       {
-        q: "A child or pet is locked in the car. What should I do?",
+        q: "A child or an animal is shut inside the car. What should I do?",
         a: "Call 911 first. Do not wait for a driver, since a closed car in Texas heat becomes dangerous fast.",
       },
       {
@@ -375,7 +375,7 @@ export const SERVICE_EXPLAINERS: Partial<Record<ServiceTypeSlug, ServiceExplaine
           "Don't drive any farther than you have to on a low or flat tire. Even a short distance can turn a repairable puncture into a ruined sidewall.",
           "Don't pull out the nail or screw. It is partly sealing the hole.",
           "Keep your hazard lights on while you wait.",
-          "If you are in a live lane, or anyone is in danger, call 911 first.",
+          "If you are in a travel lane, or someone could be hurt, call 911 before anything else.",
         ],
       },
       {
@@ -460,7 +460,7 @@ export const SERVICE_EXPLAINERS: Partial<Record<ServiceTypeSlug, ServiceExplaine
         heading: "Staying safe while you wait",
         paragraphs: [
           "Pull as far from traffic as you can and turn on your hazard lights. Put reflective triangles out if you carry them and it is safe to do so. Stay well away from the roadway, ideally behind a barrier.",
-          "If you are stopped in a live lane, or anyone is in danger, call 911 first.",
+          "If you are stopped in a travel lane, or someone could be hurt, call 911 before anything else.",
           "Keep everyone out of the car and well back from the road while it is jacked up, and never put any part of yourself under it.",
           "After the change, check the spare's pressure and have the flat repaired or replaced soon. A compact spare is a temporary fix.",
         ],
@@ -485,7 +485,7 @@ export const SERVICE_EXPLAINERS: Partial<Record<ServiceTypeSlug, ServiceExplaine
       },
       {
         q: "My car has no spare, only a repair kit. What now?",
-        a: "Tell dispatch. A tire replacement can supply and install a tire, or a repair may be possible if the puncture is in the tread.",
+        a: "Tell dispatch. A tire replacement can supply and install a tire, or a repair may be possible when the hole is in the tread.",
       },
       {
         q: "The spare has a wheel lock. Does that matter?",
@@ -534,7 +534,7 @@ export const SERVICE_EXPLAINERS: Partial<Record<ServiceTypeSlug, ServiceExplaine
         paragraphs: [
           "The driver takes the wheel off the car, removes the damaged tire from the rim and puts the new one on. The wheel is then put back and the nuts are tightened in a star pattern.",
           "Afterward, check the tire pressure against the sticker in the door jamb, and have a shop look at the nuts after the first few miles if you want to be sure.",
-          "While you wait, don't drive on the flat, and turn on your hazards. If you are in a live lane, or anyone is in danger, call 911 first.",
+          "While you wait, don't drive on the flat, and turn on your hazards. If you are in a travel lane, or someone could be hurt, call 911 before anything else.",
         ],
       },
     ],
@@ -611,7 +611,7 @@ export const SERVICE_EXPLAINERS: Partial<Record<ServiceTypeSlug, ServiceExplaine
         heading: "Waiting with a screw in the tread",
         paragraphs: [
           "Leave the screw alone. Avoid long drives, and if the tire is losing air fast, don't drive on it at all, since a flat tire damages the wheel as well as the tire.",
-          "Keep the car out of traffic and your hazard lights on if you have stopped on a roadside. If you are in a live lane, or anyone is in danger, call 911 first.",
+          "Keep the car out of traffic and your hazard lights on if you have stopped on a roadside. If you are in a travel lane, or someone could be hurt, call 911 before anything else.",
           "Afterward, check the pressure again in a day or two. If it drops, tell a shop, because there may be a second puncture.",
           "If the tire is holding air and you must move the car, go slowly and only as far as needed to reach a safe spot. Do not take it on the highway while it has a screw in it.",
         ],
@@ -689,7 +689,7 @@ export const SERVICE_EXPLAINERS: Partial<Record<ServiceTypeSlug, ServiceExplaine
         paragraphs: [
           "One lug nut on each wheel looks different from the rest. It may be rounded, a different shape or have a patterned head, and it will not fit a standard wrench or socket.",
           "A plain nut that spins under the wrench and won't grip is a stripped lug nut, which is a different service. If you aren't sure which you have, describe it when you request help.",
-          "Stay well clear of the roadway while you wait. If you are in a live lane, or anyone is in danger, call 911 first.",
+          "Stay well clear of the roadway while you wait. If you are in a travel lane, or someone could be hurt, call 911 before anything else.",
         ],
       },
     ],
@@ -757,7 +757,7 @@ export const SERVICE_EXPLAINERS: Partial<Record<ServiceTypeSlug, ServiceExplaine
         heading: "Mistakes to avoid, and what to do next",
         paragraphs: [
           "Stop turning the wrench. Don't hammer the nut or use a bigger bar, as that is how studs break. Count how many nuts on the wheel look damaged, and which wheel it is. That detail lets dispatch confirm the price and send a driver who is ready for the job.",
-          "Stay clear of the roadway while you wait. If you are in a live lane, or anyone is in danger, call 911 first.",
+          "Stay clear of the roadway while you wait. If you are in a travel lane, or someone could be hurt, call 911 before anything else.",
           "Afterward, ask the shop that does your next tire work to use a torque wrench. Nuts tightened to the maker's value come off easily and stay on safely.",
         ],
       },
@@ -836,7 +836,7 @@ export const SERVICE_EXPLAINERS: Partial<Record<ServiceTypeSlug, ServiceExplaine
         paragraphs: [
           "Don't drive far on a tire that is losing air quickly. A tire run low can be damaged inside and may no longer be repairable. Tell dispatch how fast the tire is losing air, since a fast leak is a reason to stay put.",
           "After the stem is replaced, check the pressure against the sticker in the door jamb. Always put the valve cap back on, as it keeps dirt and water out of the valve.",
-          "Stay clear of the roadway while you wait. If you are in a live lane, or anyone is in danger, call 911 first.",
+          "Stay clear of the roadway while you wait. If you are in a travel lane, or someone could be hurt, call 911 before anything else.",
         ],
       },
     ],

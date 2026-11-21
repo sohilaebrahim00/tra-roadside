@@ -50,7 +50,7 @@ export const DISPATCH_FEE_HEADLINE = `${DISPATCH_FEE_USD} Dispatch Fee + Service
  * says what its price covers.
  */
 export const DISPATCH_FEE_EXPLAINER =
-  "The dispatch fee covers sending a technician to your location, and it is charged once per job. The service price is listed with each service, along with what it covers.";
+  "The dispatch fee pays for getting a technician out to you, and it is charged once per job. The service price is listed with each service, along with what it covers.";
 
 /** "+ $19 dispatch" — the fee on its own, next to a service price. */
 export const DISPATCH_FEE_TAG = `+ ${DISPATCH_FEE_USD} dispatch`;

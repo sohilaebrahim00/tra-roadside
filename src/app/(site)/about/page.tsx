@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const POINTS = [
   { icon: MapPinned, title: "Local dispatch", body: "Requests are handled by dispatch based in the Dallas–Fort Worth area, not routed through an out-of-state call center." },
   { icon: ShieldCheck, title: "Licensed & insured", body: "TRA operates fully licensed and insured for roadside assistance work in Texas." },
-  { icon: Clock, title: "Always on", body: "Dispatch runs 24 hours a day, 365 days a year — breakdowns don't wait for business hours, and neither do we." },
+  { icon: Clock, title: "Always on", body: "Dispatch never closes. A car can break down at 3 a.m. on a holiday, and someone still picks up." },
   { icon: Receipt, title: "Upfront pricing", body: "Pricing is confirmed with you before a driver is dispatched, with no surprise fees added afterward." },
 ];
 
@@ -73,7 +73,7 @@ export default function AboutPage() {
 
       <section className="border-t border-ink-950/8 bg-white py-16 text-center">
         <Container size="narrow">
-          <h2 className="font-display text-2xl font-semibold text-ink-950">Need help right now?</h2>
+          <h2 className="font-display text-2xl font-semibold text-ink-950">Stuck right now?</h2>
           <p className="mt-2 text-ink-600 dark:text-ink-200">Request online or call dispatch directly — both take under two minutes.</p>
           <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
             <Button href="/request" size="lg" icon={<LifeBuoy className="h-4 w-4" aria-hidden="true" />}>Request Help</Button>

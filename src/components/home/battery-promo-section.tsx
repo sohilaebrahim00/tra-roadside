@@ -38,7 +38,7 @@ export function BatteryPromoSection() {
               A new battery, installed right where you are.
             </h2>
             <p className="mt-3 max-w-xl text-base leading-relaxed text-white/70">
-              We bring the battery to you and install it on the spot — no tow, no waiting room.
+              The battery comes to your car and goes in right there — no tow, no waiting room.
             </p>
 
             {/* Both strings come from SERVICES, so a price change reaches this

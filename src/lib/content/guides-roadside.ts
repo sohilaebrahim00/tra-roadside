@@ -59,7 +59,7 @@ export const GUIDES_ROADSIDE: Guide[] = [
     faqs: [
       {
         q: "Should I call 911 for a flat tire?",
-        a: "Only if you can't get the car out of traffic, or someone is hurt or in danger. A flat on a quiet street isn't an emergency. A flat in a live lane or on a narrow shoulder with fast traffic is, because the risk is a passing vehicle, not the tire.",
+        a: "Only if you can't get the car out of traffic, or someone is hurt or in danger. A flat on a quiet street isn't an emergency. A flat in a travel lane or on a narrow shoulder with fast traffic is, because the risk is a passing vehicle, not the tire.",
       },
       {
         q: "Can I drive to a tire shop on a flat?",
@@ -627,13 +627,13 @@ export const GUIDES_ROADSIDE: Guide[] = [
       {
         heading: "Check these before you call",
         paragraphs: [
-          "First, if a child or a pet is inside the car, stop and call 911. Everything else on this page can wait.",
+          "First, if a child or an animal is shut inside the car, stop and call 911. Everything else on this page can wait.",
           "If not, walk around the car and try every door, including the back doors and the trunk or hatch. Sometimes one door simply didn't lock. Check for a keypad on the door pillar or an app from the manufacturer that can unlock the car from your phone, which some cars have. And think about a spare key: at home, at work, or with a family member who can bring it.",
           "Look at the windows and the sunroof too. If one was left open, you may be able to reach a lock button, but only if you can do it without forcing anything. Don't push on a window that's meant to be closed.",
         ],
       },
       {
-        heading: "What not to try",
+        heading: "Things to avoid",
         paragraphs: [
           "A coat hanger, a long strip of metal or a wedge pushed into the door frame looks easy on video. In a modern door it can bend the frame, tear the weatherstripping, scratch the paint and catch wiring that runs through the door, including the wires for the side airbag. A broken window leaves you with glass in the seats and a bill that's higher than the cost of a lockout.",
           "If it works, you may still have caused damage you'll find later. If it doesn't, the person you call next starts with a more damaged car.",
@@ -739,7 +739,7 @@ export const GUIDES_ROADSIDE: Guide[] = [
     title: "Child or Pet Locked in a Car: Call 911",
     h1: "A child or pet locked in a car: call 911 first",
     metaDescription:
-      "If a child or pet is locked inside a car, call 911 first. What to say, what to do until help arrives, and why Texas heat makes every minute count.",
+      "If a child or an animal is shut inside a car, call 911 first. What to say, what to do until help arrives, and why Texas heat makes every minute count.",
     topic: "Safety guide",
     dek: "If anyone, a child or an animal, is locked in a car, call 911 before you call a roadside company or anyone else. In Texas heat the minutes count, and a roadside driver can't send what 911 can.",
     updated: UPDATED,
@@ -892,7 +892,7 @@ export const GUIDES_ROADSIDE: Guide[] = [
         ],
       },
       {
-        heading: "What to tell dispatch",
+        heading: "What dispatch needs from you",
         paragraphs: ["Whoever you call, the first thing they need is where you are:"],
         list: [
           "The road and direction, such as southbound I-35E.",

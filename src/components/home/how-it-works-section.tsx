@@ -11,7 +11,7 @@ const STEPS = [
   { icon: ClipboardList, title: "Pick your service", body: "Tell us what's wrong and add your vehicle details." },
   { icon: UserCheck, title: "Get matched", body: "Dispatch reviews and assigns the nearest available driver." },
   { icon: Navigation, title: "Driver on the way", body: "We text or call you when your driver is heading to you." },
-  { icon: CheckCircle2, title: "Back on the road", body: "Service is completed and your request is closed out." },
+  { icon: CheckCircle2, title: "Done and driving", body: "Service is completed and your request is closed out." },
 ] as const;
 
 export function HowItWorksSection() {

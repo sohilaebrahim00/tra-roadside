@@ -29,13 +29,13 @@ export const TOPICS_PLACES: TopicPage[] = [
       {
         heading: "Where to stop",
         paragraphs: [
-          "In a live traffic lane, or if anyone is in danger, call 911 first. Everything else waits.",
+          "In a travel lane, or if someone could be hurt, call 911 before anything else. Everything else waits.",
           "If the car can still roll, a slow drive to the right shoulder, an exit or a lot beside the road beats stopping in a lane. A ramp can look like a safe pocket, but traffic is entering or leaving at speed there and may not see you around the curve. Keep going to the end of the ramp if you can, then stop where a driver can reach you.",
           "Hazard lights on. Get everyone out on the side away from traffic, or stay belted in with the hazards on if the shoulder is too narrow to stand on.",
         ],
       },
       {
-        heading: "What to tell dispatch",
+        heading: "What dispatch needs from you",
         paragraphs: ["Read what you can see safely, and give us as many of these as you have:"],
         list: [
           "Northbound or southbound on I-35E.",
@@ -104,7 +104,7 @@ export const TOPICS_PLACES: TopicPage[] = [
       {
         heading: "Staying safe while you wait",
         paragraphs: [
-          "A car stopped in a live traffic lane, or anyone in danger, means 911 first, before you call us. Don't drive on a destroyed tire any farther than it takes to leave the lane, because every extra block damages the wheel.",
+          "A car stopped in a travel lane, or anyone in danger, means 911 first, before you call us. Don't drive on a destroyed tire any farther than it takes to leave the lane, because every extra block damages the wheel.",
           "A wide shoulder or a lot is the best place to stop and a ramp the worst, because traffic is merging or leaving there at speed. If you can't get clear of traffic, stay belted in with the hazard lights on, and don't try to jack the car up yourself.",
         ],
       },
@@ -170,7 +170,7 @@ export const TOPICS_PLACES: TopicPage[] = [
       {
         heading: "Staying safe until help arrives",
         paragraphs: [
-          "Call 911 first if you are in a live traffic lane or anyone is in danger. If the engine quit while you were moving, steering and braking can feel much heavier. Hold the wheel firmly and coast toward the right shoulder with your hazard lights on.",
+          "Call 911 first if you are in a travel lane or someone could be hurt. If the engine quit while you were moving, steering and braking can feel much heavier. Hold the wheel firmly and coast toward the right shoulder with your hazard lights on.",
           "Pick a shoulder or a lot over a ramp, since traffic enters and leaves a ramp at speed. Once stopped, put the car in park, set the parking brake and get everyone out on the side away from traffic. If the shoulder is too narrow to stand on, stay belted in with the hazards on.",
         ],
       },
@@ -185,7 +185,7 @@ export const TOPICS_PLACES: TopicPage[] = [
     faqs: [
       {
         q: "Can you jump start my car on the shoulder of I-30?",
-        a: "Yes, when the driver can reach the car safely. A jump start is {{price:jump-start}} plus the {{dispatchFee}} dispatch fee. If you are in a live lane, call 911 first.",
+        a: "Yes, when the driver can reach the car safely. A jump start is {{price:jump-start}} plus the {{dispatchFee}} dispatch fee. If you are in a travel lane, call 911 first.",
       },
       {
         q: "What if the car dies again after the jump?",
@@ -225,7 +225,7 @@ export const TOPICS_PLACES: TopicPage[] = [
       {
         heading: "A shoulder, a ramp or a lot",
         paragraphs: [
-          "If you are in a live traffic lane, or anyone is in danger, 911 comes first. Then call us. If the car can still roll slowly, a wide shoulder or a parking lot at the next exit is the best place to stop. A ramp is the worst, because traffic enters and leaves it at speed and a stopped car there is easy to miss.",
+          "If you are in a travel lane, or someone could be hurt, 911 comes first. Then call us. If the car can still roll slowly, a wide shoulder or a parking lot at the next exit is the best place to stop. A ramp is the worst, because traffic enters and leaves it at speed and a stopped car there is easy to miss.",
           "Get everyone out on the side away from traffic, or stay belted in with the hazards on if the shoulder is too narrow to stand on. Please don't jack the car up yourself beside moving traffic.",
         ],
       },
@@ -252,7 +252,7 @@ export const TOPICS_PLACES: TopicPage[] = [
       },
       {
         q: "Can I drive to the next exit on a flat?",
-        a: "Only if it is the safer choice, such as leaving a live lane. Even a short drive on a flat damages the wheel as well as the tire, so keep it slow and stop as soon as you are out of traffic.",
+        a: "Only if it is the safer choice, such as leaving a travel lane. Even a short drive on a flat damages the wheel as well as the tire, so keep it slow and stop as soon as you are out of traffic.",
       },
       {
         q: "What if my spare is flat too?",
@@ -289,7 +289,7 @@ export const TOPICS_PLACES: TopicPage[] = [
         heading: "If the engine quits at speed",
         paragraphs: [
           "A dead engine can make steering and braking feel much heavier. Hold the wheel firmly, keep steady pressure on the brake, and let the car coast toward the right shoulder with your hazard lights on.",
-          "Dial 911 before anything else if your car is in a live lane or anyone is in danger. Even a narrow shoulder beats the lane. A frontage road or a lot is better still, if there is one within reach. A ramp is a poor choice, because traffic is merging or exiting at speed.",
+          "Dial 911 before anything else if your car is stopped in moving traffic or someone could be hurt. Even a narrow shoulder beats the lane. A frontage road or a lot is better still, if there is one within reach. A ramp is a poor choice, because traffic is merging or exiting at speed.",
         ],
       },
       {
@@ -314,7 +314,7 @@ export const TOPICS_PLACES: TopicPage[] = [
       },
       {
         q: "What if I'm in the express lanes?",
-        a: "Say so. Express or managed lanes are separate from the main lanes, and a driver can't always get from one to the other. If you are stopped in a live lane, call 911 first.",
+        a: "Say so. Express or managed lanes are separate from the main lanes, and a driver can't always get from one to the other. If you are stopped in a travel lane, call 911 first.",
       },
       {
         q: "Will a jump start get me home?",
@@ -350,7 +350,7 @@ export const TOPICS_PLACES: TopicPage[] = [
       {
         heading: "Making the stop safe",
         paragraphs: [
-          "Anyone in danger, or a car sitting in a live lane, is a 911 call before it is a call to us. If the car can still roll, drive slowly to a wide shoulder, an exit or a lot rather than stopping beside the lane. A ramp is a bad place to stop, because traffic enters and leaves it at speed.",
+          "Anyone in danger, or a car sitting in a travel lane, is a 911 call before it is a call to us. If the car can still roll, drive slowly to a wide shoulder, an exit or a lot rather than stopping beside the lane. A ramp is a bad place to stop, because traffic enters and leaves it at speed.",
           "Turn the wheels away from the road if you can, put the car in park and set the parking brake. Everyone gets out on the side away from traffic, or stays belted in with the hazards on if the shoulder is too narrow.",
         ],
       },
@@ -380,7 +380,7 @@ export const TOPICS_PLACES: TopicPage[] = [
       },
       {
         q: "Can you repair the tire instead of swapping it?",
-        a: "Often, if the puncture is in the tread. A plug or patch is {{price:tire-repair-plug-patch}} plus the {{dispatchFee}} dispatch fee. Damage in or near the sidewall can't be safely repaired.",
+        a: "Often, when the hole is in the tread. A plug or patch is {{price:tire-repair-plug-patch}} plus the {{dispatchFee}} dispatch fee. Damage in or near the sidewall can't be safely repaired.",
       },
       {
         q: "Which cities along I-820 do you serve?",
@@ -419,7 +419,7 @@ export const TOPICS_PLACES: TopicPage[] = [
       {
         heading: "Stopping safely, and what to have ready",
         paragraphs: [
-          "If the car is in a live traffic lane or someone is in danger, call 911 first. A shoulder is better than the lane, and an exit or a lot is better than a shoulder. Avoid stopping on a ramp, where traffic is merging or leaving at speed and may not see you in time.",
+          "If the car is in a travel lane or someone is in danger, call 911 first. A shoulder is better than the lane, and an exit or a lot is better than a shoulder. Avoid stopping on a ramp, where traffic is merging or leaving at speed and may not see you in time.",
           "If you can't get well clear of the lanes, don't get out. Stay belted in with the hazards on, and let the driver deal with the wheel. Read these off if you can do it safely:",
         ],
         list: [
@@ -474,7 +474,7 @@ export const TOPICS_PLACES: TopicPage[] = [
         heading: "Who else can help on a toll road",
         paragraphs: [
           "A toll road has an operator, and that operator runs its own help for stranded drivers. Look for its signs or its roadside information, and use that help if it is closer to hand than ours. TRA is an independent company. We are not part of the tollway's operator, and we have no arrangement with it.",
-          "Either way, if you are in a live lane or anyone is in danger, call 911 first.",
+          "Either way, if you are stopped in moving traffic or someone could be hurt, call 911 before anything else.",
         ],
       },
       {
@@ -502,7 +502,7 @@ export const TOPICS_PLACES: TopicPage[] = [
     faqs: [
       {
         q: "Should I call the tollway's own help first?",
-        a: "You can use either, or both. The road's operator has its own help for stranded drivers, and we are a separate company you can call or request online. In a live lane, call 911 first.",
+        a: "You can use either, or both. The road's operator has its own help for stranded drivers, and we are a separate company you can call or request online. In a travel lane, call 911 first.",
       },
       {
         q: "Does being on a tollway change the price?",
@@ -550,7 +550,7 @@ export const TOPICS_PLACES: TopicPage[] = [
         heading: "The operator's help and ours",
         paragraphs: [
           "A turnpike has an operator, and that operator runs its own help for stranded drivers. Use it if it is closer to hand. TRA is independent, and we have no arrangement with the turnpike's operator.",
-          "Call 911 first, ahead of anyone else, if you are in a live traffic lane or anyone is in danger.",
+          "Call 911 first, ahead of anyone else, if you are in a travel lane or someone could be hurt.",
         ],
       },
       {
@@ -572,7 +572,7 @@ export const TOPICS_PLACES: TopicPage[] = [
       },
       {
         q: "Can you tow me off the turnpike?",
-        a: "No. We don't tow. If the car can't be fixed at the roadside, you will need a towing service. In a live lane, call 911 first.",
+        a: "No. We don't tow. If the car can't be fixed at the roadside, you will need a towing service. In a travel lane, call 911 first.",
       },
       {
         q: "Which cities along the turnpike do you serve?",
@@ -611,7 +611,7 @@ export const TOPICS_PLACES: TopicPage[] = [
       {
         heading: "Waiting safely on a tollway",
         paragraphs: [
-          "Stopped in a live lane, or with anyone in danger? Call 911 before you do anything else. The tollway's operator also runs its own help for stranded drivers, and you can use it if it is closer to hand. TRA is independent, with no arrangement with the operator.",
+          "Stopped in a travel lane, or with anyone in danger? Call 911 before you do anything else. The tollway's operator also runs its own help for stranded drivers, and you can use it if it is closer to hand. TRA is independent, with no arrangement with the operator.",
           "Pick a shoulder or lot over a ramp, since traffic enters and leaves a ramp at speed. Don't raise the hood next to the lanes; the driver does that. Hazards on, parking brake set, and stay belted in if there is not room to get well clear.",
         ],
       },
@@ -666,7 +666,7 @@ export const TOPICS_PLACES: TopicPage[] = [
       {
         heading: "Making the stop safe",
         paragraphs: [
-          "If the car is in a live traffic lane, or anyone is in danger, make 911 your first call. If the car can still roll, drive slowly to a wide shoulder, an exit or a lot instead of stopping beside the lane. A ramp is a poor place to stop, because traffic is merging or leaving at speed.",
+          "If the car is in a travel lane, or someone could be hurt, make 911 your first call. If the car can still roll, drive slowly to a wide shoulder, an exit or a lot instead of stopping beside the lane. A ramp is a poor place to stop, because traffic is merging or leaving at speed.",
           "Hazards on, parking brake set. Get out on the side away from traffic, or stay belted in if the shoulder is too narrow to stand well clear. Please don't jack up the car yourself next to moving traffic.",
         ],
       },
@@ -697,7 +697,7 @@ export const TOPICS_PLACES: TopicPage[] = [
       },
       {
         q: "Can I keep driving to a shop on the flat?",
-        a: "Only far enough to leave a live lane. Even a short drive on a flat damages the wheel as well as the tire.",
+        a: "Only far enough to leave a travel lane. Even a short drive on a flat damages the wheel as well as the tire.",
       },
       {
         q: "What if I'm on the frontage road, not the main lanes?",
@@ -732,7 +732,7 @@ export const TOPICS_PLACES: TopicPage[] = [
         paragraphs: [
           "In a garage, the address gets a driver to the door but not to the car. Tell dispatch the garage's name or street address, the level, and the section or the nearest stairwell or elevator. If you parked on a numbered level, give the number.",
           "If the garage uses tickets, a gate or an access code, say so, and be ready to meet the driver at the entrance if you can. We have no special access to any garage, so a driver gets in the way any other customer would.",
-          "Garages can be quiet at some hours. If you are alone on the level, wait where you can be seen, near the elevator or stairwell, and keep your phone with you. If anyone is in danger, call 911 first.",
+          "Garages can be quiet at some hours. If you are alone on the level, wait where you can be seen, near the elevator or stairwell, and keep your phone with you. If someone could be hurt, call 911 before anything else.",
         ],
       },
       {
@@ -816,7 +816,7 @@ export const TOPICS_PLACES: TopicPage[] = [
       {
         heading: "Waiting safely, and the cost",
         paragraphs: [
-          "Wait somewhere well lit, near the car but out of the way of traffic, and ideally with someone. If a child or pet is locked inside, or anyone is in danger, call 911 first. Don't wait for a driver.",
+          "Wait somewhere well lit, near the car but out of the way of traffic, and ideally with someone. If a child or an animal is shut inside, or someone could be hurt, call 911 before anything else. Don't wait for a driver.",
           "Opening the vehicle so you can reach keys in the cabin is {{price:lockout}}, plus a {{dispatchFee}} dispatch fee charged once. Keys locked in the trunk are a separate job, so tell dispatch which one you have. A text or a call tells you the driver is on the way. We send the nearest available driver as soon as possible.",
         ],
       },
@@ -872,7 +872,7 @@ export const TOPICS_PLACES: TopicPage[] = [
         heading: "Tight stalls and curb spaces",
         paragraphs: [
           "Garage stalls and parallel spaces can leave little room around the hood. Tell dispatch if the car is nose-in against a wall, between pillars or tucked behind another car. On some cars the battery isn't under the hood at all, so give the year, make and model.",
-          "If the car is at the curb in a travel lane, or anyone is in danger, call 911 first.",
+          "If the car is at the curb in a travel lane, or someone could be hurt, call 911 before anything else.",
         ],
       },
       {
@@ -930,7 +930,7 @@ export const TOPICS_PLACES: TopicPage[] = [
         heading: "Check the spare first",
         paragraphs: [
           "Find where the spare is stored, usually under the trunk floor or beneath the vehicle, and whether it has air. If your wheels have locking nuts, look for the key. Tell dispatch both. A missing key is a separate service.",
-          "If the car is stopped in a travel lane, or anyone is in danger, call 911 first.",
+          "If the car is stopped in a travel lane, or someone could be hurt, call 911 before anything else.",
         ],
       },
       {
@@ -991,7 +991,7 @@ export const TOPICS_PLACES: TopicPage[] = [
         heading: "Proving the car is yours",
         paragraphs: [
           "For everyone's safety, the driver confirms the car is yours before unlocking anything. Have ID ready, or another way to show it belongs to you. Entry is non-destructive whenever possible.",
-          "If a child or pet is locked in the car, or anyone is in danger, call 911 first. Don't wait for us.",
+          "If a child or an animal is shut inside the car, or someone could be hurt, call 911 before anything else. Don't wait for us.",
         ],
       },
       {
@@ -1049,7 +1049,7 @@ export const TOPICS_PLACES: TopicPage[] = [
         heading: "Telling us where to come",
         paragraphs: [
           "Give the house number and street, and say whether the car is in the driveway, at the curb or in a garage. If it is in a closed garage, make sure the driver can reach it, with the door open or someone to open it.",
-          "If you see smoke or smell burning from under the hood, or anyone is in danger, move away from the car and call 911 first.",
+          "If you see smoke or smell burning from under the hood, or someone could be hurt, move away from the car and call 911 first.",
         ],
       },
       {
@@ -1117,7 +1117,7 @@ export const TOPICS_PLACES: TopicPage[] = [
       {
         heading: "We are not part of the property, and the cost",
         paragraphs: [
-          "TRA is independent, with no arrangement with any property manager, building or lot in Las Colinas. A driver gets in the way any other customer would. If the lot restricts access, dispatch will tell you plainly whether a driver can reach it or whether to meet somewhere nearby. If anyone is in danger, call 911 first.",
+          "TRA is independent, with no arrangement with any property manager, building or lot in Las Colinas. A driver gets in the way any other customer would. If the lot restricts access, dispatch will tell you plainly whether a driver can reach it or whether to meet somewhere nearby. If someone could be hurt, call 911 before anything else.",
           "A jump start is {{price:jump-start}}, plus a {{dispatchFee}} dispatch fee charged once. A battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries. We text or call when the driver is on the way. We send the nearest available driver as soon as possible.",
         ],
       },
@@ -1162,7 +1162,7 @@ export const TOPICS_PLACES: TopicPage[] = [
         heading: "Tell us where you are",
         paragraphs: [
           "In a garage, give its name or street address, the level, and the section or nearest stairwell. On the street, give the nearest cross street, the side of the street, and which way the car faces. Tell dispatch about any ticket, gate or time limit.",
-          "TRA has no special access to any garage or lot in Fort Worth, so a driver gets in the way any other customer would. If the car is blocking a travel lane, or anyone is in danger, call 911 first.",
+          "TRA has no special access to any garage or lot in Fort Worth, so a driver gets in the way any other customer would. If the car is blocking a travel lane, or someone could be hurt, call 911 before anything else.",
         ],
       },
       {
@@ -1231,7 +1231,7 @@ export const TOPICS_PLACES: TopicPage[] = [
         heading: "We are not part of the district",
         paragraphs: [
           "TRA is independent, with no arrangement with any venue, lot owner or district group at the Stockyards. A driver gets in the way any other customer would. If a spot is closed to outside vehicles, dispatch will say so plainly, and it may be easier to meet the driver somewhere nearby.",
-          "If the car is in a travel lane, or anyone is in danger, call 911 first.",
+          "If the car is in a travel lane, or someone could be hurt, call 911 before anything else.",
         ],
       },
       {
@@ -1286,7 +1286,7 @@ export const TOPICS_PLACES: TopicPage[] = [
         heading: "The long-term lot problem",
         paragraphs: [
           "A car that has sat for days or weeks can lose enough charge to leave you with nothing but a click. If it is the first time the battery has failed on this trip, start with a jump start. If it has already been jumped and died again, go straight to a replacement.",
-          "If the key fob has gone dead, or the keys are inside, a lockout may be what you need instead. If anyone is in danger, call 911 first.",
+          "If the key fob has gone dead, or the keys are inside, a lockout may be what you need instead. If someone could be hurt, call 911 before anything else.",
         ],
       },
       {

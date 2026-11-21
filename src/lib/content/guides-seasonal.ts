@@ -37,7 +37,7 @@ export const GUIDES_SEASONAL: Guide[] = [
         heading: "A flat tire, or keys locked inside",
         paragraphs: [
           "Rows are tight, so tell dispatch if other cars are packed in around yours. A tire change needs room to open the doors and set a jack. With a good spare in the car, a flat tire change is {{price:flat-tire-change}}, plus the {{dispatchFee}} dispatch fee. Without a usable spare, we can supply and install a tire. Tire replacement is {{price:tire-replacement}}, plus the fee, once dispatch confirms one is available.",
-          "Opening a locked car is {{price:lockout}}, and keys locked in the trunk are a separate job at {{price2:lockout}}, each plus the fee. The driver confirms the car is yours before opening it, so have ID ready. If a child or a pet is locked inside, call 911 first. Don't wait for a service truck.",
+          "Opening a locked car is {{price:lockout}}, and keys locked in the trunk are a separate job at {{price2:lockout}}, each plus the fee. The driver confirms the car is yours before opening it, so have ID ready. If a child or an animal is shut inside, call 911 first. Don't wait for a service truck.",
         ],
       },
       {
@@ -100,7 +100,7 @@ export const GUIDES_SEASONAL: Guide[] = [
         heading: "Waiting for the crowd and for the driver",
         paragraphs: [
           "We send the nearest available driver as soon as possible. In heavy event traffic, expect it to take longer. We text or call when the driver is on the way, so keep your ringer on and your phone charged.",
-          "If the car is parked safely out of the way, there is nothing wrong with letting the exits clear before the driver comes in. If any part of the car is in a lane of traffic, or anyone is in danger, call 911 first.",
+          "If the car is parked safely out of the way, there is nothing wrong with letting the exits clear before the driver comes in. If any part of the car is in a lane of traffic, or someone could be hurt, call 911 before anything else.",
         ],
       },
     ],
@@ -223,7 +223,7 @@ export const GUIDES_SEASONAL: Guide[] = [
       },
       {
         q: "Can a nail in the tire be plugged?",
-        a: "If the puncture is in the tread, often yes. Damage in or near the sidewall can't be safely repaired. The driver checks before starting and tells you which it is.",
+        a: "When the hole is in the tread, often yes. Damage in or near the sidewall can't be safely repaired. The driver checks before starting and tells you which it is.",
       },
       {
         q: "I'm camping at the track. Does that change anything?",
@@ -309,7 +309,7 @@ export const GUIDES_SEASONAL: Guide[] = [
       {
         heading: "Flat tires on rough ground",
         paragraphs: [
-          "Gravel, ruts, stakes and the odd stray nail are hard on tires, and a tire can pick up a puncture well before it goes flat. A flat tire change using the spare you carry is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once. If the puncture is in the tread, tire repair is {{price:tire-repair-plug-patch}}, plus the same fee.",
+          "Gravel, ruts, stakes and the odd stray nail are hard on tires, and a tire can pick up a puncture well before it goes flat. A flat tire change using the spare you carry is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once. When the hole is in the tread, tire repair is {{price:tire-repair-plug-patch}}, plus the same fee.",
           "Check the spare before the day starts. A compact spare is meant for a short drive at reduced speed, with the limit printed on it, and it should be replaced with a proper tire soon after.",
         ],
       },
@@ -386,7 +386,7 @@ export const GUIDES_SEASONAL: Guide[] = [
       {
         heading: "If the car quits close to home",
         paragraphs: [
-          "Our service area is the Dallas–Fort Worth Metroplex. We send the nearest available driver as soon as possible. On the busiest travel days, traffic can make it longer. We text or call as the driver heads to you. If you are in a lane of traffic, or anyone is in danger, call 911 first.",
+          "Our service area is the Dallas–Fort Worth Metroplex. We send the nearest available driver as soon as possible. On the busiest travel days, traffic can make it longer. We text or call as the driver heads to you. If you are in a lane of traffic, or someone could be hurt, call 911 before anything else.",
           "Loading the trunk is also when keys get locked inside. Unlocking the car is {{price:lockout}}, and a trunk lockout is {{price2:lockout}}, each plus the dispatch fee.",
         ],
       },

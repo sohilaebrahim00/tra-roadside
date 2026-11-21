@@ -46,11 +46,11 @@ export const GUIDES_VEHICLES: Guide[] = [
         paragraphs: [
           "On the 2009 to 2014 trucks, Ford's manual describes the spare as stowed underneath the vehicle on a winch cable, lying flat against the frame. The same manual warns that stowing it badly can lead to the cable failing and the tire being lost. Later trucks and trims can differ, and some Ford vehicles carry a tire inflator and sealant kit instead of a spare, so look under the truck and check the owner's manual for yours before you count on one.",
           "A flat tire change uses the spare already in the truck. If your truck has a sealant kit and no spare, there is nothing to put on, and the answer is a tire repair for a puncture in the tread or a replacement tire. Dispatch will tell you which fits the situation.",
-          "If the truck is in a live lane, or anyone is in danger, call 911 first. The tire can wait.",
+          "If the truck is in a travel lane, or someone could be hurt, call 911 before anything else. The tire can wait.",
         ],
       },
       {
-        heading: "What to tell dispatch",
+        heading: "What dispatch needs from you",
         paragraphs: [
           "Give the year, cab and engine, plus the trim if you know it. If it is a diesel or a PowerBoost hybrid, say so, because those are matched from the VIN.",
           "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send the nearest available driver as soon as possible. We text or call when the driver is on the way.",
@@ -105,11 +105,11 @@ export const GUIDES_VEHICLES: Guide[] = [
         paragraphs: [
           "Full-size pickups commonly carry the spare under the bed, lowered with a tool through an access point at the rear. Whether yours does, and where the lowering tool and jack are kept, depends on year and trim, so the owner's manual is the place to confirm it. Some trucks come with a sealant kit rather than a spare.",
           "Do the check on a quiet day. Find the tool, see whether the spare lowers freely, and look at the spare's air pressure, since a spare that has sat for years is often soft.",
-          "A flat tire change uses the spare already in the truck. If there is no usable spare, tire repair covers a tread puncture and a replacement tire covers the rest. If you are in a lane of traffic or anyone is in danger, call 911 first.",
+          "A flat tire change uses the spare already in the truck. If there is no usable spare, tire repair covers a tread puncture and a replacement tire covers the rest. If you are in a lane of traffic or someone could be hurt, call 911 before anything else.",
         ],
       },
       {
-        heading: "What to tell dispatch",
+        heading: "What dispatch needs from you",
         paragraphs: [
           "Say the year, engine and cab, and mention it if the truck is a diesel or has stop/start. Say where the truck is parked and whether the spare is under the bed.",
           "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. Dispatch confirms the battery and your total before a driver is sent. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. We send a driver as soon as possible, and we text or call you when they are on the way.",
@@ -162,11 +162,11 @@ export const GUIDES_VEHICLES: Guide[] = [
         paragraphs: [
           "Where a Ram carries its spare, and whether it has one, depends on the year, cab and trim. Many full-size pickups keep it under the bed on a cable, but check the owner's manual for your truck rather than assuming. The manual also shows where the jack and lug wrench are stored.",
           "A flat tire change puts on the spare you already carry. If the spare is missing, flat or damaged, say so when you call, because the job then becomes a tire repair or a replacement tire instead.",
-          "If the truck is stopped in a live lane, or anyone is in danger, call 911 before anything else.",
+          "If the truck is stopped in a travel lane, or someone could be hurt, call 911 before anything else.",
         ],
       },
       {
-        heading: "What to tell dispatch",
+        heading: "What dispatch needs from you",
         paragraphs: [
           "Year, cab style and engine, and the VIN if it is easy to read from the dash or the door jamb. Tell us whether the truck is in a driveway, a lot or on a roadside.",
           "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job, using the spare already in the truck. Dispatch confirms the battery and your total before a driver is sent. We send a driver as soon as possible, and we text or call you when they are on the way.",
@@ -220,11 +220,11 @@ export const GUIDES_VEHICLES: Guide[] = [
         paragraphs: [
           "Many full-size pickups carry the spare below the bed on a cable and lower it with a tool. Your Sierra's owner's manual shows whether yours does, how the lowering tool works, and where the jack is kept. Trims differ, so do not assume.",
           "If the spare has been under there for years, it may be low on air. A flat tire change uses the spare already in the truck, so a soft spare is worth knowing about before you need it.",
-          "A tread puncture may be repairable, and a torn sidewall means a replacement tire. In a live traffic lane, or if anyone is in danger, call 911 first.",
+          "A tread puncture may be repairable, and a torn sidewall means a replacement tire. In a travel lane, or if someone could be hurt, call 911 before anything else.",
         ],
       },
       {
-        heading: "What to tell dispatch",
+        heading: "What dispatch needs from you",
         paragraphs: [
           "Year, engine, cab and trim, plus a note if the truck is a diesel or has stop/start. Add your location and whether a wheel lock key is in the truck.",
           "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send the nearest available driver as soon as possible. We text or call when the driver is on the way.",
@@ -279,11 +279,11 @@ export const GUIDES_VEHICLES: Guide[] = [
         paragraphs: [
           "Toyota's 2015 Tacoma manual says the spare is stored under the truck's bed. To get it down, you put the jack handle extension into the lowering screw and turn it counterclockwise. Once the tire is on the ground, you remove the holding bracket. Other years can differ, so read the manual for yours.",
           "The spare is easy to forget about because you never see it. Lower it once on a quiet day so you know the tool is there and the mechanism turns.",
-          "If the truck is in a live lane, or anyone is in danger, call 911 first. A flat tire change uses the spare already in the truck.",
+          "If the truck is in a travel lane, or someone could be hurt, call 911 before anything else. A flat tire change uses the spare already in the truck.",
         ],
       },
       {
-        heading: "What to tell dispatch",
+        heading: "What dispatch needs from you",
         paragraphs: [
           "Year, engine (V6 or 4-cylinder, or hybrid on the newest trucks), cab and trim. Tell us where the truck is and whether the spare is in place.",
           "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send a driver as soon as possible, and we text or call you when they are on the way.",
@@ -337,11 +337,11 @@ export const GUIDES_VEHICLES: Guide[] = [
         paragraphs: [
           "Toyota's Tacoma manual describes a spare stored under the bed on a lowering screw. For the Tundra, check your own owner's manual, because the location, the lowering tool and what you get all depend on the year and trim.",
           "A flat tire change puts on the spare already in the truck. A truck this heavy deserves a spare with proper air in it, so check it once a season. A spare that has gone soft turns a ten-minute job into a longer one.",
-          "If the truck is in a live traffic lane or anyone is in danger, call 911 first.",
+          "If the truck is in a travel lane or someone could be hurt, call 911 before anything else.",
         ],
       },
       {
-        heading: "What to tell dispatch",
+        heading: "What dispatch needs from you",
         paragraphs: [
           "Year, engine, cab and trim, and the VIN if you can reach it. Say where the truck is parked.",
           "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send a driver as soon as possible, and we text or call you when they are on the way.",
@@ -397,11 +397,11 @@ export const GUIDES_VEHICLES: Guide[] = [
         paragraphs: [
           "Look before you need it. On many sedans the spare, if there is one, sits under the trunk floor panel, and some cars carry a tire repair kit instead. Which one a Camry has depends on the year, trim and whether it is a hybrid, so check the owner's manual and lift the trunk floor once.",
           "A flat tire change uses the spare already in the car, so if you have only a repair kit, the next step is a tire repair for a tread puncture, or a replacement tire. Tell dispatch what you found.",
-          "If the car is stopped in a live lane, or anyone is in danger, call 911 first.",
+          "If the car is stopped in a travel lane, or someone could be hurt, call 911 before anything else.",
         ],
       },
       {
-        heading: "What to tell dispatch",
+        heading: "What dispatch needs from you",
         paragraphs: [
           "Year, engine (4-cylinder, V6 or hybrid) and trim. For a hybrid, add the VIN if you can reach it.",
           "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send the nearest available driver as soon as possible. We text or call when the driver is on the way.",
@@ -456,11 +456,11 @@ export const GUIDES_VEHICLES: Guide[] = [
         paragraphs: [
           "Some Corollas have a compact spare and some have a repair kit, and which you have depends on the year, body style and trim. Check the owner's manual and look under the trunk floor or cargo floor to see what you actually have.",
           "Do not drive far on a compact spare, and do not push it fast. It is there to get you to a tire shop. A flat tire change uses the spare already in the car; if there is only a repair kit, a tread puncture can often be repaired, and a damaged sidewall means a new tire.",
-          "In a live traffic lane, or if anyone is in danger, call 911 first.",
+          "In a travel lane, or if someone could be hurt, call 911 before anything else.",
         ],
       },
       {
-        heading: "What to tell dispatch",
+        heading: "What dispatch needs from you",
         paragraphs: [
           "Year, engine size or hybrid, and sedan or hatchback. Mention if you are in a garage or a tight spot.",
           "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send a driver as soon as possible, and we text or call you when they are on the way.",
@@ -513,11 +513,11 @@ export const GUIDES_VEHICLES: Guide[] = [
         heading: "The spare under the cargo floor",
         paragraphs: [
           "Lift the cargo floor panel to see what your RAV4 carries. A crossover like this commonly keeps its spare, if it has one, under that panel, but the year, trim and hybrid models can differ, and some come with a repair kit. The owner's manual says what yours has and where the jack and wrench are.",
-          "A flat tire change uses the spare already in the vehicle. If there is no spare, a tire repair covers a tread puncture and a replacement tire covers the rest. In a live traffic lane, or if anyone is in danger, call 911 before anything else.",
+          "A flat tire change uses the spare already in the vehicle. If there is no spare, a tire repair covers a tread puncture and a replacement tire covers the rest. In a travel lane, or if someone could be hurt, call 911 before anything else.",
         ],
       },
       {
-        heading: "What to tell dispatch",
+        heading: "What dispatch needs from you",
         paragraphs: [
           "Year, whether it is a hybrid, and trim. If you know it has start-stop, say so.",
           "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send the nearest available driver as soon as possible. We text or call when the driver is on the way.",
@@ -571,11 +571,11 @@ export const GUIDES_VEHICLES: Guide[] = [
         paragraphs: [
           "Honda has sold Civics with a temporary tire repair kit, a compressor and sealant, instead of a spare. A 2014 Civic manual says that model has no spare tire. Check your owner's manual for your year and trim, and look in the trunk to see what is actually there.",
           "A flat tire change puts on the spare already in the car. If you have a kit and no spare, it is a stopgap for a small puncture: the manual warns not to run the compressor for more than 15 minutes. A tire repair or a replacement tire is the real fix.",
-          "In a live lane, or if anyone is in danger, call 911 first.",
+          "In a travel lane, or if someone could be hurt, call 911 before anything else.",
         ],
       },
       {
-        heading: "What to tell dispatch",
+        heading: "What dispatch needs from you",
         paragraphs: [
           "Year, trim, and whether it is a Type R or a hybrid. Say whether you found a spare or a kit.",
           "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send a driver as soon as possible, and we text or call you when they are on the way.",
@@ -631,11 +631,11 @@ export const GUIDES_VEHICLES: Guide[] = [
         heading: "The spare",
         paragraphs: [
           "Whether your Accord has a spare, a compact spare or only a repair kit depends on the year, trim and powertrain. Check the owner's manual and lift the trunk floor to see.",
-          "A flat tire change uses the spare already in the car. A tread puncture can often be repaired, and a damaged sidewall needs a new tire. In a live lane, or if anyone is in danger, call 911 first.",
+          "A flat tire change uses the spare already in the car. A tread puncture can often be repaired, and a damaged sidewall needs a new tire. In a travel lane, or if someone could be hurt, call 911 before anything else.",
         ],
       },
       {
-        heading: "What to tell dispatch",
+        heading: "What dispatch needs from you",
         paragraphs: [
           "Year, engine (1.5-liter, 2.0-liter, 4-cylinder or V6) and trim.",
           "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send the nearest available driver as soon as possible. We text or call when the driver is on the way.",
@@ -686,11 +686,11 @@ export const GUIDES_VEHICLES: Guide[] = [
         heading: "Spare, repair kit, or neither",
         paragraphs: [
           "Some CR-Vs carry a temporary spare under the cargo floor and some come with a tire repair kit, and hybrids can differ from gas models. We have not confirmed which years and trims have which, so check your owner's manual and lift the cargo floor panel.",
-          "A flat tire change uses the spare already in the vehicle. With a kit only, a tire repair or a replacement tire is the way forward. In a live lane, or if anyone is in danger, call 911 first.",
+          "A flat tire change uses the spare already in the vehicle. With a kit only, a tire repair or a replacement tire is the way forward. In a travel lane, or if someone could be hurt, call 911 before anything else.",
         ],
       },
       {
-        heading: "What to tell dispatch",
+        heading: "What dispatch needs from you",
         paragraphs: [
           "Year, trim and whether it is a hybrid. Add the VIN if you can reach it, because it is what lets the technician match a hybrid's different 12-volt battery. Tell us where the car is parked and whether you can open the hood.",
           "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send a driver as soon as possible, and we text or call you when they are on the way.",
@@ -746,11 +746,11 @@ export const GUIDES_VEHICLES: Guide[] = [
         heading: "Before you need the spare",
         paragraphs: [
           "Where an Altima keeps its spare, and whether yours has a full spare, a compact one or a repair kit, depends on the year and trim. Check the owner's manual and lift the trunk floor to see.",
-          "A flat tire change uses the spare already in the car. If a compact spare is what you have, treat it as a way to reach a tire shop, not a replacement. If you are in a live lane, or anyone is in danger, call 911 first.",
+          "A flat tire change uses the spare already in the car. If a compact spare is what you have, treat it as a way to reach a tire shop, not a replacement. If you are in a travel lane, or someone could be hurt, call 911 before anything else.",
         ],
       },
       {
-        heading: "What to tell dispatch",
+        heading: "What dispatch needs from you",
         paragraphs: [
           "Year, trim and engine. Say whether it is a hybrid, and where the car is parked, including whether it is in a garage or against a curb.",
           "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send the nearest available driver as soon as possible. We text or call when the driver is on the way.",
@@ -806,11 +806,11 @@ export const GUIDES_VEHICLES: Guide[] = [
         heading: "The spare",
         paragraphs: [
           "Whether a Rogue has a spare, and where, depends on the year and trim. Many crossovers keep one under the cargo floor, but check your owner's manual and look rather than assume, since some come with a repair kit.",
-          "A flat tire change uses the spare already in the vehicle. In a live lane, or if anyone is in danger, call 911 first. Otherwise turn on the hazard lights and get everyone away from traffic.",
+          "A flat tire change uses the spare already in the vehicle. In a travel lane, or if someone could be hurt, call 911 before anything else. Otherwise turn on the hazard lights and get everyone away from traffic.",
         ],
       },
       {
-        heading: "What to tell dispatch",
+        heading: "What dispatch needs from you",
         paragraphs: [
           "Year, trim and, if you can reach it, the VIN. It lets the technician confirm AGM on a 2021 or newer car. Also say where the car is parked, and whether you can open the hood and the doors.",
           "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send a driver as soon as possible, and we text or call you when they are on the way.",
@@ -870,11 +870,11 @@ export const GUIDES_VEHICLES: Guide[] = [
         heading: "The spare",
         paragraphs: [
           "Some Elantras carry a spare and some carry a tire mobility kit, depending on year and trim. Check your owner's manual and the trunk floor to see which one yours has.",
-          "A flat tire change uses the spare already in the car. If you only have a kit, tire repair covers a tread puncture and a replacement tire covers the rest. In a live traffic lane, or if anyone is in danger, call 911 first.",
+          "A flat tire change uses the spare already in the car. If you only have a kit, tire repair covers a tread puncture and a replacement tire covers the rest. In a travel lane, or if someone could be hurt, call 911 before anything else.",
         ],
       },
       {
-        heading: "What to tell dispatch",
+        heading: "What dispatch needs from you",
         paragraphs: [
           "Year, engine size, whether it is a turbo, and a hybrid note if it applies.",
           "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send the nearest available driver as soon as possible. We text or call when the driver is on the way.",
@@ -928,11 +928,11 @@ export const GUIDES_VEHICLES: Guide[] = [
         heading: "Spare or mobility kit",
         paragraphs: [
           "Hyundai calls its tire repair kit a tire mobility kit, and some models carry one in place of a spare. Whether your Tucson has a spare or a kit depends on year and trim, so check the owner's manual and the cargo floor.",
-          "A flat tire change uses the spare already in the vehicle. Without one, tire repair or a replacement tire is the option. In a live lane, or if anyone is in danger, call 911 first.",
+          "A flat tire change uses the spare already in the vehicle. Without one, tire repair or a replacement tire is the option. In a travel lane, or if someone could be hurt, call 911 before anything else.",
         ],
       },
       {
-        heading: "What to tell dispatch",
+        heading: "What dispatch needs from you",
         paragraphs: [
           "Year, trim, and whether it is a hybrid or plug-in. Add the VIN if you can reach it, because it lets the technician settle the AGM question on a newer car. Tell us where the car is parked and what you found when you looked for a spare or a kit.",
           "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send a driver as soon as possible, and we text or call you when they are on the way.",
@@ -990,11 +990,11 @@ export const GUIDES_VEHICLES: Guide[] = [
         heading: "The spare",
         paragraphs: [
           "Where a Sorento carries its spare, or whether it carries a mobility kit instead, depends on the year and trim, so check the owner's manual. Do not assume it is under the cargo floor, as some SUVs mount the spare beneath the vehicle.",
-          "A flat tire change uses the spare already in the vehicle. In a live lane, or if anyone is in danger, call 911 first. Otherwise get everyone out on the side away from traffic.",
+          "A flat tire change uses the spare already in the vehicle. In a travel lane, or if someone could be hurt, call 911 before anything else. Otherwise get everyone out on the side away from traffic.",
         ],
       },
       {
-        heading: "What to tell dispatch",
+        heading: "What dispatch needs from you",
         paragraphs: [
           "Year, trim and whether it is a hybrid or plug-in. Say where the car is parked, and add the VIN if it is easy to reach.",
           "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send the nearest available driver as soon as possible. We text or call when the driver is on the way.",
@@ -1051,11 +1051,11 @@ export const GUIDES_VEHICLES: Guide[] = [
         heading: "The spare",
         paragraphs: [
           "Large SUVs often keep the spare beneath the rear of the vehicle on a cable, lowered with a tool, but whether yours does, and what the spare is, depends on year and trim. Check the owner's manual. Some trims may come with a sealant kit.",
-          "A flat tire change uses the spare already in the vehicle. If it is missing, tire repair covers a tread puncture and a replacement tire covers the rest. In a live lane, or if anyone is in danger, call 911 first.",
+          "A flat tire change uses the spare already in the vehicle. If it is missing, tire repair covers a tread puncture and a replacement tire covers the rest. In a travel lane, or if someone could be hurt, call 911 before anything else.",
         ],
       },
       {
-        heading: "What to tell dispatch",
+        heading: "What dispatch needs from you",
         paragraphs: [
           "Year, trim, engine, and whether you know of a second battery. Say whether it is a diesel or a hybrid.",
           "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send a driver as soon as possible, and we text or call you when they are on the way.",
@@ -1109,11 +1109,11 @@ export const GUIDES_VEHICLES: Guide[] = [
         heading: "The spare",
         paragraphs: [
           "Some Ford vehicles carry a tire inflator and sealant kit instead of a spare, and Ford says the kit can be in the trunk, the luggage compartment or under the front passenger seat. Whether your Explorer has a spare or a kit depends on year and trim, so look and check the owner's manual.",
-          "A flat tire change uses the spare already in the vehicle. With a kit only, a tire repair or a replacement tire is the way forward. In a live lane, or if anyone is in danger, call 911 first.",
+          "A flat tire change uses the spare already in the vehicle. With a kit only, a tire repair or a replacement tire is the way forward. In a travel lane, or if someone could be hurt, call 911 before anything else.",
         ],
       },
       {
-        heading: "What to tell dispatch",
+        heading: "What dispatch needs from you",
         paragraphs: [
           "Year, engine and trim. Say if it is a hybrid, a Police Interceptor or an ST.",
           "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send the nearest available driver as soon as possible. We text or call when the driver is on the way.",
@@ -1167,11 +1167,11 @@ export const GUIDES_VEHICLES: Guide[] = [
         heading: "The spare",
         paragraphs: [
           "Whether your Grand Cherokee has a spare, and what kind, depends on year and trim, so check the owner's manual. We have not confirmed which years carry which, so we leave it to the manual and a look under the cargo floor.",
-          "A flat tire change uses the spare already in the vehicle. With no spare, a tire repair or a replacement tire is the way forward. In a live lane, or if anyone is in danger, call 911 first.",
+          "A flat tire change uses the spare already in the vehicle. With no spare, a tire repair or a replacement tire is the way forward. In a travel lane, or if someone could be hurt, call 911 before anything else.",
         ],
       },
       {
-        heading: "What to tell dispatch",
+        heading: "What dispatch needs from you",
         paragraphs: [
           "Year, engine, and whether it is a 4xe, a diesel or has start-stop.",
           "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send a driver as soon as possible, and we text or call you when they are on the way.",
@@ -1222,11 +1222,11 @@ export const GUIDES_VEHICLES: Guide[] = [
         heading: "The spare",
         paragraphs: [
           "Whether a Charger has a spare, a compact spare or a repair kit depends on year, trim and engine, so check the owner's manual and look under the trunk floor. We have not confirmed which trims carry which.",
-          "If you have a performance trim with wide tires, a replacement tire is not always an item every shop has, and tire availability varies. A flat tire change uses the spare already in the car. In a live lane, or if anyone is in danger, call 911 first.",
+          "If you have a performance trim with wide tires, a replacement tire is not always an item every shop has, and tire availability varies. A flat tire change uses the spare already in the car. In a travel lane, or if someone could be hurt, call 911 before anything else.",
         ],
       },
       {
-        heading: "What to tell dispatch",
+        heading: "What dispatch needs from you",
         paragraphs: [
           "Year, engine and trim. If it is a police package car, say so, because those use a larger battery. Add where the car is parked and whether you can open the hood.",
           "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send the nearest available driver as soon as possible. We text or call when the driver is on the way.",
@@ -1282,11 +1282,11 @@ export const GUIDES_VEHICLES: Guide[] = [
         heading: "Spare, sealant or run-flats",
         paragraphs: [
           "Many Mercedes models are sold with a tire sealant kit, or run-flat tires, instead of a spare. We have not confirmed what each C-Class year and trim has, so check your owner's manual and look in the trunk before you assume you have a spare.",
-          "A flat tire change uses the spare already in the car. If you have no spare, tire repair covers a tread puncture and a replacement tire covers the rest. Tire availability varies, and dispatch confirms a tire is available before a driver is sent. In a live lane, or if anyone is in danger, call 911 first.",
+          "A flat tire change uses the spare already in the car. If you have no spare, tire repair covers a tread puncture and a replacement tire covers the rest. Tire availability varies, and dispatch confirms a tire is available before a driver is sent. In a travel lane, or if someone could be hurt, call 911 before anything else.",
         ],
       },
       {
-        heading: "What to tell dispatch",
+        heading: "What dispatch needs from you",
         paragraphs: [
           "Year, model (C 300, AMG or a hybrid), and what you found when you looked for the spare. The VIN, if you can reach it.",
           "Battery replacement is {{price:battery-replacement}} for eligible vehicles and batteries, installed. A flat tire change is {{price:flat-tire-change}}, plus a {{dispatchFee}} dispatch fee charged once per job. Dispatch confirms the battery and your total before a driver is sent. We send a driver as soon as possible, and we text or call you when they are on the way.",

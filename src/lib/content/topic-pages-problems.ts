@@ -18,7 +18,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
       {
         heading: "What to check before you call",
         paragraphs: [
-          "Get clear of moving traffic and turn on your hazard lights. If you're in a live traffic lane, or anyone is in danger, call 911 first. Once you're safe, a minute of looking tells us which help to send.",
+          "Get clear of moving traffic and turn on your hazard lights. If you're in a travel lane, or someone could be hurt, call 911 before anything else. Once you're safe, a minute of looking tells us which help to send.",
         ],
         list: [
           "Which tire is down, and whether it's completely flat or still holding some air.",
@@ -67,7 +67,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
         a: "Don't. Even a short drive on a flat can damage the wheel as well as the tire, and a tire that could have been plugged becomes one that has to be replaced.",
       },
       {
-        q: "Do I need a membership?",
+        q: "Is there a membership to buy?",
         a: "No. There's no membership and no account. Call or send a request.",
       },
     ],
@@ -88,7 +88,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
       {
         heading: "First, get out of harm's way",
         paragraphs: [
-          "If you're in a live traffic lane, or anyone is hurt or in danger, call 911 before you call us. Everything else waits for that.",
+          "If you're in a travel lane, or someone could be hurt, call 911 before you call us. Everything else waits for that.",
           "If the car can still roll, a slow drive to the next exit, a parking lot or a wide shoulder is worth it. A damaged wheel can be replaced; a stopped car in a lane is the bigger danger.",
         ],
       },
@@ -104,7 +104,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
         ],
       },
       {
-        heading: "Tell us exactly where you are",
+        heading: "Pin down your location",
         paragraphs: [
           "On a road, landmarks beat addresses. Give dispatch the road name, which direction you're facing, the nearest exit or cross street, and any mile marker you can read. Say that you're on a shoulder or in a hazard, and say whether there's a spare in the car.",
           "If your wheels have locking nuts, say whether you have the key. A missing key means the lock has to come off before the wheel can, which is {{price:rim-lock-removal}} plus the dispatch fee. It is better to tell dispatch now than to find out when the driver arrives.",
@@ -236,7 +236,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
         ],
       },
       {
-        heading: "What to expect when you call",
+        heading: "What happens on the call",
         paragraphs: [
           "Tell us where the car is, the year, make and model, and what's wrong with the tire. Dispatch confirms the service price and the dispatch fee for your vehicle before a driver is sent. We text or call when the driver is on the way. We send the nearest available driver as soon as possible.",
           "Not sure what to ask for at that hour? Say what you see: a tire that's completely flat, one that's losing air slowly, a nail in the tread. That's enough for dispatch to pick the right job.",
@@ -285,7 +285,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
         heading: "Make sure drivers can see you",
         paragraphs: [
           "At night, other drivers notice a stopped car late. Hazard lights on, and pull as far from the lane as you can. Put reflective triangles behind the car if you carry them and can walk back safely.",
-          "If you're in a live traffic lane, or anyone is in danger or feels unsafe, call 911 first.",
+          "If you're in a travel lane, or someone could be hurt or feels unsafe, call 911 first.",
         ],
       },
       {
@@ -353,7 +353,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
       {
         heading: "Once you've stopped",
         paragraphs: [
-          "In a live traffic lane, or if anyone is hurt, call 911 first. Otherwise get everyone clear of the car and away from traffic.",
+          "In a travel lane, or if anyone is hurt, call 911 first. Otherwise get everyone clear of the car and away from traffic.",
           "Once you're off the road, don't drive any further. The wheel is probably damaged already, and more miles on it make that worse.",
           "Take a breath before you dial. Shaking hands and a racing pulse are normal after a blowout. Give dispatch your location first, because that is the one thing we can't send help without.",
         ],
@@ -367,7 +367,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
         ],
       },
       {
-        heading: "What to tell dispatch",
+        heading: "What dispatch needs from you",
         paragraphs: [
           "A tire has to be available before a driver is dispatched, and availability varies by size, so dispatch checks first and gives you your total. These details speed that up:",
         ],
@@ -415,7 +415,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
         heading: "When a repair works",
         paragraphs: [
           "A plug or patch is for a puncture in the tread, the flat part of the tire that meets the road. Damage in or near the sidewall can't be repaired safely, and neither can a hole beyond a certain size. In those cases the tire has to be replaced instead.",
-          "A tire that has been driven on while flat often can't be repaired anymore, even when the original hole was in the tread, because the sidewall takes the damage. That is why stopping early matters more than the size of the hole.",
+          "A tire that was driven with no air in it often can't be repaired anymore, even when the original hole was in the tread, because the sidewall takes the damage. That is why stopping early matters more than the size of the hole.",
         ],
       },
       {
@@ -446,7 +446,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
     ],
     faqs: [
       {
-        q: "How do I know if my tire can be plugged?",
+        q: "Can my tire be plugged?",
         a: "A puncture in the tread usually can be. Anything in or near the sidewall can't. Tell dispatch where the damage is, and the driver confirms before starting.",
       },
       {
@@ -548,7 +548,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
         heading: "When a tire has to be replaced",
         paragraphs: [
           "Replacement is for a tire that can't be repaired safely. A small puncture in the tread is a different job, a plug or patch at {{price:tire-repair-plug-patch}} plus the dispatch fee.",
-          "Signs a tire is past repair: a bulge or a tear in the sidewall, a tire in pieces after a blowout, a hole bigger than a plug can close, or a tire that has been driven on while flat. If you're not sure, ask for a repair first. The driver checks the tire before starting and tells you which it is.",
+          "Signs a tire is past repair: a bulge or a tear in the sidewall, a tire in pieces after a blowout, a hole bigger than a plug can close, or a tire that was driven with no air in it. If you're not sure, ask for a repair first. The driver checks the tire before starting and tells you which it is.",
         ],
       },
       {
@@ -704,7 +704,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
         ],
       },
       {
-        heading: "What to tell dispatch",
+        heading: "What dispatch needs from you",
         paragraphs: [
           "Describe what you saw and heard: clicking, dim lights, a dark dashboard. Give your exact location and the vehicle's year, make and model, and say you think the battery is the cause, since that is what a jump start fixes.",
           "If you hear clicking, say how fast it is. Rapid clicking points at a weak battery. A single loud click with bright lights points elsewhere, and a jump may not help. Either way, it is better to tell dispatch than to guess.",
@@ -848,7 +848,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
         a: "No. The driver brings the jump equipment.",
       },
       {
-        q: "What if the jump doesn't hold?",
+        q: "And if the jump doesn't last?",
         a: "If the battery won't hold a charge, the driver can advise whether it needs replacing. A new battery installed on site is {{price:battery-replacement}} for eligible vehicles and batteries.",
       },
       {
@@ -1051,7 +1051,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
         a: "A dead fob can leave you stuck, yes. Tell dispatch what's happening and what the car does when you use the door handle or the fob.",
       },
       {
-        q: "A child or pet is locked inside. What should I do?",
+        q: "A child or an animal is shut inside. What should I do?",
         a: "If they're in danger, call 911 first. Don't wait for a driver.",
       },
       {
@@ -1136,12 +1136,12 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
       "{{price:lockout}} + {{dispatchFee}} dispatch. Locked out and it can't wait? Call 911 if anyone's in danger, then call us for entry, 24/7.",
     eyebrow: "Emergency lockout",
     intro:
-      "Some lockouts can't wait: a child or pet inside, a car left running, a dark lot, a roadside. This page is for those. Call 911 first if anyone is in danger, then call or send a request and a driver comes to open the car.",
+      "Some lockouts can't wait: a child or pet inside, a car left running, a dark lot, a roadside. This page is for those. Call 911 first if someone could be hurt, then call or send a request and a driver comes to open the car.",
     service: "lockout",
     alsoServices: ["battery-replacement", "jump-start"],
     sections: [
       {
-        heading: "Call 911 first if anyone is in danger",
+        heading: "Call 911 first if someone could be hurt",
         paragraphs: [
           "A child or pet locked in a car is an emergency, especially in Texas heat, where the inside of a car gets dangerous fast. If they're in danger, call 911 first. Don't wait for us.",
           "Tell the 911 operator the make, color and location of the car, and stay with it. Calling first is what gets help moving; talking to someone through the glass does not.",
@@ -1291,7 +1291,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
       {
         heading: "While you wait",
         paragraphs: [
-          "In a live traffic lane, or if anyone is in danger, call 911 before you call us. Otherwise, get clear of traffic, turn on your hazard lights and wait where you can be seen. In the dark, stay in a lit spot if you have a choice, and keep the doors locked until the driver is there.",
+          "In a travel lane, or if someone could be hurt, call 911 before you call us. Otherwise, get clear of traffic, turn on your hazard lights and wait where you can be seen. In the dark, stay in a lit spot if you have a choice, and keep the doors locked until the driver is there.",
         ],
       },
     ],
@@ -1323,14 +1323,14 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
       "{{price:jump-start}} + {{dispatchFee}} dispatch. No membership, no account: call when you're stuck, and the job has a published price.",
     eyebrow: "No membership",
     intro:
-      "You don't need a membership to get a driver. There's nothing to join, no account to set up, and nothing to have signed up for before the car stops. Call or send a request, and the job has a published price.",
+      "You don't need a membership to get a driver. There's no plan to sign up for, no account to set up, and nothing to have signed up for before the car stops. Call or send a request, and the job has a published price.",
     service: "jump-start",
     alsoServices: ["battery-replacement", "tire-replacement", "lockout"],
     sections: [
       {
         heading: "Nothing to sign up for",
         paragraphs: [
-          "A membership is something you buy ahead of time, in case. Here, you ask when you need help. There's no account and no membership, and you can call about any problem we handle, whether it's your first time or not. With nothing to join, there's no renewal date to remember either.",
+          "A membership is something you buy ahead of time, in case. Here, you ask when you need help. There's no account and no membership, and you can call about any problem we handle, whether it's your first time or not. Without a plan, there's no renewal date to remember either.",
           "You don't need a member number or a membership card to call. What dispatch needs is the car's location and what's wrong with it.",
         ],
       },
@@ -1423,7 +1423,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
       {
         heading: "If you're on the road",
         paragraphs: [
-          "Parked on a shoulder or a ramp? If the truck is in a live traffic lane, or anyone is in danger, call 911 first. Otherwise, hazard lights on, warning triangles out if it's safe to set them, and give dispatch the road, your direction of travel and the mile marker. We text or call when the driver is on the way.",
+          "Parked on a shoulder or a ramp? If the truck is in a travel lane, or someone could be hurt, call 911 before anything else. Otherwise, hazard lights on, warning triangles out if it's safe to set them, and give dispatch the road, your direction of travel and the mile marker. We text or call when the driver is on the way.",
         ],
       },
     ],
@@ -1519,7 +1519,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
       "{{price:lockout}} + {{dispatchFee}} dispatch. Locked out of a Tesla or EV? A driver gets you in with non-destructive entry whenever possible, 24/7.",
     eyebrow: "EV lockout",
     intro:
-      "Many electric cars have no traditional key to lock inside: a phone, a key card or a fob stands in for it, and any of them can end up on the wrong side of a locked door. Tell us the make and model and that it's electric, and a driver comes to open it.",
+      "Many electric cars have no traditional key to lock inside: a phone, a key card or a fob stands in for it, and any of them can find themselves locked out of the car. Tell us the make and model and that it's electric, and a driver comes to open it.",
     service: "lockout",
     alsoServices: ["jump-start", "tire-replacement"],
     sections: [
@@ -1596,7 +1596,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
       {
         heading: "Don't drive on it",
         paragraphs: [
-          "Not even to the nearest charger or shop. A flat destroys the tire and can damage the wheel, and an electric car is heavy enough that the weight is hard on a tire with no air in it. If you're in a live traffic lane, or anyone is in danger, call 911 first.",
+          "Not even to the nearest charger or shop. A flat destroys the tire and can damage the wheel, and an electric car is heavy enough that the weight is hard on a tire with no air in it. If you're in a travel lane, or someone could be hurt, call 911 before anything else.",
         ],
       },
       {
@@ -1654,7 +1654,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
       {
         heading: "If someone is in the car",
         paragraphs: [
-          "People first. If a passenger is on board, make sure everyone is safe and clear of traffic before you do anything about the car. In a live traffic lane, or if anyone is in danger, call 911.",
+          "People first. If a passenger is on board, make sure everyone is safe and clear of traffic before you do anything about the car. In a travel lane, or if someone could be hurt, call 911.",
           "If you're stopped on a freeway shoulder with a rider, they should stand well clear of the road, or stay buckled in if there's no safe place to stand. Then give dispatch your exact spot and what the car is doing. A clear description in the first minute is worth more than a long one later.",
         ],
       },
@@ -1684,7 +1684,7 @@ export const TOPICS_PROBLEMS: TopicPage[] = [
     ],
     faqs: [
       {
-        q: "Do I need a membership?",
+        q: "Is there a membership to buy?",
         a: "No. There's no membership and no account.",
       },
       {

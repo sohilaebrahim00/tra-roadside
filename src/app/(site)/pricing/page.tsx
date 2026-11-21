@@ -53,6 +53,21 @@ const WORK = [
   { slug: "tire-repair-plug-patch", src: "/images/jobs/tire-plug-pliers.webp", w: 900, h: 1200, alt: "A plug being pressed into a puncture in the tread of a tire with pliers." },
   { slug: "rim-lock-removal", src: "/images/jobs/impact-wrench-sockets.webp", w: 768, h: 512, alt: "An impact wrench and a row of sockets laid out for removing stuck lug nuts." },
 ] as const;
+/**
+ * The photo on each price card. A service's own first photo, except where two
+ * cards would show the same picture: those take another photo of the same work.
+ */
+const CARD_PHOTO: Partial<Record<Parameters<typeof getService>[0], { src: string; w: number; h: number; alt: string }>> = {
+  "tire-repair-plug-patch": { src: "/images/jobs/tire-plug-pliers.webp", w: 900, h: 1200, alt: "A plug being pressed into a puncture in the tread of a tire with pliers." },
+  "flat-tire-change": { src: "/images/jobs/spare-change-black-sedan.webp", w: 900, h: 1200, alt: "A black sedan raised on a floor jack, its flat front tire still on and the spare lying on the ground beside it." },
+  "stripped-lug-nut-removal": { src: "/images/tire-spare-lugs.webp", w: 1200, h: 800, alt: "A gloved hand running a cordless impact wrench on the lug nuts of a steel spare wheel." },
+};
+const cardPhoto = (svc: NonNullable<ReturnType<typeof getService>>) => {
+  const own = CARD_PHOTO[svc.slug];
+  if (own) return own;
+  const p = svc.photos?.[0];
+  return p ? { src: p.src, w: p.width, h: p.height, alt: p.alt } : undefined;
+};
 const jumpStart = getService("jump-start");
 const priceOf = (slug: Parameters<typeof getService>[0]) => {
   const svc = getService(slug);
@@ -201,8 +216,14 @@ export default function PricingPage() {
             Every other service
           </h2>
           <ul className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {rest.map((svc) => (
-              <li key={svc.slug} className="flex flex-col rounded-2xl border border-ink-950/10 bg-white p-6">
+            {rest.map((svc) => {
+              const photo = cardPhoto(svc);
+              return (
+              <li key={svc.slug} className="flex flex-col overflow-hidden rounded-2xl border border-ink-950/10 bg-white">
+                {photo && (
+                  <Image src={photo.src} alt={photo.alt} width={photo.w} height={photo.h} sizes="(min-width: 1024px) 380px, (min-width: 768px) 50vw, 100vw" className="aspect-[16/10] w-full object-cover" />
+                )}
+                <div className="flex flex-1 flex-col p-6">
                 <h3 className="font-display text-xl font-semibold text-ink-950">{svc.name}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-ink-600">{svc.summary}</p>
                 {svc.priceCovers && (
@@ -219,8 +240,10 @@ export default function PricingPage() {
                     Details <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </Link>
                 </div>
+                </div>
               </li>
-            ))}
+              );
+            })}
           </ul>
         </Container>
       </section>
